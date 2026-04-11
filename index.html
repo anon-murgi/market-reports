@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f1f5f9;
+      --card: #fff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --placeholder-bg: #f8fafc;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: clamp(24px, 4vw, 48px);
+      line-height: 1.5;
+    }
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .page-head {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .page-head h1 {
+      font-size: clamp(1.5rem, 4vw, 1.85rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .page-head p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    a.card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+    a.card:hover {
+      border-color: #bfdbfe;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+      transform: translateY(-2px);
+    }
+    .card h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent-soft);
+    }
+    a.card h2 { color: var(--text); }
+    .card .tagline {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .card .summary {
+      font-size: 0.9rem;
+      color: var(--muted);
+      flex: 1;
+    }
+    .card .cta {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    a.card:hover .cta { text-decoration: underline; }
+    .card.placeholder {
+      background: var(--placeholder-bg);
+      border-style: dashed;
+      color: var(--muted);
+    }
+    .card.placeholder h2 {
+      border-bottom-color: var(--border);
+      color: var(--muted);
+    }
+    .card.placeholder .summary { font-size: 0.88rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Market Reports</h1>
+      <p>Static dashboards and research pages — add new HTML files and link them here.</p>
+    </header>
+    <div class="grid">
+      <a class="card" href="RBI_Trust_Audit.html">
+        <h2>RBI State of the Economy — Trust Audit</h2>
+        <p class="tagline">June 2024 → March 2026</p>
+        <p class="summary">Evaluates predictive accuracy, narrative vs outcomes, and market divergence—tables and Chart.js visuals for a trust-oriented read of RBI’s state-of-the-economy story.</p>
+        <span class="cta">Open report →</span>
+      </a>
+      <a class="card" href="RBI_Payment_Systems_Dashboard_Jan2026.html">
+        <h2>India Payment Systems Intelligence</h2>
+        <p class="tagline">RBI Bulletin No. 45 · PSS statistics · March 2026</p>
+        <p class="summary">Headline KPIs and charts across UPI, cards, credit transfers, mobile or internet payments, ATM rails, infrastructure, and CCIL settlement—built from RBI payment-system statistics.</p>
+        <span class="cta">Open report →</span>
+      </a>
+      <div class="card placeholder">
+        <h2>Report slot 3</h2>
+        <p class="summary">Reserved for your next page. After you add the HTML file to this repo, duplicate a live card in <code>index.html</code> and point the link to the new filename.</p>
+      </div>
+      <div class="card placeholder">
+        <h2>Report slot 4</h2>
+        <p class="summary">Reserved for another dashboard or memo. Keeps the 2×2 grid balanced until you ship more reports.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

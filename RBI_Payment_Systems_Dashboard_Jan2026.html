@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Payment Systems — RBI Bulletin March 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --bg: #f8f9fb;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent1: #2563eb;
+    --accent2: #7c3aed;
+    --accent3: #059669;
+    --accent4: #d97706;
+    --accent5: #dc2626;
+    --accent6: #0891b2;
+    --subtle-blue: #eff6ff;
+    --subtle-green: #ecfdf5;
+    --subtle-purple: #f5f3ff;
+    --subtle-amber: #fffbeb;
+    --subtle-red: #fef2f2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 24px;
+  }
+
+  .dashboard {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--text);
+  }
+  .header .subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .header .badge {
+    display: inline-block;
+    background: var(--subtle-blue);
+    color: var(--accent1);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 8px;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* Section Headers */
+  .section-header {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 36px 0 16px 0;
+    padding-left: 12px;
+    border-left: 3px solid var(--accent1);
+    letter-spacing: -0.3px;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin: -10px 0 16px 15px;
+  }
+
+  /* KPI Cards */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .kpi-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+  }
+  .kpi-card.blue::before { background: var(--accent1); }
+  .kpi-card.purple::before { background: var(--accent2); }
+  .kpi-card.green::before { background: var(--accent3); }
+  .kpi-card.amber::before { background: var(--accent4); }
+  .kpi-card.red::before { background: var(--accent5); }
+  .kpi-card.teal::before { background: var(--accent6); }
+
+  .kpi-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+  .kpi-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .kpi-change {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-top: 6px;
+  }
+  .kpi-change.up { background: #ecfdf5; color: #059669; }
+  .kpi-change.down { background: #fef2f2; color: #dc2626; }
+  .kpi-change.neutral { background: #f3f4f6; color: #6b7280; }
+
+  /* Chart containers */
+  .chart-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .chart-grid.triple {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .chart-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .chart-card.full {
+    grid-column: 1 / -1;
+  }
+  .chart-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .chart-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .chart-wrap {
+    position: relative;
+    height: 280px;
+  }
+  .chart-wrap.tall {
+    height: 340px;
+  }
+  .chart-wrap.short {
+    height: 220px;
+  }
+
+  /* Tables */
+  .table-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  thead th {
+    background: #f9fafb;
+    padding: 10px 12px;
+    text-align: right;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    border-bottom: 2px solid var(--border);
+    white-space: nowrap;
+  }
+  thead th:first-child { text-align: left; }
+  tbody td {
+    padding: 9px 12px;
+    text-align: right;
+    border-bottom: 1px solid #f3f4f6;
+    white-space: nowrap;
+  }
+  tbody td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--text);
+  }
+  tbody tr:hover { background: #fafbfc; }
+  tbody tr.highlight { background: var(--subtle-blue); font-weight: 600; }
+  .growth-pos { color: #059669; font-weight: 600; }
+  .growth-neg { color: #dc2626; font-weight: 600; }
+
+  /* Insight Cards */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .insight-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .insight-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .insight-card p {
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+  .insight-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .tag-growth { background: #ecfdf5; color: #059669; }
+  .tag-risk { background: #fef2f2; color: #dc2626; }
+  .tag-shift { background: #eff6ff; color: #2563eb; }
+  .tag-infra { background: #f5f3ff; color: #7c3aed; }
+
+  /* Footer */
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .chart-grid, .chart-grid.triple { grid-template-columns: 1fr; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .kpi-grid { grid-template-columns: 1fr; }
+    .header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="dashboard">
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>India Payment Systems Intelligence</h1>
+    <div class="subtitle">RBI Bulletin No. 45 — Payment & Settlement System Statistics · March 2026</div>
+    <span class="badge">January 2026 Data</span>
+  </div>
+  <div class="header-right">
+    <div style="font-weight:600; color:var(--text);">Reserve Bank of India</div>
+    <div>Reporting Period: Jan 2026</div>
+    <div>Comparison: FY 2024-25 · Jan 2025 · Dec 2025</div>
+  </div>
+</div>
+
+<!-- ==================== SECTION 1: HEADLINE KPIs ==================== -->
+<div class="section-header">Headline Numbers</div>
+<div class="section-sub">Total digital payments ecosystem — January 2026 snapshot</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card blue">
+    <div class="kpi-label">Total Digital Payments (Vol)</div>
+    <div class="kpi-value">2,517 L</div>
+    <div class="kpi-sub">Lakh transactions · Jan 2026</div>
+    <span class="kpi-change up">vs 2,510 L Dec</span>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">Total Digital Payments (Value)</div>
+    <div class="kpi-value">₹277.6 L Cr</div>
+    <div class="kpi-sub">Lakh crore · Jan 2026</div>
+    <span class="kpi-change up">vs ₹305.7 L Cr Dec</span>
+  </div>
+  <div class="kpi-card purple">
+    <div class="kpi-label">UPI Volume Share</div>
+    <div class="kpi-value">86.3%</div>
+    <div class="kpi-sub">of retail payment volume</div>
+    <span class="kpi-change up">↑ from 83% FY24</span>
+  </div>
+  <div class="kpi-card amber">
+    <div class="kpi-label">Total Retail Payments (Value)</div>
+    <div class="kpi-value">₹91.85 L Cr</div>
+    <div class="kpi-sub">Jan 2026</div>
+    <span class="kpi-change up">vs ₹92.03 L Cr FY</span>
+  </div>
+  <div class="kpi-card teal">
+    <div class="kpi-label">Credit Cards Outstanding</div>
+    <div class="kpi-value">115.4 M</div>
+    <div class="kpi-sub">11,544 lakh cards · Jan 2026</div>
+    <span class="kpi-change up">+7.1% YoY</span>
+  </div>
+  <div class="kpi-card red">
+    <div class="kpi-label">UPI QR Codes Deployed</div>
+    <div class="kpi-value">73.8 Cr</div>
+    <div class="kpi-sub">Jan 2026 · +18% YoY</div>
+    <span class="kpi-change up">↑ 7,384 lakh</span>
+  </div>
+</div>
+
+<!-- ==================== SECTION 2: UPI DEEP DIVE ==================== -->
+<div class="section-header">UPI — The Dominant Rail</div>
+<div class="section-sub">UPI processed 21,860 crore transactions worth ₹284.7L Cr in FY26 — 12,000x growth in volume since FY17</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card blue">
+    <div class="kpi-label">UPI Volume · Jan 2026</div>
+    <div class="kpi-value">2,170 Cr</div>
+    <div class="kpi-sub">217,034 lakh transactions</div>
+    <span class="kpi-change up">+28% YoY</span>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">UPI Value · Jan 2026</div>
+    <div class="kpi-value">₹28.33 L Cr</div>
+    <div class="kpi-sub">Record monthly value</div>
+    <span class="kpi-change up">+21% YoY</span>
+  </div>
+  <div class="kpi-card purple">
+    <div class="kpi-label">Avg. Ticket Size</div>
+    <div class="kpi-value">₹1,305</div>
+    <div class="kpi-sub">Value / Volume</div>
+    <span class="kpi-change down">-5.5% YoY (more micro txns)</span>
+  </div>
+  <div class="kpi-card amber">
+    <div class="kpi-label">Daily Avg Transactions</div>
+    <div class="kpi-value">700 M</div>
+    <div class="kpi-sub">70 crore txns / day</div>
+    <span class="kpi-change up">Peak month</span>
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-title">Retail Payment Volume Mix — Jan 2026</div>
+    <div class="chart-subtitle">UPI dominates with 86% of retail volume (lakh transactions)</div>
+    <div class="chart-wrap">
+      <canvas id="chartVolumeMix"></canvas>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Retail Payment Value Mix — Jan 2026</div>
+    <div class="chart-subtitle">UPI leads in value too, but NEFT/cards remain significant for high-value flows</div>
+    <div class="chart-wrap">
+      <canvas id="chartValueMix"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION 3: CREDIT TRANSFERS ==================== -->
+<div class="section-header">Credit Transfers — RTGS, NEFT, IMPS, UPI</div>
+<div class="section-sub">The backbone of India's payments — from high-value interbank to micro P2M</div>
+
+<div class="chart-grid">
+  <div class="chart-card full">
+    <div class="chart-title">Credit Transfer Volumes Comparison</div>
+    <div class="chart-subtitle">FY 2024-25 vs Jan 2025 vs Dec 2025 vs Jan 2026 (lakh transactions)</div>
+    <div class="chart-wrap tall">
+      <canvas id="chartCreditTransfers"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="table-card">
+  <div class="chart-title" style="margin-bottom:12px;">Credit Transfers — Detailed Breakdown</div>
+  <table>
+    <thead>
+      <tr>
+        <th>System</th>
+        <th>Vol FY24-25 (L)</th>
+        <th>Vol Jan'26 (L)</th>
+        <th>Val FY24-25 (₹Cr)</th>
+        <th>Val Jan'26 (₹Cr)</th>
+        <th>Avg Ticket (₹)</th>
+        <th>MoM Vol Δ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>RTGS (1.1 to 1.2)</td>
+        <td>3,024.55</td>
+        <td>317.67</td>
+        <td>2,01,38,76,82</td>
+        <td>1,91,76,704</td>
+        <td>60.4L</td>
+        <td class="growth-pos">+0.4%</td>
+      </tr>
+      <tr>
+        <td>— Customer Txns</td>
+        <td>3,010.32</td>
+        <td>316.41</td>
+        <td>1,81,15,31,29</td>
+        <td>1,75,80,604</td>
+        <td>55.6L</td>
+        <td class="growth-neg">-0.1%</td>
+      </tr>
+      <tr>
+        <td>— Interbank</td>
+        <td>14.23</td>
+        <td>1.26</td>
+        <td>20,23,45,53</td>
+        <td>15,96,100</td>
+        <td>12.7Cr</td>
+        <td class="growth-neg">-</td>
+      </tr>
+      <tr class="highlight">
+        <td>Credit Transfers — Retail</td>
+        <td>20,61,014.91</td>
+        <td>2,33,364.66</td>
+        <td>79,88,19,76</td>
+        <td>80,78,680</td>
+        <td>—</td>
+        <td class="growth-pos">+0.4%</td>
+      </tr>
+      <tr>
+        <td>AePS (Fund Transfers)</td>
+        <td>3.64</td>
+        <td>0.24</td>
+        <td>190</td>
+        <td>14</td>
+        <td>₹583</td>
+        <td class="growth-pos">+14%</td>
+      </tr>
+      <tr>
+        <td>APBS $</td>
+        <td>32,964.43</td>
+        <td>2,616.49</td>
+        <td>5,54,034</td>
+        <td>81,195</td>
+        <td>₹3,104</td>
+        <td class="growth-pos">+10%</td>
+      </tr>
+      <tr>
+        <td>IMPS</td>
+        <td>56,249.68</td>
+        <td>3,740.33</td>
+        <td>71,39,110</td>
+        <td>6,72,089</td>
+        <td>₹17,969</td>
+        <td class="growth-neg">-1.6%</td>
+      </tr>
+      <tr>
+        <td>NACH Cr $</td>
+        <td>16,938.86</td>
+        <td>1,248.95</td>
+        <td>16,70,223</td>
+        <td>1,61,580</td>
+        <td>₹12,937</td>
+        <td class="growth-pos">+0.7%</td>
+      </tr>
+      <tr>
+        <td>NEFT</td>
+        <td>96,198.05</td>
+        <td>8,724.20</td>
+        <td>4,44,61,464</td>
+        <td>43,29,421</td>
+        <td>₹49,623</td>
+        <td class="growth-neg">-0.6%</td>
+      </tr>
+      <tr style="font-weight:700; background: #eff6ff;">
+        <td>UPI @</td>
+        <td>18,58,660.25</td>
+        <td>2,17,034.45</td>
+        <td>2,60,56,955</td>
+        <td>28,33,481</td>
+        <td>₹1,305</td>
+        <td class="growth-pos">+0.3%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== SECTION 4: DEBIT & CARD PAYMENTS ==================== -->
+<div class="section-header">Card Payments & Prepaid Instruments</div>
+<div class="section-sub">Credit cards, debit cards, PPIs, and the shifting card ecosystem</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-title">Card Payment Volumes — Jan 2026</div>
+    <div class="chart-subtitle">Credit cards (4.1) vs Debit cards (4.2) — Lakh transactions</div>
+    <div class="chart-wrap">
+      <canvas id="chartCardVolumes"></canvas>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Card Payment Values — Jan 2026</div>
+    <div class="chart-subtitle">₹ Crore — Credit cards dominate value</div>
+    <div class="chart-wrap">
+      <canvas id="chartCardValues"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="table-card">
+  <div class="chart-title" style="margin-bottom:12px;">Card & PPI Payments — Full Breakdown</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Instrument</th>
+        <th>Vol FY24-25 (L)</th>
+        <th>Vol Jan'26 (L)</th>
+        <th>Val FY24-25 (₹Cr)</th>
+        <th>Val Jan'26 (₹Cr)</th>
+        <th>MoM Vol Δ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>Card Payments (Total)</td>
+        <td>63,861.15</td>
+        <td>6,415.41</td>
+        <td>26,05,110</td>
+        <td>2,37,042</td>
+        <td class="growth-neg">-0.5%</td>
+      </tr>
+      <tr>
+        <td>— Credit Cards</td>
+        <td>47,740.76</td>
+        <td>5,397.11</td>
+        <td>21,09,197</td>
+        <td>1,99,085</td>
+        <td class="growth-pos">+0.0%</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;PoS based</td>
+        <td>24,571.10</td>
+        <td>2,674.95</td>
+        <td>7,95,022</td>
+        <td>75,988</td>
+        <td class="growth-neg">-1.7%</td>
+      </tr>
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;Others (e-comm + digital bill)</td>
+        <td>23,169.66</td>
+        <td>2,722.16</td>
+        <td>13,14,175</td>
+        <td>1,23,097</td>
+        <td class="growth-pos">+1.9%</td>
+      </tr>
+      <tr>
+        <td>— Debit Cards</td>
+        <td>16,120.39</td>
+        <td>1,018.29</td>
+        <td>4,95,914</td>
+        <td>37,957</td>
+        <td class="growth-neg">-3.0%</td>
+      </tr>
+      <tr class="highlight">
+        <td>Prepaid Instruments (PPIs)</td>
+        <td>70,254.08</td>
+        <td>9,537.91</td>
+        <td>2,16,751</td>
+        <td>27,626</td>
+        <td class="growth-neg">-2.3%</td>
+      </tr>
+      <tr>
+        <td>— Wallets</td>
+        <td>52,898.40</td>
+        <td>7,716.41</td>
+        <td>1,54,066</td>
+        <td>20,985</td>
+        <td class="growth-neg">-4.7%</td>
+      </tr>
+      <tr>
+        <td>— Cards (5.2)</td>
+        <td>17,355.68</td>
+        <td>1,821.50</td>
+        <td>62,686</td>
+        <td>6,641</td>
+        <td class="growth-pos">+10%</td>
+      </tr>
+      <tr>
+        <td>Paper-based (CTS NPCI)</td>
+        <td>6,095.38</td>
+        <td>458.71</td>
+        <td>71,13,350</td>
+        <td>6,01,415</td>
+        <td class="growth-neg">-3.7%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== SECTION 5: MOBILE & INTERNET PAYMENTS ==================== -->
+<div class="section-header">Mobile & Internet Payments</div>
+<div class="section-sub">Part II — Payment modes and channels driving India's shift to digital</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card blue">
+    <div class="kpi-label">Mobile Payments · Jan 2026</div>
+    <div class="kpi-value">1,89,023 L</div>
+    <div class="kpi-sub">Volume (lakh) — includes UPI app flows</div>
+    <span class="kpi-change up">vs 1,88,741 Dec</span>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">Mobile Payments Value</div>
+    <div class="kpi-value">₹41.2 L Cr</div>
+    <div class="kpi-sub">Jan 2026 — ₹4,120,520 Cr</div>
+    <span class="kpi-change up">+2.5% MoM</span>
+  </div>
+  <div class="kpi-card purple">
+    <div class="kpi-label">Internet Payments · Jan 2026</div>
+    <div class="kpi-value">3,727 L</div>
+    <div class="kpi-sub">Netbanking + internet browser flows</div>
+    <span class="kpi-change down">-0.8% MoM</span>
+  </div>
+  <div class="kpi-card amber">
+    <div class="kpi-label">Internet Pay Value</div>
+    <div class="kpi-value">₹139.1 L Cr</div>
+    <div class="kpi-sub">High-value netbanking transfers</div>
+    <span class="kpi-change down">-8% MoM</span>
+  </div>
+</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-title">Mobile vs Internet Payment Volumes</div>
+    <div class="chart-subtitle">FY24-25 through Jan 2026 (lakh)</div>
+    <div class="chart-wrap">
+      <canvas id="chartMobileInternet"></canvas>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">ATM Cash Withdrawal Trends</div>
+    <div class="chart-subtitle">Cash at ATMs (3.1-3.3) vs Micro ATMs (5) — volume lakh</div>
+    <div class="chart-wrap">
+      <canvas id="chartATM"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION 6: INFRASTRUCTURE ==================== -->
+<div class="section-header">Payment Infrastructure Growth</div>
+<div class="section-sub">Part III — Cards, PPIs, ATMs, PoS terminals, and QR codes deployed across India</div>
+
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-title">Payment Infrastructure — Key Metrics</div>
+    <div class="chart-subtitle">Counts as of Jan 2026 vs prior periods (lakh)</div>
+    <div class="chart-wrap tall">
+      <canvas id="chartInfra"></canvas>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-title">Infrastructure Growth Trajectory</div>
+    <div class="chart-subtitle">Mar 2025 → Jan 2025 → Dec 2025 → Jan 2026</div>
+    <div class="chart-wrap tall">
+      <canvas id="chartInfraGrowth"></canvas>
+    </div>
+  </div>
+</div>
+
+<div class="table-card">
+  <div class="chart-title" style="margin-bottom:12px;">Payment Infrastructure — Complete Data (Lakh)</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Infrastructure</th>
+        <th>Mar 2025</th>
+        <th>Jan 2025</th>
+        <th>Dec 2025</th>
+        <th>Jan 2026</th>
+        <th>YoY Change</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Credit Cards</td>
+        <td>1,098.85</td>
+        <td>1,088.73</td>
+        <td>1,157.92</td>
+        <td>1,166.52</td>
+        <td class="growth-pos">+7.2%</td>
+      </tr>
+      <tr>
+        <td>Debit Cards</td>
+        <td>9,908.12</td>
+        <td>9,820.39</td>
+        <td>10,343.46</td>
+        <td>10,377.57</td>
+        <td class="growth-pos">+5.7%</td>
+      </tr>
+      <tr class="highlight">
+        <td>Total Cards</td>
+        <td>11,006.97</td>
+        <td>10,909.12</td>
+        <td>11,501.38</td>
+        <td>11,544.09</td>
+        <td class="growth-pos">+5.8%</td>
+      </tr>
+      <tr>
+        <td>PPIs — Wallets</td>
+        <td>8,678.44</td>
+        <td>8,957.73</td>
+        <td>16,170.73</td>
+        <td>17,268.45</td>
+        <td class="growth-pos">+92.8%</td>
+      </tr>
+      <tr>
+        <td>PPIs — Cards</td>
+        <td>4,723.02</td>
+        <td>4,508.59</td>
+        <td>4,702.43</td>
+        <td>4,784.92</td>
+        <td class="growth-pos">+6.1%</td>
+      </tr>
+      <tr>
+        <td>Bank ATMs</td>
+        <td>2.20</td>
+        <td>2.21</td>
+        <td>2.15</td>
+        <td>2.14</td>
+        <td class="growth-neg">-3.2%</td>
+      </tr>
+      <tr>
+        <td>White Label ATMs</td>
+        <td>0.36</td>
+        <td>0.36</td>
+        <td>0.37</td>
+        <td>0.38</td>
+        <td class="growth-pos">+5.6%</td>
+      </tr>
+      <tr>
+        <td>Micro ATMs</td>
+        <td>14.82</td>
+        <td>14.74</td>
+        <td>14.15</td>
+        <td>13.92</td>
+        <td class="growth-neg">-5.6%</td>
+      </tr>
+      <tr>
+        <td>PoS Terminals</td>
+        <td>110.98</td>
+        <td>109.53</td>
+        <td>114.75</td>
+        <td>115.25</td>
+        <td class="growth-pos">+5.2%</td>
+      </tr>
+      <tr>
+        <td>Bharat QR</td>
+        <td>67.18</td>
+        <td>64.43</td>
+        <td>58.90</td>
+        <td>57.97</td>
+        <td class="growth-neg">-10.0%</td>
+      </tr>
+      <tr style="font-weight:700; background: #eff6ff;">
+        <td>UPI QR Codes</td>
+        <td>6,579.30</td>
+        <td>6,401.65</td>
+        <td>7,313.65</td>
+        <td>7,384.20</td>
+        <td class="growth-pos">+15.3%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ==================== SECTION 7: SETTLEMENT SYSTEMS ==================== -->
+<div class="section-header">Settlement Systems — CCIL</div>
+<div class="section-sub">Part I-A: High-value clearing and settlement</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card blue">
+    <div class="kpi-label">CCIL Operated Systems · Jan 2026</div>
+    <div class="kpi-value">₹321.6 L Cr</div>
+    <div class="kpi-sub">Total value settled</div>
+    <span class="kpi-change down">-7.3% vs Dec</span>
+  </div>
+  <div class="kpi-card green">
+    <div class="kpi-label">Govt. Securities Clearing</div>
+    <div class="kpi-value">₹187.1 L Cr</div>
+    <div class="kpi-sub">Jan 2026 value</div>
+    <span class="kpi-change up">Outright: ₹12.4L Cr</span>
+  </div>
+  <div class="kpi-card purple">
+    <div class="kpi-label">Forex Clearing</div>
+    <div class="kpi-value">₹124.5 L Cr</div>
+    <div class="kpi-sub">FX settlement · Jan 2026</div>
+    <span class="kpi-change down">-8% MoM</span>
+  </div>
+</div>
+
+<!-- ==================== SECTION 8: KEY INSIGHTS ==================== -->
+<div class="section-header">Key Insights & Structural Shifts</div>
+<div class="section-sub">What this data tells us about India's payments future</div>
+
+<div class="insight-grid">
+  <div class="insight-card">
+    <span class="insight-tag tag-growth">Growth</span>
+    <h4>UPI Is Unstoppable — 86% Volume Share</h4>
+    <p>UPI now processes ~217,034 lakh transactions/month (Jan 2026), commanding 86% of retail payment volume. FY26 total: 21,860 crore txns worth ₹284.7L Cr. That's a 12,000x volume growth since FY17. The average ticket size is declining (₹1,305) — a sign of deeper micro-payment penetration.</p>
+  </div>
+  <div class="insight-card">
+    <span class="insight-tag tag-shift">Structural Shift</span>
+    <h4>Debit Cards Are in Secular Decline</h4>
+    <p>Debit card transaction volumes fell to 1,018 lakh in Jan'26 (vs 16,120 FY avg annualized). UPI has cannibalized debit card PoS use. Bank ATMs are also declining (-3.2% YoY). The future is clear: debit cards are becoming an identity instrument, not a payment instrument.</p>
+  </div>
+  <div class="insight-card">
+    <span class="insight-tag tag-growth">Growth</span>
+    <h4>Credit Cards Resilient — But Shifting Online</h4>
+    <p>Credit card "Others" (e-commerce + digital) volume at 2,722L now exceeds PoS volume (2,675L) for the first time. Total outstanding: 116.7M cards (+7.1% YoY). Credit cards survive because they serve a different need — credit, rewards, EMI. UPI-on-credit-card is the next frontier.</p>
+  </div>
+  <div class="insight-card">
+    <span class="insight-tag tag-infra">Infrastructure</span>
+    <h4>UPI QR > Bharat QR — Winner Takes All</h4>
+    <p>UPI QR codes: 7,384 lakh (+15.3% YoY). Bharat QR: 58 lakh (-10% YoY). The divergence is massive — UPI QR is 127x more deployed than Bharat QR. Bharat QR is functionally dead as a merchant acceptance mechanism. PoS terminals growing slowly at 115L (+5.2%).</p>
+  </div>
+  <div class="insight-card">
+    <span class="insight-tag tag-shift">Structural Shift</span>
+    <h4>Wallets Exploding — 93% YoY Growth in PPIs</h4>
+    <p>PPI wallets outstanding jumped from 8,958L (Jan'25) to 17,268L (Jan'26) — a 93% increase. Driven by fintech wallet proliferation and interoperable wallets via UPI. This is a massive re-architecture of how stored value works in India.</p>
+  </div>
+  <div class="insight-card">
+    <span class="insight-tag tag-risk">Watch</span>
+    <h4>IMPS Flatlining — UPI Substitution Complete</h4>
+    <p>IMPS volume was 3,740L in Jan'26 — down 1.6% MoM. With UPI handling both P2P and P2M at zero cost, IMPS is losing relevance for retail flows. Its niche: bank-initiated transfers and fallback. Average ticket: ₹17,969 vs UPI's ₹1,305 — different use cases now.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>Data Source:</strong> Reserve Bank of India Bulletin, March 2026, No. 45: Payment System Indicators<br>
+  <strong>Research Sources:</strong> NPCI, Business Standard, BusinessToday, DD News, CareEdge, PIB India<br>
+  <strong>Note:</strong> @ = New inclusion w.e.f. Nov 2019 · $ = Data from Nov 2019 onwards · * = Static UPI QR Code only<br>
+  Digital payments = (1+2+3+4+5) from Part I. Values in ₹ Crore unless stated. Vol in Lakh unless stated.
+</div>
+
+</div><!-- end dashboard -->
+
+<script>
+// ===================== CHART CONFIGURATIONS =====================
+const COLORS = {
+  blue: '#2563eb', blueLight: 'rgba(37,99,235,0.12)',
+  purple: '#7c3aed', purpleLight: 'rgba(124,58,237,0.12)',
+  green: '#059669', greenLight: 'rgba(5,150,105,0.12)',
+  amber: '#d97706', amberLight: 'rgba(217,119,6,0.12)',
+  red: '#dc2626', redLight: 'rgba(220,38,38,0.12)',
+  teal: '#0891b2', tealLight: 'rgba(8,145,178,0.12)',
+  gray: '#9ca3af', grayLight: 'rgba(156,163,175,0.12)',
+  slate: '#475569'
+};
+
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#6b7280';
+Chart.defaults.plugins.legend.labels.usePointStyle = true;
+Chart.defaults.plugins.legend.labels.pointStyleWidth = 10;
+Chart.defaults.plugins.legend.labels.padding = 16;
+
+// 1. Retail Payment Volume Mix (Doughnut)
+new Chart(document.getElementById('chartVolumeMix'), {
+  type: 'doughnut',
+  data: {
+    labels: ['UPI', 'IMPS', 'NEFT', 'Credit Cards', 'Debit Cards', 'PPIs', 'NACH', 'Others'],
+    datasets: [{
+      data: [217034.45, 3740.33, 8724.20, 5397.11, 1018.29, 9537.91, 2016.80+1248.95, 458.71+0.24+2616.49],
+      backgroundColor: [
+        COLORS.blue, COLORS.teal, COLORS.amber, COLORS.purple,
+        COLORS.red, COLORS.green, COLORS.gray, '#cbd5e1'
+      ],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '55%',
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 } } },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            let total = ctx.dataset.data.reduce((a,b) => a+b, 0);
+            let pct = ((ctx.parsed / total) * 100).toFixed(1);
+            return `${ctx.label}: ${ctx.parsed.toLocaleString()}L (${pct}%)`;
+          }
+        }
+      }
+    }
+  }
+});
+
+// 2. Retail Payment Value Mix (Doughnut)
+new Chart(document.getElementById('chartValueMix'), {
+  type: 'doughnut',
+  data: {
+    labels: ['UPI', 'NEFT', 'Credit Cards', 'IMPS', 'NACH', 'Debit Cards', 'PPIs', 'Paper/CTS'],
+    datasets: [{
+      data: [2833481, 4329421, 199085, 672089, 161580+240345, 37957, 27626, 601415],
+      backgroundColor: [
+        COLORS.blue, COLORS.amber, COLORS.purple, COLORS.teal,
+        COLORS.gray, COLORS.red, COLORS.green, '#cbd5e1'
+      ],
+      borderWidth: 2,
+      borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '55%',
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 } } },
+      tooltip: {
+        callbacks: {
+          label: ctx => {
+            let total = ctx.dataset.data.reduce((a,b) => a+b, 0);
+            let pct = ((ctx.parsed / total) * 100).toFixed(1);
+            return `${ctx.label}: ₹${ctx.parsed.toLocaleString()} Cr (${pct}%)`;
+          }
+        }
+      }
+    }
+  }
+});
+
+// 3. Credit Transfer Volumes (Grouped Bar)
+new Chart(document.getElementById('chartCreditTransfers'), {
+  type: 'bar',
+  data: {
+    labels: ['UPI', 'NEFT', 'IMPS', 'NACH Cr', 'APBS', 'AePS'],
+    datasets: [
+      {
+        label: 'Jan 2025 (est.)',
+        data: [169960.01, 8567.93, 4442.23, 1304.72, 2263.21, 0.31],
+        backgroundColor: COLORS.grayLight,
+        borderColor: COLORS.gray,
+        borderWidth: 1
+      },
+      {
+        label: 'Dec 2025',
+        data: [216346.68, 8777.58, 3799.33, 1240.69, 2357.78, 0.21],
+        backgroundColor: COLORS.blueLight,
+        borderColor: COLORS.blue,
+        borderWidth: 1
+      },
+      {
+        label: 'Jan 2026',
+        data: [217034.45, 8724.20, 3740.33, 1248.95, 2616.49, 0.24],
+        backgroundColor: COLORS.blue,
+        borderColor: COLORS.blue,
+        borderWidth: 1
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: '#f3f4f6' },
+        title: { display: true, text: 'Volume (Lakh)', font: { size: 11 } },
+        ticks: {
+          callback: v => v >= 1000 ? (v/1000).toFixed(0) + 'K' : v
+        }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: { legend: { position: 'top' } }
+  }
+});
+
+// 4. Card Payment Volumes (Horizontal Bar)
+new Chart(document.getElementById('chartCardVolumes'), {
+  type: 'bar',
+  data: {
+    labels: ['Credit — PoS', 'Credit — Online/Digital', 'Debit — PoS', 'Debit — Online/Digital', 'Wallets', 'PPI Cards'],
+    datasets: [{
+      label: 'Jan 2026 (Lakh)',
+      data: [2674.95, 2722.16, 794.35+245.10, 1018.29-794.35-245.10<0?0:1018.29-794.35, 7716.41, 1821.50],
+      backgroundColor: [
+        COLORS.purple, 'rgba(124,58,237,0.5)',
+        COLORS.red, 'rgba(220,38,38,0.5)',
+        COLORS.green, 'rgba(5,150,105,0.5)'
+      ],
+      borderWidth: 0,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: { color: '#f3f4f6' },
+        title: { display: true, text: 'Volume (Lakh)' }
+      },
+      y: { grid: { display: false } }
+    },
+    plugins: { legend: { display: false } }
+  }
+});
+
+// 5. Card Payment Values (Horizontal Bar)
+new Chart(document.getElementById('chartCardValues'), {
+  type: 'bar',
+  data: {
+    labels: ['Credit — PoS', 'Credit — Online', 'Debit — PoS', 'Debit — Online', 'Wallets', 'PPI Cards'],
+    datasets: [{
+      label: 'Jan 2026 (₹ Cr)',
+      data: [75988, 123097, 25513+12444, 37957-25513-12444<0?0:37957-25513, 20985, 6641],
+      backgroundColor: [
+        COLORS.purple, 'rgba(124,58,237,0.5)',
+        COLORS.red, 'rgba(220,38,38,0.5)',
+        COLORS.green, 'rgba(5,150,105,0.5)'
+      ],
+      borderWidth: 0,
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: { color: '#f3f4f6' },
+        title: { display: true, text: 'Value (₹ Crore)' },
+        ticks: { callback: v => '₹' + (v/1000).toFixed(0) + 'K Cr' }
+      },
+      y: { grid: { display: false } }
+    },
+    plugins: { legend: { display: false } }
+  }
+});
+
+// 6. Mobile vs Internet Payments
+new Chart(document.getElementById('chartMobileInternet'), {
+  type: 'bar',
+  data: {
+    labels: ['FY 2024-25', 'Jan 2025 (est.)', 'Dec 2025', 'Jan 2026'],
+    datasets: [
+      {
+        label: 'Mobile Payments',
+        data: [1756976.91, 158794.78, 198740.92, 199023.23],
+        backgroundColor: COLORS.blue,
+        borderRadius: 4
+      },
+      {
+        label: 'Internet Payments',
+        data: [47478.09, 4167.05, 3757.66, 3726.69],
+        backgroundColor: COLORS.amber,
+        borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: '#f3f4f6' },
+        title: { display: true, text: 'Volume (Lakh)' },
+        ticks: { callback: v => (v/1000).toFixed(0) + 'K' }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: { legend: { position: 'top' } }
+  }
+});
+
+// 7. ATM Trends
+new Chart(document.getElementById('chartATM'), {
+  type: 'bar',
+  data: {
+    labels: ['FY 2024-25', 'Jan 2025 (est.)', 'Dec 2025', 'Jan 2026'],
+    datasets: [
+      {
+        label: 'Cash at ATMs (Debit)',
+        data: [59965.70, 4885.53, 4444.02, 4412.00],
+        backgroundColor: COLORS.red,
+        borderRadius: 4
+      },
+      {
+        label: 'Cash at ATMs (Credit)',
+        data: [97.25, 7.79, 6.96, 6.97],
+        backgroundColor: COLORS.purple,
+        borderRadius: 4
+      },
+      {
+        label: 'Cash at Micro ATMs',
+        data: [11640.55, 915.09, 926.03, 956.67],
+        backgroundColor: COLORS.teal,
+        borderRadius: 4
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: '#f3f4f6' },
+        title: { display: true, text: 'Volume (Lakh)' }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: { legend: { position: 'top' } }
+  }
+});
+
+// 8. Infrastructure Key Metrics (Grouped Bar)
+new Chart(document.getElementById('chartInfra'), {
+  type: 'bar',
+  data: {
+    labels: ['Credit Cards', 'Debit Cards', 'PPI Wallets', 'PPI Cards', 'PoS Terminals', 'UPI QR (÷10)', 'Bharat QR'],
+    datasets: [
+      {
+        label: 'Jan 2025',
+        data: [1088.73, 9820.39, 8957.73, 4508.59, 109.53, 640.17, 64.43],
+        backgroundColor: COLORS.grayLight,
+        borderColor: COLORS.gray,
+        borderWidth: 1,
+        borderRadius: 3
+      },
+      {
+        label: 'Jan 2026',
+        data: [1166.52, 10377.57, 17268.45, 4784.92, 115.25, 738.42, 57.97],
+        backgroundColor: COLORS.blue,
+        borderColor: COLORS.blue,
+        borderWidth: 0,
+        borderRadius: 3
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: '#f3f4f6' },
+        title: { display: true, text: 'Count (Lakh)' },
+        ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'K' : v }
+      },
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    },
+    plugins: { legend: { position: 'top' } }
+  }
+});
+
+// 9. Infrastructure Growth Trajectory (Line)
+new Chart(document.getElementById('chartInfraGrowth'), {
+  type: 'line',
+  data: {
+    labels: ['Mar 2025', 'Jan 2025', 'Dec 2025', 'Jan 2026'],
+    datasets: [
+      {
+        label: 'UPI QR (Lakh)',
+        data: [6579.30, 6401.65, 7313.65, 7384.20],
+        borderColor: COLORS.blue,
+        backgroundColor: COLORS.blueLight,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointBackgroundColor: COLORS.blue
+      },
+      {
+        label: 'PPI Wallets (Lakh)',
+        data: [8678.44, 8957.73, 16170.73, 17268.45],
+        borderColor: COLORS.green,
+        backgroundColor: COLORS.greenLight,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointBackgroundColor: COLORS.green
+      },
+      {
+        label: 'PoS Terminals (Lakh)',
+        data: [110.98, 109.53, 114.75, 115.25],
+        borderColor: COLORS.amber,
+        backgroundColor: COLORS.amberLight,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointBackgroundColor: COLORS.amber
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: false,
+        grid: { color: '#f3f4f6' },
+        ticks: { callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'K' : v }
+      },
+      x: { grid: { display: false } }
+    },
+    plugins: { legend: { position: 'top' } },
+    interaction: { mode: 'index', intersect: false }
+  }
+});
+</script>
+</body>
+</html>
