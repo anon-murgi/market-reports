@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nifty 50 — The Wealth Compounder</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fafafa;color:#1a1a2e;padding:20px 24px}
+.hdr{max-width:1200px;margin:0 auto 28px}.hdr h1{font-size:26px;font-weight:700;margin-bottom:2px}.hdr .sub{font-size:14px;color:#64748b}.hdr .rng{font-size:11px;color:#94a3b8;margin-top:2px}
+.g{max-width:1200px;margin:0 auto;display:grid;gap:20px}.f{grid-column:1/-1}
+.c{background:#fff;border-radius:10px;padding:20px;border:1px solid #e8ecf0}.c h2{font-size:15px;font-weight:600;margin-bottom:2px}.c .ins{font-size:12px;color:#64748b;margin-bottom:14px;font-style:italic}
+.cw{position:relative;width:100%}.cw.t{height:400px}.cw.m{height:300px}
+.sr{display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap}.sb{flex:1;min-width:130px;background:#f8fafc;border-radius:8px;padding:14px;text-align:center;border:1px solid #e8ecf0}
+.sb .v{font-size:24px;font-weight:700}.sb .l{font-size:10px;color:#64748b;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.tc{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.tc{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:center;padding:7px 8px;background:#f1f5f9;font-weight:600;color:#475569;border-bottom:2px solid #e2e8f0}
+td{padding:7px 8px;border-bottom:1px solid #f1f5f9;text-align:center}tr:hover td{background:#f8fafc}
+.co{background:#f0fdf4;border-left:3px solid #059669;padding:10px 14px;border-radius:0 8px 8px 0;margin-top:14px;font-size:12px}.co strong{color:#059669}
+
+:root,html[data-theme="light"]{
+--nd-bg:#fafafa;--nd-text:#1a1a2e;--nd-card:#fff;--nd-border:#e8ecf0;
+--nd-muted:#64748b;--nd-faint:#94a3b8;--nd-th-bg:#f1f5f9;--nd-th-text:#475569;
+--nd-grid:#f1f5f9;--nd-row-hover:#f8fafc;--nd-sb:#f8fafc;--nd-btn-bd:#e2e8f0;--nd-btn-bg:#fff;
+}
+html[data-theme="dark"]{
+--nd-bg:#0f172a;--nd-text:#e2e8f0;--nd-card:#1e293b;--nd-border:#334155;
+--nd-muted:#94a3b8;--nd-faint:#64748b;--nd-th-bg:#334155;--nd-th-text:#cbd5e1;
+--nd-grid:#334155;--nd-row-hover:#263449;--nd-sb:#172033;--nd-btn-bd:#475569;--nd-btn-bg:#1e293b;
+}
+.theme-fab{position:fixed;top:12px;right:12px;z-index:10000;font:600 12px Inter,system-ui,sans-serif;padding:8px 14px;border-radius:999px;border:1px solid var(--nd-border);background:var(--nd-card);color:var(--nd-text);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+html[data-theme="light"] .theme-fab{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+body{background:var(--nd-bg)!important;color:var(--nd-text)!important;padding-top:52px!important}
+.c,.sb{background:var(--nd-card)!important;border-color:var(--nd-border)!important}
+.hdr .sub,.hdr .rng,.c .ins,.sb .l{color:var(--nd-muted)!important}
+th{background:var(--nd-th-bg)!important;color:var(--nd-th-text)!important;border-color:var(--nd-border)!important}
+td{border-color:var(--nd-grid)!important;color:var(--nd-text)!important}
+tr:hover td{background:var(--nd-row-hover)!important}
+.sb{background:var(--nd-sb)!important}
+.btn{border-color:var(--nd-btn-bd)!important;background:var(--nd-btn-bg)!important;color:var(--nd-muted)!important}
+.btn.act{background:rgba(37,99,235,.15)!important;border-color:#2563eb!important;color:#2563eb!important}
+html[data-theme="dark"] .btn.act{background:rgba(96,165,250,.12)!important;border-color:#60a5fa!important;color:#93c5fd!important}
+.hdr h1,.c h2{color:var(--nd-text)!important}
+</style></head><body><button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
+<div class="hdr"><h1>Dashboard 6 — The Wealth Compounder</h1>
+<div class="sub">What does Rs 10,000 actually become?</div>
+<div class="rng">Nifty 50 · 1990–2026 · Lumpsum & SIP analysis</div></div>
+<div class="g">
+
+<div class="c f"><h2>24. Rs 10K Lumpsum Growth by Entry Year (held 20 years)</h2>
+<div class="ins">Massive dispersion: best entry year grew 10K to 3L+. Worst: still grew to 70K+. Even bad timing + 20Y patience = wealth.</div>
+<div class="cw m"><canvas id="lumpsum"></canvas></div></div>
+
+<div class="c f"><h2>25. SIP Growth: Rs 10K/month since 1996</h2>
+<div class="ins">Total invested vs portfolio value over time. The gap accelerates — that's compounding doing its magic.</div>
+<div class="cw t"><canvas id="sipgrowth"></canvas></div></div>
+
+<div class="c f"><h2>25b. Compounding Milestones</h2>
+<div class="ins">Each milestone takes LESS time than the previous. The first Rs 10L took the longest. Each subsequent milestone was faster.</div>
+<table><thead><tr><th>Milestone</th><th>Date Reached</th></tr></thead><tbody><tr><td><strong>Rs 1L</strong></td><td>1991-04-30</td></tr><tr><td><strong>Rs 5L</strong></td><td>1992-03-31</td></tr><tr><td><strong>Rs 10L</strong></td><td>1994-02-28</td></tr><tr><td><strong>Rs 50L</strong></td><td>2005-09-30</td></tr><tr><td><strong>Rs 1Cr</strong></td><td>2007-09-30</td></tr></tbody></table></div>
+
+<div class="c f"><h2>26. Decade Performance Comparison</h2>
+<div class="ins">1990s: highest CAGR but insane volatility. 2010s: lowest CAGR but most peaceful. Risk-reward trade-off shifts every decade.</div>
+<div class="cw m"><canvas id="decades"></canvas></div>
+<table style="margin-top:16px"><thead><tr><th>Decade</th><th>CAGR</th><th>Volatility</th><th>Max Drawdown</th><th>Sharpe (Rf=6%)</th></tr></thead><tbody><tr><td><strong>1990s</strong></td><td style="color:#059669;font-weight:700">20.5%</td><td>29.6%</td><td style="color:#dc2626">-53.2%</td><td>0.49</td></tr><tr><td><strong>2000s</strong></td><td style="color:#059669;font-weight:700">12.7%</td><td>28.0%</td><td style="color:#dc2626">-59.9%</td><td>0.24</td></tr><tr><td><strong>2010s</strong></td><td style="color:#d97706;font-weight:700">9.0%</td><td>15.3%</td><td style="color:#dc2626">-28.0%</td><td>0.19</td></tr><tr><td><strong>2020s</strong></td><td style="color:#059669;font-weight:700">13.8%</td><td>18.1%</td><td style="color:#dc2626">-38.4%</td><td>0.43</td></tr></tbody></table></div>
+</div>
+<script>
+const lump={"1991": {"growth": 15.0, "terminal_10k": 149813.0, "cagr": 14.5}, "1992": {"growth": 9.4, "terminal_10k": 94096.0, "cagr": 11.9}, "1993": {"growth": 7.8, "terminal_10k": 78043.0, "cagr": 10.8}, "1994": {"growth": 6.2, "terminal_10k": 61965.0, "cagr": 9.5}, "1995": {"growth": 7.4, "terminal_10k": 73713.0, "cagr": 10.5}, "1996": {"growth": 8.5, "terminal_10k": 84847.0, "cagr": 11.3}, "1997": {"growth": 9.6, "terminal_10k": 96272.0, "cagr": 12.0}, "1998": {"growth": 9.4, "terminal_10k": 93640.0, "cagr": 11.8}, "1999": {"growth": 12.7, "terminal_10k": 127461.0, "cagr": 13.6}, "2000": {"growth": 5.5, "terminal_10k": 55220.0, "cagr": 8.9}, "2001": {"growth": 11.8, "terminal_10k": 118146.0, "cagr": 13.1}, "2002": {"growth": 16.9, "terminal_10k": 168745.0, "cagr": 15.2}, "2003": {"growth": 16.2, "terminal_10k": 161916.0, "cagr": 14.9}, "2004": {"growth": 11.7, "terminal_10k": 117155.0, "cagr": 13.1}, "2005": {"growth": 11.5, "terminal_10k": 115270.0, "cagr": 13.0}};
+const years=Object.keys(lump).sort();
+const termVals=years.map(y=>lump[y].terminal_10k);
+new Chart(document.getElementById('lumpsum'),{type:'bar',data:{labels:years,datasets:[{data:termVals,backgroundColor:termVals.map(v=>v>200000?'rgba(34,197,94,.4)':v>100000?'rgba(217,119,6,.35)':'rgba(100,116,139,.3)'),borderColor:termVals.map(v=>v>200000?'#059669':v>100000?'#d97706':'#64748b'),borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'₹'+Math.round(c.raw).toLocaleString()+' ('+lump[years[c.dataIndex]].cagr+'% CAGR)'}}},scales:{x:{title:{display:true,text:'Entry Year'},grid:{display:false}},y:{title:{display:true,text:'Terminal Value of ₹10,000'},grid:{color:'#f1f5f9'},ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'K'}}}}});
+
+const sipD=[{"date": "1990-07-31", "value": 10000.0, "invested": 10000}, {"date": "1991-01-31", "value": 59893.0, "invested": 70000}, {"date": "1991-07-31", "value": 169665.0, "invested": 130000}, {"date": "1992-01-31", "value": 305039.0, "invested": 190000}, {"date": "1992-07-31", "value": 391945.0, "invested": 250000}, {"date": "1993-01-31", "value": 459217.0, "invested": 310000}, {"date": "1993-07-31", "value": 475890.0, "invested": 370000}, {"date": "1994-01-31", "value": 919710.0, "invested": 430000}, {"date": "1994-07-31", "value": 1005771.0, "invested": 490000}, {"date": "1995-01-31", "value": 894907.0, "invested": 550000}, {"date": "1995-07-31", "value": 891329.0, "invested": 610000}, {"date": "1996-01-31", "value": 815474.0, "invested": 670000}, {"date": "1996-07-31", "value": 1061617.0, "invested": 730000}, {"date": "1997-01-31", "value": 1053186.0, "invested": 790000}, {"date": "1997-07-31", "value": 1390668.0, "invested": 850000}, {"date": "1998-01-31", "value": 1151385.0, "invested": 910000}, {"date": "1998-07-31", "value": 1166890.0, "invested": 970000}, {"date": "1999-01-31", "value": 1276963.0, "invested": 1030000}, {"date": "1999-07-31", "value": 1802971.0, "invested": 1090000}, {"date": "2000-01-31", "value": 2193133.0, "invested": 1150000}, {"date": "2000-07-31", "value": 1945409.0, "invested": 1210000}, {"date": "2001-01-31", "value": 2066186.0, "invested": 1270000}, {"date": "2001-07-31", "value": 1671639.0, "invested": 1330000}, {"date": "2002-01-31", "value": 1738962.0, "invested": 1390000}, {"date": "2002-07-31", "value": 1604691.0, "invested": 1450000}, {"date": "2003-01-31", "value": 1804945.0, "invested": 1510000}, {"date": "2003-07-31", "value": 2122631.0, "invested": 1570000}, {"date": "2004-01-31", "value": 3308012.0, "invested": 1630000}, {"date": "2004-07-31", "value": 3042948.0, "invested": 1690000}, {"date": "2005-01-31", "value": 3902103.0, "invested": 1750000}, {"date": "2005-07-31", "value": 4451122.0, "invested": 1810000}, {"date": "2006-01-31", "value": 5845721.0, "invested": 1870000}, {"date": "2006-07-31", "value": 6181091.0, "invested": 1930000}, {"date": "2007-01-31", "value": 8093473.0, "invested": 1990000}, {"date": "2007-07-31", "value": 9043865.0, "invested": 2050000}, {"date": "2008-01-31", "value": 10316949.0, "invested": 2110000}, {"date": "2008-07-31", "value": 8756804.0, "invested": 2170000}, {"date": "2009-01-31", "value": 5864016.0, "invested": 2230000}, {"date": "2009-07-31", "value": 9534025.0, "invested": 2290000}, {"date": "2010-01-31", "value": 10098585.0, "invested": 2350000}, {"date": "2010-07-31", "value": 11165023.0, "invested": 2410000}, {"date": "2011-01-31", "value": 11509536.0, "invested": 2470000}, {"date": "2011-07-31", "value": 11518353.0, "invested": 2530000}, {"date": "2012-01-31", "value": 10986834.0, "invested": 2590000}, {"date": "2012-07-31", "value": 11109879.0, "invested": 2650000}, {"date": "2013-01-31", "value": 12885001.0, "invested": 2710000}, {"date": "2013-07-31", "value": 12319336.0, "invested": 2770000}, {"date": "2014-01-31", "value": 13125823.0, "invested": 2830000}, {"date": "2014-07-31", "value": 16709316.0, "invested": 2890000}, {"date": "2015-01-31", "value": 19126553.0, "invested": 2950000}, {"date": "2015-07-31", "value": 18587442.0, "invested": 3010000}, {"date": "2016-01-31", "value": 16533396.0, "invested": 3070000}, {"date": "2016-07-31", "value": 18948828.0, "invested": 3130000}, {"date": "2017-01-31", "value": 18839967.0, "invested": 3190000}, {"date": "2017-07-31", "value": 22239633.0, "invested": 3250000}, {"date": "2018-01-31", "value": 24402111.0, "invested": 3310000}, {"date": "2018-07-31", "value": 25193484.0, "invested": 3370000}, {"date": "2019-01-31", "value": 24087132.0, "invested": 3430000}, {"date": "2019-07-31", "value": 24783593.0, "invested": 3490000}, {"date": "2020-01-31", "value": 26726312.0, "invested": 3550000}, {"date": "2020-07-31", "value": 24807149.0, "invested": 3610000}, {"date": "2021-01-31", "value": 30610803.0, "invested": 3670000}, {"date": "2021-07-31", "value": 35451844.0, "invested": 3730000}, {"date": "2022-01-31", "value": 39058119.0, "invested": 3790000}, {"date": "2022-07-31", "value": 38710357.0, "invested": 3850000}, {"date": "2023-01-31", "value": 39906449.0, "invested": 3910000}, {"date": "2023-07-31", "value": 44697075.0, "invested": 3970000}, {"date": "2024-01-31", "value": 49223428.0, "invested": 4030000}, {"date": "2024-07-31", "value": 56596290.0, "invested": 4090000}, {"date": "2025-01-31", "value": 53381543.0, "invested": 4150000}, {"date": "2025-07-31", "value": 56304183.0, "invested": 4210000}, {"date": "2026-01-31", "value": 57619542.0, "invested": 4270000}];
+new Chart(document.getElementById('sipgrowth'),{type:'line',data:{datasets:[
+{label:'Portfolio Value',data:sipD.map(d=>({x:d.date,y:d.value/100000})),borderColor:'#059669',backgroundColor:'rgba(34,197,94,.08)',borderWidth:2.5,pointRadius:0,tension:.3,fill:true},
+{label:'Total Invested',data:sipD.map(d=>({x:d.date,y:d.invested/100000})),borderColor:'#94a3b8',backgroundColor:'rgba(148,163,184,.05)',borderWidth:1.5,pointRadius:0,tension:.3,fill:true}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11},usePointStyle:true,pointStyle:'line'}},tooltip:{callbacks:{label:c=>c.dataset.label+': ₹'+c.raw.y.toFixed(1)+'L'}}},scales:{x:{type:'category',ticks:{maxTicksLimit:12,font:{size:10}},grid:{display:false}},y:{title:{display:true,text:'₹ Lakhs'},grid:{color:'#f1f5f9'}}}}});
+
+const dp={"1990s": {"cagr": 20.5, "vol": 29.6, "max_dd": -53.2, "sharpe": 0.49}, "2000s": {"cagr": 12.7, "vol": 28.0, "max_dd": -59.9, "sharpe": 0.24}, "2010s": {"cagr": 9.0, "vol": 15.3, "max_dd": -28.0, "sharpe": 0.19}, "2020s": {"cagr": 13.8, "vol": 18.1, "max_dd": -38.4, "sharpe": 0.43}};
+const dLabels=Object.keys(dp);
+new Chart(document.getElementById('decades'),{type:'bar',data:{labels:dLabels,datasets:[
+{label:'CAGR',data:dLabels.map(l=>dp[l].cagr),backgroundColor:'rgba(34,197,94,.4)',borderColor:'#059669',borderWidth:1.5,borderRadius:4},
+{label:'Volatility',data:dLabels.map(l=>dp[l].vol),backgroundColor:'rgba(217,119,6,.35)',borderColor:'#d97706',borderWidth:1.5,borderRadius:4},
+{label:'Max DD (abs)',data:dLabels.map(l=>Math.abs(dp[l].max_dd)),backgroundColor:'rgba(220,38,38,.3)',borderColor:'#dc2626',borderWidth:1.5,borderRadius:4}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{font:{size:11}}}},scales:{x:{grid:{display:false}},y:{ticks:{callback:v=>v+'%'},grid:{color:'#f1f5f9'}}}}});
+</script><script>(function(){var KEY='market-reports-theme';var root=document.documentElement;var btn=document.getElementById('themeToggle');function syncChartsToTheme(){if(typeof Chart==='undefined')return;var d=root.getAttribute('data-theme')==='dark';var fg=d?'#94a3b8':'#64748b',grid=d?'#334155':'#f1f5f9',tc=d?'#cbd5e1':'#475569';try{Chart.defaults.color=fg}catch(e){}document.querySelectorAll('canvas').forEach(function(canvas){var ch=Chart.getChart(canvas);if(!ch||!ch.options)return;var sc=ch.options.scales||{};Object.keys(sc).forEach(function(k){var s=sc[k];if(!s)return;if(s.grid&&s.grid.display!==false)s.grid.color=grid;if(s.ticks)s.ticks.color=fg;if(s.title&&s.title.display)s.title.color=tc});var L=ch.options.plugins&&ch.options.plugins.legend;if(L&&L.labels)L.labels.color=fg;try{ch.update('none')}catch(e){}});}function stored(){try{return localStorage.getItem(KEY)}catch(e){return null}}function prefersDark(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches}function effective(){var s=stored();if(s==='dark'||s==='light')return s;return prefersDark()?'dark':'light'}function apply(t){root.setAttribute('data-theme',t);if(btn){btn.textContent=t==='dark'?'Light mode':'Dark mode';btn.setAttribute('aria-pressed',t==='dark');}try{window.dispatchEvent(new CustomEvent('report-theme',{detail:{theme:t}}))}catch(e){}syncChartsToTheme()}function toggle(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(KEY,next)}catch(e){}apply(next)}if(btn)btn.addEventListener('click',toggle);apply(effective());document.addEventListener('report-theme',function(){syncChartsToTheme()});window.addEventListener('load',function(){setTimeout(syncChartsToTheme,80)})})();</script></body></html>

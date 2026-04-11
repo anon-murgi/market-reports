@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nifty 50 — The Crash Playbook</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fafafa;color:#1a1a2e;padding:20px 24px}
+.hdr{max-width:1200px;margin:0 auto 28px}.hdr h1{font-size:26px;font-weight:700;margin-bottom:2px}.hdr .sub{font-size:14px;color:#64748b}.hdr .rng{font-size:11px;color:#94a3b8;margin-top:2px}
+.g{max-width:1200px;margin:0 auto;display:grid;gap:20px}.f{grid-column:1/-1}
+.c{background:#fff;border-radius:10px;padding:20px;border:1px solid #e8ecf0}.c h2{font-size:15px;font-weight:600;margin-bottom:2px}.c .ins{font-size:12px;color:#64748b;margin-bottom:14px;font-style:italic}
+.cw{position:relative;width:100%}.cw.t{height:380px}.cw.m{height:300px}
+.sr{display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap}.sb{flex:1;min-width:130px;background:#f8fafc;border-radius:8px;padding:14px;text-align:center;border:1px solid #e8ecf0}
+.sb .v{font-size:24px;font-weight:700}.sb .l{font-size:10px;color:#64748b;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.tc{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.tc{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:center;padding:7px 8px;background:#f1f5f9;font-weight:600;color:#475569;border-bottom:2px solid #e2e8f0}
+td{padding:7px 8px;border-bottom:1px solid #f1f5f9;text-align:center}tr:hover td{background:#f8fafc}
+.co{background:#f0fdf4;border-left:3px solid #059669;padding:10px 14px;border-radius:0 8px 8px 0;margin-top:14px;font-size:12px}.co strong{color:#059669}
+.co.w{background:#fef2f2;border-left-color:#dc2626}.co.w strong{color:#dc2626}
+
+:root,html[data-theme="light"]{
+--nd-bg:#fafafa;--nd-text:#1a1a2e;--nd-card:#fff;--nd-border:#e8ecf0;
+--nd-muted:#64748b;--nd-faint:#94a3b8;--nd-th-bg:#f1f5f9;--nd-th-text:#475569;
+--nd-grid:#f1f5f9;--nd-row-hover:#f8fafc;--nd-sb:#f8fafc;--nd-btn-bd:#e2e8f0;--nd-btn-bg:#fff;
+}
+html[data-theme="dark"]{
+--nd-bg:#0f172a;--nd-text:#e2e8f0;--nd-card:#1e293b;--nd-border:#334155;
+--nd-muted:#94a3b8;--nd-faint:#64748b;--nd-th-bg:#334155;--nd-th-text:#cbd5e1;
+--nd-grid:#334155;--nd-row-hover:#263449;--nd-sb:#172033;--nd-btn-bd:#475569;--nd-btn-bg:#1e293b;
+}
+.theme-fab{position:fixed;top:12px;right:12px;z-index:10000;font:600 12px Inter,system-ui,sans-serif;padding:8px 14px;border-radius:999px;border:1px solid var(--nd-border);background:var(--nd-card);color:var(--nd-text);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+html[data-theme="light"] .theme-fab{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+body{background:var(--nd-bg)!important;color:var(--nd-text)!important;padding-top:52px!important}
+.c,.sb{background:var(--nd-card)!important;border-color:var(--nd-border)!important}
+.hdr .sub,.hdr .rng,.c .ins,.sb .l{color:var(--nd-muted)!important}
+th{background:var(--nd-th-bg)!important;color:var(--nd-th-text)!important;border-color:var(--nd-border)!important}
+td{border-color:var(--nd-grid)!important;color:var(--nd-text)!important}
+tr:hover td{background:var(--nd-row-hover)!important}
+.sb{background:var(--nd-sb)!important}
+.btn{border-color:var(--nd-btn-bd)!important;background:var(--nd-btn-bg)!important;color:var(--nd-muted)!important}
+.btn.act{background:rgba(37,99,235,.15)!important;border-color:#2563eb!important;color:#2563eb!important}
+html[data-theme="dark"] .btn.act{background:rgba(96,165,250,.12)!important;border-color:#60a5fa!important;color:#93c5fd!important}
+.hdr h1,.c h2{color:var(--nd-text)!important}
+</style></head><body><button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
+<div class="hdr"><h1>Dashboard 8 — The Crash Playbook</h1>
+<div class="sub">How often should you expect pain?</div>
+<div class="rng">Nifty 50 · 1990–2026 · 35.7 years of crash data</div></div>
+<div class="g">
+
+<div class="c f"><div class="sr">
+<div class="sb"><div class="v" style="color:#dc2626">23</div><div class="l">10%+ crashes (every 1.6y)</div></div>
+<div class="sb"><div class="v" style="color:#ea580c">9</div><div class="l">25%+ crashes (every 4.0y)</div></div>
+<div class="sb"><div class="v" style="color:#7f1d1d">3</div><div class="l">50%+ crashes (every 11.9y)</div></div>
+</div></div>
+
+<div class="tc f">
+<div class="c"><h2>30. Crash Frequency — "How Often Does the Market Fall X%?"</h2>
+<div class="ins">A 25% crash happens every 4 years. A 50% wipeout every 12 years. These are NOT black swans — they're the base rate.</div>
+<div class="cw m"><canvas id="freq"></canvas></div></div>
+
+<div class="c"><h2>32. Crash Speed vs Recovery Speed</h2>
+<div class="ins">COVID was the fastest crash AND fastest recovery. 2008 was slow both ways. No two crashes have the same personality.</div>
+<div class="cw m"><canvas id="speedscatter"></canvas></div></div>
+</div>
+
+<div class="c f"><h2>31. Time Between 20%+ Crashes</h2>
+<div class="ins">The gap between major crashes is wildly irregular: sometimes 1 year, sometimes 7. You can't predict when — only that it WILL happen.</div>
+<table><thead><tr><th>From</th><th>To</th><th>Gap (Days)</th><th>Gap (Years)</th></tr></thead><tbody><tr><td>1990 (36%)</td><td>1992 (53%)</td><td>272</td><td>0.7</td></tr><tr><td>1992 (53%)</td><td>1994 (43%)</td><td>217</td><td>0.6</td></tr><tr><td>1994 (43%)</td><td>2000 (51%)</td><td>169</td><td>0.5</td></tr><tr><td>2000 (51%)</td><td>2004 (30%)</td><td>27</td><td>0.1</td></tr><tr><td>2004 (30%)</td><td>2006 (30%)</td><td>524</td><td>1.4</td></tr><tr><td>2006 (30%)</td><td>2008 (60%)</td><td>435</td><td>1.2</td></tr><tr><td>2008 (60%)</td><td>2010 (28%)</td><td>0</td><td>0.0</td></tr><tr><td>2010 (28%)</td><td>2015 (22%)</td><td>485</td><td>1.3</td></tr><tr><td>2015 (22%)</td><td>2020 (38%)</td><td>1036</td><td>2.8</td></tr></tbody></table></div>
+
+<div class="c f"><h2>33. "Worst Possible Timing" — Forward Returns from Every Crash Peak</h2>
+<div class="ins">What if you invested at the WORST possible time — the exact peak before each crash? Even then, patience wins.</div>
+<table><thead><tr><th>Invested at Peak of...</th><th>1Y Later</th><th>3Y Later</th><th>5Y Later</th><th>10Y Later</th><th>20Y Later</th></tr></thead><tbody><tr><td><strong>1990 (36%)</strong></td><td style="color:#059669;font-weight:600">23.2%</td><td style="color:#059669;font-weight:600">171.2%</td><td style="color:#059669;font-weight:600">117.1%</td><td style="color:#059669;font-weight:600">122.6%</td><td style="color:#059669;font-weight:600">924.9%</td></tr><tr><td><strong>1992 (53%)</strong></td><td style="color:#dc2626;font-weight:600">-49.7%</td><td style="color:#dc2626;font-weight:600">-19.4%</td><td style="color:#dc2626;font-weight:600">-15.4%</td><td style="color:#dc2626;font-weight:600">-25.1%</td><td style="color:#059669;font-weight:600">359.0%</td></tr><tr><td><strong>1994 (43%)</strong></td><td style="color:#dc2626;font-weight:600">-25.3%</td><td style="color:#dc2626;font-weight:600">-21.6%</td><td style="color:#dc2626;font-weight:600">-3.8%</td><td style="color:#059669;font-weight:600">33.7%</td><td style="color:#059669;font-weight:600">495.6%</td></tr><tr><td><strong>2000 (51%)</strong></td><td style="color:#dc2626;font-weight:600">-20.8%</td><td style="color:#dc2626;font-weight:600">-39.3%</td><td style="color:#059669;font-weight:600">17.4%</td><td style="color:#059669;font-weight:600">199.7%</td><td style="color:#059669;font-weight:600">416.3%</td></tr><tr><td><strong>2004 (30%)</strong></td><td style="color:#dc2626;font-weight:600">-3.5%</td><td style="color:#059669;font-weight:600">105.9%</td><td style="color:#059669;font-weight:600">45.0%</td><td style="color:#059669;font-weight:600">207.3%</td><td style="color:#059669;font-weight:600">1025.2%</td></tr><tr><td><strong>2006 (30%)</strong></td><td style="color:#059669;font-weight:600">10.1%</td><td style="color:#059669;font-weight:600">20.7%</td><td style="color:#059669;font-weight:600">47.4%</td><td style="color:#059669;font-weight:600">122.0%</td><td style="color:#cbd5e1">—</td></tr><tr><td><strong>2008 (60%)</strong></td><td style="color:#dc2626;font-weight:600">-54.7%</td><td style="color:#dc2626;font-weight:600">-13.8%</td><td style="color:#dc2626;font-weight:600">-5.2%</td><td style="color:#059669;font-weight:600">65.6%</td><td style="color:#cbd5e1">—</td></tr><tr><td><strong>2010 (28%)</strong></td><td style="color:#dc2626;font-weight:600">-18.4%</td><td style="color:#dc2626;font-weight:600">-2.0%</td><td style="color:#059669;font-weight:600">23.3%</td><td style="color:#059669;font-weight:600">124.1%</td><td style="color:#cbd5e1">—</td></tr><tr><td><strong>2015 (22%)</strong></td><td style="color:#dc2626;font-weight:600">-16.3%</td><td style="color:#059669;font-weight:600">12.4%</td><td style="color:#059669;font-weight:600">1.3%</td><td style="color:#059669;font-weight:600">173.2%</td><td style="color:#cbd5e1">—</td></tr><tr><td><strong>2020 (38%)</strong></td><td style="color:#059669;font-weight:600">18.1%</td><td style="color:#059669;font-weight:600">44.7%</td><td style="color:#059669;font-weight:600">89.1%</td><td style="color:#cbd5e1">—</td><td style="color:#cbd5e1">—</td></tr></tbody></table>
+<div class="co"><strong>The Punchline:</strong> Even investing at every single crash peak, by 5 years the return is positive in most cases. By 10 years, it's ALWAYS positive. The worst timing in history still builds wealth — you just need patience.</div>
+</div>
+
+</div>
+<script>
+const sc={"10%+": {"count": 23, "frequency": 1.6}, "15%+": {"count": 15, "frequency": 2.4}, "20%+": {"count": 10, "frequency": 3.6}, "25%+": {"count": 9, "frequency": 4.0}, "30%+": {"count": 6, "frequency": 6.0}, "40%+": {"count": 4, "frequency": 8.9}, "50%+": {"count": 3, "frequency": 11.9}};
+const sLabels=Object.keys(sc);
+const sCounts=sLabels.map(l=>sc[l].count);
+const sFreqs=sLabels.map(l=>sc[l].frequency);
+new Chart(document.getElementById('freq'),{type:'bar',data:{labels:sLabels,datasets:[{label:'Count',data:sCounts,backgroundColor:sLabels.map((_,i)=>{const t=i/sLabels.length;return `rgba(${Math.round(220-120*t)},${Math.round(38+159*t)},${Math.round(38+88*t)},.4)`}),borderColor:sLabels.map((_,i)=>{const t=i/sLabels.length;return `rgb(${Math.round(220-120*t)},${Math.round(38+159*t)},${Math.round(38+88*t)})`}),borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'Occurred '+c.raw+' times (every '+sFreqs[c.dataIndex]+' years)'}}},scales:{x:{title:{display:true,text:'Crash Severity'},grid:{display:false}},y:{title:{display:true,text:'Number of Occurrences'},grid:{color:'#f1f5f9'}}}}});
+
+const cs=[{"label": "1990 (36%)", "depth": 36.3, "speed_down": 108, "speed_up": 182}, {"label": "1992 (53%)", "depth": 53.2, "speed_down": 368, "speed_up": 287}, {"label": "1994 (17%)", "depth": 16.9, "speed_down": 65, "speed_up": 100}, {"label": "1994 (43%)", "depth": 43.1, "speed_down": 814, "speed_up": 995}, {"label": "1999 (16%)", "depth": 15.6, "speed_down": 18, "speed_up": 63}, {"label": "2000 (51%)", "depth": 51.4, "speed_down": 588, "speed_up": 818}, {"label": "2004 (30%)", "depth": 29.9, "speed_down": 124, "speed_up": 199}, {"label": "2006 (30%)", "depth": 29.9, "speed_down": 35, "speed_up": 138}, {"label": "2007 (15%)", "depth": 15.3, "speed_down": 26, "speed_up": 77}, {"label": "2008 (60%)", "depth": 59.9, "speed_down": 293, "speed_up": 739}, {"label": "2010 (28%)", "depth": 28.0, "speed_down": 410, "speed_up": 684}, {"label": "2015 (22%)", "depth": 22.5, "speed_down": 359, "speed_up": 383}, {"label": "2020 (38%)", "depth": 38.4, "speed_down": 69, "speed_up": 231}, {"label": "2021 (17%)", "depth": 17.2, "speed_down": 242, "speed_up": 160}, {"label": "2024 (16%)", "depth": 15.8, "speed_down": 159, "speed_up": 304}];
+new Chart(document.getElementById('speedscatter'),{type:'bubble',data:{datasets:[{data:cs.map(c=>({x:c.speed_down,y:c.speed_up,r:c.depth/5,label:c.label})),backgroundColor:cs.map(c=>c.depth>40?'rgba(220,38,38,.35)':c.depth>25?'rgba(234,88,12,.3)':'rgba(217,119,6,.25)'),borderColor:cs.map(c=>c.depth>40?'#dc2626':c.depth>25?'#ea580c':'#d97706'),borderWidth:1.5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>[c.raw.label,'Down in: '+c.raw.x+' days','Up in: '+c.raw.y+' days']}}},scales:{x:{title:{display:true,text:'Days to Trough (speed of crash)'},grid:{color:'#f1f5f9'}},y:{title:{display:true,text:'Days to Recovery'},grid:{color:'#f1f5f9'}}}}});
+</script><script>(function(){var KEY='market-reports-theme';var root=document.documentElement;var btn=document.getElementById('themeToggle');function syncChartsToTheme(){if(typeof Chart==='undefined')return;var d=root.getAttribute('data-theme')==='dark';var fg=d?'#94a3b8':'#64748b',grid=d?'#334155':'#f1f5f9',tc=d?'#cbd5e1':'#475569';try{Chart.defaults.color=fg}catch(e){}document.querySelectorAll('canvas').forEach(function(canvas){var ch=Chart.getChart(canvas);if(!ch||!ch.options)return;var sc=ch.options.scales||{};Object.keys(sc).forEach(function(k){var s=sc[k];if(!s)return;if(s.grid&&s.grid.display!==false)s.grid.color=grid;if(s.ticks)s.ticks.color=fg;if(s.title&&s.title.display)s.title.color=tc});var L=ch.options.plugins&&ch.options.plugins.legend;if(L&&L.labels)L.labels.color=fg;try{ch.update('none')}catch(e){}});}function stored(){try{return localStorage.getItem(KEY)}catch(e){return null}}function prefersDark(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches}function effective(){var s=stored();if(s==='dark'||s==='light')return s;return prefersDark()?'dark':'light'}function apply(t){root.setAttribute('data-theme',t);if(btn){btn.textContent=t==='dark'?'Light mode':'Dark mode';btn.setAttribute('aria-pressed',t==='dark');}try{window.dispatchEvent(new CustomEvent('report-theme',{detail:{theme:t}}))}catch(e){}syncChartsToTheme()}function toggle(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(KEY,next)}catch(e){}apply(next)}if(btn)btn.addEventListener('click',toggle);apply(effective());document.addEventListener('report-theme',function(){syncChartsToTheme()});window.addEventListener('load',function(){setTimeout(syncChartsToTheme,80)})})();</script></body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nifty 50 — Higher Low Bottom Signal</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fafafa;color:#1a1a2e;padding:20px 24px}
+.hdr{max-width:1200px;margin:0 auto 28px}.hdr h1{font-size:26px;font-weight:700;margin-bottom:2px}.hdr .sub{font-size:14px;color:#64748b}.hdr .rng{font-size:11px;color:#94a3b8;margin-top:2px}
+.g{max-width:1200px;margin:0 auto;display:grid;gap:20px}.f{grid-column:1/-1}
+.c{background:#fff;border-radius:10px;padding:20px;border:1px solid #e8ecf0}.c h2{font-size:15px;font-weight:600;margin-bottom:2px}.c .ins{font-size:12px;color:#64748b;margin-bottom:14px;font-style:italic}
+.cw{position:relative;width:100%}.cw.t{height:380px}.cw.m{height:300px}
+.sr{display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap}.sb{flex:1;min-width:130px;background:#f8fafc;border-radius:8px;padding:14px;text-align:center;border:1px solid #e8ecf0}
+.sb .v{font-size:26px;font-weight:700}.sb .l{font-size:10px;color:#64748b;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.co{background:#f0fdf4;border-left:3px solid #059669;padding:10px 14px;border-radius:0 8px 8px 0;margin-top:14px;font-size:12px}.co strong{color:#059669}
+.co.w{background:#fff7ed;border-left-color:#d97706}.co.w strong{color:#d97706}
+table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:center;padding:7px 8px;background:#f1f5f9;font-weight:600;color:#475569;border-bottom:2px solid #e2e8f0}
+td{padding:7px 8px;border-bottom:1px solid #f1f5f9;text-align:center}tr:hover td{background:#f8fafc}
+.tag{display:inline-block;padding:2px 8px;border-radius:8px;font-size:11px;font-weight:600}
+.tag.y{background:#f0fdf4;color:#15803d}.tag.n{background:#fef2f2;color:#dc2626}
+.method{background:#f8fafc;border:1px solid #e8ecf0;border-radius:8px;padding:16px;margin-bottom:16px;font-size:13px;line-height:1.6}
+.method strong{color:#2563eb}
+
+:root,html[data-theme="light"]{
+--nd-bg:#fafafa;--nd-text:#1a1a2e;--nd-card:#fff;--nd-border:#e8ecf0;
+--nd-muted:#64748b;--nd-faint:#94a3b8;--nd-th-bg:#f1f5f9;--nd-th-text:#475569;
+--nd-grid:#f1f5f9;--nd-row-hover:#f8fafc;--nd-sb:#f8fafc;--nd-btn-bd:#e2e8f0;--nd-btn-bg:#fff;
+}
+html[data-theme="dark"]{
+--nd-bg:#0f172a;--nd-text:#e2e8f0;--nd-card:#1e293b;--nd-border:#334155;
+--nd-muted:#94a3b8;--nd-faint:#64748b;--nd-th-bg:#334155;--nd-th-text:#cbd5e1;
+--nd-grid:#334155;--nd-row-hover:#263449;--nd-sb:#172033;--nd-btn-bd:#475569;--nd-btn-bg:#1e293b;
+}
+.theme-fab{position:fixed;top:12px;right:12px;z-index:10000;font:600 12px Inter,system-ui,sans-serif;padding:8px 14px;border-radius:999px;border:1px solid var(--nd-border);background:var(--nd-card);color:var(--nd-text);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+html[data-theme="light"] .theme-fab{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+body{background:var(--nd-bg)!important;color:var(--nd-text)!important;padding-top:52px!important}
+.c,.sb{background:var(--nd-card)!important;border-color:var(--nd-border)!important}
+.hdr .sub,.hdr .rng,.c .ins,.sb .l{color:var(--nd-muted)!important}
+th{background:var(--nd-th-bg)!important;color:var(--nd-th-text)!important;border-color:var(--nd-border)!important}
+td{border-color:var(--nd-grid)!important;color:var(--nd-text)!important}
+tr:hover td{background:var(--nd-row-hover)!important}
+.sb{background:var(--nd-sb)!important}
+.btn{border-color:var(--nd-btn-bd)!important;background:var(--nd-btn-bg)!important;color:var(--nd-muted)!important}
+.btn.act{background:rgba(37,99,235,.15)!important;border-color:#2563eb!important;color:#2563eb!important}
+html[data-theme="dark"] .btn.act{background:rgba(96,165,250,.12)!important;border-color:#60a5fa!important;color:#93c5fd!important}
+.hdr h1,.c h2{color:var(--nd-text)!important}
+</style></head><body><button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
+<div class="hdr"><h1>Dashboard 5 — The Higher Low Bottom Signal</h1>
+<div class="sub">When the market makes a higher low near the bottom — is the crash over?</div>
+<div class="rng">Nifty 50 · 1990–2026 · Testing all drawdowns ≥15% · Weekly timeframe</div></div>
+<div class="g">
+
+<div class="c f"><div class="sr">
+<div class="sb"><div class="v" style="color:#2563eb">15</div><div class="l">Episodes Analyzed (≥15%)</div></div>
+<div class="sb"><div class="v" style="color:#7c3aed">6</div><div class="l">Valid Higher Low Signals</div></div>
+<div class="sb"><div class="v" style="color:#059669">83.3%</div><div class="l">3M Hold Rate</div></div>
+<div class="sb"><div class="v" style="color:#d97706">66.7%</div><div class="l">6M Hold Rate</div></div>
+<div class="sb"><div class="v" style="color:#dc2626">66.7%</div><div class="l">1Y Hold Rate</div></div>
+</div></div>
+
+<div class="c f">
+<h2>19. Methodology</h2>
+<div class="method">
+<strong>What we're testing:</strong> After a drawdown ≥15%, the market hits a trough (T1). It bounces, then pulls back to T2.<br>
+<strong>Higher Low Signal:</strong> T2 > T1 (higher low on weekly closes) AND T2 is within 10% of T1.<br>
+<strong>Question:</strong> When this signal fires, does T1 hold? What are forward returns from T2?<br>
+<strong>Dataset:</strong> 15 qualifying drawdown episodes over 35 years. 6 produced valid higher low signals.
+</div>
+</div>
+
+<div class="c f">
+<h2>20. Historical Signal Table</h2>
+<div class="ins">Every drawdown ≥15%, showing whether a higher low formed and whether it correctly predicted the bottom.</div>
+<table><thead><tr><th>Event</th><th>DD%</th><th>T1 Date</th><th>T1 Level</th><th>T2 Date</th><th>T2 Level</th><th>Higher Low?</th><th>Within 10%?</th><th>T1 Held 3M</th><th>T1 Held 6M</th><th>T1 Held 1Y</th><th>3M Fwd</th><th>1Y Fwd</th></tr></thead><tbody><tr><td><strong>1990 (36%)</strong></td><td>-36.3%</td><td>1991-01-27</td><td>306.2</td><td>1991-03-31</td><td>366.4</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">13.6%</span></td><td><span style="color:#059669;font-weight:600">130.6%</span></td></tr><tr><td><strong>1992 (53%)</strong></td><td>-53.2%</td><td>1993-04-25</td><td>619.0</td><td>1993-07-18</td><td>645.8</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">25.8%</span></td><td><span style="color:#059669;font-weight:600">113.6%</span></td></tr><tr><td><strong>1994 (17%)</strong></td><td>-16.9%</td><td>1994-05-01</td><td>1150.6</td><td>1994-07-10</td><td>1250.1</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag n">✗</span></td><td><span class="tag n">✗</span></td><td><span style="color:#059669;font-weight:600">3.4%</span></td><td><span style="color:#dc2626;font-weight:600">-21.0%</span></td></tr><tr><td><strong>1994 (43%)</strong></td><td>-43.1%</td><td>1996-12-08</td><td>808.2</td><td>1997-02-02</td><td>972.6</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">11.1%</span></td><td><span style="color:#059669;font-weight:600">2.8%</span></td></tr><tr><td><strong>1999 (16%)</strong></td><td>-15.6%</td><td>1999-10-31</td><td>1325.4</td><td>2000-01-02</td><td>1480.4</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag n">✗</span></td><td><span class="tag n">✗</span></td><td><span style="color:#dc2626;font-weight:600">-10.3%</span></td><td><span style="color:#dc2626;font-weight:600">-18.9%</span></td></tr><tr><td><strong>2000 (51%)</strong></td><td>-51.4%</td><td>2001-09-23</td><td>854.2</td><td>2001-12-30</td><td>1033.8</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">7.5%</span></td><td><span style="color:#059669;font-weight:600">3.9%</span></td></tr><tr><td><strong>2004 (30%)</strong></td><td>-29.9%</td><td>2004-05-30</td><td>1508.7</td><td>2004-08-22</td><td>1590.3</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">18.7%</span></td><td><span style="color:#059669;font-weight:600">50.0%</span></td></tr><tr><td><strong>2006 (30%)</strong></td><td>-29.9%</td><td>2006-06-11</td><td>2866.3</td><td>2006-08-13</td><td>3274.3</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">16.7%</span></td><td><span style="color:#059669;font-weight:600">27.0%</span></td></tr><tr><td><strong>2007 (15%)</strong></td><td>-15.3%</td><td>2007-03-18</td><td>3608.5</td><td>2007-05-13</td><td>4076.6</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">6.5%</span></td><td><span style="color:#059669;font-weight:600">21.2%</span></td></tr><tr><td><strong>2008 (60%)</strong></td><td>-59.9%</td><td>2008-10-26</td><td>2584.0</td><td>2009-01-25</td><td>2678.5</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag n">✗</span></td><td><span class="tag n">✗</span></td><td><span class="tag n">✗</span></td><td><span style="color:#059669;font-weight:600">32.9%</span></td><td><span style="color:#059669;font-weight:600">71.8%</span></td></tr><tr><td><strong>2010 (28%)</strong></td><td>-28.0%</td><td>2012-01-01</td><td>4624.3</td><td>2012-03-25</td><td>5278.2</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#dc2626;font-weight:600">-1.3%</span></td><td><span style="color:#059669;font-weight:600">8.8%</span></td></tr><tr><td><strong>2015 (22%)</strong></td><td>-22.5%</td><td>2016-02-14</td><td>6980.9</td><td>2016-04-10</td><td>7555.2</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">11.1%</span></td><td><span style="color:#059669;font-weight:600">18.7%</span></td></tr><tr><td><strong>2020 (38%)</strong></td><td>-38.4%</td><td>2020-04-05</td><td>8083.8</td><td>2020-05-24</td><td>9039.2</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">25.9%</span></td><td><span style="color:#059669;font-weight:600">69.9%</span></td></tr><tr><td><strong>2021 (17%)</strong></td><td>-17.2%</td><td>2022-06-19</td><td>15293.5</td><td>2022-09-25</td><td>17327.4</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#059669;font-weight:600">6.6%</span></td><td><span style="color:#059669;font-weight:600">14.8%</span></td></tr><tr><td><strong>2024 (16%)</strong></td><td>-15.8%</td><td>2025-03-02</td><td>22124.7</td><td>2025-05-11</td><td>24008.0</td><td><span class="tag y">YES</span></td><td><span class="tag y">YES</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span class="tag y">✓</span></td><td><span style="color:#dc2626;font-weight:600">-1.3%</span></td><td>—</td></tr></tbody></table></div>
+
+<div class="c f">
+<h2>21. Success Rate Summary</h2>
+<div class="cw m"><canvas id="success"></canvas></div>
+<div class="co w"><strong>Interpretation:</strong> The higher low signal has a 83.3% success rate at 3 months — meaning in 83% of cases, the T1 low was never broken in the next 3 months. At 1 year, the rate drops to 66.7%. The signal is useful but NOT infallible — always combine with other indicators (volume, breadth, PE). A higher low alone is a necessary but not sufficient condition for a confirmed bottom.</div>
+</div>
+
+</div>
+<script>
+new Chart(document.getElementById('success'),{type:'bar',data:{labels:['3 Month Hold','6 Month Hold','1 Year Hold'],datasets:[{data:[83.3,66.7,66.7],backgroundColor:['rgba(34,197,94,.4)','rgba(217,119,6,.35)','rgba(220,38,38,.3)'],borderColor:['#059669','#d97706','#dc2626'],borderWidth:1.5,borderRadius:6}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+'% success rate'}}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'Success Rate (%)'},grid:{color:'#f1f5f9'},ticks:{callback:v=>v+'%'},max:100}}}});
+</script><script>(function(){var KEY='market-reports-theme';var root=document.documentElement;var btn=document.getElementById('themeToggle');function syncChartsToTheme(){if(typeof Chart==='undefined')return;var d=root.getAttribute('data-theme')==='dark';var fg=d?'#94a3b8':'#64748b',grid=d?'#334155':'#f1f5f9',tc=d?'#cbd5e1':'#475569';try{Chart.defaults.color=fg}catch(e){}document.querySelectorAll('canvas').forEach(function(canvas){var ch=Chart.getChart(canvas);if(!ch||!ch.options)return;var sc=ch.options.scales||{};Object.keys(sc).forEach(function(k){var s=sc[k];if(!s)return;if(s.grid&&s.grid.display!==false)s.grid.color=grid;if(s.ticks)s.ticks.color=fg;if(s.title&&s.title.display)s.title.color=tc});var L=ch.options.plugins&&ch.options.plugins.legend;if(L&&L.labels)L.labels.color=fg;try{ch.update('none')}catch(e){}});}function stored(){try{return localStorage.getItem(KEY)}catch(e){return null}}function prefersDark(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches}function effective(){var s=stored();if(s==='dark'||s==='light')return s;return prefersDark()?'dark':'light'}function apply(t){root.setAttribute('data-theme',t);if(btn){btn.textContent=t==='dark'?'Light mode':'Dark mode';btn.setAttribute('aria-pressed',t==='dark');}try{window.dispatchEvent(new CustomEvent('report-theme',{detail:{theme:t}}))}catch(e){}syncChartsToTheme()}function toggle(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(KEY,next)}catch(e){}apply(next)}if(btn)btn.addEventListener('click',toggle);apply(effective());document.addEventListener('report-theme',function(){syncChartsToTheme()});window.addEventListener('load',function(){setTimeout(syncChartsToTheme,80)})})();</script></body></html>

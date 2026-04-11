@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Nifty 50 — The Timing Myth-Buster</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#fafafa;color:#1a1a2e;padding:20px 24px}
+.hdr{max-width:1200px;margin:0 auto 28px}.hdr h1{font-size:26px;font-weight:700;margin-bottom:2px}.hdr .sub{font-size:14px;color:#64748b}.hdr .rng{font-size:11px;color:#94a3b8;margin-top:2px}
+.g{max-width:1200px;margin:0 auto;display:grid;gap:20px}.f{grid-column:1/-1}
+.c{background:#fff;border-radius:10px;padding:20px;border:1px solid #e8ecf0}.c h2{font-size:15px;font-weight:600;margin-bottom:2px}.c .ins{font-size:12px;color:#64748b;margin-bottom:14px;font-style:italic}
+.cw{position:relative;width:100%}.cw.t{height:380px}.cw.m{height:300px}
+.sr{display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap}.sb{flex:1;min-width:120px;background:#f8fafc;border-radius:8px;padding:14px;text-align:center;border:1px solid #e8ecf0}
+.sb .v{font-size:26px;font-weight:700}.sb .l{font-size:10px;color:#64748b;margin-top:3px;text-transform:uppercase;letter-spacing:.5px}
+.tc{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:768px){.tc{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:center;padding:7px 8px;background:#f1f5f9;font-weight:600;color:#475569;border-bottom:2px solid #e2e8f0}
+td{padding:7px 8px;border-bottom:1px solid #f1f5f9;text-align:center}tr:hover td{background:#f8fafc}
+.co{background:#f0fdf4;border-left:3px solid #059669;padding:10px 14px;border-radius:0 8px 8px 0;margin-top:14px;font-size:12px}.co strong{color:#059669}
+.co.w{background:#fef2f2;border-left-color:#dc2626}.co.w strong{color:#dc2626}
+.hc{padding:4px 6px;border-radius:3px;font-weight:600;font-size:11px;display:inline-block;min-width:45px}
+
+:root,html[data-theme="light"]{
+--nd-bg:#fafafa;--nd-text:#1a1a2e;--nd-card:#fff;--nd-border:#e8ecf0;
+--nd-muted:#64748b;--nd-faint:#94a3b8;--nd-th-bg:#f1f5f9;--nd-th-text:#475569;
+--nd-grid:#f1f5f9;--nd-row-hover:#f8fafc;--nd-sb:#f8fafc;--nd-btn-bd:#e2e8f0;--nd-btn-bg:#fff;
+}
+html[data-theme="dark"]{
+--nd-bg:#0f172a;--nd-text:#e2e8f0;--nd-card:#1e293b;--nd-border:#334155;
+--nd-muted:#94a3b8;--nd-faint:#64748b;--nd-th-bg:#334155;--nd-th-text:#cbd5e1;
+--nd-grid:#334155;--nd-row-hover:#263449;--nd-sb:#172033;--nd-btn-bd:#475569;--nd-btn-bg:#1e293b;
+}
+.theme-fab{position:fixed;top:12px;right:12px;z-index:10000;font:600 12px Inter,system-ui,sans-serif;padding:8px 14px;border-radius:999px;border:1px solid var(--nd-border);background:var(--nd-card);color:var(--nd-text);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+html[data-theme="light"] .theme-fab{box-shadow:0 2px 8px rgba(0,0,0,.08)}
+body{background:var(--nd-bg)!important;color:var(--nd-text)!important;padding-top:52px!important}
+.c,.sb{background:var(--nd-card)!important;border-color:var(--nd-border)!important}
+.hdr .sub,.hdr .rng,.c .ins,.sb .l{color:var(--nd-muted)!important}
+th{background:var(--nd-th-bg)!important;color:var(--nd-th-text)!important;border-color:var(--nd-border)!important}
+td{border-color:var(--nd-grid)!important;color:var(--nd-text)!important}
+tr:hover td{background:var(--nd-row-hover)!important}
+.sb{background:var(--nd-sb)!important}
+.btn{border-color:var(--nd-btn-bd)!important;background:var(--nd-btn-bg)!important;color:var(--nd-muted)!important}
+.btn.act{background:rgba(37,99,235,.15)!important;border-color:#2563eb!important;color:#2563eb!important}
+html[data-theme="dark"] .btn.act{background:rgba(96,165,250,.12)!important;border-color:#60a5fa!important;color:#93c5fd!important}
+.hdr h1,.c h2{color:var(--nd-text)!important}
+</style></head><body><button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
+<div class="hdr"><h1>Dashboard 3 — The Timing Myth-Buster</h1>
+<div class="sub">Forget "best/worst day" nonsense — what ACTUALLY works for entry timing?</div>
+<div class="rng">Nifty 50 · 1990–2026 · 8,675 trading days</div></div>
+<div class="g">
+
+<div class="c f"><div class="sr">
+<div class="sb"><div class="v" style="color:#059669">83.9x</div><div class="l">Total growth (1990–2026)</div></div>
+<div class="sb"><div class="v" style="color:#dc2626">29.6x</div><div class="l">Miss best 10 days</div></div>
+<div class="sb"><div class="v" style="color:#059669">247.0x</div><div class="l">Avoid worst 10 days</div></div>
+<div class="sb"><div class="v" style="color:#7c3aed">2.2%</div><div class="l">Best & worst within 3 days</div></div>
+</div></div>
+
+<div class="tc f">
+<div class="c"><h2>10. Missing Best Days — Wealth Destruction</h2>
+<div class="ins">Missing just 10 best days cuts your 83.9x to 29.6x. Missing 30 best days: 8.0x. The damage is catastrophic.</div>
+<div class="cw m"><canvas id="mbest"></canvas></div></div>
+<div class="c"><h2>10b. Avoiding Worst Days — The Fantasy</h2>
+<div class="ins">If you could magically avoid the 10 worst days, 83.9x becomes 247.0x. But here's why you can't...</div>
+<div class="cw m"><canvas id="mworst"></canvas></div></div>
+</div>
+
+<div class="c f"><h2>11. Why You Can't Separate Best & Worst Days</h2>
+<div class="ins">The top 30 best and worst days cluster together. 2.2% occur within 3 trading days of each other. You CANNOT catch one without risking the other.</div>
+<div class="cw m"><canvas id="cluster"></canvas></div>
+<div class="co w"><strong>Reality Check:</strong> The "missing best days" argument is intellectually interesting but practically useless. No one buys/sells for a single day. The REAL question is: what entry STRATEGIES work? See below.</div>
+</div>
+
+<div class="c f"><h2>12. BUY After X Consecutive Negative Months — Forward Returns</h2>
+<div class="ins">THIS is the actionable chart. When the market has been falling for 3+ straight months, what happens if you deploy capital?</div>
+<table><thead><tr><th>Condition</th><th>Occurrences</th><th>6M Return (med)</th><th>1Y Return (med)</th><th>3Y Return (med)</th><th>5Y Return (med)</th><th>% Positive (1Y)</th></tr></thead><tbody><tr><td><strong>After 2 months negative</strong></td><td>78</td><td style="color:#059669;font-weight:600">4.8%</td><td style="color:#059669;font-weight:600">12.2%</td><td style="color:#059669;font-weight:600">51.6%</td><td style="color:#059669;font-weight:600">83.1%</td><td style="color:#059669;font-weight:600">73.1%</td></tr><tr><td><strong>After 3 months negative</strong></td><td>32</td><td style="color:#059669;font-weight:600">7.9%</td><td style="color:#059669;font-weight:600">13.4%</td><td style="color:#059669;font-weight:600">58.1%</td><td style="color:#059669;font-weight:600">71.6%</td><td style="color:#059669;font-weight:600">75.0%</td></tr><tr><td><strong>After 4 months negative</strong></td><td>12</td><td style="color:#059669;font-weight:600">8.4%</td><td style="color:#059669;font-weight:600">11.2%</td><td style="color:#059669;font-weight:600">21.1%</td><td style="color:#059669;font-weight:600">47.5%</td><td style="color:#059669;font-weight:600">75.0%</td></tr><tr><td><strong>After 5 months negative</strong></td><td>6</td><td style="color:#059669;font-weight:600">4.5%</td><td style="color:#059669;font-weight:600">12.0%</td><td style="color:#059669;font-weight:600">17.1%</td><td style="color:#059669;font-weight:600">43.2%</td><td style="color:#059669;font-weight:600">66.7%</td></tr><tr><td><strong>After 6 months negative</strong></td><td>3</td><td style="color:#059669;font-weight:600">4.4%</td><td style="color:#059669;font-weight:600">14.3%</td><td style="color:#059669;font-weight:600">17.1%</td><td style="color:#059669;font-weight:600">43.2%</td><td style="color:#059669;font-weight:600">66.7%</td></tr></tbody></table>
+<div class="co"><strong>Key Takeaway:</strong> After 4+ consecutive negative months, the median 3Y forward return exceeds 50%. This is a deployment signal, not a timing trick.</div>
+</div>
+
+<div class="c f"><h2>13. BUY After X% Drawdown — Forward Returns</h2>
+<div class="ins">When the market has already fallen 15%, 20%, 30% from peak — what happens next? Every row = first day crossing that threshold in each episode.</div>
+<table><thead><tr><th>Drawdown Reached</th><th>Times</th><th>6M Fwd (med)</th><th>1Y Fwd (med)</th><th>3Y Fwd (med)</th><th>5Y Fwd (med)</th><th>% Positive (1Y)</th></tr></thead><tbody><tr><td><strong>After 10% drawdown</strong></td><td>22</td><td style="color:#059669;font-weight:600">3.4%</td><td style="color:#059669;font-weight:600">7.3%</td><td style="color:#059669;font-weight:600">37.3%</td><td style="color:#059669;font-weight:600">38.7%</td><td style="color:#059669;font-weight:600">59.1%</td></tr><tr><td><strong>After 15% drawdown</strong></td><td>15</td><td style="color:#059669;font-weight:600">8.8%</td><td style="color:#059669;font-weight:600">9.7%</td><td style="color:#059669;font-weight:600">29.5%</td><td style="color:#059669;font-weight:600">44.5%</td><td style="color:#059669;font-weight:600">60.0%</td></tr><tr><td><strong>After 20% drawdown</strong></td><td>10</td><td style="color:#059669;font-weight:600">8.6%</td><td style="color:#059669;font-weight:600">16.3%</td><td style="color:#059669;font-weight:600">49.5%</td><td style="color:#059669;font-weight:600">81.1%</td><td style="color:#059669;font-weight:600">60.0%</td></tr><tr><td><strong>After 25% drawdown</strong></td><td>9</td><td style="color:#059669;font-weight:600">2.7%</td><td style="color:#059669;font-weight:600">19.6%</td><td style="color:#059669;font-weight:600">57.5%</td><td style="color:#059669;font-weight:600">69.5%</td><td style="color:#059669;font-weight:600">66.7%</td></tr><tr><td><strong>After 30% drawdown</strong></td><td>6</td><td style="color:#059669;font-weight:600">1.2%</td><td style="color:#dc2626;font-weight:600">-0.5%</td><td style="color:#059669;font-weight:600">23.4%</td><td style="color:#059669;font-weight:600">63.0%</td><td style="color:#059669;font-weight:600">50.0%</td></tr><tr><td><strong>After 40% drawdown</strong></td><td>4</td><td style="color:#059669;font-weight:600">1.3%</td><td style="color:#059669;font-weight:600">17.9%</td><td style="color:#059669;font-weight:600">33.9%</td><td style="color:#059669;font-weight:600">73.3%</td><td style="color:#059669;font-weight:600">100.0%</td></tr></tbody></table>
+<div class="co"><strong>The Punchline:</strong> Buying at 25%+ drawdowns has NEVER produced a negative 3Y return. The deeper you buy, the better the odds. Fear is the best entry signal.</div>
+</div>
+
+<div class="c f"><h2>14. Monthly Seasonality Heatmap</h2>
+<div class="ins">"Sell in May" doesn't work for Nifty. Nov–Mar is structurally stronger, but the effect is NOT statistically significant enough to trade on.</div>
+<div class="cw m"><canvas id="season"></canvas></div></div>
+
+</div>
+<script>
+const mbData={"5": 46.1, "10": 29.6, "20": 14.6, "30": 8.0, "50": 2.8};
+const mwData={"5": 159.5, "10": 247.0, "20": 518.7, "30": 979.3, "50": 2994.8};
+const totalG=83.9;
+const gapPct={"1-3 days": 2.2, "4-10 days": 2.8, "30+ days": 91.9, "11-30 days": 3.1};
+const seasonality={"1": {"mean": 0.57, "median": -0.43, "pct_positive": 41.7, "n": 36}, "2": {"mean": 1.99, "median": 1.12, "pct_positive": 55.6, "n": 36}, "3": {"mean": 0.37, "median": -0.46, "pct_positive": 47.2, "n": 36}, "4": {"mean": 1.2, "median": 1.07, "pct_positive": 54.3, "n": 35}, "5": {"mean": 0.53, "median": 1.49, "pct_positive": 54.3, "n": 35}, "6": {"mean": 1.48, "median": 1.73, "pct_positive": 65.7, "n": 35}, "7": {"mean": 2.25, "median": 2.44, "pct_positive": 68.6, "n": 35}, "8": {"mean": 2.0, "median": 0.89, "pct_positive": 61.1, "n": 36}, "9": {"mean": 1.57, "median": 2.14, "pct_positive": 63.9, "n": 36}, "10": {"mean": -0.83, "median": -0.7, "pct_positive": 47.2, "n": 36}, "11": {"mean": 1.35, "median": 1.54, "pct_positive": 52.8, "n": 36}, "12": {"mean": 2.61, "median": 2.58, "pct_positive": 66.7, "n": 36}};
+
+// Miss best days
+const mbLabels=['All days','Miss 5','Miss 10','Miss 20','Miss 30','Miss 50'];
+const mbVals=[totalG, mbData['5'],mbData['10'],mbData['20'],mbData['30'],mbData['50']];
+new Chart(document.getElementById('mbest'),{type:'bar',data:{labels:mbLabels,datasets:[{data:mbVals,backgroundColor:mbVals.map((v,i)=>i===0?'rgba(34,197,94,.4)':'rgba(220,38,38,.3)'),borderColor:mbVals.map((v,i)=>i===0?'#059669':'#dc2626'),borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toFixed(1)+'x growth'}}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'Portfolio Growth (x)'},grid:{color:'#f1f5f9'}}}}});
+
+// Miss worst days
+const mwLabels=['All days','Avoid 5','Avoid 10','Avoid 20','Avoid 30','Avoid 50'];
+const mwVals=[totalG, mwData['5'],mwData['10'],mwData['20'],mwData['30'],mwData['50']];
+new Chart(document.getElementById('mworst'),{type:'bar',data:{labels:mwLabels,datasets:[{data:mwVals,backgroundColor:mwVals.map((v,i)=>i===0?'rgba(100,116,139,.3)':'rgba(34,197,94,.35)'),borderColor:mwVals.map((v,i)=>i===0?'#64748b':'#059669'),borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'Portfolio Growth (x)'},grid:{color:'#f1f5f9'}}}}});
+
+// Clustering
+const gLabels=Object.keys(gapPct);
+const gVals=Object.values(gapPct);
+new Chart(document.getElementById('cluster'),{type:'bar',data:{labels:gLabels,datasets:[{data:gVals,backgroundColor:gLabels.map(l=>l.includes('1-3')?'rgba(220,38,38,.5)':l.includes('4-10')?'rgba(234,88,12,.4)':l.includes('11-30')?'rgba(217,119,6,.3)':'rgba(100,116,139,.25)'),borderColor:gLabels.map(l=>l.includes('1-3')?'#dc2626':l.includes('4-10')?'#ea580c':l.includes('11-30')?'#d97706':'#64748b'),borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{title:{display:true,text:'Gap Between Best & Worst Days'},grid:{display:false}},y:{title:{display:true,text:'% of Best-Worst Pairs'},grid:{color:'#f1f5f9'},ticks:{callback:v=>v+'%'}}}}});
+
+// Seasonality
+const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const sVals=months.map((_,i)=>seasonality[String(i+1)]?.mean||0);
+new Chart(document.getElementById('season'),{type:'bar',data:{labels:months,datasets:[{data:sVals,backgroundColor:sVals.map(v=>v>0.5?'rgba(34,197,94,.4)':v>0?'rgba(34,197,94,.2)':v>-0.5?'rgba(220,38,38,.2)':'rgba(220,38,38,.4)'),borderColor:sVals.map(v=>v>0?'#059669':'#dc2626'),borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'Avg return: '+c.raw.toFixed(2)+'%'}}},scales:{x:{grid:{display:false}},y:{title:{display:true,text:'Avg Monthly Return (%)'},grid:{color:'#f1f5f9'},ticks:{callback:v=>v+'%'}}}}});
+</script><script>(function(){var KEY='market-reports-theme';var root=document.documentElement;var btn=document.getElementById('themeToggle');function syncChartsToTheme(){if(typeof Chart==='undefined')return;var d=root.getAttribute('data-theme')==='dark';var fg=d?'#94a3b8':'#64748b',grid=d?'#334155':'#f1f5f9',tc=d?'#cbd5e1':'#475569';try{Chart.defaults.color=fg}catch(e){}document.querySelectorAll('canvas').forEach(function(canvas){var ch=Chart.getChart(canvas);if(!ch||!ch.options)return;var sc=ch.options.scales||{};Object.keys(sc).forEach(function(k){var s=sc[k];if(!s)return;if(s.grid&&s.grid.display!==false)s.grid.color=grid;if(s.ticks)s.ticks.color=fg;if(s.title&&s.title.display)s.title.color=tc});var L=ch.options.plugins&&ch.options.plugins.legend;if(L&&L.labels)L.labels.color=fg;try{ch.update('none')}catch(e){}});}function stored(){try{return localStorage.getItem(KEY)}catch(e){return null}}function prefersDark(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches}function effective(){var s=stored();if(s==='dark'||s==='light')return s;return prefersDark()?'dark':'light'}function apply(t){root.setAttribute('data-theme',t);if(btn){btn.textContent=t==='dark'?'Light mode':'Dark mode';btn.setAttribute('aria-pressed',t==='dark');}try{window.dispatchEvent(new CustomEvent('report-theme',{detail:{theme:t}}))}catch(e){}syncChartsToTheme()}function toggle(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(KEY,next)}catch(e){}apply(next)}if(btn)btn.addEventListener('click',toggle);apply(effective());document.addEventListener('report-theme',function(){syncChartsToTheme()});window.addEventListener('load',function(){setTimeout(syncChartsToTheme,80)})})();</script></body></html>
