@@ -293,9 +293,66 @@
     .kpi-grid { grid-template-columns: 1fr; }
     .header { flex-direction: column; }
   }
+
+  html[data-theme="dark"] {
+    --bg: #0f1117;
+    --card: #161b22;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --accent1: #58a6ff;
+    --accent2: #a371f7;
+    --accent3: #3fb950;
+    --accent4: #d29922;
+    --accent5: #f85149;
+    --accent6: #39d0d6;
+    --subtle-blue: rgba(88, 166, 255, 0.14);
+    --subtle-green: rgba(63, 185, 80, 0.14);
+    --subtle-purple: rgba(163, 113, 247, 0.14);
+    --subtle-amber: rgba(210, 153, 34, 0.14);
+    --subtle-red: rgba(248, 81, 73, 0.14);
+  }
+  html[data-theme="dark"] thead th {
+    background: #21262d;
+    border-bottom-color: var(--border);
+  }
+  html[data-theme="dark"] tbody td {
+    border-bottom-color: #30363d;
+  }
+  html[data-theme="dark"] tbody tr:hover {
+    background: #1c2128;
+  }
+  html[data-theme="dark"] .insight-card p {
+    color: var(--muted);
+  }
+  html[data-theme="dark"] .kpi-change.up { background: rgba(63, 185, 80, 0.18); color: #3fb950; }
+  html[data-theme="dark"] .kpi-change.down { background: rgba(248, 81, 73, 0.15); color: #f85149; }
+  html[data-theme="dark"] .kpi-change.neutral { background: #21262d; color: var(--muted); }
+  html[data-theme="dark"] .tag-growth { background: rgba(63, 185, 80, 0.18); color: #3fb950; }
+  html[data-theme="dark"] .tag-risk { background: rgba(248, 81, 73, 0.15); color: #f85149; }
+  html[data-theme="dark"] .tag-shift { background: rgba(88, 166, 255, 0.15); color: #58a6ff; }
+  html[data-theme="dark"] .tag-infra { background: rgba(163, 113, 247, 0.15); color: #a371f7; }
+  html[data-theme="dark"] .table-card tbody tr[style*="#eff6ff"] {
+    background: rgba(88, 166, 255, 0.12) !important;
+  }
+  .theme-fab {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 10000;
+    font: 600 13px Inter, system-ui, sans-serif;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  }
 </style>
 </head>
 <body>
+<button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
 <div class="dashboard">
 
 <!-- HEADER -->
@@ -904,8 +961,34 @@ Chart.defaults.plugins.legend.labels.usePointStyle = true;
 Chart.defaults.plugins.legend.labels.pointStyleWidth = 10;
 Chart.defaults.plugins.legend.labels.padding = 16;
 
+const chartInstances = [];
+function syncChartsToTheme() {
+  if (typeof Chart === 'undefined') return;
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const fg = dark ? '#9ca3af' : '#6b7280';
+  const grid = dark ? '#374151' : '#f3f4f6';
+  const donutBorder = dark ? '#161b22' : '#ffffff';
+  Chart.defaults.color = fg;
+  chartInstances.forEach((ch) => {
+    if (!ch || !ch.config) return;
+    if (ch.config.type === 'doughnut' && ch.data && ch.data.datasets) {
+      ch.data.datasets.forEach((ds) => {
+        if (ds.borderColor !== undefined) ds.borderColor = donutBorder;
+      });
+    }
+    const scales = ch.options.scales || {};
+    Object.keys(scales).forEach((k) => {
+      const s = scales[k];
+      if (s && s.grid && s.grid.display !== false) s.grid.color = grid;
+      if (s && s.ticks) s.ticks.color = fg;
+      if (s && s.title) s.title.color = fg;
+    });
+    ch.update('none');
+  });
+}
+
 // 1. Retail Payment Volume Mix (Doughnut)
-new Chart(document.getElementById('chartVolumeMix'), {
+chartInstances.push(new Chart(document.getElementById('chartVolumeMix'), {
   type: 'doughnut',
   data: {
     labels: ['UPI', 'IMPS', 'NEFT', 'Credit Cards', 'Debit Cards', 'PPIs', 'NACH', 'Others'],
@@ -935,10 +1018,10 @@ new Chart(document.getElementById('chartVolumeMix'), {
       }
     }
   }
-});
+}));
 
 // 2. Retail Payment Value Mix (Doughnut)
-new Chart(document.getElementById('chartValueMix'), {
+chartInstances.push(new Chart(document.getElementById('chartValueMix'), {
   type: 'doughnut',
   data: {
     labels: ['UPI', 'NEFT', 'Credit Cards', 'IMPS', 'NACH', 'Debit Cards', 'PPIs', 'Paper/CTS'],
@@ -968,10 +1051,10 @@ new Chart(document.getElementById('chartValueMix'), {
       }
     }
   }
-});
+}));
 
 // 3. Credit Transfer Volumes (Grouped Bar)
-new Chart(document.getElementById('chartCreditTransfers'), {
+chartInstances.push(new Chart(document.getElementById('chartCreditTransfers'), {
   type: 'bar',
   data: {
     labels: ['UPI', 'NEFT', 'IMPS', 'NACH Cr', 'APBS', 'AePS'],
@@ -1014,10 +1097,10 @@ new Chart(document.getElementById('chartCreditTransfers'), {
     },
     plugins: { legend: { position: 'top' } }
   }
-});
+}));
 
 // 4. Card Payment Volumes (Horizontal Bar)
-new Chart(document.getElementById('chartCardVolumes'), {
+chartInstances.push(new Chart(document.getElementById('chartCardVolumes'), {
   type: 'bar',
   data: {
     labels: ['Credit — PoS', 'Credit — Online/Digital', 'Debit — PoS', 'Debit — Online/Digital', 'Wallets', 'PPI Cards'],
@@ -1046,10 +1129,10 @@ new Chart(document.getElementById('chartCardVolumes'), {
     },
     plugins: { legend: { display: false } }
   }
-});
+}));
 
 // 5. Card Payment Values (Horizontal Bar)
-new Chart(document.getElementById('chartCardValues'), {
+chartInstances.push(new Chart(document.getElementById('chartCardValues'), {
   type: 'bar',
   data: {
     labels: ['Credit — PoS', 'Credit — Online', 'Debit — PoS', 'Debit — Online', 'Wallets', 'PPI Cards'],
@@ -1079,10 +1162,10 @@ new Chart(document.getElementById('chartCardValues'), {
     },
     plugins: { legend: { display: false } }
   }
-});
+}));
 
 // 6. Mobile vs Internet Payments
-new Chart(document.getElementById('chartMobileInternet'), {
+chartInstances.push(new Chart(document.getElementById('chartMobileInternet'), {
   type: 'bar',
   data: {
     labels: ['FY 2024-25', 'Jan 2025 (est.)', 'Dec 2025', 'Jan 2026'],
@@ -1114,10 +1197,10 @@ new Chart(document.getElementById('chartMobileInternet'), {
     },
     plugins: { legend: { position: 'top' } }
   }
-});
+}));
 
 // 7. ATM Trends
-new Chart(document.getElementById('chartATM'), {
+chartInstances.push(new Chart(document.getElementById('chartATM'), {
   type: 'bar',
   data: {
     labels: ['FY 2024-25', 'Jan 2025 (est.)', 'Dec 2025', 'Jan 2026'],
@@ -1154,10 +1237,10 @@ new Chart(document.getElementById('chartATM'), {
     },
     plugins: { legend: { position: 'top' } }
   }
-});
+}));
 
 // 8. Infrastructure Key Metrics (Grouped Bar)
-new Chart(document.getElementById('chartInfra'), {
+chartInstances.push(new Chart(document.getElementById('chartInfra'), {
   type: 'bar',
   data: {
     labels: ['Credit Cards', 'Debit Cards', 'PPI Wallets', 'PPI Cards', 'PoS Terminals', 'UPI QR (÷10)', 'Bharat QR'],
@@ -1193,10 +1276,10 @@ new Chart(document.getElementById('chartInfra'), {
     },
     plugins: { legend: { position: 'top' } }
   }
-});
+}));
 
 // 9. Infrastructure Growth Trajectory (Line)
-new Chart(document.getElementById('chartInfraGrowth'), {
+chartInstances.push(new Chart(document.getElementById('chartInfraGrowth'), {
   type: 'line',
   data: {
     labels: ['Mar 2025', 'Jan 2025', 'Dec 2025', 'Jan 2026'],
@@ -1246,7 +1329,28 @@ new Chart(document.getElementById('chartInfraGrowth'), {
     plugins: { legend: { position: 'top' } },
     interaction: { mode: 'index', intersect: false }
   }
-});
+}));
+(function () {
+  const KEY = 'market-reports-theme';
+  const root = document.documentElement;
+  function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function prefersDark() { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+  function effective() { const s = stored(); if (s === 'dark' || s === 'light') return s; return prefersDark() ? 'dark' : 'light'; }
+  function label(t) { return t === 'dark' ? 'Light mode' : 'Dark mode'; }
+  function apply(t) {
+    root.setAttribute('data-theme', t);
+    const btn = document.getElementById('themeToggle');
+    if (btn) { btn.textContent = label(t); btn.setAttribute('aria-pressed', t === 'dark'); }
+    syncChartsToTheme();
+  }
+  function toggle() {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+    apply(next);
+  }
+  document.getElementById('themeToggle').addEventListener('click', toggle);
+  apply(effective());
+})();
 </script>
 </body>
 </html>

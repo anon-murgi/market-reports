@@ -228,9 +228,64 @@
             border-left-color: #27ae60;
             background-color: #f5fdf9;
         }
+
+        .theme-fab {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            z-index: 10000;
+            font: 600 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid #cbd5e1;
+            background: #fff;
+            color: #334155;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+        html[data-theme="dark"] .theme-fab {
+            border-color: #475569;
+            background: #1e293b;
+            color: #e2e8f0;
+        }
+
+        html[data-theme="dark"] body { background-color: #0f1419; color: #e2e8f0; }
+        html[data-theme="dark"] header {
+            background-color: #1a2332;
+            border-bottom-color: #3d7ea6;
+        }
+        html[data-theme="dark"] h1, html[data-theme="dark"] h2 { color: #f1f5f9; }
+        html[data-theme="dark"] h3 { color: #cbd5e1; }
+        html[data-theme="dark"] .subtitle { color: #94a3b8; }
+        html[data-theme="dark"] .section {
+            background-color: #1a2332;
+            border-left-color: #3d8fd6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+        html[data-theme="dark"] .callout { background-color: #252f3f; color: #e2e8f0; }
+        html[data-theme="dark"] .callout.warning { background-color: #2a1f22; }
+        html[data-theme="dark"] .callout.success { background-color: #1a2e24; }
+        html[data-theme="dark"] .callout.info { background-color: #1a2838; }
+        html[data-theme="dark"] th { background-color: #252f3f; color: #f1f5f9; border-bottom-color: #475569; }
+        html[data-theme="dark"] td { border-bottom-color: #334155; color: #e2e8f0; }
+        html[data-theme="dark"] tr:nth-child(even) { background-color: #151d28; }
+        html[data-theme="dark"] .correct { background-color: #14261c; color: #4ade80; }
+        html[data-theme="dark"] .wrong { background-color: #2a1a1a; color: #f87171; }
+        html[data-theme="dark"] .partial { background-color: #2a2419; color: #fbbf24; }
+        html[data-theme="dark"] .insight-box { background-color: #252f3f; border-left-color: #3d8fd6; color: #cbd5e1; }
+        html[data-theme="dark"] .verdict-box { background-color: #2a221c; border-color: #f87171; color: #e2e8f0; }
+        html[data-theme="dark"] .verdict-box.positive { background-color: #1a2e22; border-color: #4ade80; }
+        html[data-theme="dark"] .score-high { background-color: #14261c; color: #4ade80; }
+        html[data-theme="dark"] .score-medium { background-color: #2a2419; color: #fbbf24; }
+        html[data-theme="dark"] .score-low { background-color: #2a1a1a; color: #f87171; }
+        html[data-theme="dark"] footer { color: #64748b; border-top-color: #334155; }
+        html[data-theme="dark"] .timeline-item { border-left-color: #3d8fd6; color: #e2e8f0; }
+        html[data-theme="dark"] .timeline-item.bad { border-left-color: #f87171; background-color: #2a1a1a; }
+        html[data-theme="dark"] .timeline-item.good { border-left-color: #4ade80; background-color: #14261c; }
     </style>
 </head>
 <body>
+    <button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
     <div class="container">
         <header>
             <h1>RBI State of the Economy — Trust Audit</h1>
@@ -799,9 +854,10 @@
     </div>
 
     <script>
+        var trustCharts = [];
         // Chart.js visualizations
         const ctx1 = document.getElementById('marketDivergenceChart').getContext('2d');
-        new Chart(ctx1, {
+        trustCharts.push(new Chart(ctx1, {
             type: 'scatter',
             data: {
                 datasets: [
@@ -874,10 +930,10 @@
                     }
                 }
             }
-        });
+        }));
 
         const ctx2 = document.getElementById('propagandaChart').getContext('2d');
-        new Chart(ctx2, {
+        trustCharts.push(new Chart(ctx2, {
             type: 'line',
             data: {
                 labels: ['Jun24', 'Sep24', 'Dec24', 'Mar25', 'Jun25', 'Sep25', 'Dec25', 'Mar26'],
@@ -935,10 +991,10 @@
                     }
                 }
             }
-        });
+        }));
 
         const ctx3 = document.getElementById('niftyBreadthChart').getContext('2d');
-        new Chart(ctx3, {
+        trustCharts.push(new Chart(ctx3, {
             type: 'bar',
             data: {
                 labels: ['Jun24', 'Sep24', 'Dec24', 'Mar25', 'Jun25', 'Sep25', 'Dec25', 'Mar26'],
@@ -1002,7 +1058,50 @@
                     }
                 }
             }
-        });
+        }));
+
+        function applyTrustChartTheme(isDark) {
+            var legendColor = isDark ? '#cbd5e1' : '#666';
+            var tickColor = isDark ? '#94a3b8' : '#666';
+            var gridColor = isDark ? '#334155' : 'rgba(0,0,0,0.06)';
+            trustCharts.forEach(function (ch) {
+                if (ch.options.plugins && ch.options.plugins.legend && ch.options.plugins.legend.labels) {
+                    ch.options.plugins.legend.labels.color = legendColor;
+                }
+                if (ch.options.plugins && ch.options.plugins.title) {
+                    ch.options.plugins.title.color = legendColor;
+                }
+                ['x', 'y', 'y1'].forEach(function (k) {
+                    var sc = ch.options.scales && ch.options.scales[k];
+                    if (!sc) return;
+                    if (sc.ticks) sc.ticks.color = tickColor;
+                    if (sc.title) sc.title.color = tickColor;
+                    if (sc.grid) sc.grid.color = gridColor;
+                });
+                ch.update();
+            });
+        }
+        (function () {
+            var KEY = 'market-reports-theme';
+            var root = document.documentElement;
+            function stored() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+            function prefersDark() { return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+            function effective() { var s = stored(); if (s === 'dark' || s === 'light') return s; return prefersDark() ? 'dark' : 'light'; }
+            function label(t) { return t === 'dark' ? 'Light mode' : 'Dark mode'; }
+            function apply(t) {
+                root.setAttribute('data-theme', t);
+                var btn = document.getElementById('themeToggle');
+                if (btn) { btn.textContent = label(t); btn.setAttribute('aria-pressed', t === 'dark'); }
+                applyTrustChartTheme(t === 'dark');
+            }
+            function toggle() {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                try { localStorage.setItem(KEY, next); } catch (e) {}
+                apply(next);
+            }
+            document.getElementById('themeToggle').addEventListener('click', toggle);
+            apply(effective());
+        })();
     </script>
 </body>
 </html>
