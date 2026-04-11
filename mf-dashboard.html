@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MF Evaluator · 12 Apr 2026, 02:01</title><style>
+:root, html[data-theme="light"] {
+  --mf-bg: #FAFAF7;
+  --mf-card: #FFFFFF;
+  --mf-elev: #F0EFEA;
+  --mf-border: #E8E6DE;
+  --mf-border2: #D4D2CC;
+  --mf-divider: #ECEAE4;
+  --mf-text: #1A1A18;
+  --mf-heading: #141413;
+  --mf-muted: #5C5C57;
+  --mf-dim: #6B6A64;
+  --mf-faint: #9C9A92;
+  --mf-th: #6B6A64;
+  --mf-row-hover: rgba(0,0,0,0.04);
+}
+html[data-theme="dark"] {
+  --mf-bg: #292928;
+  --mf-card: #333331;
+  --mf-elev: #3a3a38;
+  --mf-border: #444441;
+  --mf-border2: #4a4a47;
+  --mf-divider: #3a3a38;
+  --mf-text: #e8e6df;
+  --mf-heading: #f0eeea;
+  --mf-muted: #a0a098;
+  --mf-dim: #706f6a;
+  --mf-faint: #5f5e5a;
+  --mf-th: #8a8a82;
+  --mf-row-hover: rgba(255,255,255,0.02);
+}
+.theme-fab{
+  position:fixed;top:12px;right:12px;z-index:10000;
+  font:600 12px -apple-system,system-ui,sans-serif;padding:8px 14px;border-radius:999px;
+  border:1px solid var(--mf-border2);background:var(--mf-card);color:var(--mf-text);
+  cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+html[data-theme="light"] .theme-fab{box-shadow:0 2px 8px rgba(0,0,0,.08);}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,'SF Pro Text','Segoe UI',system-ui,sans-serif;background:var(--mf-bg);color:var(--mf-text);line-height:1.5;padding:16px;padding-top:56px}
+.container{max-width:1200px;margin:0 auto}
+h2{font-size:17px;font-weight:500;color:var(--mf-heading);margin:24px 0 8px}
+h3{font-size:12px;font-weight:500;color:var(--mf-th);margin:10px 0 6px;text-transform:uppercase;letter-spacing:.04em}
+.sub{font-size:12px;color:var(--mf-dim);margin-bottom:10px}
+.card{background:var(--mf-card);border:1px solid var(--mf-border);border-radius:10px;padding:14px 18px;margin-bottom:12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{padding:7px;text-align:left;font-size:10px;font-weight:500;color:var(--mf-th);border-bottom:1px solid var(--mf-border);text-transform:uppercase;letter-spacing:.04em}
+td{padding:6px 7px;border-bottom:1px solid var(--mf-divider)}
+tr:hover{background:var(--mf-row-hover)}
+.mono{font-family:'SF Mono',Consolas,monospace;font-size:12px}
+.tr{text-align:right}.tc{text-align:center}.muted{color:var(--mf-th)}
+.badge{display:inline-block;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:500}
+.bg{background:rgba(102,187,106,.12);color:#66bb6a}.by{background:rgba(255,183,77,.12);color:#ffb74d}.br{background:rgba(239,83,80,.12);color:#ef5350}
+.fcard{background:var(--mf-elev);border:1px solid var(--mf-border2);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+.fname{font-weight:500;font-size:13px;color:var(--mf-heading);margin-bottom:2px}
+.fmeta{font-size:10px;color:var(--mf-th)}
+.fscore{font-family:monospace;font-size:18px;font-weight:700}
+.qbar{display:flex;gap:2px}
+.qbar span{display:inline-block;width:20px;height:16px;border-radius:3px;font-size:8px;font-weight:500;text-align:center;line-height:16px;color:#d4d2cc}
+.metric{background:var(--mf-card);border:1px solid var(--mf-border2);border-radius:8px;padding:8px 12px}
+.mlabel{font-size:10px;color:var(--mf-th);margin-bottom:1px}
+.mval{font-size:16px;font-weight:500;font-family:monospace}
+.pill{display:inline-block;padding:3px 8px;border-radius:6px;font-size:10px;background:var(--mf-elev);color:var(--mf-muted);border:1px solid var(--mf-border2);margin:2px}
+.pill-now{border-color:#d4a053;color:#d4a053}
+.tabbar{display:flex;gap:5px;margin:6px 0 12px;flex-wrap:wrap}
+.tbtn{padding:6px 14px;border-radius:7px;border:1px solid var(--mf-border2);background:transparent;color:var(--mf-muted);font-size:11px;font-weight:500;cursor:pointer;font-family:inherit;transition:all .15s}
+.tbtn.on{border-color:#d4a053;background:rgba(212,160,83,.08);color:#d4a053}
+.tbtn:hover{border-color:var(--mf-faint)}
+.tsec{display:none}.tsec.on{display:block}
+.sigcard{background:var(--mf-card);border:1px solid var(--mf-border2);border-radius:8px;padding:8px 10px}
+.signame{font-size:10px;color:var(--mf-th)}
+.sigval{font-size:14px;font-weight:500;font-family:monospace;margin:2px 0}
+.sigctx{font-size:9px;color:var(--mf-dim);line-height:1.3}
+.disc{text-align:center;padding:16px 0;font-size:8px;color:var(--mf-faint)}
+@media(max-width:768px){.g2,.g3,.g4{grid-template-columns:1fr}}
+</style></head><body><button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
+<div class="container">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px">
+  <div><span style="font-size:20px;font-weight:500;color:var(--mf-heading)">MF Evaluator</span>
+  <span style="font-size:12px;color:var(--mf-dim);margin-left:8px">458 funds · 10 categories</span></div>
+  <div style="font-size:11px;color:var(--mf-dim)">12 Apr 2026, 02:01</div>
+</div>
+
+<div style="background:var(--mf-card);border:1px solid var(--mf-border2);border-left:4px solid #ef5350;border-radius:0 10px 10px 0;padding:18px 22px;margin-bottom:16px">
+  <div style="font-size:24px;font-weight:500;color:#ef5350;margin-bottom:3px">Cautious</div>
+  <div style="font-size:13px;color:var(--mf-muted);line-height:1.6">
+    Deploy <b style="color:var(--mf-text)">30 lumpsum : 70 SIP</b> &mdash;
+    P(10%+ DD in 3M): <b style="color:var(--mf-text)">0%</b>.
+    Nifty RSI <b style="color:var(--mf-text)">31.7</b>.
+    <b style="color:var(--mf-text)">5</b> historical matches.
+    6M median: <b style="color:var(--mf-text)">-5.5%</b>.
+  </div>
+  <div class="g4" style="margin-top:12px">
+    <div class="metric"><div class="mlabel">Nifty 50</div><div class="mval">24,051</div></div>
+    <div class="metric"><div class="mlabel">Sensex</div><div class="mval">77,550</div></div>
+    <div class="metric"><div class="mlabel">EMA200 breadth</div><div class="mval" style="color:#ef5350">23.0%</div></div>
+    <div class="metric"><div class="mlabel">Nifty RSI(14)</div><div class="mval">31.7</div></div>
+  </div>
+</div>
+<h2>Forward returns from present state</h2>
+<div class="sub">Based on 5 historical instances with similar breadth (EMA200 ~23%) + RSI (~32) &mdash; median return</div>
+<div class="card"><table><tr><th></th><th class="tc">3 months</th><th class="tc">6 months</th><th class="tc">1 year</th></tr><tr><td style="font-weight:500;color:var(--mf-heading);padding-left:0">Nifty 50</td><td class="mono tc"><span style="background:rgba(102,187,106,.12);color:#66bb6a;padding:3px 10px;border-radius:4px;font-size:12px">+10.9%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td><td class="mono tc"><span style="background:rgba(239,83,80,.1);color:#ef5350;padding:3px 10px;border-radius:4px;font-size:12px">-5.5%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td><td class="mono tc"><span style="background:rgba(102,187,106,.12);color:#66bb6a;padding:3px 10px;border-radius:4px;font-size:12px">+9.3%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td></tr><tr><td style="font-weight:500;color:var(--mf-heading);padding-left:0">Nifty Next 50</td><td class="mono tc"><span style="background:rgba(102,187,106,.12);color:#66bb6a;padding:3px 10px;border-radius:4px;font-size:12px">+4.9%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td><td class="mono tc"><span style="background:rgba(239,83,80,.1);color:#ef5350;padding:3px 10px;border-radius:4px;font-size:12px">-11.2%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td><td class="mono tc"><span style="background:rgba(102,187,106,.06);color:#8aaa7a;padding:3px 10px;border-radius:4px;font-size:12px">+2.9%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td></tr><tr><td style="font-weight:500;color:var(--mf-heading);padding-left:0">MidSmallCap 400</td><td class="mono tc"><span style="background:rgba(102,187,106,.12);color:#66bb6a;padding:3px 10px;border-radius:4px;font-size:12px">+5.3%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td><td class="mono tc"><span style="background:rgba(255,183,77,.08);color:#c0a060;padding:3px 10px;border-radius:4px;font-size:12px">-2.4%</span><div style="font-size:8px;color:var(--mf-faint)">n=3</div></td><td class="mono tc"><span style="background:rgba(102,187,106,.12);color:#66bb6a;padding:3px 10px;border-radius:4px;font-size:12px">+5.7%</span><div style="font-size:8px;color:var(--mf-faint)">n=4</div></td></tr></table></div>
+<h2>Drawdown probability (next 3M)</h2>
+<div class="card"><div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--mf-divider)">
+          <div style="flex:0 0 120px;font-size:12px;color:var(--mf-muted)">Drawdown > 5%</div>
+          <div style="flex:1;height:20px;background:var(--mf-elev);border-radius:4px;overflow:hidden">
+            <div style="width:0.0%;height:100%;background:rgba(102,187,106,.12);border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:10px;color:#8aaa7a">0%</div>
+          </div>
+        </div><div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--mf-divider)">
+          <div style="flex:0 0 120px;font-size:12px;color:var(--mf-muted)">Drawdown > 10%</div>
+          <div style="flex:1;height:20px;background:var(--mf-elev);border-radius:4px;overflow:hidden">
+            <div style="width:0.0%;height:100%;background:rgba(102,187,106,.12);border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:10px;color:#8aaa7a">0%</div>
+          </div>
+        </div><div style="display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--mf-divider)">
+          <div style="flex:0 0 120px;font-size:12px;color:var(--mf-muted)">Drawdown > 20%</div>
+          <div style="flex:1;height:20px;background:var(--mf-elev);border-radius:4px;overflow:hidden">
+            <div style="width:0.0%;height:100%;background:rgba(102,187,106,.12);border-radius:4px;display:flex;align-items:center;padding-left:6px;font-size:10px;color:#8aaa7a">0%</div>
+          </div>
+        </div><div style="margin-top:4px;font-size:10px;color:var(--mf-faint)">Median max DD: -4.1% / Worst: -4.2%</div></div>
+<h3>Historical match dates</h3>
+<div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:14px"><span class="pill">Dec 2018 (IL&FS)</span><span class="pill">Jan 2019 (IL&FS recovery)</span><span class="pill">Sep 2019 (Pre-slowdown)</span><span class="pill pill-now">Apr 2026 (Current)</span></div>
+<h2>Deployment recommendation</h2>
+<div class="g2" style="margin-bottom:10px">
+  <div class="metric"><div class="mlabel">Lumpsum</div><div class="mval" style="color:#ffb74d">30%</div><div style="font-size:10px;color:var(--mf-dim);margin-top:2px">Deploy gradually over 4-6 weeks on dips</div></div>
+  <div class="metric"><div class="mlabel">SIP</div><div class="mval" style="color:#66bb6a">70%</div><div style="font-size:10px;color:var(--mf-dim);margin-top:2px">Weekly SIP for 3-6 months</div></div>
+</div>
+<div class="g4"><div class="sigcard">
+      <div class="signame">Nifty PE</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#ffb74d;margin-right:6px;vertical-align:middle"></span>21.13</div>
+      <div class="sigctx">Consolidated TTM PE at 21.13 — right at historical median (~21.5). Neutral.</div>
+    </div><div class="sigcard">
+      <div class="signame">India VIX</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#ffb74d;margin-right:6px;vertical-align:middle"></span>18.85</div>
+      <div class="sigctx">Down from 20.4 intraday. Moderate stress, declining. Not alarming.</div>
+    </div><div class="sigcard">
+      <div class="signame">Breadth EMA200</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#ef5350;margin-right:6px;vertical-align:middle"></span>23.0</div>
+      <div class="sigctx">Only 23% stocks above 200 EMA. Bear territory. But EMA50 at 52% shows short-term</div>
+    </div><div class="sigcard">
+      <div class="signame">Brent Crude</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#ef5350;margin-right:6px;vertical-align:middle"></span>97.0</div>
+      <div class="sigctx">$97/bbl — Strait of Hormuz crisis. Significant inflation + CAD pressure for Indi</div>
+    </div><div class="sigcard">
+      <div class="signame">India GDP</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#66bb6a;margin-right:6px;vertical-align:middle"></span>7.8</div>
+      <div class="sigctx">Q3 FY26 at 7.8% under new base year. Manufacturing double-digit. Full year 7.6%.</div>
+    </div><div class="sigcard">
+      <div class="signame">India CPI</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#66bb6a;margin-right:6px;vertical-align:middle"></span>3.4</div>
+      <div class="sigctx">Feb 2026 actual 3.21%, Mar est 3.4%. Well below RBI 4% target. Rate cuts likely </div>
+    </div><div class="sigcard">
+      <div class="signame">USDINR</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#ef5350;margin-right:6px;vertical-align:middle"></span>92.71</div>
+      <div class="sigctx">92.71 — breached 90. FII outflows + crude import bill. Severe stress territory.</div>
+    </div><div class="sigcard">
+      <div class="signame">India CAD</div>
+      <div class="sigval"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#ffb74d;margin-right:6px;vertical-align:middle"></span>1.3</div>
+      <div class="sigctx">Q3 FY26 at 1.3% GDP ($13.2B). Rising from 1.1% YoY. Watch closely given crude sp</div>
+    </div></div>
+<div class="card" style="margin-top:10px"><h3>Reasoning</h3><div style="font-size:12px;color:var(--mf-muted);line-height:1.6">2 green (GDP strong at 7.8%, CPI benign at 3.4%), 3 yellow (PE fair at 21, VIX moderate at 18.9, CAD manageable at 1.3%), 3 red (Breadth EMA200 at 23% extremely poor, Crude at $97 crisis-level, USDINR at 92.7 severe weakness). The crude + INR combo is the dominant risk — historically, crude above $90 with INR above 90 has led to sustained market weakness. However, the EMA50/EMA200 DIVERGENCE (52% vs 23%) signals accumulation — smart money buying while broad market still weak. Probability engine (n=4-5) shows 100% positive 3M returns (median +10.9%) from similar states, suggesting near-term bounce. But 6M window shows 50% chance of >10% drawdown — the path is likely volatile. Net stance: CAUTIOUS. Deploy 30% lumpsum on dips, 70% via weekly SIP over 3-6 months. If crude drops below $85 or INR stabilizes below 90, upgrade to Moderate.</div></div><div class="card" style="margin-top:10px;border-left:3px solid #d4a053;border-radius:0 10px 10px 0">
+      <h3>Breadth Divergence Signal</h3>
+      <div class="g3">
+        <div><span style="font-size:10px;color:var(--mf-th)">EMA200</span><div class="mono" style="color:#ef5350;font-size:15px">23.0%</div></div>
+        <div><span style="font-size:10px;color:var(--mf-th)">EMA100</span><div class="mono" style="color:#ffb74d;font-size:15px">32.0%</div></div>
+        <div><span style="font-size:10px;color:var(--mf-th)">EMA50</span><div class="mono" style="color:#66bb6a;font-size:15px">52.0%</div></div>
+      </div>
+      <div style="font-size:12px;color:#d4a053;margin-top:6px;font-weight:500">Accumulation</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:2px">EMA200 low but EMA50 recovering strongly — classic accumulation pattern. Smart money positioning.</div>
+    </div>
+<h2>Fund rankings</h2>
+<div class="tabbar">
+  <button class="tbtn on" onclick="showTab('big')">Big Sum (Safety)</button>
+  <button class="tbtn" onclick="showTab('low')">Low Sum (Growth)</button>
+  <button class="tbtn" onclick="showTab('cusp')">Cusp Picks (20)</button>
+</div>
+<div id="tab-big" class="tsec on"><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">1. DSP Value Dir Gr</div>
+          <div class="fmeta">Value/Contra · ER 0.95% · ★★★★ · -4.3% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">89.4</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="5Y: Q4">Q4</span><span style="background:#5a7a5e" title="3Y: Q2">Q2</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#8a5a52" title="Month: Q4">Q4</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+18.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+19.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+15.2%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.66</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.39</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">7.6</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">2. Parag Parikh Flexi Cap Dir Gr</div>
+          <div class="fmeta">Flexi/Multi Cap · ER 0.63% · ★★★★★ · -5.6% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">88.7</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="10Y: Q1">Q1</span><span style="background:#5a7a5e" title="5Y: Q2">Q2</span><span style="background:#5a7a5e" title="3Y: Q2">Q2</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#8a5a52" title="1Y: Q4">Q4</span><span style="background:#5a7a5e" title="3M: Q2">Q2</span><span style="background:#8a5a52" title="Month: Q4">Q4</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+7.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+18.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+16.6%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.65</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.55</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">-0.6</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">3. ICICI Prudential Value Dir Gr</div>
+          <div class="fmeta">Value/Contra · ER 0.95% · ★★★★★ · -7.7% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">77.2</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="10Y: Q3">Q3</span><span style="background:#5a7a5e" title="5Y: Q1">Q1</span><span style="background:#5a7a5e" title="3Y: Q2">Q2</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#5a7a5e" title="1Y: Q2">Q2</span><span style="background:#8a5a52" title="3M: Q4">Q4</span><span style="background:#8a5a52" title="Month: Q4">Q4</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+9.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+18.9%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+18.9%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.80</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.66</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">2.0</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">4. Baroda BNP P Mid Cap Dir Gr</div>
+          <div class="fmeta">Mid Cap · ER 0.53% · ★★★★ · -2.9% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">76.7</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="10Y: Q3">Q3</span><span style="background:#5a7a5e" title="5Y: Q2">Q2</span><span style="background:#5a7a5e" title="3Y: Q2">Q2</span><span style="background:#5a7a5e" title="2Y: Q2">Q2</span><span style="background:#5a7a5e" title="1Y: Q2">Q2</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q2">Q2</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+17.1%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+22.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+18.0%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.81</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.25</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">1.9</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">5. SBI Small Cap Fund Dir Gr</div>
+          <div class="fmeta">Small Cap · ER 0.75% · ★★★ · -9.9% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">76.5</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="10Y: Q2">Q2</span><span style="background:#8a5a52" title="5Y: Q4">Q4</span><span style="background:#8a5a52" title="3Y: Q4">Q4</span><span style="background:#8a5a52" title="2Y: Q4">Q4</span><span style="background:#8a5a52" title="1Y: Q4">Q4</span><span style="background:#8a5a52" title="3M: Q3">Q3</span><span style="background:#5a7a5e" title="Month: Q2">Q2</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+4.5%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+13.9%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+15.0%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.68</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">0.93</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">-3.4</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">6. HDFC Focused Dir Gr</div>
+          <div class="fmeta">Focused · ER 0.63% · ★★★★★ · -6.8% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">76.3</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="10Y: Q1">Q1</span><span style="background:#5a7a5e" title="5Y: Q1">Q1</span><span style="background:#5a7a5e" title="3Y: Q1">Q1</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#8a5a52" title="1Y: Q3">Q3</span><span style="background:#8a5a52" title="3M: Q3">Q3</span><span style="background:#8a5a52" title="Month: Q3">Q3</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+8.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+20.3%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+21.6%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.82</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.72</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">1.1</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">7. SBI Focused Dir Gr</div>
+          <div class="fmeta">Focused · ER 0.73% · ★★★★★ · -4.8% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">76.2</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="10Y: Q2">Q2</span><span style="background:#5a7a5e" title="5Y: Q2">Q2</span><span style="background:#5a7a5e" title="3Y: Q1">Q1</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q2">Q2</span><span style="background:#5a7a5e" title="Month: Q2">Q2</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+14.6%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+18.5%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+14.6%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.75</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">0.97</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">6.0</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">8. Templeton India Dividend Yld Dir Gr</div>
+          <div class="fmeta">Other · ER 1.23% · ★★ · -6.5% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">75.9</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="10Y: Q3">Q3</span><span style="background:#8a5a52" title="5Y: Q3">Q3</span><span style="background:#8a5a52" title="3Y: Q4">Q4</span><span style="background:#8a5a52" title="2Y: Q4">Q4</span><span style="background:#8a5a52" title="1Y: Q4">Q4</span><span style="background:#8a5a52" title="3M: Q3">Q3</span><span style="background:#8a5a52" title="Month: Q3">Q3</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+6.2%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+15.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+16.4%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.75</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.22</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">-2.6</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">9. Axis Small Cap Fund Dir Gr</div>
+          <div class="fmeta">Small Cap · ER 0.6% · ★★★★★ · -8.0% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">75.5</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="10Y: Q1">Q1</span><span style="background:#8a5a52" title="5Y: Q3">Q3</span><span style="background:#8a5a52" title="3Y: Q3">Q3</span><span style="background:#5a7a5e" title="2Y: Q2">Q2</span><span style="background:#8a5a52" title="1Y: Q3">Q3</span><span style="background:#8a5a52" title="3M: Q3">Q3</span><span style="background:#8a5a52" title="Month: Q4">Q4</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+9.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+18.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+18.3%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.70</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.28</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">0.8</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">10. ICICI Pru Dividend Yield Eq Dir Gr</div>
+          <div class="fmeta">Dividend Yield · ER 0.57% · ★★★★ · -5.5% from 52W high</div></div>
+        <div class="fscore" style="color:#66bb6a">73.5</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="5Y: Q1">Q1</span><span style="background:#5a7a5e" title="3Y: Q1">Q1</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#5a7a5e" title="1Y: Q2">Q2</span><span style="background:#5a7a5e" title="3M: Q2">Q2</span><span style="background:#8a5a52" title="Month: Q4">Q4</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+10.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+22.2%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+22.1%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.88</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.88</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">2.1</b></span>
+      </div>
+    </div></div>
+<div id="tab-low" class="tsec"><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">1. SBI Energy Opportunities Dir Gr</div>
+          <div class="fmeta">Sectoral/Thematic · ER 0.78% · -- · -5.6% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">76.1</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="2Y: Q4">Q4</span><span style="background:#5a7a5e" title="1Y: Q2">Q2</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#8a5a52" title="Month: Q3">Q3</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+11.4%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">-2.6</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">2. Quant BFSI Dir Gr</div>
+          <div class="fmeta">Sectoral/Thematic · ER 0.75% · -- · -6.7% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">73.1</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="2Y: Q2">Q2</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#8a5a52" title="3M: Q4">Q4</span><span style="background:#5a7a5e" title="Month: Q1">Q1</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+28.3%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">18.6</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">3. Motilal Oswal Focused Dir Gr</div>
+          <div class="fmeta">Focused · ER 0.97% · ★★ · -4.1% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">72.0</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="10Y: Q4">Q4</span><span style="background:#8a5a52" title="5Y: Q4">Q4</span><span style="background:#8a5a52" title="3Y: Q4">Q4</span><span style="background:#8a5a52" title="2Y: Q4">Q4</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q1">Q1</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+18.7%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+11.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+8.3%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.99</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">0.23</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">6.9</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">4. DSP Small Cap Dir Gr</div>
+          <div class="fmeta">Small Cap · ER 0.79% · ★★★★ · -4.7% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">71.9</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="10Y: Q3">Q3</span><span style="background:#5a7a5e" title="5Y: Q2">Q2</span><span style="background:#5a7a5e" title="3Y: Q2">Q2</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q1">Q1</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+18.9%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+20.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+19.4%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.89</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.14</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">8.8</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">5. Tata Multicap Dir Gr</div>
+          <div class="fmeta">Flexi/Multi Cap · ER 0.47% · ★ · -4.8% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">71.9</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="3Y: Q4">Q4</span><span style="background:#8a5a52" title="2Y: Q3">Q3</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q1">Q1</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+16.6%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+14.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">4.2</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">6. Groww Multicap Dir Gr</div>
+          <div class="fmeta">Flexi/Multi Cap · ER 0.51% · -- · -1.7% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">71.8</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q1">Q1</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+23.1%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">10.2</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">7. ICICI Pru MidCap Dir Gr</div>
+          <div class="fmeta">Mid Cap · ER 1.03% · ★★★★ · -2.7% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">70.9</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="10Y: Q2">Q2</span><span style="background:#5a7a5e" title="5Y: Q2">Q2</span><span style="background:#5a7a5e" title="3Y: Q1">Q1</span><span style="background:#5a7a5e" title="2Y: Q1">Q1</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q2">Q2</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+30.5%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+26.2%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+20.1%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.95</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">1.31</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">9.2</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">8. Tata Dividend Yield Dir Gr</div>
+          <div class="fmeta">Dividend Yield · ER 0.6% · -- · -3.7% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">69.7</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#5a7a5e" title="3Y: Q2">Q2</span><span style="background:#5a7a5e" title="2Y: Q2">Q2</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q1">Q1</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+17.7%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+19.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">7.2</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">9. ITI Multi Cap Dir Gr</div>
+          <div class="fmeta">Flexi/Multi Cap · ER 0.33% · ★★★ · -3.8% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">69.4</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="5Y: Q3">Q3</span><span style="background:#5a7a5e" title="3Y: Q1">Q1</span><span style="background:#8a5a52" title="2Y: Q3">Q3</span><span style="background:#5a7a5e" title="1Y: Q1">Q1</span><span style="background:#5a7a5e" title="3M: Q1">Q1</span><span style="background:#5a7a5e" title="Month: Q2">Q2</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+17.3%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+20.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+13.8%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">0.94</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">0.76</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">5.8</b></span>
+      </div>
+    </div><div class="fcard">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div><div class="fname">10. Edelweiss Recently Listed IPO Dir Gr</div>
+          <div class="fmeta">Other · ER 1.02% · -- · -6.4% from 52W high</div></div>
+        <div class="fscore" style="color:#64b5f6">69.4</div>
+      </div>
+      <div style="margin:6px 0 4px"><div class="qbar"><span style="background:#8a5a52" title="5Y: Q4">Q4</span><span style="background:#8a5a52" title="3Y: Q3">Q3</span><span style="background:#8a5a52" title="2Y: Q3">Q3</span><span style="background:#8a5a52" title="1Y: Q3">Q3</span><span style="background:#5a7a5e" title="3M: Q2">Q2</span><span style="background:#5a7a5e" title="Month: Q1">Q1</span></div></div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);flex-wrap:wrap">
+        <span>1Y: <b style="color:var(--mf-text)">+16.5%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+19.5%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+12.2%</b></span>
+        <span>Beta5Y: <b style="color:var(--mf-text)">--</b></span>
+        <span>Sortino5Y: <b style="color:var(--mf-text)">0.50</b></span>
+        <span>Alpha1Y: <b style="color:var(--mf-text)">14.9</b></span>
+      </div>
+    </div></div>
+<div id="tab-cusp" class="tsec"><div class="fcard">
+      <div class="fname">1. Motilal Oswal Focused Dir Gr</div>
+      <div class="fmeta">Focused · Momentum: 1.714 · Q3/Q4 on 3Y,5Y,10Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+18.7%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+11.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+8.3%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">2. Tata Multicap Dir Gr</div>
+      <div class="fmeta">Flexi/Multi Cap · Momentum: 1.6 · Q3/Q4 on 3Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+16.6%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+14.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">3. Navi Large & Mid Cap Dir Gr</div>
+      <div class="fmeta">Large & Mid Cap · Momentum: 1.333 · Q3/Q4 on 3Y,5Y,10Y -> Q1/Q2 on 3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+9.2%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+13.9%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+13.4%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">4. Aditya BSL Multi-Cap Dir Gr</div>
+      <div class="fmeta">Flexi/Multi Cap · Momentum: 1.2 · Q3/Q4 on 3Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+12.1%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+17.3%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">5. Sundaram Small Cap Dir Gr</div>
+      <div class="fmeta">Small Cap · Momentum: 1.143 · Q3/Q4 on 5Y,10Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+16.0%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+20.5%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+18.9%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">6. ITI Large Cap Dir Gr</div>
+      <div class="fmeta">Large Cap · Momentum: 1.067 · Q3/Q4 on 3Y,5Y -> Q1/Q2 on Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+6.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+13.9%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+10.7%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">7. Aditya BSL Small Cap Dir Gr</div>
+      <div class="fmeta">Small Cap · Momentum: 0.857 · Q3/Q4 on 5Y,10Y -> Q1/Q2 on 1Y,3M</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+15.0%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+18.9%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+14.2%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">8. DSP Small Cap Dir Gr</div>
+      <div class="fmeta">Small Cap · Momentum: 0.857 · Q3/Q4 on 10Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+18.9%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+20.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+19.4%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">9. Bandhan Midcap Dir Gr</div>
+      <div class="fmeta">Mid Cap · Momentum: 0.8 · Q3/Q4 on 3Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+17.2%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+21.5%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">10. Canara Robeco Mid Cap Dir Gr</div>
+      <div class="fmeta">Mid Cap · Momentum: 0.8 · Q3/Q4 on 3Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+18.9%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+21.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">11. Canara Robeco Value Dir Gr</div>
+      <div class="fmeta">Value/Contra · Momentum: 0.8 · Q3/Q4 on 3Y -> Q1/Q2 on Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+7.3%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+16.4%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">12. SBI Multicap Dir Gr</div>
+      <div class="fmeta">Flexi/Multi Cap · Momentum: 0.8 · Q3/Q4 on 3Y -> Q1/Q2 on 3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+3.6%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+17.0%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">13. Tata Business Cycle Dir Gr</div>
+      <div class="fmeta">Sectoral/Thematic · Momentum: 0.8 · Q3/Q4 on 3Y -> Q1/Q2 on 3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+6.9%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+17.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">--</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">14. DSP Midcap Dir Gr</div>
+      <div class="fmeta">Mid Cap · Momentum: 0.762 · Q3/Q4 on 3Y,5Y,10Y -> Q1/Q2 on 1Y,3M</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+17.6%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+20.8%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+13.9%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">15. HDFC Value Dir Gr</div>
+      <div class="fmeta">Value/Contra · Momentum: 0.762 · Q3/Q4 on 5Y,10Y -> Q1/Q2 on 1Y,3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+13.4%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+19.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+16.6%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">16. Quant Large and Mid Cap Dir Gr</div>
+      <div class="fmeta">Large & Mid Cap · Momentum: 0.762 · Q3/Q4 on 3Y,10Y -> Q1/Q2 on 3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+3.7%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+16.7%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+16.2%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">17. Quant Mid Cap Dir Gr</div>
+      <div class="fmeta">Mid Cap · Momentum: 0.762 · Q3/Q4 on 3Y,10Y -> Q1/Q2 on 3M,Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+1.9%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+16.8%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+18.7%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">18. Taurus Ethical Dir Gr</div>
+      <div class="fmeta">Other · Momentum: 0.762 · Q3/Q4 on 3Y,5Y,10Y -> Q1/Q2 on Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+8.8%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+16.2%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+11.9%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">19. Axis Flexi Cap Dir Gr</div>
+      <div class="fmeta">Flexi/Multi Cap · Momentum: 0.733 · Q3/Q4 on 3Y,5Y -> Q1/Q2 on 3M</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">+8.9%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+15.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+11.2%</b></span>
+      </div>
+    </div><div class="fcard">
+      <div class="fname">20. Baroda BNP P IndiaCnsmptnDirGr</div>
+      <div class="fmeta">Other · Momentum: 0.667 · Q3/Q4 on 3Y,5Y -> Q1/Q2 on Month</div>
+      <div style="display:flex;gap:12px;font-size:10px;color:var(--mf-muted);margin-top:4px">
+        <span>1Y: <b style="color:var(--mf-text)">-0.1%</b></span>
+        <span>3Y: <b style="color:var(--mf-text)">+15.1%</b></span>
+        <span>5Y: <b style="color:var(--mf-text)">+13.7%</b></span>
+      </div>
+    </div></div>
+<h2>Drawdown simulator</h2>
+<div class="sub">Based on Beta 5Y (Big Sum) and Beta 1Y (Low Sum). Allocation: Big Sum ₹13L, Low Sum ₹11L.</div>
+<div class="card"><table>
+<tr><th>Nifty drop</th><th>Nifty at</th><th class="tr">Big Sum loss</th><th class="tr">%</th><th class="tr">Low Sum loss</th><th class="tr">%</th><th class="tr">Combined</th></tr>
+<tr>
+      <td class="mono" style="color:#ef5350">-5%</td>
+      <td class="mono muted">22,848</td>
+      <td class="mono tr" style="color:#ef5350">-₹45,000</td>
+      <td class="mono tr muted">3.46%</td>
+      <td class="mono tr" style="color:#ef5350">-₹55,800</td>
+      <td class="mono tr muted">5.07%</td>
+      <td class="mono tr" style="color:#ef5350">-₹100,800</td>
+    </tr><tr>
+      <td class="mono" style="color:#ef5350">-10%</td>
+      <td class="mono muted">21,645</td>
+      <td class="mono tr" style="color:#ef5350">-₹90,000</td>
+      <td class="mono tr muted">6.92%</td>
+      <td class="mono tr" style="color:#ef5350">-₹111,600</td>
+      <td class="mono tr muted">10.15%</td>
+      <td class="mono tr" style="color:#ef5350">-₹201,600</td>
+    </tr><tr>
+      <td class="mono" style="color:#ef5350">-15%</td>
+      <td class="mono muted">20,443</td>
+      <td class="mono tr" style="color:#ef5350">-₹135,000</td>
+      <td class="mono tr muted">10.38%</td>
+      <td class="mono tr" style="color:#ef5350">-₹167,400</td>
+      <td class="mono tr muted">15.22%</td>
+      <td class="mono tr" style="color:#ef5350">-₹302,400</td>
+    </tr><tr>
+      <td class="mono" style="color:#ef5350">-20%</td>
+      <td class="mono muted">19,240</td>
+      <td class="mono tr" style="color:#ef5350">-₹180,000</td>
+      <td class="mono tr muted">13.85%</td>
+      <td class="mono tr" style="color:#ef5350">-₹223,200</td>
+      <td class="mono tr muted">20.29%</td>
+      <td class="mono tr" style="color:#ef5350">-₹403,200</td>
+    </tr><tr>
+      <td class="mono" style="color:#ef5350">-30%</td>
+      <td class="mono muted">16,835</td>
+      <td class="mono tr" style="color:#ef5350">-₹270,000</td>
+      <td class="mono tr muted">20.77%</td>
+      <td class="mono tr" style="color:#ef5350">-₹334,800</td>
+      <td class="mono tr muted">30.44%</td>
+      <td class="mono tr" style="color:#ef5350">-₹604,800</td>
+    </tr><tr>
+      <td class="mono" style="color:#ef5350">-40%</td>
+      <td class="mono muted">14,430</td>
+      <td class="mono tr" style="color:#ef5350">-₹360,000</td>
+      <td class="mono tr muted">27.69%</td>
+      <td class="mono tr" style="color:#ef5350">-₹446,400</td>
+      <td class="mono tr muted">40.58%</td>
+      <td class="mono tr" style="color:#ef5350">-₹806,400</td>
+    </tr></table></div><div class="card" style="margin-top:8px"><h3>Big Sum fund-level (top 5)</h3><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">DSP Value Dir Gr</span>
+      <span class="mono muted">Beta: 0.66 · ₹600,000 · -20%: -₹79,200</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">Parag Parikh Flexi Cap Dir Gr</span>
+      <span class="mono muted">Beta: 0.65 · ₹300,000 · -20%: -₹39,000</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">ICICI Prudential Value Dir Gr</span>
+      <span class="mono muted">Beta: 0.8 · ₹200,000 · -20%: -₹32,000</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">Baroda BNP P Mid Cap Dir Gr</span>
+      <span class="mono muted">Beta: 0.81 · ₹100,000 · -20%: -₹16,200</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">SBI Small Cap Fund Dir Gr</span>
+      <span class="mono muted">Beta: 0.68 · ₹100,000 · -20%: -₹13,600</span>
+    </div></div><div class="card" style="margin-top:8px"><h3>Low Sum fund-level (top 5)</h3><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">SBI Energy Opportunities Dir G</span>
+      <span class="mono muted">Beta: 1.22 · ₹400,000 · -20%: -₹97,600</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">Quant BFSI Dir Gr</span>
+      <span class="mono muted">Beta: 0.85 · ₹300,000 · -20%: -₹51,000</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">Motilal Oswal Focused Dir Gr</span>
+      <span class="mono muted">Beta: 0.91 · ₹200,000 · -20%: -₹36,400</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">DSP Small Cap Dir Gr</span>
+      <span class="mono muted">Beta: 1.0 · ₹100,000 · -20%: -₹20,000</span>
+    </div><div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--mf-divider);font-size:11px">
+      <span style="color:var(--mf-text)">Tata Multicap Dir Gr</span>
+      <span class="mono muted">Beta: 0.91 · ₹100,000 · -20%: -₹18,200</span>
+    </div></div><h2>Fund house philosophy</h2><div class="fcard">
+      <div class="fname">DSP Value Dir Gr</div>
+      <div class="fmeta">DSP Mutual Fund · value discipline · global diversification · risk-managed</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Applies value investing principles to identify undervalued quality companies. Uses disciplined quantitative and fundamental rules — 'good companies at good prices' — with emphasis on cash management and contrarian positioning.</div>
+    </div><div class="fcard">
+      <div class="fname">Parag Parikh Flexi Cap Dir Gr</div>
+      <div class="fmeta">PPFAS · intrinsic value · compact 30-35 stocks · behavioral finance</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Bottom-up stock selection focused on buying securities at a discount to intrinsic value. Targets low-debt, high-cash-flow companies. Incorporates behavioral finance overlay with conviction-based compounding.</div>
+    </div><div class="fcard">
+      <div class="fname">ICICI Prudential Value Dir Gr</div>
+      <div class="fmeta">ICICI Prudential AMC · contrarian value · valuation metrics · multi-cap flex</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Contrarian value approach seeking stocks priced significantly below intrinsic worth via low P/B, P/E, high dividend yield screens. Multi-cap mandate allows flexibility across market caps.</div>
+    </div><div class="fcard">
+      <div class="fname">Baroda BNP P Mid Cap Dir Gr</div>
+      <div class="fmeta">Baroda BNP Paribas · growth mid-caps · management quality · long-term</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Focuses on mid-cap companies with high growth potential and entrepreneurial management quality. Seeks long-term capital appreciation through innovative business models.</div>
+    </div><div class="fcard">
+      <div class="fname">SBI Small Cap Fund Dir Gr</div>
+      <div class="fmeta">SBI Mutual Fund · small-cap mandate · high growth · SIP-friendly</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Mandated 65%+ in small-cap stocks for high-growth emerging company exposure. Diversified basket approach with reasonable expense ratio. Long-term wealth creation focus.</div>
+    </div><div class="fcard">
+      <div class="fname">Motilal Oswal Focused Dir Gr</div>
+      <div class="fmeta">Motilal Oswal AMC · QGLP framework · focused 30-stock · high conviction</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Follows QGLP framework (Quality, Growth, Longevity, Price). Concentrated 30-stock portfolio with high-conviction bets and rigorous capital allocation quality assessment.</div>
+    </div><div class="fcard">
+      <div class="fname">DSP Small Cap Dir Gr</div>
+      <div class="fmeta">DSP Mutual Fund · emerging companies · efficient capital · long-term SIP</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Invests in smallest, fastest-growing innovative Indian companies with strong business models. Emphasizes emerging small-cap opportunities with long-term SIP-based approach.</div>
+    </div><div class="fcard">
+      <div class="fname">Tata Multicap Dir Gr</div>
+      <div class="fmeta">Tata Mutual Fund · GARP · multi-cap balance · dynamic rebalancing</div>
+      <div style="font-size:11px;color:var(--mf-muted);margin-top:4px;line-height:1.5">Growth at Reasonable Price (GARP) approach balancing large, mid, small caps (min 25% each). Bottom-up stock selection with top-down rebalancing to capture opportunities.</div>
+    </div><h2>Category medians</h2>
+<div class="card"><table>
+<tr><th>Category</th><th class="tc">Funds</th><th class="tc">1Y median</th><th class="tc">3Y</th><th class="tc">5Y</th><th class="tc">ER</th></tr>
+<tr>
+      <td style="color:var(--mf-heading)">Dividend Yield</td>
+      <td class="mono tc">9</td>
+      <td class="mono tc">10.7%</td>
+      <td class="mono tc">19.0%</td>
+      <td class="mono tc">17.1%</td>
+      <td class="mono tc">0.80%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Flexi/Multi Cap</td>
+      <td class="mono tc">67</td>
+      <td class="mono tc">9.8%</td>
+      <td class="mono tc">17.4%</td>
+      <td class="mono tc">14.1%</td>
+      <td class="mono tc">0.68%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Focused</td>
+      <td class="mono tc">27</td>
+      <td class="mono tc">8.8%</td>
+      <td class="mono tc">16.7%</td>
+      <td class="mono tc">14.0%</td>
+      <td class="mono tc">0.78%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Large & Mid Cap</td>
+      <td class="mono tc">26</td>
+      <td class="mono tc">12.7%</td>
+      <td class="mono tc">18.3%</td>
+      <td class="mono tc">15.9%</td>
+      <td class="mono tc">0.66%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Large Cap</td>
+      <td class="mono tc">28</td>
+      <td class="mono tc">8.1%</td>
+      <td class="mono tc">14.3%</td>
+      <td class="mono tc">12.5%</td>
+      <td class="mono tc">0.81%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Mid Cap</td>
+      <td class="mono tc">31</td>
+      <td class="mono tc">16.4%</td>
+      <td class="mono tc">22.0%</td>
+      <td class="mono tc">18.0%</td>
+      <td class="mono tc">0.65%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Other</td>
+      <td class="mono tc">69</td>
+      <td class="mono tc">21.0%</td>
+      <td class="mono tc">25.1%</td>
+      <td class="mono tc">16.8%</td>
+      <td class="mono tc">0.69%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Sectoral/Thematic</td>
+      <td class="mono tc">150</td>
+      <td class="mono tc">10.4%</td>
+      <td class="mono tc">18.1%</td>
+      <td class="mono tc">15.6%</td>
+      <td class="mono tc">0.84%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Small Cap</td>
+      <td class="mono tc">29</td>
+      <td class="mono tc">11.1%</td>
+      <td class="mono tc">18.6%</td>
+      <td class="mono tc">19.0%</td>
+      <td class="mono tc">0.65%</td>
+    </tr><tr>
+      <td style="color:var(--mf-heading)">Value/Contra</td>
+      <td class="mono tc">22</td>
+      <td class="mono tc">9.8%</td>
+      <td class="mono tc">18.9%</td>
+      <td class="mono tc">16.6%</td>
+      <td class="mono tc">0.85%</td>
+    </tr></table></div>
+
+<h2>What market experts are saying</h2>
+<div class="sub" style="font-style:italic">Sourced from YouTube expert interviews. Opinions are those of the experts, not investment recommendations.</div>
+
+<div class="fcard" style="border-left:3px solid #64b5f6;border-radius:0 8px 8px 0">
+  <div style="display:flex;justify-content:space-between">
+    <div class="fname">Kunal Shah</div>
+    <div style="font-size:10px;color:var(--mf-dim)">Apr 9, 2026</div>
+  </div>
+  <div class="fmeta">Nirmal Bang &middot; Commodities Research</div>
+  <div style="font-size:12px;color:var(--mf-muted);margin-top:6px;line-height:1.5">
+    Crude structurally constrained to $80-120 range &mdash; 8-9M bpd offline needs 6-8 month restart.
+    Near-month contracts show 2,000 Rs premium vs far-month, indicating market expects sentiment collapse on ceasefire but structural support remains.
+    <span class="badge by">Cautiously Bullish</span>
+  </div>
+</div>
+
+<div class="fcard" style="border-left:3px solid #66bb6a;border-radius:0 8px 8px 0">
+  <div style="display:flex;justify-content:space-between">
+    <div class="fname">Gautam Chugtai</div>
+    <div style="font-size:10px;color:var(--mf-dim)">Mar 28, 2026</div>
+  </div>
+  <div class="fmeta">UBS</div>
+  <div style="font-size:12px;color:var(--mf-muted);margin-top:6px;line-height:1.5">
+    Market never panic-priced prolonged war (oil topped at 119-120 vs catastrophic 150-200 scenarios).
+    Ceasefire shifted focus from geopolitics to business fundamentals. Nifty PE at 22x is appropriately valued.
+    Domestic SIPs (40+ cr active equity inflows) provide structural floor.
+    <span class="badge bg">Cautiously Optimistic</span>
+  </div>
+</div>
+
+<div class="fcard" style="border-left:3px solid #ef5350;border-radius:0 8px 8px 0">
+  <div style="display:flex;justify-content:space-between">
+    <div class="fname">Sajid Chinoy</div>
+    <div style="font-size:10px;color:var(--mf-dim)">Mar 20, 2026</div>
+  </div>
+  <div class="fmeta">JP Morgan &middot; Chief Asia Economics</div>
+  <div style="font-size:12px;color:var(--mf-muted);margin-top:6px;line-height:1.5">
+    2026 energy shock differs from 2022: 10-16M bpd offline = QUANTITATIVE constraint, not just price.
+    Creates non-linear hysteresis effects &mdash; business closures, workforce displacement.
+    Critical risk window: 4-6 weeks for policy response.
+    <span class="badge br">Bearish</span>
+  </div>
+</div>
+
+<div class="fcard" style="border-left:3px solid #ef5350;border-radius:0 8px 8px 0">
+  <div style="display:flex;justify-content:space-between">
+    <div class="fname">Neelkanth Mishra</div>
+    <div style="font-size:10px;color:var(--mf-dim)">Mar 26, 2026</div>
+  </div>
+  <div class="fmeta">Axis Capital &middot; Chief Economist</div>
+  <div style="font-size:12px;color:var(--mf-muted);margin-top:6px;line-height:1.5">
+    Strait of Hormuz = 7% world energy supply at risk. India terms-of-trade shock at $100 oil = $80B hit (2.1% GDP).
+    Rupee needs ~7% depreciation at $100 oil. Energy is inelastic &mdash; supply loss directly reduces productive capacity.
+    <span class="badge br">Cautiously Bearish</span>
+  </div>
+</div>
+
+<div class="fcard" style="border-left:3px solid #ffb74d;border-radius:0 8px 8px 0">
+  <div style="display:flex;justify-content:space-between">
+    <div class="fname">Raghuram Rajan</div>
+    <div style="font-size:10px;color:var(--mf-dim)">Mar 21, 2026</div>
+  </div>
+  <div class="fmeta">Chicago Booth &middot; Former RBI Governor</div>
+  <div style="font-size:12px;color:var(--mf-muted);margin-top:6px;line-height:1.5">
+    If 15-20% of world energy disrupted, demand destruction requires $150-200/bbl &mdash; unprecedented territory.
+    Financial sector stress is next risk if conflict extends. Three-step response: buffer, adjust, build resilience.
+    <span class="badge by">Mixed / Bearish</span>
+  </div>
+</div>
+
+<div class="card" style="margin-top:8px;border-left:3px solid #d4a053;border-radius:0 10px 10px 0">
+  <h3>Expert consensus vs. quantitative signal</h3>
+  <div style="font-size:12px;color:var(--mf-muted);line-height:1.6">
+    <b style="color:#d4a053">Partial divergence.</b> The probability engine (n=5) shows 100% positive 3M returns (median +10.9%)
+    from similar breadth states, suggesting a near-term bounce. However, experts (Sajid, Neelkanth) warn of a 4-6 week
+    critical window where re-escalation could trigger severe drawdowns. Gautam Chugtai's optimism aligns with the
+    probability engine's 3M outlook. The 6M outlook diverges more sharply &mdash; probability engine shows 50% chance of
+    >10% drawdown while Kunal Shah's crude structure thesis ($80-120 range) suggests the worst may be priced in.
+    <br><br>
+    <b style="color:var(--mf-text)">Net read:</b> Near-term bounce likely (next 2-3 months), but deploy cautiously &mdash;
+    the 6M path includes meaningful drawdown risk if geopolitical situation deteriorates.
+  </div>
+</div>
+
+<div style="font-size:10px;color:var(--mf-faint);margin-top:6px;font-style:italic">12 expert interviews in knowledge base. Latest: April 9, 2026.</div>
+<div class="disc">MF Evaluator v2 &mdash; Not investment advice. Past performance does not guarantee future results. Data from ValueResearch, ChartInk, NSE.</div>
+</div><script>function showTab(id){document.querySelectorAll('.tsec').forEach(e=>e.classList.remove('on'));document.querySelectorAll('.tbtn').forEach(e=>e.classList.remove('on'));document.getElementById('tab-'+id).classList.add('on');event.target.classList.add('on');}</script>
+<script>(function(){var KEY='market-reports-theme';var root=document.documentElement;var btn=document.getElementById('themeToggle');function stored(){try{return localStorage.getItem(KEY);}catch(e){return null;}}function prefersDark(){return window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}function effective(){var s=stored();if(s==='dark'||s==='light')return s;return prefersDark()?'dark':'light';}function label(t){return t==='dark'?'Light mode':'Dark mode';}function apply(t){root.setAttribute('data-theme',t);if(btn){btn.textContent=label(t);btn.setAttribute('aria-pressed',t==='dark');}try{window.dispatchEvent(new CustomEvent('report-theme',{detail:{theme:t}}));}catch(e){}}function toggle(){var next=root.getAttribute('data-theme')==='dark'?'light':'dark';try{localStorage.setItem(KEY,next);}catch(e){}apply(next);}if(btn)btn.addEventListener('click',toggle);apply(effective());})();</script></body></html>
