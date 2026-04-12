@@ -1,0 +1,2518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var k='market-reports-theme';try{var t=localStorage.getItem(k);if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);return;}}catch(e){}document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MF Evaluation v2 — Stock-Picking Resilience</title>
+<style>
+html { color-scheme: light dark; }
+:root, html[data-theme="light"] {
+  --bg: #f0f2f7;
+  --card: #ffffff;
+  --border: #d8dce6;
+  --text: #1a1d27;
+  --text-dim: #5a6270;
+  --heading: #0c0e14;
+  --accent: #3b6fd4;
+  --green: #1a6b3a;
+  --red: #a82a22;
+  --amber: #9a750a;
+  --purple: #5a4299;
+}
+html[data-theme="dark"] {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e0e0e0;
+  --text-dim: #888;
+  --heading: #ffffff;
+  --accent: #5b8def;
+  --green: #2d8a4e;
+  --red: #c0392b;
+  --amber: #d4a017;
+  --purple: #7c5cbf;
+}
+.theme-fab {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 10000;
+  font: 600 12px 'Inter', -apple-system, system-ui, sans-serif;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+html[data-theme="light"] .theme-fab { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; padding: 20px; padding-top: 52px; }
+.header { text-align: center; padding: 30px 0 20px; }
+.header h1 { font-size: 1.6rem; font-weight: 600; color: var(--heading); }
+.header .subtitle { color: var(--text-dim); font-size: 0.85rem; margin-top: 4px; }
+.tabs { display: flex; gap: 4px; padding: 0 20px; margin-bottom: 20px; overflow-x: auto; border-bottom: 1px solid var(--border); }
+.tab { padding: 10px 18px; background: transparent; border: none; color: var(--text-dim); cursor: pointer; font-size: 0.85rem; font-weight: 500; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+.stat-card .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-dim); margin-bottom: 4px; }
+.stat-card .value { font-size: 1.5rem; font-weight: 700; color: var(--heading); }
+.stat-card .detail { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-bottom: 24px; }
+.data-table th { background: var(--card); padding: 10px 8px; text-align: left; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.3px; color: var(--text-dim); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1; }
+.data-table td { padding: 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.data-table tr:hover { background: rgba(91, 141, 239, 0.05); }
+.rank { text-align: center; color: var(--text-dim); width: 30px; }
+.fund-name { font-weight: 500; max-width: 280px; overflow: hidden; text-overflow: ellipsis; }
+.cat { color: var(--text-dim); font-size: 0.75rem; }
+.score { font-weight: 700; color: var(--accent); }
+.badge { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 0.6rem; font-weight: 700; vertical-align: middle; margin-left: 4px; }
+.badge-young { background: var(--amber); color: #000; }
+.cat-section { margin-bottom: 32px; }
+.cat-section h3 { font-size: 1rem; font-weight: 600; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.cat-count { color: var(--text-dim); font-weight: 400; font-size: 0.8rem; }
+.chart-container { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 24px; }
+.chart-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+.chart-subtitle { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 16px; }
+canvas { max-width: 100%; }
+.insight-box { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 4px; padding: 16px 20px; margin-bottom: 16px; font-size: 0.85rem; line-height: 1.6; }
+.insight-box strong { color: var(--heading); }
+.insight-box .verdict { margin-top: 8px; padding: 8px 12px; background: rgba(91, 141, 239, 0.1); border-radius: 4px; font-weight: 600; }
+.bucket-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 16px 0; }
+.bucket-table th { background: var(--card); padding: 8px 12px; text-align: right; font-weight: 600; font-size: 0.72rem; text-transform: uppercase; color: var(--text-dim); border-bottom: 1px solid var(--border); }
+.bucket-table th:first-child { text-align: left; }
+.bucket-table td { padding: 8px 12px; text-align: right; border-bottom: 1px solid var(--border); }
+.bucket-table td:first-child { text-align: left; font-weight: 500; }
+.methodology { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 24px; font-size: 0.82rem; line-height: 1.7; }
+.methodology h3 { margin-bottom: 12px; font-size: 0.95rem; }
+.weight-bar { display: flex; height: 24px; border-radius: 4px; overflow: hidden; margin: 12px 0; }
+.weight-segment { display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 600; color: var(--heading); }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 0.72rem; }
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+.fix-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.fix-card .fix-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.fix-card .fix-num { background: var(--accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; flex-shrink: 0; }
+.fix-card .fix-title { font-weight: 600; color: var(--heading); font-size: 0.9rem; }
+.fix-card .fix-severity { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 3px; font-weight: 600; }
+.severity-high { background: #c0392b40; color: #e74c3c; }
+.severity-medium { background: #d4a01740; color: #f1c40f; }
+.fix-card p { color: var(--text-dim); font-size: 0.82rem; line-height: 1.6; }
+.fix-card .before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+.fix-card .ba-col { padding: 10px; border-radius: 4px; font-size: 0.78rem; }
+.fix-card .ba-before { background: #c0392b15; border: 1px solid #c0392b30; }
+.fix-card .ba-after { background: #2d8a4e15; border: 1px solid #2d8a4e30; }
+.fix-card .ba-label { font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<button type="button" class="theme-fab" id="themeToggle" aria-pressed="false">Dark mode</button>
+
+<div class="header">
+  <h1>Mutual Fund Evaluation v2 — Stock-Picking Resilience</h1>
+  <div class="subtitle">Sep 2024 Peak to Apr 2026 | 332 active funds scored | 894 total universe | 7 audit fixes applied</div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('overview')">Overview</button>
+  <button class="tab" onclick="showTab('categories')">By Category</button>
+  <button class="tab" onclick="showTab('churn')">Churn Analysis</button>
+  <button class="tab" onclick="showTab('pe')">PE Analysis</button>
+  <button class="tab" onclick="showTab('separate')">Sectoral / Index / Other</button>
+  <button class="tab" onclick="showTab('methodology')">Methodology &amp; Audit</button>
+</div>
+
+<!-- OVERVIEW -->
+<div id="overview" class="tab-content active">
+  <div class="stats-row">
+    <div class="stat-card"><div class="label">Primary Universe</div><div class="value">332</div><div class="detail">Active diversified equity</div></div>
+    <div class="stat-card"><div class="label">Fuzzy Matched</div><div class="value">431</div><div class="detail">36 bad matches dropped</div></div>
+    <div class="stat-card"><div class="label">Avg Equity Allocation</div><div class="value">94%</div><div class="detail">Median: 96%</div></div>
+    <div class="stat-card"><div class="label">Nifty 50 Since Sep 24</div><div class="value" style="color:var(--red)">-8.5%</div><div class="detail">26,277 to ~24,050</div></div>
+    <div class="stat-card"><div class="label">Churn vs Alpha Corr</div><div class="value">-0.113</div><div class="detail">Weak negative</div></div>
+    <div class="stat-card"><div class="label">PE vs P2P Corr</div><div class="value">0.078</div><div class="detail">Near zero</div></div>
+  </div>
+  <h2 style="font-size:1.1rem;margin-bottom:16px;">Top 20 — Stock-Picking Resilience Score (v2)</h2>
+  <div style="overflow-x:auto;">
+  <table class="data-table"><thead><tr>
+    <th>#</th><th>Fund</th><th>Category</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+    <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th><th>Turnover</th><th>PE</th><th>Score</th>
+  </tr></thead><tbody><tr>
+      <td class="rank">1</td>
+      <td class="fund-name">HDFC Flexi Cap Dir Gr </td>
+      <td class="cat">Flexi Cap</td>
+      <td style="color:#2d8a4e;font-weight:600">+2.1%</td>
+      <td style="color:#2d8a4e">6.8</td>
+      <td>0.70%</td>
+      <td>93%</td>
+      <td>0.89</td>
+      <td>9%</td>
+      <td>21.6</td>
+      <td class="score">89.8</td>
+    </tr><tr>
+      <td class="rank">2</td>
+      <td class="fund-name">ICICI Pru Dividend Yield Eq Dir Gr </td>
+      <td class="cat">Dividend Yield</td>
+      <td style="color:#c0392b;font-weight:600">-0.7%</td>
+      <td style="color:#2d8a4e">8.8</td>
+      <td>0.57%</td>
+      <td>93%</td>
+      <td>0.95</td>
+      <td>33%</td>
+      <td>18.9</td>
+      <td class="score">89.0</td>
+    </tr><tr>
+      <td class="rank">3</td>
+      <td class="fund-name">HDFC Focused Dir Gr </td>
+      <td class="cat">Focused</td>
+      <td style="color:#2d8a4e;font-weight:600">+1.9%</td>
+      <td style="color:#2d8a4e">8.3</td>
+      <td>0.63%</td>
+      <td>92%</td>
+      <td>0.89</td>
+      <td>7%</td>
+      <td>21.5</td>
+      <td class="score">88.0</td>
+    </tr><tr>
+      <td class="rank">4</td>
+      <td class="fund-name">Motilal Oswal Large & Midcap Dir Gr </td>
+      <td class="cat">Large & Mid Cap</td>
+      <td style="color:#2d8a4e;font-weight:600">+1.9%</td>
+      <td style="color:#2d8a4e">4.4</td>
+      <td>0.75%</td>
+      <td>99%</td>
+      <td>0.79</td>
+      <td>54%</td>
+      <td>44.5</td>
+      <td class="score">86.4</td>
+    </tr><tr>
+      <td class="rank">5</td>
+      <td class="fund-name">Invesco India Smallcap Dir Gr </td>
+      <td class="cat">Small Cap</td>
+      <td style="color:#c0392b;font-weight:600">-2.0%</td>
+      <td style="color:#2d8a4e">5.2</td>
+      <td>0.40%</td>
+      <td>99%</td>
+      <td>0.83</td>
+      <td>52%</td>
+      <td>41.6</td>
+      <td class="score">81.1</td>
+    </tr><tr>
+      <td class="rank">6</td>
+      <td class="fund-name">Nippon India Large Cap Dir Gr </td>
+      <td class="cat">Large Cap</td>
+      <td style="color:#c0392b;font-weight:600">-1.1%</td>
+      <td style="color:#2d8a4e">4.7</td>
+      <td>0.65%</td>
+      <td>96%</td>
+      <td>0.68</td>
+      <td>24%</td>
+      <td>23.3</td>
+      <td class="score">80.4</td>
+    </tr><tr>
+      <td class="rank">7</td>
+      <td class="fund-name">Bandhan Small Cap Dir Gr </td>
+      <td class="cat">Small Cap</td>
+      <td style="color:#c0392b;font-weight:600">-3.3%</td>
+      <td style="color:#2d8a4e">5.9</td>
+      <td>0.49%</td>
+      <td>87%</td>
+      <td>1.05</td>
+      <td>23%</td>
+      <td>16.1</td>
+      <td class="score">79.6</td>
+    </tr><tr>
+      <td class="rank">8</td>
+      <td class="fund-name">Nippon India Multi Cap Dir Gr </td>
+      <td class="cat">Multi Cap</td>
+      <td style="color:#c0392b;font-weight:600">-2.3%</td>
+      <td style="color:#2d8a4e">5.7</td>
+      <td>0.71%</td>
+      <td>97%</td>
+      <td>0.80</td>
+      <td>26%</td>
+      <td>29.1</td>
+      <td class="score">79.4</td>
+    </tr><tr>
+      <td class="rank">9</td>
+      <td class="fund-name">SBI ELSS Tax Saver Fund-Reg(G) </td>
+      <td class="cat">ELSS</td>
+      <td style="color:#c0392b;font-weight:600">-3.4%</td>
+      <td style="color:#2d8a4e">0.6</td>
+      <td>0.42%</td>
+      <td>97%</td>
+      <td>0.30</td>
+      <td>21%</td>
+      <td>18.5</td>
+      <td class="score">79.4</td>
+    </tr><tr>
+      <td class="rank">10</td>
+      <td class="fund-name">HDFC ELSS Tax saver(G) </td>
+      <td class="cat">ELSS</td>
+      <td style="color:#c0392b;font-weight:600">-1.3%</td>
+      <td style="color:#2d8a4e">0.3</td>
+      <td>0.55%</td>
+      <td>98%</td>
+      <td>0.27</td>
+      <td>21%</td>
+      <td>21.6</td>
+      <td class="score">79.2</td>
+    </tr><tr>
+      <td class="rank">11</td>
+      <td class="fund-name">Motilal Oswal ELSS Tax Saver Fund-Reg(G) </td>
+      <td class="cat">ELSS</td>
+      <td style="color:#c0392b;font-weight:600">-1.5%</td>
+      <td style="color:#2d8a4e">0.4</td>
+      <td>0.67%</td>
+      <td>99%</td>
+      <td>0.24</td>
+      <td>55%</td>
+      <td>48.2</td>
+      <td class="score">79.1</td>
+    </tr><tr>
+      <td class="rank">12</td>
+      <td class="fund-name">ICICI Pru Large & Mid Cap Dir Gr </td>
+      <td class="cat">Large & Mid Cap</td>
+      <td style="color:#c0392b;font-weight:600">-0.1%</td>
+      <td style="color:#2d8a4e">5.0</td>
+      <td>0.77%</td>
+      <td>94%</td>
+      <td>0.84</td>
+      <td>60%</td>
+      <td>23.8</td>
+      <td class="score">78.8</td>
+    </tr><tr>
+      <td class="rank">13</td>
+      <td class="fund-name">ICICI Pru Focused Equity Dir Gr </td>
+      <td class="cat">Focused</td>
+      <td style="color:#2d8a4e;font-weight:600">+0.7%</td>
+      <td style="color:#2d8a4e">5.3</td>
+      <td>0.58%</td>
+      <td>97%</td>
+      <td>0.85</td>
+      <td>101%</td>
+      <td>18.9</td>
+      <td class="score">78.5</td>
+    </tr><tr>
+      <td class="rank">14</td>
+      <td class="fund-name">HDFC Mid Cap Dir Gr </td>
+      <td class="cat">Mid Cap</td>
+      <td style="color:#2d8a4e;font-weight:600">+1.4%</td>
+      <td style="color:#2d8a4e">3.8</td>
+      <td>0.76%</td>
+      <td>92%</td>
+      <td>0.99</td>
+      <td>7%</td>
+      <td>23.8</td>
+      <td class="score">78.4</td>
+    </tr><tr>
+      <td class="rank">15</td>
+      <td class="fund-name">HSBC Value Dir Gr </td>
+      <td class="cat">Value/Contra</td>
+      <td style="color:#c0392b;font-weight:600">-0.1%</td>
+      <td style="color:#2d8a4e">6.1</td>
+      <td>0.74%</td>
+      <td>93%</td>
+      <td>0.85</td>
+      <td>31%</td>
+      <td>16.5</td>
+      <td class="score">77.9</td>
+    </tr><tr>
+      <td class="rank">16</td>
+      <td class="fund-name">Bank of India Flexi Cap Fund Dir Gr </td>
+      <td class="cat">Flexi Cap</td>
+      <td style="color:#c0392b;font-weight:600">-3.6%</td>
+      <td style="color:#2d8a4e">5.8</td>
+      <td>0.52%</td>
+      <td>94%</td>
+      <td>0.79</td>
+      <td>68%</td>
+      <td>21.0</td>
+      <td class="score">77.7</td>
+    </tr><tr>
+      <td class="rank">17</td>
+      <td class="fund-name">Parag Parikh Flexi Cap Dir Gr </td>
+      <td class="cat">Flexi Cap</td>
+      <td style="color:#2d8a4e;font-weight:600">+2.4%</td>
+      <td style="color:#2d8a4e">6.1</td>
+      <td>0.63%</td>
+      <td>67%</td>
+      <td>1.05</td>
+      <td>46%</td>
+      <td>15.7</td>
+      <td class="score">77.7</td>
+    </tr><tr>
+      <td class="rank">18</td>
+      <td class="fund-name">Nippon India Growth Mid Cap Dir Gr </td>
+      <td class="cat">Mid Cap</td>
+      <td style="color:#2d8a4e;font-weight:600">+0.7%</td>
+      <td style="color:#2d8a4e">3.1</td>
+      <td>0.72%</td>
+      <td>99%</td>
+      <td>0.94</td>
+      <td>3%</td>
+      <td>26.1</td>
+      <td class="score">77.3</td>
+    </tr><tr>
+      <td class="rank">19</td>
+      <td class="fund-name">Bandhan Large & Mid Cap Dir Gr </td>
+      <td class="cat">Large & Mid Cap</td>
+      <td style="color:#c0392b;font-weight:600">-1.7%</td>
+      <td style="color:#2d8a4e">4.0</td>
+      <td>0.54%</td>
+      <td>96%</td>
+      <td>0.95</td>
+      <td>124%</td>
+      <td>20.6</td>
+      <td class="score">77.2</td>
+    </tr><tr>
+      <td class="rank">20</td>
+      <td class="fund-name">Invesco India Mid Cap Dir Gr </td>
+      <td class="cat">Mid Cap</td>
+      <td style="color:#2d8a4e;font-weight:600">+0.8%</td>
+      <td style="color:#2d8a4e">1.9</td>
+      <td>0.54%</td>
+      <td>99%</td>
+      <td>0.92</td>
+      <td>32%</td>
+      <td>43.9</td>
+      <td class="score">77.1</td>
+    </tr></tbody></table></div>
+</div>
+
+<!-- BY CATEGORY -->
+<div id="categories" class="tab-content">
+  <h2 style="font-size:1.1rem;margin-bottom:16px;">Top 10 Per Category</h2>
+  <div class="cat-section">
+      <h3>Dividend Yield <span class="cat-count">(11 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">ICICI Pru Dividend Yield Eq Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.7%</td>
+          <td style="color:#2d8a4e">8.8</td>
+          <td>0.57%</td>
+          <td>93%</td>
+          <td>0.95</td>
+          <td>33%</td>
+          <td>18.9</td>
+          <td>67</td>
+          <td class="score">89.0</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">Tata Dividend Yield Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.3%</td>
+          <td style="color:#2d8a4e">0.1</td>
+          <td>0.60%</td>
+          <td>97%</td>
+          <td>0.66</td>
+          <td>30%</td>
+          <td>23.4</td>
+          <td>71</td>
+          <td class="score">60.9</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">HDFC Dividend Yield Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-6.2%</td>
+          <td style="color:#2d8a4e">4.4</td>
+          <td>0.78%</td>
+          <td>99%</td>
+          <td>0.56</td>
+          <td>6%</td>
+          <td>19.2</td>
+          <td>129</td>
+          <td class="score">59.3</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Aditya BSL Div Yield Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-4.8%</td>
+          <td style="color:#2d8a4e">5.2</td>
+          <td>1.35%</td>
+          <td>94%</td>
+          <td>0.66</td>
+          <td>28%</td>
+          <td>15.6</td>
+          <td>50</td>
+          <td class="score">56.3</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">LIC MF Dividend Yield Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-5.3%</td>
+          <td style="color:#2d8a4e">2.9</td>
+          <td>0.77%</td>
+          <td>98%</td>
+          <td>0.70</td>
+          <td>65%</td>
+          <td>22.6</td>
+          <td>66</td>
+          <td class="score">54.5</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">UTI Dividend Yield Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-4.1%</td>
+          <td style="color:#2d8a4e">3.1</td>
+          <td>1.45%</td>
+          <td>93%</td>
+          <td>0.75</td>
+          <td>17%</td>
+          <td>17.6</td>
+          <td>54</td>
+          <td class="score">51.4</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">SBI Dividend Yield Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-4.0%</td>
+          <td style="color:#c0392b">-0.1</td>
+          <td>0.80%</td>
+          <td>89%</td>
+          <td>0.45</td>
+          <td>19%</td>
+          <td>19.6</td>
+          <td>42</td>
+          <td class="score">46.2</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Sundaram Div Yield Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-5.4%</td>
+          <td style="color:#2d8a4e">2.0</td>
+          <td>1.09%</td>
+          <td>90%</td>
+          <td>0.59</td>
+          <td>32%</td>
+          <td>16.1</td>
+          <td>57</td>
+          <td class="score">44.0</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">Franklin India Dividend Yield Fund(G) </td>
+          <td style="color:#c0392b;font-weight:600">-6.5%</td>
+          <td style="color:#2d8a4e">0.1</td>
+          <td>0.93%</td>
+          <td>80%</td>
+          <td>0.20</td>
+          <td>33%</td>
+          <td>14.2</td>
+          <td>44</td>
+          <td class="score">28.9</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>ELSS <span class="cat-count">(39 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">SBI ELSS Tax Saver Fund-Reg(G) </td>
+          <td style="color:#c0392b;font-weight:600">-3.4%</td>
+          <td style="color:#2d8a4e">0.6</td>
+          <td>0.42%</td>
+          <td>97%</td>
+          <td>0.30</td>
+          <td>21%</td>
+          <td>18.5</td>
+          <td>76</td>
+          <td class="score">79.4</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">HDFC ELSS Tax saver(G) </td>
+          <td style="color:#c0392b;font-weight:600">-1.3%</td>
+          <td style="color:#2d8a4e">0.3</td>
+          <td>0.55%</td>
+          <td>98%</td>
+          <td>0.27</td>
+          <td>21%</td>
+          <td>21.6</td>
+          <td>55</td>
+          <td class="score">79.2</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Motilal Oswal ELSS Tax Saver Fund-Reg(G) </td>
+          <td style="color:#c0392b;font-weight:600">-1.5%</td>
+          <td style="color:#2d8a4e">0.4</td>
+          <td>0.67%</td>
+          <td>99%</td>
+          <td>0.24</td>
+          <td>55%</td>
+          <td>48.2</td>
+          <td>25</td>
+          <td class="score">79.1</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">DSP ELSS Tax Saver Fund-Reg(G) </td>
+          <td style="color:#c0392b;font-weight:600">-2.9%</td>
+          <td style="color:#2d8a4e">0.2</td>
+          <td>0.49%</td>
+          <td>99%</td>
+          <td>0.25</td>
+          <td>36%</td>
+          <td>18.2</td>
+          <td>62</td>
+          <td class="score">74.6</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">Nippon India ELSS Tax Saver Fund(G) </td>
+          <td style="color:#c0392b;font-weight:600">-2.4%</td>
+          <td style="color:#2d8a4e">0.1</td>
+          <td>0.56%</td>
+          <td>100%</td>
+          <td>0.23</td>
+          <td>13%</td>
+          <td>20.2</td>
+          <td>63</td>
+          <td class="score">73.9</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">Aditya Birla SL ELSS Tax Saver Fund(G) </td>
+          <td style="color:#c0392b;font-weight:600">-1.8%</td>
+          <td style="color:#c0392b">-0.0</td>
+          <td>0.54%</td>
+          <td>99%</td>
+          <td>0.19</td>
+          <td>28%</td>
+          <td>23.9</td>
+          <td>59</td>
+          <td class="score">71.6</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">Tata ELSS Fund-Reg(G) </td>
+          <td style="color:#c0392b;font-weight:600">-1.7%</td>
+          <td style="color:#c0392b">-0.0</td>
+          <td>0.68%</td>
+          <td>98%</td>
+          <td>0.19</td>
+          <td>33%</td>
+          <td>23.2</td>
+          <td>60</td>
+          <td class="score">69.5</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">HSBC ELSS Tax saver Fund-Reg(G) </td>
+          <td style="color:#c0392b;font-weight:600">-2.3%</td>
+          <td style="color:#2d8a4e">0.2</td>
+          <td>0.77%</td>
+          <td>98%</td>
+          <td>0.23</td>
+          <td>7%</td>
+          <td>24.2</td>
+          <td>77</td>
+          <td class="score">69.2</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">WOC ELSS Tax Saver Fund-Reg(G) </td>
+          <td style="color:#c0392b;font-weight:600">-1.4%</td>
+          <td style="color:#2d8a4e">0.5</td>
+          <td>1.18%</td>
+          <td>97%</td>
+          <td>0.25</td>
+          <td>32%</td>
+          <td>23.2</td>
+          <td>133</td>
+          <td class="score">69.2</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">Baroda BNP Paribas ELSS Tax Saver Fund-Reg(G) </td>
+          <td style="color:#c0392b;font-weight:600">-0.2%</td>
+          <td style="color:#2d8a4e">0.2</td>
+          <td>1.08%</td>
+          <td>95%</td>
+          <td>0.24</td>
+          <td>37%</td>
+          <td>28.2</td>
+          <td>49</td>
+          <td class="score">69.0</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Flexi Cap <span class="cat-count">(47 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">HDFC Flexi Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+2.1%</td>
+          <td style="color:#2d8a4e">6.8</td>
+          <td>0.70%</td>
+          <td>93%</td>
+          <td>0.89</td>
+          <td>9%</td>
+          <td>21.6</td>
+          <td>59</td>
+          <td class="score">89.8</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">Bank of India Flexi Cap Fund Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.6%</td>
+          <td style="color:#2d8a4e">5.8</td>
+          <td>0.52%</td>
+          <td>94%</td>
+          <td>0.79</td>
+          <td>68%</td>
+          <td>21.0</td>
+          <td>58</td>
+          <td class="score">77.7</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Parag Parikh Flexi Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+2.4%</td>
+          <td style="color:#2d8a4e">6.1</td>
+          <td>0.63%</td>
+          <td>67%</td>
+          <td>1.05</td>
+          <td>46%</td>
+          <td>15.7</td>
+          <td>43</td>
+          <td class="score">77.7</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Kotak Flexicap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.2%</td>
+          <td style="color:#2d8a4e">0.8</td>
+          <td>0.59%</td>
+          <td>97%</td>
+          <td>0.55</td>
+          <td>10%</td>
+          <td>23.1</td>
+          <td>57</td>
+          <td class="score">73.0</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">Edelweiss Flexi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.5%</td>
+          <td style="color:#2d8a4e">3.0</td>
+          <td>0.43%</td>
+          <td>95%</td>
+          <td>0.69</td>
+          <td>45%</td>
+          <td>23.6</td>
+          <td>85</td>
+          <td class="score">72.2</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">Aditya BSL Flexi Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.5%</td>
+          <td style="color:#2d8a4e">1.5</td>
+          <td>0.85%</td>
+          <td>99%</td>
+          <td>0.68</td>
+          <td>23%</td>
+          <td>26.1</td>
+          <td>77</td>
+          <td class="score">72.0</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">Mirae Asset Flexi Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.4%</td>
+          <td style="color:#2d8a4e">0.0</td>
+          <td>0.44%</td>
+          <td>98%</td>
+          <td>0.60</td>
+          <td>28%</td>
+          <td>22.9</td>
+          <td>85</td>
+          <td class="score">70.6</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Franklin India Flexi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.8%</td>
+          <td style="color:#2d8a4e">2.7</td>
+          <td>0.89%</td>
+          <td>95%</td>
+          <td>0.64</td>
+          <td>25%</td>
+          <td>23.1</td>
+          <td>54</td>
+          <td class="score">69.5</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">Helios Flexi Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.4%</td>
+          <td style="color:#2d8a4e">0.2</td>
+          <td>0.47%</td>
+          <td>99%</td>
+          <td>0.12</td>
+          <td>22%</td>
+          <td>30.3</td>
+          <td>64</td>
+          <td class="score">68.8</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">Invesco India Flexi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.2%</td>
+          <td style="color:#2d8a4e">0.4</td>
+          <td>0.52%</td>
+          <td>99%</td>
+          <td>0.68</td>
+          <td>38%</td>
+          <td>36.9</td>
+          <td>63</td>
+          <td class="score">68.4</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Focused <span class="cat-count">(29 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">HDFC Focused Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+1.9%</td>
+          <td style="color:#2d8a4e">8.3</td>
+          <td>0.63%</td>
+          <td>92%</td>
+          <td>0.89</td>
+          <td>7%</td>
+          <td>21.5</td>
+          <td>29</td>
+          <td class="score">88.0</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">ICICI Pru Focused Equity Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.7%</td>
+          <td style="color:#2d8a4e">5.3</td>
+          <td>0.58%</td>
+          <td>97%</td>
+          <td>0.85</td>
+          <td>101%</td>
+          <td>18.9</td>
+          <td>30</td>
+          <td class="score">78.5</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Kotak Focused Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+1.1%</td>
+          <td style="color:#2d8a4e">2.0</td>
+          <td>0.54%</td>
+          <td>96%</td>
+          <td>0.66</td>
+          <td>20%</td>
+          <td>26.6</td>
+          <td>29</td>
+          <td class="score">72.9</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Mahindra Manulife Focused Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.7%</td>
+          <td style="color:#2d8a4e">5.5</td>
+          <td>0.57%</td>
+          <td>96%</td>
+          <td>0.79</td>
+          <td>49%</td>
+          <td>19.0</td>
+          <td>30</td>
+          <td class="score">72.1</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">SBI Focused Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+5.8%</td>
+          <td style="color:#2d8a4e">3.0</td>
+          <td>0.73%</td>
+          <td>77%</td>
+          <td>0.82</td>
+          <td>35%</td>
+          <td>26.4</td>
+          <td>26</td>
+          <td class="score">70.6</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">Bandhan Focused Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.3%</td>
+          <td style="color:#2d8a4e">1.2</td>
+          <td>0.78%</td>
+          <td>96%</td>
+          <td>0.66</td>
+          <td>54%</td>
+          <td>15.7</td>
+          <td>29</td>
+          <td class="score">65.9</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">Invesco India Focused Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-5.0%</td>
+          <td style="color:#2d8a4e">3.1</td>
+          <td>0.48%</td>
+          <td>94%</td>
+          <td>0.79</td>
+          <td>28%</td>
+          <td>34.2</td>
+          <td>20</td>
+          <td class="score">65.8</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Aditya BSL Focused Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.6%</td>
+          <td style="color:#2d8a4e">1.1</td>
+          <td>0.88%</td>
+          <td>97%</td>
+          <td>0.62</td>
+          <td>24%</td>
+          <td>24.2</td>
+          <td>29</td>
+          <td class="score">64.6</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">Canara Robeco Focused Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.7%</td>
+          <td style="color:#2d8a4e">0.1</td>
+          <td>0.55%</td>
+          <td>96%</td>
+          <td>0.60</td>
+          <td>36%</td>
+          <td>28.8</td>
+          <td>30</td>
+          <td class="score">64.1</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">ITI Focused Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.4%</td>
+          <td style="color:#2d8a4e">0.3</td>
+          <td>0.58%</td>
+          <td>95%</td>
+          <td>0.18</td>
+          <td>90%</td>
+          <td>24.2</td>
+          <td>29</td>
+          <td class="score">62.5</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Large & Mid Cap <span class="cat-count">(33 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">Motilal Oswal Large & Midcap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+1.9%</td>
+          <td style="color:#2d8a4e">4.4</td>
+          <td>0.75%</td>
+          <td>99%</td>
+          <td>0.79</td>
+          <td>54%</td>
+          <td>44.5</td>
+          <td>30</td>
+          <td class="score">86.4</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">ICICI Pru Large & Mid Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.1%</td>
+          <td style="color:#2d8a4e">5.0</td>
+          <td>0.77%</td>
+          <td>94%</td>
+          <td>0.84</td>
+          <td>60%</td>
+          <td>23.8</td>
+          <td>83</td>
+          <td class="score">78.8</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Bandhan Large & Mid Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.7%</td>
+          <td style="color:#2d8a4e">4.0</td>
+          <td>0.54%</td>
+          <td>96%</td>
+          <td>0.95</td>
+          <td>124%</td>
+          <td>20.6</td>
+          <td>112</td>
+          <td class="score">77.2</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Kotak Large & Midcap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.9%</td>
+          <td style="color:#2d8a4e">1.7</td>
+          <td>0.55%</td>
+          <td>96%</td>
+          <td>0.69</td>
+          <td>24%</td>
+          <td>23.4</td>
+          <td>66</td>
+          <td class="score">74.3</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">SBI Large & Midcap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+1.1%</td>
+          <td style="color:#2d8a4e">2.7</td>
+          <td>0.72%</td>
+          <td>93%</td>
+          <td>0.69</td>
+          <td>55%</td>
+          <td>24.9</td>
+          <td>85</td>
+          <td class="score">74.2</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">Edelweiss Large & Mid Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.6%</td>
+          <td style="color:#2d8a4e">1.0</td>
+          <td>0.42%</td>
+          <td>97%</td>
+          <td>0.70</td>
+          <td>23%</td>
+          <td>25.8</td>
+          <td>91</td>
+          <td class="score">71.8</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">UTI Large & Mid Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.6%</td>
+          <td style="color:#2d8a4e">2.9</td>
+          <td>0.87%</td>
+          <td>95%</td>
+          <td>0.85</td>
+          <td>36%</td>
+          <td>18.1</td>
+          <td>72</td>
+          <td class="score">71.0</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">HDFC Large and Mid Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.9%</td>
+          <td style="color:#2d8a4e">2.1</td>
+          <td>0.86%</td>
+          <td>99%</td>
+          <td>0.67</td>
+          <td>3%</td>
+          <td>20.8</td>
+          <td>237</td>
+          <td class="score">67.6</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">HSBC Large & Mid Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.1%</td>
+          <td style="color:#2d8a4e">1.2</td>
+          <td>0.79%</td>
+          <td>98%</td>
+          <td>0.70</td>
+          <td>99%</td>
+          <td>29.2</td>
+          <td>82</td>
+          <td class="score">67.3</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">DSP Large & Mid Cap Fund Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.1%</td>
+          <td style="color:#2d8a4e">1.2</td>
+          <td>0.63%</td>
+          <td>97%</td>
+          <td>0.74</td>
+          <td>33%</td>
+          <td>19.2</td>
+          <td>77</td>
+          <td class="score">67.1</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Large Cap <span class="cat-count">(35 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">Nippon India Large Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.1%</td>
+          <td style="color:#2d8a4e">4.7</td>
+          <td>0.65%</td>
+          <td>96%</td>
+          <td>0.68</td>
+          <td>24%</td>
+          <td>23.3</td>
+          <td>65</td>
+          <td class="score">80.4</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">ICICI Prudential Large Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.5%</td>
+          <td style="color:#2d8a4e">3.1</td>
+          <td>0.85%</td>
+          <td>94%</td>
+          <td>0.62</td>
+          <td>17%</td>
+          <td>20.4</td>
+          <td>71</td>
+          <td class="score">71.4</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Invesco India largecap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.0%</td>
+          <td style="color:#2d8a4e">2.1</td>
+          <td>0.71%</td>
+          <td>99%</td>
+          <td>0.57</td>
+          <td>61%</td>
+          <td>29.1</td>
+          <td>49</td>
+          <td class="score">69.8</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Motilal Oswal Large Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+1.7%</td>
+          <td style="color:#2d8a4e">0.6</td>
+          <td>0.80%</td>
+          <td>96%</td>
+          <td>0.13</td>
+          <td>53%</td>
+          <td>21.2</td>
+          <td>51</td>
+          <td class="score">68.0</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">SBI Large Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.7%</td>
+          <td style="color:#2d8a4e">0.3</td>
+          <td>0.79%</td>
+          <td>96%</td>
+          <td>0.41</td>
+          <td>61%</td>
+          <td>25.0</td>
+          <td>45</td>
+          <td class="score">65.2</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">Kotak Large Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.1%</td>
+          <td style="color:#2d8a4e">0.9</td>
+          <td>0.63%</td>
+          <td>96%</td>
+          <td>0.48</td>
+          <td>25%</td>
+          <td>20.9</td>
+          <td>60</td>
+          <td class="score">64.8</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">DSP Large cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.1%</td>
+          <td style="color:#2d8a4e">1.2</td>
+          <td>0.85%</td>
+          <td>90%</td>
+          <td>0.66</td>
+          <td>22%</td>
+          <td>17.2</td>
+          <td>34</td>
+          <td class="score">63.9</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Canara Robeco Large Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.5%</td>
+          <td style="color:#2d8a4e">0.5</td>
+          <td>0.52%</td>
+          <td>97%</td>
+          <td>0.47</td>
+          <td>15%</td>
+          <td>24.2</td>
+          <td>59</td>
+          <td class="score">63.8</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">Bandhan Large Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.3%</td>
+          <td style="color:#2d8a4e">1.3</td>
+          <td>0.86%</td>
+          <td>99%</td>
+          <td>0.58</td>
+          <td>81%</td>
+          <td>23.3</td>
+          <td>68</td>
+          <td class="score">63.2</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">HDFC Large Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.9%</td>
+          <td style="color:#2d8a4e">2.0</td>
+          <td>1.01%</td>
+          <td>96%</td>
+          <td>0.44</td>
+          <td>31%</td>
+          <td>22.7</td>
+          <td>45</td>
+          <td class="score">61.7</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Mid Cap <span class="cat-count">(38 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">HDFC Mid Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+1.4%</td>
+          <td style="color:#2d8a4e">3.8</td>
+          <td>0.76%</td>
+          <td>92%</td>
+          <td>0.99</td>
+          <td>7%</td>
+          <td>23.8</td>
+          <td>78</td>
+          <td class="score">78.4</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">Nippon India Growth Mid Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.7%</td>
+          <td style="color:#2d8a4e">3.1</td>
+          <td>0.72%</td>
+          <td>99%</td>
+          <td>0.94</td>
+          <td>3%</td>
+          <td>26.1</td>
+          <td>99</td>
+          <td class="score">77.3</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Invesco India Mid Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.8%</td>
+          <td style="color:#2d8a4e">1.9</td>
+          <td>0.54%</td>
+          <td>99%</td>
+          <td>0.92</td>
+          <td>32%</td>
+          <td>43.9</td>
+          <td>44</td>
+          <td class="score">77.1</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Invesco India large& mid cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.8%</td>
+          <td style="color:#2d8a4e">2.1</td>
+          <td>0.60%</td>
+          <td>99%</td>
+          <td>0.85</td>
+          <td>32%</td>
+          <td>43.9</td>
+          <td>44</td>
+          <td class="score">76.3</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">Edelweiss Mid Cap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+0.3%</td>
+          <td style="color:#2d8a4e">2.9</td>
+          <td>0.46%</td>
+          <td>94%</td>
+          <td>0.96</td>
+          <td>40%</td>
+          <td>28.1</td>
+          <td>86</td>
+          <td class="score">74.8</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">ICICI Pru MidCap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+4.7%</td>
+          <td style="color:#2d8a4e">1.7</td>
+          <td>1.03%</td>
+          <td>98%</td>
+          <td>0.94</td>
+          <td>24%</td>
+          <td>30.6</td>
+          <td>81</td>
+          <td class="score">73.4</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">Invesco India Midcap Fund-Reg(G) </td>
+          <td style="color:#2d8a4e;font-weight:600">+3.0%</td>
+          <td style="color:#2d8a4e">0.9</td>
+          <td>0.56%</td>
+          <td>99%</td>
+          <td>0.30</td>
+          <td>31%</td>
+          <td>43.0</td>
+          <td>44</td>
+          <td class="score">71.7</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Kotak Midcap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.5%</td>
+          <td style="color:#2d8a4e">1.3</td>
+          <td>0.38%</td>
+          <td>99%</td>
+          <td>0.76</td>
+          <td>24%</td>
+          <td>27.1</td>
+          <td>65</td>
+          <td class="score">71.4</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">Mahindra Manulife Mid Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.4%</td>
+          <td style="color:#2d8a4e">2.4</td>
+          <td>0.58%</td>
+          <td>97%</td>
+          <td>0.96</td>
+          <td>60%</td>
+          <td>30.2</td>
+          <td>58</td>
+          <td class="score">71.1</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">HSBC Midcap Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+1.3%</td>
+          <td style="color:#2d8a4e">0.8</td>
+          <td>0.65%</td>
+          <td>99%</td>
+          <td>0.90</td>
+          <td>99%</td>
+          <td>37.4</td>
+          <td>80</td>
+          <td class="score">69.2</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Multi Cap <span class="cat-count">(39 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">Nippon India Multi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.3%</td>
+          <td style="color:#2d8a4e">5.7</td>
+          <td>0.71%</td>
+          <td>97%</td>
+          <td>0.80</td>
+          <td>26%</td>
+          <td>29.1</td>
+          <td>122</td>
+          <td class="score">79.4</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">Mahindra Manulife Multi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.4%</td>
+          <td style="color:#2d8a4e">3.7</td>
+          <td>0.53%</td>
+          <td>94%</td>
+          <td>0.77</td>
+          <td>112%</td>
+          <td>27.6</td>
+          <td>78</td>
+          <td class="score">69.0</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Kotak Multicap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.2%</td>
+          <td style="color:#2d8a4e">0.3</td>
+          <td>0.45%</td>
+          <td>97%</td>
+          <td>0.87</td>
+          <td>50%</td>
+          <td>17.2</td>
+          <td>71</td>
+          <td class="score">63.6</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">ICICI Pru Multicap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.1%</td>
+          <td style="color:#2d8a4e">2.7</td>
+          <td>0.94%</td>
+          <td>98%</td>
+          <td>0.75</td>
+          <td>94%</td>
+          <td>30.0</td>
+          <td>147</td>
+          <td class="score">63.2</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">Bank of India Multi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.7%</td>
+          <td style="color:#2d8a4e">0.2</td>
+          <td>0.78%</td>
+          <td>96%</td>
+          <td>0.85</td>
+          <td>65%</td>
+          <td>22.7</td>
+          <td>57</td>
+          <td class="score">61.6</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">ITI Multi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-4.0%</td>
+          <td style="color:#c0392b">-0.3</td>
+          <td>0.33%</td>
+          <td>99%</td>
+          <td>0.71</td>
+          <td>127%</td>
+          <td>21.5</td>
+          <td>81</td>
+          <td class="score">59.8</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">Baroda BNP P Multi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.7%</td>
+          <td style="color:#2d8a4e">2.0</td>
+          <td>0.90%</td>
+          <td>97%</td>
+          <td>0.66</td>
+          <td>111%</td>
+          <td>30.2</td>
+          <td>68</td>
+          <td class="score">59.1</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Axis Multicap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.2%</td>
+          <td style="color:#2d8a4e">0.3</td>
+          <td>0.69%</td>
+          <td>94%</td>
+          <td>0.89</td>
+          <td>50%</td>
+          <td>27.8</td>
+          <td>117</td>
+          <td class="score">59.0</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">HSBC Multi Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.2%</td>
+          <td style="color:#2d8a4e">0.2</td>
+          <td>0.61%</td>
+          <td>95%</td>
+          <td>0.81</td>
+          <td>42%</td>
+          <td>25.8</td>
+          <td>98</td>
+          <td class="score">58.1</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">SBI Multicap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.7%</td>
+          <td style="color:#2d8a4e">0.0</td>
+          <td>0.84%</td>
+          <td>93%</td>
+          <td>0.64</td>
+          <td>47%</td>
+          <td>25.9</td>
+          <td>58</td>
+          <td class="score">57.7</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Small Cap <span class="cat-count">(36 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">Invesco India Smallcap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.0%</td>
+          <td style="color:#2d8a4e">5.2</td>
+          <td>0.40%</td>
+          <td>99%</td>
+          <td>0.83</td>
+          <td>52%</td>
+          <td>41.6</td>
+          <td>63</td>
+          <td class="score">81.1</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">Bandhan Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.3%</td>
+          <td style="color:#2d8a4e">5.9</td>
+          <td>0.49%</td>
+          <td>87%</td>
+          <td>1.05</td>
+          <td>23%</td>
+          <td>16.1</td>
+          <td>251</td>
+          <td class="score">79.6</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Nippon India Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-6.9%</td>
+          <td style="color:#2d8a4e">5.3</td>
+          <td>0.65%</td>
+          <td>96%</td>
+          <td>0.67</td>
+          <td>15%</td>
+          <td>25.1</td>
+          <td>247</td>
+          <td class="score">72.0</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Edelweiss Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-5.1%</td>
+          <td style="color:#2d8a4e">3.6</td>
+          <td>0.45%</td>
+          <td>97%</td>
+          <td>0.68</td>
+          <td>23%</td>
+          <td>30.0</td>
+          <td>86</td>
+          <td class="score">69.9</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">ITI Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.4%</td>
+          <td style="color:#2d8a4e">2.1</td>
+          <td>0.39%</td>
+          <td>96%</td>
+          <td>0.88</td>
+          <td>118%</td>
+          <td>33.0</td>
+          <td>79</td>
+          <td class="score">68.3</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">DSP Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-2.4%</td>
+          <td style="color:#2d8a4e">2.6</td>
+          <td>0.79%</td>
+          <td>93%</td>
+          <td>0.62</td>
+          <td>11%</td>
+          <td>25.8</td>
+          <td>82</td>
+          <td class="score">66.4</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">Union Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.3%</td>
+          <td style="color:#2d8a4e">3.0</td>
+          <td>1.03%</td>
+          <td>98%</td>
+          <td>0.69</td>
+          <td>48%</td>
+          <td>36.3</td>
+          <td>68</td>
+          <td class="score">66.4</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Axis Small Cap Fund Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.6%</td>
+          <td style="color:#2d8a4e">3.7</td>
+          <td>0.60%</td>
+          <td>88%</td>
+          <td>0.62</td>
+          <td>38%</td>
+          <td>28.0</td>
+          <td>137</td>
+          <td class="score">66.3</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">Sundaram Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.2%</td>
+          <td style="color:#2d8a4e">2.9</td>
+          <td>0.83%</td>
+          <td>96%</td>
+          <td>0.64</td>
+          <td>32%</td>
+          <td>24.9</td>
+          <td>68</td>
+          <td class="score">65.2</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">Bank of India Small Cap Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-5.7%</td>
+          <td style="color:#2d8a4e">3.5</td>
+          <td>0.51%</td>
+          <td>95%</td>
+          <td>0.64</td>
+          <td>96%</td>
+          <td>31.6</td>
+          <td>82</td>
+          <td class="score">64.4</td>
+        </tr></tbody></table></div><div class="cat-section">
+      <h3>Value/Contra <span class="cat-count">(25 funds)</span></h3>
+      <table class="data-table"><thead><tr>
+        <th>#</th><th>Fund</th><th>P2P (Sep 24)</th><th>Alpha 5Y</th>
+        <th>Expense</th><th>Equity%</th><th>Sharpe 3Y</th>
+        <th>Turnover</th><th>PE</th><th>Stocks</th><th>Score</th>
+      </tr></thead><tbody><tr>
+          <td class="rank">1</td>
+          <td class="fund-name">HSBC Value Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.1%</td>
+          <td style="color:#2d8a4e">6.1</td>
+          <td>0.74%</td>
+          <td>93%</td>
+          <td>0.85</td>
+          <td>31%</td>
+          <td>16.5</td>
+          <td>77</td>
+          <td class="score">77.9</td>
+        </tr><tr>
+          <td class="rank">2</td>
+          <td class="fund-name">ICICI Prudential Value Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-0.8%</td>
+          <td style="color:#2d8a4e">6.9</td>
+          <td>0.95%</td>
+          <td>95%</td>
+          <td>0.83</td>
+          <td>50%</td>
+          <td>15.1</td>
+          <td>66</td>
+          <td class="score">75.5</td>
+        </tr><tr>
+          <td class="rank">3</td>
+          <td class="fund-name">Kotak Contra Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.2%</td>
+          <td style="color:#2d8a4e">3.8</td>
+          <td>0.58%</td>
+          <td>98%</td>
+          <td>0.75</td>
+          <td>35%</td>
+          <td>22.5</td>
+          <td>61</td>
+          <td class="score">69.4</td>
+        </tr><tr>
+          <td class="rank">4</td>
+          <td class="fund-name">Templeton India Value Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-5.5%</td>
+          <td style="color:#2d8a4e">4.8</td>
+          <td>0.89%</td>
+          <td>91%</td>
+          <td>0.61</td>
+          <td>26%</td>
+          <td>15.5</td>
+          <td>46</td>
+          <td class="score">65.3</td>
+        </tr><tr>
+          <td class="rank">5</td>
+          <td class="fund-name">HDFC Value Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-1.4%</td>
+          <td style="color:#2d8a4e">3.0</td>
+          <td>0.99%</td>
+          <td>100%</td>
+          <td>0.69</td>
+          <td>24%</td>
+          <td>23.1</td>
+          <td>70</td>
+          <td class="score">64.8</td>
+        </tr><tr>
+          <td class="rank">6</td>
+          <td class="fund-name">DSP Value Dir Gr </td>
+          <td style="color:#2d8a4e;font-weight:600">+3.6%</td>
+          <td style="color:#2d8a4e">4.8</td>
+          <td>0.95%</td>
+          <td>65%</td>
+          <td>1.06</td>
+          <td>119%</td>
+          <td>19.3</td>
+          <td>69</td>
+          <td class="score">63.5</td>
+        </tr><tr>
+          <td class="rank">7</td>
+          <td class="fund-name">Invesco India Contra Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-4.4%</td>
+          <td style="color:#2d8a4e">2.6</td>
+          <td>0.51%</td>
+          <td>97%</td>
+          <td>0.66</td>
+          <td>52%</td>
+          <td>25.6</td>
+          <td>68</td>
+          <td class="score">62.2</td>
+        </tr><tr>
+          <td class="rank">8</td>
+          <td class="fund-name">Bandhan Value Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-5.5%</td>
+          <td style="color:#2d8a4e">4.9</td>
+          <td>0.72%</td>
+          <td>93%</td>
+          <td>0.58</td>
+          <td>73%</td>
+          <td>20.7</td>
+          <td>67</td>
+          <td class="score">61.5</td>
+        </tr><tr>
+          <td class="rank">9</td>
+          <td class="fund-name">SBI Contra Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-4.5%</td>
+          <td style="color:#2d8a4e">6.8</td>
+          <td>0.73%</td>
+          <td>81%</td>
+          <td>0.70</td>
+          <td>192%</td>
+          <td>16.0</td>
+          <td>82</td>
+          <td class="score">61.3</td>
+        </tr><tr>
+          <td class="rank">10</td>
+          <td class="fund-name">Nippon India Value Dir Gr </td>
+          <td style="color:#c0392b;font-weight:600">-3.6%</td>
+          <td style="color:#2d8a4e">4.4</td>
+          <td>1.05%</td>
+          <td>94%</td>
+          <td>0.82</td>
+          <td>41%</td>
+          <td>18.9</td>
+          <td>75</td>
+          <td class="score">61.1</td>
+        </tr></tbody></table></div>
+</div>
+
+<!-- CHURN -->
+<div id="churn" class="tab-content">
+  <div class="insight-box">
+    <strong>Question: Is high portfolio churn (turnover) good or bad for returns?</strong><br><br>
+    Across <strong>294 funds</strong> with both turnover and alpha data:<br>
+    Turnover vs Alpha 5Y correlation: <strong>-0.113</strong> (weak negative)<br>
+    Turnover vs P2P Return correlation: <strong>-0.258</strong> (moderate negative)<br><br>
+    <div class="verdict">
+      VERDICT: High churn HURTS drawdown resilience. Funds churning &gt;75% lost ~5.2% since Sep 24 vs ~3.1% for funds &lt;25%.
+      The golden zone is 25-50% turnover — avg alpha 1.11 with reasonable drawdown protection.
+      Above 75%, hidden transaction costs (NOT in TER) drag performance, especially during corrections.
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="chart-container"><div class="chart-title">Turnover vs Alpha 5Y</div>
+      <div class="chart-subtitle">Each dot = fund. Corr = -0.113</div>
+      <canvas id="churnAlphaChart" height="300"></canvas></div>
+    <div class="chart-container"><div class="chart-title">Turnover vs P2P Return (Sep 24)</div>
+      <div class="chart-subtitle">Drawdown resilience by churn. Corr = -0.258</div>
+      <canvas id="churnP2PChart" height="300"></canvas></div>
+  </div>
+  <div class="chart-container"><div class="chart-title">Turnover Bucket Analysis</div>
+    <table class="bucket-table"><thead><tr>
+      <th>Turnover Bucket</th><th>Count</th><th>Avg Alpha 5Y</th><th>Median Alpha</th><th>Avg P2P</th><th>Avg Sharpe 3Y</th>
+    </tr></thead><tbody><tr>
+      <td>0-25%</td><td>58</td>
+      <td style="color:#2d8a4e">1.26</td>
+      <td style="color:#2d8a4e">0.56</td>
+      <td style="color:#c0392b">-3.1%</td>
+      <td>0.48</td></tr><tr>
+      <td>25-50%</td><td>94</td>
+      <td style="color:#2d8a4e">0.95</td>
+      <td style="color:#2d8a4e">0.18</td>
+      <td style="color:#c0392b">-3.1%</td>
+      <td>0.52</td></tr><tr>
+      <td>50-75%</td><td>51</td>
+      <td style="color:#2d8a4e">1.15</td>
+      <td style="color:#2d8a4e">0.63</td>
+      <td style="color:#c0392b">-3.6%</td>
+      <td>0.47</td></tr><tr>
+      <td>75-100%</td><td>32</td>
+      <td style="color:#2d8a4e">0.39</td>
+      <td style="color:#2d8a4e">0.26</td>
+      <td style="color:#c0392b">-5.2%</td>
+      <td>0.41</td></tr><tr>
+      <td>100-200%</td><td>43</td>
+      <td style="color:#2d8a4e">0.77</td>
+      <td style="color:#2d8a4e">0.11</td>
+      <td style="color:#c0392b">-4.8%</td>
+      <td>0.41</td></tr><tr>
+      <td>200%+</td><td>11</td>
+      <td style="color:#2d8a4e">0.92</td>
+      <td style="color:#2d8a4e">0.31</td>
+      <td style="color:#c0392b">-5.1%</td>
+      <td>0.23</td></tr></tbody></table></div>
+  <div class="insight-box">
+    <strong>Key Takeaway:</strong><br>
+    Churn is NOT inherently bad — but ONLY funds in the 25-50% range consistently combine decent alpha (1.11 avg)
+    with reasonable drawdown protection. Above 75%, the hidden brokerage + STT costs silently eat returns.<br>
+    <strong>The golden zone: 25-50% turnover + positive alpha = active repositioning without overtrading.</strong>
+  </div>
+</div>
+
+<!-- PE -->
+<div id="pe" class="tab-content">
+  <div class="insight-box">
+    <strong>Question: Do low-PE funds hold up better in corrections?</strong><br><br>
+    Across <strong>286 funds</strong> with both PE and P2P data:<br>
+    PE vs P2P correlation: <strong>0.078</strong> (near zero, slightly positive)<br>
+    PB vs P2P correlation: <strong>0.089</strong> (near zero)<br><br>
+    <div class="verdict">
+      VERDICT: Counter-intuitive — PE did NOT determine drawdown resilience. Low-PE funds (&lt;18) fell MORE (-4.5%)
+      than high-PE funds (35+, -2.7%). Low PE = cyclicals (PSU banks, metals) hammered in this correction.
+      High PE = quality/defensives that held up. PE is a STYLE indicator, not a resilience indicator.
+      Alpha and stock selection matter more.
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="chart-container"><div class="chart-title">PE vs P2P Return (Sep 24)</div>
+      <div class="chart-subtitle">Each dot = fund. Corr = 0.078</div>
+      <canvas id="pePPChart" height="300"></canvas></div>
+    <div class="chart-container"><div class="chart-title">PE Bucket Performance</div>
+      <div class="chart-subtitle">Avg P2P return and 1Y return by PE range</div>
+      <canvas id="peBucketChart" height="300"></canvas></div>
+  </div>
+  <div class="chart-container"><div class="chart-title">PE Bucket Detailed Stats</div>
+    <table class="bucket-table"><thead><tr>
+      <th>PE Bucket</th><th>Count</th><th>Avg P2P</th><th>Median P2P</th><th>Avg Alpha 5Y</th><th>Avg Return 1Y</th>
+    </tr></thead><tbody><tr>
+      <td><18</td><td>31</td>
+      <td style="color:#c0392b">-4.5%</td>
+      <td style="color:#c0392b">-4.5%</td>
+      <td style="color:#2d8a4e">1.67</td>
+      <td>+9.3%</td></tr><tr>
+      <td>18-22</td><td>60</td>
+      <td style="color:#c0392b">-3.9%</td>
+      <td style="color:#c0392b">-3.6%</td>
+      <td style="color:#2d8a4e">1.34</td>
+      <td>+9.7%</td></tr><tr>
+      <td>22-26</td><td>88</td>
+      <td style="color:#c0392b">-3.8%</td>
+      <td style="color:#c0392b">-3.2%</td>
+      <td style="color:#2d8a4e">0.99</td>
+      <td>+10.6%</td></tr><tr>
+      <td>26-30</td><td>58</td>
+      <td style="color:#c0392b">-3.9%</td>
+      <td style="color:#c0392b">-3.4%</td>
+      <td style="color:#2d8a4e">0.57</td>
+      <td>+10.8%</td></tr><tr>
+      <td>30-35</td><td>30</td>
+      <td style="color:#c0392b">-3.2%</td>
+      <td style="color:#c0392b">-3.3%</td>
+      <td style="color:#2d8a4e">0.32</td>
+      <td>+12.2%</td></tr><tr>
+      <td>35+</td><td>19</td>
+      <td style="color:#c0392b">-2.6%</td>
+      <td style="color:#c0392b">-1.8%</td>
+      <td style="color:#2d8a4e">1.12</td>
+      <td>+14.5%</td></tr></tbody></table></div>
+</div>
+
+<!-- SEPARATE -->
+<div id="separate" class="tab-content">
+  <h2 style="font-size:1.1rem;margin-bottom:8px;">Sectoral, Index, Gold, International &amp; Other</h2>
+  <p style="color:var(--text-dim);font-size:0.8rem;margin-bottom:16px;">
+    Shown separately, NOT scored. Sectoral = sector bet. Index = no active management. Gold/International = different asset class.</p>
+  <div style="overflow-x:auto;">
+  <table class="data-table"><thead><tr>
+    <th>Segment</th><th>Fund</th><th>P2P (Sep 24)</th><th>Return 1Y</th><th>Return 3Y</th><th>PE</th><th>Turnover</th>
+  </tr></thead><tbody><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">360 ONE Quant Dir Gr</td>
+          <td style="color:#c0392b">-6.2%</td>
+          <td>9.1%</td>
+          <td>22.5%</td>
+          <td>25.5</td>
+          <td>105%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Business Cycle Dir Gr</td>
+          <td style="color:#c0392b">-2.8%</td>
+          <td>11.8%</td>
+          <td>13.6%</td>
+          <td>27.3</td>
+          <td>32%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Conglomerate Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>9.9%</td>
+          <td>—</td>
+          <td>25.6</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Consumption Dir Gr</td>
+          <td style="color:#c0392b">-7.2%</td>
+          <td>2.2%</td>
+          <td>13.3%</td>
+          <td>34.4</td>
+          <td>18%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Digital India Dir Gr</td>
+          <td style="color:#c0392b">-14.1%</td>
+          <td>-0.2%</td>
+          <td>7.0%</td>
+          <td>27.4</td>
+          <td>47%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL ESG Intg Stgy Dir Gr</td>
+          <td style="color:#c0392b">-2.2%</td>
+          <td>11.2%</td>
+          <td>14.6%</td>
+          <td>23.9</td>
+          <td>16%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Infrastructure Dir Gr</td>
+          <td style="color:#c0392b">-2.5%</td>
+          <td>17.8%</td>
+          <td>21.2%</td>
+          <td>26.7</td>
+          <td>44%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL MNC Dir Gr</td>
+          <td style="color:#c0392b">-8.6%</td>
+          <td>6.2%</td>
+          <td>11.6%</td>
+          <td>36.2</td>
+          <td>23%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Manufacturing Eq Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL PSU Equity Dir Gr</td>
+          <td style="color:#c0392b">-1.1%</td>
+          <td>19.3%</td>
+          <td>28.8%</td>
+          <td>10.8</td>
+          <td>31%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Pharma & Hlthcare Dir Gr</td>
+          <td style="color:#c0392b">-2.9%</td>
+          <td>9.2%</td>
+          <td>22.4%</td>
+          <td>37.8</td>
+          <td>26%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Quant Dir Gr</td>
+          <td style="color:#c0392b">-3.5%</td>
+          <td>15.1%</td>
+          <td>—</td>
+          <td>20.1</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Aditya BSL Special Opports Dir Gr</td>
+          <td style="color:#2d8a4e">+2.0%</td>
+          <td>20.2%</td>
+          <td>21.0%</td>
+          <td>22.8</td>
+          <td>31%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Axis Business Cycles Dir Gr</td>
+          <td style="color:#c0392b">-3.4%</td>
+          <td>10.8%</td>
+          <td>16.0%</td>
+          <td>30.4</td>
+          <td>100%</td></tr><tr>
+          <td class="cat">Sectoral/Thematic</td>
+          <td class="fund-name">Axis Consumption Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>0.8%</td>
+          <td>—</td>
+          <td>39.9</td>
+          <td>37%</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">Aditya BSL Silver ETF FoF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">DSP Gold ETF Fund of Fund Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">DSP Silver ETF FoF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">Edelweiss Gold & Slvr ETF FoF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">HDFC Gold ETF FoF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">HDFC Silver ETF Fund of Fund Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">ICICI Pru Gold ETF FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">ICICI Pru Nifty 100 LV 30 ETF FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">ICICI Pru Nifty Alp LV 30 ETF FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">ICICI Pru Silver ETF FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">ICICI Prudential PSU Equity Dir Gr</td>
+          <td style="color:#c0392b">-1.1%</td>
+          <td>14.7%</td>
+          <td>27.4%</td>
+          <td>11.2</td>
+          <td>71%</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">Invesco India Gold ETF FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">Kotak Silver ETF Fund of Fund Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">LIC MF Gold ETF FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Index/ETF</td>
+          <td class="fund-name">Mirae Asset Gold ETF FoF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Aditya BSL Gold Fund Dir Gr</td>
+          <td style="color:#c0392b">-0.6%</td>
+          <td>12.9%</td>
+          <td>16.1%</td>
+          <td>24.2</td>
+          <td>24%</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Axis Gold Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Axis Gold and Silver Passive FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Kotak Gold Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Kotak Gold Silver Passive FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Mirae Asset Gold Slvr Pasv FoF Dr Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Nippon India Gold Savings Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">Quantum Gold Savings Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Gold</td>
+          <td class="fund-name">SBI Gold Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">International</td>
+          <td class="fund-name">Aditya Birla SL Intl. Equity Fund(G)</td>
+          <td style="color:#2d8a4e">+21.5%</td>
+          <td>38.5%</td>
+          <td>16.7%</td>
+          <td>—</td>
+          <td>174%</td></tr><tr>
+          <td class="cat">International</td>
+          <td class="fund-name">Franklin Asian Equity Fund(G)</td>
+          <td style="color:#2d8a4e">+22.2%</td>
+          <td>47.7%</td>
+          <td>14.2%</td>
+          <td>27.0</td>
+          <td>58%</td></tr><tr>
+          <td class="cat">International</td>
+          <td class="fund-name">ICICI Pru US Bluechip Equity Fund(G)</td>
+          <td style="color:#2d8a4e">+7.0%</td>
+          <td>22.9%</td>
+          <td>13.4%</td>
+          <td>—</td>
+          <td>70%</td></tr><tr>
+          <td class="cat">International</td>
+          <td class="fund-name">Nippon India Japan Equity Fund(G)</td>
+          <td style="color:#2d8a4e">+19.5%</td>
+          <td>43.4%</td>
+          <td>18.1%</td>
+          <td>—</td>
+          <td>35%</td></tr><tr>
+          <td class="cat">International</td>
+          <td class="fund-name">Nippon India Taiwan Equity Fund-Reg(G)</td>
+          <td style="color:#2d8a4e">+86.5%</td>
+          <td>270.2%</td>
+          <td>52.2%</td>
+          <td>—</td>
+          <td>66%</td></tr><tr>
+          <td class="cat">International</td>
+          <td class="fund-name">Nippon India US Equity Opp Fund(G)</td>
+          <td style="color:#2d8a4e">+10.1%</td>
+          <td>12.1%</td>
+          <td>17.4%</td>
+          <td>—</td>
+          <td>4%</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Aditya BSL Bkng & Fin Srvcs Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Aditya BSL Trsptn andLogisticsDirGr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Altiva Hybrid Long-Short Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Axis Silver Fund of Funds Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Baroda BNP P Bank & Fin Srvs Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Baroda BNP P Busnss CycleDirGr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Baroda BNP P IndiaCnsmptnDirGr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Diviniti Equity Long Short Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">HDFC Trsptn & Logistics Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">ICICI Pru BHARAT 22 FOF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Kotak Trsptn & Lgstcs Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Magnum Hybrid Long Short Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Mahindra Manu Bkg & Fincl Svcs Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Motilal Oswal Gld & Slvr Pasv FoF Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr><tr>
+          <td class="cat">Other</td>
+          <td class="fund-name">Templeton India Dividend Yld Dir Gr</td>
+          <td style="color:#888">—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td></tr></tbody></table></div>
+</div>
+
+<!-- METHODOLOGY -->
+<div id="methodology" class="tab-content">
+  
+<div class="methodology">
+  <h3>Scoring Weights (v2)</h3>
+  <div class="weight-bar">
+    <div class="weight-segment" style="width:25%;background:#5b8def;">P2P 25%</div>
+    <div class="weight-segment" style="width:20%;background:#7c5cbf;">Alpha 5Y 20%</div>
+    <div class="weight-segment" style="width:15%;background:#2d8a4e;">Expense 15%</div>
+    <div class="weight-segment" style="width:15%;background:#d4a017;">Equity Purity 15%</div>
+    <div class="weight-segment" style="width:10%;background:#e67e22;">Sharpe 3Y 10%</div>
+    <div class="weight-segment" style="width:10%;background:#c0392b;">Churn Eff 10%</div>
+    <div class="weight-segment" style="width:5%;background:#888;">Conc 5%</div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#5b8def;"></div> P2P Return (Sep 24 to now) — 25%</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#7c5cbf;"></div> Alpha 5Y — 20%</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#2d8a4e;"></div> Expense Ratio (lower=better) — 15%</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#d4a017;"></div> Equity Purity (higher=better) — 15%</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e67e22;"></div> Sharpe 3Y — 10%</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#c0392b;"></div> Churn Efficiency (Alpha/Turnover, floored) — 10%</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#888;"></div> Concentration Signal — 5%</div>
+  </div>
+</div>
+
+<h2 style="font-size:1.1rem;margin-bottom:16px;">v2 Audit: 7 Issues Found &amp; Fixed</h2>
+
+<div class="fix-card">
+  <div class="fix-header">
+    <div class="fix-num">1</div>
+    <div class="fix-title">Focused Funds Were Scattered Across Wrong Categories</div>
+    <span class="fix-severity severity-high">HIGH</span>
+  </div>
+  <p>SEBI classifies "Focused" as its own category, but RupeeVest maps them by mandate: EQ-FLEX, EQ-MLC, or EQ-LC.
+  Our v1 categorizer used the RV code BEFORE checking the fund name, so 28 focused funds were absorbed into Flexi Cap,
+  Multi Cap, and Large Cap — competing against 50-80 stock portfolios with a 25-30 stock portfolio.</p>
+  <div class="before-after">
+    <div class="ba-col ba-before"><div class="ba-label" style="color:#c0392b;">Before</div>
+      Focused category: 0 funds. HDFC Focused scored in Multi Cap, ICICI Pru Focused in Large Cap.
+      Concentration Score of 100 (sweet spot for 30 stocks) gave them unfair advantage in 60-stock categories.</div>
+    <div class="ba-col ba-after"><div class="ba-label" style="color:#2d8a4e;">After</div>
+      Focused category: 29 funds. Name keyword "focused" now takes priority over RV category code.
+      All focused funds compete against each other — fair normalization.</div>
+  </div>
+</div>
+
+<div class="fix-card">
+  <div class="fix-header">
+    <div class="fix-num">2</div>
+    <div class="fix-title">Contra Category Had Only 3 Funds — Meaningless Normalization</div>
+    <span class="fix-severity severity-high">HIGH</span>
+  </div>
+  <p>With min-max normalization on 3 data points, Kotak Contra automatically scored ~93 (rank #3 overall!)
+  while SBI Contra scored ~8. The spread is mathematically meaningless. Contra's raw P2P of -3.2% was worse
+  than many Large &amp; Mid Cap funds, yet scored higher.</p>
+  <div class="before-after">
+    <div class="ba-col ba-before"><div class="ba-label" style="color:#c0392b;">Before</div>
+      Contra: 3 funds. Kotak Contra score: 92.7 (#3 overall). Score range: 8.4 – 92.7.</div>
+    <div class="ba-col ba-after"><div class="ba-label" style="color:#2d8a4e;">After</div>
+      Value/Contra: 25 funds. SEBI treats them as close cousins. Meaningful normalization.
+      Score range: 36.6 – 79.5.</div>
+  </div>
+</div>
+
+<div class="fix-card">
+  <div class="fix-header">
+    <div class="fix-num">3</div>
+    <div class="fix-title">65 Funds Used Regular Plan Expense Ratios Instead of Direct</div>
+    <span class="fix-severity severity-medium">MEDIUM</span>
+  </div>
+  <p>Trendlyne has Direct plans (expense ~0.3-1.0%). RupeeVest has Regular plans (expense ~1.5-2.5%).
+  When Trendlyne expense was missing, we fell back to RupeeVest — penalizing 65 funds (esp. ELSS) by 1.15% on average.
+  This made their expense score artificially bad.</p>
+  <div class="before-after">
+    <div class="ba-col ba-before"><div class="ba-label" style="color:#c0392b;">Before</div>
+      ELSS top funds showing 1.57-1.92% expense. Penalized vs 0.38-0.70% Direct plan funds from Trendlyne.</div>
+    <div class="ba-col ba-after"><div class="ba-label" style="color:#2d8a4e;">After</div>
+      RV fallback expense adjusted by -1.15% (median Direct-Regular gap). ELSS top funds now show 0.42-0.67%.
+      Floor at 0.05% prevents negative values.</div>
+  </div>
+</div>
+
+<div class="fix-card">
+  <div class="fix-header">
+    <div class="fix-num">4</div>
+    <div class="fix-title">Churn Efficiency Exploded at Low Turnover (Divide-by-Near-Zero)</div>
+    <span class="fix-severity severity-medium">MEDIUM</span>
+  </div>
+  <p>Alpha / Turnover: Nippon India Growth Mid Cap (3% turnover, alpha 2.88) got efficiency 0.96 — the highest
+  in the universe. ICICI Pru Div Yield (33% turnover, alpha 6.88) got only 0.21. The metric over-rewarded
+  extreme buy-and-hold regardless of alpha quality.</p>
+  <div class="before-after">
+    <div class="ba-col ba-before"><div class="ba-label" style="color:#c0392b;">Before</div>
+      Top CE: 0.960 (Nippon, 3% turnover). Extreme outliers dominated this metric.</div>
+    <div class="ba-col ba-after"><div class="ba-label" style="color:#2d8a4e;">After</div>
+      Turnover floored at 15%. Top CE: 0.383 (Bandhan Small Cap, 23% turnover, alpha 8.8).
+      Now rewards actual alpha generation, not just sitting still.</div>
+  </div>
+</div>
+
+<div class="fix-card">
+  <div class="fix-header">
+    <div class="fix-num">5</div>
+    <div class="fix-title">Within-Category Normalization Hid Cross-Category Quality Gaps</div>
+    <span class="fix-severity severity-high">HIGH</span>
+  </div>
+  <p>Best ELSS fund (Alpha 0.55) scored ~87. Best Small Cap fund (Alpha 8.81) also scored ~87. In the final ranking,
+  they sat side by side — but the raw quality was vastly different. A Flexi Cap fund with alpha 6.6 scored 80.9
+  because other Flexi Cap funds compressed its normalized score.</p>
+  <div class="before-after">
+    <div class="ba-col ba-before"><div class="ba-label" style="color:#c0392b;">Before</div>
+      100% within-category normalization. Best-in-weak-category = Best-in-strong-category.</div>
+    <div class="ba-col ba-after"><div class="ba-label" style="color:#2d8a4e;">After</div>
+      Hybrid: 70% within-category + 30% cross-category. Funds in strong categories get a raw-quality bonus.
+      A high-alpha fund in Mid Cap now ranks above a low-alpha fund in ELSS, even if both are #1 in their category.</div>
+  </div>
+</div>
+
+<div class="fix-card">
+  <div class="fix-header">
+    <div class="fix-num">6</div>
+    <div class="fix-title">7 Wrong Fuzzy Matches Contaminating Scores</div>
+    <span class="fix-severity severity-high">HIGH</span>
+  </div>
+  <p>At 65% threshold: JioBlackRock Flexi Cap matched to Samco Flexi Cap (different AMC!),
+  WhiteOak Capital matched to Capitalmind Flexi Cap, JM Focused matched to Motilal Oswal Focused.
+  These funds got PE, PB, Turnover, P2P data from the WRONG fund.</p>
+  <div class="before-after">
+    <div class="ba-col ba-before"><div class="ba-label" style="color:#c0392b;">Before</div>
+      Threshold: 65%. 467 matches. 7 confirmed wrong (different AMC or fund).</div>
+    <div class="ba-col ba-after"><div class="ba-label" style="color:#2d8a4e;">After</div>
+      Threshold: 80% + AMC pre-filter. 431 matches. 36 low-confidence matches dropped to NaN.
+      Zero cross-AMC contamination.</div>
+  </div>
+</div>
+
+<div class="fix-card">
+  <div class="fix-header">
+    <div class="fix-num">7</div>
+    <div class="fix-title">Some Funds Scored on Just 1-2 Metrics — Not Credible</div>
+    <span class="fix-severity severity-medium">MEDIUM</span>
+  </div>
+  <p>Small Cap had P2P NaN at 22% and Alpha NaN at 17%. When both are missing, the weight redistributed to
+  Expense + Equity alone — a very incomplete picture. Some funds got a score based on essentially 2 metrics.</p>
+  <div class="before-after">
+    <div class="ba-col ba-before"><div class="ba-label" style="color:#c0392b;">Before</div>
+      All funds with any data got a score. Some scored on Expense + Equity alone.</div>
+    <div class="ba-col ba-after"><div class="ba-label" style="color:#2d8a4e;">After</div>
+      Minimum 3 of 7 scoring metrics must be non-null. 11 funds marked
+      "Insufficient Data" and excluded from ranking (still visible in tables).</div>
+  </div>
+</div>
+
+<div class="methodology" style="margin-top:24px;">
+  <h3>Data Sources</h3>
+  <p><strong>Trendlyne (3 CSVs, ~500 Direct plan funds):</strong> Returns, category returns,
+  risk ratios (Alpha, Beta, Sharpe, Sortino, Treynor, StdDev) at 1Y/3Y/5Y, Checklist Score, Morningstar Rating, 52W High/Low.</p>
+  <p style="margin-top:8px;"><strong>RupeeVest (1 CSV, ~818 funds incl. Regular):</strong> PE, PB, Turnover Ratio,
+  No. of Stocks, Avg Market Cap, Large/Mid/Small %, Fund Manager, Inception Date, Benchmark, P2P Return (Sep 24 to now), Classification.</p>
+  <p style="margin-top:8px;"><strong>Fuzzy Matching:</strong> 431 of 500 Trendlyne funds matched (80% threshold + AMC filter).
+  36 low-confidence matches dropped.</p>
+
+  <h3 style="margin-top:16px;">Young Funds (&lt; 3Y Track Record)</h3>
+  <p>Compete in primary universe. 30% weight from Alpha 5Y + Sharpe 3Y redistributed to P2P (36%), Expense (22%), Equity (22%), Churn (13%).
+  Flagged with <span class="badge badge-young">NEW</span> badge.</p>
+</div>
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 100);
+}
+
+var chartInstances = [];
+function chartThemeColors() {
+  var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return dark
+    ? { fg: '#888888', grid: '#1e2130', border: '#2a2d3a' }
+    : { fg: '#4a5568', grid: '#e4e7ef', border: '#c5cad6' };
+}
+function syncChartDefaults() {
+  var c = chartThemeColors();
+  Chart.defaults.color = c.fg;
+  Chart.defaults.borderColor = c.border;
+}
+function refreshChartsTheme() {
+  var c = chartThemeColors();
+  syncChartDefaults();
+  chartInstances.forEach(function (ch) {
+    if (!ch || !ch.options) return;
+    ['x', 'y'].forEach(function (ax) {
+      var scale = ch.options.scales && ch.options.scales[ax];
+      if (!scale) return;
+      if (scale.grid) scale.grid.color = c.grid;
+      if (scale.ticks) scale.ticks.color = c.fg;
+      if (scale.title && scale.title.display) scale.title.color = c.fg;
+    });
+    var leg = ch.options.plugins && ch.options.plugins.legend && ch.options.plugins.legend.labels;
+    if (leg) leg.color = c.fg;
+    ch.update('none');
+  });
+}
+syncChartDefaults();
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.font.size = 11;
+
+var catColors = {
+  'Flexi Cap': '#5b8def', 'Multi Cap': '#7c5cbf', 'Large Cap': '#2d8a4e',
+  'Large & Mid Cap': '#d4a017', 'Mid Cap': '#e67e22', 'Small Cap': '#c0392b',
+  'Focused': '#17a2b8', 'Value/Contra': '#6f42c1', 'Dividend Yield': '#20c997', 'ELSS': '#e83e8c'
+};
+
+var churnAlphaData = [{"x": 51.0, "y": 0.22, "name": "360 ONE Flexicap Dir Gr", "cat": "Flexi Cap", "p2p": -4.61}, {"x": 23.0, "y": 1.47, "name": "Aditya BSL Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": 0.5}, {"x": 27.0, "y": -1.46, "name": "Axis Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.29}, {"x": 160.0, "y": 0.37, "name": "Bajaj Finserv Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -0.05}, {"x": 121.0, "y": 0.4, "name": "Bandhan Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.49}, {"x": 68.0, "y": 5.83, "name": "Bank of India Flexi Cap Fund Dir Gr", "cat": "Flexi Cap", "p2p": -3.61}, {"x": 89.0, "y": -0.06, "name": "Baroda BNP Paribas Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -4.52}, {"x": 22.0, "y": 0.39, "name": "Canara Robeco Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.43}, {"x": 25.0, "y": 0.14, "name": "DSP Flexi Cap Fund Dir Gr", "cat": "Flexi Cap", "p2p": -3.94}, {"x": 45.0, "y": 2.99, "name": "Edelweiss Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.51}, {"x": 24.67, "y": 2.68, "name": "Franklin India Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -3.83}, {"x": 9.4, "y": 6.76, "name": "HDFC Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": 2.13}, {"x": 33.0, "y": 1.65, "name": "HSBC Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -3.03}, {"x": 22.0, "y": 0.22, "name": "Helios Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": 0.4}, {"x": 20.0, "y": 0.38, "name": "ICICI Pru Flexicap Dir Gr", "cat": "Flexi Cap", "p2p": -0.95}, {"x": 138.0, "y": 0.25, "name": "ITI Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.85}, {"x": 38.0, "y": 0.42, "name": "Invesco India Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -3.25}, {"x": 171.35, "y": 3.76, "name": "JM Flexicap Dir Gr", "cat": "Flexi Cap", "p2p": -10.53}, {"x": 9.99, "y": 0.78, "name": "Kotak Flexicap Dir Gr", "cat": "Flexi Cap", "p2p": 0.22}, {"x": 96.0, "y": -1.52, "name": "LIC MF Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -6.11}, {"x": 69.0, "y": -0.07, "name": "Mahindra Manulife Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -4.66}, {"x": 28.0, "y": 0.03, "name": "Mirae Asset Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": 0.39}, {"x": 103.0, "y": 0.15, "name": "Motilal Oswal Flexicap Dir Gr", "cat": "Flexi Cap", "p2p": -7.92}, {"x": 57.0, "y": -0.15, "name": "NJ Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -14.93}, {"x": 30.0, "y": -0.07, "name": "Nippon India Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -5.83}, {"x": 33.0, "y": -0.02, "name": "PGIM India Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.91}, {"x": 46.5, "y": 6.07, "name": "Parag Parikh Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": 2.36}, {"x": 290.0, "y": 5.83, "name": "Quant Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -7.02}, {"x": 95.0, "y": -0.85, "name": "SBI Flexicap Dir Gr", "cat": "Flexi Cap", "p2p": -3.68}, {"x": 172.0, "y": -1.14, "name": "Samco Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -17.38}, {"x": 47.9, "y": -0.11, "name": "Sundaram Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.48}, {"x": 56.01, "y": 0.4, "name": "Tata Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.18}, {"x": 84.0, "y": -2.22, "name": "Taurus Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -6.68}, {"x": 284.0, "y": 0.02, "name": "TrustMF Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -3.74}, {"x": 9.0, "y": -5.11, "name": "UTI Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -6.45}, {"x": 75.0, "y": 0.84, "name": "Union Flexi Cap Dir Gr", "cat": "Flexi Cap", "p2p": -2.79}, {"x": 137.0, "y": 0.31, "name": "Motilal Oswal Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap", "p2p": -4.87}, {"x": 68.0, "y": -0.18, "name": "Navi Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap", "p2p": -2.52}, {"x": 183.3, "y": -0.5, "name": "Shriram Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap", "p2p": -10.71}, {"x": 156.0, "y": 0.43, "name": "WOC Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap", "p2p": -0.84}, {"x": 51.0, "y": 1.44, "name": "360 ONE Focused Dir Gr", "cat": "Focused", "p2p": -5.13}, {"x": 24.0, "y": 1.06, "name": "Aditya BSL Focused Dir Gr", "cat": "Focused", "p2p": -0.63}, {"x": 26.0, "y": -5.41, "name": "Axis Focused Dir Gr", "cat": "Focused", "p2p": -5.48}, {"x": 54.0, "y": 1.18, "name": "Bandhan Focused Dir Gr", "cat": "Focused", "p2p": -0.31}, {"x": 134.0, "y": -0.38, "name": "Baroda BNP P Focused Dir Gr", "cat": "Focused", "p2p": -7.67}, {"x": 36.0, "y": 0.14, "name": "Canara Robeco Focused Dir Gr", "cat": "Focused", "p2p": -1.67}, {"x": 29.0, "y": 0.16, "name": "DSP Focused Dir Gr", "cat": "Focused", "p2p": -3.61}, {"x": 31.0, "y": 0.01, "name": "Edelweiss Focused Dir Gr", "cat": "Focused", "p2p": -3.35}, {"x": 18.96, "y": 1.91, "name": "Franklin India Focused Equity Dir Gr", "cat": "Focused", "p2p": -5.78}, {"x": 7.23, "y": 8.26, "name": "HDFC Focused Dir Gr", "cat": "Focused", "p2p": 1.95}, {"x": 40.0, "y": 1.07, "name": "HSBC Focused Dir Gr", "cat": "Focused", "p2p": -1.53}, {"x": 101.0, "y": 5.32, "name": "ICICI Pru Focused Equity Dir Gr", "cat": "Focused", "p2p": 0.73}, {"x": 90.0, "y": 0.27, "name": "ITI Focused Dir Gr", "cat": "Focused", "p2p": 0.39}, {"x": 28.0, "y": 3.15, "name": "Invesco India Focused Dir Gr", "cat": "Focused", "p2p": -4.99}, {"x": 20.01, "y": 2.04, "name": "Kotak Focused Dir Gr", "cat": "Focused", "p2p": 1.14}, {"x": 49.0, "y": 5.49, "name": "Mahindra Manulife Focused Dir Gr", "cat": "Focused", "p2p": -3.71}, {"x": 45.0, "y": -3.58, "name": "Mirae Asset Focused Dir Gr", "cat": "Focused", "p2p": -6.98}, {"x": 152.0, "y": -3.83, "name": "Motilal Oswal Focused Dir Gr", "cat": "Focused", "p2p": -10.34}, {"x": 41.0, "y": 0.46, "name": "Nippon India Focused Dir Gr", "cat": "Focused", "p2p": -3.28}, {"x": 21.0, "y": 0.29, "name": "Old Bridge Focused Dir Gr", "cat": "Focused", "p2p": -2.24}, {"x": 569.0, "y": 0.44, "name": "Quant Focused fund Dir Gr", "cat": "Focused", "p2p": -9.28}, {"x": 35.0, "y": 2.95, "name": "SBI Focused Dir Gr", "cat": "Focused", "p2p": 5.85}, {"x": 45.5, "y": -0.07, "name": "Sundaram Focused Dir Gr", "cat": "Focused", "p2p": -5.27}, {"x": 63.61, "y": 1.15, "name": "Tata Focused Dir Gr", "cat": "Focused", "p2p": -5.42}, {"x": 57.0, "y": -0.1, "name": "UTI Focused Dir Gr", "cat": "Focused", "p2p": -6.06}, {"x": 48.0, "y": 0.24, "name": "Union Focused Dir Gr", "cat": "Focused", "p2p": -1.13}, {"x": 100.6, "y": 0.23, "name": "JM Focused Fund-Reg(G)", "cat": "Focused", "p2p": -7.25}, {"x": 87.0, "y": -0.4, "name": "LIC MF Focused Fund-Reg(G)", "cat": "Focused", "p2p": -7.81}, {"x": 28.0, "y": 5.25, "name": "Aditya BSL Div Yield Dir Gr", "cat": "Dividend Yield", "p2p": -4.78}, {"x": 58.0, "y": -0.16, "name": "Baroda BNP P Dividend Yield Dir Gr", "cat": "Dividend Yield", "p2p": null}, {"x": 5.69, "y": 4.4, "name": "HDFC Dividend Yield Dir Gr", "cat": "Dividend Yield", "p2p": -6.21}, {"x": 33.0, "y": 8.78, "name": "ICICI Pru Dividend Yield Eq Dir Gr", "cat": "Dividend Yield", "p2p": -0.66}, {"x": 65.0, "y": 2.88, "name": "LIC MF Dividend Yield Dir Gr", "cat": "Dividend Yield", "p2p": -5.32}, {"x": 19.0, "y": -0.07, "name": "SBI Dividend Yield Dir Gr", "cat": "Dividend Yield", "p2p": -4.05}, {"x": 31.5, "y": 2.0, "name": "Sundaram Div Yield Dir Gr", "cat": "Dividend Yield", "p2p": -5.36}, {"x": 30.11, "y": 0.07, "name": "Tata Dividend Yield Dir Gr", "cat": "Dividend Yield", "p2p": -1.34}, {"x": 17.0, "y": 3.1, "name": "UTI Dividend Yield Dir Gr", "cat": "Dividend Yield", "p2p": -4.11}, {"x": 32.99, "y": 0.09, "name": "Franklin India Dividend Yield Fund(G)", "cat": "Dividend Yield", "p2p": -6.49}, {"x": 52.0, "y": -4.0, "name": "Aditya BSL Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -3.26}, {"x": 62.0, "y": 1.32, "name": "Axis Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -1.15}, {"x": 195.0, "y": 0.04, "name": "Bajaj Finserv Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -3.39}, {"x": 124.0, "y": 4.05, "name": "Bandhan Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -1.7}, {"x": 61.0, "y": 0.89, "name": "Bank of India Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -3.59}, {"x": 33.0, "y": -0.83, "name": "Canara Robeco Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -4.32}, {"x": 33.0, "y": 1.18, "name": "DSP Large & Mid Cap Fund Dir Gr", "cat": "Large & Mid Cap", "p2p": -3.08}, {"x": 23.0, "y": 0.96, "name": "Edelweiss Large & Mid Dir Gr", "cat": "Large & Mid Cap", "p2p": -1.58}, {"x": 89.87, "y": -0.95, "name": "Franklin India Lrg & Md Cp Dir Gr", "cat": "Large & Mid Cap", "p2p": -3.19}, {"x": 3.11, "y": 2.13, "name": "HDFC Large and Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -3.86}, {"x": 99.0, "y": 1.17, "name": "HSBC Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -1.11}, {"x": 19.0, "y": 0.16, "name": "Helios Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": null}, {"x": 60.0, "y": 5.05, "name": "ICICI Pru Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -0.08}, {"x": 124.0, "y": -0.33, "name": "ITI Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": null}, {"x": 24.11, "y": 1.72, "name": "Kotak Large & Midcap Dir Gr", "cat": "Large & Mid Cap", "p2p": -0.92}, {"x": 49.0, "y": -0.22, "name": "LIC MF Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -5.62}, {"x": 99.0, "y": 1.08, "name": "Mahindra Manulife Lrg & Md cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -5.13}, {"x": 105.0, "y": -0.87, "name": "Mirae Asset Large & Midcap Dir Gr", "cat": "Large & Mid Cap", "p2p": -2.45}, {"x": 54.0, "y": 4.44, "name": "Motilal Oswal Large & Midcap Dir Gr", "cat": "Large & Mid Cap", "p2p": 1.85}, {"x": 66.0, "y": -1.39, "name": "Navi Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -4.46}, {"x": 70.0, "y": 1.4, "name": "Nippon India Vsn Lg & Md Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -1.0}, {"x": 26.0, "y": -0.02, "name": "PGIM India Large and Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -2.06}, {"x": 291.0, "y": 1.63, "name": "Quant Large and Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -10.66}, {"x": 55.0, "y": 2.71, "name": "SBI Large & Midcap Dir Gr", "cat": "Large & Mid Cap", "p2p": 1.11}, {"x": 59.0, "y": -0.57, "name": "Sundaram large and Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -2.77}, {"x": 20.23, "y": -2.7, "name": "Tata Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -8.97}, {"x": 36.0, "y": 2.89, "name": "UTI Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap", "p2p": -1.56}, {"x": 101.0, "y": 0.11, "name": "Union Large & Midcap Dir Gr", "cat": "Large & Mid Cap", "p2p": -2.22}, {"x": 47.0, "y": -0.08, "name": "LIC MF Large & Midcap Fund-Reg(G)", "cat": "Large & Mid Cap", "p2p": -5.19}, {"x": 230.0, "y": 0.41, "name": "WOC Large & Mid Cap Fund-Reg(G)", "cat": "Large & Mid Cap", "p2p": 0.65}, {"x": 52.0, "y": 0.65, "name": "Aditya BSL Large Cap Dir Gr", "cat": "Large Cap", "p2p": -2.99}, {"x": 85.0, "y": -2.53, "name": "Axis Large Cap Fund Dir Gr", "cat": "Large Cap", "p2p": -3.67}, {"x": 209.0, "y": 0.05, "name": "Bajaj Finserv Large Cap Dir Gr", "cat": "Large Cap", "p2p": -2.18}, {"x": 81.0, "y": 1.32, "name": "Bandhan Large Cap Dir Gr", "cat": "Large Cap", "p2p": -2.27}, {"x": 67.0, "y": 1.59, "name": "Baroda BNP P Large Cap Dir Gr", "cat": "Large Cap", "p2p": -4.59}, {"x": 15.0, "y": 0.46, "name": "Canara Robeco Large Cap Dir Gr", "cat": "Large Cap", "p2p": -2.49}, {"x": 22.0, "y": 1.22, "name": "DSP Large cap Dir Gr", "cat": "Large Cap", "p2p": -2.12}, {"x": 80.0, "y": 1.38, "name": "Edelweiss Large Cap Dir Gr", "cat": "Large Cap", "p2p": -3.57}, {"x": 61.83, "y": -0.32, "name": "Franklin India Large Cap Dir Gr", "cat": "Large Cap", "p2p": -2.24}, {"x": 30.6, "y": 1.97, "name": "HDFC Large Cap Dir Gr", "cat": "Large Cap", "p2p": -3.86}, {"x": 40.0, "y": -0.09, "name": "HSBC Large Cap Dir Gr", "cat": "Large Cap", "p2p": -3.07}, {"x": 17.0, "y": 3.13, "name": "ICICI Prudential Large Cap Dir Gr", "cat": "Large Cap", "p2p": -1.5}, {"x": 75.0, "y": -1.37, "name": "ITI Large Cap Dir Gr", "cat": "Large Cap", "p2p": -5.77}, {"x": 61.0, "y": 2.1, "name": "Invesco India largecap Dir Gr", "cat": "Large Cap", "p2p": -2.03}, {"x": 103.24, "y": 1.16, "name": "JM Large Cap Dir Gr", "cat": "Large Cap", "p2p": -7.1}, {"x": 25.15, "y": 0.94, "name": "Kotak Large Cap Dir Gr", "cat": "Large Cap", "p2p": -2.12}, {"x": 49.0, "y": -2.01, "name": "LIC MF Large Cap Dir Gr", "cat": "Large Cap", "p2p": -5.62}, {"x": 54.0, "y": 0.8, "name": "Mahindra Manulife Lrg Cap Dir Gr", "cat": "Large Cap", "p2p": -4.65}, {"x": 36.0, "y": -0.65, "name": "Mirae Asset Large Cap Dir Gr", "cat": "Large Cap", "p2p": -2.58}, {"x": 53.0, "y": 0.61, "name": "Motilal Oswal Large Cap Dir Gr", "cat": "Large Cap", "p2p": 1.7}, {"x": 24.0, "y": 4.69, "name": "Nippon India Large Cap Dir Gr", "cat": "Large Cap", "p2p": -1.05}, {"x": 24.0, "y": -1.67, "name": "PGIM India Large Cap Dr Pl Gr", "cat": "Large Cap", "p2p": -4.39}, {"x": 610.0, "y": 0.08, "name": "Quant Large Cap Dir Gr", "cat": "Large Cap", "p2p": -6.67}, {"x": 61.0, "y": 0.35, "name": "SBI Large Cap Dir Gr", "cat": "Large Cap", "p2p": -0.66}, {"x": 31.4, "y": 0.14, "name": "Sundaram Large Cap Dir Gr", "cat": "Large Cap", "p2p": -4.29}, {"x": 44.29, "y": 0.78, "name": "Tata Large Cap Dir Gr", "cat": "Large Cap", "p2p": -3.08}, {"x": 41.0, "y": -1.23, "name": "UTI Large cap Dir Gr", "cat": "Large Cap", "p2p": -4.67}, {"x": 50.0, "y": -0.78, "name": "Union Largecap Dir Gr", "cat": "Large Cap", "p2p": -3.57}, {"x": 84.0, "y": 0.13, "name": "Bank of India Large Cap Fund-Reg(G)", "cat": "Large Cap", "p2p": -2.73}, {"x": 113.0, "y": -0.06, "name": "Groww Largecap Fund-Reg(G)", "cat": "Large Cap", "p2p": -2.1}, {"x": 1377.0, "y": -1.39, "name": "Samco Large Cap Fund-Reg(G)", "cat": "Large Cap", "p2p": null}, {"x": 89.0, "y": 0.28, "name": "Taurus Large Cap Fund-Reg(G)", "cat": "Large Cap", "p2p": -2.81}, {"x": 203.0, "y": 0.27, "name": "WOC Large Cap Fund-Reg(G)", "cat": "Large Cap", "p2p": -0.88}, {"x": 23.0, "y": -0.82, "name": "Aditya BSL Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": 0.5}, {"x": 50.0, "y": -0.74, "name": "Axis Midcap Dir Gr", "cat": "Mid Cap", "p2p": -1.4}, {"x": 29.0, "y": 0.57, "name": "Bandhan Midcap Dir Gr", "cat": "Mid Cap", "p2p": -3.16}, {"x": 88.0, "y": 1.03, "name": "Baroda BNP P Lrg & Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -5.42}, {"x": 62.0, "y": 1.55, "name": "Baroda BNP P Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -0.58}, {"x": 44.0, "y": -0.04, "name": "Canara Robeco Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -1.84}, {"x": 25.0, "y": -3.46, "name": "DSP Midcap Dir Gr", "cat": "Mid Cap", "p2p": -2.83}, {"x": 40.0, "y": 2.9, "name": "Edelweiss Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": 0.31}, {"x": 32.42, "y": -1.63, "name": "Franklin India Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -4.39}, {"x": 7.16, "y": 3.79, "name": "HDFC Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": 1.41}, {"x": 99.0, "y": 0.76, "name": "HSBC Midcap Dir Gr", "cat": "Mid Cap", "p2p": 1.3}, {"x": 40.0, "y": 0.14, "name": "Helios Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": null}, {"x": 24.0, "y": 1.7, "name": "ICICI Pru MidCap Dir Gr", "cat": "Mid Cap", "p2p": 4.66}, {"x": 127.0, "y": -0.55, "name": "ITI Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -4.05}, {"x": 32.0, "y": 1.93, "name": "Invesco India Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": 0.76}, {"x": 32.0, "y": 2.1, "name": "Invesco India large& mid cap Dir Gr", "cat": "Mid Cap", "p2p": 0.76}, {"x": 117.48, "y": -0.04, "name": "JM Midcap Dir Gr", "cat": "Mid Cap", "p2p": -5.64}, {"x": 24.2, "y": 1.26, "name": "Kotak Midcap Dir Gr", "cat": "Mid Cap", "p2p": -0.52}, {"x": 41.0, "y": -3.69, "name": "LIC MF Midcap Fund Dir Gr", "cat": "Mid Cap", "p2p": -6.22}, {"x": 60.0, "y": 2.35, "name": "Mahindra Manulife Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -2.41}, {"x": 111.0, "y": -0.17, "name": "Mirae Asset Midcap Dir Gr", "cat": "Mid Cap", "p2p": -1.96}, {"x": 103.0, "y": 4.58, "name": "Motilal Oswal Midcap Dir Gr", "cat": "Mid Cap", "p2p": -7.92}, {"x": 3.0, "y": 3.15, "name": "Nippon India Growth Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": 0.72}, {"x": 41.0, "y": -1.63, "name": "PGIM India Midcap Fund Dir Gr", "cat": "Mid Cap", "p2p": -3.93}, {"x": 322.0, "y": 2.34, "name": "Quant Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -11.1}, {"x": 69.0, "y": -0.17, "name": "SBI Midcap Dir Gr", "cat": "Mid Cap", "p2p": -4.82}, {"x": 37.2, "y": 1.4, "name": "Sundaram Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -0.39}, {"x": 31.47, "y": 0.42, "name": "Tata Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -2.86}, {"x": 44.0, "y": -2.7, "name": "UTI Mid Cap Dir Gr", "cat": "Mid Cap", "p2p": -6.33}, {"x": 92.0, "y": 0.66, "name": "Union Midcap Dir Gr", "cat": "Mid Cap", "p2p": -0.71}, {"x": 73.0, "y": -0.18, "name": "Aditya Birla SL Midcap Fund(G)", "cat": "Mid Cap", "p2p": -3.07}, {"x": 31.0, "y": 0.93, "name": "Invesco India Midcap Fund-Reg(G)", "cat": "Mid Cap", "p2p": 3.02}, {"x": 81.0, "y": -0.54, "name": "Taurus Mid Cap Fund-Reg(G)", "cat": "Mid Cap", "p2p": -9.05}, {"x": 235.0, "y": 0.96, "name": "WOC Mid Cap Fund-Reg(G)", "cat": "Mid Cap", "p2p": 2.56}, {"x": 52.0, "y": -0.11, "name": "Aditya BSL Multi-Cap Dir Gr", "cat": "Multi Cap", "p2p": -2.9}, {"x": 50.0, "y": 0.29, "name": "Axis Multicap Dir Gr", "cat": "Multi Cap", "p2p": -2.24}, {"x": 47.0, "y": -0.1, "name": "Bandhan Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -4.89}, {"x": 65.0, "y": 0.25, "name": "Bank of India Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -1.73}, {"x": 111.0, "y": 2.02, "name": "Baroda BNP P Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -3.72}, {"x": 30.0, "y": 0.04, "name": "Canara Robeco Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -2.98}, {"x": 12.0, "y": -0.01, "name": "DSP Multicap Dir Gr", "cat": "Multi Cap", "p2p": -6.69}, {"x": 39.0, "y": 0.17, "name": "Edelweiss Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -3.56}, {"x": 73.07, "y": 0.07, "name": "Franklin India Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -3.17}, {"x": 99.0, "y": 0.38, "name": "Groww Multicap Dir Gr", "cat": "Multi Cap", "p2p": null}, {"x": 42.0, "y": 0.21, "name": "HSBC Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -3.23}, {"x": 94.0, "y": 2.68, "name": "ICICI Pru Multicap Dir Gr", "cat": "Multi Cap", "p2p": -2.12}, {"x": 127.0, "y": -0.31, "name": "ITI Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -4.05}, {"x": 86.0, "y": -0.48, "name": "Invesco India Multicap Dir Gr", "cat": "Multi Cap", "p2p": -7.46}, {"x": 49.85, "y": 0.32, "name": "Kotak Multicap Dir Gr", "cat": "Multi Cap", "p2p": -2.25}, {"x": 33.0, "y": 0.09, "name": "LIC MF Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -3.88}, {"x": 112.0, "y": 3.67, "name": "Mahindra Manulife Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -2.38}, {"x": 200.0, "y": 0.79, "name": "Motilal Oswal Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -1.67}, {"x": 26.0, "y": 5.68, "name": "Nippon India Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -2.29}, {"x": 26.0, "y": -0.01, "name": "PGIM India Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": null}, {"x": 261.0, "y": -0.02, "name": "Quant Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -11.8}, {"x": 47.0, "y": 0.03, "name": "SBI Multicap Dir Gr", "cat": "Multi Cap", "p2p": -1.69}, {"x": 969.0, "y": -1.16, "name": "Samco Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": null}, {"x": 47.1, "y": 1.0, "name": "Sundaram Multi Cap Dir Gr", "cat": "Multi Cap", "p2p": -3.96}, {"x": 52.34, "y": -0.34, "name": "Tata Multicap Dir Gr", "cat": "Multi Cap", "p2p": -4.53}, {"x": 87.0, "y": 0.26, "name": "Taurus Ethical Dir Gr", "cat": "Multi Cap", "p2p": -8.65}, {"x": 110.0, "y": 0.03, "name": "Union Multicap Dir Gr", "cat": "Multi Cap", "p2p": -2.06}, {"x": 109.0, "y": 0.03, "name": "ITI Multi-Cap Fund-Reg(G)", "cat": "Multi Cap", "p2p": -3.79}, {"x": 361.8, "y": -1.73, "name": "Shriram Multi Sector Rotation Fund-Reg(G", "cat": "Multi Cap", "p2p": null}, {"x": 180.0, "y": 0.3, "name": "WOC Multi Cap Fund-Reg(G)", "cat": "Multi Cap", "p2p": 1.14}, {"x": 41.0, "y": -1.23, "name": "Aditya BSL Small Cap Dir Gr", "cat": "Small Cap", "p2p": -5.09}, {"x": 38.0, "y": 3.66, "name": "Axis Small Cap Fund Dir Gr", "cat": "Small Cap", "p2p": -3.56}, {"x": 23.0, "y": 5.87, "name": "Bandhan Small Cap Dir Gr", "cat": "Small Cap", "p2p": -3.34}, {"x": 96.0, "y": 3.5, "name": "Bank of India Small Cap Dir Gr", "cat": "Small Cap", "p2p": -5.73}, {"x": 105.0, "y": -0.07, "name": "Baroda BNP Paribas Small Cap Dir Gr", "cat": "Small Cap", "p2p": -6.71}, {"x": 28.0, "y": 3.49, "name": "Canara Robeco Small Cap Dir Gr", "cat": "Small Cap", "p2p": -7.33}, {"x": 11.0, "y": 2.64, "name": "DSP Small Cap Dir Gr", "cat": "Small Cap", "p2p": -2.41}, {"x": 23.0, "y": 3.57, "name": "Edelweiss Small Cap Dir Gr", "cat": "Small Cap", "p2p": -5.07}, {"x": 29.77, "y": 2.69, "name": "Franklin India Small Cap Dir Gr", "cat": "Small Cap", "p2p": -9.35}, {"x": 8.12, "y": 3.41, "name": "HDFC Small Cap Dir Gr", "cat": "Small Cap", "p2p": -5.97}, {"x": 38.0, "y": 3.07, "name": "HSBC Small Cap Fund Dir Gr", "cat": "Small Cap", "p2p": -9.69}, {"x": 51.0, "y": 2.44, "name": "ICICI Pru Smallcap Dir Gr", "cat": "Small Cap", "p2p": -7.68}, {"x": 118.0, "y": 2.07, "name": "ITI Small Cap Dir Gr", "cat": "Small Cap", "p2p": -3.44}, {"x": 52.0, "y": 5.23, "name": "Invesco India Smallcap Dir Gr", "cat": "Small Cap", "p2p": -2.02}, {"x": 81.86, "y": -0.15, "name": "JM Small Cap Dir Gr", "cat": "Small Cap", "p2p": -10.41}, {"x": 23.74, "y": 0.04, "name": "Kotak Small Cap Dir Gr", "cat": "Small Cap", "p2p": -9.48}, {"x": 72.0, "y": 2.26, "name": "LIC MF Small Cap Fund Dir Gr", "cat": "Small Cap", "p2p": -9.25}, {"x": 94.0, "y": 0.78, "name": "Mahindra Manulife Small Cap Dir Gr", "cat": "Small Cap", "p2p": -7.27}, {"x": 12.0, "y": 0.56, "name": "Mirae Asset Small Cap Dir Gr", "cat": "Small Cap", "p2p": null}, {"x": 61.0, "y": 0.63, "name": "Motilal Oswal Small Cap Dir Gr", "cat": "Small Cap", "p2p": -0.68}, {"x": 15.0, "y": 5.31, "name": "Nippon India Small Cap Dir Gr", "cat": "Small Cap", "p2p": -6.91}, {"x": 38.0, "y": -0.26, "name": "PGIM India Small Cap Dir Gr", "cat": "Small Cap", "p2p": -4.08}, {"x": 67.0, "y": 6.37, "name": "Quant Small Cap Dir Gr", "cat": "Small Cap", "p2p": -9.27}, {"x": 116.0, "y": 0.76, "name": "SBI Small Cap Fund Dir Gr", "cat": "Small Cap", "p2p": -8.18}, {"x": 32.3, "y": 2.86, "name": "Sundaram Small Cap Dir Gr", "cat": "Small Cap", "p2p": -3.21}, {"x": 12.01, "y": 1.92, "name": "Tata Small Cap Fund Dir Gr", "cat": "Small Cap", "p2p": -14.0}, {"x": 191.0, "y": 0.78, "name": "TrustMF Small Cap Dir Gr", "cat": "Small Cap", "p2p": null}, {"x": 35.0, "y": 1.96, "name": "UTI Small Cap Dir Gr", "cat": "Small Cap", "p2p": -5.9}, {"x": 48.0, "y": 3.02, "name": "Union Small Cap Dir Gr", "cat": "Small Cap", "p2p": -1.31}, {"x": 9.58, "y": -0.05, "name": "Quantum Small Cap Fund-Reg(G)", "cat": "Small Cap", "p2p": -3.67}, {"x": 84.0, "y": 2.79, "name": "Aditya BSL Value Dir Gr", "cat": "Value/Contra", "p2p": -4.52}, {"x": 41.0, "y": 0.47, "name": "Axis Value Dir Gr", "cat": "Value/Contra", "p2p": -1.4}, {"x": 73.0, "y": 4.92, "name": "Bandhan Value Dir Gr", "cat": "Value/Contra", "p2p": -5.49}, {"x": 69.0, "y": -0.13, "name": "Baroda BNP Paribas Value Dir Gr", "cat": "Value/Contra", "p2p": -7.83}, {"x": 119.0, "y": 4.82, "name": "DSP Value Dir Gr", "cat": "Value/Contra", "p2p": 3.6}, {"x": 24.16, "y": 3.03, "name": "HDFC Value Dir Gr", "cat": "Value/Contra", "p2p": -1.38}, {"x": 31.0, "y": 6.09, "name": "HSBC Value Dir Gr", "cat": "Value/Contra", "p2p": -0.09}, {"x": 50.0, "y": 6.9, "name": "ICICI Prudential Value Dir Gr", "cat": "Value/Contra", "p2p": -0.77}, {"x": 138.0, "y": -0.02, "name": "ITI Value Dir Gr", "cat": "Value/Contra", "p2p": -5.66}, {"x": 52.0, "y": 2.56, "name": "Invesco India Contra Dir Gr", "cat": "Value/Contra", "p2p": -4.38}, {"x": 87.39, "y": 3.05, "name": "JM Value Dir Gr", "cat": "Value/Contra", "p2p": -12.54}, {"x": 35.11, "y": 3.81, "name": "Kotak Contra Dir Gr", "cat": "Value/Contra", "p2p": -3.19}, {"x": 41.0, "y": 4.41, "name": "Nippon India Value Dir Gr", "cat": "Value/Contra", "p2p": -3.61}, {"x": 241.0, "y": 0.31, "name": "Quant Value Dir Gr", "cat": "Value/Contra", "p2p": -6.86}, {"x": 15.11, "y": 0.4, "name": "Quantum Value Dir Gr", "cat": "Value/Contra", "p2p": -5.39}, {"x": 192.0, "y": 6.76, "name": "SBI Contra Dir Gr", "cat": "Value/Contra", "p2p": -4.54}, {"x": 47.0, "y": 3.36, "name": "Tata Value Dir Gr", "cat": "Value/Contra", "p2p": -5.37}, {"x": 26.47, "y": 4.84, "name": "Templeton India Value Dir Gr", "cat": "Value/Contra", "p2p": -5.54}, {"x": 18.0, "y": 1.76, "name": "UTI Value fund Dir Gr", "cat": "Value/Contra", "p2p": -3.9}, {"x": 64.0, "y": 3.0, "name": "Union Value Fund Dir Gr", "cat": "Value/Contra", "p2p": -1.81}, {"x": 129.0, "y": -0.01, "name": "Groww Value Fund-Reg(G)", "cat": "Value/Contra", "p2p": -1.37}, {"x": 183.0, "y": -0.02, "name": "LIC MF Value Fund-Reg(G)", "cat": "Value/Contra", "p2p": -3.59}, {"x": 48.1, "y": -0.2, "name": "Sundaram Value Fund-Reg(G)", "cat": "Value/Contra", "p2p": -3.24}, {"x": 28.0, "y": -0.04, "name": "Aditya Birla SL ELSS Tax Saver Fund(G)", "cat": "ELSS", "p2p": -1.78}, {"x": 32.0, "y": -0.07, "name": "Axis ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -3.45}, {"x": 32.0, "y": 0.17, "name": "Bandhan ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -3.87}, {"x": 69.0, "y": 0.34, "name": "Bank of India ELSS Tax Saver-Reg(G)", "cat": "ELSS", "p2p": -5.96}, {"x": 37.0, "y": 0.19, "name": "Baroda BNP Paribas ELSS Tax Saver Fund-R", "cat": "ELSS", "p2p": -0.25}, {"x": 12.0, "y": 0.04, "name": "Canara Rob ELSS Tax Saver-Reg(G)", "cat": "ELSS", "p2p": -3.1}, {"x": 36.0, "y": 0.2, "name": "DSP ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -2.9}, {"x": 16.2, "y": 0.07, "name": "Franklin India ELSS Tax Saver Fund(G)", "cat": "ELSS", "p2p": -4.77}, {"x": 186.0, "y": -0.29, "name": "Groww ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -6.51}, {"x": 20.63, "y": 0.28, "name": "HDFC ELSS Tax saver(G)", "cat": "ELSS", "p2p": -1.26}, {"x": 7.0, "y": 0.16, "name": "HSBC ELSS Tax saver Fund-Reg(G)", "cat": "ELSS", "p2p": -2.27}, {"x": 90.0, "y": 0.19, "name": "HSBC Tax Saver Equity Fund(G)", "cat": "ELSS", "p2p": null}, {"x": 26.0, "y": 0.06, "name": "ICICI Pru ELSS Tax Saver Fund(G)", "cat": "ELSS", "p2p": -1.95}, {"x": 84.0, "y": 0.14, "name": "Invesco India ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -7.05}, {"x": 48.0, "y": -0.01, "name": "ITI ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -5.59}, {"x": 88.63, "y": 0.34, "name": "JM ELSS Tax Saver Fund(G)", "cat": "ELSS", "p2p": -7.12}, {"x": 21.84, "y": -0.11, "name": "Kotak ELSS Tax Saver Fund(G)", "cat": "ELSS", "p2p": -4.37}, {"x": 10.0, "y": -0.12, "name": "LIC MF ELSS Tax Saver-Reg(G)", "cat": "ELSS", "p2p": -5.62}, {"x": 61.0, "y": -0.18, "name": "Mahindra Manulife ELSS Tax Saver Fund-Re", "cat": "ELSS", "p2p": -4.44}, {"x": 55.0, "y": 0.4, "name": "Motilal Oswal ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -1.51}, {"x": 15.0, "y": -0.3, "name": "Navi ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -6.73}, {"x": 13.0, "y": 0.12, "name": "Nippon India ELSS Tax Saver Fund(G)", "cat": "ELSS", "p2p": -2.35}, {"x": 85.0, "y": -0.1, "name": "NJ ELSS Tax Saver Scheme-Reg(G)", "cat": "ELSS", "p2p": -10.71}, {"x": 20.8, "y": 0.06, "name": "Parag Parikh ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -2.17}, {"x": 25.0, "y": -0.41, "name": "PGIM India ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -4.74}, {"x": 12.61, "y": 0.13, "name": "Quantum ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -5.36}, {"x": 141.0, "y": -0.82, "name": "Samco ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -14.01}, {"x": 21.0, "y": 0.55, "name": "SBI ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -3.38}, {"x": 172.4, "y": -0.47, "name": "Shriram ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -9.99}, {"x": 46.5, "y": -0.06, "name": "Sundaram ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -2.64}, {"x": 33.12, "y": -0.01, "name": "Tata ELSS Fund-Reg(G)", "cat": "ELSS", "p2p": -1.73}, {"x": 76.0, "y": 0.08, "name": "Taurus ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -5.44}, {"x": 67.0, "y": 0.03, "name": "Union ELSS Tax Saver Fund(G)", "cat": "ELSS", "p2p": -3.51}, {"x": 42.0, "y": -0.2, "name": "UTI ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -5.97}, {"x": 32.0, "y": 0.49, "name": "WOC ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS", "p2p": -1.36}];
+var peData = [{"x": 26.71, "y": -4.61, "name": "360 ONE Flexicap Dir Gr", "cat": "Flexi Cap"}, {"x": 26.07, "y": 0.5, "name": "Aditya BSL Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 30.57, "y": -2.29, "name": "Axis Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 28.08, "y": -0.05, "name": "Bajaj Finserv Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 21.97, "y": -2.49, "name": "Bandhan Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 20.97, "y": -3.61, "name": "Bank of India Flexi Cap Fund Dir Gr", "cat": "Flexi Cap"}, {"x": 26.62, "y": -4.52, "name": "Baroda BNP Paribas Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 27.56, "y": -2.43, "name": "Canara Robeco Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 20.38, "y": -3.94, "name": "DSP Flexi Cap Fund Dir Gr", "cat": "Flexi Cap"}, {"x": 23.65, "y": -2.51, "name": "Edelweiss Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 23.13, "y": -3.83, "name": "Franklin India Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 21.59, "y": 2.13, "name": "HDFC Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 24.12, "y": -3.03, "name": "HSBC Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 30.31, "y": 0.4, "name": "Helios Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 31.08, "y": -0.95, "name": "ICICI Pru Flexicap Dir Gr", "cat": "Flexi Cap"}, {"x": 24.53, "y": -2.85, "name": "ITI Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 36.86, "y": -3.25, "name": "Invesco India Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 21.36, "y": -10.53, "name": "JM Flexicap Dir Gr", "cat": "Flexi Cap"}, {"x": 23.07, "y": 0.22, "name": "Kotak Flexicap Dir Gr", "cat": "Flexi Cap"}, {"x": 26.28, "y": -6.11, "name": "LIC MF Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 25.56, "y": -4.66, "name": "Mahindra Manulife Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 22.93, "y": 0.39, "name": "Mirae Asset Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 42.45, "y": -7.92, "name": "Motilal Oswal Flexicap Dir Gr", "cat": "Flexi Cap"}, {"x": 23.73, "y": -14.93, "name": "NJ Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 24.25, "y": -5.83, "name": "Nippon India Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 27.73, "y": -2.91, "name": "PGIM India Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 15.71, "y": 2.36, "name": "Parag Parikh Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 25.3, "y": -7.02, "name": "Quant Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 21.22, "y": -3.68, "name": "SBI Flexicap Dir Gr", "cat": "Flexi Cap"}, {"x": 24.2, "y": -17.38, "name": "Samco Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 21.09, "y": -2.48, "name": "Sundaram Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 21.97, "y": -2.18, "name": "Tata Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 16.3, "y": -6.68, "name": "Taurus Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 27.89, "y": -3.74, "name": "TrustMF Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 33.59, "y": -6.45, "name": "UTI Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 25.19, "y": -2.79, "name": "Union Flexi Cap Dir Gr", "cat": "Flexi Cap"}, {"x": 34.35, "y": -4.87, "name": "Motilal Oswal Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap"}, {"x": 20.51, "y": -2.52, "name": "Navi Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap"}, {"x": 17.88, "y": -10.71, "name": "Shriram Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap"}, {"x": 23.52, "y": -0.84, "name": "WOC Flexi Cap Fund-Reg(G)", "cat": "Flexi Cap"}, {"x": 26.36, "y": -5.13, "name": "360 ONE Focused Dir Gr", "cat": "Focused"}, {"x": 24.17, "y": -0.63, "name": "Aditya BSL Focused Dir Gr", "cat": "Focused"}, {"x": 28.98, "y": -5.48, "name": "Axis Focused Dir Gr", "cat": "Focused"}, {"x": 15.72, "y": -0.31, "name": "Bandhan Focused Dir Gr", "cat": "Focused"}, {"x": 28.5, "y": -7.67, "name": "Baroda BNP P Focused Dir Gr", "cat": "Focused"}, {"x": 28.8, "y": -1.67, "name": "Canara Robeco Focused Dir Gr", "cat": "Focused"}, {"x": 19.42, "y": -3.61, "name": "DSP Focused Dir Gr", "cat": "Focused"}, {"x": 25.93, "y": -3.35, "name": "Edelweiss Focused Dir Gr", "cat": "Focused"}, {"x": 22.9, "y": -5.78, "name": "Franklin India Focused Equity Dir Gr", "cat": "Focused"}, {"x": 21.53, "y": 1.95, "name": "HDFC Focused Dir Gr", "cat": "Focused"}, {"x": 28.16, "y": -1.53, "name": "HSBC Focused Dir Gr", "cat": "Focused"}, {"x": 18.94, "y": 0.73, "name": "ICICI Pru Focused Equity Dir Gr", "cat": "Focused"}, {"x": 24.21, "y": 0.39, "name": "ITI Focused Dir Gr", "cat": "Focused"}, {"x": 34.17, "y": -4.99, "name": "Invesco India Focused Dir Gr", "cat": "Focused"}, {"x": 26.55, "y": 1.14, "name": "Kotak Focused Dir Gr", "cat": "Focused"}, {"x": 18.99, "y": -3.71, "name": "Mahindra Manulife Focused Dir Gr", "cat": "Focused"}, {"x": 27.84, "y": -6.98, "name": "Mirae Asset Focused Dir Gr", "cat": "Focused"}, {"x": 46.03, "y": -10.34, "name": "Motilal Oswal Focused Dir Gr", "cat": "Focused"}, {"x": 27.23, "y": -3.28, "name": "Nippon India Focused Dir Gr", "cat": "Focused"}, {"x": 13.63, "y": -2.24, "name": "Old Bridge Focused Dir Gr", "cat": "Focused"}, {"x": 24.97, "y": -9.28, "name": "Quant Focused fund Dir Gr", "cat": "Focused"}, {"x": 26.36, "y": 5.85, "name": "SBI Focused Dir Gr", "cat": "Focused"}, {"x": 27.56, "y": -5.27, "name": "Sundaram Focused Dir Gr", "cat": "Focused"}, {"x": 22.11, "y": -5.42, "name": "Tata Focused Dir Gr", "cat": "Focused"}, {"x": 27.92, "y": -6.06, "name": "UTI Focused Dir Gr", "cat": "Focused"}, {"x": 31.34, "y": -1.13, "name": "Union Focused Dir Gr", "cat": "Focused"}, {"x": 31.78, "y": -7.25, "name": "JM Focused Fund-Reg(G)", "cat": "Focused"}, {"x": 21.49, "y": -7.81, "name": "LIC MF Focused Fund-Reg(G)", "cat": "Focused"}, {"x": 15.57, "y": -4.78, "name": "Aditya BSL Div Yield Dir Gr", "cat": "Dividend Yield"}, {"x": 19.16, "y": -6.21, "name": "HDFC Dividend Yield Dir Gr", "cat": "Dividend Yield"}, {"x": 18.9, "y": -0.66, "name": "ICICI Pru Dividend Yield Eq Dir Gr", "cat": "Dividend Yield"}, {"x": 22.6, "y": -5.32, "name": "LIC MF Dividend Yield Dir Gr", "cat": "Dividend Yield"}, {"x": 19.57, "y": -4.05, "name": "SBI Dividend Yield Dir Gr", "cat": "Dividend Yield"}, {"x": 16.1, "y": -5.36, "name": "Sundaram Div Yield Dir Gr", "cat": "Dividend Yield"}, {"x": 23.38, "y": -1.34, "name": "Tata Dividend Yield Dir Gr", "cat": "Dividend Yield"}, {"x": 17.58, "y": -4.11, "name": "UTI Dividend Yield Dir Gr", "cat": "Dividend Yield"}, {"x": 14.19, "y": -6.49, "name": "Franklin India Dividend Yield Fund(G)", "cat": "Dividend Yield"}, {"x": 26.82, "y": -3.26, "name": "Aditya BSL Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 27.44, "y": -1.15, "name": "Axis Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 20.38, "y": -3.39, "name": "Bajaj Finserv Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 20.58, "y": -1.7, "name": "Bandhan Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 21.46, "y": -3.59, "name": "Bank of India Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 33.93, "y": -4.32, "name": "Canara Robeco Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 19.16, "y": -3.08, "name": "DSP Large & Mid Cap Fund Dir Gr", "cat": "Large & Mid Cap"}, {"x": 25.76, "y": -1.58, "name": "Edelweiss Large & Mid Dir Gr", "cat": "Large & Mid Cap"}, {"x": 30.06, "y": -3.19, "name": "Franklin India Lrg & Md Cp Dir Gr", "cat": "Large & Mid Cap"}, {"x": 20.79, "y": -3.86, "name": "HDFC Large and Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 29.22, "y": -1.11, "name": "HSBC Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 23.82, "y": -0.08, "name": "ICICI Pru Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 23.42, "y": -0.92, "name": "Kotak Large & Midcap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 15.69, "y": -5.62, "name": "LIC MF Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 26.71, "y": -5.13, "name": "Mahindra Manulife Lrg & Md cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 20.11, "y": -2.45, "name": "Mirae Asset Large & Midcap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 44.52, "y": 1.85, "name": "Motilal Oswal Large & Midcap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 21.57, "y": -4.46, "name": "Navi Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 27.23, "y": -1.0, "name": "Nippon India Vsn Lg & Md Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 29.35, "y": -2.06, "name": "PGIM India Large and Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 24.8, "y": -10.66, "name": "Quant Large and Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 24.94, "y": 1.11, "name": "SBI Large & Midcap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 27.52, "y": -2.77, "name": "Sundaram large and Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 19.69, "y": -8.97, "name": "Tata Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 18.07, "y": -1.56, "name": "UTI Large & Mid Cap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 30.03, "y": -2.22, "name": "Union Large & Midcap Dir Gr", "cat": "Large & Mid Cap"}, {"x": 21.11, "y": -5.19, "name": "LIC MF Large & Midcap Fund-Reg(G)", "cat": "Large & Mid Cap"}, {"x": 25.68, "y": 0.65, "name": "WOC Large & Mid Cap Fund-Reg(G)", "cat": "Large & Mid Cap"}, {"x": 22.04, "y": -2.99, "name": "Aditya BSL Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 24.68, "y": -3.67, "name": "Axis Large Cap Fund Dir Gr", "cat": "Large Cap"}, {"x": 23.91, "y": -2.18, "name": "Bajaj Finserv Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 23.29, "y": -2.27, "name": "Bandhan Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 23.71, "y": -4.59, "name": "Baroda BNP P Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 24.19, "y": -2.49, "name": "Canara Robeco Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 17.21, "y": -2.12, "name": "DSP Large cap Dir Gr", "cat": "Large Cap"}, {"x": 20.5, "y": -3.57, "name": "Edelweiss Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 25.62, "y": -2.24, "name": "Franklin India Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 22.72, "y": -3.86, "name": "HDFC Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 23.72, "y": -3.07, "name": "HSBC Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 20.45, "y": -1.5, "name": "ICICI Prudential Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 20.77, "y": -5.77, "name": "ITI Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 29.06, "y": -2.03, "name": "Invesco India largecap Dir Gr", "cat": "Large Cap"}, {"x": 22.98, "y": -7.1, "name": "JM Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 20.92, "y": -2.12, "name": "Kotak Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 15.69, "y": -5.62, "name": "LIC MF Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 22.45, "y": -4.65, "name": "Mahindra Manulife Lrg Cap Dir Gr", "cat": "Large Cap"}, {"x": 22.43, "y": -2.58, "name": "Mirae Asset Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 21.16, "y": 1.7, "name": "Motilal Oswal Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 23.27, "y": -1.05, "name": "Nippon India Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 24.3, "y": -4.39, "name": "PGIM India Large Cap Dr Pl Gr", "cat": "Large Cap"}, {"x": 23.55, "y": -6.67, "name": "Quant Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 24.97, "y": -0.66, "name": "SBI Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 23.41, "y": -4.29, "name": "Sundaram Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 22.12, "y": -3.08, "name": "Tata Large Cap Dir Gr", "cat": "Large Cap"}, {"x": 19.13, "y": -4.67, "name": "UTI Large cap Dir Gr", "cat": "Large Cap"}, {"x": 25.12, "y": -3.57, "name": "Union Largecap Dir Gr", "cat": "Large Cap"}, {"x": 20.06, "y": -2.73, "name": "Bank of India Large Cap Fund-Reg(G)", "cat": "Large Cap"}, {"x": 16.2, "y": -2.1, "name": "Groww Largecap Fund-Reg(G)", "cat": "Large Cap"}, {"x": 17.7, "y": -2.81, "name": "Taurus Large Cap Fund-Reg(G)", "cat": "Large Cap"}, {"x": 22.53, "y": -0.88, "name": "WOC Large Cap Fund-Reg(G)", "cat": "Large Cap"}, {"x": 26.07, "y": 0.5, "name": "Aditya BSL Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 34.68, "y": -1.4, "name": "Axis Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 41.79, "y": -3.16, "name": "Bandhan Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 28.41, "y": -5.42, "name": "Baroda BNP P Lrg & Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 31.68, "y": -0.58, "name": "Baroda BNP P Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 36.17, "y": -1.84, "name": "Canara Robeco Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 26.82, "y": -2.83, "name": "DSP Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 28.12, "y": 0.31, "name": "Edelweiss Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 30.7, "y": -4.39, "name": "Franklin India Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 23.84, "y": 1.41, "name": "HDFC Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 37.43, "y": 1.3, "name": "HSBC Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 30.63, "y": 4.66, "name": "ICICI Pru MidCap Dir Gr", "cat": "Mid Cap"}, {"x": 21.53, "y": -4.05, "name": "ITI Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 43.9, "y": 0.76, "name": "Invesco India Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 43.9, "y": 0.76, "name": "Invesco India large& mid cap Dir Gr", "cat": "Mid Cap"}, {"x": 29.75, "y": -5.64, "name": "JM Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 27.1, "y": -0.52, "name": "Kotak Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 31.5, "y": -6.22, "name": "LIC MF Midcap Fund Dir Gr", "cat": "Mid Cap"}, {"x": 30.18, "y": -2.41, "name": "Mahindra Manulife Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 34.76, "y": -1.96, "name": "Mirae Asset Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 42.45, "y": -7.92, "name": "Motilal Oswal Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 26.06, "y": 0.72, "name": "Nippon India Growth Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 34.87, "y": -3.93, "name": "PGIM India Midcap Fund Dir Gr", "cat": "Mid Cap"}, {"x": 29.03, "y": -11.1, "name": "Quant Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 36.21, "y": -4.82, "name": "SBI Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 30.07, "y": -0.39, "name": "Sundaram Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 30.0, "y": -2.86, "name": "Tata Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 28.61, "y": -6.33, "name": "UTI Mid Cap Dir Gr", "cat": "Mid Cap"}, {"x": 35.92, "y": -0.71, "name": "Union Midcap Dir Gr", "cat": "Mid Cap"}, {"x": 31.25, "y": -3.07, "name": "Aditya Birla SL Midcap Fund(G)", "cat": "Mid Cap"}, {"x": 43.0, "y": 3.02, "name": "Invesco India Midcap Fund-Reg(G)", "cat": "Mid Cap"}, {"x": 20.21, "y": -9.05, "name": "Taurus Mid Cap Fund-Reg(G)", "cat": "Mid Cap"}, {"x": 30.22, "y": 2.56, "name": "WOC Mid Cap Fund-Reg(G)", "cat": "Mid Cap"}, {"x": 24.25, "y": -2.9, "name": "Aditya BSL Multi-Cap Dir Gr", "cat": "Multi Cap"}, {"x": 27.8, "y": -2.24, "name": "Axis Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 25.99, "y": -4.89, "name": "Bandhan Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 22.66, "y": -1.73, "name": "Bank of India Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 30.2, "y": -3.72, "name": "Baroda BNP P Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 28.77, "y": -2.98, "name": "Canara Robeco Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 24.12, "y": -6.69, "name": "DSP Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 24.72, "y": -3.56, "name": "Edelweiss Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 20.27, "y": -3.17, "name": "Franklin India Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 23.39, "y": -5.6, "name": "HDFC Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 25.8, "y": -3.23, "name": "HSBC Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 29.97, "y": -2.12, "name": "ICICI Pru Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 21.53, "y": -4.05, "name": "ITI Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 36.13, "y": -7.46, "name": "Invesco India Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 17.22, "y": -2.25, "name": "Kotak Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 23.74, "y": -3.88, "name": "LIC MF Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 27.62, "y": -2.38, "name": "Mahindra Manulife Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 22.9, "y": -1.93, "name": "Mirae Asset Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 36.19, "y": -1.67, "name": "Motilal Oswal Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 29.14, "y": -2.29, "name": "Nippon India Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 21.52, "y": -11.8, "name": "Quant Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 25.94, "y": -1.69, "name": "SBI Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 23.1, "y": -3.96, "name": "Sundaram Multi Cap Dir Gr", "cat": "Multi Cap"}, {"x": 20.59, "y": -4.53, "name": "Tata Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 17.44, "y": -8.65, "name": "Taurus Ethical Dir Gr", "cat": "Multi Cap"}, {"x": 32.09, "y": -2.06, "name": "Union Multicap Dir Gr", "cat": "Multi Cap"}, {"x": 27.74, "y": -3.79, "name": "ITI Multi-Cap Fund-Reg(G)", "cat": "Multi Cap"}, {"x": 25.15, "y": 1.14, "name": "WOC Multi Cap Fund-Reg(G)", "cat": "Multi Cap"}, {"x": 26.82, "y": -5.09, "name": "Aditya BSL Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 28.02, "y": -3.56, "name": "Axis Small Cap Fund Dir Gr", "cat": "Small Cap"}, {"x": 16.13, "y": -3.34, "name": "Bandhan Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 31.57, "y": -5.73, "name": "Bank of India Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 32.16, "y": -6.71, "name": "Baroda BNP Paribas Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 28.09, "y": -7.33, "name": "Canara Robeco Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 25.83, "y": -2.41, "name": "DSP Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 30.04, "y": -5.07, "name": "Edelweiss Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 26.48, "y": -9.35, "name": "Franklin India Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 20.37, "y": -5.97, "name": "HDFC Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 28.45, "y": -9.69, "name": "HSBC Small Cap Fund Dir Gr", "cat": "Small Cap"}, {"x": 21.75, "y": -7.68, "name": "ICICI Pru Smallcap Dir Gr", "cat": "Small Cap"}, {"x": 32.97, "y": -3.44, "name": "ITI Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 41.64, "y": -2.02, "name": "Invesco India Smallcap Dir Gr", "cat": "Small Cap"}, {"x": 27.89, "y": -10.41, "name": "JM Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 29.73, "y": -9.48, "name": "Kotak Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 30.9, "y": -9.25, "name": "LIC MF Small Cap Fund Dir Gr", "cat": "Small Cap"}, {"x": 25.97, "y": -7.27, "name": "Mahindra Manulife Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 29.11, "y": -0.68, "name": "Motilal Oswal Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 25.08, "y": -6.91, "name": "Nippon India Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 40.26, "y": -4.08, "name": "PGIM India Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 25.68, "y": -9.27, "name": "Quant Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 29.45, "y": -8.18, "name": "SBI Small Cap Fund Dir Gr", "cat": "Small Cap"}, {"x": 24.91, "y": -3.21, "name": "Sundaram Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 29.89, "y": -14.0, "name": "Tata Small Cap Fund Dir Gr", "cat": "Small Cap"}, {"x": 24.97, "y": -5.9, "name": "UTI Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 36.34, "y": -1.31, "name": "Union Small Cap Dir Gr", "cat": "Small Cap"}, {"x": 20.38, "y": -3.67, "name": "Quantum Small Cap Fund-Reg(G)", "cat": "Small Cap"}, {"x": 22.62, "y": -4.52, "name": "Aditya BSL Value Dir Gr", "cat": "Value/Contra"}, {"x": 22.46, "y": -1.4, "name": "Axis Value Dir Gr", "cat": "Value/Contra"}, {"x": 20.73, "y": -5.49, "name": "Bandhan Value Dir Gr", "cat": "Value/Contra"}, {"x": 21.99, "y": -7.83, "name": "Baroda BNP Paribas Value Dir Gr", "cat": "Value/Contra"}, {"x": 19.31, "y": 3.6, "name": "DSP Value Dir Gr", "cat": "Value/Contra"}, {"x": 23.11, "y": -1.38, "name": "HDFC Value Dir Gr", "cat": "Value/Contra"}, {"x": 16.46, "y": -0.09, "name": "HSBC Value Dir Gr", "cat": "Value/Contra"}, {"x": 15.12, "y": -0.77, "name": "ICICI Prudential Value Dir Gr", "cat": "Value/Contra"}, {"x": 17.33, "y": -5.66, "name": "ITI Value Dir Gr", "cat": "Value/Contra"}, {"x": 25.65, "y": -4.38, "name": "Invesco India Contra Dir Gr", "cat": "Value/Contra"}, {"x": 17.87, "y": -12.54, "name": "JM Value Dir Gr", "cat": "Value/Contra"}, {"x": 22.5, "y": -3.19, "name": "Kotak Contra Dir Gr", "cat": "Value/Contra"}, {"x": 18.9, "y": -3.61, "name": "Nippon India Value Dir Gr", "cat": "Value/Contra"}, {"x": 17.77, "y": -6.86, "name": "Quant Value Dir Gr", "cat": "Value/Contra"}, {"x": 18.35, "y": -5.39, "name": "Quantum Value Dir Gr", "cat": "Value/Contra"}, {"x": 16.01, "y": -4.54, "name": "SBI Contra Dir Gr", "cat": "Value/Contra"}, {"x": 13.96, "y": -5.37, "name": "Tata Value Dir Gr", "cat": "Value/Contra"}, {"x": 15.54, "y": -5.54, "name": "Templeton India Value Dir Gr", "cat": "Value/Contra"}, {"x": 20.2, "y": -3.9, "name": "UTI Value fund Dir Gr", "cat": "Value/Contra"}, {"x": 23.44, "y": -1.81, "name": "Union Value Fund Dir Gr", "cat": "Value/Contra"}, {"x": 14.3, "y": -1.37, "name": "Groww Value Fund-Reg(G)", "cat": "Value/Contra"}, {"x": 15.16, "y": -3.59, "name": "LIC MF Value Fund-Reg(G)", "cat": "Value/Contra"}, {"x": 15.57, "y": -3.24, "name": "Sundaram Value Fund-Reg(G)", "cat": "Value/Contra"}, {"x": 23.91, "y": -1.78, "name": "Aditya Birla SL ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 26.9, "y": -3.45, "name": "Axis ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 22.52, "y": -3.87, "name": "Bandhan ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 20.48, "y": -5.96, "name": "Bank of India ELSS Tax Saver-Reg(G)", "cat": "ELSS"}, {"x": 28.22, "y": -0.25, "name": "Baroda BNP Paribas ELSS Tax Saver Fund-R", "cat": "ELSS"}, {"x": 24.61, "y": -3.1, "name": "Canara Rob ELSS Tax Saver-Reg(G)", "cat": "ELSS"}, {"x": 18.19, "y": -2.9, "name": "DSP ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 23.26, "y": -1.78, "name": "Edelweiss ELSS Tax saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 23.3, "y": -4.77, "name": "Franklin India ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 21.92, "y": -6.51, "name": "Groww ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 21.6, "y": -1.26, "name": "HDFC ELSS Tax saver(G)", "cat": "ELSS"}, {"x": 24.25, "y": -2.27, "name": "HSBC ELSS Tax saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 23.92, "y": -1.95, "name": "ICICI Pru ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 30.42, "y": -7.05, "name": "Invesco India ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 22.48, "y": -5.59, "name": "ITI ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 27.31, "y": -7.12, "name": "JM ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 20.21, "y": -4.37, "name": "Kotak ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 22.08, "y": -5.62, "name": "LIC MF ELSS Tax Saver-Reg(G)", "cat": "ELSS"}, {"x": 25.39, "y": -4.44, "name": "Mahindra Manulife ELSS Tax Saver Fund-Re", "cat": "ELSS"}, {"x": 19.62, "y": -1.72, "name": "Mirae Asset ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 48.24, "y": -1.51, "name": "Motilal Oswal ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 22.8, "y": -6.73, "name": "Navi ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 20.23, "y": -2.35, "name": "Nippon India ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 20.98, "y": -10.71, "name": "NJ ELSS Tax Saver Scheme-Reg(G)", "cat": "ELSS"}, {"x": 16.37, "y": -2.17, "name": "Parag Parikh ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 28.29, "y": -4.74, "name": "PGIM India ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 25.94, "y": -6.54, "name": "Quant ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 18.36, "y": -5.36, "name": "Quantum ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 23.87, "y": -14.01, "name": "Samco ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 18.54, "y": -3.38, "name": "SBI ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 17.89, "y": -9.99, "name": "Shriram ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 20.99, "y": -2.64, "name": "Sundaram ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 23.19, "y": -1.73, "name": "Tata ELSS Fund-Reg(G)", "cat": "ELSS"}, {"x": 15.29, "y": -5.44, "name": "Taurus ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 26.76, "y": -3.51, "name": "Union ELSS Tax Saver Fund(G)", "cat": "ELSS"}, {"x": 22.02, "y": -5.97, "name": "UTI ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}, {"x": 23.2, "y": -1.36, "name": "WOC ELSS Tax Saver Fund-Reg(G)", "cat": "ELSS"}];
+
+// Churn vs Alpha
+chartInstances.push(new Chart(document.getElementById('churnAlphaChart'), {
+  type: 'scatter',
+  data: { datasets: [{ data: churnAlphaData.map(function(d) { return {x: d.x, y: d.y}; }),
+    backgroundColor: churnAlphaData.map(function(d) { return (catColors[d.cat] || '#5b8def') + '80'; }),
+    borderColor: churnAlphaData.map(function(d) { return catColors[d.cat] || '#5b8def'; }),
+    borderWidth: 1, pointRadius: 4, pointHoverRadius: 6 }] },
+  options: { responsive: true,
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: function(ctx) { var d = churnAlphaData[ctx.dataIndex]; return d.name + ' (' + d.cat + ') | Turnover: ' + d.x + '% | Alpha: ' + d.y; } } } },
+    scales: { x: { title: { display: true, text: 'Portfolio Turnover (%)' }, min: 0, max: 300 },
+      y: { title: { display: true, text: 'Alpha 5Y' }, grid: { color: chartThemeColors().grid } } } }
+}));
+
+// Churn vs P2P
+chartInstances.push(new Chart(document.getElementById('churnP2PChart'), {
+  type: 'scatter',
+  data: { datasets: [{ data: churnAlphaData.filter(function(d) { return d.p2p !== null; }).map(function(d) { return {x: d.x, y: d.p2p}; }),
+    backgroundColor: churnAlphaData.filter(function(d) { return d.p2p !== null; }).map(function(d) { return (catColors[d.cat] || '#5b8def') + '80'; }),
+    borderColor: churnAlphaData.filter(function(d) { return d.p2p !== null; }).map(function(d) { return catColors[d.cat] || '#5b8def'; }),
+    borderWidth: 1, pointRadius: 4, pointHoverRadius: 6 }] },
+  options: { responsive: true,
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: function(ctx) { var filtered = churnAlphaData.filter(function(d) { return d.p2p !== null; }); var d = filtered[ctx.dataIndex]; return d.name + ' | Turnover: ' + d.x + '% | P2P: ' + d.p2p + '%'; } } } },
+    scales: { x: { title: { display: true, text: 'Portfolio Turnover (%)' }, min: 0, max: 300 },
+      y: { title: { display: true, text: "P2P Return (Sep 24 to Now) %" }, grid: { color: chartThemeColors().grid } } } }
+}));
+
+// PE vs P2P
+chartInstances.push(new Chart(document.getElementById('pePPChart'), {
+  type: 'scatter',
+  data: { datasets: [{ data: peData.map(function(d) { return {x: d.x, y: d.y}; }),
+    backgroundColor: peData.map(function(d) { return (catColors[d.cat] || '#5b8def') + '80'; }),
+    borderColor: peData.map(function(d) { return catColors[d.cat] || '#5b8def'; }),
+    borderWidth: 1, pointRadius: 4, pointHoverRadius: 6 }] },
+  options: { responsive: true,
+    plugins: { legend: { display: false },
+      tooltip: { callbacks: { label: function(ctx) { var d = peData[ctx.dataIndex]; return d.name + ' (' + d.cat + ') | PE: ' + d.x + ' | P2P: ' + d.y + '%'; } } } },
+    scales: { x: { title: { display: true, text: 'Portfolio PE Ratio' } },
+      y: { title: { display: true, text: "P2P Return (Sep 24 to Now) %" }, grid: { color: chartThemeColors().grid } } } }
+}));
+
+// PE Bucket bars
+var peBuckets = [{"PE_Bucket": "<18", "Count": 31, "Avg_P2P": -4.45, "Median_P2P": -4.54, "Avg_Alpha": 1.67, "Avg_Return_1Y": 9.28}, {"PE_Bucket": "18-22", "Count": 60, "Avg_P2P": -3.89, "Median_P2P": -3.64, "Avg_Alpha": 1.34, "Avg_Return_1Y": 9.71}, {"PE_Bucket": "22-26", "Count": 88, "Avg_P2P": -3.8, "Median_P2P": -3.2, "Avg_Alpha": 0.99, "Avg_Return_1Y": 10.6}, {"PE_Bucket": "26-30", "Count": 58, "Avg_P2P": -3.87, "Median_P2P": -3.36, "Avg_Alpha": 0.57, "Avg_Return_1Y": 10.79}, {"PE_Bucket": "30-35", "Count": 30, "Avg_P2P": -3.25, "Median_P2P": -3.32, "Avg_Alpha": 0.32, "Avg_Return_1Y": 12.18}, {"PE_Bucket": "35+", "Count": 19, "Avg_P2P": -2.65, "Median_P2P": -1.84, "Avg_Alpha": 1.12, "Avg_Return_1Y": 14.49}];
+chartInstances.push(new Chart(document.getElementById('peBucketChart'), {
+  type: 'bar',
+  data: { labels: peBuckets.map(function(b) { return b.PE_Bucket; }),
+    datasets: [
+      { label: 'Avg P2P Return (%)', data: peBuckets.map(function(b) { return b.Avg_P2P; }),
+        backgroundColor: peBuckets.map(function(b) { return b.Avg_P2P >= 0 ? '#2d8a4e80' : '#c0392b80'; }),
+        borderColor: peBuckets.map(function(b) { return b.Avg_P2P >= 0 ? '#2d8a4e' : '#c0392b'; }), borderWidth: 1 },
+      { label: 'Avg Return 1Y (%)', data: peBuckets.map(function(b) { return b.Avg_Return_1Y; }),
+        backgroundColor: '#5b8def50', borderColor: '#5b8def', borderWidth: 1 }
+    ] },
+  options: { responsive: true,
+    plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } },
+    scales: { x: { title: { display: true, text: 'PE Bucket' } },
+      y: { title: { display: true, text: 'Return (%)' }, grid: { color: chartThemeColors().grid } } } }
+}));
+
+(function () {
+  var KEY = 'market-reports-theme';
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  function stored() {
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  }
+  function prefersDark() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function effective() {
+    var s = stored();
+    if (s === 'dark' || s === 'light') return s;
+    return prefersDark() ? 'dark' : 'light';
+  }
+  function label(t) {
+    return t === 'dark' ? 'Light mode' : 'Dark mode';
+  }
+  function apply(t) {
+    root.setAttribute('data-theme', t);
+    if (btn) {
+      btn.textContent = label(t);
+      btn.setAttribute('aria-pressed', t === 'dark');
+    }
+    refreshChartsTheme();
+    try {
+      window.dispatchEvent(new CustomEvent('report-theme', { detail: { theme: t } }));
+    } catch (e) {}
+  }
+  function toggle() {
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(KEY, next); } catch (e) {}
+    apply(next);
+  }
+  if (btn) btn.addEventListener('click', toggle);
+  apply(effective());
+})();
+</script>
+
+</body></html>
