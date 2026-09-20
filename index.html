@@ -40,6 +40,10 @@
       --new-fg: #8B3A2A;
       --pill-nifty-bg: #E8EDF2;
       --pill-nifty-fg: #1E3A5F;
+      --pill-em-bg: #F0E8EB;
+      --pill-em-fg: #5F2A3A;
+      --pill-scanner-bg: #F5E6E2;
+      --pill-scanner-fg: #8B3A2A;
     }
 
     html[data-theme="dark"] {
@@ -65,6 +69,10 @@
       --new-fg: #E8B0A0;
       --pill-nifty-bg: #1E2A38;
       --pill-nifty-fg: #A8C4E8;
+      --pill-em-bg: #382430;
+      --pill-em-fg: #E8A8C0;
+      --pill-scanner-bg: #3A2824;
+      --pill-scanner-fg: #E8B0A0;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -358,6 +366,8 @@
     .pill--oil { background: var(--pill-oil-bg); color: var(--pill-oil-fg); }
     .pill--payments { background: var(--pill-pay-bg); color: var(--pill-pay-fg); }
     .pill--nifty { background: var(--pill-nifty-bg); color: var(--pill-nifty-fg); }
+    .pill--em { background: var(--pill-em-bg); color: var(--pill-em-fg); }
+    .pill--scanner { background: var(--pill-scanner-bg); color: var(--pill-scanner-fg); }
 
     .pill--new {
       background: var(--new-bg);
@@ -584,10 +594,67 @@
       </button>
     </header>
 
-    <p class="stats-bar">6 research reports · 8 NIFTY dashboards · Chart.js + static HTML · Updated Apr 2026</p>
+    <p class="stats-bar">3 live scanners · 7 research reports · 8 NIFTY dashboards · Updated Sep 2026</p>
+
+    <section class="nifty-section" aria-labelledby="scanner-section-title">
+      <header class="nifty-section__head">
+        <p class="nifty-section__kicker">NSE · current screening outputs</p>
+        <h2 id="scanner-section-title" class="nifty-section__title">Live Stock Scanners</h2>
+        <p class="nifty-section__subtitle">Three complementary lenses on delivery persistence, structured pullbacks, and short-term momentum. These are research queues—not buy recommendations.</p>
+      </header>
+      <div class="nifty-grid">
+        <a class="card card--standard nifty-card reveal" href="scanners/delivery/" style="--reveal-i: 0">
+          <div class="card__pills">
+            <span class="pill pill--scanner">Delivery</span>
+            <span class="pill pill--new">Latest</span>
+          </div>
+          <p class="card__date">Data through 18 Sep 2026</p>
+          <h2 class="card__title">Delivery Persistence Scanner</h2>
+          <p class="card__desc">A regime-free, ranked queue of 41 stocks with sustained delivery participation: 22 Priority and 19 Watch candidates.</p>
+          <div class="card__foot">
+            <span class="card__cta">Open scanner <span class="card__cta-arrow">→</span></span>
+            <span class="card__source">10-session evidence</span>
+          </div>
+        </a>
+        <a class="card card--standard nifty-card reveal" href="scanners/v5/" style="--reveal-i: 1">
+          <div class="card__pills"><span class="pill pill--scanner">V5 Pullback</span></div>
+          <p class="card__date">11–18 Sep 2026</p>
+          <h2 class="card__title">V5 Pullback Scanner</h2>
+          <p class="card__desc">Technical pullback setups ranked from the local NSE universe using price structure, trend, momentum, and liquidity checks.</p>
+          <div class="card__foot">
+            <span class="card__cta">Open scanner <span class="card__cta-arrow">→</span></span>
+            <span class="card__source">Technical setup</span>
+          </div>
+        </a>
+        <a class="card card--standard nifty-card reveal" href="scanners/momentum-pullbacks/" style="--reveal-i: 2">
+          <div class="card__pills"><span class="pill pill--scanner">Momentum</span></div>
+          <p class="card__date">Latest three sessions</p>
+          <h2 class="card__title">Momentum Pullback Scanner</h2>
+          <p class="card__desc">Recent pullbacks inside stronger momentum structures, with sortable stock-level context and charts for rapid review.</p>
+          <div class="card__foot">
+            <span class="card__cta">Open scanner <span class="card__cta-arrow">→</span></span>
+            <span class="card__source">Short-term review</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
     <main class="bento">
-      <a class="card card--featured reveal" href="expert-intelligence-dashboard.html" style="--reveal-i: 0">
+      <a class="card card--wide reveal" href="msci-em-country-weights.html" style="--reveal-i: 0">
+        <div class="card__pills">
+          <span class="pill pill--em">Emerging Markets</span>
+          <span class="pill pill--new">NEW</span>
+        </div>
+        <p class="card__date">May 2026</p>
+        <h2 class="card__title">MSCI EM — Who Owns the Index?</h2>
+        <p class="card__desc">Country weight shifts across China, Taiwan, India, South Korea, and Brazil from 2003 to April 2026. Korea and Taiwan once ran this index. China took it. Now Taiwan is coming back.</p>
+        <div class="card__foot">
+          <span class="card__cta">Open report <span class="card__cta-arrow">&rarr;</span></span>
+          <span class="card__source">MSCI &middot; iShares EEM &middot; SEC EDGAR</span>
+        </div>
+      </a>
+
+      <a class="card card--featured reveal" href="expert-intelligence-dashboard.html" style="--reveal-i: 1">
         <div class="card__body">
           <div class="card__pills">
             <span class="pill pill--macro">Macro</span>
@@ -607,7 +674,7 @@
         </div>
       </a>
 
-      <a class="card card--standard reveal" href="oil-shock-bottom-analysis-apr2026.html" style="--reveal-i: 1">
+      <a class="card card--standard reveal" href="oil-shock-bottom-analysis-apr2026.html" style="--reveal-i: 2">
         <div class="card__pills">
           <span class="pill pill--oil">Oil</span>
           <span class="pill pill--macro">Macro</span>
@@ -621,7 +688,7 @@
         </div>
       </a>
 
-      <a class="card card--standard reveal" href="RBI_Trust_Audit.html" style="--reveal-i: 2">
+      <a class="card card--standard reveal" href="RBI_Trust_Audit.html" style="--reveal-i: 3">
         <div class="card__pills">
           <span class="pill pill--rbi">RBI</span>
           <span class="pill pill--macro">Macro</span>
@@ -635,7 +702,7 @@
         </div>
       </a>
 
-      <a class="card card--wide reveal" href="RBI_Payment_Systems_Dashboard_Jan2026.html" style="--reveal-i: 3">
+      <a class="card card--wide reveal" href="RBI_Payment_Systems_Dashboard_Jan2026.html" style="--reveal-i: 4">
         <div class="card__pills">
           <span class="pill pill--payments">Payments</span>
           <span class="pill pill--rbi">RBI</span>
@@ -649,7 +716,7 @@
         </div>
       </a>
 
-      <a class="card card--standard reveal" href="mf-dashboard.html" style="--reveal-i: 4">
+      <a class="card card--standard reveal" href="mf-dashboard.html" style="--reveal-i: 5">
         <div class="card__pills">
           <span class="pill pill--macro">Macro</span>
         </div>
@@ -662,7 +729,7 @@
         </div>
       </a>
 
-      <a class="card card--wide reveal" href="mf-evaluation-dashboard-v2.html" style="--reveal-i: 5">
+      <a class="card card--wide reveal" href="mf-evaluation-dashboard-v2.html" style="--reveal-i: 6">
         <div class="card__pills">
           <span class="pill pill--macro">Mutual funds</span>
           <span class="pill pill--new">NEW</span>
@@ -684,7 +751,7 @@
         <p class="nifty-section__subtitle">Eight standalone Chart.js dashboards on Nifty 50 history: drawdowns, rolling returns, timing myths, SIP vs timing, trend signals, compounding, volatility regimes, and crash playbooks. Kept separate from the macro research lane above.</p>
       </header>
       <div class="nifty-grid">
-        <a class="card card--standard nifty-card reveal" href="nifty-underwater-world.html" style="--reveal-i: 6">
+        <a class="card card--standard nifty-card reveal" href="nifty-underwater-world.html" style="--reveal-i: 7">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 1</p>
           <h2 class="card__title">The Underwater World</h2>
@@ -694,7 +761,7 @@
             <span class="card__source">1990–2026</span>
           </div>
         </a>
-        <a class="card card--standard nifty-card reveal" href="nifty-rolling-returns.html" style="--reveal-i: 7">
+        <a class="card card--standard nifty-card reveal" href="nifty-rolling-returns.html" style="--reveal-i: 8">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 2</p>
           <h2 class="card__title">Rolling Returns &amp; Mean Reversion</h2>
@@ -704,7 +771,7 @@
             <span class="card__source">Heatmaps · stats</span>
           </div>
         </a>
-        <a class="card card--standard nifty-card reveal" href="nifty-timing-mythbuster.html" style="--reveal-i: 8">
+        <a class="card card--standard nifty-card reveal" href="nifty-timing-mythbuster.html" style="--reveal-i: 9">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 3</p>
           <h2 class="card__title">Timing Mythbuster</h2>
@@ -714,7 +781,7 @@
             <span class="card__source">Entry timing</span>
           </div>
         </a>
-        <a class="card card--standard nifty-card reveal" href="nifty-sip-vs-timer.html" style="--reveal-i: 9">
+        <a class="card card--standard nifty-card reveal" href="nifty-sip-vs-timer.html" style="--reveal-i: 10">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 4</p>
           <h2 class="card__title">SIP vs Timer</h2>
@@ -724,7 +791,7 @@
             <span class="card__source">Wealth paths</span>
           </div>
         </a>
-        <a class="card card--standard nifty-card reveal" href="nifty-higher-low-signal.html" style="--reveal-i: 10">
+        <a class="card card--standard nifty-card reveal" href="nifty-higher-low-signal.html" style="--reveal-i: 11">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 5</p>
           <h2 class="card__title">Higher Low Signal</h2>
@@ -734,7 +801,7 @@
             <span class="card__source">Trend anatomy</span>
           </div>
         </a>
-        <a class="card card--standard nifty-card reveal" href="nifty-wealth-compounder.html" style="--reveal-i: 11">
+        <a class="card card--standard nifty-card reveal" href="nifty-wealth-compounder.html" style="--reveal-i: 12">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 6</p>
           <h2 class="card__title">Wealth Compounder</h2>
@@ -744,7 +811,7 @@
             <span class="card__source">Long horizon</span>
           </div>
         </a>
-        <a class="card card--standard nifty-card reveal" href="nifty-volatility-regimes.html" style="--reveal-i: 12">
+        <a class="card card--standard nifty-card reveal" href="nifty-volatility-regimes.html" style="--reveal-i: 13">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 7</p>
           <h2 class="card__title">Volatility Regimes</h2>
@@ -754,7 +821,7 @@
             <span class="card__source">Risk states</span>
           </div>
         </a>
-        <a class="card card--standard nifty-card reveal" href="nifty-crash-playbook.html" style="--reveal-i: 13">
+        <a class="card card--standard nifty-card reveal" href="nifty-crash-playbook.html" style="--reveal-i: 14">
           <div class="card__pills"><span class="pill pill--nifty">Nifty 50</span></div>
           <p class="card__date">Dashboard 8</p>
           <h2 class="card__title">Crash Playbook</h2>
