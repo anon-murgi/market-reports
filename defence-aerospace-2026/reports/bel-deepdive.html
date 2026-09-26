@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BEL — Company Deepdive</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css" rel="stylesheet">
+<script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+<style>
+:root{--bg:#111111;--card:#1a1a1a;--bd:#2e2e2e;--tx:#F5F5F5;--mt:#999999;--dm:#666666;
+      --red:#F9423A;--grn:#22c55e;--yel:#eab308;--th:#222222;--blue:#7dd3fc}
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0!important}
+html{font-size:14px}
+body{background:var(--bg);color:var(--tx);font-family:'Pretendard','Noto Sans',sans-serif}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:#111}
+::-webkit-scrollbar-thumb{background:#2e2e2e}
+*{scrollbar-width:thin;scrollbar-color:#2e2e2e #111}
+
+.wrap{max-width:1260px;margin:0 auto;padding:24px 28px}
+hr.div{border:none;border-top:1px dotted var(--bd);margin:22px 0}
+.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt24{margin-top:24px}
+.g{color:var(--grn)}.r{color:var(--red)}.y{color:var(--yel)}.b{color:var(--blue)}
+
+header{background:#000;padding:16px 28px;display:flex;justify-content:space-between;
+       align-items:center;border-bottom:1px dotted var(--bd)}
+.hd-title{color:var(--tx);font-size:15px;font-weight:600}
+.hd-meta{color:var(--dm);font-size:12px}
+
+.co-name{font-size:24px;font-weight:700;letter-spacing:-.01em}
+.co-sub{font-size:12px;color:var(--mt);margin-top:3px}
+.stats-strip{display:flex;flex-wrap:wrap;align-items:center;
+             margin-top:10px;padding-top:10px;border-top:1px dotted var(--bd)}
+.sstat{display:flex;flex-direction:column;padding:4px 14px 4px 0;
+       border-right:1px dotted var(--bd);margin-right:14px}
+.sstat:last-child{border-right:none}
+.sstat .lbl{font-size:10px;font-weight:700;text-transform:uppercase;
+            letter-spacing:1px;color:var(--dm);margin-bottom:2px}
+.sstat .val{font-size:14px;font-weight:700}
+
+/* tabs — right after stats strip */
+.tab-bar{display:flex;border-bottom:1px dotted var(--bd);margin-top:14px;overflow-x:auto}
+.tab{padding:10px 22px;background:transparent;color:rgba(245,245,245,.45);
+     border:none;border-bottom:2px solid transparent;cursor:pointer;
+     font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+     margin-bottom:-1px;outline:none;font-family:'Pretendard',sans-serif;white-space:nowrap}
+.tab.active{color:var(--tx);border-bottom:2px solid var(--red)}
+.tab-body{display:none;padding-top:20px}.tab-body.active{display:block}
+
+.sh2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;
+     color:var(--dm);margin-bottom:10px}
+.section{margin-bottom:30px}
+
+/* verdict */
+.verdict-banner{padding:22px 24px;background:var(--card);border:1px dotted var(--bd)}
+.vb-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px}
+.vb-tag{display:inline-block;font-size:14px;font-weight:800;letter-spacing:.8px;
+        text-transform:uppercase;padding:6px 14px;border:1px solid}
+.vb-tag.t-buy{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.vb-tag.t-watch{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.vb-tag.t-avoid{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+.vb-conviction{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--dm);text-transform:uppercase}
+.vb-thesis{font-size:17px;line-height:1.65;color:var(--tx);margin:6px 0 14px}
+.vb-fv-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;
+           padding-top:12px;border-top:1px dotted var(--bd);font-size:13px;color:var(--mt)}
+.vb-mos{display:inline-block;padding:4px 10px;font-weight:800;font-size:14px;border:1px solid}
+.vb-mos.pos{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.vb-mos.neg{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+
+/* state tiles — subtle RAG tint, no colored borders */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+.tile{border:1px dotted var(--bd);display:flex;flex-direction:column}
+.tile.up{background:rgba(34,197,94,.04)}.tile.down{background:rgba(249,66,58,.04)}.tile.flat{background:rgba(234,179,8,.04)}
+.tile-top{padding:14px 16px 10px}
+.tile .tlabel{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+             color:var(--dm);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.tile .tdot{width:7px;height:7px;border-radius:50%!important}
+.tile.up .tdot{background:var(--grn)}.tile.down .tdot{background:var(--red)}.tile.flat .tdot{background:var(--yel)}
+.tile .tval{font-size:19px;font-weight:700;line-height:1.3;margin-bottom:6px}
+.tile .tcap{font-size:13px;color:var(--mt);line-height:1.5}
+.tile .tcap b,.tile .tcap strong{color:var(--tx);font-weight:700}
+.tile-chart{position:relative;height:60px;margin-top:auto;overflow:hidden}
+.tile-chart svg{display:block;width:100%;height:100%}
+
+.risk-flag{margin-top:14px;padding:12px 16px;background:rgba(249,66,58,.05);
+           border:1px dotted rgba(249,66,58,.2);font-size:13px;line-height:1.55;color:var(--mt)}
+.risk-flag b{color:var(--red)}
+
+.price-chart-wrap{margin-bottom:20px}
+.price-chart{width:100%;height:360px;background:#0d0d0d;border:1px dotted var(--bd)}
+.chart-caption{font-size:12px;color:var(--dm);margin-top:4px;line-height:1.45}
+
+/* thesis driver cards — fill row, max 5, equal width */
+.driver-row{display:flex;gap:14px;margin-bottom:20px}
+.driver-card{flex:1 1 0;min-width:0;padding:0;background:rgba(234,179,8,.03);border:1px dotted var(--bd);
+             display:flex;flex-direction:column}
+.dc-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px 0}
+.dc-tag{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--dm);text-transform:uppercase}
+.dc-tag span{color:var(--mt)}
+.dc-conv{display:flex;align-items:center;gap:4px;font-size:9px;font-weight:700;
+         letter-spacing:.8px;color:var(--dm);text-transform:uppercase}
+.dc-dot{width:7px;height:7px;display:inline-block;border-radius:50%!important}
+.dc-dot.h{background:var(--grn)}.dc-dot.m{background:var(--yel)}.dc-dot.l{background:var(--red)}
+.dc-body{padding:10px 18px 0;flex:1}
+.dc-body .dtitle{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:10px;line-height:1.35}
+.dc-body .devidence{font-size:13px;color:var(--mt);line-height:1.6}
+.dc-body .devidence b,.dc-body .devidence strong{color:var(--tx);font-weight:700}
+.dc-foot{display:flex;justify-content:space-between;align-items:center;
+         padding:10px 18px;margin-top:auto;border-top:1px dotted var(--bd)}
+.dc-foot .dc-time{font-size:11px;font-weight:700;color:var(--tx)}
+.dc-foot .dc-src{font-size:11px;color:var(--dm);font-style:italic}
+
+/* catalyst grid — quarterly state pills */
+.cat-grid{width:100%;border-collapse:collapse;font-size:13px}
+.cat-grid th{text-align:left;padding:8px 10px;background:var(--th);border-bottom:2px solid var(--tx);
+             font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mt)}
+.cat-grid th.qcol{text-align:center;width:70px}
+.cat-grid td{padding:10px;border-bottom:1px dotted var(--bd);vertical-align:middle}
+.cat-grid td.qcol{text-align:center}
+.cat-grid .cat-id{font-size:12px;color:var(--dm);font-weight:700;width:30px}
+.cat-grid .cat-nm{font-size:14px;font-weight:600;color:var(--tx)}
+.cat-grid .cat-nm .star{color:var(--yel);margin-left:4px;font-size:12px}
+.cat-grid .cat-imp{font-size:12px;color:var(--mt);line-height:1.5}
+.cat-pill{display:inline-block;padding:3px 8px;font-size:10px;font-weight:800;letter-spacing:.4px;
+          min-width:38px;text-align:center;border:1px solid}
+.cat-pill.act{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.10)}
+.cat-pill.bld{color:var(--blue);border-color:var(--blue);background:rgba(125,211,252,.08)}
+.cat-pill.bldup{color:#60a5fa;border-color:#60a5fa;background:rgba(96,165,250,.10)}
+.cat-pill.fad{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.10)}
+.cat-pill.dot{color:var(--dm);border-color:var(--bd);background:var(--th)}
+.cat-footer{font-size:11px;color:var(--dm);margin-top:10px;line-height:1.6}
+
+/* pulse mini-charts */
+.pulse-strip{display:flex;border:1px dotted var(--bd);background:var(--card);overflow:hidden}
+.pulse-label{display:flex;align-items:center;padding:12px 16px;font-size:10px;font-weight:700;
+             text-transform:uppercase;letter-spacing:1px;color:var(--dm);border-right:1px dotted var(--bd);
+             min-width:90px;flex-direction:column;gap:2px}
+.pulse-cell{flex:1;padding:10px 14px;border-right:1px dotted var(--bd);text-align:center;min-width:120px}
+.pulse-cell:last-child{border-right:none}
+.pulse-cell .pm-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:6px}
+.pulse-cell .pm-bars{display:flex;align-items:flex-end;justify-content:center;gap:3px;height:32px;margin-bottom:4px}
+.pulse-cell .pm-bars .bar{width:8px;background:var(--dm);min-height:2px}
+.pulse-cell .pm-bars .bar.last{background:var(--red)}
+.pulse-cell .pm-bars .bar.g{background:var(--grn)}.pulse-cell .pm-bars .bar.r{background:var(--red)}
+.pulse-cell .pm-vals{font-size:10px;font-weight:600;color:var(--mt);line-height:1.4;letter-spacing:.3px}
+.pulse-cell .pm-trend{font-size:10px;color:var(--mt)}
+
+/* grids */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+
+.kpi{background:var(--card);padding:16px 18px;border:1px dotted var(--bd)}
+.kpi .kv{font-size:20px;font-weight:700;margin-bottom:4px}
+.kpi .kl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--dm)}
+.kpi .ks{font-size:10px;color:var(--mt);margin-top:3px}
+
+/* scenarios */
+.scn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.scn-col{padding:18px 20px;border:1px dotted var(--bd)}
+.scn-col.bull{background:rgba(34,197,94,.04)}.scn-col.base{background:rgba(234,179,8,.04)}.scn-col.bear{background:rgba(249,66,58,.04)}
+.scn-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;
+            display:flex;justify-content:space-between;align-items:baseline}
+.scn-col.bull h4{color:var(--grn)}.scn-col.base h4{color:var(--yel)}.scn-col.bear h4{color:var(--red)}
+.scn-col h4 .wt{font-size:19px;font-weight:800}
+.scn-col .lbl{font-size:14px;color:var(--mt);font-weight:500;line-height:1.5;margin-bottom:10px}
+.scn-tp{font-size:28px;font-weight:800;color:var(--tx);line-height:1.2;margin-bottom:4px}
+.scn-updn{font-size:13px;font-weight:700;margin-bottom:12px}
+.scn-updn.pos{color:var(--grn)}.scn-updn.neg{color:var(--red)}
+.scn-divider{border-top:1px dotted var(--bd);padding-top:10px;margin-top:2px}
+.scn-col ul{margin:0;padding-left:18px}
+.scn-col li{font-size:13px;line-height:1.6;color:var(--mt);margin-bottom:5px}
+.scn-col li b,.scn-col li strong{color:var(--tx);font-weight:700}
+
+/* risks */
+.risk-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+.risk-card{padding:16px 18px;border:1px dotted var(--bd)}
+.risk-card.HIGH{background:rgba(249,66,58,.04)}.risk-card.MED{background:rgba(234,179,8,.04)}.risk-card.LOW{background:var(--card)}
+.risk-sev{font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 8px;border:1px solid;display:inline-block;margin-bottom:8px}
+.risk-card.HIGH .risk-sev{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+.risk-card.MED .risk-sev{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.risk-card.LOW .risk-sev{color:var(--mt);border-color:var(--bd);background:var(--th)}
+.risk-card .ttl{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:8px;line-height:1.45}
+.risk-card .det{font-size:13px;color:var(--mt);line-height:1.6}
+.risk-card .monitor{font-size:12px;color:var(--dm);margin-top:8px;font-style:italic}
+
+.gate{padding:14px 18px;border:1px dotted var(--bd);margin-bottom:10px;
+      display:grid;grid-template-columns:1fr 140px;gap:14px;align-items:center;
+      background:var(--card)}
+.gate.drop{background:rgba(249,66,58,.04)}
+.gate .gtxt{font-size:14px;color:var(--mt);line-height:1.55}
+.gate .gtxt b{color:var(--red)}
+.gate .gdeadline{font-size:12px;color:var(--dm);text-align:right}
+
+/* scorecards */
+.sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sc{padding:20px 22px;background:var(--card);border:1px dotted var(--bd)}
+.sc-hd{display:flex;justify-content:space-between;align-items:baseline;
+       padding-bottom:12px;border-bottom:1px dotted var(--bd);margin-bottom:14px}
+.sc-hd .nm{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mt)}
+.sc-hd .sc-score{font-size:32px;font-weight:800;line-height:1;color:var(--tx)}
+.sc-hd .sc-score small{font-size:15px;color:var(--dm);font-weight:600}
+.sc-row{display:grid;grid-template-columns:1fr 60px 90px;gap:10px;align-items:center;margin-bottom:8px}
+.sc-row .lab{font-size:15px;color:var(--tx)}.sc-row .lab small{color:var(--dm);font-size:12px;margin-left:6px}
+.sc-row .val{font-weight:700;text-align:right;font-size:15px}
+.sc-bar{position:relative;height:6px;background:var(--th);border:1px solid var(--bd)}
+.sc-bar i{position:absolute;left:0;top:0;bottom:0}
+.sc-bar i.g{background:var(--grn)}.sc-bar i.y{background:var(--yel)}.sc-bar i.r{background:var(--red)}
+.sc-note{margin-top:16px;padding-top:12px;border-top:1px dotted var(--bd);font-size:13px;line-height:1.6;color:var(--mt)}
+
+/* valuation table */
+.val-tbl{background:var(--card);border:1px dotted var(--bd);font-variant-numeric:tabular-nums}
+.val-lead{font-size:12.5px;color:var(--mt);padding:10px 16px;background:var(--th);
+          border-bottom:1px dotted var(--bd);font-style:italic}
+.val-row{display:grid;grid-template-columns:230px 180px 1fr;gap:0;padding:7px 16px;
+         border-bottom:1px dotted var(--bd);font-size:13.5px;align-items:baseline}
+.val-row.total{background:rgba(34,197,94,.06);border-top:1px solid var(--bd);font-weight:700}
+.val-row .lab{color:var(--mt);font-weight:500}
+.val-row .vv{color:var(--tx);font-weight:700;text-align:right;padding-right:24px}
+.val-row .bas{color:var(--dm);font-size:13px;font-style:italic}
+
+/* concall */
+.concall-quote{padding:14px 18px;background:rgba(234,179,8,.03);border:1px dotted var(--bd);
+               margin-bottom:12px}
+.concall-quote .cq-text{font-size:15px;line-height:1.65;color:var(--tx);font-style:italic}
+.concall-quote .cq-src{font-size:12px;color:var(--dm);margin-top:6px}
+.promise-row{padding:12px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+             display:grid;grid-template-columns:1fr 80px;gap:14px;align-items:center}
+.promise-row .ptxt{font-size:14px;color:var(--mt);line-height:1.55}
+.promise-pill{display:inline-block;padding:4px 8px;font-size:11px;font-weight:800;
+              letter-spacing:.6px;border:1px solid;text-align:center}
+.promise-pill.kept,.promise-pill.beat{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.10)}
+.promise-pill.broken,.promise-pill.miss{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.10)}
+.promise-pill.pending,.promise-pill.amber{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.10)}
+.promise-pill.build{color:var(--blue);border-color:var(--blue);background:rgba(125,211,252,.08)}
+
+.prev-verdict{padding:14px 18px;background:rgba(234,179,8,.04);border:1px dotted var(--yel)}
+.prev-verdict .pv-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--yel);margin-bottom:6px}
+.prev-verdict .pv-body{font-size:14px;color:var(--mt);line-height:1.55}
+
+.callout{background:rgba(234,179,8,.04);border:1px dotted rgba(234,179,8,.2);
+         padding:10px 14px;font-size:12px;line-height:1.6;margin-bottom:12px}
+.industry-card{padding:18px 20px;background:var(--card);border:1px dotted var(--bd);margin-bottom:14px}
+.industry-card .ih{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:10px}
+.industry-card .ib{font-size:14px;color:var(--mt);line-height:1.6}
+.industry-card .ib b,.industry-card .ib strong{color:var(--tx);font-weight:700}
+
+/* ── concall v2 ──────────────────────────────────────────────────────── */
+/* sentiment + confidence pills (used in verdict banner + concall header) */
+.cc-sent{display:inline-block;padding:3px 9px;font-size:10px;font-weight:800;letter-spacing:.7px;
+         text-transform:uppercase;border:1px solid;margin-left:6px;vertical-align:middle}
+.cc-sent.bullish{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.10)}
+.cc-sent.neutral{color:var(--mt);border-color:var(--bd);background:var(--th)}
+.cc-sent.bearish{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.10)}
+.cc-conf{display:inline-block;padding:3px 9px;font-size:10px;font-weight:700;letter-spacing:.7px;
+         text-transform:uppercase;border:1px dotted var(--bd);color:var(--dm);margin-left:4px}
+.cc-verif{display:inline-block;padding:3px 9px;font-size:10px;font-weight:700;letter-spacing:.6px;
+          text-transform:uppercase;border:1px solid;margin-left:4px;vertical-align:middle}
+.cc-verif.verified{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.cc-verif.pending{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.cc-verif.mismatch{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+
+/* concall header strip — revenue/EBITDA/PAT + sentiment + verification */
+.cc-head{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;
+         padding:0;border:1px dotted var(--bd);background:var(--card);margin-bottom:14px}
+.cc-head .cell{padding:14px 16px;border-right:1px dotted var(--bd)}
+.cc-head .cell:last-child{border-right:none}
+.cc-head .lbl{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--dm);margin-bottom:6px}
+.cc-head .val{font-size:18px;font-weight:800;color:var(--tx);line-height:1.2}
+.cc-head .delta{font-size:12px;font-weight:600;margin-top:3px}
+.cc-head .delta.pos{color:var(--grn)} .cc-head .delta.neg{color:var(--red)} .cc-head .delta.flat{color:var(--mt)}
+.cc-head .meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:10px 16px;
+               border-top:1px dotted var(--bd);grid-column:1/-1;background:var(--th);font-size:11px;color:var(--mt)}
+
+/* 2-min summary — 4 bullets in a tight grid */
+.cc-2min{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;
+         border:1px dotted var(--bd);background:var(--card);margin-bottom:14px}
+.cc-2min .b{padding:14px 18px;border-right:1px dotted var(--bd);border-bottom:1px dotted var(--bd)}
+.cc-2min .b:last-child{border-right:none}
+.cc-2min .b .blbl{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--yel);margin-bottom:8px}
+.cc-2min .b .btxt{font-size:14px;color:var(--tx);line-height:1.6}
+.cc-2min .b .btxt strong{color:var(--yel);font-weight:700}
+
+/* story tension — italic question banner */
+.cc-tension{padding:14px 18px;background:rgba(125,211,252,.04);border:1px dotted var(--blue);
+            font-size:15px;font-style:italic;color:var(--tx);line-height:1.55;margin-bottom:14px}
+.cc-tension::before{content:"OPEN DEBATE — ";font-style:normal;font-weight:800;font-size:10px;
+                    letter-spacing:1px;color:var(--blue);margin-right:6px}
+
+/* what-changed 4-bucket grid */
+.cc-wc{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:14px}
+.cc-wc .col{border:1px dotted var(--bd);background:var(--card);padding:0}
+.cc-wc .col h5{font-size:11px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;
+               padding:10px 14px;margin:0;border-bottom:1px dotted var(--bd);background:var(--th);display:flex;justify-content:space-between;align-items:baseline}
+.cc-wc .col h5 .cnt{font-size:10px;color:var(--dm);font-weight:600}
+.cc-wc .col.ng h5{color:var(--blue)}.cc-wc .col.dg h5{color:var(--mt)}
+.cc-wc .col.nr h5{color:var(--red)}.cc-wc .col.rr h5{color:var(--grn)}
+.cc-wc .item{padding:10px 14px;border-bottom:1px dotted var(--bd)}
+.cc-wc .item:last-child{border-bottom:none}
+.cc-wc .item .ttl{font-size:13px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:4px}
+.cc-wc .item .det{font-size:12px;color:var(--mt);line-height:1.55}
+.cc-wc .item .sev{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.7px;
+                  padding:1px 5px;border:1px solid;margin-right:6px;text-transform:uppercase}
+.cc-wc .item .sev.high{color:var(--red);border-color:var(--red)}
+.cc-wc .item .sev.medium{color:var(--yel);border-color:var(--yel)}
+.cc-wc .item .sev.low{color:var(--mt);border-color:var(--bd)}
+.cc-wc .empty{padding:14px;font-size:12px;color:var(--dm);font-style:italic;text-align:center}
+
+/* silence detection */
+.cc-silence{padding:14px 18px;background:rgba(234,179,8,.04);border:1px dotted var(--yel);margin-bottom:10px}
+.cc-silence .stop{font-size:14px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:6px}
+.cc-silence .stop::before{content:"\1F910  ";margin-right:4px}
+.cc-silence .mq{font-size:11px;color:var(--dm);margin-bottom:6px}
+.cc-silence .mq span{padding:1px 5px;border:1px solid var(--bd);margin-right:4px;font-weight:600}
+.cc-silence .ctx{font-size:12px;color:var(--mt);line-height:1.5;margin-bottom:6px}
+.cc-silence .imp{font-size:12px;color:var(--tx);font-style:italic;line-height:1.5}
+.cc-silence .imp::before{content:"Implication: ";font-style:normal;font-weight:700;color:var(--yel)}
+
+/* tone shifts */
+.cc-tone{display:grid;grid-template-columns:140px 90px 1fr;gap:14px;padding:12px 16px;
+         background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;align-items:center}
+.cc-tone .area{font-size:13px;font-weight:700;color:var(--tx)}
+.cc-tone .dir{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;
+              padding:3px 8px;border:1px solid;text-align:center}
+.cc-tone .dir.cut{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+.cc-tone .dir.raised{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.cc-tone .dir.hedged{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.cc-tone .dir.firmer{color:var(--blue);border-color:var(--blue);background:rgba(125,211,252,.08)}
+.cc-tone .body{font-size:12px;color:var(--mt);line-height:1.5}
+.cc-tone .body .from{color:var(--dm);text-decoration:line-through}
+.cc-tone .body .to{color:var(--tx);font-weight:700}
+
+/* promise ledger — multi-quarter */
+.cc-ledger{border:1px dotted var(--bd);background:var(--card);padding:0;margin-bottom:14px}
+.cc-ledger .pl{padding:12px 16px;border-bottom:1px dotted var(--bd);display:grid;
+               grid-template-columns:1fr 90px;gap:14px;align-items:start}
+.cc-ledger .pl:last-child{border-bottom:none}
+.cc-ledger .pl .pl-top{font-size:14px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:6px}
+.cc-ledger .pl .pl-meta{font-size:11px;color:var(--dm);margin-bottom:6px}
+.cc-ledger .pl .pl-meta span{margin-right:10px}
+.cc-ledger .pl .pl-ev{font-size:12px;color:var(--mt);line-height:1.55}
+
+/* bear cases */
+.cc-bear{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.cc-bear .bc{padding:14px 16px;border:1px dotted var(--bd);background:var(--card)}
+.cc-bear .bc.alive{border-color:var(--red);background:rgba(249,66,58,.04)}
+.cc-bear .bc.weakening{border-color:var(--yel);background:rgba(234,179,8,.04)}
+.cc-bear .bc.dead{border-color:var(--grn);background:rgba(34,197,94,.04);opacity:.7}
+.cc-bear .bc .stat{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.8px;
+                   padding:2px 6px;border:1px solid;margin-bottom:8px}
+.cc-bear .bc.alive .stat{color:var(--red);border-color:var(--red)}
+.cc-bear .bc.weakening .stat{color:var(--yel);border-color:var(--yel)}
+.cc-bear .bc.dead .stat{color:var(--grn);border-color:var(--grn)}
+.cc-bear .bc .th{font-size:13px;font-weight:700;color:var(--tx);line-height:1.45;margin-bottom:6px}
+.cc-bear .bc .meta{font-size:11px;color:var(--dm);margin-bottom:6px}
+.cc-bear .bc .ev{font-size:12px;color:var(--mt);line-height:1.5}
+.cc-bear .bc .chg{display:inline-block;font-size:9px;font-weight:800;color:var(--yel);
+                  margin-left:6px;letter-spacing:.6px}
+
+/* top guidance + top risk preview footer */
+.cc-preview{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.cc-preview .card{padding:14px 16px;border:1px dotted var(--bd);background:var(--card)}
+.cc-preview .card .lbl{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:6px}
+.cc-preview .card.g .lbl{color:var(--blue)}
+.cc-preview .card.r .lbl{color:var(--red)}
+.cc-preview .card .body{font-size:14px;color:var(--tx);line-height:1.5;font-weight:600}
+
+/* post-call reaction */
+.cc-react{padding:14px 18px;border:1px dotted var(--bd);background:var(--card);margin-bottom:14px}
+.cc-react .rh{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0}
+.cc-react .rh .cell{padding:0 14px;border-right:1px dotted var(--bd)}
+.cc-react .rh .cell:last-child{border-right:none}
+.cc-react .rh .lbl{font-size:10px;color:var(--dm);font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:4px}
+.cc-react .rh .v{font-size:16px;font-weight:800}
+.cc-react .rh .v.pos{color:var(--grn)} .cc-react .rh .v.neg{color:var(--red)} .cc-react .rh .v.flat{color:var(--mt)}
+.cc-react .match{margin-top:10px;font-size:12px;color:var(--mt);line-height:1.5;padding-top:10px;border-top:1px dotted var(--bd)}
+.cc-react .match .tag{display:inline-block;font-size:10px;font-weight:800;padding:2px 6px;border:1px solid;letter-spacing:.6px;margin-right:8px}
+.cc-react .match .tag.ok{color:var(--grn);border-color:var(--grn)}
+.cc-react .match .tag.no{color:var(--red);border-color:var(--red)}
+.cc-react .hl{margin-top:10px}
+.cc-react .hl .h-row{padding:8px 0;border-bottom:1px dotted var(--bd);font-size:12px;color:var(--mt);line-height:1.5;display:grid;grid-template-columns:1fr 80px;gap:10px;align-items:start}
+.cc-react .hl .h-row:last-child{border-bottom:none}
+.cc-react .hl .h-row .src{font-size:10px;color:var(--dm);text-align:right;font-style:italic}
+.cc-react .hl .tone-tag{display:inline-block;font-size:9px;font-weight:800;padding:1px 5px;border:1px solid;margin-right:6px;letter-spacing:.5px}
+.cc-react .hl .tone-tag.positive{color:var(--grn);border-color:var(--grn)}
+.cc-react .hl .tone-tag.negative{color:var(--red);border-color:var(--red)}
+.cc-react .hl .tone-tag.neutral{color:var(--mt);border-color:var(--bd)}
+
+/* industry snapshot KPIs (used in Industry tab, sourced from concall) */
+.cc-isnap{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}
+.cc-isnap .kpi{padding:14px 16px;background:var(--card);border:1px dotted var(--bd);display:flex;flex-direction:column}
+.cc-isnap .kpi .km{font-size:11px;color:var(--mt);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.cc-isnap .kpi .kv{font-size:22px;font-weight:800;color:var(--tx);line-height:1.1}
+.cc-isnap .kpi .kd{font-size:12px;color:var(--blue);font-weight:600;margin-top:3px}
+.cc-isnap .kpi .kd.pos{color:var(--grn)} .cc-isnap .kpi .kd.neg{color:var(--red)}
+.cc-isnap .kpi .kpi-chart{position:relative;height:54px;margin-top:8px;overflow:hidden}
+.cc-isnap .kpi .kpi-chart svg{display:block;width:100%;height:100%}
+.cc-isnap .kpi .qlabels{display:flex;justify-content:space-between;font-size:9px;color:var(--dm);font-weight:600;letter-spacing:.3px;margin-top:2px;padding:0 4px}
+.cc-isnap .kpi .kn{font-size:12px;color:var(--mt);line-height:1.5;margin-top:8px;padding-top:8px;border-top:1px dotted var(--bd)}
+
+@media(max-width:900px){
+  .cc-tone{grid-template-columns:1fr;gap:6px}
+  .cc-preview{grid-template-columns:1fr}
+  .cc-ledger .pl{grid-template-columns:1fr}
+}
+
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.tbl th{text-align:left;padding:6px 10px;background:var(--th);border-bottom:2px solid var(--tx);
+        font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mt)}
+.tbl td{padding:6px 10px;border-bottom:1px dotted var(--bd)}
+.tbl .num{text-align:right}
+.tbl tr.self td{color:var(--red);font-weight:700}
+
+footer{border-top:1px dotted var(--bd);padding:12px 28px;
+       font-size:10px;color:var(--dm);display:flex;justify-content:space-between;margin-top:32px}
+
+@media(max-width:900px){
+  .grid2,.grid3,.sc-grid,.scn-grid{grid-template-columns:1fr}
+  .driver-card{max-width:100%}
+  .wrap{padding:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="hd-title">COMPANY DEEPDIVE</span>
+  <span class="hd-meta">Generated 2026-09-26 17:21 | Data as of 2026-09-26</span>
+</header>
+
+<div class="wrap">
+
+  <div class="co-name">Bharat Electronics Limited</div>
+  <div class="co-sub">BEL · Capital Goods · Aerospace & Defence — defence electronics, radars, communications, electronic warfare, avionics</div>
+  <div class="stats-strip">
+    <div class="sstat"><span class="lbl">CMP</span><span class="val">₹393.55</span></div>
+    <div class="sstat"><span class="lbl">Mkt Cap</span><span class="val">₹286,944 Cr</span></div>
+    <div class="sstat"><span class="lbl">PE</span><span class="val">46.7</span></div>
+    <div class="sstat"><span class="lbl">PBV</span><span class="val">12.0</span></div>
+    <div class="sstat"><span class="lbl">ROCE</span><span class="val">36.4%</span></div>
+    <div class="sstat"><span class="lbl">OPM</span><span class="val">%</span></div>
+    <div class="sstat"><span class="lbl">52W H/L</span><span class="val">₹473.0 / ₹380.0</span></div>
+  </div>
+
+  <!-- TABS — right after stats -->
+  <div class="tab-bar">
+    <button class="tab active" onclick="showTab('thesis')">Thesis</button>
+    <button class="tab" onclick="showTab('financials')">Financials</button>
+    <button class="tab" onclick="showTab('industry')">Industry</button>
+    <button class="tab" onclick="showTab('concall')">Concall</button>
+    <button class="tab" onclick="showTab('risks')">Risks & Gates</button>
+  </div>
+
+  <!-- ═══════════ TAB: THESIS ═══════════ -->
+  <div id="tab-thesis" class="tab-body active">
+
+    <!-- Verdict -->
+    <div class="verdict-banner">
+      <div class="vb-top">
+        <span class="vb-tag t-watch">WATCH</span>
+        <span class="vb-conviction">MEDIUM CONVICTION</span>
+
+        <span class="vb-conviction" style="color:var(--tx)">25% PORTFOLIO</span>
+
+
+
+        <span class="cc-sent neutral" title="Latest concall sentiment">NEUTRAL</span>
+
+
+
+        <span class="cc-conf" title="Confidence in concall extraction">HIGH CONF</span>
+
+
+        <span class="cc-verif verified" title="Transcript headline ₹5,533 Cr revenue / ₹1,403 Cr PBT / ₹1,048 Cr PAT, 25.83% EBITDA margin; official result release gives ₹5,533.06 Cr / ₹1,402.83 Cr / ₹1,048.33 Cr. Refreshed local consolidated row ₹5,547 Cr sales, ₹1,396 Cr PBT, ₹1,055 Cr PAT, 25% OPM; small basis/rounding and EBITDA-vs-operating-profit definition differences are visible.">
+          ✓ FILING-VERIFIED
+
+        </span>
+
+      </div>
+      <div class="vb-thesis">BEL’s Q1 FY27 revenue grew 25.3% and its order book was ₹72,258 Cr at 1 July; however, PAT rose only 8.2% and EBITDA margin was 25.83%, below the 28% FY27 guide. Management attributes quarterly margin variance to product mix and reaffirmed its full-year target. The FY27 ₹55,000 Cr+ order-inflow guide includes QRSAM, which management still expected by September subject to CCS approval; through reviewed 17 Sep disclosures no QRSAM award was found. At ₹393.55 the stock is below both key EMAs, with limited base-case valuation cushion.</div>
+      <div class="vb-fv-row">
+        <span>Fair Value: <b style="color:var(--tx)">₹410</b></span>
+        <span>CMP: <b style="color:var(--tx)">₹393.55</b></span>
+
+        <span class="vb-mos pos">
+          +4.2% MoS
+        </span>
+
+        <span style="font-style:italic;color:var(--dm)">43x FY27E EPS ₹9.53 (FY26 consolidated EPS ₹8.29 × 15% scenario growth, aligned to management’s >15% FY27 revenue guide but not a PAT guide); scenario anchor, not company guidance.</span>
+      </div>
+
+
+
+
+
+      <div style="margin-top:12px;padding-top:10px;border-top:1px dotted var(--bd);display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--dm);text-transform:uppercase">CCS v2</span>
+        <span style="font-size:20px;font-weight:800;color:var(--yel)">44.9</span>
+
+        <span style="font-size:10px;font-weight:700;letter-spacing:.6px;padding:2px 8px;border:1px solid;
+                     color:var(--yel);border-color:var(--yel);text-transform:uppercase">FQG AMBER</span>
+
+
+        <span style="font-size:11px;color:var(--dm)">
+          MoS&nbsp;<b style="color:var(--tx)">23</b>
+          &nbsp;·&nbsp;Qual&nbsp;<b style="color:var(--tx)">73</b>
+          &nbsp;·&nbsp;Growth&nbsp;<b style="color:var(--tx)">62</b>
+          &nbsp;·&nbsp;Cycle&nbsp;<b style="color:var(--tx)">66</b>
+          &nbsp;·&nbsp;FwdEP&nbsp;<b style="color:var(--tx)">49</b>
+          &nbsp;·&nbsp;Risk&nbsp;<b style="color:var(--tx)">49</b>
+        </span>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px dotted var(--bd);display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--dm);text-transform:uppercase">V3 verdict</span>
+        <span style="font-size:13px;font-weight:800;padding:3px 10px;border:1.5px solid var(--red);color:var(--red);letter-spacing:.6px;text-transform:uppercase">
+          AVOID · LOW
+        </span>
+        <span style="font-size:11px;color:var(--dm)">
+          Investability&nbsp;<b style="color:var(--red)">46.2</b>
+          &nbsp;·&nbsp;Tactical&nbsp;<b style="color:var(--red)">42.7</b>
+          &nbsp;·&nbsp;Leader&nbsp;<b style="color:var(--tx)">INV</b>
+        </span>
+
+        <span style="font-size:11px;color:var(--dm)">
+          Mom&nbsp;<b style="color:var(--tx)">39</b>
+          &nbsp;·&nbsp;EarnSurp&nbsp;<b style="color:var(--tx)">6</b>
+          &nbsp;·&nbsp;VolSurge&nbsp;<b style="color:var(--tx)">42</b>
+          &nbsp;·&nbsp;TTM&nbsp;PAT&nbsp;<b style="color:var(--tx)">47</b>
+          &nbsp;·&nbsp;OrderBk&nbsp;<b style="color:var(--tx)">46</b>
+        </span>
+
+
+        <span style="font-size:10px;font-weight:700;letter-spacing:.6px;padding:2px 7px;border:1px solid var(--grn);color:var(--grn);text-transform:uppercase">DEFENCE</span>
+
+
+        <span style="font-size:11px;color:var(--dm)">Order Book&nbsp;<b style="color:var(--tx)">₹73,000&nbsp;Cr</b>&nbsp;(-1.4% QoQ)</span>
+
+
+        <span style="font-size:10px;font-weight:700;letter-spacing:.6px;padding:2px 7px;border:1px solid var(--dm);color:var(--dm);text-transform:uppercase">Regime: NARRATIVE (23)</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="tiles">
+
+      <div class="tile flat">
+        <div class="tile-top">
+          <div class="tlabel">Order book <span class="tdot"></span></div>
+          <div class="tval">₹72,258 Cr</div>
+          <div class="tcap">At 1 Jul 2026, about 2.62x FY26 revenue; Q1 new orders ₹3,754 Cr. Order book was below FY26 closing figure, making inflow a monitorable.</div>
+        </div>
+      </div>
+
+      <div class="tile up">
+        <div class="tile-top">
+          <div class="tlabel">Q1 revenue <span class="tdot"></span></div>
+          <div class="tval">₹5,533 Cr</div>
+          <div class="tcap">+25.27% YoY (issuer standalone); local consolidated revenue ₹5,547 Cr.</div>
+        </div>
+      </div>
+
+      <div class="tile down">
+        <div class="tile-top">
+          <div class="tlabel">Q1 EBITDA margin <span class="tdot"></span></div>
+          <div class="tval">25.83%</div>
+          <div class="tcap">Below FY27 management guide of 28%; management cited product mix, not input-cost pressure.</div>
+        </div>
+      </div>
+
+      <div class="tile up">
+        <div class="tile-top">
+          <div class="tlabel">Q1 PAT <span class="tdot"></span></div>
+          <div class="tval">₹1,048 Cr</div>
+          <div class="tcap">+8.17% YoY, slower than revenue growth.</div>
+        </div>
+      </div>
+
+      <div class="tile up">
+        <div class="tile-top">
+          <div class="tlabel">Order wins after Q1 <span class="tdot"></span></div>
+          <div class="tval">₹648 Cr</div>
+          <div class="tcap">Additional orders announced 17 Sep across IR jammer, communications, cyber, thermal imaging, AI and TR modules.</div>
+        </div>
+      </div>
+
+      <div class="tile down">
+        <div class="tile-top">
+          <div class="tlabel">Technical trend <span class="tdot"></span></div>
+          <div class="tval">Below EMA50 / EMA200</div>
+          <div class="tcap">₹393.55 close on 25 Sep vs EMA50 ₹403.81 and EMA200 ₹408.36; near 52-week low ₹380.45.</div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="risk-flag"><b>KEY RISK:</b> FY27 order-inflow guide relies on a pending QRSAM award — Management’s ₹55,000 Cr+ FY27 inflow guide includes QRSAM; on 27 Jul the company said CCS approval was pending and expected by September. Through the latest reviewed BEL release on 17 Sep, QRSAM was not confirmed. The date window is nearly elapsed and must be rechecked before carrying the guide as intact.</div>
+
+
+
+
+    <!-- Price chart -->
+    <div class="price-chart-wrap mt16">
+      <div id="price-chart" class="price-chart"></div>
+    </div>
+
+    <!-- V3 Score Breakdown — full sub-score table + Order Book block + Regime -->
+
+
+
+    <div class="section">
+      <div class="sh2">V3 Score Breakdown</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px">
+        <!-- LEFT: top-line + sub-scores -->
+        <div style="padding:16px;border:1px solid var(--bd);background:var(--card)">
+          <div style="font-size:11px;color:var(--dm);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">Composite Scores</div>
+          <table style="width:100%;font-size:12px;border-collapse:collapse">
+            <tr><td style="padding:6px 0;color:var(--dm)">Investability (long-term value)</td>
+                <td style="padding:6px 0;text-align:right"><b style="font-size:15px">46.2</b> / 100</td></tr>
+            <tr><td style="padding:6px 0;color:var(--dm)">Tactical (short-term momentum)</td>
+                <td style="padding:6px 0;text-align:right"><b style="font-size:15px">42.7</b> / 100</td></tr>
+            <tr><td style="padding:6px 0;color:var(--dm);border-top:1px dotted var(--bd)">Tier</td>
+                <td style="padding:6px 0;text-align:right;border-top:1px dotted var(--bd)"><b>AVOID</b> · LOW</td></tr>
+            <tr><td style="padding:6px 0;color:var(--dm)">Score leader</td>
+                <td style="padding:6px 0;text-align:right">INV</td></tr>
+          </table>
+        </div>
+        <!-- RIGHT: regime context -->
+        <div style="padding:16px;border:1px solid var(--bd);background:var(--card)">
+          <div style="font-size:11px;color:var(--dm);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">Market regime today</div>
+
+
+          <div style="font-size:18px;font-weight:800;color:var(--red);letter-spacing:.6px">NARRATIVE · 23</div>
+          <div style="font-size:11px;color:var(--dm);margin-top:8px;line-height:1.5">
+            Narrative-driven tape — V3 BUYs historically underperform. Conviction auto-downgraded one tier.
+
+          </div>
+        </div>
+      </div>
+      <!-- Sub-score table — all sub-scores explained -->
+      <div style="padding:16px;border:1px solid var(--bd);background:var(--card);margin-bottom:16px">
+        <div style="font-size:11px;color:var(--dm);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">Tactical sub-scores (0-100, higher = stronger signal)</div>
+        <table style="width:100%;font-size:12px;border-collapse:collapse">
+          <thead><tr style="color:var(--dm);border-bottom:1px solid var(--bd)">
+            <th style="text-align:left;padding:6px 0;font-weight:600">Sub-score</th>
+            <th style="text-align:right;padding:6px 0;font-weight:600">Value</th>
+            <th style="text-align:left;padding:6px 12px;font-weight:600">What it measures</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 0">Momentum</td>
+                <td style="padding:6px 0;text-align:right"><b>39</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Relative strength vs Nifty 500 (3M+6M) + distance from 52w high + up-weeks</td></tr>
+            <tr><td style="padding:6px 0">Earnings surprise</td>
+                <td style="padding:6px 0;text-align:right"><b>6</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Latest qtr revenue + PAT vs trailing 4Q mean; loss-to-profit flips score 200</td></tr>
+            <tr><td style="padding:6px 0">Volume surge</td>
+                <td style="padding:6px 0;text-align:right"><b>42</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">20d/100d volume ratio + big-day count + price-vol correlation (accumulation proxy)</td></tr>
+            <tr><td style="padding:6px 0">TTM PAT growth</td>
+                <td style="padding:6px 0;text-align:right"><b>47</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Trailing 12M PAT YoY growth (0%→0, 10%→40, 25%+→100)</td></tr>
+            <tr><td style="padding:6px 0">Order book strength</td>
+                <td style="padding:6px 0;text-align:right"><b>46</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Order book ÷ TTM revenue + QoQ growth + capex guidance (industrials only)</td></tr>
+
+            <tr><td style="padding:6px 0">Active theme</td>
+                <td style="padding:6px 0;text-align:right"><b>+0</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Tagged with theme <b style="color:var(--grn)">DEFENCE</b> AND TTM revenue ≥15% — flat boost</td></tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- Order Book block — surfaces the raw extracted numbers when available -->
+
+      <div style="padding:16px;border:1.5px solid var(--grn);background:rgba(34,197,94,.04);margin-bottom:16px">
+        <div style="font-size:11px;color:var(--grn);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;font-weight:700">Order Book — extracted from latest concall</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;font-size:13px">
+          <div>
+            <div style="color:var(--dm);font-size:10px;text-transform:uppercase;letter-spacing:.6px">Book size</div>
+            <div style="font-size:18px;font-weight:800;color:var(--tx);margin-top:4px">₹73,000 Cr</div>
+          </div>
+
+
+
+          <div>
+            <div style="color:var(--dm);font-size:10px;text-transform:uppercase;letter-spacing:.6px">QoQ change</div>
+            <div style="font-size:18px;font-weight:800;color:var(--red);margin-top:4px">-1.4%</div>
+          </div>
+
+          <div>
+            <div style="color:var(--dm);font-size:10px;text-transform:uppercase;letter-spacing:.6px">Sub-score</div>
+            <div style="font-size:18px;font-weight:800;color:var(--tx);margin-top:4px">46/100</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--dm);margin-top:10px;font-style:italic">
+          Extracted from earnings-call PDFs by rules-based parser. Verified manually on BEL/KEI/MTARTECH — accuracy ~95% on industrial / capex names. NA for FMCG, financials, IT services (no order book concept).
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Thesis drivers — responsive row, max 5 -->
+
+    <div class="section">
+      <div class="sh2">Thesis Drivers</div>
+      <div class="driver-row">
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">01 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">A scaled, multi-service defence electronics backlog provides execution visibility</div>
+            <div class="devidence">BEL disclosed an order book of ₹72,258 Cr at 1 July 2026 and Q1 FY27 order intake ₹3,754 Cr. The backlog spans electronic fuses, LRSAM, LCA Mk1 LRUs, BMP-2 upgrades, Ashwini radar and Arudhra among other programmes. It is about 2.62x FY26 local consolidated revenue; that coverage supports visibility but not a smooth quarterly billing curve.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">BEL disclosed an order book of ₹72,258 Cr at 1 July 2026 and Q1 FY27 order intake ₹3,754 Cr. The backlog spans electronic fuses, LRSAM, LCA Mk1 LRUs, BMP-2 upgrades, Ashwini radar and Arudhra among other programmes. It is about 2.62x FY26 local consolidated revenue; that coverage supports visibility but not a smooth quarterly billing curve.</span>
+          </div>
+        </div>
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">02 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">Strong Q1 sales growth, weaker profit growth and margin below guide</div>
+            <div class="devidence">Issuer Q1 standalone revenue ₹5,533.06 Cr grew 25.27% YoY; PBT ₹1,402.83 Cr rose 8.81%, PAT ₹1,048.33 Cr rose 8.17%, and EBITDA margin was 25.83%. Refreshed local consolidated data shows revenue ₹5,547 Cr, PAT ₹1,055 Cr and operating-profit margin 25%; basis/rounding differences are small. Management attributes margin variation to product mix and retains 28% EBITDA margin FY27 guidance.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">Issuer Q1 standalone revenue ₹5,533.06 Cr grew 25.27% YoY; PBT ₹1,402.83 Cr rose 8.81%, PAT ₹1,048.33 Cr rose 8.17%, and EBITDA margin was 25.83%. Refreshed local consolidated data shows revenue ₹5,547 Cr, PAT ₹1,055 Cr and operating-profit margin 25%; basis/rounding differences are small. Management attributes margin variation to product mix and retains 28% EBITDA margin FY27 guidance.</span>
+          </div>
+        </div>
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">03 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">QRSAM can lift inflows, but remains conditional and date-sensitive</div>
+            <div class="devidence">At the 27 Jul Q1 call, management said the ₹55,000 Cr+ FY27 order-inflow target includes QRSAM; the contract was waiting for CCS approval and management said September was the maximum expected timing. As of 26 Sep the time window is near expiry; reviewed company disclosures through 17 Sep did not confirm a QRSAM award. Keep the programme in pipeline, not backlog, until signed.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">At the 27 Jul Q1 call, management said the ₹55,000 Cr+ FY27 order-inflow target includes QRSAM; the contract was waiting for CCS approval and management said September was the maximum expected timing. As of 26 Sep the time window is near expiry; reviewed company disclosures through 17 Sep did not confirm a QRSAM award. Keep the programme in pipeline, not backlog, until signed.</span>
+          </div>
+        </div>
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">04 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">Recent orders support a broad electronics content opportunity</div>
+            <div class="devidence">BEL reported a further ₹648 Cr of orders on 17 Sep 2026, including laser IR jammers, communication equipment, cybersecurity, thermal imagers, transducers, AI software, TR modules, upgrades and services. These signed orders diversify content but are small relative to the ₹72,258 Cr book.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">BEL reported a further ₹648 Cr of orders on 17 Sep 2026, including laser IR jammers, communication equipment, cybersecurity, thermal imagers, transducers, AI software, TR modules, upgrades and services. These signed orders diversify content but are small relative to the ₹72,258 Cr book.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Business Cycles</div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:rgba(234,179,8,.04)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Order Inflow Cycle</span>
+          <span style="font-size:11px;color:var(--yel);font-weight:700">THESIS DRIVER</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PRE-BUDGET LULL</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">BUDGET ANNOUNCEMENT</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">AoN APPROVAL WAVE</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">CONTRACT SIGNING / ORDERING ACCELERATION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PEAK INFLOW</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">MATURING</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">SLOWDOWN</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">CONTRACT SIGNING / ORDERING ACCELERATION: FY26 orders exceeded ₹30,000 Cr and order book stood ₹72,258 Cr at 1 Jul 2026. Q1 order intake was ₹3,754 Cr; ₹648 Cr additional orders were announced 17 Sep. FY27 guide is ₹55,000 Cr+ including QRSAM, still pending CCS in Q1 call.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Valuation / PE Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">DE-RATING TROUGH</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">RE-RATING</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PEAK MULTIPLES</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">CORRECTION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">MEAN REVERSION</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">CORRECTION: CMP ₹393.55 on 25 Sep is below EMA50 ₹403.81 and EMA200 ₹408.36 and 17% below the ₹473.45 52-week high. Local PE 46.7x; 43x is used for base scenario valuation.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Government Capex / Budget Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PRE-BUDGET LULL</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">BE ANNOUNCEMENT</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">1H DEPLOYMENT (LOW)</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">2H DEPLOYMENT (BACK-LOADED)</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">RE REVISION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">ACTUAL EXECUTION</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">1H DEPLOYMENT (LOW): Q1 sales were strong (+25.27%) but Q1 order intake ₹3,754 Cr; year remains dependent on larger contracts and conversion of FY27 budget into signed orders.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Execution / Book-to-Bill Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">ORDER WIN</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">CONTRACT SIGNING</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PRODUCTION RAMP</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">DELIVERY ACCELERATION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">REPLENISHMENT GAP</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">DELIVERY ACCELERATION: Q1 revenue ₹5,533 Cr grew 25.27%, with book ₹72,258 Cr at 1 Jul. But PAT growth was 8.17% and margin 25.83%, below annual 28% guide; order replenishment still matters.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Indigenisation / Policy Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">IMPORT-DEPENDENT</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">INDIGENISATION RAMP</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">DOMESTIC LEADER</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">EXPORT INFLECTION</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">DOMESTIC LEADER: broad defence electronics capability and domestic backlog remain core; Q1 call did not update export order book/sales or the prior $1bn FY29 target.</div>
+      </div>
+
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Forward Thesis — Bull / Base / Bear</div>
+      <div class="scn-grid">
+
+
+
+        <div class="scn-col bull"><h4><span style="display:flex;align-items:center;gap:6px"><span class="dc-dot h"></span>BULL</span> <span class="wt">25%</span></h4>
+          <div class="lbl">QRSAM and other awards lift order inflow while margins recover</div>
+
+          <div class="scn-divider">
+
+            <ul>
+
+              <li>FY27 signed order intake reaches or exceeds ₹55,000 Cr as management guided, with QRSAM approved and contracted; as-of 26 Sep this remains unconfirmed.</li>
+
+              <li>Revenue grows 18–20% and EBITDA margin returns to 28%; FY26 base revenue ₹27,610 Cr local consolidated.</li>
+
+              <li>EPS reaches about ₹10.0; 45x implies ₹450, contingent on order conversion and margin recovery.</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="scn-col base"><h4><span style="display:flex;align-items:center;gap:6px"><span class="dc-dot m"></span>BASE</span> <span class="wt">50%</span></h4>
+          <div class="lbl">Revenue guide is met, while margin recovery is gradual</div>
+
+          <div class="scn-divider">
+
+            <ul>
+
+              <li>FY27 revenue grows 15% to about ₹31,750 Cr, aligning with management’s >15% guidance.</li>
+
+              <li>PAT/EPS grow more slowly than sales; use EPS ₹9.53 scenario, with Q1 PAT +8.17% and EBITDA margin 25.83% below 28% guide.</li>
+
+              <li>At 43x EPS ₹9.53, scenario value is about ₹410; price ₹393.55 offers modest upside before risk discount.</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="scn-col bear"><h4><span style="display:flex;align-items:center;gap:6px"><span class="dc-dot l"></span>BEAR</span> <span class="wt">25%</span></h4>
+          <div class="lbl">QRSAM slips and earnings miss the growth guide</div>
+
+          <div class="scn-divider">
+
+            <ul>
+
+              <li>FY27 revenue growth slows to 10% if major programme orders and CCS approval move beyond FY27.</li>
+
+              <li>EBITDA margin stays near 26% and EPS remains near FY26 ₹8.29 as product mix is adverse.</li>
+
+              <li>At 38x EPS ₹8.3, scenario value is about ₹315; order-inflow and margin guidance become falsified.</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Scorecards</div>
+      <div class="sc-grid">
+
+        <div class="sc">
+          <div class="sc-hd">
+            <span class="nm">Company Quality</span>
+            <span class="sc-score">7.2<small>/10</small></span>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Order book + L1 pipeline <small>25%</small></span>
+
+            <span class="val g">7</span>
+            <div class="sc-bar"><i class="g" style="width:70%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Execution capability + delivery track <small>20%</small></span>
+
+            <span class="val g">8</span>
+            <div class="sc-bar"><i class="g" style="width:80%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Margin on L1 wins <small>20%</small></span>
+
+            <span class="val y">6</span>
+            <div class="sc-bar"><i class="y" style="width:60%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Import substitution + indigenisation <small>20%</small></span>
+
+            <span class="val g">8</span>
+            <div class="sc-bar"><i class="g" style="width:80%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Governance: PSU transparency <small>15%</small></span>
+
+            <span class="val g">7</span>
+            <div class="sc-bar"><i class="g" style="width:70%"></i></div>
+          </div>
+
+          <div class="sc-note">7.20/10 using defence_railways_psu v1. Backlog and Q1 execution are strong; FY27 order replenishment depends on large pending programmes, Q1 margin lagged annual guide, and export/defence product splits remain incomplete.</div>
+        </div>
+
+        <div class="sc">
+          <div class="sc-hd">
+            <span class="nm">Management Quality</span>
+            <span class="sc-score">7.4<small>/10</small></span>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Capital allocation <small>30%</small></span>
+
+            <span class="val g">8</span>
+            <div class="sc-bar"><i class="g" style="width:80%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Execution track record <small>25%</small></span>
+
+            <span class="val g">9</span>
+            <div class="sc-bar"><i class="g" style="width:90%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Communication clarity <small>15%</small></span>
+
+            <span class="val g">7</span>
+            <div class="sc-bar"><i class="g" style="width:70%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Promoter skin-in-game <small>15%</small></span>
+
+            <span class="val y">5</span>
+            <div class="sc-bar"><i class="y" style="width:50%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Governance / related party <small>15%</small></span>
+
+            <span class="val g">7</span>
+            <div class="sc-bar"><i class="g" style="width:70%"></i></div>
+          </div>
+
+          <div class="sc-note">Q1 management reaffirmed the 28% FY27 EBITDA margin and ₹55,000 Cr+ order-inflow guide; communication was clear, while QRSAM timing remains dependent on CCS and should be judged against the stated September window.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ═══════════ TAB: FINANCIALS + VALUATION (merged) ═══════════ -->
+  <div id="tab-financials" class="tab-body">
+
+    <!-- Pulse strip — mini bar charts -->
+    <div class="section">
+      <div class="sh2">Pulse — Last 4 Quarters</div>
+      <div class="pulse-strip">
+        <div class="pulse-label">PULSE<br><span style="font-size:9px;color:var(--dm)">LAST 4Q</span></div>
+        <div class="pulse-cell" id="pulse-rev">
+          <div class="pm-label">Revenue YoY</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-pat">
+          <div class="pm-label">PAT YoY</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-opm">
+          <div class="pm-label">OPM %</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-roce">
+          <div class="pm-label">ROCE %</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-pe">
+          <div class="pm-label">PE (6Q)</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valuation section -->
+
+    <div class="section">
+      <div class="sh2">Valuation Summary</div>
+      <div class="val-tbl">
+
+        <div class="val-lead">Forward P/E on FY27E EPS scenario</div>
+
+
+        <div class="val-row ">
+          <span class="lab">FY26 consolidated EPS actual</span>
+          <span class="vv">₹8.29</span>
+          <span class="bas">Local pnl_annual.parquet; net profit ₹6,062 Cr.</span>
+        </div>
+
+        <div class="val-row ">
+          <span class="lab">FY27 revenue guide</span>
+          <span class="vv">>15% growth</span>
+          <span class="bas">Q4 FY26 and Q1 FY27 management guidance; guide is for revenue, not PAT.</span>
+        </div>
+
+        <div class="val-row ">
+          <span class="lab">FY27E EPS base scenario</span>
+          <span class="vv">₹9.53</span>
+          <span class="bas">15% growth on FY26 EPS ₹8.29; scenario proxy, not issuer EPS guidance.</span>
+        </div>
+
+        <div class="val-row ">
+          <span class="lab">Base forward multiple</span>
+          <span class="vv">43x</span>
+          <span class="bas">Below local trailing PE 46.7x, reflecting high order visibility but near-term order/margin risk.</span>
+        </div>
+
+        <div class="val-row total">
+          <span class="lab">Base scenario fair value</span>
+          <span class="vv">₹410</span>
+          <span class="bas">43x × ₹9.53 FY27E EPS scenario.</span>
+        </div>
+
+        <div class="val-row ">
+          <span class="lab">Bull / bear sensitivity</span>
+          <span class="vv">₹315–450</span>
+          <span class="bas">38x × ₹8.3 bear EPS to 45x × ₹10.0 bull EPS; programme timing drives range.</span>
+        </div>
+
+        <div class="val-row ">
+          <span class="lab">CMP (25 Sep 2026)</span>
+          <span class="vv">₹393.55</span>
+          <span class="bas">Local clean close; technical close below EMA50/EMA200.</span>
+        </div>
+
+        <div class="val-row total">
+          <span class="lab">Upside to base value</span>
+          <span class="vv">+4.2%</span>
+          <span class="bas">Before dividends and execution risk.</span>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Quarterly Snapshot</div>
+      <table class="tbl">
+        <thead><tr><th>Quarter</th><th class="num">Q2FY26</th><th class="num">Q3FY26</th><th class="num">Q4FY26</th><th class="num">Q1FY27</th></tr></thead>
+        <tbody>
+
+          <tr><td>Sales (₹ Cr)</td><td class="num">5,792</td><td class="num">7,154</td><td class="num">10,224</td><td class="num">5,547</td></tr>
+
+          <tr><td>Sales YoY</td><td class="num">25.8%</td><td class="num">24.0%</td><td class="num">11.7%</td><td class="num">24.9%</td></tr>
+
+          <tr><td>PAT (₹ Cr)</td><td class="num">1,287</td><td class="num">1,580</td><td class="num">2,226</td><td class="num">1,055</td></tr>
+
+          <tr><td>PAT YoY</td><td class="num">17.7%</td><td class="num">20.4%</td><td class="num">4.7%</td><td class="num">8.9%</td></tr>
+
+          <tr><td>OPM</td><td class="num">29.0%</td><td class="num">30.0%</td><td class="num">29.0%</td><td class="num">25.0%</td></tr>
+
+          <tr><td>EPS (₹)</td><td class="num">1.76</td><td class="num">2.16</td><td class="num">3.04</td><td class="num">1.44</td></tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- Peer comparison (was its own tab, now under Financials) -->
+
+    <div class="section">
+      <div class="sh2">Peer Comparison</div>
+      <table class="tbl">
+        <thead><tr><th class="">Company</th><th class="num">CMP</th><th class="num">Mkt Cap</th><th class="num">PE</th><th class="num">ROCE</th><th class="num">Order book / FY26 revenue</th></tr></thead>
+        <tbody>
+
+          <tr class="self"><td class="">Bharat Electronics</td><td class="num">₹393.55</td><td class="num">₹2,86,944 Cr</td><td class="num">46.7x</td><td class="num">36.4%</td><td class="num">2.62x (₹72,258 Cr at 1 Jul / FY26 revenue).</td></tr>
+
+          <tr class=""><td class="">HAL</td><td class="num">₹4,800</td><td class="num">₹3,20,790 Cr</td><td class="num">34.4x</td><td class="num">32.0%</td><td class="num">2.5x (latest peer table; date/basis differs).</td></tr>
+
+          <tr class=""><td class="">Bharat Dynamics</td><td class="num">₹1,140</td><td class="num">₹41,788 Cr</td><td class="num">80.2x</td><td class="num">13.9%</td><td class="num">10.7x FY26 book / revenue; book as at 31 Mar.</td></tr>
+
+          <tr class=""><td class="">GRSE</td><td class="num">₹2,319</td><td class="num">₹26,584 Cr</td><td class="num">33.2x</td><td class="num">42.8%</td><td class="num">Peer data as at 25 Sep; shipyard execution profile.</td></tr>
+
+          <tr class=""><td class="">Data Patterns</td><td class="num">₹4,418.80</td><td class="num">₹24,740 Cr</td><td class="num">91.5x</td><td class="num">21.9%</td><td class="num">Peer data as at 25 Sep; defence electronics mix.</td></tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+  <!-- ═══════════ TAB: INDUSTRY ═══════════ -->
+  <div id="tab-industry" class="tab-body">
+
+
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>Quarter Snapshot — Operating KPIs</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;text-transform:none;letter-spacing:0">
+          From Q1 FY27 concall (2026-07-27)
+        </span>
+      </div>
+      <div class="cc-isnap">
+
+
+        <div class="kpi"
+             >
+          <div class="km">Order book</div>
+          <div class="kv">₹72,258 Cr at 1 Jul 2026</div>
+
+          <div class="kd ">Q1 order intake ₹3,754 Cr</div>
+
+
+          <div class="kn">Backlog is diversified; annual inflow replenishment remains the key monitor.</div>
+        </div>
+
+
+        <div class="kpi"
+             >
+          <div class="km">Receivables</div>
+          <div class="kv">140 days at 30 Jun 2026</div>
+
+          <div class="kd ">vs 176 days at 31 Mar 2026</div>
+
+
+          <div class="kn">Management said cash flows were good; company does not publish full Q1 cash-flow statement in this call.</div>
+        </div>
+
+
+        <div class="kpi"
+             >
+          <div class="km">EBITDA margin</div>
+          <div class="kv">25.83%</div>
+
+          <div class="kd ">vs FY27 guide 28%</div>
+
+
+          <div class="kn">Management attributed quarterly difference to product mix, not input-cost pressure.</div>
+        </div>
+
+
+        <div class="kpi"
+             >
+          <div class="km">Orders after Q1</div>
+          <div class="kv">₹648 Cr</div>
+
+          <div class="kd ">announced 17 Sep 2026</div>
+
+
+          <div class="kn">Includes jammer, comms, cyber, thermal, AI and TR-module categories.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="industry-card">
+      <div class="ih">BEL — The Defence Electronics Integrator</div>
+      <div class="ib">Bharat Electronics is India's <strong>primary defence electronics company</strong> — the only major listed PSU with capabilities across radars, electronic warfare, avionics, naval systems, C4ISR, and now AI/cybersecurity. BEL's competitive position is unique because electronics is the <strong>fastest-growing content layer</strong> in modern defence platforms. A modern frigate has 3-5x more electronics value vs a 1990s equivalent. As India's defence platforms upgrade from imported to indigenous, BEL captures the electronics integration contract.</div>
+    </div>
+
+    <div class="industry-card">
+      <div class="ih">Electronics Content Migration — The Structural Thesis</div>
+      <div class="ib">HSIE's March 2026 thematic ('Electronics Powering India's Defence Upcycle') identifies BEL as the primary beneficiary. Three trends converge: (1) <strong>Multi-domain warfare</strong> requiring integrated electronics across land/sea/air; (2) <strong>Aging asset replacement</strong> with electronically superior platforms; (3) <strong>MSME ecosystem scaling</strong> creating domestic component supply for BEL's manufacturing. The total addressable market for defence electronics is ₹50,000+ Cr/year from FY27-30 as platforms replace 1980s-90s vintage systems.</div>
+    </div>
+
+    <div class="industry-card">
+      <div class="ih">Defence Sector Brief (W39, 25 Sep 2026)</div>
+      <div class="ib">FY27 defence allocation is ₹7.85 lakh Cr (+15% vs FY26 BE), with ₹2.193 lakh Cr for defence capital (+21.84%). Distinguish signed contracts from AoN and pipeline. BDL’s 23 Sep ₹810.79 Cr SAT-SAAW contract is signed, with deliveries in FY28–FY29; it does not create immediate Q1 revenue. BEL’s large QRSAM remains unconfirmed in the reviewed disclosure set through 17 Sep.</div>
+    </div>
+
+    <div class="industry-card">
+      <div class="ih">Macro Environment (September 2026)</div>
+      <div class="ib"><strong>India macro backdrop (as of 2026-09-25):</strong> Cautious / weak breadth: 45.24% of tracked stocks are above their 200-EMA and Nifty 500 is 1.98% below its 200-DMA. <strong>Growth:</strong> RBI FY27 real GDP projection 6.7%. <strong>Inflation:</strong> August CPI 4.82% y/y (provisional); RBI FY27 CPI projection 5.0%. <strong>Rates / FX:</strong> repo 5.25%, 10-year government yield 7.0408%, USD/INR 95.9099 (24 Sep). <strong>Company read-through:</strong> government defence allocation and contract conversion matter more directly than broad market breadth; imported electronics, sensors, engines and machine tools can face rupee pressure before localization or contract pricing offsets it. No expert quotation was available within the 90-day window. <strong>BEL read-through:</strong> the defence capex envelope supports demand, but order wins still require contract signature and production; rupee weakness is relevant to imported modules until localization offsets it.</div>
+    </div>
+
+
+
+
+
+  </div>
+
+  <!-- ═══════════ TAB: CONCALL (v2) ═══════════ -->
+  <div id="tab-concall" class="tab-body">
+
+
+
+    <div class="cc-head">
+
+      <div class="cell">
+        <div class="lbl">Revenue</div>
+        <div class="val">₹5,547 Cr</div>
+
+        <div class="delta pos">
+          +24.9% YoY</div>
+
+      </div>
+      <div class="cell">
+        <div class="lbl">EBITDA</div>
+        <div class="val">₹1,387 Cr</div>
+
+        <div class="delta pos">
+          +11.6% YoY</div>
+
+      </div>
+      <div class="cell">
+        <div class="lbl">PAT</div>
+        <div class="val">₹1,055 Cr</div>
+
+        <div class="delta pos">
+          +8.9% YoY</div>
+
+      </div>
+      <div class="cell">
+        <div class="lbl">OPM</div>
+        <div class="val">25.0%</div>
+
+        <div class="delta neg">
+          -300 bps YoY</div>
+
+      </div>
+      <div class="meta">
+        <span><b>Q1 FY27</b> concall (2026-07-27)</span>
+
+        <span>· source: nse_local</span>
+        <span class="cc-sent neutral">NEUTRAL</span>
+        <span class="cc-conf">HIGH CONF</span>
+
+        <span class="cc-verif verified" title="Transcript headline ₹5,533 Cr revenue / ₹1,403 Cr PBT / ₹1,048 Cr PAT, 25.83% EBITDA margin; official result release gives ₹5,533.06 Cr / ₹1,402.83 Cr / ₹1,048.33 Cr. Refreshed local consolidated row ₹5,547 Cr sales, ₹1,396 Cr PBT, ₹1,055 Cr PAT, 25% OPM; small basis/rounding and EBITDA-vs-operating-profit definition differences are visible.">
+          ✓ FILING-VERIFIED
+
+        </span>
+
+      </div>
+    </div>
+
+    <div style="font-size:12px;color:var(--mt);font-style:italic;margin:-6px 0 14px 0;line-height:1.5">
+      <b style="font-style:normal;color:var(--dm)">Sentiment basis:</b> Revenue and orders grew but PAT growth lagged and Q1 EBITDA margin missed the FY27 28% guide; management reaffirmed the full-year target and identified mix as the quarterly cause.
+    </div>
+
+
+
+
+
+    <div class="cc-tension">Can BEL meet 15% revenue growth and a 28% EBITDA margin while replacing execution with enough signed orders, especially if the QRSAM approval slips beyond management’s stated September window?</div>
+
+
+
+
+
+    <div class="section">
+      <div class="sh2">Two-Minute Summary</div>
+      <div class="cc-2min">
+        <div class="b"><div class="blbl">RESULT</div><div class="btxt">Q1 FY27 revenue ₹5,533 Cr (+25.27%), PBT ₹1,403 Cr (+8.81%), PAT ₹1,048 Cr (+8.17%); EBITDA margin 25.83%.</div></div>
+        <div class="b"><div class="blbl">DRIVER</div><div class="btxt">Order book ₹72,258 Cr at 1 July; Q1 orders ₹3,754 Cr; receivable days improved to 140 from 176 at March end.</div></div>
+        <div class="b"><div class="blbl">FORWARD</div><div class="btxt">FY27 guidance retained: revenue growth 15%, EBITDA margin 28%, order inflow ₹55,000 Cr+ including QRSAM; QRSAM still awaits CCS approval.</div></div>
+        <div class="b"><div class="blbl">RISK</div><div class="btxt">QRSAM timing and large-order conversion remain the key risks; September expected window had not been confirmed in disclosures checked through 17 Sep.</div></div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>What Changed vs Last Call</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;text-transform:none;letter-spacing:0">
+          Comparing Q1 FY27 vs Q4 FY26</span>
+      </div>
+      <div class="cc-wc">
+        <div class="col ng">
+          <h5>+ New Guidance <span class="cnt">0</span></h5>
+          <div class="empty">No new guidance this quarter.</div>
+        </div>
+        <div class="col dg">
+          <h5>− Dropped Guidance <span class="cnt">1</span></h5>
+
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev low">low</span>
+                FY27 revenue growth >15%, 28% EBITDA margin, ₹55,000 Cr+ order inflow</div>
+              <div class="det">The Q1 call reiterated all three, so none dropped; this row intentionally remains empty of withdrawn guidance.</div>
+            </div>
+
+
+        </div>
+        <div class="col nr">
+          <h5>⚠ New Risks <span class="cnt">3</span></h5>
+
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev high">high</span>
+                QRSAM approval remains procedural and time-sensitive</div>
+              <div class="det">Management said all company-side activity was complete but CCS approval remained pending; September was the maximum timing it expected.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev medium">medium</span>
+                Q1 order inflow was only ₹3,754 Cr</div>
+              <div class="det">Management said Q1 intake was planned and previous Q1 benefited from spillover, but the ₹55,000 Cr+ annual target still requires large later awards.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev medium">medium</span>
+                Q1 margin was below annual guide</div>
+              <div class="det">EBITDA margin was 25.83% vs 28% FY27 target; CFO cited product mix and retained annual guide.</div>
+            </div>
+
+
+        </div>
+        <div class="col rr">
+          <h5>✓ Resolved Risks <span class="cnt">2</span></h5>
+
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev low">low</span>
+                FY26 revenue guidance delivery</div>
+              <div class="det">FY26 revenue exceeded the ₹26,000 Cr goal in the prior call; the current quarter moves attention to FY27 delivery.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev low">low</span>
+                Q1 receivable spike from year-end</div>
+              <div class="det">Receivable days were 140 at June end vs 176 at March end.</div>
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="section">
+      <div class="sh2">Tone Shifts & Guidance Changes</div>
+
+      <div class="cc-tone">
+        <div class="area">QRSAM timing</div>
+        <div class="dir hedged">HEDGED</div>
+        <div class="body">
+          <div><span class="from">Q4 FY26: award expected imminently/around start of FY27</span> → <span class="to">Q1 FY27: procedural delay; management still expected award by September after CCS approval</span></div>
+          <div style="margin-top:4px">No contract evidence was located in BEL’s 17 Sep order disclosure; as-of 26 Sep the timing window is nearly elapsed, so treat as pending and at risk.</div>
+        </div>
+      </div>
+
+      <div class="cc-tone">
+        <div class="area">FY27 EBITDA margin</div>
+        <div class="dir firmer">FIRMER</div>
+        <div class="body">
+          <div><span class="from">FY27 margin floor >28% in Q4 FY26</span> → <span class="to">28% FY27 retained despite Q1 actual 25.83%</span></div>
+          <div style="margin-top:4px">Management explicitly said the quarterly shortfall is product mix and reaffirmed the annual target.</div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>Promise Ledger</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;text-transform:none;letter-spacing:0">
+          Looking back up to 6 quarters</span>
+      </div>
+      <div class="cc-ledger">
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">FY26 revenue ₹26,000 Cr</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q2 FY26</b></span>
+              <span>Restated: <b style="color:var(--mt)">Q3 FY26</b></span>
+              <span>Window: <b style="color:var(--mt)">FY26</b></span>
+
+            </div>
+            <div class="pl-ev">Local FY26 consolidated revenue ₹27,610 Cr; official FY26 press disclosure rounded to ₹27,480 Cr standalone. Basis differs; both exceed the ₹26,000 Cr target.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill kept">KEPT</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">FY26 EBITDA margin about 27%</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q2 FY26</b></span>
+              <span>Restated: <b style="color:var(--mt)">Q3 FY26</b></span>
+              <span>Window: <b style="color:var(--mt)">FY26</b></span>
+
+            </div>
+            <div class="pl-ev">Local consolidated OPM 29%; issuer reported FY26 EBITDA margin around 30%.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill kept">KEPT</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">FY27 revenue growth >15%</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q4 FY26</b></span>
+              <span>Restated: <b style="color:var(--mt)">Q1 FY27</b></span>
+              <span>Window: <b style="color:var(--mt)">FY27</b></span>
+              <span>Quarters open: <b style="color:var(--mt)">1</b></span>
+            </div>
+            <div class="pl-ev">Q1 revenue grew 25.27%; one quarter is not enough to verify full-year outcome.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">FY27 EBITDA margin 28%</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q4 FY26</b></span>
+              <span>Restated: <b style="color:var(--mt)">Q1 FY27</b></span>
+              <span>Window: <b style="color:var(--mt)">FY27</b></span>
+              <span>Quarters open: <b style="color:var(--mt)">1</b></span>
+            </div>
+            <div class="pl-ev">Q1 margin was 25.83%; management retained the annual target and attributed the gap to product mix.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">FY27 order inflow ₹55,000 Cr+ including QRSAM</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q4 FY26</b></span>
+              <span>Restated: <b style="color:var(--mt)">Q1 FY27</b></span>
+              <span>Window: <b style="color:var(--mt)">FY27</b></span>
+              <span>Quarters open: <b style="color:var(--mt)">1</b></span>
+            </div>
+            <div class="pl-ev">Q1 order intake ₹3,754 Cr; QRSAM CCS approval remained pending and the expected September window was not yet confirmed in reviewed 17 Sep disclosures.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">QRSAM award by September 2026</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q4 FY26</b></span>
+              <span>Restated: <b style="color:var(--mt)">Q1 FY27</b></span>
+              <span>Window: <b style="color:var(--mt)">September 2026</b></span>
+              <span>Quarters open: <b style="color:var(--mt)">1</b></span>
+            </div>
+            <div class="pl-ev">Management reaffirmed September as maximum expected window on 27 Jul; latest reviewed BEL order release on 17 Sep did not include QRSAM. Recheck after month end.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">Export order book $1bn by FY29</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q4 FY26</b></span>
+
+              <span>Window: <b style="color:var(--mt)">FY29</b></span>
+              <span>Quarters open: <b style="color:var(--mt)">4</b></span>
+            </div>
+            <div class="pl-ev">FY26 exports and $495 Mn export backlog are prior dated; no Q1 FY27 updated order book or export target progress was disclosed.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="section">
+      <div class="sh2">Bear Case Tracker</div>
+      <div class="cc-bear">
+
+        <div class="bc alive">
+          <span class="stat">ALIVE</span>
+
+          <div class="th">Large programme order intake is back-ended and may not replenish revenue recognized.</div>
+          <div class="meta">First flagged: <b style="color:var(--mt)">FY25</b></div>
+          <div class="ev">Q1 order intake ₹3,754 Cr; QRSAM included in ₹55,000 Cr FY27 guide remained pending CCS approval.</div>
+        </div>
+
+        <div class="bc weakening">
+          <span class="stat">WEAKENING</span>
+          <span class="chg">· STATUS CHANGED THIS Q</span>
+          <div class="th">High 29–30% margin may prove difficult as product mix changes.</div>
+          <div class="meta">First flagged: <b style="color:var(--mt)">Q1 FY26</b></div>
+          <div class="ev">Q1 margin 25.83%, below 28% target; management retained the target and said mix was the cause.</div>
+        </div>
+
+        <div class="bc alive">
+          <span class="stat">ALIVE</span>
+
+          <div class="th">Execution can outrun new inflows and shrink backlog coverage.</div>
+          <div class="meta">First flagged: <b style="color:var(--mt)">Q4 FY26</b></div>
+          <div class="ev">Order book ₹72,258 Cr at 1 Jul compared with FY26 close ₹73,882 Cr; ₹648 Cr signed order disclosed 17 Sep, but QRSAM not found in reviewed disclosures.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="section">
+      <div class="sh2">Key Management Quotes</div>
+
+      <div class="concall-quote">
+        <div class="cq-text">"We are definitely going to meet the guidance given about the order inflow for this year."</div>
+        <div class="cq-src">— Manoj Jain (Chairman and Managing Director)</div>
+      </div>
+
+      <div class="concall-quote">
+        <div class="cq-text">"As far as margins are concerned, current year EBITDA margin guidance we have given of 28%, we remain at that."</div>
+        <div class="cq-src">— Damodar Bhattad (Director (Finance) and CFO)</div>
+      </div>
+
+      <div class="concall-quote">
+        <div class="cq-text">"So, we are just waiting for the CCS approval and that time we will get the good news about QRSAM."</div>
+        <div class="cq-src">— Manoj Jain (Chairman and Managing Director)</div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="section">
+      <div class="sh2">Post-Call Reaction</div>
+      <div class="cc-react">
+        <div class="rh">
+          <div class="cell">
+            <div class="lbl">T+1 Return</div>
+
+            <div class="v neg">
+              -4.46%</div>
+
+          </div>
+          <div class="cell">
+            <div class="lbl">T+5 Return</div>
+
+            <div class="v neg">
+              -3.68%</div>
+
+          </div>
+          <div class="cell">
+            <div class="lbl">vs Nifty 500 (1d)</div>
+
+            <div class="v neg">
+              -4.55%</div>
+
+          </div>
+          <div class="cell">
+            <div class="lbl">Expected (from sentiment)</div>
+            <div class="v flat">FLAT</div>
+          </div>
+        </div>
+
+        <div class="match">
+          <span class="tag no">
+            PRICE DIVERGED FROM SENTIMENT</span>
+          Local clean OHLCV shows a 4.46% next-session fall and 3.68% five-session decline; next-session relative return was -4.55pp vs Nifty 500. No useful, distinct two-day headline set was found; the price move is consistent with a mixed read on margin and order-inflow timing, but that attribution is an inference.
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="cc-preview">
+
+      <div class="card g">
+        <div class="lbl">★ Top Guidance</div>
+        <div class="body">FY27 guidance reaffirmed: revenue growth >15%, EBITDA margin 28%, order inflow ₹55,000 Cr+ including QRSAM; QRSAM awaited CCS approval.</div>
+      </div>
+
+
+      <div class="card r">
+        <div class="lbl">⚠ Top Risk</div>
+        <div class="body">QRSAM approval may slip beyond the September timing and create a gap to the annual inflow guide.</div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="section">
+      <div class="sh2">Said vs Delivered (4Q)</div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">Q2FY26</span>
+        <span class="promise-pill not assessed">NOT ASSESSED</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+
+          <span style="color:var(--tx);display:block">Local consolidated P&L: revenue ₹5792 Cr; PAT ₹1287 Cr; OPM 29%. Analyst-consensus estimate was not available in audited local inputs, so no beat/miss label is assigned.</span>
+
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">Q3FY26</span>
+        <span class="promise-pill not assessed">NOT ASSESSED</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+
+          <span style="color:var(--tx);display:block">Local consolidated P&L: revenue ₹7154 Cr; PAT ₹1580 Cr; OPM 30%. Analyst-consensus estimate was not available in audited local inputs, so no beat/miss label is assigned.</span>
+
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">Q4FY26</span>
+        <span class="promise-pill not assessed">NOT ASSESSED</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+
+          <span style="color:var(--tx);display:block">Local consolidated P&L: revenue ₹10224 Cr; PAT ₹2226 Cr; OPM 29%. Analyst-consensus estimate was not available in audited local inputs, so no beat/miss label is assigned.</span>
+
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">Q1FY27</span>
+        <span class="promise-pill not assessed">NOT ASSESSED</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+
+          <span style="color:var(--tx);display:block">Local consolidated P&L: revenue ₹5547 Cr; PAT ₹1055 Cr; OPM 25%. Analyst-consensus estimate was not available in audited local inputs, so no beat/miss label is assigned.</span>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  <!-- ═══════════ TAB: RISKS & GATES ═══════════ -->
+  <div id="tab-risks" class="tab-body">
+
+
+    <div class="section">
+      <div class="sh2">Top Risks</div>
+      <div class="risk-cards">
+
+        <div class="risk-card HIGH">
+          <div class="risk-sev">HIGH</div>
+          <div class="ttl">FY27 order-inflow guide relies on a pending QRSAM award</div>
+          <div class="det">Management’s ₹55,000 Cr+ FY27 inflow guide includes QRSAM; on 27 Jul the company said CCS approval was pending and expected by September. Through the latest reviewed BEL release on 17 Sep, QRSAM was not confirmed. The date window is nearly elapsed and must be rechecked before carrying the guide as intact.</div>
+          <div class="monitor">Monitor: Official signed contract disclosure, revised timing, and actual order intake vs annual guide.</div>
+        </div>
+
+        <div class="risk-card MEDIUM">
+          <div class="risk-sev">MEDIUM</div>
+          <div class="ttl">Profit growth and margins lag revenue growth</div>
+          <div class="det">Q1 revenue +25.3% but PAT +8.2%; EBITDA margin 25.83% was below the 28% full-year guide. Management cited product mix, but future quarters must recover to meet FY27 target.</div>
+          <div class="monitor">Monitor: Quarterly EBITDA margin and cumulative FY27 margin vs 28% guide.</div>
+        </div>
+
+        <div class="risk-card MEDIUM">
+          <div class="risk-sev">MEDIUM</div>
+          <div class="ttl">Order intake may not fully replenish deliveries</div>
+          <div class="det">Order book at 1 Jul was ₹72,258 Cr vs FY26 close ₹73,882 Cr (issuer prior disclosure); Q1 order intake ₹3,754 Cr. Later ₹648 Cr order receipt helps, but leaves major annual inflow target dependent on large programmes.</div>
+          <div class="monitor">Monitor: Quarterly order intake/backlog, including reported signed awards only.</div>
+        </div>
+
+        <div class="risk-card MEDIUM">
+          <div class="risk-sev">MEDIUM</div>
+          <div class="ttl">High valuation and technical weakness</div>
+          <div class="det">Local snapshot PE 46.7x; price ₹393.55 is below EMA50 and EMA200 and near the 52-week low. A disappointment in QRSAM or earnings conversion could drive further multiple compression.</div>
+          <div class="monitor">Monitor: Q2/Q3 execution, PE vs earnings delivery and reclaiming ₹408 EMA200.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Catalyst grid with quarterly state pills -->
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>Active Fundamental Catalysts</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;letter-spacing:0;text-transform:none">
+          5 of the 16-catalyst framework are live for this name — status across the 4 quarters</span>
+      </div>
+      <div class="cat-grid-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <table class="cat-grid">
+        <thead>
+          <tr>
+            <th style="width:30px">#</th>
+            <th>Catalyst</th>
+
+            <th class="qcol">Q2FY26</th>
+
+            <th class="qcol">Q3FY26</th>
+
+            <th class="qcol">Q4FY26</th>
+
+            <th class="qcol">Q1FY27</th>
+
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="cat-id">1</td>
+            <td class="cat-nm">Order replenishment and QRSAM approval<span class="star">★</span></td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="cat-imp">HIGH · FY27 order inflow ₹55,000 Cr+ includes QRSAM; no award found in reviewed disclosures through 17 Sep.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">2</td>
+            <td class="cat-nm">Margin recovery to FY27 guide<span class="star">★</span></td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="cat-imp">HIGH · Q1 EBITDA margin 25.83% vs 28% guide; management attributes difference to mix.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">3</td>
+            <td class="cat-nm">Signed ₹648 Cr Sep order conversion</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill dot">·</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill dot">·</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill dot">·</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="cat-imp">MEDIUM · ₹648 Cr additional orders announced 17 Sep, small vs backlog.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">4</td>
+            <td class="cat-nm">Export order book and FY29 export ambition</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="cat-imp">MEDIUM · Prior $495 Mn export book/$1bn FY29 target is dated; Q1 update unavailable.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">5</td>
+            <td class="cat-nm">Electronics indigenisation / new programme wins</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="cat-imp">MEDIUM · QRSAM/Kusha/other programmes are pipeline until signed; do not book AoN as order.</td>
+          </tr>
+
+        </tbody>
+      </table>
+      </div>
+      <div class="cat-footer">
+        ★ = thesis driver. ACT = active · BLD = building · BLD↑ = strengthening · FAD = fading · · = not yet.
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Falsification Gates</div>
+
+      <div class="gate ">
+        <div class="gtxt">FY27 revenue misses ₹30,000 Cr — growth decelerates from 16% to <12%</div>
+        <div class="gdeadline">By Q2 FY27</div>
+      </div>
+
+      <div class="gate ">
+        <div class="gtxt">Export order book fails to grow from $495 Mn in FY27 — $1 Bn target looks unachievable</div>
+        <div class="gdeadline">FY27 full year</div>
+      </div>
+
+      <div class="gate drop">
+        <div class="gtxt">Order book falls below 2.5x revenue — revenue visibility deteriorates <b style="color:var(--red)">[THESIS KILLER]</b></div>
+        <div class="gdeadline">Any quarter</div>
+      </div>
+
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">What Changed</div>
+
+      <div style="padding:10px 16px;border:1px dotted var(--bd);margin-bottom:6px;font-size:14px;line-height:1.55;color:var(--mt)">Q1 FY27 overlay refreshed using current filings/transcript coverage; prior verdict preserved in CCS history. See concall and source log. As of 25 Sep 2026: close ₹393.55, EMA50 ₹403.81, EMA200 ₹408.36, RSI14 40.98; close below both moving averages. Relative strength beat Nifty 500 in 25/52 weeks and 7/13 weeks. Support ₹380–383 (52-week low ₹380.45 and Sep swing low); resistance ₹404 (EMA50), ₹408 (EMA200), then ₹473.45 (52-week high). Results call held 27 Jul after the close; next session returned -4.46%, five sessions -3.68%, and relative next-session return -4.55pp vs Nifty 500. On 15 Sep shares fell 5.30% but volume was 1.83x 10-day average (below >2x threshold).</div>
+
+
+    </div>
+
+  </div>
+
+
+</div>
+
+<footer>
+  <span>Company Deepdive · BEL</span>
+  <span>Public financial data. As of 2026-09-26.</span>
+</footer>
+
+<script>
+const D = {"ohlcv_6m": [{"time": "2026-03-25", "open": 416.3, "high": 422.0, "low": 412.55, "close": 413.45}, {"time": "2026-03-27", "open": 411.9, "high": 413.45, "low": 403.25, "close": 404.75}, {"time": "2026-03-30", "open": 400.0, "high": 413.25, "low": 399.35, "close": 400.65}, {"time": "2026-04-01", "open": 415.0, "high": 430.2, "low": 412.65, "close": 418.7}, {"time": "2026-04-02", "open": 417.0, "high": 423.6, "low": 407.5, "close": 421.6}, {"time": "2026-04-06", "open": 422.0, "high": 428.05, "low": 420.0, "close": 427.15}, {"time": "2026-04-07", "open": 424.0, "high": 429.0, "low": 420.65, "close": 427.8}, {"time": "2026-04-08", "open": 440.0, "high": 440.0, "low": 428.8, "close": 433.1}, {"time": "2026-04-09", "open": 425.0, "high": 443.3, "low": 424.5, "close": 439.75}, {"time": "2026-04-10", "open": 444.1, "high": 447.45, "low": 440.45, "close": 442.45}, {"time": "2026-04-13", "open": 435.0, "high": 445.5, "low": 434.0, "close": 441.55}, {"time": "2026-04-15", "open": 447.5, "high": 449.2, "low": 444.8, "close": 447.65}, {"time": "2026-04-16", "open": 449.85, "high": 457.0, "low": 448.9, "close": 455.65}, {"time": "2026-04-17", "open": 458.0, "high": 463.75, "low": 454.45, "close": 462.75}, {"time": "2026-04-20", "open": 462.0, "high": 464.4, "low": 456.0, "close": 457.55}, {"time": "2026-04-21", "open": 457.5, "high": 461.8, "low": 449.45, "close": 451.5}, {"time": "2026-04-22", "open": 450.8, "high": 451.85, "low": 444.7, "close": 448.7}, {"time": "2026-04-23", "open": 451.7, "high": 455.7, "low": 444.5, "close": 449.95}, {"time": "2026-04-24", "open": 450.0, "high": 451.2, "low": 438.75, "close": 444.45}, {"time": "2026-04-27", "open": 445.0, "high": 448.3, "low": 432.95, "close": 435.6}, {"time": "2026-04-28", "open": 435.6, "high": 441.0, "low": 433.55, "close": 435.75}, {"time": "2026-04-29", "open": 437.05, "high": 442.8, "low": 435.25, "close": 437.55}, {"time": "2026-04-30", "open": 436.45, "high": 436.45, "low": 424.5, "close": 431.3}, {"time": "2026-05-01", "open": 431.3, "high": 431.3, "low": 431.3, "close": 431.3}, {"time": "2026-05-04", "open": 433.0, "high": 438.6, "low": 428.6, "close": 433.55}, {"time": "2026-05-05", "open": 433.5, "high": 436.5, "low": 429.3, "close": 433.35}, {"time": "2026-05-06", "open": 437.0, "high": 439.65, "low": 435.15, "close": 438.2}, {"time": "2026-05-07", "open": 439.9, "high": 441.0, "low": 433.5, "close": 439.45}, {"time": "2026-05-08", "open": 439.0, "high": 443.8, "low": 437.8, "close": 439.7}, {"time": "2026-05-11", "open": 438.0, "high": 439.15, "low": 431.0, "close": 431.95}, {"time": "2026-05-12", "open": 430.2, "high": 432.5, "low": 415.5, "close": 416.5}, {"time": "2026-05-13", "open": 416.6, "high": 432.0, "low": 415.75, "close": 428.25}, {"time": "2026-05-14", "open": 431.0, "high": 435.15, "low": 424.45, "close": 428.85}, {"time": "2026-05-15", "open": 428.85, "high": 429.5, "low": 422.2, "close": 423.65}, {"time": "2026-05-18", "open": 423.85, "high": 427.8, "low": 414.6, "close": 426.6}, {"time": "2026-05-19", "open": 428.4, "high": 430.9, "low": 419.3, "close": 422.95}, {"time": "2026-05-20", "open": 416.3, "high": 420.0, "low": 407.0, "close": 413.3}, {"time": "2026-05-21", "open": 420.0, "high": 426.1, "low": 418.05, "close": 420.4}, {"time": "2026-05-22", "open": 421.45, "high": 421.45, "low": 415.45, "close": 416.55}, {"time": "2026-05-25", "open": 419.3, "high": 422.55, "low": 417.3, "close": 421.85}, {"time": "2026-05-26", "open": 423.5, "high": 425.55, "low": 418.85, "close": 420.1}, {"time": "2026-05-27", "open": 422.0, "high": 422.0, "low": 416.1, "close": 419.1}, {"time": "2026-05-28", "open": 419.1, "high": 419.1, "low": 419.1, "close": 419.1}, {"time": "2026-05-29", "open": 413.3, "high": 419.1, "low": 409.9, "close": 410.75}, {"time": "2026-06-01", "open": 412.35, "high": 413.7, "low": 404.75, "close": 407.2}, {"time": "2026-06-02", "open": 405.8, "high": 409.6, "low": 400.3, "close": 407.85}, {"time": "2026-06-03", "open": 408.0, "high": 408.95, "low": 403.1, "close": 406.6}, {"time": "2026-06-04", "open": 405.0, "high": 411.55, "low": 404.0, "close": 409.9}, {"time": "2026-06-05", "open": 410.1, "high": 412.0, "low": 405.1, "close": 408.2}, {"time": "2026-06-08", "open": 399.0, "high": 415.5, "low": 399.0, "close": 412.95}, {"time": "2026-06-09", "open": 417.0, "high": 417.0, "low": 410.0, "close": 412.05}, {"time": "2026-06-10", "open": 413.0, "high": 415.25, "low": 407.1, "close": 408.35}, {"time": "2026-06-11", "open": 407.35, "high": 407.35, "low": 401.75, "close": 402.3}, {"time": "2026-06-12", "open": 407.35, "high": 409.0, "low": 403.3, "close": 406.5}, {"time": "2026-06-15", "open": 412.0, "high": 412.5, "low": 406.0, "close": 409.55}, {"time": "2026-06-16", "open": 409.6, "high": 410.8, "low": 406.15, "close": 407.55}, {"time": "2026-06-17", "open": 407.0, "high": 422.4, "low": 406.15, "close": 419.85}, {"time": "2026-06-18", "open": 422.5, "high": 430.0, "low": 421.75, "close": 428.6}, {"time": "2026-06-19", "open": 427.9, "high": 431.6, "low": 424.55, "close": 426.9}, {"time": "2026-06-22", "open": 428.1, "high": 432.7, "low": 426.15, "close": 431.5}, {"time": "2026-06-23", "open": 435.0, "high": 435.0, "low": 418.5, "close": 420.0}, {"time": "2026-06-24", "open": 420.2, "high": 422.55, "low": 412.8, "close": 413.55}, {"time": "2026-06-25", "open": 413.6, "high": 415.05, "low": 406.0, "close": 407.2}, {"time": "2026-06-26", "open": 407.2, "high": 407.2, "low": 407.2, "close": 407.2}, {"time": "2026-06-29", "open": 406.8, "high": 418.3, "low": 403.55, "close": 411.6}, {"time": "2026-06-30", "open": 413.5, "high": 414.45, "low": 408.5, "close": 411.8}, {"time": "2026-07-01", "open": 413.0, "high": 417.65, "low": 411.4, "close": 416.25}, {"time": "2026-07-02", "open": 416.25, "high": 418.3, "low": 412.3, "close": 415.05}, {"time": "2026-07-03", "open": 418.6, "high": 424.5, "low": 417.1, "close": 418.05}, {"time": "2026-07-06", "open": 422.0, "high": 429.9, "low": 420.1, "close": 425.55}, {"time": "2026-07-07", "open": 425.55, "high": 425.9, "low": 416.0, "close": 419.15}, {"time": "2026-07-08", "open": 416.5, "high": 417.8, "low": 406.0, "close": 407.6}, {"time": "2026-07-09", "open": 409.15, "high": 411.0, "low": 404.05, "close": 406.2}, {"time": "2026-07-10", "open": 408.4, "high": 415.45, "low": 408.2, "close": 414.85}, {"time": "2026-07-13", "open": 411.95, "high": 412.9, "low": 408.6, "close": 410.8}, {"time": "2026-07-14", "open": 409.35, "high": 411.25, "low": 405.7, "close": 410.1}, {"time": "2026-07-15", "open": 409.0, "high": 414.3, "low": 408.4, "close": 410.95}, {"time": "2026-07-16", "open": 412.25, "high": 412.5, "low": 406.5, "close": 407.1}, {"time": "2026-07-17", "open": 407.1, "high": 411.2, "low": 405.1, "close": 409.45}, {"time": "2026-07-20", "open": 408.55, "high": 409.5, "low": 406.1, "close": 408.15}, {"time": "2026-07-21", "open": 408.15, "high": 410.95, "low": 406.5, "close": 410.05}, {"time": "2026-07-22", "open": 410.05, "high": 410.55, "low": 406.0, "close": 406.75}, {"time": "2026-07-23", "open": 405.55, "high": 406.95, "low": 400.6, "close": 405.35}, {"time": "2026-07-24", "open": 404.2, "high": 406.1, "low": 401.0, "close": 405.0}, {"time": "2026-07-27", "open": 408.0, "high": 408.45, "low": 404.6, "close": 407.15}, {"time": "2026-07-28", "open": 406.15, "high": 406.15, "low": 388.0, "close": 389.0}, {"time": "2026-07-29", "open": 390.9, "high": 390.95, "low": 382.2, "close": 387.55}, {"time": "2026-07-30", "open": 386.0, "high": 387.5, "low": 382.7, "close": 384.9}, {"time": "2026-07-31", "open": 385.0, "high": 390.6, "low": 385.0, "close": 387.85}, {"time": "2026-08-03", "open": 390.0, "high": 392.25, "low": 388.0, "close": 392.15}, {"time": "2026-08-04", "open": 390.2, "high": 394.1, "low": 389.25, "close": 391.5}, {"time": "2026-08-05", "open": 392.25, "high": 392.7, "low": 385.2, "close": 390.0}, {"time": "2026-08-06", "open": 389.65, "high": 400.9, "low": 388.65, "close": 399.2}, {"time": "2026-08-07", "open": 401.0, "high": 403.0, "low": 398.35, "close": 401.0}, {"time": "2026-08-10", "open": 402.0, "high": 405.65, "low": 399.25, "close": 404.35}, {"time": "2026-08-11", "open": 405.25, "high": 406.8, "low": 401.4, "close": 405.85}, {"time": "2026-08-12", "open": 406.0, "high": 406.25, "low": 399.3, "close": 405.7}, {"time": "2026-08-13", "open": 405.7, "high": 412.0, "low": 402.9, "close": 410.5}, {"time": "2026-08-14", "open": 410.45, "high": 412.5, "low": 408.25, "close": 410.8}, {"time": "2026-08-17", "open": 411.0, "high": 413.95, "low": 409.1, "close": 412.45}, {"time": "2026-08-18", "open": 412.7, "high": 416.35, "low": 410.95, "close": 412.0}, {"time": "2026-08-19", "open": 412.0, "high": 412.75, "low": 406.4, "close": 409.2}, {"time": "2026-08-20", "open": 411.8, "high": 412.2, "low": 406.3, "close": 409.4}, {"time": "2026-08-21", "open": 413.45, "high": 415.95, "low": 408.65, "close": 414.0}, {"time": "2026-08-24", "open": 414.3, "high": 414.6, "low": 405.55, "close": 409.0}, {"time": "2026-08-25", "open": 407.0, "high": 413.25, "low": 405.95, "close": 413.25}, {"time": "2026-08-26", "open": 411.75, "high": 412.3, "low": 406.9, "close": 406.9}, {"time": "2026-08-27", "open": 410.8, "high": 412.9, "low": 408.0, "close": 411.0}, {"time": "2026-08-28", "open": 410.85, "high": 411.9, "low": 407.25, "close": 411.9}, {"time": "2026-08-31", "open": 411.45, "high": 414.45, "low": 406.3, "close": 414.45}, {"time": "2026-09-01", "open": 414.45, "high": 414.45, "low": 410.35, "close": 410.5}, {"time": "2026-09-02", "open": 407.5, "high": 408.0, "low": 402.9, "close": 404.15}, {"time": "2026-09-03", "open": 406.05, "high": 410.15, "low": 405.15, "close": 409.25}, {"time": "2026-09-04", "open": 409.25, "high": 413.1, "low": 405.35, "close": 405.35}, {"time": "2026-09-07", "open": 406.35, "high": 409.25, "low": 406.0, "close": 406.7}, {"time": "2026-09-08", "open": 408.0, "high": 416.0, "low": 406.5, "close": 412.85}, {"time": "2026-09-09", "open": 411.55, "high": 413.85, "low": 406.0, "close": 406.0}, {"time": "2026-09-10", "open": 407.0, "high": 407.2, "low": 402.0, "close": 405.0}, {"time": "2026-09-11", "open": 402.6, "high": 405.4, "low": 399.25, "close": 404.35}, {"time": "2026-09-15", "open": 402.0, "high": 403.65, "low": 382.9, "close": 382.9}, {"time": "2026-09-16", "open": 384.05, "high": 390.2, "low": 382.1, "close": 385.75}, {"time": "2026-09-17", "open": 387.0, "high": 395.9, "low": 387.0, "close": 395.45}, {"time": "2026-09-18", "open": 397.4, "high": 399.2, "low": 393.3, "close": 393.3}, {"time": "2026-09-21", "open": 394.35, "high": 399.15, "low": 393.1, "close": 398.5}, {"time": "2026-09-22", "open": 398.5, "high": 400.65, "low": 395.8, "close": 397.9}, {"time": "2026-09-23", "open": 397.9, "high": 399.5, "low": 395.6, "close": 396.05}, {"time": "2026-09-24", "open": 394.0, "high": 398.05, "low": 392.0, "close": 392.0}, {"time": "2026-09-25", "open": 392.0, "high": 394.55, "low": 388.6, "close": 393.55}], "volume": [{"time": "2026-03-25", "value": 15134997, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-27", "value": 21818224, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-30", "value": 22694742, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-01", "value": 25301241, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-02", "value": 19686517, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-06", "value": 12327836, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-07", "value": 11417162, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-08", "value": 20054221, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-09", "value": 19917307, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-10", "value": 10833065, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-13", "value": 15149734, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-15", "value": 9915383, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-16", "value": 12197884, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-17", "value": 14128030, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-20", "value": 9914017, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-21", "value": 13492130, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-22", "value": 11538028, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-23", "value": 15021500, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-24", "value": 11651499, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-27", "value": 18502535, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-28", "value": 10883746, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-29", "value": 9507163, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-30", "value": 15795581, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-01", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-04", "value": 10764998, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-05", "value": 11671943, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-06", "value": 9748728, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-07", "value": 15696400, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-08", "value": 11164661, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-11", "value": 7631226, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-12", "value": 15199825, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-13", "value": 13230827, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-14", "value": 9807792, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-15", "value": 7593616, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-18", "value": 10452161, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-19", "value": 13350029, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-20", "value": 28012723, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-21", "value": 19789651, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-22", "value": 9175611, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-25", "value": 8862027, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-26", "value": 12315435, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-27", "value": 10871894, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-28", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-29", "value": 26559872, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-01", "value": 16453240, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-02", "value": 15004796, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-03", "value": 6626958, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-04", "value": 9119774, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-05", "value": 11084641, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-08", "value": 12017495, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-09", "value": 10996007, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-10", "value": 5371511, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-11", "value": 6994969, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-12", "value": 8086130, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-15", "value": 11500111, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-16", "value": 9701695, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-17", "value": 24506595, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-18", "value": 23598062, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-19", "value": 10829044, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-22", "value": 9754708, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-23", "value": 15566093, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-24", "value": 9620759, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-25", "value": 21994027, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-26", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-29", "value": 26669735, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-30", "value": 14611849, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-01", "value": 8844076, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-02", "value": 10736747, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-03", "value": 12085695, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-06", "value": 16516762, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-07", "value": 7821978, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-08", "value": 12837834, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-09", "value": 10893635, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-10", "value": 9273712, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-13", "value": 6650781, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-14", "value": 10652838, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-15", "value": 9115088, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-16", "value": 5679241, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-17", "value": 6678047, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-20", "value": 5382967, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-21", "value": 5242231, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-22", "value": 6665967, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-23", "value": 9947413, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-24", "value": 6176660, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-27", "value": 9683515, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-28", "value": 35317783, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-29", "value": 32630643, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-30", "value": 16521484, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-31", "value": 17114563, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-03", "value": 9389415, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-04", "value": 10632551, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-05", "value": 13854251, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-06", "value": 17574744, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-07", "value": 10798068, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-10", "value": 7836426, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-11", "value": 6803132, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-12", "value": 13125672, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-13", "value": 13819369, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-14", "value": 7388147, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-17", "value": 7410599, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-18", "value": 9120934, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-19", "value": 10660149, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-20", "value": 6984638, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-21", "value": 13688811, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-24", "value": 9480784, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-25", "value": 9410099, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-26", "value": 7631016, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-27", "value": 9156009, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-28", "value": 8025382, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-31", "value": 12595864, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-01", "value": 773474, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-02", "value": 4509866, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-03", "value": 3609985, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-04", "value": 8354982, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-07", "value": 2872702, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-08", "value": 13876802, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-09", "value": 10892062, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-10", "value": 8716895, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-11", "value": 7805974, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-15", "value": 16726930, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-16", "value": 10133817, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-17", "value": 7817045, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-18", "value": 11862641, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-21", "value": 9754868, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-22", "value": 8486272, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-23", "value": 6729908, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-24", "value": 5840220, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-25", "value": 6080419, "color": "rgba(34,197,94,.3)"}], "ema50_6m": [{"time": "2026-03-25", "value": 432.6}, {"time": "2026-03-27", "value": 431.51}, {"time": "2026-03-30", "value": 430.3}, {"time": "2026-04-01", "value": 429.84}, {"time": "2026-04-02", "value": 429.52}, {"time": "2026-04-06", "value": 429.43}, {"time": "2026-04-07", "value": 429.36}, {"time": "2026-04-08", "value": 429.51}, {"time": "2026-04-09", "value": 429.91}, {"time": "2026-04-10", "value": 430.4}, {"time": "2026-04-13", "value": 430.84}, {"time": "2026-04-15", "value": 431.5}, {"time": "2026-04-16", "value": 432.45}, {"time": "2026-04-17", "value": 433.63}, {"time": "2026-04-20", "value": 434.57}, {"time": "2026-04-21", "value": 435.24}, {"time": "2026-04-22", "value": 435.76}, {"time": "2026-04-23", "value": 436.32}, {"time": "2026-04-24", "value": 436.64}, {"time": "2026-04-27", "value": 436.6}, {"time": "2026-04-28", "value": 436.56}, {"time": "2026-04-29", "value": 436.6}, {"time": "2026-04-30", "value": 436.4}, {"time": "2026-05-01", "value": 436.2}, {"time": "2026-05-04", "value": 436.09}, {"time": "2026-05-05", "value": 435.98}, {"time": "2026-05-06", "value": 436.07}, {"time": "2026-05-07", "value": 436.2}, {"time": "2026-05-08", "value": 436.34}, {"time": "2026-05-11", "value": 436.17}, {"time": "2026-05-12", "value": 435.4}, {"time": "2026-05-13", "value": 435.12}, {"time": "2026-05-14", "value": 434.87}, {"time": "2026-05-15", "value": 434.43}, {"time": "2026-05-18", "value": 434.12}, {"time": "2026-05-19", "value": 433.69}, {"time": "2026-05-20", "value": 432.89}, {"time": "2026-05-21", "value": 432.4}, {"time": "2026-05-22", "value": 431.78}, {"time": "2026-05-25", "value": 431.39}, {"time": "2026-05-26", "value": 430.94}, {"time": "2026-05-27", "value": 430.48}, {"time": "2026-05-28", "value": 430.03}, {"time": "2026-05-29", "value": 429.28}, {"time": "2026-06-01", "value": 428.41}, {"time": "2026-06-02", "value": 427.6}, {"time": "2026-06-03", "value": 426.78}, {"time": "2026-06-04", "value": 426.12}, {"time": "2026-06-05", "value": 425.42}, {"time": "2026-06-08", "value": 424.93}, {"time": "2026-06-09", "value": 424.42}, {"time": "2026-06-10", "value": 423.79}, {"time": "2026-06-11", "value": 422.95}, {"time": "2026-06-12", "value": 422.3}, {"time": "2026-06-15", "value": 421.8}, {"time": "2026-06-16", "value": 421.25}, {"time": "2026-06-17", "value": 421.19}, {"time": "2026-06-18", "value": 421.48}, {"time": "2026-06-19", "value": 421.69}, {"time": "2026-06-22", "value": 422.08}, {"time": "2026-06-23", "value": 422.0}, {"time": "2026-06-24", "value": 421.67}, {"time": "2026-06-25", "value": 421.1}, {"time": "2026-06-26", "value": 420.55}, {"time": "2026-06-29", "value": 420.2}, {"time": "2026-06-30", "value": 419.87}, {"time": "2026-07-01", "value": 419.73}, {"time": "2026-07-02", "value": 419.55}, {"time": "2026-07-03", "value": 419.49}, {"time": "2026-07-06", "value": 419.73}, {"time": "2026-07-07", "value": 419.7}, {"time": "2026-07-08", "value": 419.23}, {"time": "2026-07-09", "value": 418.72}, {"time": "2026-07-10", "value": 418.57}, {"time": "2026-07-13", "value": 418.26}, {"time": "2026-07-14", "value": 417.94}, {"time": "2026-07-15", "value": 417.67}, {"time": "2026-07-16", "value": 417.25}, {"time": "2026-07-17", "value": 416.95}, {"time": "2026-07-20", "value": 416.6}, {"time": "2026-07-21", "value": 416.34}, {"time": "2026-07-22", "value": 415.97}, {"time": "2026-07-23", "value": 415.55}, {"time": "2026-07-24", "value": 415.14}, {"time": "2026-07-27", "value": 414.83}, {"time": "2026-07-28", "value": 413.81}, {"time": "2026-07-29", "value": 412.78}, {"time": "2026-07-30", "value": 411.69}, {"time": "2026-07-31", "value": 410.75}, {"time": "2026-08-03", "value": 410.02}, {"time": "2026-08-04", "value": 409.3}, {"time": "2026-08-05", "value": 408.54}, {"time": "2026-08-06", "value": 408.18}, {"time": "2026-08-07", "value": 407.89}, {"time": "2026-08-10", "value": 407.75}, {"time": "2026-08-11", "value": 407.68}, {"time": "2026-08-12", "value": 407.6}, {"time": "2026-08-13", "value": 407.72}, {"time": "2026-08-14", "value": 407.84}, {"time": "2026-08-17", "value": 408.02}, {"time": "2026-08-18", "value": 408.17}, {"time": "2026-08-19", "value": 408.21}, {"time": "2026-08-20", "value": 408.26}, {"time": "2026-08-21", "value": 408.49}, {"time": "2026-08-24", "value": 408.51}, {"time": "2026-08-25", "value": 408.69}, {"time": "2026-08-26", "value": 408.62}, {"time": "2026-08-27", "value": 408.72}, {"time": "2026-08-28", "value": 408.84}, {"time": "2026-08-31", "value": 409.06}, {"time": "2026-09-01", "value": 409.12}, {"time": "2026-09-02", "value": 408.92}, {"time": "2026-09-03", "value": 408.93}, {"time": "2026-09-04", "value": 408.79}, {"time": "2026-09-07", "value": 408.71}, {"time": "2026-09-08", "value": 408.87}, {"time": "2026-09-09", "value": 408.76}, {"time": "2026-09-10", "value": 408.61}, {"time": "2026-09-11", "value": 408.45}, {"time": "2026-09-15", "value": 407.44}, {"time": "2026-09-16", "value": 406.59}, {"time": "2026-09-17", "value": 406.16}, {"time": "2026-09-18", "value": 405.65}, {"time": "2026-09-21", "value": 405.37}, {"time": "2026-09-22", "value": 405.08}, {"time": "2026-09-23", "value": 404.73}, {"time": "2026-09-24", "value": 404.23}, {"time": "2026-09-25", "value": 403.81}], "ohlcv_1y": [{"time": "2025-09-25", "open": 395.45, "high": 406.45, "low": 392.45, "close": 403.15}, {"time": "2025-09-26", "open": 403.65, "high": 406.15, "low": 394.4, "close": 395.9}, {"time": "2025-09-29", "open": 401.0, "high": 408.15, "low": 399.05, "close": 399.95}, {"time": "2025-09-30", "open": 405.0, "high": 406.4, "low": 401.85, "close": 403.95}, {"time": "2025-10-01", "open": 402.0, "high": 409.0, "low": 399.35, "close": 406.5}, {"time": "2025-10-03", "open": 406.8, "high": 413.8, "low": 405.1, "close": 412.65}, {"time": "2025-10-06", "open": 412.7, "high": 414.9, "low": 407.5, "close": 413.25}, {"time": "2025-10-07", "open": 413.25, "high": 415.55, "low": 409.1, "close": 410.3}, {"time": "2025-10-08", "open": 410.4, "high": 412.0, "low": 403.1, "close": 403.65}, {"time": "2025-10-09", "open": 403.7, "high": 410.0, "low": 403.0, "close": 409.35}, {"time": "2025-10-10", "open": 409.0, "high": 415.5, "low": 408.35, "close": 413.5}, {"time": "2025-10-13", "open": 412.95, "high": 413.0, "low": 406.35, "close": 409.4}, {"time": "2025-10-14", "open": 410.0, "high": 414.15, "low": 401.6, "close": 402.4}, {"time": "2025-10-15", "open": 403.0, "high": 410.25, "low": 403.0, "close": 408.1}, {"time": "2025-10-16", "open": 409.1, "high": 412.7, "low": 409.05, "close": 411.8}, {"time": "2025-10-17", "open": 410.35, "high": 420.0, "low": 409.65, "close": 412.8}, {"time": "2025-10-20", "open": 416.5, "high": 417.55, "low": 412.5, "close": 416.5}, {"time": "2025-10-21", "open": 418.15, "high": 419.15, "low": 416.6, "close": 417.7}, {"time": "2025-10-23", "open": 421.5, "high": 422.5, "low": 418.0, "close": 418.65}, {"time": "2025-10-24", "open": 422.0, "high": 423.7, "low": 419.9, "close": 422.05}, {"time": "2025-10-27", "open": 425.0, "high": 425.0, "low": 414.6, "close": 415.15}, {"time": "2025-10-28", "open": 416.8, "high": 416.8, "low": 410.85, "close": 413.55}, {"time": "2025-10-29", "open": 413.55, "high": 414.9, "low": 406.85, "close": 407.2}, {"time": "2025-10-30", "open": 407.8, "high": 410.65, "low": 404.3, "close": 409.9}, {"time": "2025-10-31", "open": 413.8, "high": 427.25, "low": 408.15, "close": 426.1}, {"time": "2025-11-03", "open": 428.0, "high": 431.0, "low": 416.4, "close": 422.3}, {"time": "2025-11-04", "open": 420.0, "high": 422.4, "low": 414.5, "close": 415.15}, {"time": "2025-11-06", "open": 411.0, "high": 415.0, "low": 407.45, "close": 408.8}, {"time": "2025-11-07", "open": 408.0, "high": 416.0, "low": 405.3, "close": 414.25}, {"time": "2025-11-10", "open": 415.95, "high": 420.4, "low": 414.0, "close": 416.85}, {"time": "2025-11-11", "open": 417.15, "high": 427.9, "low": 417.15, "close": 427.3}, {"time": "2025-11-12", "open": 428.15, "high": 429.4, "low": 421.8, "close": 424.75}, {"time": "2025-11-13", "open": 423.15, "high": 425.2, "low": 419.0, "close": 419.8}, {"time": "2025-11-14", "open": 418.8, "high": 428.7, "low": 418.7, "close": 426.85}, {"time": "2025-11-17", "open": 427.95, "high": 429.5, "low": 422.4, "close": 424.55}, {"time": "2025-11-18", "open": 424.55, "high": 429.45, "low": 420.3, "close": 420.9}, {"time": "2025-11-19", "open": 420.0, "high": 424.25, "low": 415.05, "close": 423.2}, {"time": "2025-11-20", "open": 425.0, "high": 427.2, "low": 422.2, "close": 423.0}, {"time": "2025-11-21", "open": 421.5, "high": 423.35, "low": 415.5, "close": 416.35}, {"time": "2025-11-24", "open": 414.0, "high": 415.35, "low": 401.0, "close": 403.8}, {"time": "2025-11-25", "open": 406.5, "high": 412.4, "low": 406.0, "close": 410.25}, {"time": "2025-11-26", "open": 410.25, "high": 416.5, "low": 408.5, "close": 415.3}, {"time": "2025-11-27", "open": 415.3, "high": 417.3, "low": 412.0, "close": 413.05}, {"time": "2025-11-28", "open": 414.0, "high": 415.25, "low": 408.65, "close": 411.75}, {"time": "2025-12-01", "open": 415.9, "high": 419.2, "low": 413.5, "close": 417.25}, {"time": "2025-12-02", "open": 418.05, "high": 418.65, "low": 411.0, "close": 413.05}, {"time": "2025-12-03", "open": 412.0, "high": 412.7, "low": 403.4, "close": 403.95}, {"time": "2025-12-04", "open": 405.8, "high": 409.5, "low": 401.75, "close": 407.15}, {"time": "2025-12-05", "open": 409.0, "high": 410.7, "low": 405.35, "close": 406.9}, {"time": "2025-12-08", "open": 406.45, "high": 406.45, "low": 385.0, "close": 386.4}, {"time": "2025-12-09", "open": 385.05, "high": 391.0, "low": 380.55, "close": 389.45}, {"time": "2025-12-10", "open": 390.0, "high": 391.45, "low": 385.75, "close": 387.35}, {"time": "2025-12-11", "open": 386.0, "high": 390.0, "low": 385.15, "close": 387.5}, {"time": "2025-12-12", "open": 388.0, "high": 394.1, "low": 388.0, "close": 389.45}, {"time": "2025-12-15", "open": 389.05, "high": 392.4, "low": 388.0, "close": 390.75}, {"time": "2025-12-16", "open": 390.75, "high": 391.2, "low": 384.75, "close": 388.0}, {"time": "2025-12-17", "open": 388.0, "high": 388.4, "low": 385.0, "close": 385.6}, {"time": "2025-12-18", "open": 384.05, "high": 386.8, "low": 380.45, "close": 383.45}, {"time": "2025-12-19", "open": 383.5, "high": 393.5, "low": 383.5, "close": 392.85}, {"time": "2025-12-22", "open": 393.0, "high": 399.3, "low": 392.9, "close": 398.95}, {"time": "2025-12-23", "open": 399.0, "high": 402.5, "low": 395.75, "close": 399.4}, {"time": "2025-12-24", "open": 399.0, "high": 403.65, "low": 397.6, "close": 400.0}, {"time": "2025-12-26", "open": 403.0, "high": 407.55, "low": 397.15, "close": 398.45}, {"time": "2025-12-29", "open": 401.0, "high": 403.45, "low": 392.45, "close": 393.25}, {"time": "2025-12-30", "open": 395.8, "high": 397.0, "low": 389.55, "close": 393.3}, {"time": "2025-12-31", "open": 395.9, "high": 401.3, "low": 395.7, "close": 399.6}, {"time": "2026-01-01", "open": 399.9, "high": 400.75, "low": 394.6, "close": 397.7}, {"time": "2026-01-02", "open": 399.65, "high": 405.6, "low": 398.95, "close": 403.15}, {"time": "2026-01-05", "open": 402.85, "high": 418.6, "low": 402.8, "close": 413.8}, {"time": "2026-01-06", "open": 414.7, "high": 415.7, "low": 410.2, "close": 413.1}, {"time": "2026-01-07", "open": 413.1, "high": 416.25, "low": 409.55, "close": 415.65}, {"time": "2026-01-08", "open": 415.7, "high": 422.95, "low": 414.05, "close": 415.65}, {"time": "2026-01-09", "open": 417.0, "high": 424.55, "low": 415.85, "close": 418.65}, {"time": "2026-01-12", "open": 419.5, "high": 419.8, "low": 410.6, "close": 417.7}, {"time": "2026-01-13", "open": 419.75, "high": 422.35, "low": 409.4, "close": 413.7}, {"time": "2026-01-14", "open": 411.0, "high": 420.8, "low": 411.0, "close": 417.6}, {"time": "2026-01-15", "open": 417.6, "high": 417.6, "low": 417.6, "close": 417.6}, {"time": "2026-01-16", "open": 416.55, "high": 417.25, "low": 406.35, "close": 410.25}, {"time": "2026-01-19", "open": 410.0, "high": 414.9, "low": 407.7, "close": 412.8}, {"time": "2026-01-20", "open": 413.9, "high": 415.4, "low": 406.0, "close": 409.35}, {"time": "2026-01-21", "open": 406.5, "high": 409.5, "low": 397.0, "close": 402.65}, {"time": "2026-01-22", "open": 406.0, "high": 418.3, "low": 406.0, "close": 417.3}, {"time": "2026-01-23", "open": 419.0, "high": 419.0, "low": 408.5, "close": 410.7}, {"time": "2026-01-27", "open": 416.45, "high": 419.25, "low": 411.6, "close": 415.95}, {"time": "2026-01-28", "open": 418.0, "high": 457.5, "low": 417.3, "close": 453.0}, {"time": "2026-01-29", "open": 454.25, "high": 455.95, "low": 438.25, "close": 444.5}, {"time": "2026-01-30", "open": 446.85, "high": 451.95, "low": 439.3, "close": 449.0}, {"time": "2026-02-02", "open": 432.0, "high": 441.35, "low": 420.25, "close": 439.1}, {"time": "2026-02-03", "open": 460.0, "high": 460.0, "low": 435.25, "close": 438.95}, {"time": "2026-02-04", "open": 436.8, "high": 443.4, "low": 433.8, "close": 439.2}, {"time": "2026-02-05", "open": 439.0, "high": 439.0, "low": 428.15, "close": 432.9}, {"time": "2026-02-06", "open": 433.0, "high": 433.4, "low": 425.55, "close": 429.65}, {"time": "2026-02-09", "open": 432.0, "high": 439.6, "low": 429.5, "close": 437.3}, {"time": "2026-02-10", "open": 438.0, "high": 441.3, "low": 433.55, "close": 437.3}, {"time": "2026-02-11", "open": 438.7, "high": 438.7, "low": 434.35, "close": 437.55}, {"time": "2026-02-12", "open": 437.0, "high": 444.95, "low": 434.6, "close": 443.9}, {"time": "2026-02-13", "open": 443.9, "high": 446.2, "low": 432.8, "close": 435.55}, {"time": "2026-02-16", "open": 433.05, "high": 438.6, "low": 429.1, "close": 438.0}, {"time": "2026-02-17", "open": 442.0, "high": 449.35, "low": 440.3, "close": 446.85}, {"time": "2026-02-18", "open": 450.0, "high": 453.5, "low": 446.15, "close": 447.7}, {"time": "2026-02-19", "open": 447.7, "high": 449.25, "low": 432.95, "close": 435.35}, {"time": "2026-02-20", "open": 435.0, "high": 445.4, "low": 433.7, "close": 441.15}, {"time": "2026-02-23", "open": 442.8, "high": 445.3, "low": 435.7, "close": 439.75}, {"time": "2026-02-24", "open": 437.0, "high": 437.5, "low": 430.35, "close": 435.05}, {"time": "2026-02-25", "open": 435.0, "high": 441.0, "low": 433.55, "close": 439.3}, {"time": "2026-02-26", "open": 440.6, "high": 449.9, "low": 440.0, "close": 449.05}, {"time": "2026-02-27", "open": 448.6, "high": 449.0, "low": 441.7, "close": 444.7}, {"time": "2026-03-02", "open": 442.1, "high": 456.7, "low": 441.7, "close": 453.95}, {"time": "2026-03-04", "open": 460.0, "high": 460.85, "low": 444.5, "close": 446.85}, {"time": "2026-03-05", "open": 448.8, "high": 467.9, "low": 445.85, "close": 460.0}, {"time": "2026-03-06", "open": 462.0, "high": 473.45, "low": 460.35, "close": 468.45}, {"time": "2026-03-09", "open": 470.0, "high": 470.0, "low": 450.0, "close": 457.35}, {"time": "2026-03-10", "open": 465.0, "high": 465.8, "low": 453.55, "close": 463.35}, {"time": "2026-03-11", "open": 463.5, "high": 469.8, "low": 453.25, "close": 454.1}, {"time": "2026-03-12", "open": 452.0, "high": 455.0, "low": 448.5, "close": 453.55}, {"time": "2026-03-13", "open": 451.9, "high": 452.4, "low": 433.65, "close": 439.4}, {"time": "2026-03-16", "open": 431.9, "high": 437.8, "low": 422.25, "close": 429.5}, {"time": "2026-03-17", "open": 432.45, "high": 441.05, "low": 430.3, "close": 439.35}, {"time": "2026-03-18", "open": 445.45, "high": 447.75, "low": 440.5, "close": 442.6}, {"time": "2026-03-19", "open": 436.1, "high": 439.0, "low": 428.4, "close": 430.8}, {"time": "2026-03-20", "open": 432.2, "high": 438.95, "low": 424.7, "close": 426.1}, {"time": "2026-03-23", "open": 420.6, "high": 421.75, "low": 404.0, "close": 405.5}, {"time": "2026-03-24", "open": 412.5, "high": 417.45, "low": 408.75, "close": 414.45}, {"time": "2026-03-25", "open": 416.3, "high": 422.0, "low": 412.55, "close": 413.45}, {"time": "2026-03-27", "open": 411.9, "high": 413.45, "low": 403.25, "close": 404.75}, {"time": "2026-03-30", "open": 400.0, "high": 413.25, "low": 399.35, "close": 400.65}, {"time": "2026-04-01", "open": 415.0, "high": 430.2, "low": 412.65, "close": 418.7}, {"time": "2026-04-02", "open": 417.0, "high": 423.6, "low": 407.5, "close": 421.6}, {"time": "2026-04-06", "open": 422.0, "high": 428.05, "low": 420.0, "close": 427.15}, {"time": "2026-04-07", "open": 424.0, "high": 429.0, "low": 420.65, "close": 427.8}, {"time": "2026-04-08", "open": 440.0, "high": 440.0, "low": 428.8, "close": 433.1}, {"time": "2026-04-09", "open": 425.0, "high": 443.3, "low": 424.5, "close": 439.75}, {"time": "2026-04-10", "open": 444.1, "high": 447.45, "low": 440.45, "close": 442.45}, {"time": "2026-04-13", "open": 435.0, "high": 445.5, "low": 434.0, "close": 441.55}, {"time": "2026-04-15", "open": 447.5, "high": 449.2, "low": 444.8, "close": 447.65}, {"time": "2026-04-16", "open": 449.85, "high": 457.0, "low": 448.9, "close": 455.65}, {"time": "2026-04-17", "open": 458.0, "high": 463.75, "low": 454.45, "close": 462.75}, {"time": "2026-04-20", "open": 462.0, "high": 464.4, "low": 456.0, "close": 457.55}, {"time": "2026-04-21", "open": 457.5, "high": 461.8, "low": 449.45, "close": 451.5}, {"time": "2026-04-22", "open": 450.8, "high": 451.85, "low": 444.7, "close": 448.7}, {"time": "2026-04-23", "open": 451.7, "high": 455.7, "low": 444.5, "close": 449.95}, {"time": "2026-04-24", "open": 450.0, "high": 451.2, "low": 438.75, "close": 444.45}, {"time": "2026-04-27", "open": 445.0, "high": 448.3, "low": 432.95, "close": 435.6}, {"time": "2026-04-28", "open": 435.6, "high": 441.0, "low": 433.55, "close": 435.75}, {"time": "2026-04-29", "open": 437.05, "high": 442.8, "low": 435.25, "close": 437.55}, {"time": "2026-04-30", "open": 436.45, "high": 436.45, "low": 424.5, "close": 431.3}, {"time": "2026-05-01", "open": 431.3, "high": 431.3, "low": 431.3, "close": 431.3}, {"time": "2026-05-04", "open": 433.0, "high": 438.6, "low": 428.6, "close": 433.55}, {"time": "2026-05-05", "open": 433.5, "high": 436.5, "low": 429.3, "close": 433.35}, {"time": "2026-05-06", "open": 437.0, "high": 439.65, "low": 435.15, "close": 438.2}, {"time": "2026-05-07", "open": 439.9, "high": 441.0, "low": 433.5, "close": 439.45}, {"time": "2026-05-08", "open": 439.0, "high": 443.8, "low": 437.8, "close": 439.7}, {"time": "2026-05-11", "open": 438.0, "high": 439.15, "low": 431.0, "close": 431.95}, {"time": "2026-05-12", "open": 430.2, "high": 432.5, "low": 415.5, "close": 416.5}, {"time": "2026-05-13", "open": 416.6, "high": 432.0, "low": 415.75, "close": 428.25}, {"time": "2026-05-14", "open": 431.0, "high": 435.15, "low": 424.45, "close": 428.85}, {"time": "2026-05-15", "open": 428.85, "high": 429.5, "low": 422.2, "close": 423.65}, {"time": "2026-05-18", "open": 423.85, "high": 427.8, "low": 414.6, "close": 426.6}, {"time": "2026-05-19", "open": 428.4, "high": 430.9, "low": 419.3, "close": 422.95}, {"time": "2026-05-20", "open": 416.3, "high": 420.0, "low": 407.0, "close": 413.3}, {"time": "2026-05-21", "open": 420.0, "high": 426.1, "low": 418.05, "close": 420.4}, {"time": "2026-05-22", "open": 421.45, "high": 421.45, "low": 415.45, "close": 416.55}, {"time": "2026-05-25", "open": 419.3, "high": 422.55, "low": 417.3, "close": 421.85}, {"time": "2026-05-26", "open": 423.5, "high": 425.55, "low": 418.85, "close": 420.1}, {"time": "2026-05-27", "open": 422.0, "high": 422.0, "low": 416.1, "close": 419.1}, {"time": "2026-05-28", "open": 419.1, "high": 419.1, "low": 419.1, "close": 419.1}, {"time": "2026-05-29", "open": 413.3, "high": 419.1, "low": 409.9, "close": 410.75}, {"time": "2026-06-01", "open": 412.35, "high": 413.7, "low": 404.75, "close": 407.2}, {"time": "2026-06-02", "open": 405.8, "high": 409.6, "low": 400.3, "close": 407.85}, {"time": "2026-06-03", "open": 408.0, "high": 408.95, "low": 403.1, "close": 406.6}, {"time": "2026-06-04", "open": 405.0, "high": 411.55, "low": 404.0, "close": 409.9}, {"time": "2026-06-05", "open": 410.1, "high": 412.0, "low": 405.1, "close": 408.2}, {"time": "2026-06-08", "open": 399.0, "high": 415.5, "low": 399.0, "close": 412.95}, {"time": "2026-06-09", "open": 417.0, "high": 417.0, "low": 410.0, "close": 412.05}, {"time": "2026-06-10", "open": 413.0, "high": 415.25, "low": 407.1, "close": 408.35}, {"time": "2026-06-11", "open": 407.35, "high": 407.35, "low": 401.75, "close": 402.3}, {"time": "2026-06-12", "open": 407.35, "high": 409.0, "low": 403.3, "close": 406.5}, {"time": "2026-06-15", "open": 412.0, "high": 412.5, "low": 406.0, "close": 409.55}, {"time": "2026-06-16", "open": 409.6, "high": 410.8, "low": 406.15, "close": 407.55}, {"time": "2026-06-17", "open": 407.0, "high": 422.4, "low": 406.15, "close": 419.85}, {"time": "2026-06-18", "open": 422.5, "high": 430.0, "low": 421.75, "close": 428.6}, {"time": "2026-06-19", "open": 427.9, "high": 431.6, "low": 424.55, "close": 426.9}, {"time": "2026-06-22", "open": 428.1, "high": 432.7, "low": 426.15, "close": 431.5}, {"time": "2026-06-23", "open": 435.0, "high": 435.0, "low": 418.5, "close": 420.0}, {"time": "2026-06-24", "open": 420.2, "high": 422.55, "low": 412.8, "close": 413.55}, {"time": "2026-06-25", "open": 413.6, "high": 415.05, "low": 406.0, "close": 407.2}, {"time": "2026-06-26", "open": 407.2, "high": 407.2, "low": 407.2, "close": 407.2}, {"time": "2026-06-29", "open": 406.8, "high": 418.3, "low": 403.55, "close": 411.6}, {"time": "2026-06-30", "open": 413.5, "high": 414.45, "low": 408.5, "close": 411.8}, {"time": "2026-07-01", "open": 413.0, "high": 417.65, "low": 411.4, "close": 416.25}, {"time": "2026-07-02", "open": 416.25, "high": 418.3, "low": 412.3, "close": 415.05}, {"time": "2026-07-03", "open": 418.6, "high": 424.5, "low": 417.1, "close": 418.05}, {"time": "2026-07-06", "open": 422.0, "high": 429.9, "low": 420.1, "close": 425.55}, {"time": "2026-07-07", "open": 425.55, "high": 425.9, "low": 416.0, "close": 419.15}, {"time": "2026-07-08", "open": 416.5, "high": 417.8, "low": 406.0, "close": 407.6}, {"time": "2026-07-09", "open": 409.15, "high": 411.0, "low": 404.05, "close": 406.2}, {"time": "2026-07-10", "open": 408.4, "high": 415.45, "low": 408.2, "close": 414.85}, {"time": "2026-07-13", "open": 411.95, "high": 412.9, "low": 408.6, "close": 410.8}, {"time": "2026-07-14", "open": 409.35, "high": 411.25, "low": 405.7, "close": 410.1}, {"time": "2026-07-15", "open": 409.0, "high": 414.3, "low": 408.4, "close": 410.95}, {"time": "2026-07-16", "open": 412.25, "high": 412.5, "low": 406.5, "close": 407.1}, {"time": "2026-07-17", "open": 407.1, "high": 411.2, "low": 405.1, "close": 409.45}, {"time": "2026-07-20", "open": 408.55, "high": 409.5, "low": 406.1, "close": 408.15}, {"time": "2026-07-21", "open": 408.15, "high": 410.95, "low": 406.5, "close": 410.05}, {"time": "2026-07-22", "open": 410.05, "high": 410.55, "low": 406.0, "close": 406.75}, {"time": "2026-07-23", "open": 405.55, "high": 406.95, "low": 400.6, "close": 405.35}, {"time": "2026-07-24", "open": 404.2, "high": 406.1, "low": 401.0, "close": 405.0}, {"time": "2026-07-27", "open": 408.0, "high": 408.45, "low": 404.6, "close": 407.15}, {"time": "2026-07-28", "open": 406.15, "high": 406.15, "low": 388.0, "close": 389.0}, {"time": "2026-07-29", "open": 390.9, "high": 390.95, "low": 382.2, "close": 387.55}, {"time": "2026-07-30", "open": 386.0, "high": 387.5, "low": 382.7, "close": 384.9}, {"time": "2026-07-31", "open": 385.0, "high": 390.6, "low": 385.0, "close": 387.85}, {"time": "2026-08-03", "open": 390.0, "high": 392.25, "low": 388.0, "close": 392.15}, {"time": "2026-08-04", "open": 390.2, "high": 394.1, "low": 389.25, "close": 391.5}, {"time": "2026-08-05", "open": 392.25, "high": 392.7, "low": 385.2, "close": 390.0}, {"time": "2026-08-06", "open": 389.65, "high": 400.9, "low": 388.65, "close": 399.2}, {"time": "2026-08-07", "open": 401.0, "high": 403.0, "low": 398.35, "close": 401.0}, {"time": "2026-08-10", "open": 402.0, "high": 405.65, "low": 399.25, "close": 404.35}, {"time": "2026-08-11", "open": 405.25, "high": 406.8, "low": 401.4, "close": 405.85}, {"time": "2026-08-12", "open": 406.0, "high": 406.25, "low": 399.3, "close": 405.7}, {"time": "2026-08-13", "open": 405.7, "high": 412.0, "low": 402.9, "close": 410.5}, {"time": "2026-08-14", "open": 410.45, "high": 412.5, "low": 408.25, "close": 410.8}, {"time": "2026-08-17", "open": 411.0, "high": 413.95, "low": 409.1, "close": 412.45}, {"time": "2026-08-18", "open": 412.7, "high": 416.35, "low": 410.95, "close": 412.0}, {"time": "2026-08-19", "open": 412.0, "high": 412.75, "low": 406.4, "close": 409.2}, {"time": "2026-08-20", "open": 411.8, "high": 412.2, "low": 406.3, "close": 409.4}, {"time": "2026-08-21", "open": 413.45, "high": 415.95, "low": 408.65, "close": 414.0}, {"time": "2026-08-24", "open": 414.3, "high": 414.6, "low": 405.55, "close": 409.0}, {"time": "2026-08-25", "open": 407.0, "high": 413.25, "low": 405.95, "close": 413.25}, {"time": "2026-08-26", "open": 411.75, "high": 412.3, "low": 406.9, "close": 406.9}, {"time": "2026-08-27", "open": 410.8, "high": 412.9, "low": 408.0, "close": 411.0}, {"time": "2026-08-28", "open": 410.85, "high": 411.9, "low": 407.25, "close": 411.9}, {"time": "2026-08-31", "open": 411.45, "high": 414.45, "low": 406.3, "close": 414.45}, {"time": "2026-09-01", "open": 414.45, "high": 414.45, "low": 410.35, "close": 410.5}, {"time": "2026-09-02", "open": 407.5, "high": 408.0, "low": 402.9, "close": 404.15}, {"time": "2026-09-03", "open": 406.05, "high": 410.15, "low": 405.15, "close": 409.25}, {"time": "2026-09-04", "open": 409.25, "high": 413.1, "low": 405.35, "close": 405.35}, {"time": "2026-09-07", "open": 406.35, "high": 409.25, "low": 406.0, "close": 406.7}, {"time": "2026-09-08", "open": 408.0, "high": 416.0, "low": 406.5, "close": 412.85}, {"time": "2026-09-09", "open": 411.55, "high": 413.85, "low": 406.0, "close": 406.0}, {"time": "2026-09-10", "open": 407.0, "high": 407.2, "low": 402.0, "close": 405.0}, {"time": "2026-09-11", "open": 402.6, "high": 405.4, "low": 399.25, "close": 404.35}, {"time": "2026-09-15", "open": 402.0, "high": 403.65, "low": 382.9, "close": 382.9}, {"time": "2026-09-16", "open": 384.05, "high": 390.2, "low": 382.1, "close": 385.75}, {"time": "2026-09-17", "open": 387.0, "high": 395.9, "low": 387.0, "close": 395.45}, {"time": "2026-09-18", "open": 397.4, "high": 399.2, "low": 393.3, "close": 393.3}, {"time": "2026-09-21", "open": 394.35, "high": 399.15, "low": 393.1, "close": 398.5}, {"time": "2026-09-22", "open": 398.5, "high": 400.65, "low": 395.8, "close": 397.9}, {"time": "2026-09-23", "open": 397.9, "high": 399.5, "low": 395.6, "close": 396.05}, {"time": "2026-09-24", "open": 394.0, "high": 398.05, "low": 392.0, "close": 392.0}, {"time": "2026-09-25", "open": 392.0, "high": 394.55, "low": 388.6, "close": 393.55}], "volume_1y": [{"time": "2025-09-25", "value": 23804019, "color": "rgba(34,197,94,.3)"}, {"time": "2025-09-26", "value": 11687034, "color": "rgba(249,66,58,.3)"}, {"time": "2025-09-29", "value": 23390892, "color": "rgba(249,66,58,.3)"}, {"time": "2025-09-30", "value": 14681751, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-01", "value": 13156495, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-03", "value": 16002501, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-06", "value": 14684188, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-07", "value": 11933246, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-08", "value": 8668516, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-09", "value": 9035150, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-10", "value": 13813014, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-13", "value": 7858503, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-14", "value": 10789648, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-15", "value": 10892830, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-16", "value": 11479498, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-17", "value": 19566580, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-20", "value": 10580573, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-21", "value": 2915071, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-23", "value": 21980966, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-24", "value": 18720794, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-27", "value": 12158324, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-28", "value": 12247991, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-29", "value": 14498733, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-30", "value": 11172780, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-31", "value": 51342361, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-03", "value": 27222212, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-04", "value": 12831686, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-06", "value": 12786294, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-07", "value": 10141248, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-10", "value": 9288444, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-11", "value": 24889361, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-12", "value": 15221773, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-13", "value": 9091428, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-14", "value": 14719899, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-17", "value": 12996079, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-18", "value": 13340937, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-19", "value": 9661756, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-20", "value": 10463382, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-21", "value": 8395038, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-24", "value": 23696864, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-25", "value": 14107503, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-26", "value": 8339381, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-27", "value": 5251173, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-28", "value": 6690232, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-01", "value": 9650320, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-02", "value": 11215451, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-03", "value": 12294040, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-04", "value": 10865110, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-05", "value": 11774958, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-08", "value": 25593778, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-09", "value": 19270896, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-10", "value": 8372979, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-11", "value": 7666925, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-12", "value": 12661065, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-15", "value": 9087687, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-16", "value": 8700626, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-17", "value": 6612962, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-18", "value": 7510229, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-19", "value": 11595429, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-22", "value": 9321669, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-23", "value": 7734965, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-24", "value": 8097208, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-26", "value": 13284184, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-29", "value": 15690096, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-30", "value": 37726382, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-31", "value": 9409818, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-01", "value": 6084786, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-02", "value": 10950368, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-05", "value": 26097635, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-06", "value": 9927677, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-07", "value": 8279218, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-08", "value": 22238704, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-09", "value": 22963210, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-12", "value": 14594852, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-13", "value": 13393010, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-14", "value": 17676239, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-15", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-16", "value": 18888193, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-19", "value": 8012134, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-20", "value": 32732305, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-21", "value": 19150437, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-22", "value": 19763144, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-23", "value": 12715222, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-27", "value": 15482165, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-28", "value": 71986647, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-29", "value": 42412510, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-30", "value": 36684903, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-02", "value": 43652893, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-03", "value": 26696516, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-04", "value": 12400181, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-05", "value": 14345511, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-06", "value": 11078888, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-09", "value": 12162696, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-10", "value": 10878065, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-11", "value": 8274702, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-12", "value": 16140306, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-13", "value": 14086068, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-16", "value": 8156650, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-17", "value": 17963084, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-18", "value": 14341134, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-19", "value": 9791516, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-20", "value": 9533724, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-23", "value": 12915631, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-24", "value": 12223376, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-25", "value": 9469190, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-26", "value": 13738213, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-27", "value": 22732811, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-02", "value": 35034174, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-04", "value": 35193505, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-05", "value": 38023711, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-06", "value": 28154230, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-09", "value": 21898419, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-10", "value": 19398151, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-11", "value": 16015126, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-12", "value": 14089623, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-13", "value": 19502809, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-16", "value": 22324389, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-17", "value": 14421128, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-18", "value": 13700203, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-19", "value": 12237975, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-20", "value": 17599734, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-23", "value": 18894757, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-24", "value": 14642804, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-25", "value": 15134997, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-27", "value": 21818224, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-30", "value": 22694742, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-01", "value": 25301241, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-02", "value": 19686517, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-06", "value": 12327836, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-07", "value": 11417162, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-08", "value": 20054221, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-09", "value": 19917307, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-10", "value": 10833065, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-13", "value": 15149734, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-15", "value": 9915383, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-16", "value": 12197884, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-17", "value": 14128030, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-20", "value": 9914017, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-21", "value": 13492130, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-22", "value": 11538028, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-23", "value": 15021500, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-24", "value": 11651499, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-27", "value": 18502535, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-28", "value": 10883746, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-29", "value": 9507163, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-30", "value": 15795581, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-01", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-04", "value": 10764998, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-05", "value": 11671943, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-06", "value": 9748728, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-07", "value": 15696400, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-08", "value": 11164661, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-11", "value": 7631226, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-12", "value": 15199825, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-13", "value": 13230827, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-14", "value": 9807792, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-15", "value": 7593616, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-18", "value": 10452161, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-19", "value": 13350029, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-20", "value": 28012723, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-21", "value": 19789651, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-22", "value": 9175611, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-25", "value": 8862027, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-26", "value": 12315435, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-27", "value": 10871894, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-28", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-29", "value": 26559872, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-01", "value": 16453240, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-02", "value": 15004796, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-03", "value": 6626958, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-04", "value": 9119774, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-05", "value": 11084641, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-08", "value": 12017495, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-09", "value": 10996007, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-10", "value": 5371511, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-11", "value": 6994969, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-12", "value": 8086130, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-15", "value": 11500111, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-16", "value": 9701695, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-17", "value": 24506595, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-18", "value": 23598062, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-19", "value": 10829044, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-22", "value": 9754708, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-23", "value": 15566093, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-24", "value": 9620759, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-25", "value": 21994027, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-26", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-29", "value": 26669735, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-30", "value": 14611849, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-01", "value": 8844076, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-02", "value": 10736747, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-03", "value": 12085695, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-06", "value": 16516762, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-07", "value": 7821978, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-08", "value": 12837834, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-09", "value": 10893635, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-10", "value": 9273712, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-13", "value": 6650781, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-14", "value": 10652838, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-15", "value": 9115088, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-16", "value": 5679241, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-17", "value": 6678047, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-20", "value": 5382967, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-21", "value": 5242231, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-22", "value": 6665967, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-23", "value": 9947413, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-24", "value": 6176660, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-27", "value": 9683515, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-28", "value": 35317783, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-29", "value": 32630643, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-30", "value": 16521484, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-31", "value": 17114563, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-03", "value": 9389415, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-04", "value": 10632551, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-05", "value": 13854251, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-06", "value": 17574744, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-07", "value": 10798068, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-10", "value": 7836426, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-11", "value": 6803132, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-12", "value": 13125672, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-13", "value": 13819369, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-14", "value": 7388147, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-17", "value": 7410599, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-18", "value": 9120934, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-19", "value": 10660149, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-20", "value": 6984638, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-21", "value": 13688811, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-24", "value": 9480784, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-25", "value": 9410099, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-26", "value": 7631016, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-27", "value": 9156009, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-28", "value": 8025382, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-31", "value": 12595864, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-01", "value": 773474, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-02", "value": 4509866, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-03", "value": 3609985, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-04", "value": 8354982, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-07", "value": 2872702, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-08", "value": 13876802, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-09", "value": 10892062, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-10", "value": 8716895, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-11", "value": 7805974, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-15", "value": 16726930, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-16", "value": 10133817, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-17", "value": 7817045, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-18", "value": 11862641, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-21", "value": 9754868, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-22", "value": 8486272, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-23", "value": 6729908, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-24", "value": 5840220, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-25", "value": 6080419, "color": "rgba(34,197,94,.3)"}], "ema50_1y": [{"time": "2025-09-25", "value": 389.09}, {"time": "2025-09-26", "value": 389.36}, {"time": "2025-09-29", "value": 389.77}, {"time": "2025-09-30", "value": 390.33}, {"time": "2025-10-01", "value": 390.96}, {"time": "2025-10-03", "value": 391.81}, {"time": "2025-10-06", "value": 392.65}, {"time": "2025-10-07", "value": 393.34}, {"time": "2025-10-08", "value": 393.75}, {"time": "2025-10-09", "value": 394.36}, {"time": "2025-10-10", "value": 395.11}, {"time": "2025-10-13", "value": 395.67}, {"time": "2025-10-14", "value": 395.94}, {"time": "2025-10-15", "value": 396.41}, {"time": "2025-10-16", "value": 397.02}, {"time": "2025-10-17", "value": 397.63}, {"time": "2025-10-20", "value": 398.37}, {"time": "2025-10-21", "value": 399.13}, {"time": "2025-10-23", "value": 399.9}, {"time": "2025-10-24", "value": 400.77}, {"time": "2025-10-27", "value": 401.33}, {"time": "2025-10-28", "value": 401.81}, {"time": "2025-10-29", "value": 402.02}, {"time": "2025-10-30", "value": 402.33}, {"time": "2025-10-31", "value": 403.26}, {"time": "2025-11-03", "value": 404.01}, {"time": "2025-11-04", "value": 404.45}, {"time": "2025-11-06", "value": 404.62}, {"time": "2025-11-07", "value": 404.99}, {"time": "2025-11-10", "value": 405.46}, {"time": "2025-11-11", "value": 406.32}, {"time": "2025-11-12", "value": 407.04}, {"time": "2025-11-13", "value": 407.54}, {"time": "2025-11-14", "value": 408.3}, {"time": "2025-11-17", "value": 408.93}, {"time": "2025-11-18", "value": 409.4}, {"time": "2025-11-19", "value": 409.94}, {"time": "2025-11-20", "value": 410.46}, {"time": "2025-11-21", "value": 410.69}, {"time": "2025-11-24", "value": 410.42}, {"time": "2025-11-25", "value": 410.41}, {"time": "2025-11-26", "value": 410.6}, {"time": "2025-11-27", "value": 410.7}, {"time": "2025-11-28", "value": 410.74}, {"time": "2025-12-01", "value": 410.99}, {"time": "2025-12-02", "value": 411.08}, {"time": "2025-12-03", "value": 410.8}, {"time": "2025-12-04", "value": 410.65}, {"time": "2025-12-05", "value": 410.51}, {"time": "2025-12-08", "value": 409.56}, {"time": "2025-12-09", "value": 408.77}, {"time": "2025-12-10", "value": 407.93}, {"time": "2025-12-11", "value": 407.13}, {"time": "2025-12-12", "value": 406.44}, {"time": "2025-12-15", "value": 405.82}, {"time": "2025-12-16", "value": 405.12}, {"time": "2025-12-17", "value": 404.36}, {"time": "2025-12-18", "value": 403.54}, {"time": "2025-12-19", "value": 403.12}, {"time": "2025-12-22", "value": 402.96}, {"time": "2025-12-23", "value": 402.82}, {"time": "2025-12-24", "value": 402.71}, {"time": "2025-12-26", "value": 402.54}, {"time": "2025-12-29", "value": 402.17}, {"time": "2025-12-30", "value": 401.83}, {"time": "2025-12-31", "value": 401.74}, {"time": "2026-01-01", "value": 401.58}, {"time": "2026-01-02", "value": 401.64}, {"time": "2026-01-05", "value": 402.12}, {"time": "2026-01-06", "value": 402.55}, {"time": "2026-01-07", "value": 403.06}, {"time": "2026-01-08", "value": 403.56}, {"time": "2026-01-09", "value": 404.15}, {"time": "2026-01-12", "value": 404.68}, {"time": "2026-01-13", "value": 405.03}, {"time": "2026-01-14", "value": 405.53}, {"time": "2026-01-15", "value": 406.0}, {"time": "2026-01-16", "value": 406.17}, {"time": "2026-01-19", "value": 406.43}, {"time": "2026-01-20", "value": 406.54}, {"time": "2026-01-21", "value": 406.39}, {"time": "2026-01-22", "value": 406.82}, {"time": "2026-01-23", "value": 406.97}, {"time": "2026-01-27", "value": 407.32}, {"time": "2026-01-28", "value": 409.11}, {"time": "2026-01-29", "value": 410.5}, {"time": "2026-01-30", "value": 412.01}, {"time": "2026-02-02", "value": 413.07}, {"time": "2026-02-03", "value": 414.09}, {"time": "2026-02-04", "value": 415.07}, {"time": "2026-02-05", "value": 415.77}, {"time": "2026-02-06", "value": 416.32}, {"time": "2026-02-09", "value": 417.14}, {"time": "2026-02-10", "value": 417.93}, {"time": "2026-02-11", "value": 418.7}, {"time": "2026-02-12", "value": 419.69}, {"time": "2026-02-13", "value": 420.31}, {"time": "2026-02-16", "value": 421.0}, {"time": "2026-02-17", "value": 422.02}, {"time": "2026-02-18", "value": 423.02}, {"time": "2026-02-19", "value": 423.51}, {"time": "2026-02-20", "value": 424.2}, {"time": "2026-02-23", "value": 424.81}, {"time": "2026-02-24", "value": 425.21}, {"time": "2026-02-25", "value": 425.76}, {"time": "2026-02-26", "value": 426.68}, {"time": "2026-02-27", "value": 427.38}, {"time": "2026-03-02", "value": 428.42}, {"time": "2026-03-04", "value": 429.15}, {"time": "2026-03-05", "value": 430.36}, {"time": "2026-03-06", "value": 431.85}, {"time": "2026-03-09", "value": 432.85}, {"time": "2026-03-10", "value": 434.05}, {"time": "2026-03-11", "value": 434.83}, {"time": "2026-03-12", "value": 435.57}, {"time": "2026-03-13", "value": 435.72}, {"time": "2026-03-16", "value": 435.47}, {"time": "2026-03-17", "value": 435.63}, {"time": "2026-03-18", "value": 435.9}, {"time": "2026-03-19", "value": 435.7}, {"time": "2026-03-20", "value": 435.32}, {"time": "2026-03-23", "value": 434.15}, {"time": "2026-03-24", "value": 433.38}, {"time": "2026-03-25", "value": 432.6}, {"time": "2026-03-27", "value": 431.51}, {"time": "2026-03-30", "value": 430.3}, {"time": "2026-04-01", "value": 429.84}, {"time": "2026-04-02", "value": 429.52}, {"time": "2026-04-06", "value": 429.43}, {"time": "2026-04-07", "value": 429.36}, {"time": "2026-04-08", "value": 429.51}, {"time": "2026-04-09", "value": 429.91}, {"time": "2026-04-10", "value": 430.4}, {"time": "2026-04-13", "value": 430.84}, {"time": "2026-04-15", "value": 431.5}, {"time": "2026-04-16", "value": 432.45}, {"time": "2026-04-17", "value": 433.63}, {"time": "2026-04-20", "value": 434.57}, {"time": "2026-04-21", "value": 435.24}, {"time": "2026-04-22", "value": 435.76}, {"time": "2026-04-23", "value": 436.32}, {"time": "2026-04-24", "value": 436.64}, {"time": "2026-04-27", "value": 436.6}, {"time": "2026-04-28", "value": 436.56}, {"time": "2026-04-29", "value": 436.6}, {"time": "2026-04-30", "value": 436.4}, {"time": "2026-05-01", "value": 436.2}, {"time": "2026-05-04", "value": 436.09}, {"time": "2026-05-05", "value": 435.98}, {"time": "2026-05-06", "value": 436.07}, {"time": "2026-05-07", "value": 436.2}, {"time": "2026-05-08", "value": 436.34}, {"time": "2026-05-11", "value": 436.17}, {"time": "2026-05-12", "value": 435.4}, {"time": "2026-05-13", "value": 435.12}, {"time": "2026-05-14", "value": 434.87}, {"time": "2026-05-15", "value": 434.43}, {"time": "2026-05-18", "value": 434.12}, {"time": "2026-05-19", "value": 433.69}, {"time": "2026-05-20", "value": 432.89}, {"time": "2026-05-21", "value": 432.4}, {"time": "2026-05-22", "value": 431.78}, {"time": "2026-05-25", "value": 431.39}, {"time": "2026-05-26", "value": 430.94}, {"time": "2026-05-27", "value": 430.48}, {"time": "2026-05-28", "value": 430.03}, {"time": "2026-05-29", "value": 429.28}, {"time": "2026-06-01", "value": 428.41}, {"time": "2026-06-02", "value": 427.6}, {"time": "2026-06-03", "value": 426.78}, {"time": "2026-06-04", "value": 426.12}, {"time": "2026-06-05", "value": 425.42}, {"time": "2026-06-08", "value": 424.93}, {"time": "2026-06-09", "value": 424.42}, {"time": "2026-06-10", "value": 423.79}, {"time": "2026-06-11", "value": 422.95}, {"time": "2026-06-12", "value": 422.3}, {"time": "2026-06-15", "value": 421.8}, {"time": "2026-06-16", "value": 421.25}, {"time": "2026-06-17", "value": 421.19}, {"time": "2026-06-18", "value": 421.48}, {"time": "2026-06-19", "value": 421.69}, {"time": "2026-06-22", "value": 422.08}, {"time": "2026-06-23", "value": 422.0}, {"time": "2026-06-24", "value": 421.67}, {"time": "2026-06-25", "value": 421.1}, {"time": "2026-06-26", "value": 420.55}, {"time": "2026-06-29", "value": 420.2}, {"time": "2026-06-30", "value": 419.87}, {"time": "2026-07-01", "value": 419.73}, {"time": "2026-07-02", "value": 419.55}, {"time": "2026-07-03", "value": 419.49}, {"time": "2026-07-06", "value": 419.73}, {"time": "2026-07-07", "value": 419.7}, {"time": "2026-07-08", "value": 419.23}, {"time": "2026-07-09", "value": 418.72}, {"time": "2026-07-10", "value": 418.57}, {"time": "2026-07-13", "value": 418.26}, {"time": "2026-07-14", "value": 417.94}, {"time": "2026-07-15", "value": 417.67}, {"time": "2026-07-16", "value": 417.25}, {"time": "2026-07-17", "value": 416.95}, {"time": "2026-07-20", "value": 416.6}, {"time": "2026-07-21", "value": 416.34}, {"time": "2026-07-22", "value": 415.97}, {"time": "2026-07-23", "value": 415.55}, {"time": "2026-07-24", "value": 415.14}, {"time": "2026-07-27", "value": 414.83}, {"time": "2026-07-28", "value": 413.81}, {"time": "2026-07-29", "value": 412.78}, {"time": "2026-07-30", "value": 411.69}, {"time": "2026-07-31", "value": 410.75}, {"time": "2026-08-03", "value": 410.02}, {"time": "2026-08-04", "value": 409.3}, {"time": "2026-08-05", "value": 408.54}, {"time": "2026-08-06", "value": 408.18}, {"time": "2026-08-07", "value": 407.89}, {"time": "2026-08-10", "value": 407.75}, {"time": "2026-08-11", "value": 407.68}, {"time": "2026-08-12", "value": 407.6}, {"time": "2026-08-13", "value": 407.72}, {"time": "2026-08-14", "value": 407.84}, {"time": "2026-08-17", "value": 408.02}, {"time": "2026-08-18", "value": 408.17}, {"time": "2026-08-19", "value": 408.21}, {"time": "2026-08-20", "value": 408.26}, {"time": "2026-08-21", "value": 408.49}, {"time": "2026-08-24", "value": 408.51}, {"time": "2026-08-25", "value": 408.69}, {"time": "2026-08-26", "value": 408.62}, {"time": "2026-08-27", "value": 408.72}, {"time": "2026-08-28", "value": 408.84}, {"time": "2026-08-31", "value": 409.06}, {"time": "2026-09-01", "value": 409.12}, {"time": "2026-09-02", "value": 408.92}, {"time": "2026-09-03", "value": 408.93}, {"time": "2026-09-04", "value": 408.79}, {"time": "2026-09-07", "value": 408.71}, {"time": "2026-09-08", "value": 408.87}, {"time": "2026-09-09", "value": 408.76}, {"time": "2026-09-10", "value": 408.61}, {"time": "2026-09-11", "value": 408.45}, {"time": "2026-09-15", "value": 407.44}, {"time": "2026-09-16", "value": 406.59}, {"time": "2026-09-17", "value": 406.16}, {"time": "2026-09-18", "value": 405.65}, {"time": "2026-09-21", "value": 405.37}, {"time": "2026-09-22", "value": 405.08}, {"time": "2026-09-23", "value": 404.73}, {"time": "2026-09-24", "value": 404.23}, {"time": "2026-09-25", "value": 403.81}], "rs_dates": ["2025-09-25", "2025-09-26", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-03", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-26", "2025-12-29", "2025-12-30", "2025-12-31", "2026-01-01", "2026-01-02", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-27", "2026-03-30", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-08-31", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25"], "rs_ratio": [5.2275, 5.2034, 5.2506, 5.3043, 5.2925, 5.3494, 5.3244, 5.2773, 5.2143, 5.2578, 5.2893, 5.2464, 5.1814, 5.2113, 5.217, 5.222, 5.2426, 5.2482, 5.2608, 5.3191, 5.1983, 5.1844, 5.075, 5.1324, 5.3647, 5.2945, 5.2346, 5.1901, 5.2574, 5.2735, 5.3862, 5.3194, 5.262, 5.3458, 5.2907, 5.2739, 5.2846, 5.2668, 5.2244, 5.0917, 5.1773, 5.1753, 5.1489, 5.1358, 5.2068, 5.176, 5.0846, 5.1195, 5.0962, 4.903, 4.9438, 4.9397, 4.9118, 4.9, 4.9166, 4.9141, 4.8991, 4.8728, 4.953, 4.9898, 4.9897, 5.0066, 5.0019, 4.9571, 4.9605, 4.9971, 4.9734, 4.9939, 5.1345, 5.1361, 5.1665, 5.2399, 5.3255, 5.3037, 5.2596, 5.3103, 5.3103, 5.2147, 5.2721, 5.3254, 5.2638, 5.4142, 5.3995, 5.4415, 5.8587, 5.7356, 5.8076, 5.7398, 5.5888, 5.5709, 5.5199, 5.4732, 5.512, 5.4957, 5.4921, 5.6028, 5.5772, 5.5705, 5.6667, 5.6521, 5.5784, 5.6291, 5.5897, 5.5728, 5.6034, 5.7168, 5.7303, 5.9342, 5.9525, 6.0499, 6.2204, 6.19, 6.1908, 6.1499, 6.1831, 6.132, 5.9638, 6.0526, 6.0284, 6.0588, 5.964, 5.858, 5.8728, 5.7465, 5.7481, 5.8263, 5.9704, 6.0108, 6.0165, 5.9967, 5.8404, 5.9569, 5.9105, 5.9431, 5.9141, 6.0037, 6.0404, 5.9735, 5.8493, 5.8259, 5.8884, 5.8785, 5.698, 5.7139, 5.7111, 5.676, 5.676, 5.6689, 5.6718, 5.7074, 5.6511, 5.6717, 5.6325, 5.5756, 5.6917, 5.6614, 5.6131, 5.6876, 5.6061, 5.4848, 5.5523, 5.476, 5.5005, 5.477, 5.4503, 5.4503, 5.3447, 5.384, 5.4061, 5.4623, 5.439, 5.4056, 5.5558, 5.5437, 5.4324, 5.4306, 5.4282, 5.3219, 5.2903, 5.4318, 5.5134, 5.5063, 5.5411, 5.4487, 5.333, 5.2591, 5.2591, 5.3507, 5.3459, 5.3701, 5.3257, 5.3402, 5.421, 5.3548, 5.3116, 5.2389, 5.3041, 5.2655, 5.2566, 5.2555, 5.2309, 5.2525, 5.236, 5.2419, 5.2413, 5.2652, 5.2765, 5.2631, 5.0238, 4.9632, 4.9201, 4.9351, 4.9181, 4.9333, 4.905, 5.022, 5.0485, 5.0839, 5.1149, 5.1161, 5.1911, 5.1974, 5.2388, 5.2398, 5.2254, 5.1978, 5.2545, 5.197, 5.2247, 5.1448, 5.225, 5.2347, 5.2759, 5.2504, 5.2255, 5.2537, 5.1891, 5.2402, 5.3339, 5.279, 5.2675, 5.2788, 5.0853, 5.1107, 5.2109, 5.1404, 5.2039, 5.2111, 5.155, 5.1888, 5.2093], "years": ["2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], "revenue": [6518.0, 7093.0, 7354.0, 8656.0, 10401.0, 12164.0, 12968.0, 14109.0, 15368.0, 17734.0, 20268.0, 23769.0, 27610.0], "pat": [952.0, 1197.0, 1337.0, 1523.0, 1431.0, 1887.0, 1825.0, 2100.0, 2400.0, 2986.0, 3985.0, 5323.0, 6062.0], "opm": [14.0, 17.0, 19.0, 21.0, 20.0, 24.0, 21.0, 23.0, 22.0, 23.0, 25.0, 29.0, 29.0], "npm": [14.6, 16.9, 18.2, 17.6, 13.8, 15.5, 14.1, 14.9, 15.6, 16.8, 19.7, 22.4, 22.0], "roe": [18.0, 20.0, 20.0, 23.0, 25.0, 30.0, 26.0, 28.0, 27.0, 30.0, 35.0, 39.0, 36.0], "roce_hist": [18.0, 20.0, 20.0, 23.0, 25.0, 30.0, 26.0, 28.0, 27.0, 30.0, 35.0, 39.0, 36.0], "pe_years": [], "pe_hist": [], "pe_median": null, "pulse_rev": [25.8, 24.0, 11.7, 24.9], "pulse_pat": [17.7, 20.4, 4.7, 8.9], "pulse_opm": [29.0, 30.0, 29.0, 25.0], "pulse_roce": [36.0, 36.0, 36.0, 36.0], "pulse_pe": [41.4, 56.1, 51.9, 49.0, 48.3, 49.0]};
+
+function showTab(name){
+  document.querySelectorAll('.tab-body').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.classList.add('active');
+  if(name==='financials'&&!pulseInited){
+    pulseInited=true;
+    setTimeout(initPulse,50);
+  }
+}
+
+const RED='#F9423A',GRN='#22c55e',YEL='#eab308',DIM='#888888',MT='#666666';
+
+const UP='#3a8a5a',DN='#8a3a3a';
+function initPriceChart(containerId, ohlcv, ema50, volData){
+  if(typeof LightweightCharts==='undefined'||!ohlcv||!ohlcv.length)return null;
+  const el=document.getElementById(containerId);if(!el)return null;
+  const chart=LightweightCharts.createChart(el,{
+    width:el.clientWidth||800,height:el.clientHeight||400,
+    layout:{background:{type:'solid',color:'#0d0d0d'},textColor:'#888888',fontFamily:'Pretendard',fontSize:11},
+    grid:{vertLines:{visible:false},horzLines:{visible:false}},
+    localization:{locale:'en-IN'},
+    rightPriceScale:{borderColor:'#2e2e2e'},
+    timeScale:{borderColor:'#2e2e2e',timeVisible:true,secondsVisible:false},
+    crosshair:{mode:LightweightCharts.CrosshairMode.Normal},
+  });
+  const cs=chart.addCandlestickSeries({
+    upColor:UP,downColor:DN,borderVisible:false,
+    wickUpColor:UP,wickDownColor:DN,priceLineVisible:false});
+  const vs=chart.addHistogramSeries({
+    priceFormat:{type:'volume'},priceScaleId:'',lastValueVisible:false});
+  cs.priceScale().applyOptions({scaleMargins:{top:0.12,bottom:0.22}});
+  chart.priceScale('').applyOptions({scaleMargins:{top:0.78,bottom:0}});
+  cs.setData(ohlcv);
+  if(volData&&volData.length){
+    vs.setData(volData.map(b=>{
+      const up=b.color&&b.color.includes('34,197,94');
+      return{time:b.time,value:b.value,color:up?'rgba(58,138,90,0.35)':'rgba(138,58,58,0.35)'};
+    }));
+  }
+  if(ema50&&ema50.length){
+    const es=chart.addLineSeries({color:'#b08d57',lineWidth:1.5,lastValueVisible:false});
+    es.setData(ema50);
+  }
+  chart.timeScale().fitContent();
+  return chart;
+}
+
+function initPulse(){
+  buildPulseBars('pulse-rev',D.pulse_rev,'pct');
+  buildPulseBars('pulse-pat',D.pulse_pat,'pct');
+  buildPulseBars('pulse-opm',D.pulse_opm,'val');
+  buildPulseBars('pulse-roce',D.pulse_roce,'val');
+  buildPulseBars('pulse-pe',D.pulse_pe,'val');
+}
+
+/* Pulse mini-chart builder */
+function buildPulseBars(cellId, values, fmt){
+  const cell=document.getElementById(cellId);if(!cell||!values||!values.length)return;
+  const barsEl=cell.querySelector('.pm-bars');
+  const valsEl=cell.querySelector('.pm-vals');
+  if(!barsEl||!valsEl)return;
+  const max=Math.max(...values.map(v=>Math.abs(v||0)),1);
+  barsEl.innerHTML='';
+  values.forEach((v,i)=>{
+    const bar=document.createElement('div');
+    bar.className='bar'+(i===values.length-1?' last':'')+(v>=0?' g':' r');
+    bar.style.height=Math.max(2,Math.abs(v||0)/max*30)+'px';
+    barsEl.appendChild(bar);
+  });
+  const fmt2=v=>{
+    if(v===null)return '·';
+    const n=Math.abs(v)<10?v.toFixed(1):Math.round(v);
+    return fmt==='pct'?(v>=0?'+':'')+n+'%':String(n);
+  };
+  valsEl.textContent=values.map(fmt2).join('  |  ');
+}
+
+function initSparklines(){
+  document.querySelectorAll('[data-spark]').forEach(tile=>{
+    const raw=tile.dataset.spark;if(!raw)return;
+    const vals=raw.split(',').map(Number).filter(v=>!isNaN(v));
+    if(vals.length<2)return;
+    const chartEl=tile.querySelector('.tile-chart, .kpi-chart');if(!chartEl)return;
+    const dir=tile.dataset.dir||'flat';
+    const color=dir==='up'?'34,197,94':dir==='down'?'249,66,58':'234,179,8';
+    const min=Math.min(...vals),max=Math.max(...vals);
+    const range=max-min||1;
+    const h=60,padT=16,padB=4,padX=20;
+    const w=chartEl.offsetWidth||200;
+    const step=(w-padX*2)/(vals.length-1);
+    const pts=vals.map((v,i)=>{
+      const x=padX+i*step;
+      const y=padT+((max-v)/range)*(h-padT-padB);
+      return{x,y};
+    });
+    const line=pts.map((p,i)=>(i===0?'M':'L')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
+    const area=line+' L'+pts[pts.length-1].x.toFixed(1)+','+h+' L'+pts[0].x.toFixed(1)+','+h+' Z';
+    const labels=pts.map((p,i)=>
+      '<text x="'+p.x.toFixed(1)+'" y="'+(p.y-5).toFixed(1)+'" '+
+      'fill="rgba('+color+',.9)" font-size="9" font-weight="700" font-family="Pretendard" '+
+      'text-anchor="middle">'+vals[i]+'</text>'
+    ).join('');
+    const dots=pts.map(p=>
+      '<circle cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="2.5" fill="rgb('+color+')"/>'
+    ).join('');
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 '+w+' '+h);
+    svg.setAttribute('preserveAspectRatio','none');
+    svg.style.width='100%';svg.style.height='100%';svg.style.display='block';
+    svg.innerHTML=
+      '<defs><linearGradient id="sg'+vals[0]+'" x1="0" y1="0" x2="0" y2="1">'+
+      '<stop offset="0%" stop-color="rgba('+color+',.25)"/>'+
+      '<stop offset="100%" stop-color="rgba('+color+',.03)"/>'+
+      '</linearGradient></defs>'+
+      '<path d="'+area+'" fill="url(#sg'+vals[0]+')" stroke="none"/>'+
+      '<path d="'+line+'" fill="none" stroke="rgba('+color+',.6)" stroke-width="1.5"/>'+
+      dots+labels;
+    chartEl.appendChild(svg);
+  });
+}
+
+let pulseInited=false;
+window.addEventListener('DOMContentLoaded',()=>{
+  initPriceChart('price-chart',D.ohlcv_6m,D.ema50_6m,D.volume);
+  initSparklines();
+});
+</script>
+
+</body>
+</html>

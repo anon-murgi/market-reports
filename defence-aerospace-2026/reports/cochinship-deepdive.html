@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COCHINSHIP — Company Deepdive</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.min.css" rel="stylesheet">
+<script src="https://unpkg.com/lightweight-charts@4.1.1/dist/lightweight-charts.standalone.production.js"></script>
+<style>
+:root{--bg:#111111;--card:#1a1a1a;--bd:#2e2e2e;--tx:#F5F5F5;--mt:#999999;--dm:#666666;
+      --red:#F9423A;--grn:#22c55e;--yel:#eab308;--th:#222222;--blue:#7dd3fc}
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0!important}
+html{font-size:14px}
+body{background:var(--bg);color:var(--tx);font-family:'Pretendard','Noto Sans',sans-serif}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:#111}
+::-webkit-scrollbar-thumb{background:#2e2e2e}
+*{scrollbar-width:thin;scrollbar-color:#2e2e2e #111}
+
+.wrap{max-width:1260px;margin:0 auto;padding:24px 28px}
+hr.div{border:none;border-top:1px dotted var(--bd);margin:22px 0}
+.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}.mt24{margin-top:24px}
+.g{color:var(--grn)}.r{color:var(--red)}.y{color:var(--yel)}.b{color:var(--blue)}
+
+header{background:#000;padding:16px 28px;display:flex;justify-content:space-between;
+       align-items:center;border-bottom:1px dotted var(--bd)}
+.hd-title{color:var(--tx);font-size:15px;font-weight:600}
+.hd-meta{color:var(--dm);font-size:12px}
+
+.co-name{font-size:24px;font-weight:700;letter-spacing:-.01em}
+.co-sub{font-size:12px;color:var(--mt);margin-top:3px}
+.stats-strip{display:flex;flex-wrap:wrap;align-items:center;
+             margin-top:10px;padding-top:10px;border-top:1px dotted var(--bd)}
+.sstat{display:flex;flex-direction:column;padding:4px 14px 4px 0;
+       border-right:1px dotted var(--bd);margin-right:14px}
+.sstat:last-child{border-right:none}
+.sstat .lbl{font-size:10px;font-weight:700;text-transform:uppercase;
+            letter-spacing:1px;color:var(--dm);margin-bottom:2px}
+.sstat .val{font-size:14px;font-weight:700}
+
+/* tabs — right after stats strip */
+.tab-bar{display:flex;border-bottom:1px dotted var(--bd);margin-top:14px;overflow-x:auto}
+.tab{padding:10px 22px;background:transparent;color:rgba(245,245,245,.45);
+     border:none;border-bottom:2px solid transparent;cursor:pointer;
+     font-size:11px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+     margin-bottom:-1px;outline:none;font-family:'Pretendard',sans-serif;white-space:nowrap}
+.tab.active{color:var(--tx);border-bottom:2px solid var(--red)}
+.tab-body{display:none;padding-top:20px}.tab-body.active{display:block}
+
+.sh2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;
+     color:var(--dm);margin-bottom:10px}
+.section{margin-bottom:30px}
+
+/* verdict */
+.verdict-banner{padding:22px 24px;background:var(--card);border:1px dotted var(--bd)}
+.vb-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:14px}
+.vb-tag{display:inline-block;font-size:14px;font-weight:800;letter-spacing:.8px;
+        text-transform:uppercase;padding:6px 14px;border:1px solid}
+.vb-tag.t-buy{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.vb-tag.t-watch{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.vb-tag.t-avoid{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+.vb-conviction{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--dm);text-transform:uppercase}
+.vb-thesis{font-size:17px;line-height:1.65;color:var(--tx);margin:6px 0 14px}
+.vb-fv-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;
+           padding-top:12px;border-top:1px dotted var(--bd);font-size:13px;color:var(--mt)}
+.vb-mos{display:inline-block;padding:4px 10px;font-weight:800;font-size:14px;border:1px solid}
+.vb-mos.pos{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.vb-mos.neg{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+
+/* state tiles — subtle RAG tint, no colored borders */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+.tile{border:1px dotted var(--bd);display:flex;flex-direction:column}
+.tile.up{background:rgba(34,197,94,.04)}.tile.down{background:rgba(249,66,58,.04)}.tile.flat{background:rgba(234,179,8,.04)}
+.tile-top{padding:14px 16px 10px}
+.tile .tlabel{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+             color:var(--dm);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.tile .tdot{width:7px;height:7px;border-radius:50%!important}
+.tile.up .tdot{background:var(--grn)}.tile.down .tdot{background:var(--red)}.tile.flat .tdot{background:var(--yel)}
+.tile .tval{font-size:19px;font-weight:700;line-height:1.3;margin-bottom:6px}
+.tile .tcap{font-size:13px;color:var(--mt);line-height:1.5}
+.tile .tcap b,.tile .tcap strong{color:var(--tx);font-weight:700}
+.tile-chart{position:relative;height:60px;margin-top:auto;overflow:hidden}
+.tile-chart svg{display:block;width:100%;height:100%}
+
+.risk-flag{margin-top:14px;padding:12px 16px;background:rgba(249,66,58,.05);
+           border:1px dotted rgba(249,66,58,.2);font-size:13px;line-height:1.55;color:var(--mt)}
+.risk-flag b{color:var(--red)}
+
+.price-chart-wrap{margin-bottom:20px}
+.price-chart{width:100%;height:360px;background:#0d0d0d;border:1px dotted var(--bd)}
+.chart-caption{font-size:12px;color:var(--dm);margin-top:4px;line-height:1.45}
+
+/* thesis driver cards — fill row, max 5, equal width */
+.driver-row{display:flex;gap:14px;margin-bottom:20px}
+.driver-card{flex:1 1 0;min-width:0;padding:0;background:rgba(234,179,8,.03);border:1px dotted var(--bd);
+             display:flex;flex-direction:column}
+.dc-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px 0}
+.dc-tag{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--dm);text-transform:uppercase}
+.dc-tag span{color:var(--mt)}
+.dc-conv{display:flex;align-items:center;gap:4px;font-size:9px;font-weight:700;
+         letter-spacing:.8px;color:var(--dm);text-transform:uppercase}
+.dc-dot{width:7px;height:7px;display:inline-block;border-radius:50%!important}
+.dc-dot.h{background:var(--grn)}.dc-dot.m{background:var(--yel)}.dc-dot.l{background:var(--red)}
+.dc-body{padding:10px 18px 0;flex:1}
+.dc-body .dtitle{font-size:16px;font-weight:700;color:var(--tx);margin-bottom:10px;line-height:1.35}
+.dc-body .devidence{font-size:13px;color:var(--mt);line-height:1.6}
+.dc-body .devidence b,.dc-body .devidence strong{color:var(--tx);font-weight:700}
+.dc-foot{display:flex;justify-content:space-between;align-items:center;
+         padding:10px 18px;margin-top:auto;border-top:1px dotted var(--bd)}
+.dc-foot .dc-time{font-size:11px;font-weight:700;color:var(--tx)}
+.dc-foot .dc-src{font-size:11px;color:var(--dm);font-style:italic}
+
+/* catalyst grid — quarterly state pills */
+.cat-grid{width:100%;border-collapse:collapse;font-size:13px}
+.cat-grid th{text-align:left;padding:8px 10px;background:var(--th);border-bottom:2px solid var(--tx);
+             font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mt)}
+.cat-grid th.qcol{text-align:center;width:70px}
+.cat-grid td{padding:10px;border-bottom:1px dotted var(--bd);vertical-align:middle}
+.cat-grid td.qcol{text-align:center}
+.cat-grid .cat-id{font-size:12px;color:var(--dm);font-weight:700;width:30px}
+.cat-grid .cat-nm{font-size:14px;font-weight:600;color:var(--tx)}
+.cat-grid .cat-nm .star{color:var(--yel);margin-left:4px;font-size:12px}
+.cat-grid .cat-imp{font-size:12px;color:var(--mt);line-height:1.5}
+.cat-pill{display:inline-block;padding:3px 8px;font-size:10px;font-weight:800;letter-spacing:.4px;
+          min-width:38px;text-align:center;border:1px solid}
+.cat-pill.act{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.10)}
+.cat-pill.bld{color:var(--blue);border-color:var(--blue);background:rgba(125,211,252,.08)}
+.cat-pill.bldup{color:#60a5fa;border-color:#60a5fa;background:rgba(96,165,250,.10)}
+.cat-pill.fad{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.10)}
+.cat-pill.dot{color:var(--dm);border-color:var(--bd);background:var(--th)}
+.cat-footer{font-size:11px;color:var(--dm);margin-top:10px;line-height:1.6}
+
+/* pulse mini-charts */
+.pulse-strip{display:flex;border:1px dotted var(--bd);background:var(--card);overflow:hidden}
+.pulse-label{display:flex;align-items:center;padding:12px 16px;font-size:10px;font-weight:700;
+             text-transform:uppercase;letter-spacing:1px;color:var(--dm);border-right:1px dotted var(--bd);
+             min-width:90px;flex-direction:column;gap:2px}
+.pulse-cell{flex:1;padding:10px 14px;border-right:1px dotted var(--bd);text-align:center;min-width:120px}
+.pulse-cell:last-child{border-right:none}
+.pulse-cell .pm-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--dm);margin-bottom:6px}
+.pulse-cell .pm-bars{display:flex;align-items:flex-end;justify-content:center;gap:3px;height:32px;margin-bottom:4px}
+.pulse-cell .pm-bars .bar{width:8px;background:var(--dm);min-height:2px}
+.pulse-cell .pm-bars .bar.last{background:var(--red)}
+.pulse-cell .pm-bars .bar.g{background:var(--grn)}.pulse-cell .pm-bars .bar.r{background:var(--red)}
+.pulse-cell .pm-vals{font-size:10px;font-weight:600;color:var(--mt);line-height:1.4;letter-spacing:.3px}
+.pulse-cell .pm-trend{font-size:10px;color:var(--mt)}
+
+/* grids */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+
+.kpi{background:var(--card);padding:16px 18px;border:1px dotted var(--bd)}
+.kpi .kv{font-size:20px;font-weight:700;margin-bottom:4px}
+.kpi .kl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--dm)}
+.kpi .ks{font-size:10px;color:var(--mt);margin-top:3px}
+
+/* scenarios */
+.scn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.scn-col{padding:18px 20px;border:1px dotted var(--bd)}
+.scn-col.bull{background:rgba(34,197,94,.04)}.scn-col.base{background:rgba(234,179,8,.04)}.scn-col.bear{background:rgba(249,66,58,.04)}
+.scn-col h4{font-size:13px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;
+            display:flex;justify-content:space-between;align-items:baseline}
+.scn-col.bull h4{color:var(--grn)}.scn-col.base h4{color:var(--yel)}.scn-col.bear h4{color:var(--red)}
+.scn-col h4 .wt{font-size:19px;font-weight:800}
+.scn-col .lbl{font-size:14px;color:var(--mt);font-weight:500;line-height:1.5;margin-bottom:10px}
+.scn-tp{font-size:28px;font-weight:800;color:var(--tx);line-height:1.2;margin-bottom:4px}
+.scn-updn{font-size:13px;font-weight:700;margin-bottom:12px}
+.scn-updn.pos{color:var(--grn)}.scn-updn.neg{color:var(--red)}
+.scn-divider{border-top:1px dotted var(--bd);padding-top:10px;margin-top:2px}
+.scn-col ul{margin:0;padding-left:18px}
+.scn-col li{font-size:13px;line-height:1.6;color:var(--mt);margin-bottom:5px}
+.scn-col li b,.scn-col li strong{color:var(--tx);font-weight:700}
+
+/* risks */
+.risk-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+.risk-card{padding:16px 18px;border:1px dotted var(--bd)}
+.risk-card.HIGH{background:rgba(249,66,58,.04)}.risk-card.MED{background:rgba(234,179,8,.04)}.risk-card.LOW{background:var(--card)}
+.risk-sev{font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 8px;border:1px solid;display:inline-block;margin-bottom:8px}
+.risk-card.HIGH .risk-sev{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+.risk-card.MED .risk-sev{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.risk-card.LOW .risk-sev{color:var(--mt);border-color:var(--bd);background:var(--th)}
+.risk-card .ttl{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:8px;line-height:1.45}
+.risk-card .det{font-size:13px;color:var(--mt);line-height:1.6}
+.risk-card .monitor{font-size:12px;color:var(--dm);margin-top:8px;font-style:italic}
+
+.gate{padding:14px 18px;border:1px dotted var(--bd);margin-bottom:10px;
+      display:grid;grid-template-columns:1fr 140px;gap:14px;align-items:center;
+      background:var(--card)}
+.gate.drop{background:rgba(249,66,58,.04)}
+.gate .gtxt{font-size:14px;color:var(--mt);line-height:1.55}
+.gate .gtxt b{color:var(--red)}
+.gate .gdeadline{font-size:12px;color:var(--dm);text-align:right}
+
+/* scorecards */
+.sc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sc{padding:20px 22px;background:var(--card);border:1px dotted var(--bd)}
+.sc-hd{display:flex;justify-content:space-between;align-items:baseline;
+       padding-bottom:12px;border-bottom:1px dotted var(--bd);margin-bottom:14px}
+.sc-hd .nm{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mt)}
+.sc-hd .sc-score{font-size:32px;font-weight:800;line-height:1;color:var(--tx)}
+.sc-hd .sc-score small{font-size:15px;color:var(--dm);font-weight:600}
+.sc-row{display:grid;grid-template-columns:1fr 60px 90px;gap:10px;align-items:center;margin-bottom:8px}
+.sc-row .lab{font-size:15px;color:var(--tx)}.sc-row .lab small{color:var(--dm);font-size:12px;margin-left:6px}
+.sc-row .val{font-weight:700;text-align:right;font-size:15px}
+.sc-bar{position:relative;height:6px;background:var(--th);border:1px solid var(--bd)}
+.sc-bar i{position:absolute;left:0;top:0;bottom:0}
+.sc-bar i.g{background:var(--grn)}.sc-bar i.y{background:var(--yel)}.sc-bar i.r{background:var(--red)}
+.sc-note{margin-top:16px;padding-top:12px;border-top:1px dotted var(--bd);font-size:13px;line-height:1.6;color:var(--mt)}
+
+/* valuation table */
+.val-tbl{background:var(--card);border:1px dotted var(--bd);font-variant-numeric:tabular-nums}
+.val-lead{font-size:12.5px;color:var(--mt);padding:10px 16px;background:var(--th);
+          border-bottom:1px dotted var(--bd);font-style:italic}
+.val-row{display:grid;grid-template-columns:230px 180px 1fr;gap:0;padding:7px 16px;
+         border-bottom:1px dotted var(--bd);font-size:13.5px;align-items:baseline}
+.val-row.total{background:rgba(34,197,94,.06);border-top:1px solid var(--bd);font-weight:700}
+.val-row .lab{color:var(--mt);font-weight:500}
+.val-row .vv{color:var(--tx);font-weight:700;text-align:right;padding-right:24px}
+.val-row .bas{color:var(--dm);font-size:13px;font-style:italic}
+
+/* concall */
+.concall-quote{padding:14px 18px;background:rgba(234,179,8,.03);border:1px dotted var(--bd);
+               margin-bottom:12px}
+.concall-quote .cq-text{font-size:15px;line-height:1.65;color:var(--tx);font-style:italic}
+.concall-quote .cq-src{font-size:12px;color:var(--dm);margin-top:6px}
+.promise-row{padding:12px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+             display:grid;grid-template-columns:1fr 80px;gap:14px;align-items:center}
+.promise-row .ptxt{font-size:14px;color:var(--mt);line-height:1.55}
+.promise-pill{display:inline-block;padding:4px 8px;font-size:11px;font-weight:800;
+              letter-spacing:.6px;border:1px solid;text-align:center}
+.promise-pill.kept,.promise-pill.beat{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.10)}
+.promise-pill.broken,.promise-pill.miss{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.10)}
+.promise-pill.pending,.promise-pill.amber{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.10)}
+.promise-pill.build{color:var(--blue);border-color:var(--blue);background:rgba(125,211,252,.08)}
+
+.prev-verdict{padding:14px 18px;background:rgba(234,179,8,.04);border:1px dotted var(--yel)}
+.prev-verdict .pv-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--yel);margin-bottom:6px}
+.prev-verdict .pv-body{font-size:14px;color:var(--mt);line-height:1.55}
+
+.callout{background:rgba(234,179,8,.04);border:1px dotted rgba(234,179,8,.2);
+         padding:10px 14px;font-size:12px;line-height:1.6;margin-bottom:12px}
+.industry-card{padding:18px 20px;background:var(--card);border:1px dotted var(--bd);margin-bottom:14px}
+.industry-card .ih{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:10px}
+.industry-card .ib{font-size:14px;color:var(--mt);line-height:1.6}
+.industry-card .ib b,.industry-card .ib strong{color:var(--tx);font-weight:700}
+
+/* ── concall v2 ──────────────────────────────────────────────────────── */
+/* sentiment + confidence pills (used in verdict banner + concall header) */
+.cc-sent{display:inline-block;padding:3px 9px;font-size:10px;font-weight:800;letter-spacing:.7px;
+         text-transform:uppercase;border:1px solid;margin-left:6px;vertical-align:middle}
+.cc-sent.bullish{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.10)}
+.cc-sent.neutral{color:var(--mt);border-color:var(--bd);background:var(--th)}
+.cc-sent.bearish{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.10)}
+.cc-conf{display:inline-block;padding:3px 9px;font-size:10px;font-weight:700;letter-spacing:.7px;
+         text-transform:uppercase;border:1px dotted var(--bd);color:var(--dm);margin-left:4px}
+.cc-verif{display:inline-block;padding:3px 9px;font-size:10px;font-weight:700;letter-spacing:.6px;
+          text-transform:uppercase;border:1px solid;margin-left:4px;vertical-align:middle}
+.cc-verif.verified{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.cc-verif.pending{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.cc-verif.mismatch{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+
+/* concall header strip — revenue/EBITDA/PAT + sentiment + verification */
+.cc-head{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;
+         padding:0;border:1px dotted var(--bd);background:var(--card);margin-bottom:14px}
+.cc-head .cell{padding:14px 16px;border-right:1px dotted var(--bd)}
+.cc-head .cell:last-child{border-right:none}
+.cc-head .lbl{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--dm);margin-bottom:6px}
+.cc-head .val{font-size:18px;font-weight:800;color:var(--tx);line-height:1.2}
+.cc-head .delta{font-size:12px;font-weight:600;margin-top:3px}
+.cc-head .delta.pos{color:var(--grn)} .cc-head .delta.neg{color:var(--red)} .cc-head .delta.flat{color:var(--mt)}
+.cc-head .meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:10px 16px;
+               border-top:1px dotted var(--bd);grid-column:1/-1;background:var(--th);font-size:11px;color:var(--mt)}
+
+/* 2-min summary — 4 bullets in a tight grid */
+.cc-2min{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;
+         border:1px dotted var(--bd);background:var(--card);margin-bottom:14px}
+.cc-2min .b{padding:14px 18px;border-right:1px dotted var(--bd);border-bottom:1px dotted var(--bd)}
+.cc-2min .b:last-child{border-right:none}
+.cc-2min .b .blbl{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--yel);margin-bottom:8px}
+.cc-2min .b .btxt{font-size:14px;color:var(--tx);line-height:1.6}
+.cc-2min .b .btxt strong{color:var(--yel);font-weight:700}
+
+/* story tension — italic question banner */
+.cc-tension{padding:14px 18px;background:rgba(125,211,252,.04);border:1px dotted var(--blue);
+            font-size:15px;font-style:italic;color:var(--tx);line-height:1.55;margin-bottom:14px}
+.cc-tension::before{content:"OPEN DEBATE — ";font-style:normal;font-weight:800;font-size:10px;
+                    letter-spacing:1px;color:var(--blue);margin-right:6px}
+
+/* what-changed 4-bucket grid */
+.cc-wc{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:14px}
+.cc-wc .col{border:1px dotted var(--bd);background:var(--card);padding:0}
+.cc-wc .col h5{font-size:11px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;
+               padding:10px 14px;margin:0;border-bottom:1px dotted var(--bd);background:var(--th);display:flex;justify-content:space-between;align-items:baseline}
+.cc-wc .col h5 .cnt{font-size:10px;color:var(--dm);font-weight:600}
+.cc-wc .col.ng h5{color:var(--blue)}.cc-wc .col.dg h5{color:var(--mt)}
+.cc-wc .col.nr h5{color:var(--red)}.cc-wc .col.rr h5{color:var(--grn)}
+.cc-wc .item{padding:10px 14px;border-bottom:1px dotted var(--bd)}
+.cc-wc .item:last-child{border-bottom:none}
+.cc-wc .item .ttl{font-size:13px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:4px}
+.cc-wc .item .det{font-size:12px;color:var(--mt);line-height:1.55}
+.cc-wc .item .sev{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.7px;
+                  padding:1px 5px;border:1px solid;margin-right:6px;text-transform:uppercase}
+.cc-wc .item .sev.high{color:var(--red);border-color:var(--red)}
+.cc-wc .item .sev.medium{color:var(--yel);border-color:var(--yel)}
+.cc-wc .item .sev.low{color:var(--mt);border-color:var(--bd)}
+.cc-wc .empty{padding:14px;font-size:12px;color:var(--dm);font-style:italic;text-align:center}
+
+/* silence detection */
+.cc-silence{padding:14px 18px;background:rgba(234,179,8,.04);border:1px dotted var(--yel);margin-bottom:10px}
+.cc-silence .stop{font-size:14px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:6px}
+.cc-silence .stop::before{content:"\1F910  ";margin-right:4px}
+.cc-silence .mq{font-size:11px;color:var(--dm);margin-bottom:6px}
+.cc-silence .mq span{padding:1px 5px;border:1px solid var(--bd);margin-right:4px;font-weight:600}
+.cc-silence .ctx{font-size:12px;color:var(--mt);line-height:1.5;margin-bottom:6px}
+.cc-silence .imp{font-size:12px;color:var(--tx);font-style:italic;line-height:1.5}
+.cc-silence .imp::before{content:"Implication: ";font-style:normal;font-weight:700;color:var(--yel)}
+
+/* tone shifts */
+.cc-tone{display:grid;grid-template-columns:140px 90px 1fr;gap:14px;padding:12px 16px;
+         background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;align-items:center}
+.cc-tone .area{font-size:13px;font-weight:700;color:var(--tx)}
+.cc-tone .dir{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;
+              padding:3px 8px;border:1px solid;text-align:center}
+.cc-tone .dir.cut{color:var(--red);border-color:var(--red);background:rgba(249,66,58,.08)}
+.cc-tone .dir.raised{color:var(--grn);border-color:var(--grn);background:rgba(34,197,94,.08)}
+.cc-tone .dir.hedged{color:var(--yel);border-color:var(--yel);background:rgba(234,179,8,.08)}
+.cc-tone .dir.firmer{color:var(--blue);border-color:var(--blue);background:rgba(125,211,252,.08)}
+.cc-tone .body{font-size:12px;color:var(--mt);line-height:1.5}
+.cc-tone .body .from{color:var(--dm);text-decoration:line-through}
+.cc-tone .body .to{color:var(--tx);font-weight:700}
+
+/* promise ledger — multi-quarter */
+.cc-ledger{border:1px dotted var(--bd);background:var(--card);padding:0;margin-bottom:14px}
+.cc-ledger .pl{padding:12px 16px;border-bottom:1px dotted var(--bd);display:grid;
+               grid-template-columns:1fr 90px;gap:14px;align-items:start}
+.cc-ledger .pl:last-child{border-bottom:none}
+.cc-ledger .pl .pl-top{font-size:14px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:6px}
+.cc-ledger .pl .pl-meta{font-size:11px;color:var(--dm);margin-bottom:6px}
+.cc-ledger .pl .pl-meta span{margin-right:10px}
+.cc-ledger .pl .pl-ev{font-size:12px;color:var(--mt);line-height:1.55}
+
+/* bear cases */
+.cc-bear{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.cc-bear .bc{padding:14px 16px;border:1px dotted var(--bd);background:var(--card)}
+.cc-bear .bc.alive{border-color:var(--red);background:rgba(249,66,58,.04)}
+.cc-bear .bc.weakening{border-color:var(--yel);background:rgba(234,179,8,.04)}
+.cc-bear .bc.dead{border-color:var(--grn);background:rgba(34,197,94,.04);opacity:.7}
+.cc-bear .bc .stat{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.8px;
+                   padding:2px 6px;border:1px solid;margin-bottom:8px}
+.cc-bear .bc.alive .stat{color:var(--red);border-color:var(--red)}
+.cc-bear .bc.weakening .stat{color:var(--yel);border-color:var(--yel)}
+.cc-bear .bc.dead .stat{color:var(--grn);border-color:var(--grn)}
+.cc-bear .bc .th{font-size:13px;font-weight:700;color:var(--tx);line-height:1.45;margin-bottom:6px}
+.cc-bear .bc .meta{font-size:11px;color:var(--dm);margin-bottom:6px}
+.cc-bear .bc .ev{font-size:12px;color:var(--mt);line-height:1.5}
+.cc-bear .bc .chg{display:inline-block;font-size:9px;font-weight:800;color:var(--yel);
+                  margin-left:6px;letter-spacing:.6px}
+
+/* top guidance + top risk preview footer */
+.cc-preview{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.cc-preview .card{padding:14px 16px;border:1px dotted var(--bd);background:var(--card)}
+.cc-preview .card .lbl{font-size:10px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;margin-bottom:6px}
+.cc-preview .card.g .lbl{color:var(--blue)}
+.cc-preview .card.r .lbl{color:var(--red)}
+.cc-preview .card .body{font-size:14px;color:var(--tx);line-height:1.5;font-weight:600}
+
+/* post-call reaction */
+.cc-react{padding:14px 18px;border:1px dotted var(--bd);background:var(--card);margin-bottom:14px}
+.cc-react .rh{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0}
+.cc-react .rh .cell{padding:0 14px;border-right:1px dotted var(--bd)}
+.cc-react .rh .cell:last-child{border-right:none}
+.cc-react .rh .lbl{font-size:10px;color:var(--dm);font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:4px}
+.cc-react .rh .v{font-size:16px;font-weight:800}
+.cc-react .rh .v.pos{color:var(--grn)} .cc-react .rh .v.neg{color:var(--red)} .cc-react .rh .v.flat{color:var(--mt)}
+.cc-react .match{margin-top:10px;font-size:12px;color:var(--mt);line-height:1.5;padding-top:10px;border-top:1px dotted var(--bd)}
+.cc-react .match .tag{display:inline-block;font-size:10px;font-weight:800;padding:2px 6px;border:1px solid;letter-spacing:.6px;margin-right:8px}
+.cc-react .match .tag.ok{color:var(--grn);border-color:var(--grn)}
+.cc-react .match .tag.no{color:var(--red);border-color:var(--red)}
+.cc-react .hl{margin-top:10px}
+.cc-react .hl .h-row{padding:8px 0;border-bottom:1px dotted var(--bd);font-size:12px;color:var(--mt);line-height:1.5;display:grid;grid-template-columns:1fr 80px;gap:10px;align-items:start}
+.cc-react .hl .h-row:last-child{border-bottom:none}
+.cc-react .hl .h-row .src{font-size:10px;color:var(--dm);text-align:right;font-style:italic}
+.cc-react .hl .tone-tag{display:inline-block;font-size:9px;font-weight:800;padding:1px 5px;border:1px solid;margin-right:6px;letter-spacing:.5px}
+.cc-react .hl .tone-tag.positive{color:var(--grn);border-color:var(--grn)}
+.cc-react .hl .tone-tag.negative{color:var(--red);border-color:var(--red)}
+.cc-react .hl .tone-tag.neutral{color:var(--mt);border-color:var(--bd)}
+
+/* industry snapshot KPIs (used in Industry tab, sourced from concall) */
+.cc-isnap{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}
+.cc-isnap .kpi{padding:14px 16px;background:var(--card);border:1px dotted var(--bd);display:flex;flex-direction:column}
+.cc-isnap .kpi .km{font-size:11px;color:var(--mt);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.cc-isnap .kpi .kv{font-size:22px;font-weight:800;color:var(--tx);line-height:1.1}
+.cc-isnap .kpi .kd{font-size:12px;color:var(--blue);font-weight:600;margin-top:3px}
+.cc-isnap .kpi .kd.pos{color:var(--grn)} .cc-isnap .kpi .kd.neg{color:var(--red)}
+.cc-isnap .kpi .kpi-chart{position:relative;height:54px;margin-top:8px;overflow:hidden}
+.cc-isnap .kpi .kpi-chart svg{display:block;width:100%;height:100%}
+.cc-isnap .kpi .qlabels{display:flex;justify-content:space-between;font-size:9px;color:var(--dm);font-weight:600;letter-spacing:.3px;margin-top:2px;padding:0 4px}
+.cc-isnap .kpi .kn{font-size:12px;color:var(--mt);line-height:1.5;margin-top:8px;padding-top:8px;border-top:1px dotted var(--bd)}
+
+@media(max-width:900px){
+  .cc-tone{grid-template-columns:1fr;gap:6px}
+  .cc-preview{grid-template-columns:1fr}
+  .cc-ledger .pl{grid-template-columns:1fr}
+}
+
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.tbl th{text-align:left;padding:6px 10px;background:var(--th);border-bottom:2px solid var(--tx);
+        font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mt)}
+.tbl td{padding:6px 10px;border-bottom:1px dotted var(--bd)}
+.tbl .num{text-align:right}
+.tbl tr.self td{color:var(--red);font-weight:700}
+
+footer{border-top:1px dotted var(--bd);padding:12px 28px;
+       font-size:10px;color:var(--dm);display:flex;justify-content:space-between;margin-top:32px}
+
+@media(max-width:900px){
+  .grid2,.grid3,.sc-grid,.scn-grid{grid-template-columns:1fr}
+  .driver-card{max-width:100%}
+  .wrap{padding:12px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="hd-title">COMPANY DEEPDIVE</span>
+  <span class="hd-meta">Generated 2026-09-26 17:21 | Data as of 2026-09-26</span>
+</header>
+
+<div class="wrap">
+
+  <div class="co-name">Cochin Shipyard Limited</div>
+  <div class="co-sub">COCHINSHIP · Industrials · Shipyard PSU — Naval + Commercial Shipbuilding & Ship Repair</div>
+  <div class="stats-strip">
+    <div class="sstat"><span class="lbl">CMP</span><span class="val">₹1377.0</span></div>
+    <div class="sstat"><span class="lbl">Mkt Cap</span><span class="val">₹36,306 Cr</span></div>
+    <div class="sstat"><span class="lbl">PE</span><span class="val">53.4</span></div>
+    <div class="sstat"><span class="lbl">PBV</span><span class="val">6.2</span></div>
+    <div class="sstat"><span class="lbl">ROCE</span><span class="val">16.2%</span></div>
+    <div class="sstat"><span class="lbl">OPM</span><span class="val">%</span></div>
+    <div class="sstat"><span class="lbl">52W H/L</span><span class="val">₹1940.0 / ₹1187.0</span></div>
+  </div>
+
+  <!-- TABS — right after stats -->
+  <div class="tab-bar">
+    <button class="tab active" onclick="showTab('thesis')">Thesis</button>
+    <button class="tab" onclick="showTab('financials')">Financials</button>
+    <button class="tab" onclick="showTab('industry')">Industry</button>
+    <button class="tab" onclick="showTab('concall')">Concall</button>
+    <button class="tab" onclick="showTab('risks')">Risks & Gates</button>
+  </div>
+
+  <!-- ═══════════ TAB: THESIS ═══════════ -->
+  <div id="tab-thesis" class="tab-body active">
+
+    <!-- Verdict -->
+    <div class="verdict-banner">
+      <div class="vb-top">
+        <span class="vb-tag t-avoid">AVOID</span>
+        <span class="vb-conviction">LOW CONVICTION</span>
+
+
+
+        <span class="cc-sent neutral" title="Latest concall sentiment">NEUTRAL</span>
+
+
+
+        <span class="cc-conf" title="Confidence in concall extraction">LOW CONF</span>
+
+
+        <span class="cc-verif verified" title="Issuer call reports turnover ₹1,094.21 Cr, PBT ₹202.49 Cr, PAT ₹151.45 Cr; local consolidated parquet rounds sales to ₹1,094 Cr and PAT to ₹151 Cr. EBITDA margin disclosed by management (~24%) is not the parquet operating-profit margin proxy (~18%); keep measures distinct.">
+          ✓ FILING-VERIFIED
+
+        </span>
+
+      </div>
+      <div class="vb-thesis">Cochin Shipyard retains a ₹22,000 Cr unexecuted order book and expansion options, but Q1 FY27 PAT fell about 19% YoY and management reset its blended EBITDA-margin expectation to a conservative ~14%. The ISRF JV and greenfield plans add optionality while execution, cash conversion and approval/capex risk remain material; at ₹1,377 and 53.4x trailing PE, the evidence supports WATCH pending delivery and margin confirmation.</div>
+      <div class="vb-fv-row">
+        <span>Fair Value: <b style="color:var(--tx)">Not assigned</b></span>
+        <span>CMP: <b style="color:var(--tx)">₹1377.0</b></span>
+
+        <span style="font-style:italic;color:var(--dm)">No fresh point fair value assigned: the FY26-based ₹1,380 estimate is stale after Q1 FY27 margin/PAT decline and the revised operating profile. Rebuild valuation from FY27 reported run-rate, ISRF JV transfer economics, NGSV signing and verified share-count/cash-flow assumptions; until then use the local 25-Sep snapshot (₹1,377; 53.4x trailing PE) as the observable anchor.</span>
+      </div>
+
+
+
+
+
+      <div style="margin-top:12px;padding-top:10px;border-top:1px dotted var(--bd);display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--dm);text-transform:uppercase">CCS v2</span>
+        <span style="font-size:20px;font-weight:800;color:var(--red)">21.6</span>
+
+        <span style="font-size:10px;font-weight:700;letter-spacing:.6px;padding:2px 8px;border:1px solid;
+                     color:var(--yel);border-color:var(--yel);text-transform:uppercase">FQG AMBER</span>
+
+
+        <span style="font-size:11px;color:var(--dm)">
+          MoS&nbsp;<b style="color:var(--tx)">0</b>
+          &nbsp;·&nbsp;Qual&nbsp;<b style="color:var(--tx)">68</b>
+          &nbsp;·&nbsp;Growth&nbsp;<b style="color:var(--tx)">12</b>
+          &nbsp;·&nbsp;Cycle&nbsp;<b style="color:var(--tx)">50</b>
+          &nbsp;·&nbsp;FwdEP&nbsp;<b style="color:var(--tx)">54</b>
+          &nbsp;·&nbsp;Risk&nbsp;<b style="color:var(--tx)">74</b>
+        </span>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px dotted var(--bd);display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.8px;color:var(--dm);text-transform:uppercase">V3 verdict</span>
+        <span style="font-size:13px;font-weight:800;padding:3px 10px;border:1.5px solid var(--red);color:var(--red);letter-spacing:.6px;text-transform:uppercase">
+          AVOID · LOW
+        </span>
+        <span style="font-size:11px;color:var(--dm)">
+          Investability&nbsp;<b style="color:var(--red)">23.0</b>
+          &nbsp;·&nbsp;Tactical&nbsp;<b style="color:var(--red)">35.7</b>
+          &nbsp;·&nbsp;Leader&nbsp;<b style="color:var(--tx)">TAC</b>
+        </span>
+
+        <span style="font-size:11px;color:var(--dm)">
+          Mom&nbsp;<b style="color:var(--tx)">30</b>
+          &nbsp;·&nbsp;EarnSurp&nbsp;<b style="color:var(--tx)">20</b>
+          &nbsp;·&nbsp;VolSurge&nbsp;<b style="color:var(--tx)">73</b>
+          &nbsp;·&nbsp;TTM&nbsp;PAT&nbsp;<b style="color:var(--tx)">0</b>
+          &nbsp;·&nbsp;OrderBk&nbsp;<b style="color:var(--tx)">nan</b>
+        </span>
+
+
+        <span style="font-size:10px;font-weight:700;letter-spacing:.6px;padding:2px 7px;border:1px solid var(--grn);color:var(--grn);text-transform:uppercase">DEFENCE_SHIPS</span>
+
+
+        <span style="font-size:11px;color:var(--dm)">Order Book&nbsp;<b style="color:var(--tx)">₹nan&nbsp;Cr</b>&nbsp;(+nan% QoQ)</span>
+
+
+        <span style="font-size:10px;font-weight:700;letter-spacing:.6px;padding:2px 7px;border:1px solid var(--dm);color:var(--dm);text-transform:uppercase">Regime: NARRATIVE (23)</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="tiles">
+
+      <div class="tile up">
+        <div class="tile-top">
+          <div class="tlabel">Unexecuted order book <span class="tdot"></span></div>
+          <div class="tval">~₹22,000 Cr</div>
+          <div class="tcap">Management reported at 10-Sep-2026 call; ₹5,000 Cr L1 NGSV not yet contracted and excluded.</div>
+        </div>
+      </div>
+
+      <div class="tile down">
+        <div class="tile-top">
+          <div class="tlabel">Q1 FY27 PAT <span class="tdot"></span></div>
+          <div class="tval">₹151.45 Cr (-19% YoY)</div>
+          <div class="tcap">Management call figure; local consolidated parquet ₹151 Cr vs ₹188 Cr Q1 FY26.</div>
+        </div>
+      </div>
+
+      <div class="tile flat">
+        <div class="tile-top">
+          <div class="tlabel">Guided growth / margin <span class="tdot"></span></div>
+          <div class="tval">~12% / ~14%</div>
+          <div class="tcap">Management conservative annual revenue growth and blended EBITDA margin guidance at Q1 FY27 call.</div>
+        </div>
+      </div>
+
+      <div class="tile flat">
+        <div class="tile-top">
+          <div class="tlabel">CMP / trailing PE <span class="tdot"></span></div>
+          <div class="tval">₹1,377 / 53.4x</div>
+          <div class="tcap">Local snapshot dated 25-Sep-2026; price below its 200-day average per batch screen.</div>
+        </div>
+      </div>
+
+      <div class="tile up">
+        <div class="tile-top">
+          <div class="tlabel">ISRF transaction <span class="tdot"></span></div>
+          <div class="tval">₹1,800 Cr proposed transfer</div>
+          <div class="tcap">50% cash / 50% JV equity; subject to ministry, DIPAM and shareholder approvals; target completion by FY27 end.</div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="risk-flag"><b>KEY RISK:</b> Earnings derating — FY26 is year 1 of multi-year earnings disappointment — FY26 PAT ₹717 Cr (-13.5%) vs FY25 ₹827 Cr. Structural headwinds: depreciation rising to ₹140+ Cr FY27, finance costs up (₹92 Cr FY26 from near-zero), LD drag. Even a 20% PAT recovery gets to only ₹860 Cr FY27E — barely above FY25 levels, yet the stock trades at 55x FY26 EPS.</div>
+
+
+
+
+    <!-- Price chart -->
+    <div class="price-chart-wrap mt16">
+      <div id="price-chart" class="price-chart"></div>
+    </div>
+
+    <!-- V3 Score Breakdown — full sub-score table + Order Book block + Regime -->
+
+
+
+    <div class="section">
+      <div class="sh2">V3 Score Breakdown</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px">
+        <!-- LEFT: top-line + sub-scores -->
+        <div style="padding:16px;border:1px solid var(--bd);background:var(--card)">
+          <div style="font-size:11px;color:var(--dm);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">Composite Scores</div>
+          <table style="width:100%;font-size:12px;border-collapse:collapse">
+            <tr><td style="padding:6px 0;color:var(--dm)">Investability (long-term value)</td>
+                <td style="padding:6px 0;text-align:right"><b style="font-size:15px">23.0</b> / 100</td></tr>
+            <tr><td style="padding:6px 0;color:var(--dm)">Tactical (short-term momentum)</td>
+                <td style="padding:6px 0;text-align:right"><b style="font-size:15px">35.7</b> / 100</td></tr>
+            <tr><td style="padding:6px 0;color:var(--dm);border-top:1px dotted var(--bd)">Tier</td>
+                <td style="padding:6px 0;text-align:right;border-top:1px dotted var(--bd)"><b>AVOID</b> · LOW</td></tr>
+            <tr><td style="padding:6px 0;color:var(--dm)">Score leader</td>
+                <td style="padding:6px 0;text-align:right">TAC</td></tr>
+          </table>
+        </div>
+        <!-- RIGHT: regime context -->
+        <div style="padding:16px;border:1px solid var(--bd);background:var(--card)">
+          <div style="font-size:11px;color:var(--dm);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">Market regime today</div>
+
+
+          <div style="font-size:18px;font-weight:800;color:var(--red);letter-spacing:.6px">NARRATIVE · 23</div>
+          <div style="font-size:11px;color:var(--dm);margin-top:8px;line-height:1.5">
+            Narrative-driven tape — V3 BUYs historically underperform. Conviction auto-downgraded one tier.
+
+          </div>
+        </div>
+      </div>
+      <!-- Sub-score table — all sub-scores explained -->
+      <div style="padding:16px;border:1px solid var(--bd);background:var(--card);margin-bottom:16px">
+        <div style="font-size:11px;color:var(--dm);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">Tactical sub-scores (0-100, higher = stronger signal)</div>
+        <table style="width:100%;font-size:12px;border-collapse:collapse">
+          <thead><tr style="color:var(--dm);border-bottom:1px solid var(--bd)">
+            <th style="text-align:left;padding:6px 0;font-weight:600">Sub-score</th>
+            <th style="text-align:right;padding:6px 0;font-weight:600">Value</th>
+            <th style="text-align:left;padding:6px 12px;font-weight:600">What it measures</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:6px 0">Momentum</td>
+                <td style="padding:6px 0;text-align:right"><b>30</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Relative strength vs Nifty 500 (3M+6M) + distance from 52w high + up-weeks</td></tr>
+            <tr><td style="padding:6px 0">Earnings surprise</td>
+                <td style="padding:6px 0;text-align:right"><b>20</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Latest qtr revenue + PAT vs trailing 4Q mean; loss-to-profit flips score 200</td></tr>
+            <tr><td style="padding:6px 0">Volume surge</td>
+                <td style="padding:6px 0;text-align:right"><b>73</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">20d/100d volume ratio + big-day count + price-vol correlation (accumulation proxy)</td></tr>
+            <tr><td style="padding:6px 0">TTM PAT growth</td>
+                <td style="padding:6px 0;text-align:right"><b>0</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Trailing 12M PAT YoY growth (0%→0, 10%→40, 25%+→100)</td></tr>
+            <tr><td style="padding:6px 0">Order book strength</td>
+                <td style="padding:6px 0;text-align:right"><b>nan</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Order book ÷ TTM revenue + QoQ growth + capex guidance (industrials only)</td></tr>
+
+            <tr><td style="padding:6px 0">Active theme</td>
+                <td style="padding:6px 0;text-align:right"><b>+0</b></td>
+                <td style="padding:6px 12px;color:var(--dm)">Tagged with theme <b style="color:var(--grn)">DEFENCE_SHIPS</b> AND TTM revenue ≥15% — flat boost</td></tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- Order Book block — surfaces the raw extracted numbers when available -->
+
+      <div style="padding:16px;border:1.5px solid var(--grn);background:rgba(34,197,94,.04);margin-bottom:16px">
+        <div style="font-size:11px;color:var(--grn);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;font-weight:700">Order Book — extracted from latest concall</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;font-size:13px">
+          <div>
+            <div style="color:var(--dm);font-size:10px;text-transform:uppercase;letter-spacing:.6px">Book size</div>
+            <div style="font-size:18px;font-weight:800;color:var(--tx);margin-top:4px">₹nan Cr</div>
+          </div>
+
+
+
+          <div>
+            <div style="color:var(--dm);font-size:10px;text-transform:uppercase;letter-spacing:.6px">QoQ change</div>
+            <div style="font-size:18px;font-weight:800;color:var(--dm);margin-top:4px">+nan%</div>
+          </div>
+
+          <div>
+            <div style="color:var(--dm);font-size:10px;text-transform:uppercase;letter-spacing:.6px">Sub-score</div>
+            <div style="font-size:18px;font-weight:800;color:var(--tx);margin-top:4px">nan/100</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--dm);margin-top:10px;font-style:italic">
+          Extracted from earnings-call PDFs by rules-based parser. Verified manually on BEL/KEI/MTARTECH — accuracy ~95% on industrial / capex names. NA for FMCG, financials, IT services (no order book concept).
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Thesis drivers — responsive row, max 5 -->
+
+    <div class="section">
+      <div class="sh2">Thesis Drivers</div>
+      <div class="driver-row">
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">01 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">Large contracted workload provides multi-year visibility</div>
+            <div class="devidence">Management stated an unexecuted order book of about ₹22,000 Cr at the 10-Sep-2026 call. The additional ₹5,000 Cr NGSV order was only L1 and not contracted; the call expected signing around November 2026.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">Management stated an unexecuted order book of about ₹22,000 Cr at the 10-Sep-2026 call. The additional ₹5,000 Cr NGSV order was only L1 and not contracted; the call expected signing around November 2026.</span>
+          </div>
+        </div>
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">02 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">Q1 earnings and margins have weakened</div>
+            <div class="devidence">Management reported turnover ₹1,094.21 Cr versus ₹1,068.59 Cr YoY, PBT ₹202.49 Cr versus ₹249.54 Cr, PAT ₹151.45 Cr versus ₹187.82 Cr, and EBITDA margin ~24%. Local consolidated quarterly data rounds sales/PAT to ₹1,094/₹151 Cr and operating margin to 18%; operating-profit proxy is not directly comparable with EBITDA.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">Management reported turnover ₹1,094.21 Cr versus ₹1,068.59 Cr YoY, PBT ₹202.49 Cr versus ₹249.54 Cr, PAT ₹151.45 Cr versus ₹187.82 Cr, and EBITDA margin ~24%. Local consolidated quarterly data rounds sales/PAT to ₹1,094/₹151 Cr and operating margin to 18%; operating-profit proxy is not directly comparable with EBITDA.</span>
+          </div>
+        </div>
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">03 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">ISRF partnership could broaden ship-repair reach but is not closed</div>
+            <div class="devidence">Board approved a 50:50 JV with Drydocks World for the Willingdon Island ISRF. The proposed ₹1,800 Cr slump-sale consideration is half cash and half JV equity, with transfer/expansion subject to ministry, DIPAM and shareholder approvals; management targets implementation before FY27 close.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">Board approved a 50:50 JV with Drydocks World for the Willingdon Island ISRF. The proposed ₹1,800 Cr slump-sale consideration is half cash and half JV equity, with transfer/expansion subject to ministry, DIPAM and shareholder approvals; management targets implementation before FY27 close.</span>
+          </div>
+        </div>
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">04 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">Expansion creates long-dated capacity and funding demands</div>
+            <div class="devidence">CSL won a 30-year Tuticorin lease for ₹305.76 Cr and plans shipbuilding, repair and offshore fabrication. Vadinar awaits environmental clearance; management targets operations within 36 months of clearance. The HD KSOE block-fabrication JV was not agreed; CSL will proceed independently at smaller scale.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">CSL won a 30-year Tuticorin lease for ₹305.76 Cr and plans shipbuilding, repair and offshore fabrication. Vadinar awaits environmental clearance; management targets operations within 36 months of clearance. The HD KSOE block-fabrication JV was not agreed; CSL will proceed independently at smaller scale.</span>
+          </div>
+        </div>
+
+        <div class="driver-card">
+          <div class="dc-head">
+            <span class="dc-tag">05 · <span>THESIS</span></span>
+            <span class="dc-conv">CONVICTION
+
+              <span class="dc-dot m"></span>
+              <span class="dc-dot m"></span>
+              <span class="dc-dot" style="background:var(--bd)"></span>
+            </span>
+          </div>
+          <div class="dc-body">
+            <div class="dtitle">Cash conversion depends on tail-ended export vessel payments</div>
+            <div class="devidence">Management attributed negative FY26 operating cash flow to European export contracts receiving about 30% during construction and ~70% on delivery. It targeted ~10 vessel deliveries in FY27 and positive FY27 cash flow; this is guidance, not yet realized.</div>
+          </div>
+          <div class="dc-foot">
+            <span class="dc-time"></span>
+            <span class="dc-src">Management attributed negative FY26 operating cash flow to European export contracts receiving about 30% during construction and ~70% on delivery. It targeted ~10 vessel deliveries in FY27 and positive FY27 cash flow; this is guidance, not yet realized.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Business Cycles</div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:rgba(234,179,8,.04)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Order Inflow Cycle</span>
+          <span style="font-size:11px;color:var(--yel);font-weight:700">THESIS DRIVER</span>
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PRE-BUDGET LULL</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">BUDGET ANNOUNCEMENT</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">AoN APPROVAL WAVE</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">CONTRACT SIGNING / ORDERING ACCELERATION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PEAK INFLOW</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">MATURING</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">SLOWDOWN</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">Order book at ₹21,100 Cr (Q1 FY26) and pipeline at ₹2.2 lakh Cr signal MATURING after the PEAK INFLOW phase driven by record FY26 AoN clearances. NGSV contract (L1, ~₹5,000 Cr) is next signing trigger. New order flow now depends on larger programmes (P-17 Bravo, LPD, MCMV, IAC-2) that are still in RFI stage.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Valuation / PE Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">DE-RATING TROUGH</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">RE-RATING (story emerges)</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PEAK MULTIPLES</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">CORRECTION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">MEAN REVERSION</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">Stock peaked at ₹2,530 (Jun 2025) and has declined 40% to ₹1,509, entering CORRECTION phase. At 55x FY26 EPS, multiple is compressing from peak but remains elevated vs 30-45x archetype range. Mean reversion target: 35x FY28E EPS ≈ ₹1,400.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Capex / Capacity Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">CAPEX ANNOUNCEMENT</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">CONSTRUCTION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">COMMISSIONING</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">UNDER-LEVERAGED RAMP</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">OPERATING LEVERAGE HARVEST</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">₹2,769 Cr capex (ISRF + new dry dock) now fully commissioned as of Q1 FY26. The cycle is in UNDER-LEVERAGED RAMP — new assets are operational but revenue ramp from them (global commercial repair, larger vessel orders) is 1-2 years out. Operating leverage harvest expected FY28-29 as utilisation rises.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Execution / Revenue Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PIPELINE BUILD</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">ORDER BOOK RAMP</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">EXECUTION ACCELERATION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PEAK REVENUE</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">REPLENISHMENT GAP</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">Revenue CAGR FY21-FY26 has been 16% CAGR but FY26 growth was only 4.2% — execution is not yet accelerating from the new order book. 75 vessels in various construction stages; 13 in advanced completion. Revenue acceleration expected in FY27-28 as midstage vessels near delivery and new dry dock comes on-stream.</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Indigenisation / Policy Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">IMPORT DEPENDENCE</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">DOMESTIC SUBSTITUTION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">INDIGENISATION RAMP</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">EXPORT INFLECTION</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">GLOBAL PLAYER</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">Domestic defence procurement share ~88% FY25. CSL is actively building EXPORT INFLECTION — CMA CGM LNG vessels, European Hybrid SOV, UCSL delivering to European clients. MSRA with US Navy signed. Target: position as the premium regional hub by 2030 (MV2030 document).</div>
+      </div>
+
+      <div style="padding:18px 20px;border:1px dotted var(--bd);margin-bottom:14px;background:var(--card)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px">
+          <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.8px">Geopolitical Premium Cycle</span>
+
+        </div>
+        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">PEACE PREMIUM</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">TENSION BUILDING</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:rgba(234,179,8,.12);border:1px solid var(--yel);color:var(--yel);
+                      text-transform:uppercase;letter-spacing:.5px">ACTIVE CONFLICT SPILLOVER</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">STRUCTURAL REARM</div>
+
+          <div style="flex:1 1 0;min-width:90px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;
+                      background:var(--th);border:1px solid var(--bd);color:var(--dm);
+                      text-transform:uppercase;letter-spacing:.5px">NORMALISATION</div>
+
+        </div>
+        <div style="font-size:15px;color:var(--tx);line-height:1.6">Operation Sindoor (May 2025) + Iran war (Mar 2026) = ACTIVE CONFLICT SPILLOVER, supporting structural naval procurement. The geopolitical overlay sustains political will for defence budget expansion and fast-tracks AoN approvals for naval vessels where CSL is the primary beneficiary.</div>
+      </div>
+
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Forward Thesis — Bull / Base / Bear</div>
+      <div class="scn-grid">
+
+
+
+        <div class="scn-col bull"><h4><span style="display:flex;align-items:center;gap:6px"><span class="dc-dot h"></span>BULL</span> <span class="wt">25%</span></h4>
+          <div class="lbl">IAC-2 + NGSV + P-17 Bravo — the full order pipeline unlocks</div>
+
+          <div class="scn-divider">
+
+            <ul>
+
+              <li>IAC-2 (₹40,000-50,000 Cr) receives final sanction by FY28; order book doubles to ₹60,000+ Cr</li>
+
+              <li>NGSV signed + 18 fast patrol vessels for Coast Guard + MCMV contract all flow through by FY28</li>
+
+              <li>HD KSOE partnership delivers 10-15 commercial vessels/year from FY29; export revenue crosses ₹3,000 Cr</li>
+
+              <li>Bull fair value: 45x FY29E EPS ₹60 = ₹2,700 (3-year target)</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="scn-col base"><h4><span style="display:flex;align-items:center;gap:6px"><span class="dc-dot m"></span>BASE</span> <span class="wt">50%</span></h4>
+          <div class="lbl">Steady execution — order book ramps, new capacity fills gradually</div>
+
+          <div class="scn-divider">
+
+            <ul>
+
+              <li>NGSV contract signed H1 FY27; order book stable at ₹22,000-25,000 Cr through FY28</li>
+
+              <li>Revenue CAGR 15-18% FY27-FY29; PAT CAGR 18-20% as LD normalises and new assets contribute</li>
+
+              <li>Ship repair stabilises at ₹1,800-2,000 Cr as ISRF + Maersk/US Navy contracts fill the IAC gap by FY28</li>
+
+              <li>Base fair value: 35x FY28E EPS ₹40 = ₹1,400 (2-year target)</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="scn-col bear"><h4><span style="display:flex;align-items:center;gap:6px"><span class="dc-dot l"></span>BEAR</span> <span class="wt">25%</span></h4>
+          <div class="lbl">Execution disappointment + valuation derating</div>
+
+          <div class="scn-divider">
+
+            <ul>
+
+              <li>IAC-2 deferred beyond FY30; NGSV faces L1 challenge or contract delay; order book stagnates at ₹20,000 Cr</li>
+
+              <li>LD on Andaman vessels escalates (additional ₹100+ Cr); FY27 PAT also disappoints</li>
+
+              <li>Market rerate to 28-30x FY27E EPS on execution miss; ship repair stays depressed</li>
+
+              <li>Bear fair value: 30x FY27E EPS ₹30 = ₹900 (-40% from CMP)</li>
+
+            </ul>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Scorecards</div>
+      <div class="sc-grid">
+
+        <div class="sc">
+          <div class="sc-hd">
+            <span class="nm">Company Quality</span>
+            <span class="sc-score">7.4<small>/10</small></span>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Revenue predictability (order book visibility) <small>25%</small></span>
+
+            <span class="val g">8</span>
+            <div class="sc-bar"><i class="g" style="width:80%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Margin stability (lumpy, project-mix driven) <small>20%</small></span>
+
+            <span class="val y">5</span>
+            <div class="sc-bar"><i class="y" style="width:50%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Capital efficiency (ROCE 20%) <small>20%</small></span>
+
+            <span class="val g">7</span>
+            <div class="sc-bar"><i class="g" style="width:70%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Competitive moat (only yard for destroyers + subs) <small>20%</small></span>
+
+            <span class="val g">9</span>
+            <div class="sc-bar"><i class="g" style="width:90%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Balance sheet strength (near debt-free) <small>15%</small></span>
+
+            <span class="val g">8</span>
+            <div class="sc-bar"><i class="g" style="width:80%"></i></div>
+          </div>
+
+          <div class="sc-note">Strong moat and balance sheet, but margin volatility (7% to 28% within 4 quarters) and LD/project-execution risk pull the quality score down. Order book visibility is world-class for the segment.</div>
+        </div>
+
+        <div class="sc">
+          <div class="sc-hd">
+            <span class="nm">Management Quality</span>
+            <span class="sc-score">6.3<small>/10</small></span>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Capital allocation (₹2,769 Cr capex on time) <small>30%</small></span>
+
+            <span class="val g">7</span>
+            <div class="sc-bar"><i class="g" style="width:70%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Execution track record (LDs, Andaman delays) <small>25%</small></span>
+
+            <span class="val y">6</span>
+            <div class="sc-bar"><i class="y" style="width:60%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Communication clarity (hedged on IAC-2, LD) <small>15%</small></span>
+
+            <span class="val y">6</span>
+            <div class="sc-bar"><i class="y" style="width:60%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Promoter skin-in-game (GoI PSU, 73% stake) <small>15%</small></span>
+
+            <span class="val g">7</span>
+            <div class="sc-bar"><i class="g" style="width:70%"></i></div>
+          </div>
+
+          <div class="sc-row">
+            <span class="lab">Governance (audit committee concern flagged) <small>15%</small></span>
+
+            <span class="val y">5</span>
+            <div class="sc-bar"><i class="y" style="width:50%"></i></div>
+          </div>
+
+          <div class="sc-note">Management completed the ₹2,769 Cr capex cycle on schedule — a genuine execution credit. However, the Andaman LD situation and the governance flag (insufficient independent directors) are concern points.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ═══════════ TAB: FINANCIALS + VALUATION (merged) ═══════════ -->
+  <div id="tab-financials" class="tab-body">
+
+    <!-- Pulse strip — mini bar charts -->
+    <div class="section">
+      <div class="sh2">Pulse — Last 4 Quarters</div>
+      <div class="pulse-strip">
+        <div class="pulse-label">PULSE<br><span style="font-size:9px;color:var(--dm)">LAST 4Q</span></div>
+        <div class="pulse-cell" id="pulse-rev">
+          <div class="pm-label">Revenue YoY</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-pat">
+          <div class="pm-label">PAT YoY</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-opm">
+          <div class="pm-label">OPM %</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-roce">
+          <div class="pm-label">ROCE %</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+        <div class="pulse-cell" id="pulse-pe">
+          <div class="pm-label">PE (6Q)</div>
+          <div class="pm-bars"></div>
+          <div class="pm-vals"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valuation section -->
+
+    <div class="section">
+      <div class="sh2">Valuation Summary</div>
+      <div class="val-tbl">
+
+
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Quarterly Snapshot</div>
+      <table class="tbl">
+        <thead><tr><th>Quarter</th><th class="num">Q2FY26</th><th class="num">Q3FY26</th><th class="num">Q4FY26</th><th class="num">Q1FY27</th></tr></thead>
+        <tbody>
+
+          <tr><td>Sales (₹ Cr)</td><td class="num">1,119</td><td class="num">1,350</td><td class="num">1,484</td><td class="num">1,094</td></tr>
+
+          <tr><td>Sales YoY</td><td class="num">-2.1%</td><td class="num">17.6%</td><td class="num">-15.6%</td><td class="num">2.3%</td></tr>
+
+          <tr><td>PAT (₹ Cr)</td><td class="num">108</td><td class="num">145</td><td class="num">276</td><td class="num">151</td></tr>
+
+          <tr><td>PAT YoY</td><td class="num">-42.9%</td><td class="num">-18.1%</td><td class="num">-3.8%</td><td class="num">-19.7%</td></tr>
+
+          <tr><td>OPM</td><td class="num">7.0%</td><td class="num">14.0%</td><td class="num">21.0%</td><td class="num">18.0%</td></tr>
+
+          <tr><td>EPS (₹)</td><td class="num">4.09</td><td class="num">5.50</td><td class="num">10.51</td><td class="num">5.76</td></tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- Peer comparison (was its own tab, now under Financials) -->
+
+    <div class="section">
+      <div class="sh2">Peer Comparison</div>
+      <table class="tbl">
+        <thead><tr><th class="">Company</th><th class="num">Mkt Cap</th><th class="num">PE</th><th class="num">ROCE</th><th class="num">OPM FY26</th><th class="num">Revenue (FY26E)</th><th class="num">Order Book</th></tr></thead>
+        <tbody>
+
+          <tr class="self"><td class="">Cochin Shipyard (CSL)</td><td class="num">₹39,671 Cr</td><td class="num">55× FY26E</td><td class="num">20%</td><td class="num">~17-18%</td><td class="num">₹5,022 Cr</td><td class="num">₹21,100 Cr</td></tr>
+
+          <tr class=""><td class="">Mazagon Dock (MDL)</td><td class="num">₹1,03,552 Cr</td><td class="num">40×</td><td class="num">36%</td><td class="num">~12-15%</td><td class="num">~₹10,000 Cr</td><td class="num">₹37,000 Cr+</td></tr>
+
+          <tr class=""><td class="">Garden Reach (GRSE)</td><td class="num">₹20,000 Cr</td><td class="num">~38×</td><td class="num">~22%</td><td class="num">~8-10%</td><td class="num">~₹3,500 Cr</td><td class="num">~₹15,000 Cr</td></tr>
+
+          <tr class=""><td class="">HAL</td><td class="num">₹2,80,000 Cr</td><td class="num">~30×</td><td class="num">~24%</td><td class="num">~26-28%</td><td class="num">~₹32,000 Cr</td><td class="num">₹2,54,000 Cr</td></tr>
+
+          <tr class=""><td class="">BEL</td><td class="num">₹1,50,000 Cr</td><td class="num">~42×</td><td class="num">~30%</td><td class="num">~22-26%</td><td class="num">~₹20,000 Cr</td><td class="num">₹74,859 Cr</td></tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+  <!-- ═══════════ TAB: INDUSTRY ═══════════ -->
+  <div id="tab-industry" class="tab-body">
+
+
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>Quarter Snapshot — Operating KPIs</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;text-transform:none;letter-spacing:0">
+          From Q1 FY27 business update concall (2026-09-10)
+        </span>
+      </div>
+      <div class="cc-isnap">
+
+
+        <div class="kpi"
+             >
+          <div class="km">Unexecuted order book</div>
+          <div class="kv">~₹22,000 Cr</div>
+
+          <div class="kd ">Management said NGSV L1 ~₹5,000 Cr would lift it to ~₹27,000 Cr after signing</div>
+
+
+          <div class="kn">NGSV was not yet a contracted order as of the 10-Sep call.</div>
+        </div>
+
+
+        <div class="kpi"
+             >
+          <div class="km">FY27 vessel deliveries</div>
+          <div class="kv">~10 targeted</div>
+
+          <div class="kd ">3 delivered by call date</div>
+
+
+          <div class="kn">Includes a mix of defence, export and domestic commercial vessels.</div>
+        </div>
+
+
+        <div class="kpi"
+             >
+          <div class="km">ISRF capacity</div>
+          <div class="kv">Up to 82 ships/year</div>
+
+          <div class="kd ">10 additional workstations planned under proposed JV</div>
+
+
+          <div class="kn">Facility specifications and expansion subject to transaction approvals.</div>
+        </div>
+
+
+        <div class="kpi"
+             >
+          <div class="km">Blended EBITDA margin guide</div>
+          <div class="kv">~14%</div>
+
+          <div class="kd ">Management conservative guide</div>
+
+
+          <div class="kn">Separate from reported EBITDA margin of ~24% in Q1 FY27.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="industry-card">
+      <div class="ih">Defence shipbuilding and policy</div>
+      <div class="ib">The defence shipyard archetype is driven by long-duration platform procurement, milestone-based execution and public-sector contracting. For CSL, the order book is diversified across defence, commercial exports and repair; order announcements should be distinguished from contracted backlog.</div>
+    </div>
+
+    <div class="industry-card">
+      <div class="ih">Macro Environment (September 2026)</div>
+      <div class="ib">India defence capex and indigenisation support the long-cycle opportunity, but public procurement timing and back-ended shipbuilding receipts make reported growth lumpy. For CSL, rates and project-finance availability matter to Tuticorin/Vadinar expansion; oil, steel and imported equipment can affect project costs.</div>
+    </div>
+
+    <div class="industry-card">
+      <div class="ih">Company-specific operating context</div>
+      <div class="ib">The Q1 FY27 call described a proposed ISRF JV with Drydocks World and independent smaller-scale block fabrication after HD KSOE JV terms were not agreed. FY27 progress should be judged against approvals, ship delivery milestones, operating cash flow and the ~14% blended EBITDA-margin guide.</div>
+    </div>
+
+
+
+
+
+  </div>
+
+  <!-- ═══════════ TAB: CONCALL (v2) ═══════════ -->
+  <div id="tab-concall" class="tab-body">
+
+
+
+    <div class="cc-head">
+
+      <div class="cell">
+        <div class="lbl">Revenue</div>
+        <div class="val">₹1,094 Cr</div>
+
+        <div class="delta pos">
+          +2.3% YoY</div>
+
+      </div>
+      <div class="cell">
+        <div class="lbl">EBITDA</div>
+        <div class="val">₹197 Cr</div>
+
+        <div class="delta neg">
+          -19.9% YoY</div>
+
+      </div>
+      <div class="cell">
+        <div class="lbl">PAT</div>
+        <div class="val">₹151 Cr</div>
+
+        <div class="delta neg">
+          -19.7% YoY</div>
+
+      </div>
+      <div class="cell">
+        <div class="lbl">OPM</div>
+        <div class="val">18.0%</div>
+
+        <div class="delta neg">
+          -500 bps YoY</div>
+
+      </div>
+      <div class="meta">
+        <span><b>Q1 FY27 business update</b> concall (2026-09-10)</span>
+        <span>· 62 min call</span>
+        <span>· source: nse_local</span>
+        <span class="cc-sent neutral">NEUTRAL</span>
+        <span class="cc-conf">LOW CONF</span>
+
+        <span class="cc-verif verified" title="Issuer call reports turnover ₹1,094.21 Cr, PBT ₹202.49 Cr, PAT ₹151.45 Cr; local consolidated parquet rounds sales to ₹1,094 Cr and PAT to ₹151 Cr. EBITDA margin disclosed by management (~24%) is not the parquet operating-profit margin proxy (~18%); keep measures distinct.">
+          ✓ FILING-VERIFIED
+
+        </span>
+
+      </div>
+    </div>
+
+    <div style="font-size:12px;color:var(--mt);font-style:italic;margin:-6px 0 14px 0;line-height:1.5">
+      <b style="font-style:normal;color:var(--dm)">Sentiment basis:</b> Revenue increased modestly and order visibility remains substantial, while PBT/PAT declined, blended margin guidance is ~14%, and no comparable immediately prior quarterly transcript was available locally.
+    </div>
+
+
+
+
+
+    <div class="cc-tension">Can vessel deliveries and ship-repair expansion lift cash conversion and sustain margins near management’s ~14% blended guide while CSL funds several new facilities?</div>
+
+
+
+
+
+    <div class="section">
+      <div class="sh2">Two-Minute Summary</div>
+      <div class="cc-2min">
+        <div class="b"><div class="blbl">RESULT</div><div class="btxt">Q1 turnover rose modestly to ₹1,094 Cr; PBT and PAT declined YoY, while management cited ~24% EBITDA margin.</div></div>
+        <div class="b"><div class="blbl">DRIVER</div><div class="btxt">Three vessels were delivered by CSL and three by subsidiary Udupi; shipbuilding execution and ship-repair utilization remain key drivers.</div></div>
+        <div class="b"><div class="blbl">FORWARD</div><div class="btxt">Management conservatively guides ~12% annual revenue growth and ~14% blended EBITDA margin; ~10 FY27 vessel deliveries are targeted.</div></div>
+        <div class="b"><div class="blbl">RISK</div><div class="btxt">Export vessel milestone billing delays cash receipts; expansion spend and ISRF transfer remain subject to approvals and execution.</div></div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>What Changed vs Last Call</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;text-transform:none;letter-spacing:0">
+          Comparing Q1 FY27 business update vs No immediately preceding quarterly transcript available in local transcript index; last local transcript was Q1 FY26 (26-Aug-2025). Therefore the quarter-to-quarter change buckets are limited to explicit new/discontinued updates and are not a complete Q4-to-Q1 diff.</span>
+      </div>
+      <div class="cc-wc">
+        <div class="col ng">
+          <h5>+ New Guidance <span class="cnt">4</span></h5>
+
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev high">high</span>
+                Annual revenue growth guide ~12% conservatively</div>
+              <div class="det">Management said growth could be 12–15%, while retaining ~12% as conservative guide.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev high">high</span>
+                Blended EBITDA margin ~14%</div>
+              <div class="det">Management called this a conservative blended margin expectation.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev high">high</span>
+                ~10 vessel deliveries in FY27 and positive cash flow</div>
+              <div class="det">Three vessels had already been delivered by the call; remaining milestone receipts are expected to improve cash conversion.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev medium">medium</span>
+                NGSV signing expected around November 2026</div>
+              <div class="det">₹5,000 Cr L1 opportunity; not an order until contract execution.</div>
+            </div>
+
+
+        </div>
+        <div class="col dg">
+          <h5>− Dropped Guidance <span class="cnt">0</span></h5>
+          <div class="empty">No prior guidance was dropped.</div>
+        </div>
+        <div class="col nr">
+          <h5>⚠ New Risks <span class="cnt">3</span></h5>
+
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev high">high</span>
+                Drydocks World ISRF JV approvals and transfer</div>
+              <div class="det">₹1,800 Cr proposed transaction requires ministry, DIPAM and shareholder approvals; target FY27 close.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev medium">medium</span>
+                HD KSOE block-fabrication JV did not progress</div>
+              <div class="det">CSL said definitive terms were not agreed and it would build independently at smaller scale.</div>
+            </div>
+
+            <div class="item">
+              <div class="ttl">
+                <span class="sev high">high</span>
+                Export milestone cash collection is back-ended</div>
+              <div class="det">Management described roughly 70% collection on vessel delivery, making delivery timing important for cash flow.</div>
+            </div>
+
+
+        </div>
+        <div class="col rr">
+          <h5>✓ Resolved Risks <span class="cnt">0</span></h5>
+          <div class="empty">No prior risks marked resolved.</div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>Promise Ledger</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;text-transform:none;letter-spacing:0">
+          Looking back up to 6 quarters</span>
+      </div>
+      <div class="cc-ledger">
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">~12% conservative annual revenue growth</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q1 FY27 call</b></span>
+
+              <span>Window: <b style="color:var(--mt)">ongoing annual guide</b></span>
+
+            </div>
+            <div class="pl-ev">Future periods have not yet tested the guide.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">FY27 operating cash flow turns positive</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q1 FY27 call</b></span>
+
+              <span>Window: <b style="color:var(--mt)">FY27</b></span>
+
+            </div>
+            <div class="pl-ev">Management linked conversion to delivery of export vessels; year-end outcome not yet available.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+        <div class="pl">
+          <div>
+            <div class="pl-top">NGSV contract signing around November 2026</div>
+            <div class="pl-meta"><span>First made: <b style="color:var(--mt)">Q1 FY27 call</b></span>
+
+              <span>Window: <b style="color:var(--mt)">Q3 FY27</b></span>
+
+            </div>
+            <div class="pl-ev">L1 status only as of the call; contract remains unsigned.</div>
+          </div>
+          <div style="text-align:right">
+            <span class="promise-pill pending">PENDING</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="section">
+      <div class="sh2">Bear Case Tracker</div>
+      <div class="cc-bear">
+
+        <div class="bc alive">
+          <span class="stat">ALIVE</span>
+
+          <div class="th">Project-mix and delivery timing cause volatile margins and delayed cash conversion.</div>
+          <div class="meta">First flagged: <b style="color:var(--mt)">FY26 disclosures</b></div>
+          <div class="ev">Q1 FY27 PAT declined YoY; management described 70% export contract payment at delivery and linked positive cash-flow guide to vessel completions.</div>
+        </div>
+
+        <div class="bc alive">
+          <span class="stat">ALIVE</span>
+          <span class="chg">· STATUS CHANGED THIS Q</span>
+          <div class="th">Large capacity plans create capital and approval risk before utilization is proven.</div>
+          <div class="meta">First flagged: <b style="color:var(--mt)">FY26 disclosures</b></div>
+          <div class="ev">Tuticorin lease awarded and Vadinar/ISRF/greenfield plans advanced, but ISRF approvals remain outstanding and HD KSOE block-fabrication JV was not agreed.</div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="section">
+      <div class="sh2">Key Management Quotes</div>
+
+      <div class="concall-quote">
+        <div class="cq-text">"Normally, we guide around 12% every year to the investors. So, we are still sticking on to that, because normally we guide around 12%, but finally, we may end up between something around 12% to 15% every year."</div>
+        <div class="cq-src">— Jose V J (Chairman and Managing Director), Q1 FY27 business update</div>
+      </div>
+
+      <div class="concall-quote">
+        <div class="cq-text">"FY27, the cash flow will be positive."</div>
+        <div class="cq-src">— Jose V J (Chairman and Managing Director), Q1 FY27 business update</div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="section">
+      <div class="sh2">Post-Call Reaction</div>
+      <div class="cc-react">
+        <div class="rh">
+          <div class="cell">
+            <div class="lbl">T+1 Return</div>
+
+            <div class="v neg">
+              -9.17%</div>
+
+          </div>
+          <div class="cell">
+            <div class="lbl">T+5 Return</div>
+
+            <div class="v neg">
+              -8.05%</div>
+
+          </div>
+          <div class="cell">
+            <div class="lbl">vs Nifty 500 (1d)</div>
+
+            <div class="v neg">
+              -8.79%</div>
+
+          </div>
+          <div class="cell">
+            <div class="lbl">Expected (from sentiment)</div>
+            <div class="v flat">FLAT</div>
+          </div>
+        </div>
+
+        <div class="match">
+          <span class="tag no">
+            PRICE DIVERGED FROM SENTIMENT</span>
+          Not computed in this overlay; call date is known, but reaction/headline check remains for root QA.
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <div class="cc-preview">
+
+      <div class="card g">
+        <div class="lbl">★ Top Guidance</div>
+        <div class="body">Conservative ~12% annual revenue growth, ~14% blended EBITDA margin; ~10 vessels targeted for FY27.</div>
+      </div>
+
+
+      <div class="card r">
+        <div class="lbl">⚠ Top Risk</div>
+        <div class="body">Cash conversion and capex execution depend on vessel delivery timing and pending approvals.</div>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="section">
+      <div class="sh2">Said vs Delivered (4Q)</div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">Revenue</span>
+        <span class="promise-pill miss">MISS</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+          <span style="color:var(--dm);font-size:13px;display:block">Guided: FY25 guidance: 20-25% growth on FY24 ₹3,830 Cr → ₹4,596-4,788 Cr</span>
+          <span style="color:var(--tx);display:block">Delivered: FY25 actual ₹4,820 Cr — just beat top of range. FY26 only +4.2%.</span>
+
+
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">EBITDA Margin</span>
+        <span class="promise-pill miss">MISS</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+          <span style="color:var(--dm);font-size:13px;display:block">Guided: FY26 guided ~20% EBITDA</span>
+          <span style="color:var(--tx);display:block">Delivered: FY26 estimated ~17-18%; Q2-Q3 FY26 saw 7% and 14% quarters</span>
+
+
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">PAT</span>
+        <span class="promise-pill miss">MISS</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+          <span style="color:var(--dm);font-size:13px;display:block">Guided: FY26 PAT expected to grow on FY25 ₹827 Cr base</span>
+          <span style="color:var(--tx);display:block">Delivered: FY26 PAT ₹717 Cr (-13.5%); dragged by ₹216 Cr LDs and higher depreciation</span>
+
+
+        </div>
+      </div>
+
+      <div style="padding:14px 16px;background:var(--card);border:1px dotted var(--bd);margin-bottom:8px;
+                  display:grid;grid-template-columns:200px 60px 1fr;gap:14px;align-items:start">
+        <span style="font-size:15px;font-weight:700;color:var(--tx)">Capacity Commissioning</span>
+        <span class="promise-pill beat">BEAT</span>
+        <div style="font-size:14px;color:var(--mt);line-height:1.55">
+
+          <span style="color:var(--dm);font-size:13px;display:block">Guided: New dry dock operational by Aug 2024 (guided Q4 FY24 call)</span>
+          <span style="color:var(--tx);display:block">Delivered: New dry dock + ISRF both operational as of Q1 FY26 — capex cycle complete</span>
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  <!-- ═══════════ TAB: RISKS & GATES ═══════════ -->
+  <div id="tab-risks" class="tab-body">
+
+
+    <div class="section">
+      <div class="sh2">Top Risks</div>
+      <div class="risk-cards">
+
+        <div class="risk-card HIGH">
+          <div class="risk-sev">HIGH</div>
+          <div class="ttl">Earnings derating — FY26 is year 1 of multi-year earnings disappointment</div>
+          <div class="det">FY26 PAT ₹717 Cr (-13.5%) vs FY25 ₹827 Cr. Structural headwinds: depreciation rising to ₹140+ Cr FY27, finance costs up (₹92 Cr FY26 from near-zero), LD drag. Even a 20% PAT recovery gets to only ₹860 Cr FY27E — barely above FY25 levels, yet the stock trades at 55x FY26 EPS.</div>
+          <div class="monitor">Monitor: Q4 FY26 concall for FY27 guidance; Q1 FY27 PAT vs consensus</div>
+        </div>
+
+        <div class="risk-card HIGH">
+          <div class="risk-sev">HIGH</div>
+          <div class="ttl">Liquidated damages escalation — Andaman passenger vessels still undelivered</div>
+          <div class="det">₹216 Cr already provisioned (₹118 Cr + ₹98 Cr). Q4 FY26 filing says 'no additional provisions made beyond earlier recognition' — but the contractual risk is open until delivery. Any further delay could trigger another LD tranche.</div>
+          <div class="monitor">Monitor: Delivery confirmation of both Andaman vessels; any further LD disclosures</div>
+        </div>
+
+        <div class="risk-card MEDIUM">
+          <div class="risk-sev">MEDIUM</div>
+          <div class="ttl">Ship repair revenue structural gap — no aircraft carrier repair in FY26-27</div>
+          <div class="det">Ship repair fell to ₹1,656 Cr in FY26 from ₹1,865 Cr FY25. The IAC repair cycle (FY23-25) was a non-recurring revenue booster. Vikrant and Vikramaditya are now on operational schedules. ISRF + commercial partnerships (Maersk, Drydocks World) need 2-3 years to replace this revenue, leaving a near-term structural gap.</div>
+          <div class="monitor">Monitor: Ship repair revenue vs ₹1,800 Cr target; first ISRF commercial vessel confirmation</div>
+        </div>
+
+        <div class="risk-card MEDIUM">
+          <div class="risk-sev">MEDIUM</div>
+          <div class="ttl">Valuation — stock prices in zero execution risk at 55x FY26 EPS</div>
+          <div class="det">At CMP ₹1,509 and FY26 EPS ₹27.3, PE = 55x. Even at FY28E EPS ₹40 × 35x PE = ₹1,400, there is 8% downside. For the stock to generate 20%+ returns from here, EPS needs to reach ₹43+ by FY28 (60% growth from FY26) — achievable but requires flawless execution.</div>
+          <div class="monitor">Monitor: PE vs archetype range 30-45x; FY27E EPS consensus direction</div>
+        </div>
+
+        <div class="risk-card MEDIUM">
+          <div class="risk-sev">MEDIUM</div>
+          <div class="ttl">IAC-2 indefinitely deferred — mega-catalyst is a call option, not a certainty</div>
+          <div class="det">Management cannot provide ANY timeline on IAC-2. The second aircraft carrier is the single largest order that could reset CSL's growth trajectory. Without it, order book peaks at ₹25,000 Cr and revenue CAGR stays at 15-18% — adequate but not transformative.</div>
+          <div class="monitor">Monitor: GoI defence budget; Cabinet Committee on Security (CCS) approval signals; any AoN notification</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Catalyst grid with quarterly state pills -->
+
+    <div class="section">
+      <div class="sh2" style="display:flex;justify-content:space-between;align-items:baseline">
+        <span>Active Fundamental Catalysts</span>
+        <span style="font-size:11px;color:var(--mt);font-weight:400;letter-spacing:0;text-transform:none">
+          8 of the 16-catalyst framework are live for this name — status across the 4 quarters</span>
+      </div>
+      <div class="cat-grid-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+      <table class="cat-grid">
+        <thead>
+          <tr>
+            <th style="width:30px">#</th>
+            <th>Catalyst</th>
+
+            <th class="qcol">Q2FY26</th>
+
+            <th class="qcol">Q3FY26</th>
+
+            <th class="qcol">Q4FY26</th>
+
+            <th class="qcol">Q1FY27</th>
+
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="cat-id">1</td>
+            <td class="cat-nm">NGSV contract signing — L1 status, ₹5,000 Cr, 5 Navy survey vessels<span class="star">★</span></td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="cat-imp">HIGH · Contract signing would add ~₹5,000 Cr to order book (>20% increase); provides FY27-FY30 revenue visibility and validates CSL's competitive bid position for follow-on programmes.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">2</td>
+            <td class="cat-nm">New 310m dry dock ramp — commercial and export orders<span class="star">★</span></td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="cat-imp">HIGH · New capacity can accommodate vessels that CSL could not previously build; key to HD KSOE merchant shipbuilding MoU and export order pipeline (₹4,200 Cr currently).</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">3</td>
+            <td class="cat-nm">AoN pipeline conversion — P-17 Bravo, LPD, MCMV programmes</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="cat-imp">HIGH · P-17 Bravo frigates (programme value ~₹50,000 Cr+), LPD, Mine Countermeasure Vessels are at RFI stage. CSL is the natural prime for all. Any AoN approval triggers tender issuance.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">4</td>
+            <td class="cat-nm">IAC-2 (second aircraft carrier) — mega-catalyst, no timeline</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill dot">·</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill dot">·</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill dot">·</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill dot">·</span>
+            </td>
+
+            <td class="cat-imp">VERY HIGH · IAC-2 is estimated at ₹40,000-50,000 Cr+ and would single-handedly double order book. Political will confirmed; GoI budget and final sanction are the constraints.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">5</td>
+            <td class="cat-nm">ISRF commercial ramp — Maersk, Drydocks World UAE partnership</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bld">BLD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="cat-imp">MEDIUM · ISRF positions CSL as regional ship repair hub. Maersk MoU, MSRA with US Navy, and Drydocks World UAE partnership to drive international commercial traffic over 2-3 years.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">6</td>
+            <td class="cat-nm">Operation Sindoor — accelerated naval procurement policy signal</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="cat-imp">MEDIUM · Military confrontation validates urgency of naval expansion. Fast-track clearances for vessels under bid; political backing for AoN approvals strengthened.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">7</td>
+            <td class="cat-nm">Liquidated damages resolution — Andaman passenger vessels</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill fad">FAD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill fad">FAD</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="cat-imp">MEDIUM · ₹216 Cr already provisioned. If project delivered without further LDs, FY27 PAT receives meaningful tailwind. If LDs escalate, additional hits possible.</td>
+          </tr>
+
+          <tr>
+            <td class="cat-id">8</td>
+            <td class="cat-nm">CMA CGM LNG feeder vessels — 6 ships, export shipbuilding entry</td>
+
+            <td class="qcol">
+
+              <span class="cat-pill bldup">BLD↑</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="qcol">
+
+              <span class="cat-pill act">ACT</span>
+            </td>
+
+            <td class="cat-imp">MEDIUM · First LNG-fuelled commercial contract signals green shipbuilding capability; positions CSL for European green transition ordering. Revenue contribution FY27-FY29.</td>
+          </tr>
+
+        </tbody>
+      </table>
+      </div>
+      <div class="cat-footer">
+        ★ = thesis driver. ACT = active · BLD = building · BLD↑ = strengthening · FAD = fading · · = not yet.
+      </div>
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">Falsification Gates</div>
+
+      <div class="gate drop">
+        <div class="gtxt">NGSV contract NOT signed by Q2 FY27 despite L1 status — signals systemic procurement delay <b style="color:var(--red)">[THESIS KILLER]</b></div>
+        <div class="gdeadline">By Sep 2026</div>
+      </div>
+
+      <div class="gate drop">
+        <div class="gtxt">FY27 revenue growth <10% despite new dry dock and order book — execution thesis breaks <b style="color:var(--red)">[THESIS KILLER]</b></div>
+        <div class="gdeadline">By Q4 FY27 (May 2027)</div>
+      </div>
+
+      <div class="gate ">
+        <div class="gtxt">Ship repair revenue fails to recover to ₹2,000 Cr by FY28 — ISRF ramp thesis invalidated</div>
+        <div class="gdeadline">By Mar 2028</div>
+      </div>
+
+      <div class="gate ">
+        <div class="gtxt">Liquidated damages escalate beyond ₹300 Cr total (additional ₹84 Cr+ from already ₹216 Cr provisioned)</div>
+        <div class="gdeadline">FY27 annual results</div>
+      </div>
+
+      <div class="gate drop">
+        <div class="gtxt">Order book drops below ₹18,000 Cr without replacement inflows — book-to-bill <1x <b style="color:var(--red)">[THESIS KILLER]</b></div>
+        <div class="gdeadline">By Q2 FY27</div>
+      </div>
+
+    </div>
+
+
+
+    <div class="section">
+      <div class="sh2">What Changed Since First deepdive (May 19, 2026)</div>
+
+
+      <div style="padding:10px 16px;border:1px dotted var(--bd);margin-bottom:6px;
+                  font-size:14px;line-height:1.55;color:var(--mt);
+                  background:rgba(249,66,58,.04)">
+        Q4 FY26 results released May 15: revenue -15.6% YoY, PAT -3.7% YoY, full year PAT -13.5%
+      </div>
+
+      <div style="padding:10px 16px;border:1px dotted var(--bd);margin-bottom:6px;
+                  font-size:14px;line-height:1.55;color:var(--mt);
+                  background:rgba(249,66,58,.04)">
+        ₹216 Cr liquidated damages on two Andaman passenger vessels now public
+      </div>
+
+      <div style="padding:10px 16px;border:1px dotted var(--bd);margin-bottom:6px;
+                  font-size:14px;line-height:1.55;color:var(--mt);
+                  background:rgba(34,197,94,.04)">
+        CMA CGM LNG feeder contract (6 ships) signed Feb 2026 — green export shipbuilding entry
+      </div>
+
+      <div style="padding:10px 16px;border:1px dotted var(--bd);margin-bottom:6px;
+                  font-size:14px;line-height:1.55;color:var(--mt);
+                  background:rgba(34,197,94,.04)">
+        L1 status secured for ₹5,000 Cr NGSV order (5 Navy survey vessels)
+      </div>
+
+      <div style="padding:10px 16px;border:1px dotted var(--bd);margin-bottom:6px;
+                  font-size:14px;line-height:1.55;color:var(--mt);
+                  background:rgba(34,197,94,.04)">
+        EBITDA margin Q4 FY26 recovered to 20.87% (+575 bps YoY) despite revenue decline
+      </div>
+
+      <div style="padding:10px 16px;border:1px dotted var(--bd);margin-bottom:6px;
+                  font-size:14px;line-height:1.55;color:var(--mt);
+                  background:rgba(234,179,8,.04)">
+        Audit committee governance concern flagged in Q4 FY26 results: insufficient independent directors
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+<footer>
+  <span>Company Deepdive · COCHINSHIP</span>
+  <span>Public financial data. As of 2026-09-26.</span>
+</footer>
+
+<script>
+const D = {"ohlcv_6m": [{"time": "2026-03-25", "open": 1328.0, "high": 1352.4, "low": 1310.0, "close": 1317.4}, {"time": "2026-03-27", "open": 1305.1, "high": 1312.0, "low": 1253.0, "close": 1256.8}, {"time": "2026-03-30", "open": 1243.9, "high": 1284.6, "low": 1187.0, "close": 1193.1}, {"time": "2026-04-01", "open": 1244.9, "high": 1372.0, "low": 1228.1, "close": 1338.6}, {"time": "2026-04-02", "open": 1300.0, "high": 1320.0, "low": 1266.8, "close": 1314.5}, {"time": "2026-04-06", "open": 1310.0, "high": 1343.7, "low": 1275.1, "close": 1333.9}, {"time": "2026-04-07", "open": 1333.9, "high": 1363.8, "low": 1322.3, "close": 1348.0}, {"time": "2026-04-08", "open": 1420.0, "high": 1425.0, "low": 1374.2, "close": 1379.8}, {"time": "2026-04-09", "open": 1380.0, "high": 1449.0, "low": 1372.5, "close": 1423.9}, {"time": "2026-04-10", "open": 1436.0, "high": 1502.2, "low": 1435.0, "close": 1464.6}, {"time": "2026-04-13", "open": 1417.1, "high": 1447.8, "low": 1394.2, "close": 1435.0}, {"time": "2026-04-15", "open": 1465.0, "high": 1491.0, "low": 1459.2, "close": 1479.2}, {"time": "2026-04-16", "open": 1492.0, "high": 1511.8, "low": 1464.0, "close": 1498.1}, {"time": "2026-04-17", "open": 1500.0, "high": 1569.5, "low": 1498.1, "close": 1561.1}, {"time": "2026-04-20", "open": 1568.0, "high": 1582.9, "low": 1538.0, "close": 1544.9}, {"time": "2026-04-21", "open": 1540.4, "high": 1584.8, "low": 1531.2, "close": 1556.9}, {"time": "2026-04-22", "open": 1556.9, "high": 1588.0, "low": 1542.9, "close": 1583.1}, {"time": "2026-04-23", "open": 1580.0, "high": 1612.5, "low": 1571.8, "close": 1592.8}, {"time": "2026-04-24", "open": 1595.0, "high": 1710.0, "low": 1592.8, "close": 1664.7}, {"time": "2026-04-27", "open": 1677.1, "high": 1716.5, "low": 1647.2, "close": 1679.3}, {"time": "2026-04-28", "open": 1682.0, "high": 1709.9, "low": 1675.2, "close": 1695.6}, {"time": "2026-04-29", "open": 1714.0, "high": 1780.0, "low": 1714.0, "close": 1773.8}, {"time": "2026-04-30", "open": 1773.8, "high": 1776.9, "low": 1710.6, "close": 1733.4}, {"time": "2026-05-01", "open": 1733.4, "high": 1733.4, "low": 1733.4, "close": 1733.4}, {"time": "2026-05-04", "open": 1742.0, "high": 1753.8, "low": 1677.3, "close": 1719.3}, {"time": "2026-05-05", "open": 1710.9, "high": 1733.8, "low": 1693.8, "close": 1712.2}, {"time": "2026-05-06", "open": 1725.0, "high": 1765.8, "low": 1721.9, "close": 1753.1}, {"time": "2026-05-07", "open": 1760.0, "high": 1823.9, "low": 1746.0, "close": 1814.7}, {"time": "2026-05-08", "open": 1830.0, "high": 1842.8, "low": 1767.9, "close": 1776.7}, {"time": "2026-05-11", "open": 1760.0, "high": 1764.5, "low": 1712.0, "close": 1716.5}, {"time": "2026-05-12", "open": 1715.0, "high": 1718.1, "low": 1607.6, "close": 1616.1}, {"time": "2026-05-13", "open": 1619.9, "high": 1668.9, "low": 1616.2, "close": 1653.1}, {"time": "2026-05-14", "open": 1662.9, "high": 1671.9, "low": 1600.1, "close": 1645.2}, {"time": "2026-05-15", "open": 1645.1, "high": 1649.0, "low": 1590.0, "close": 1594.5}, {"time": "2026-05-18", "open": 1549.0, "high": 1549.0, "low": 1475.0, "close": 1513.5}, {"time": "2026-05-19", "open": 1516.0, "high": 1531.0, "low": 1484.1, "close": 1489.6}, {"time": "2026-05-20", "open": 1486.1, "high": 1514.0, "low": 1463.1, "close": 1507.8}, {"time": "2026-05-21", "open": 1526.2, "high": 1552.9, "low": 1523.0, "close": 1531.0}, {"time": "2026-05-22", "open": 1535.0, "high": 1548.2, "low": 1526.5, "close": 1532.1}, {"time": "2026-05-25", "open": 1539.7, "high": 1557.0, "low": 1523.9, "close": 1529.0}, {"time": "2026-05-26", "open": 1524.9, "high": 1556.0, "low": 1510.0, "close": 1526.2}, {"time": "2026-05-27", "open": 1527.0, "high": 1553.1, "low": 1512.1, "close": 1523.9}, {"time": "2026-05-28", "open": 1523.9, "high": 1523.9, "low": 1523.9, "close": 1523.9}, {"time": "2026-05-29", "open": 1524.5, "high": 1530.6, "low": 1455.5, "close": 1467.4}, {"time": "2026-06-01", "open": 1470.0, "high": 1485.0, "low": 1424.1, "close": 1429.4}, {"time": "2026-06-02", "open": 1425.0, "high": 1476.2, "low": 1409.0, "close": 1467.7}, {"time": "2026-06-03", "open": 1467.7, "high": 1469.6, "low": 1430.8, "close": 1455.7}, {"time": "2026-06-04", "open": 1449.0, "high": 1485.4, "low": 1445.1, "close": 1472.4}, {"time": "2026-06-05", "open": 1474.2, "high": 1482.8, "low": 1432.2, "close": 1439.1}, {"time": "2026-06-08", "open": 1425.0, "high": 1431.0, "low": 1400.0, "close": 1407.1}, {"time": "2026-06-09", "open": 1410.0, "high": 1446.1, "low": 1407.2, "close": 1441.2}, {"time": "2026-06-10", "open": 1439.9, "high": 1449.1, "low": 1400.0, "close": 1404.2}, {"time": "2026-06-11", "open": 1400.0, "high": 1400.0, "low": 1368.1, "close": 1387.8}, {"time": "2026-06-12", "open": 1405.1, "high": 1428.0, "low": 1395.5, "close": 1424.3}, {"time": "2026-06-15", "open": 1450.0, "high": 1462.0, "low": 1405.5, "close": 1411.8}, {"time": "2026-06-16", "open": 1414.9, "high": 1436.4, "low": 1411.9, "close": 1431.6}, {"time": "2026-06-17", "open": 1432.8, "high": 1515.0, "low": 1432.1, "close": 1500.2}, {"time": "2026-06-18", "open": 1511.1, "high": 1523.6, "low": 1444.4, "close": 1469.6}, {"time": "2026-06-19", "open": 1463.0, "high": 1483.0, "low": 1454.9, "close": 1458.0}, {"time": "2026-06-22", "open": 1465.5, "high": 1485.6, "low": 1418.0, "close": 1476.4}, {"time": "2026-06-23", "open": 1477.8, "high": 1495.6, "low": 1466.6, "close": 1483.6}, {"time": "2026-06-24", "open": 1475.0, "high": 1493.8, "low": 1456.4, "close": 1487.1}, {"time": "2026-06-25", "open": 1488.0, "high": 1496.0, "low": 1451.1, "close": 1458.4}, {"time": "2026-06-26", "open": 1458.4, "high": 1458.4, "low": 1458.4, "close": 1458.4}, {"time": "2026-06-29", "open": 1458.0, "high": 1465.7, "low": 1421.4, "close": 1427.6}, {"time": "2026-06-30", "open": 1434.0, "high": 1519.0, "low": 1430.9, "close": 1507.9}, {"time": "2026-07-01", "open": 1512.7, "high": 1518.3, "low": 1494.0, "close": 1504.4}, {"time": "2026-07-02", "open": 1504.9, "high": 1529.0, "low": 1494.4, "close": 1519.3}, {"time": "2026-07-03", "open": 1525.0, "high": 1551.0, "low": 1519.5, "close": 1524.1}, {"time": "2026-07-06", "open": 1524.1, "high": 1541.9, "low": 1495.9, "close": 1506.4}, {"time": "2026-07-07", "open": 1451.2, "high": 1467.9, "low": 1430.6, "close": 1445.7}, {"time": "2026-07-08", "open": 1419.0, "high": 1430.5, "low": 1397.6, "close": 1404.1}, {"time": "2026-07-09", "open": 1410.5, "high": 1439.0, "low": 1402.1, "close": 1406.7}, {"time": "2026-07-10", "open": 1417.0, "high": 1444.3, "low": 1414.3, "close": 1418.0}, {"time": "2026-07-13", "open": 1408.0, "high": 1422.4, "low": 1400.1, "close": 1411.8}, {"time": "2026-07-14", "open": 1408.0, "high": 1418.0, "low": 1382.6, "close": 1390.8}, {"time": "2026-07-15", "open": 1397.5, "high": 1413.0, "low": 1391.2, "close": 1411.2}, {"time": "2026-07-16", "open": 1417.0, "high": 1422.8, "low": 1402.6, "close": 1406.9}, {"time": "2026-07-17", "open": 1406.9, "high": 1409.0, "low": 1390.0, "close": 1402.2}, {"time": "2026-07-20", "open": 1401.0, "high": 1410.0, "low": 1392.9, "close": 1407.6}, {"time": "2026-07-21", "open": 1408.0, "high": 1409.5, "low": 1396.7, "close": 1405.3}, {"time": "2026-07-22", "open": 1405.0, "high": 1409.7, "low": 1363.0, "close": 1367.7}, {"time": "2026-07-23", "open": 1367.7, "high": 1400.0, "low": 1356.6, "close": 1395.7}, {"time": "2026-07-24", "open": 1381.9, "high": 1399.5, "low": 1375.3, "close": 1392.4}, {"time": "2026-07-27", "open": 1398.6, "high": 1406.8, "low": 1387.1, "close": 1402.3}, {"time": "2026-07-28", "open": 1402.0, "high": 1403.5, "low": 1377.6, "close": 1382.6}, {"time": "2026-07-29", "open": 1389.5, "high": 1408.0, "low": 1385.5, "close": 1403.6}, {"time": "2026-07-30", "open": 1400.0, "high": 1406.3, "low": 1385.6, "close": 1402.1}, {"time": "2026-07-31", "open": 1404.0, "high": 1430.8, "low": 1400.1, "close": 1423.0}, {"time": "2026-08-03", "open": 1430.0, "high": 1448.6, "low": 1423.5, "close": 1441.9}, {"time": "2026-08-04", "open": 1441.0, "high": 1455.7, "low": 1430.0, "close": 1430.0}, {"time": "2026-08-05", "open": 1436.1, "high": 1451.8, "low": 1415.6, "close": 1425.0}, {"time": "2026-08-06", "open": 1425.0, "high": 1499.9, "low": 1416.5, "close": 1490.0}, {"time": "2026-08-07", "open": 1490.0, "high": 1524.7, "low": 1482.6, "close": 1519.7}, {"time": "2026-08-10", "open": 1519.7, "high": 1524.9, "low": 1498.1, "close": 1502.0}, {"time": "2026-08-11", "open": 1502.0, "high": 1510.7, "low": 1487.3, "close": 1496.0}, {"time": "2026-08-12", "open": 1496.0, "high": 1514.9, "low": 1490.0, "close": 1506.0}, {"time": "2026-08-13", "open": 1500.0, "high": 1536.9, "low": 1500.0, "close": 1507.0}, {"time": "2026-08-14", "open": 1509.1, "high": 1524.2, "low": 1485.0, "close": 1496.5}, {"time": "2026-08-17", "open": 1450.0, "high": 1494.7, "low": 1435.0, "close": 1457.8}, {"time": "2026-08-18", "open": 1460.9, "high": 1501.6, "low": 1457.0, "close": 1485.1}, {"time": "2026-08-19", "open": 1499.0, "high": 1506.5, "low": 1473.2, "close": 1485.0}, {"time": "2026-08-20", "open": 1490.3, "high": 1496.8, "low": 1478.2, "close": 1489.0}, {"time": "2026-08-21", "open": 1485.0, "high": 1496.6, "low": 1461.7, "close": 1480.5}, {"time": "2026-08-24", "open": 1480.5, "high": 1516.0, "low": 1480.5, "close": 1514.0}, {"time": "2026-08-25", "open": 1515.0, "high": 1524.4, "low": 1503.0, "close": 1518.5}, {"time": "2026-08-26", "open": 1526.0, "high": 1555.0, "low": 1513.0, "close": 1547.0}, {"time": "2026-08-27", "open": 1554.0, "high": 1577.9, "low": 1534.0, "close": 1543.0}, {"time": "2026-08-28", "open": 1543.0, "high": 1543.9, "low": 1528.0, "close": 1535.0}, {"time": "2026-09-01", "open": 1509.9, "high": 1513.4, "low": 1485.2, "close": 1493.4}, {"time": "2026-09-02", "open": 1473.9, "high": 1473.9, "low": 1452.1, "close": 1457.8}, {"time": "2026-09-03", "open": 1466.0, "high": 1497.1, "low": 1465.0, "close": 1490.2}, {"time": "2026-09-04", "open": 1488.9, "high": 1522.9, "low": 1486.0, "close": 1499.1}, {"time": "2026-09-07", "open": 1498.2, "high": 1520.4, "low": 1490.1, "close": 1514.1}, {"time": "2026-09-08", "open": 1506.0, "high": 1527.8, "low": 1505.0, "close": 1522.7}, {"time": "2026-09-09", "open": 1528.2, "high": 1562.0, "low": 1502.1, "close": 1556.0}, {"time": "2026-09-10", "open": 1556.1, "high": 1571.8, "low": 1520.4, "close": 1520.4}, {"time": "2026-09-11", "open": 1510.0, "high": 1510.0, "low": 1372.0, "close": 1381.0}, {"time": "2026-09-15", "open": 1389.0, "high": 1389.0, "low": 1320.0, "close": 1325.0}, {"time": "2026-09-16", "open": 1327.8, "high": 1330.0, "low": 1290.9, "close": 1319.0}, {"time": "2026-09-17", "open": 1312.0, "high": 1349.9, "low": 1310.1, "close": 1334.3}, {"time": "2026-09-18", "open": 1335.0, "high": 1398.0, "low": 1333.0, "close": 1398.0}, {"time": "2026-09-21", "open": 1373.8, "high": 1392.5, "low": 1363.1, "close": 1385.0}, {"time": "2026-09-22", "open": 1390.0, "high": 1411.0, "low": 1376.5, "close": 1388.9}, {"time": "2026-09-23", "open": 1388.0, "high": 1393.2, "low": 1369.1, "close": 1370.0}, {"time": "2026-09-24", "open": 1365.0, "high": 1385.0, "low": 1358.1, "close": 1370.0}, {"time": "2026-09-25", "open": 1370.0, "high": 1385.0, "low": 1365.0, "close": 1377.0}], "volume": [{"time": "2026-03-25", "value": 904626, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-27", "value": 1427301, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-30", "value": 2459243, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-01", "value": 8012279, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-02", "value": 2173478, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-06", "value": 1734231, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-07", "value": 1326825, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-08", "value": 1627642, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-09", "value": 3535624, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-10", "value": 3028553, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-13", "value": 1636477, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-15", "value": 1312701, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-16", "value": 1832570, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-17", "value": 3562913, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-20", "value": 1612096, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-21", "value": 1552083, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-22", "value": 1558646, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-23", "value": 1990037, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-24", "value": 11757918, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-27", "value": 3449868, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-28", "value": 2154823, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-29", "value": 6725966, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-30", "value": 1943753, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-01", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-04", "value": 1948916, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-05", "value": 1249349, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-06", "value": 2113987, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-07", "value": 3414471, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-08", "value": 2677634, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-11", "value": 1244517, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-12", "value": 1945837, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-13", "value": 1524918, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-14", "value": 1628896, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-15", "value": 1497079, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-18", "value": 3618669, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-19", "value": 1359052, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-20", "value": 1120941, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-21", "value": 1576652, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-22", "value": 672415, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-25", "value": 740059, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-26", "value": 975462, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-27", "value": 1127361, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-28", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-29", "value": 1596837, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-01", "value": 920596, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-02", "value": 1104916, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-03", "value": 691044, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-04", "value": 977661, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-05", "value": 1096107, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-08", "value": 759236, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-09", "value": 698428, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-10", "value": 730390, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-11", "value": 907447, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-12", "value": 837543, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-15", "value": 1048910, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-16", "value": 645762, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-17", "value": 2340067, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-18", "value": 2485828, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-19", "value": 1194685, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-22", "value": 2934165, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-23", "value": 2036034, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-24", "value": 1012072, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-25", "value": 835465, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-26", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-29", "value": 1139188, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-30", "value": 2885327, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-01", "value": 1320683, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-02", "value": 1094896, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-03", "value": 1390329, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-06", "value": 814764, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-07", "value": 6317270, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-08", "value": 6795582, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-09", "value": 2392180, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-10", "value": 1234073, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-13", "value": 854769, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-14", "value": 1384716, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-15", "value": 712988, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-16", "value": 391570, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-17", "value": 818536, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-20", "value": 618105, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-21", "value": 373894, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-22", "value": 1267753, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-23", "value": 970744, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-24", "value": 543772, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-27", "value": 847899, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-28", "value": 839816, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-29", "value": 742837, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-30", "value": 784302, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-31", "value": 1195972, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-03", "value": 919243, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-04", "value": 758781, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-05", "value": 476060, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-06", "value": 3352181, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-07", "value": 2274374, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-10", "value": 637249, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-11", "value": 462009, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-12", "value": 622999, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-13", "value": 1161993, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-14", "value": 1027659, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-17", "value": 1954085, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-18", "value": 1360896, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-19", "value": 680465, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-20", "value": 458250, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-21", "value": 817183, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-24", "value": 851792, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-25", "value": 973455, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-26", "value": 1691548, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-27", "value": 1334290, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-28", "value": 412702, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-01", "value": 190804, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-02", "value": 175556, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-03", "value": 259416, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-04", "value": 630573, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-07", "value": 347060, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-08", "value": 441023, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-09", "value": 1253238, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-10", "value": 1052635, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-11", "value": 6390480, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-15", "value": 1989128, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-16", "value": 1222729, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-17", "value": 778344, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-18", "value": 1456165, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-21", "value": 784923, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-22", "value": 830174, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-23", "value": 402616, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-24", "value": 557285, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-25", "value": 420719, "color": "rgba(34,197,94,.3)"}], "ema50_6m": [{"time": "2026-03-25", "value": 1467.58}, {"time": "2026-03-27", "value": 1459.31}, {"time": "2026-03-30", "value": 1448.87}, {"time": "2026-04-01", "value": 1444.55}, {"time": "2026-04-02", "value": 1439.45}, {"time": "2026-04-06", "value": 1435.31}, {"time": "2026-04-07", "value": 1431.88}, {"time": "2026-04-08", "value": 1429.84}, {"time": "2026-04-09", "value": 1429.61}, {"time": "2026-04-10", "value": 1430.98}, {"time": "2026-04-13", "value": 1431.14}, {"time": "2026-04-15", "value": 1433.02}, {"time": "2026-04-16", "value": 1435.57}, {"time": "2026-04-17", "value": 1440.5}, {"time": "2026-04-20", "value": 1444.59}, {"time": "2026-04-21", "value": 1449.0}, {"time": "2026-04-22", "value": 1454.25}, {"time": "2026-04-23", "value": 1459.69}, {"time": "2026-04-24", "value": 1467.73}, {"time": "2026-04-27", "value": 1476.02}, {"time": "2026-04-28", "value": 1484.64}, {"time": "2026-04-29", "value": 1495.98}, {"time": "2026-04-30", "value": 1505.29}, {"time": "2026-05-01", "value": 1514.23}, {"time": "2026-05-04", "value": 1522.27}, {"time": "2026-05-05", "value": 1529.72}, {"time": "2026-05-06", "value": 1538.48}, {"time": "2026-05-07", "value": 1549.31}, {"time": "2026-05-08", "value": 1558.23}, {"time": "2026-05-11", "value": 1564.44}, {"time": "2026-05-12", "value": 1566.46}, {"time": "2026-05-13", "value": 1569.86}, {"time": "2026-05-14", "value": 1572.82}, {"time": "2026-05-15", "value": 1573.67}, {"time": "2026-05-18", "value": 1571.31}, {"time": "2026-05-19", "value": 1568.1}, {"time": "2026-05-20", "value": 1565.74}, {"time": "2026-05-21", "value": 1564.38}, {"time": "2026-05-22", "value": 1563.11}, {"time": "2026-05-25", "value": 1561.77}, {"time": "2026-05-26", "value": 1560.38}, {"time": "2026-05-27", "value": 1558.95}, {"time": "2026-05-28", "value": 1557.57}, {"time": "2026-05-29", "value": 1554.04}, {"time": "2026-06-01", "value": 1549.15}, {"time": "2026-06-02", "value": 1545.95}, {"time": "2026-06-03", "value": 1542.41}, {"time": "2026-06-04", "value": 1539.67}, {"time": "2026-06-05", "value": 1535.73}, {"time": "2026-06-08", "value": 1530.68}, {"time": "2026-06-09", "value": 1527.17}, {"time": "2026-06-10", "value": 1522.35}, {"time": "2026-06-11", "value": 1517.07}, {"time": "2026-06-12", "value": 1513.43}, {"time": "2026-06-15", "value": 1509.45}, {"time": "2026-06-16", "value": 1506.4}, {"time": "2026-06-17", "value": 1506.15}, {"time": "2026-06-18", "value": 1504.72}, {"time": "2026-06-19", "value": 1502.89}, {"time": "2026-06-22", "value": 1501.85}, {"time": "2026-06-23", "value": 1501.13}, {"time": "2026-06-24", "value": 1500.58}, {"time": "2026-06-25", "value": 1498.93}, {"time": "2026-06-26", "value": 1497.34}, {"time": "2026-06-29", "value": 1494.6}, {"time": "2026-06-30", "value": 1495.13}, {"time": "2026-07-01", "value": 1495.49}, {"time": "2026-07-02", "value": 1496.42}, {"time": "2026-07-03", "value": 1497.51}, {"time": "2026-07-06", "value": 1497.86}, {"time": "2026-07-07", "value": 1495.81}, {"time": "2026-07-08", "value": 1492.22}, {"time": "2026-07-09", "value": 1488.86}, {"time": "2026-07-10", "value": 1486.08}, {"time": "2026-07-13", "value": 1483.17}, {"time": "2026-07-14", "value": 1479.55}, {"time": "2026-07-15", "value": 1476.87}, {"time": "2026-07-16", "value": 1474.12}, {"time": "2026-07-17", "value": 1471.3}, {"time": "2026-07-20", "value": 1468.8}, {"time": "2026-07-21", "value": 1466.31}, {"time": "2026-07-22", "value": 1462.45}, {"time": "2026-07-23", "value": 1459.83}, {"time": "2026-07-24", "value": 1457.19}, {"time": "2026-07-27", "value": 1455.03}, {"time": "2026-07-28", "value": 1452.19}, {"time": "2026-07-29", "value": 1450.29}, {"time": "2026-07-30", "value": 1448.4}, {"time": "2026-07-31", "value": 1447.4}, {"time": "2026-08-03", "value": 1447.19}, {"time": "2026-08-04", "value": 1446.51}, {"time": "2026-08-05", "value": 1445.67}, {"time": "2026-08-06", "value": 1447.41}, {"time": "2026-08-07", "value": 1450.24}, {"time": "2026-08-10", "value": 1452.27}, {"time": "2026-08-11", "value": 1453.99}, {"time": "2026-08-12", "value": 1456.03}, {"time": "2026-08-13", "value": 1458.02}, {"time": "2026-08-14", "value": 1459.53}, {"time": "2026-08-17", "value": 1459.47}, {"time": "2026-08-18", "value": 1460.47}, {"time": "2026-08-19", "value": 1461.43}, {"time": "2026-08-20", "value": 1462.51}, {"time": "2026-08-21", "value": 1463.22}, {"time": "2026-08-24", "value": 1465.21}, {"time": "2026-08-25", "value": 1467.3}, {"time": "2026-08-26", "value": 1470.43}, {"time": "2026-08-27", "value": 1473.27}, {"time": "2026-08-28", "value": 1475.69}, {"time": "2026-09-01", "value": 1476.39}, {"time": "2026-09-02", "value": 1475.66}, {"time": "2026-09-03", "value": 1476.23}, {"time": "2026-09-04", "value": 1477.13}, {"time": "2026-09-07", "value": 1478.58}, {"time": "2026-09-08", "value": 1480.31}, {"time": "2026-09-09", "value": 1483.27}, {"time": "2026-09-10", "value": 1484.73}, {"time": "2026-09-11", "value": 1480.66}, {"time": "2026-09-15", "value": 1474.56}, {"time": "2026-09-16", "value": 1468.46}, {"time": "2026-09-17", "value": 1463.2}, {"time": "2026-09-18", "value": 1460.64}, {"time": "2026-09-21", "value": 1457.67}, {"time": "2026-09-22", "value": 1454.98}, {"time": "2026-09-23", "value": 1451.64}, {"time": "2026-09-24", "value": 1448.44}, {"time": "2026-09-25", "value": 1445.64}], "ohlcv_1y": [{"time": "2025-09-25", "open": 1904.8, "high": 1977.0, "low": 1892.6, "close": 1926.9}, {"time": "2025-09-26", "open": 1935.0, "high": 1936.6, "low": 1856.4, "close": 1874.2}, {"time": "2025-09-29", "open": 1880.0, "high": 1888.9, "low": 1755.0, "close": 1772.0}, {"time": "2025-09-30", "open": 1780.4, "high": 1804.8, "low": 1762.6, "close": 1789.6}, {"time": "2025-10-01", "open": 1790.0, "high": 1929.9, "low": 1774.2, "close": 1861.6}, {"time": "2025-10-03", "open": 1861.6, "high": 1890.0, "low": 1832.0, "close": 1861.5}, {"time": "2025-10-06", "open": 1865.0, "high": 1882.3, "low": 1837.0, "close": 1853.0}, {"time": "2025-10-07", "open": 1853.0, "high": 1874.8, "low": 1833.8, "close": 1839.8}, {"time": "2025-10-08", "open": 1840.0, "high": 1842.5, "low": 1790.0, "close": 1796.8}, {"time": "2025-10-09", "open": 1798.9, "high": 1810.0, "low": 1780.5, "close": 1785.2}, {"time": "2025-10-10", "open": 1785.6, "high": 1805.0, "low": 1771.3, "close": 1776.3}, {"time": "2025-10-13", "open": 1774.9, "high": 1774.9, "low": 1750.5, "close": 1760.1}, {"time": "2025-10-14", "open": 1766.0, "high": 1807.0, "low": 1763.4, "close": 1784.5}, {"time": "2025-10-15", "open": 1795.5, "high": 1814.8, "low": 1777.5, "close": 1795.2}, {"time": "2025-10-16", "open": 1799.0, "high": 1814.8, "low": 1782.8, "close": 1791.0}, {"time": "2025-10-17", "open": 1785.0, "high": 1824.0, "low": 1773.0, "close": 1792.0}, {"time": "2025-10-20", "open": 1800.0, "high": 1806.8, "low": 1779.0, "close": 1797.0}, {"time": "2025-10-21", "open": 1800.8, "high": 1814.5, "low": 1800.8, "close": 1808.8}, {"time": "2025-10-23", "open": 1821.0, "high": 1834.9, "low": 1783.2, "close": 1792.4}, {"time": "2025-10-24", "open": 1810.0, "high": 1864.0, "low": 1800.1, "close": 1824.3}, {"time": "2025-10-27", "open": 1826.9, "high": 1828.9, "low": 1808.0, "close": 1820.2}, {"time": "2025-10-28", "open": 1829.3, "high": 1838.3, "low": 1806.7, "close": 1810.9}, {"time": "2025-10-29", "open": 1812.0, "high": 1826.0, "low": 1801.0, "close": 1804.5}, {"time": "2025-10-30", "open": 1804.5, "high": 1807.0, "low": 1780.0, "close": 1782.5}, {"time": "2025-10-31", "open": 1782.9, "high": 1802.0, "low": 1776.0, "close": 1789.5}, {"time": "2025-11-03", "open": 1789.5, "high": 1797.8, "low": 1783.5, "close": 1787.0}, {"time": "2025-11-04", "open": 1787.4, "high": 1791.7, "low": 1762.4, "close": 1768.7}, {"time": "2025-11-06", "open": 1771.9, "high": 1775.0, "low": 1698.5, "close": 1702.7}, {"time": "2025-11-07", "open": 1699.0, "high": 1735.0, "low": 1666.4, "close": 1725.8}, {"time": "2025-11-10", "open": 1729.8, "high": 1790.0, "low": 1725.8, "close": 1755.1}, {"time": "2025-11-11", "open": 1754.9, "high": 1782.4, "low": 1742.7, "close": 1754.5}, {"time": "2025-11-12", "open": 1759.9, "high": 1805.0, "low": 1748.2, "close": 1792.0}, {"time": "2025-11-13", "open": 1648.0, "high": 1744.4, "low": 1645.3, "close": 1707.3}, {"time": "2025-11-14", "open": 1707.3, "high": 1751.0, "low": 1696.5, "close": 1725.3}, {"time": "2025-11-17", "open": 1728.4, "high": 1754.6, "low": 1717.6, "close": 1721.7}, {"time": "2025-11-18", "open": 1725.0, "high": 1729.3, "low": 1702.1, "close": 1710.0}, {"time": "2025-11-19", "open": 1705.1, "high": 1714.0, "low": 1694.4, "close": 1699.3}, {"time": "2025-11-20", "open": 1700.0, "high": 1771.0, "low": 1700.0, "close": 1724.7}, {"time": "2025-11-21", "open": 1725.0, "high": 1726.4, "low": 1695.0, "close": 1697.3}, {"time": "2025-11-24", "open": 1697.3, "high": 1702.7, "low": 1656.7, "close": 1667.4}, {"time": "2025-11-25", "open": 1667.4, "high": 1700.5, "low": 1660.0, "close": 1682.5}, {"time": "2025-11-26", "open": 1682.5, "high": 1701.7, "low": 1671.5, "close": 1677.2}, {"time": "2025-11-27", "open": 1680.0, "high": 1694.8, "low": 1670.4, "close": 1676.0}, {"time": "2025-11-28", "open": 1681.0, "high": 1687.0, "low": 1658.5, "close": 1666.1}, {"time": "2025-12-01", "open": 1670.0, "high": 1682.9, "low": 1661.1, "close": 1666.8}, {"time": "2025-12-02", "open": 1665.0, "high": 1675.0, "low": 1634.0, "close": 1639.9}, {"time": "2025-12-03", "open": 1640.0, "high": 1647.9, "low": 1612.5, "close": 1622.4}, {"time": "2025-12-04", "open": 1622.4, "high": 1648.0, "low": 1614.0, "close": 1640.4}, {"time": "2025-12-05", "open": 1645.2, "high": 1652.0, "low": 1623.0, "close": 1644.0}, {"time": "2025-12-08", "open": 1658.0, "high": 1660.0, "low": 1602.5, "close": 1616.0}, {"time": "2025-12-09", "open": 1615.0, "high": 1625.0, "low": 1561.0, "close": 1617.9}, {"time": "2025-12-10", "open": 1625.9, "high": 1648.9, "low": 1605.0, "close": 1618.8}, {"time": "2025-12-11", "open": 1615.0, "high": 1619.1, "low": 1592.3, "close": 1597.0}, {"time": "2025-12-12", "open": 1602.0, "high": 1613.9, "low": 1595.0, "close": 1599.1}, {"time": "2025-12-15", "open": 1595.0, "high": 1599.1, "low": 1582.4, "close": 1587.6}, {"time": "2025-12-16", "open": 1585.0, "high": 1587.6, "low": 1551.0, "close": 1560.4}, {"time": "2025-12-17", "open": 1565.0, "high": 1565.0, "low": 1495.0, "close": 1502.8}, {"time": "2025-12-18", "open": 1502.8, "high": 1517.6, "low": 1477.1, "close": 1506.1}, {"time": "2025-12-19", "open": 1510.0, "high": 1554.7, "low": 1510.0, "close": 1548.3}, {"time": "2025-12-22", "open": 1557.4, "high": 1684.4, "low": 1550.9, "close": 1666.3}, {"time": "2025-12-23", "open": 1677.9, "high": 1686.8, "low": 1642.4, "close": 1646.8}, {"time": "2025-12-24", "open": 1644.0, "high": 1677.0, "low": 1635.0, "close": 1649.3}, {"time": "2025-12-26", "open": 1651.0, "high": 1697.0, "low": 1646.0, "close": 1652.1}, {"time": "2025-12-29", "open": 1661.0, "high": 1688.5, "low": 1630.1, "close": 1637.4}, {"time": "2025-12-30", "open": 1639.0, "high": 1640.6, "low": 1603.1, "close": 1614.4}, {"time": "2025-12-31", "open": 1614.6, "high": 1635.0, "low": 1614.6, "close": 1620.1}, {"time": "2026-01-01", "open": 1622.0, "high": 1634.0, "low": 1607.3, "close": 1622.6}, {"time": "2026-01-02", "open": 1622.6, "high": 1642.9, "low": 1619.4, "close": 1629.0}, {"time": "2026-01-05", "open": 1630.0, "high": 1666.6, "low": 1621.1, "close": 1630.0}, {"time": "2026-01-06", "open": 1630.6, "high": 1633.3, "low": 1602.0, "close": 1605.2}, {"time": "2026-01-07", "open": 1601.0, "high": 1618.0, "low": 1590.1, "close": 1608.2}, {"time": "2026-01-08", "open": 1608.2, "high": 1633.0, "low": 1573.0, "close": 1580.4}, {"time": "2026-01-09", "open": 1580.4, "high": 1636.8, "low": 1561.0, "close": 1569.0}, {"time": "2026-01-12", "open": 1569.8, "high": 1579.0, "low": 1520.2, "close": 1562.6}, {"time": "2026-01-13", "open": 1569.0, "high": 1582.5, "low": 1538.6, "close": 1547.3}, {"time": "2026-01-14", "open": 1547.0, "high": 1559.9, "low": 1525.6, "close": 1534.4}, {"time": "2026-01-15", "open": 1534.4, "high": 1534.4, "low": 1534.4, "close": 1534.4}, {"time": "2026-01-16", "open": 1535.0, "high": 1542.5, "low": 1520.5, "close": 1526.6}, {"time": "2026-01-19", "open": 1512.0, "high": 1524.6, "low": 1501.0, "close": 1506.4}, {"time": "2026-01-20", "open": 1504.0, "high": 1510.9, "low": 1425.0, "close": 1436.9}, {"time": "2026-01-21", "open": 1437.0, "high": 1480.0, "low": 1409.0, "close": 1467.3}, {"time": "2026-01-22", "open": 1476.1, "high": 1505.0, "low": 1463.0, "close": 1498.2}, {"time": "2026-01-23", "open": 1499.0, "high": 1504.0, "low": 1474.0, "close": 1488.4}, {"time": "2026-01-27", "open": 1490.0, "high": 1544.8, "low": 1457.8, "close": 1523.1}, {"time": "2026-01-28", "open": 1526.1, "high": 1632.0, "low": 1526.0, "close": 1622.9}, {"time": "2026-01-29", "open": 1629.0, "high": 1655.0, "low": 1602.0, "close": 1610.2}, {"time": "2026-01-30", "open": 1608.0, "high": 1666.0, "low": 1575.0, "close": 1659.9}, {"time": "2026-02-02", "open": 1559.9, "high": 1597.8, "low": 1483.3, "close": 1512.0}, {"time": "2026-02-03", "open": 1578.0, "high": 1578.0, "low": 1487.2, "close": 1508.5}, {"time": "2026-02-04", "open": 1508.5, "high": 1517.0, "low": 1495.6, "close": 1502.2}, {"time": "2026-02-05", "open": 1502.2, "high": 1503.5, "low": 1476.7, "close": 1482.9}, {"time": "2026-02-06", "open": 1481.8, "high": 1496.0, "low": 1472.1, "close": 1490.1}, {"time": "2026-02-09", "open": 1490.2, "high": 1544.9, "low": 1488.6, "close": 1524.4}, {"time": "2026-02-10", "open": 1534.0, "high": 1574.0, "low": 1524.0, "close": 1528.6}, {"time": "2026-02-11", "open": 1528.6, "high": 1534.9, "low": 1506.0, "close": 1513.7}, {"time": "2026-02-12", "open": 1513.7, "high": 1515.8, "low": 1495.0, "close": 1500.4}, {"time": "2026-02-13", "open": 1500.4, "high": 1500.4, "low": 1462.7, "close": 1472.8}, {"time": "2026-02-16", "open": 1472.8, "high": 1482.0, "low": 1455.0, "close": 1469.4}, {"time": "2026-02-17", "open": 1550.0, "high": 1574.5, "low": 1520.0, "close": 1525.6}, {"time": "2026-02-18", "open": 1532.9, "high": 1540.0, "low": 1505.9, "close": 1529.1}, {"time": "2026-02-19", "open": 1550.0, "high": 1562.3, "low": 1501.5, "close": 1522.2}, {"time": "2026-02-20", "open": 1521.3, "high": 1543.8, "low": 1496.6, "close": 1517.6}, {"time": "2026-02-23", "open": 1517.6, "high": 1519.9, "low": 1492.6, "close": 1501.8}, {"time": "2026-02-24", "open": 1501.8, "high": 1501.8, "low": 1478.2, "close": 1489.9}, {"time": "2026-02-25", "open": 1494.0, "high": 1504.6, "low": 1476.0, "close": 1487.1}, {"time": "2026-02-26", "open": 1487.6, "high": 1515.9, "low": 1480.1, "close": 1500.8}, {"time": "2026-02-27", "open": 1491.4, "high": 1505.0, "low": 1474.3, "close": 1491.7}, {"time": "2026-03-02", "open": 1435.0, "high": 1524.4, "low": 1428.3, "close": 1448.9}, {"time": "2026-03-04", "open": 1447.3, "high": 1447.3, "low": 1389.0, "close": 1398.0}, {"time": "2026-03-05", "open": 1405.0, "high": 1497.0, "low": 1400.2, "close": 1447.6}, {"time": "2026-03-06", "open": 1458.0, "high": 1523.8, "low": 1445.9, "close": 1490.3}, {"time": "2026-03-09", "open": 1490.3, "high": 1491.0, "low": 1435.1, "close": 1454.6}, {"time": "2026-03-10", "open": 1480.0, "high": 1494.4, "low": 1453.1, "close": 1474.6}, {"time": "2026-03-11", "open": 1474.6, "high": 1507.1, "low": 1450.2, "close": 1460.7}, {"time": "2026-03-12", "open": 1450.0, "high": 1452.0, "low": 1422.6, "close": 1444.3}, {"time": "2026-03-13", "open": 1435.0, "high": 1439.6, "low": 1375.0, "close": 1385.5}, {"time": "2026-03-16", "open": 1385.5, "high": 1387.6, "low": 1310.1, "close": 1334.7}, {"time": "2026-03-17", "open": 1349.0, "high": 1366.0, "low": 1328.0, "close": 1359.6}, {"time": "2026-03-18", "open": 1369.0, "high": 1414.8, "low": 1364.0, "close": 1411.9}, {"time": "2026-03-19", "open": 1394.9, "high": 1404.9, "low": 1355.7, "close": 1361.4}, {"time": "2026-03-20", "open": 1368.0, "high": 1395.0, "low": 1331.6, "close": 1341.5}, {"time": "2026-03-23", "open": 1330.9, "high": 1333.5, "low": 1260.1, "close": 1269.2}, {"time": "2026-03-24", "open": 1319.0, "high": 1321.9, "low": 1283.2, "close": 1305.1}, {"time": "2026-03-25", "open": 1328.0, "high": 1352.4, "low": 1310.0, "close": 1317.4}, {"time": "2026-03-27", "open": 1305.1, "high": 1312.0, "low": 1253.0, "close": 1256.8}, {"time": "2026-03-30", "open": 1243.9, "high": 1284.6, "low": 1187.0, "close": 1193.1}, {"time": "2026-04-01", "open": 1244.9, "high": 1372.0, "low": 1228.1, "close": 1338.6}, {"time": "2026-04-02", "open": 1300.0, "high": 1320.0, "low": 1266.8, "close": 1314.5}, {"time": "2026-04-06", "open": 1310.0, "high": 1343.7, "low": 1275.1, "close": 1333.9}, {"time": "2026-04-07", "open": 1333.9, "high": 1363.8, "low": 1322.3, "close": 1348.0}, {"time": "2026-04-08", "open": 1420.0, "high": 1425.0, "low": 1374.2, "close": 1379.8}, {"time": "2026-04-09", "open": 1380.0, "high": 1449.0, "low": 1372.5, "close": 1423.9}, {"time": "2026-04-10", "open": 1436.0, "high": 1502.2, "low": 1435.0, "close": 1464.6}, {"time": "2026-04-13", "open": 1417.1, "high": 1447.8, "low": 1394.2, "close": 1435.0}, {"time": "2026-04-15", "open": 1465.0, "high": 1491.0, "low": 1459.2, "close": 1479.2}, {"time": "2026-04-16", "open": 1492.0, "high": 1511.8, "low": 1464.0, "close": 1498.1}, {"time": "2026-04-17", "open": 1500.0, "high": 1569.5, "low": 1498.1, "close": 1561.1}, {"time": "2026-04-20", "open": 1568.0, "high": 1582.9, "low": 1538.0, "close": 1544.9}, {"time": "2026-04-21", "open": 1540.4, "high": 1584.8, "low": 1531.2, "close": 1556.9}, {"time": "2026-04-22", "open": 1556.9, "high": 1588.0, "low": 1542.9, "close": 1583.1}, {"time": "2026-04-23", "open": 1580.0, "high": 1612.5, "low": 1571.8, "close": 1592.8}, {"time": "2026-04-24", "open": 1595.0, "high": 1710.0, "low": 1592.8, "close": 1664.7}, {"time": "2026-04-27", "open": 1677.1, "high": 1716.5, "low": 1647.2, "close": 1679.3}, {"time": "2026-04-28", "open": 1682.0, "high": 1709.9, "low": 1675.2, "close": 1695.6}, {"time": "2026-04-29", "open": 1714.0, "high": 1780.0, "low": 1714.0, "close": 1773.8}, {"time": "2026-04-30", "open": 1773.8, "high": 1776.9, "low": 1710.6, "close": 1733.4}, {"time": "2026-05-01", "open": 1733.4, "high": 1733.4, "low": 1733.4, "close": 1733.4}, {"time": "2026-05-04", "open": 1742.0, "high": 1753.8, "low": 1677.3, "close": 1719.3}, {"time": "2026-05-05", "open": 1710.9, "high": 1733.8, "low": 1693.8, "close": 1712.2}, {"time": "2026-05-06", "open": 1725.0, "high": 1765.8, "low": 1721.9, "close": 1753.1}, {"time": "2026-05-07", "open": 1760.0, "high": 1823.9, "low": 1746.0, "close": 1814.7}, {"time": "2026-05-08", "open": 1830.0, "high": 1842.8, "low": 1767.9, "close": 1776.7}, {"time": "2026-05-11", "open": 1760.0, "high": 1764.5, "low": 1712.0, "close": 1716.5}, {"time": "2026-05-12", "open": 1715.0, "high": 1718.1, "low": 1607.6, "close": 1616.1}, {"time": "2026-05-13", "open": 1619.9, "high": 1668.9, "low": 1616.2, "close": 1653.1}, {"time": "2026-05-14", "open": 1662.9, "high": 1671.9, "low": 1600.1, "close": 1645.2}, {"time": "2026-05-15", "open": 1645.1, "high": 1649.0, "low": 1590.0, "close": 1594.5}, {"time": "2026-05-18", "open": 1549.0, "high": 1549.0, "low": 1475.0, "close": 1513.5}, {"time": "2026-05-19", "open": 1516.0, "high": 1531.0, "low": 1484.1, "close": 1489.6}, {"time": "2026-05-20", "open": 1486.1, "high": 1514.0, "low": 1463.1, "close": 1507.8}, {"time": "2026-05-21", "open": 1526.2, "high": 1552.9, "low": 1523.0, "close": 1531.0}, {"time": "2026-05-22", "open": 1535.0, "high": 1548.2, "low": 1526.5, "close": 1532.1}, {"time": "2026-05-25", "open": 1539.7, "high": 1557.0, "low": 1523.9, "close": 1529.0}, {"time": "2026-05-26", "open": 1524.9, "high": 1556.0, "low": 1510.0, "close": 1526.2}, {"time": "2026-05-27", "open": 1527.0, "high": 1553.1, "low": 1512.1, "close": 1523.9}, {"time": "2026-05-28", "open": 1523.9, "high": 1523.9, "low": 1523.9, "close": 1523.9}, {"time": "2026-05-29", "open": 1524.5, "high": 1530.6, "low": 1455.5, "close": 1467.4}, {"time": "2026-06-01", "open": 1470.0, "high": 1485.0, "low": 1424.1, "close": 1429.4}, {"time": "2026-06-02", "open": 1425.0, "high": 1476.2, "low": 1409.0, "close": 1467.7}, {"time": "2026-06-03", "open": 1467.7, "high": 1469.6, "low": 1430.8, "close": 1455.7}, {"time": "2026-06-04", "open": 1449.0, "high": 1485.4, "low": 1445.1, "close": 1472.4}, {"time": "2026-06-05", "open": 1474.2, "high": 1482.8, "low": 1432.2, "close": 1439.1}, {"time": "2026-06-08", "open": 1425.0, "high": 1431.0, "low": 1400.0, "close": 1407.1}, {"time": "2026-06-09", "open": 1410.0, "high": 1446.1, "low": 1407.2, "close": 1441.2}, {"time": "2026-06-10", "open": 1439.9, "high": 1449.1, "low": 1400.0, "close": 1404.2}, {"time": "2026-06-11", "open": 1400.0, "high": 1400.0, "low": 1368.1, "close": 1387.8}, {"time": "2026-06-12", "open": 1405.1, "high": 1428.0, "low": 1395.5, "close": 1424.3}, {"time": "2026-06-15", "open": 1450.0, "high": 1462.0, "low": 1405.5, "close": 1411.8}, {"time": "2026-06-16", "open": 1414.9, "high": 1436.4, "low": 1411.9, "close": 1431.6}, {"time": "2026-06-17", "open": 1432.8, "high": 1515.0, "low": 1432.1, "close": 1500.2}, {"time": "2026-06-18", "open": 1511.1, "high": 1523.6, "low": 1444.4, "close": 1469.6}, {"time": "2026-06-19", "open": 1463.0, "high": 1483.0, "low": 1454.9, "close": 1458.0}, {"time": "2026-06-22", "open": 1465.5, "high": 1485.6, "low": 1418.0, "close": 1476.4}, {"time": "2026-06-23", "open": 1477.8, "high": 1495.6, "low": 1466.6, "close": 1483.6}, {"time": "2026-06-24", "open": 1475.0, "high": 1493.8, "low": 1456.4, "close": 1487.1}, {"time": "2026-06-25", "open": 1488.0, "high": 1496.0, "low": 1451.1, "close": 1458.4}, {"time": "2026-06-26", "open": 1458.4, "high": 1458.4, "low": 1458.4, "close": 1458.4}, {"time": "2026-06-29", "open": 1458.0, "high": 1465.7, "low": 1421.4, "close": 1427.6}, {"time": "2026-06-30", "open": 1434.0, "high": 1519.0, "low": 1430.9, "close": 1507.9}, {"time": "2026-07-01", "open": 1512.7, "high": 1518.3, "low": 1494.0, "close": 1504.4}, {"time": "2026-07-02", "open": 1504.9, "high": 1529.0, "low": 1494.4, "close": 1519.3}, {"time": "2026-07-03", "open": 1525.0, "high": 1551.0, "low": 1519.5, "close": 1524.1}, {"time": "2026-07-06", "open": 1524.1, "high": 1541.9, "low": 1495.9, "close": 1506.4}, {"time": "2026-07-07", "open": 1451.2, "high": 1467.9, "low": 1430.6, "close": 1445.7}, {"time": "2026-07-08", "open": 1419.0, "high": 1430.5, "low": 1397.6, "close": 1404.1}, {"time": "2026-07-09", "open": 1410.5, "high": 1439.0, "low": 1402.1, "close": 1406.7}, {"time": "2026-07-10", "open": 1417.0, "high": 1444.3, "low": 1414.3, "close": 1418.0}, {"time": "2026-07-13", "open": 1408.0, "high": 1422.4, "low": 1400.1, "close": 1411.8}, {"time": "2026-07-14", "open": 1408.0, "high": 1418.0, "low": 1382.6, "close": 1390.8}, {"time": "2026-07-15", "open": 1397.5, "high": 1413.0, "low": 1391.2, "close": 1411.2}, {"time": "2026-07-16", "open": 1417.0, "high": 1422.8, "low": 1402.6, "close": 1406.9}, {"time": "2026-07-17", "open": 1406.9, "high": 1409.0, "low": 1390.0, "close": 1402.2}, {"time": "2026-07-20", "open": 1401.0, "high": 1410.0, "low": 1392.9, "close": 1407.6}, {"time": "2026-07-21", "open": 1408.0, "high": 1409.5, "low": 1396.7, "close": 1405.3}, {"time": "2026-07-22", "open": 1405.0, "high": 1409.7, "low": 1363.0, "close": 1367.7}, {"time": "2026-07-23", "open": 1367.7, "high": 1400.0, "low": 1356.6, "close": 1395.7}, {"time": "2026-07-24", "open": 1381.9, "high": 1399.5, "low": 1375.3, "close": 1392.4}, {"time": "2026-07-27", "open": 1398.6, "high": 1406.8, "low": 1387.1, "close": 1402.3}, {"time": "2026-07-28", "open": 1402.0, "high": 1403.5, "low": 1377.6, "close": 1382.6}, {"time": "2026-07-29", "open": 1389.5, "high": 1408.0, "low": 1385.5, "close": 1403.6}, {"time": "2026-07-30", "open": 1400.0, "high": 1406.3, "low": 1385.6, "close": 1402.1}, {"time": "2026-07-31", "open": 1404.0, "high": 1430.8, "low": 1400.1, "close": 1423.0}, {"time": "2026-08-03", "open": 1430.0, "high": 1448.6, "low": 1423.5, "close": 1441.9}, {"time": "2026-08-04", "open": 1441.0, "high": 1455.7, "low": 1430.0, "close": 1430.0}, {"time": "2026-08-05", "open": 1436.1, "high": 1451.8, "low": 1415.6, "close": 1425.0}, {"time": "2026-08-06", "open": 1425.0, "high": 1499.9, "low": 1416.5, "close": 1490.0}, {"time": "2026-08-07", "open": 1490.0, "high": 1524.7, "low": 1482.6, "close": 1519.7}, {"time": "2026-08-10", "open": 1519.7, "high": 1524.9, "low": 1498.1, "close": 1502.0}, {"time": "2026-08-11", "open": 1502.0, "high": 1510.7, "low": 1487.3, "close": 1496.0}, {"time": "2026-08-12", "open": 1496.0, "high": 1514.9, "low": 1490.0, "close": 1506.0}, {"time": "2026-08-13", "open": 1500.0, "high": 1536.9, "low": 1500.0, "close": 1507.0}, {"time": "2026-08-14", "open": 1509.1, "high": 1524.2, "low": 1485.0, "close": 1496.5}, {"time": "2026-08-17", "open": 1450.0, "high": 1494.7, "low": 1435.0, "close": 1457.8}, {"time": "2026-08-18", "open": 1460.9, "high": 1501.6, "low": 1457.0, "close": 1485.1}, {"time": "2026-08-19", "open": 1499.0, "high": 1506.5, "low": 1473.2, "close": 1485.0}, {"time": "2026-08-20", "open": 1490.3, "high": 1496.8, "low": 1478.2, "close": 1489.0}, {"time": "2026-08-21", "open": 1485.0, "high": 1496.6, "low": 1461.7, "close": 1480.5}, {"time": "2026-08-24", "open": 1480.5, "high": 1516.0, "low": 1480.5, "close": 1514.0}, {"time": "2026-08-25", "open": 1515.0, "high": 1524.4, "low": 1503.0, "close": 1518.5}, {"time": "2026-08-26", "open": 1526.0, "high": 1555.0, "low": 1513.0, "close": 1547.0}, {"time": "2026-08-27", "open": 1554.0, "high": 1577.9, "low": 1534.0, "close": 1543.0}, {"time": "2026-08-28", "open": 1543.0, "high": 1543.9, "low": 1528.0, "close": 1535.0}, {"time": "2026-09-01", "open": 1509.9, "high": 1513.4, "low": 1485.2, "close": 1493.4}, {"time": "2026-09-02", "open": 1473.9, "high": 1473.9, "low": 1452.1, "close": 1457.8}, {"time": "2026-09-03", "open": 1466.0, "high": 1497.1, "low": 1465.0, "close": 1490.2}, {"time": "2026-09-04", "open": 1488.9, "high": 1522.9, "low": 1486.0, "close": 1499.1}, {"time": "2026-09-07", "open": 1498.2, "high": 1520.4, "low": 1490.1, "close": 1514.1}, {"time": "2026-09-08", "open": 1506.0, "high": 1527.8, "low": 1505.0, "close": 1522.7}, {"time": "2026-09-09", "open": 1528.2, "high": 1562.0, "low": 1502.1, "close": 1556.0}, {"time": "2026-09-10", "open": 1556.1, "high": 1571.8, "low": 1520.4, "close": 1520.4}, {"time": "2026-09-11", "open": 1510.0, "high": 1510.0, "low": 1372.0, "close": 1381.0}, {"time": "2026-09-15", "open": 1389.0, "high": 1389.0, "low": 1320.0, "close": 1325.0}, {"time": "2026-09-16", "open": 1327.8, "high": 1330.0, "low": 1290.9, "close": 1319.0}, {"time": "2026-09-17", "open": 1312.0, "high": 1349.9, "low": 1310.1, "close": 1334.3}, {"time": "2026-09-18", "open": 1335.0, "high": 1398.0, "low": 1333.0, "close": 1398.0}, {"time": "2026-09-21", "open": 1373.8, "high": 1392.5, "low": 1363.1, "close": 1385.0}, {"time": "2026-09-22", "open": 1390.0, "high": 1411.0, "low": 1376.5, "close": 1388.9}, {"time": "2026-09-23", "open": 1388.0, "high": 1393.2, "low": 1369.1, "close": 1370.0}, {"time": "2026-09-24", "open": 1365.0, "high": 1385.0, "low": 1358.1, "close": 1370.0}, {"time": "2026-09-25", "open": 1370.0, "high": 1385.0, "low": 1365.0, "close": 1377.0}], "volume_1y": [{"time": "2025-09-25", "value": 4982811, "color": "rgba(34,197,94,.3)"}, {"time": "2025-09-26", "value": 1526837, "color": "rgba(249,66,58,.3)"}, {"time": "2025-09-29", "value": 2609772, "color": "rgba(249,66,58,.3)"}, {"time": "2025-09-30", "value": 1196621, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-01", "value": 4285387, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-03", "value": 1506063, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-06", "value": 1226229, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-07", "value": 745956, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-08", "value": 1043352, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-09", "value": 901095, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-10", "value": 851632, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-13", "value": 456844, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-14", "value": 1373139, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-15", "value": 926136, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-16", "value": 586614, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-17", "value": 1101864, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-20", "value": 571723, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-21", "value": 188901, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-23", "value": 906858, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-24", "value": 3072570, "color": "rgba(34,197,94,.3)"}, {"time": "2025-10-27", "value": 612659, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-28", "value": 578915, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-29", "value": 465217, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-30", "value": 507176, "color": "rgba(249,66,58,.3)"}, {"time": "2025-10-31", "value": 543761, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-03", "value": 313736, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-04", "value": 438411, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-06", "value": 838981, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-07", "value": 745707, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-10", "value": 1057367, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-11", "value": 831651, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-12", "value": 1284377, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-13", "value": 3234178, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-14", "value": 1494958, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-17", "value": 878395, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-18", "value": 471434, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-19", "value": 332103, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-20", "value": 1911722, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-21", "value": 533296, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-24", "value": 663284, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-25", "value": 730729, "color": "rgba(34,197,94,.3)"}, {"time": "2025-11-26", "value": 588822, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-27", "value": 717426, "color": "rgba(249,66,58,.3)"}, {"time": "2025-11-28", "value": 393249, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-01", "value": 311598, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-02", "value": 446369, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-03", "value": 479589, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-04", "value": 438905, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-05", "value": 399327, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-08", "value": 1002488, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-09", "value": 883922, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-10", "value": 518851, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-11", "value": 395649, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-12", "value": 309330, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-15", "value": 287603, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-16", "value": 343460, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-17", "value": 923611, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-18", "value": 732285, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-19", "value": 606429, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-22", "value": 3641800, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-23", "value": 1300532, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-24", "value": 1155083, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-26", "value": 1507690, "color": "rgba(34,197,94,.3)"}, {"time": "2025-12-29", "value": 1000304, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-30", "value": 595261, "color": "rgba(249,66,58,.3)"}, {"time": "2025-12-31", "value": 407077, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-01", "value": 312028, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-02", "value": 442322, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-05", "value": 1034202, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-06", "value": 598317, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-07", "value": 447929, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-08", "value": 672046, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-09", "value": 1117017, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-12", "value": 1000834, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-13", "value": 551763, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-14", "value": 468787, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-15", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-16", "value": 458849, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-19", "value": 476722, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-20", "value": 901653, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-21", "value": 1112063, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-22", "value": 764865, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-23", "value": 444823, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-27", "value": 844991, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-28", "value": 1844824, "color": "rgba(34,197,94,.3)"}, {"time": "2026-01-29", "value": 1713970, "color": "rgba(249,66,58,.3)"}, {"time": "2026-01-30", "value": 1986637, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-02", "value": 1535114, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-03", "value": 1244801, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-04", "value": 580219, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-05", "value": 468641, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-06", "value": 461400, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-09", "value": 759713, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-10", "value": 662590, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-11", "value": 345826, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-12", "value": 369959, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-13", "value": 424397, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-16", "value": 351246, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-17", "value": 4331935, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-18", "value": 871628, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-19", "value": 993788, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-20", "value": 765676, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-23", "value": 476836, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-24", "value": 354359, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-25", "value": 355321, "color": "rgba(249,66,58,.3)"}, {"time": "2026-02-26", "value": 620411, "color": "rgba(34,197,94,.3)"}, {"time": "2026-02-27", "value": 500459, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-02", "value": 1164505, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-04", "value": 830833, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-05", "value": 3364197, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-06", "value": 3073346, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-09", "value": 793449, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-10", "value": 1146499, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-11", "value": 633606, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-12", "value": 582483, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-13", "value": 715141, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-16", "value": 1426596, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-17", "value": 897810, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-18", "value": 957703, "color": "rgba(34,197,94,.3)"}, {"time": "2026-03-19", "value": 632056, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-20", "value": 814079, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-23", "value": 1034950, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-24", "value": 1136361, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-25", "value": 904626, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-27", "value": 1427301, "color": "rgba(249,66,58,.3)"}, {"time": "2026-03-30", "value": 2459243, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-01", "value": 8012279, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-02", "value": 2173478, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-06", "value": 1734231, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-07", "value": 1326825, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-08", "value": 1627642, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-09", "value": 3535624, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-10", "value": 3028553, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-13", "value": 1636477, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-15", "value": 1312701, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-16", "value": 1832570, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-17", "value": 3562913, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-20", "value": 1612096, "color": "rgba(249,66,58,.3)"}, {"time": "2026-04-21", "value": 1552083, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-22", "value": 1558646, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-23", "value": 1990037, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-24", "value": 11757918, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-27", "value": 3449868, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-28", "value": 2154823, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-29", "value": 6725966, "color": "rgba(34,197,94,.3)"}, {"time": "2026-04-30", "value": 1943753, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-01", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-04", "value": 1948916, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-05", "value": 1249349, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-06", "value": 2113987, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-07", "value": 3414471, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-08", "value": 2677634, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-11", "value": 1244517, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-12", "value": 1945837, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-13", "value": 1524918, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-14", "value": 1628896, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-15", "value": 1497079, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-18", "value": 3618669, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-19", "value": 1359052, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-20", "value": 1120941, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-21", "value": 1576652, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-22", "value": 672415, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-25", "value": 740059, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-26", "value": 975462, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-27", "value": 1127361, "color": "rgba(249,66,58,.3)"}, {"time": "2026-05-28", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-05-29", "value": 1596837, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-01", "value": 920596, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-02", "value": 1104916, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-03", "value": 691044, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-04", "value": 977661, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-05", "value": 1096107, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-08", "value": 759236, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-09", "value": 698428, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-10", "value": 730390, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-11", "value": 907447, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-12", "value": 837543, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-15", "value": 1048910, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-16", "value": 645762, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-17", "value": 2340067, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-18", "value": 2485828, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-19", "value": 1194685, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-22", "value": 2934165, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-23", "value": 2036034, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-24", "value": 1012072, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-25", "value": 835465, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-26", "value": 0, "color": "rgba(34,197,94,.3)"}, {"time": "2026-06-29", "value": 1139188, "color": "rgba(249,66,58,.3)"}, {"time": "2026-06-30", "value": 2885327, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-01", "value": 1320683, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-02", "value": 1094896, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-03", "value": 1390329, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-06", "value": 814764, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-07", "value": 6317270, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-08", "value": 6795582, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-09", "value": 2392180, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-10", "value": 1234073, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-13", "value": 854769, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-14", "value": 1384716, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-15", "value": 712988, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-16", "value": 391570, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-17", "value": 818536, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-20", "value": 618105, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-21", "value": 373894, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-22", "value": 1267753, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-23", "value": 970744, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-24", "value": 543772, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-27", "value": 847899, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-28", "value": 839816, "color": "rgba(249,66,58,.3)"}, {"time": "2026-07-29", "value": 742837, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-30", "value": 784302, "color": "rgba(34,197,94,.3)"}, {"time": "2026-07-31", "value": 1195972, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-03", "value": 919243, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-04", "value": 758781, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-05", "value": 476060, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-06", "value": 3352181, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-07", "value": 2274374, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-10", "value": 637249, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-11", "value": 462009, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-12", "value": 622999, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-13", "value": 1161993, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-14", "value": 1027659, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-17", "value": 1954085, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-18", "value": 1360896, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-19", "value": 680465, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-20", "value": 458250, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-21", "value": 817183, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-24", "value": 851792, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-25", "value": 973455, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-26", "value": 1691548, "color": "rgba(34,197,94,.3)"}, {"time": "2026-08-27", "value": 1334290, "color": "rgba(249,66,58,.3)"}, {"time": "2026-08-28", "value": 412702, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-01", "value": 190804, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-02", "value": 175556, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-03", "value": 259416, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-04", "value": 630573, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-07", "value": 347060, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-08", "value": 441023, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-09", "value": 1253238, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-10", "value": 1052635, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-11", "value": 6390480, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-15", "value": 1989128, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-16", "value": 1222729, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-17", "value": 778344, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-18", "value": 1456165, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-21", "value": 784923, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-22", "value": 830174, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-23", "value": 402616, "color": "rgba(249,66,58,.3)"}, {"time": "2026-09-24", "value": 557285, "color": "rgba(34,197,94,.3)"}, {"time": "2026-09-25", "value": 420719, "color": "rgba(34,197,94,.3)"}], "ema50_1y": [{"time": "2025-09-25", "value": 1792.58}, {"time": "2025-09-26", "value": 1795.78}, {"time": "2025-09-29", "value": 1794.85}, {"time": "2025-09-30", "value": 1794.64}, {"time": "2025-10-01", "value": 1797.27}, {"time": "2025-10-03", "value": 1799.79}, {"time": "2025-10-06", "value": 1801.87}, {"time": "2025-10-07", "value": 1803.36}, {"time": "2025-10-08", "value": 1803.1}, {"time": "2025-10-09", "value": 1802.4}, {"time": "2025-10-10", "value": 1801.38}, {"time": "2025-10-13", "value": 1799.76}, {"time": "2025-10-14", "value": 1799.16}, {"time": "2025-10-15", "value": 1799.01}, {"time": "2025-10-16", "value": 1798.69}, {"time": "2025-10-17", "value": 1798.43}, {"time": "2025-10-20", "value": 1798.37}, {"time": "2025-10-21", "value": 1798.78}, {"time": "2025-10-23", "value": 1798.53}, {"time": "2025-10-24", "value": 1799.54}, {"time": "2025-10-27", "value": 1800.35}, {"time": "2025-10-28", "value": 1800.77}, {"time": "2025-10-29", "value": 1800.91}, {"time": "2025-10-30", "value": 1800.19}, {"time": "2025-10-31", "value": 1799.77}, {"time": "2025-11-03", "value": 1799.27}, {"time": "2025-11-04", "value": 1798.07}, {"time": "2025-11-06", "value": 1794.33}, {"time": "2025-11-07", "value": 1791.64}, {"time": "2025-11-10", "value": 1790.21}, {"time": "2025-11-11", "value": 1788.81}, {"time": "2025-11-12", "value": 1788.94}, {"time": "2025-11-13", "value": 1785.73}, {"time": "2025-11-14", "value": 1783.36}, {"time": "2025-11-17", "value": 1780.95}, {"time": "2025-11-18", "value": 1778.16}, {"time": "2025-11-19", "value": 1775.07}, {"time": "2025-11-20", "value": 1773.1}, {"time": "2025-11-21", "value": 1770.12}, {"time": "2025-11-24", "value": 1766.1}, {"time": "2025-11-25", "value": 1762.82}, {"time": "2025-11-26", "value": 1759.46}, {"time": "2025-11-27", "value": 1756.19}, {"time": "2025-11-28", "value": 1752.65}, {"time": "2025-12-01", "value": 1749.29}, {"time": "2025-12-02", "value": 1745.0}, {"time": "2025-12-03", "value": 1740.19}, {"time": "2025-12-04", "value": 1736.28}, {"time": "2025-12-05", "value": 1732.66}, {"time": "2025-12-08", "value": 1728.08}, {"time": "2025-12-09", "value": 1723.76}, {"time": "2025-12-10", "value": 1719.65}, {"time": "2025-12-11", "value": 1714.84}, {"time": "2025-12-12", "value": 1710.3}, {"time": "2025-12-15", "value": 1705.49}, {"time": "2025-12-16", "value": 1699.8}, {"time": "2025-12-17", "value": 1692.07}, {"time": "2025-12-18", "value": 1684.78}, {"time": "2025-12-19", "value": 1679.43}, {"time": "2025-12-22", "value": 1678.91}, {"time": "2025-12-23", "value": 1677.65}, {"time": "2025-12-24", "value": 1676.54}, {"time": "2025-12-26", "value": 1675.58}, {"time": "2025-12-29", "value": 1674.08}, {"time": "2025-12-30", "value": 1671.74}, {"time": "2025-12-31", "value": 1669.72}, {"time": "2026-01-01", "value": 1667.87}, {"time": "2026-01-02", "value": 1666.35}, {"time": "2026-01-05", "value": 1664.92}, {"time": "2026-01-06", "value": 1662.58}, {"time": "2026-01-07", "value": 1660.45}, {"time": "2026-01-08", "value": 1657.31}, {"time": "2026-01-09", "value": 1653.84}, {"time": "2026-01-12", "value": 1650.27}, {"time": "2026-01-13", "value": 1646.23}, {"time": "2026-01-14", "value": 1641.84}, {"time": "2026-01-15", "value": 1637.63}, {"time": "2026-01-16", "value": 1633.28}, {"time": "2026-01-19", "value": 1628.3}, {"time": "2026-01-20", "value": 1620.79}, {"time": "2026-01-21", "value": 1614.77}, {"time": "2026-01-22", "value": 1610.2}, {"time": "2026-01-23", "value": 1605.43}, {"time": "2026-01-27", "value": 1602.2}, {"time": "2026-01-28", "value": 1603.01}, {"time": "2026-01-29", "value": 1603.29}, {"time": "2026-01-30", "value": 1605.51}, {"time": "2026-02-02", "value": 1601.84}, {"time": "2026-02-03", "value": 1598.18}, {"time": "2026-02-04", "value": 1594.42}, {"time": "2026-02-05", "value": 1590.05}, {"time": "2026-02-06", "value": 1586.13}, {"time": "2026-02-09", "value": 1583.71}, {"time": "2026-02-10", "value": 1581.55}, {"time": "2026-02-11", "value": 1578.88}, {"time": "2026-02-12", "value": 1575.81}, {"time": "2026-02-13", "value": 1571.77}, {"time": "2026-02-16", "value": 1567.75}, {"time": "2026-02-17", "value": 1566.1}, {"time": "2026-02-18", "value": 1564.65}, {"time": "2026-02-19", "value": 1562.98}, {"time": "2026-02-20", "value": 1561.2}, {"time": "2026-02-23", "value": 1558.87}, {"time": "2026-02-24", "value": 1556.17}, {"time": "2026-02-25", "value": 1553.46}, {"time": "2026-02-26", "value": 1551.4}, {"time": "2026-02-27", "value": 1549.06}, {"time": "2026-03-02", "value": 1545.13}, {"time": "2026-03-04", "value": 1539.36}, {"time": "2026-03-05", "value": 1535.76}, {"time": "2026-03-06", "value": 1533.98}, {"time": "2026-03-09", "value": 1530.86}, {"time": "2026-03-10", "value": 1528.66}, {"time": "2026-03-11", "value": 1525.99}, {"time": "2026-03-12", "value": 1522.79}, {"time": "2026-03-13", "value": 1517.41}, {"time": "2026-03-16", "value": 1510.24}, {"time": "2026-03-17", "value": 1504.33}, {"time": "2026-03-18", "value": 1500.71}, {"time": "2026-03-19", "value": 1495.24}, {"time": "2026-03-20", "value": 1489.22}, {"time": "2026-03-23", "value": 1480.59}, {"time": "2026-03-24", "value": 1473.71}, {"time": "2026-03-25", "value": 1467.58}, {"time": "2026-03-27", "value": 1459.31}, {"time": "2026-03-30", "value": 1448.87}, {"time": "2026-04-01", "value": 1444.55}, {"time": "2026-04-02", "value": 1439.45}, {"time": "2026-04-06", "value": 1435.31}, {"time": "2026-04-07", "value": 1431.88}, {"time": "2026-04-08", "value": 1429.84}, {"time": "2026-04-09", "value": 1429.61}, {"time": "2026-04-10", "value": 1430.98}, {"time": "2026-04-13", "value": 1431.14}, {"time": "2026-04-15", "value": 1433.02}, {"time": "2026-04-16", "value": 1435.57}, {"time": "2026-04-17", "value": 1440.5}, {"time": "2026-04-20", "value": 1444.59}, {"time": "2026-04-21", "value": 1449.0}, {"time": "2026-04-22", "value": 1454.25}, {"time": "2026-04-23", "value": 1459.69}, {"time": "2026-04-24", "value": 1467.73}, {"time": "2026-04-27", "value": 1476.02}, {"time": "2026-04-28", "value": 1484.64}, {"time": "2026-04-29", "value": 1495.98}, {"time": "2026-04-30", "value": 1505.29}, {"time": "2026-05-01", "value": 1514.23}, {"time": "2026-05-04", "value": 1522.27}, {"time": "2026-05-05", "value": 1529.72}, {"time": "2026-05-06", "value": 1538.48}, {"time": "2026-05-07", "value": 1549.31}, {"time": "2026-05-08", "value": 1558.23}, {"time": "2026-05-11", "value": 1564.44}, {"time": "2026-05-12", "value": 1566.46}, {"time": "2026-05-13", "value": 1569.86}, {"time": "2026-05-14", "value": 1572.82}, {"time": "2026-05-15", "value": 1573.67}, {"time": "2026-05-18", "value": 1571.31}, {"time": "2026-05-19", "value": 1568.1}, {"time": "2026-05-20", "value": 1565.74}, {"time": "2026-05-21", "value": 1564.38}, {"time": "2026-05-22", "value": 1563.11}, {"time": "2026-05-25", "value": 1561.77}, {"time": "2026-05-26", "value": 1560.38}, {"time": "2026-05-27", "value": 1558.95}, {"time": "2026-05-28", "value": 1557.57}, {"time": "2026-05-29", "value": 1554.04}, {"time": "2026-06-01", "value": 1549.15}, {"time": "2026-06-02", "value": 1545.95}, {"time": "2026-06-03", "value": 1542.41}, {"time": "2026-06-04", "value": 1539.67}, {"time": "2026-06-05", "value": 1535.73}, {"time": "2026-06-08", "value": 1530.68}, {"time": "2026-06-09", "value": 1527.17}, {"time": "2026-06-10", "value": 1522.35}, {"time": "2026-06-11", "value": 1517.07}, {"time": "2026-06-12", "value": 1513.43}, {"time": "2026-06-15", "value": 1509.45}, {"time": "2026-06-16", "value": 1506.4}, {"time": "2026-06-17", "value": 1506.15}, {"time": "2026-06-18", "value": 1504.72}, {"time": "2026-06-19", "value": 1502.89}, {"time": "2026-06-22", "value": 1501.85}, {"time": "2026-06-23", "value": 1501.13}, {"time": "2026-06-24", "value": 1500.58}, {"time": "2026-06-25", "value": 1498.93}, {"time": "2026-06-26", "value": 1497.34}, {"time": "2026-06-29", "value": 1494.6}, {"time": "2026-06-30", "value": 1495.13}, {"time": "2026-07-01", "value": 1495.49}, {"time": "2026-07-02", "value": 1496.42}, {"time": "2026-07-03", "value": 1497.51}, {"time": "2026-07-06", "value": 1497.86}, {"time": "2026-07-07", "value": 1495.81}, {"time": "2026-07-08", "value": 1492.22}, {"time": "2026-07-09", "value": 1488.86}, {"time": "2026-07-10", "value": 1486.08}, {"time": "2026-07-13", "value": 1483.17}, {"time": "2026-07-14", "value": 1479.55}, {"time": "2026-07-15", "value": 1476.87}, {"time": "2026-07-16", "value": 1474.12}, {"time": "2026-07-17", "value": 1471.3}, {"time": "2026-07-20", "value": 1468.8}, {"time": "2026-07-21", "value": 1466.31}, {"time": "2026-07-22", "value": 1462.45}, {"time": "2026-07-23", "value": 1459.83}, {"time": "2026-07-24", "value": 1457.19}, {"time": "2026-07-27", "value": 1455.03}, {"time": "2026-07-28", "value": 1452.19}, {"time": "2026-07-29", "value": 1450.29}, {"time": "2026-07-30", "value": 1448.4}, {"time": "2026-07-31", "value": 1447.4}, {"time": "2026-08-03", "value": 1447.19}, {"time": "2026-08-04", "value": 1446.51}, {"time": "2026-08-05", "value": 1445.67}, {"time": "2026-08-06", "value": 1447.41}, {"time": "2026-08-07", "value": 1450.24}, {"time": "2026-08-10", "value": 1452.27}, {"time": "2026-08-11", "value": 1453.99}, {"time": "2026-08-12", "value": 1456.03}, {"time": "2026-08-13", "value": 1458.02}, {"time": "2026-08-14", "value": 1459.53}, {"time": "2026-08-17", "value": 1459.47}, {"time": "2026-08-18", "value": 1460.47}, {"time": "2026-08-19", "value": 1461.43}, {"time": "2026-08-20", "value": 1462.51}, {"time": "2026-08-21", "value": 1463.22}, {"time": "2026-08-24", "value": 1465.21}, {"time": "2026-08-25", "value": 1467.3}, {"time": "2026-08-26", "value": 1470.43}, {"time": "2026-08-27", "value": 1473.27}, {"time": "2026-08-28", "value": 1475.69}, {"time": "2026-09-01", "value": 1476.39}, {"time": "2026-09-02", "value": 1475.66}, {"time": "2026-09-03", "value": 1476.23}, {"time": "2026-09-04", "value": 1477.13}, {"time": "2026-09-07", "value": 1478.58}, {"time": "2026-09-08", "value": 1480.31}, {"time": "2026-09-09", "value": 1483.27}, {"time": "2026-09-10", "value": 1484.73}, {"time": "2026-09-11", "value": 1480.66}, {"time": "2026-09-15", "value": 1474.56}, {"time": "2026-09-16", "value": 1468.46}, {"time": "2026-09-17", "value": 1463.2}, {"time": "2026-09-18", "value": 1460.64}, {"time": "2026-09-21", "value": 1457.67}, {"time": "2026-09-22", "value": 1454.98}, {"time": "2026-09-23", "value": 1451.64}, {"time": "2026-09-24", "value": 1448.44}, {"time": "2026-09-25", "value": 1445.64}], "rs_dates": ["2025-09-25", "2025-09-26", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-03", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-26", "2025-12-29", "2025-12-30", "2025-12-31", "2026-01-01", "2026-01-02", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-16", "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20", "2026-02-23", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-27", "2026-03-30", "2026-04-01", "2026-04-02", "2026-04-06", "2026-04-07", "2026-04-08", "2026-04-09", "2026-04-10", "2026-04-13", "2026-04-15", "2026-04-16", "2026-04-17", "2026-04-20", "2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-04", "2026-05-05", "2026-05-06", "2026-05-07", "2026-05-08", "2026-05-11", "2026-05-12", "2026-05-13", "2026-05-14", "2026-05-15", "2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21", "2026-05-22", "2026-05-25", "2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-08", "2026-06-09", "2026-06-10", "2026-06-11", "2026-06-12", "2026-06-15", "2026-06-16", "2026-06-17", "2026-06-18", "2026-06-19", "2026-06-22", "2026-06-23", "2026-06-24", "2026-06-25", "2026-06-26", "2026-06-29", "2026-06-30", "2026-07-01", "2026-07-02", "2026-07-03", "2026-07-06", "2026-07-07", "2026-07-08", "2026-07-09", "2026-07-10", "2026-07-13", "2026-07-14", "2026-07-15", "2026-07-16", "2026-07-17", "2026-07-20", "2026-07-21", "2026-07-22", "2026-07-23", "2026-07-24", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31", "2026-08-03", "2026-08-04", "2026-08-05", "2026-08-06", "2026-08-07", "2026-08-10", "2026-08-11", "2026-08-12", "2026-08-13", "2026-08-14", "2026-08-17", "2026-08-18", "2026-08-19", "2026-08-20", "2026-08-21", "2026-08-24", "2026-08-25", "2026-08-26", "2026-08-27", "2026-08-28", "2026-09-01", "2026-09-02", "2026-09-03", "2026-09-04", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-24", "2026-09-25"], "rs_ratio": [2.6711, 2.6334, 2.487, 2.5122, 2.5912, 2.5798, 2.5523, 2.5298, 2.4814, 2.4513, 2.4291, 2.4113, 2.4565, 2.4507, 2.4257, 2.4235, 2.4182, 2.4296, 2.4079, 2.458, 2.4366, 2.427, 2.4043, 2.3861, 2.4087, 2.3952, 2.3842, 2.311, 2.3416, 2.3737, 2.3643, 2.3992, 2.2878, 2.31, 2.2938, 2.2906, 2.2685, 2.2958, 2.2769, 2.2477, 2.2699, 2.2344, 2.2335, 2.2217, 2.2236, 2.1969, 2.1832, 2.2051, 2.2012, 2.1922, 2.1957, 2.207, 2.1641, 2.1509, 2.1356, 2.1128, 2.0412, 2.0461, 2.0869, 2.228, 2.1994, 2.2069, 2.2172, 2.2066, 2.1768, 2.1659, 2.1693, 2.1573, 2.1622, 2.1336, 2.137, 2.1299, 2.1337, 2.1211, 2.103, 2.0859, 2.0859, 2.0745, 2.0568, 1.9984, 2.0507, 2.0781, 2.092, 2.1301, 2.2439, 2.2212, 2.2953, 2.113, 2.0533, 2.037, 2.0214, 2.0293, 2.0542, 2.0537, 2.0312, 2.0246, 2.0162, 1.9978, 2.0683, 2.0638, 2.0852, 2.0702, 2.0408, 2.0403, 2.0278, 2.0426, 2.0549, 2.0249, 1.9909, 2.0354, 2.1156, 2.1047, 2.1063, 2.1149, 2.105, 2.0671, 1.9813, 2.0024, 2.0559, 2.0469, 2.0074, 1.9602, 1.9771, 1.9575, 1.9081, 1.8549, 2.0406, 2.0035, 2.0086, 2.0201, 1.9892, 2.062, 2.0916, 2.0649, 2.0892, 2.1102, 2.1785, 2.1562, 2.1563, 2.1975, 2.2284, 2.3539, 2.3484, 2.377, 2.4751, 2.4388, 2.4388, 2.4033, 2.3958, 2.441, 2.4948, 2.4501, 2.3928, 2.3128, 2.3488, 2.3219, 2.2585, 2.1572, 2.1108, 2.1392, 2.1617, 2.1532, 2.1314, 2.1272, 2.1187, 2.1187, 2.0413, 2.0205, 2.0798, 2.0907, 2.0887, 2.0373, 2.0239, 2.0729, 1.9971, 2.0028, 2.0333, 1.9613, 1.9867, 2.0749, 2.021, 2.0105, 2.0269, 2.0576, 2.0502, 2.0137, 2.0137, 1.984, 2.0927, 2.0749, 2.0841, 2.0814, 2.0515, 1.9745, 1.9561, 1.9396, 1.9382, 1.9346, 1.9058, 1.9294, 1.9326, 1.923, 1.9305, 1.9205, 1.8841, 1.9381, 1.9394, 1.9379, 1.9089, 1.9217, 1.9161, 1.9357, 1.9332, 1.9264, 1.916, 2.0039, 2.0454, 2.0189, 2.0156, 2.0303, 2.0373, 2.0241, 1.9795, 2.0192, 2.0273, 2.021, 2.0089, 2.0566, 2.0524, 2.0911, 2.0971, 2.0855, 2.042, 2.015, 2.0452, 2.0516, 2.0856, 2.1031, 2.1629, 2.114, 1.9274, 1.8813, 1.8682, 1.8797, 1.9534, 1.9335, 1.9446, 1.9063, 1.9387, 1.9486], "years": ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"], "revenue": [2355.0, 2966.0, 3422.0, 2819.0, 3191.0, 2365.0, 3830.0, 4820.0, 5022.0], "pat": [396.0, 478.0, 632.0, 609.0, 564.0, 305.0, 783.0, 827.0, 717.0], "opm": [20.0, 19.0, 21.0, 26.0, 20.0, 11.0, 23.0, 19.0, 17.0], "npm": [16.8, 16.1, 18.5, 21.6, 17.7, 12.9, 20.4, 17.2, 14.3], "roe": [null, 22.0, 25.0, 20.0, 17.0, 8.0, 21.0, 20.0, 16.0], "roce_hist": [null, 22.0, 25.0, 20.0, 17.0, 8.0, 21.0, 20.0, 16.0], "pe_years": [], "pe_hist": [], "pe_median": null, "pulse_rev": [-2.1, 17.6, -15.6, 2.3], "pulse_pat": [-42.9, -18.1, -3.8, -19.7], "pulse_opm": [7.0, 14.0, 21.0, 18.0], "pulse_roce": [16.0, 16.0, 16.0, 16.0], "pulse_pe": [44.8, 64.6, 62.0, 58.6, 43.8, 58.3]};
+
+function showTab(name){
+  document.querySelectorAll('.tab-body').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  event.target.classList.add('active');
+  if(name==='financials'&&!pulseInited){
+    pulseInited=true;
+    setTimeout(initPulse,50);
+  }
+}
+
+const RED='#F9423A',GRN='#22c55e',YEL='#eab308',DIM='#888888',MT='#666666';
+
+const UP='#3a8a5a',DN='#8a3a3a';
+function initPriceChart(containerId, ohlcv, ema50, volData){
+  if(typeof LightweightCharts==='undefined'||!ohlcv||!ohlcv.length)return null;
+  const el=document.getElementById(containerId);if(!el)return null;
+  const chart=LightweightCharts.createChart(el,{
+    width:el.clientWidth||800,height:el.clientHeight||400,
+    layout:{background:{type:'solid',color:'#0d0d0d'},textColor:'#888888',fontFamily:'Pretendard',fontSize:11},
+    grid:{vertLines:{visible:false},horzLines:{visible:false}},
+    localization:{locale:'en-IN'},
+    rightPriceScale:{borderColor:'#2e2e2e'},
+    timeScale:{borderColor:'#2e2e2e',timeVisible:true,secondsVisible:false},
+    crosshair:{mode:LightweightCharts.CrosshairMode.Normal},
+  });
+  const cs=chart.addCandlestickSeries({
+    upColor:UP,downColor:DN,borderVisible:false,
+    wickUpColor:UP,wickDownColor:DN,priceLineVisible:false});
+  const vs=chart.addHistogramSeries({
+    priceFormat:{type:'volume'},priceScaleId:'',lastValueVisible:false});
+  cs.priceScale().applyOptions({scaleMargins:{top:0.12,bottom:0.22}});
+  chart.priceScale('').applyOptions({scaleMargins:{top:0.78,bottom:0}});
+  cs.setData(ohlcv);
+  if(volData&&volData.length){
+    vs.setData(volData.map(b=>{
+      const up=b.color&&b.color.includes('34,197,94');
+      return{time:b.time,value:b.value,color:up?'rgba(58,138,90,0.35)':'rgba(138,58,58,0.35)'};
+    }));
+  }
+  if(ema50&&ema50.length){
+    const es=chart.addLineSeries({color:'#b08d57',lineWidth:1.5,lastValueVisible:false});
+    es.setData(ema50);
+  }
+  chart.timeScale().fitContent();
+  return chart;
+}
+
+function initPulse(){
+  buildPulseBars('pulse-rev',D.pulse_rev,'pct');
+  buildPulseBars('pulse-pat',D.pulse_pat,'pct');
+  buildPulseBars('pulse-opm',D.pulse_opm,'val');
+  buildPulseBars('pulse-roce',D.pulse_roce,'val');
+  buildPulseBars('pulse-pe',D.pulse_pe,'val');
+}
+
+/* Pulse mini-chart builder */
+function buildPulseBars(cellId, values, fmt){
+  const cell=document.getElementById(cellId);if(!cell||!values||!values.length)return;
+  const barsEl=cell.querySelector('.pm-bars');
+  const valsEl=cell.querySelector('.pm-vals');
+  if(!barsEl||!valsEl)return;
+  const max=Math.max(...values.map(v=>Math.abs(v||0)),1);
+  barsEl.innerHTML='';
+  values.forEach((v,i)=>{
+    const bar=document.createElement('div');
+    bar.className='bar'+(i===values.length-1?' last':'')+(v>=0?' g':' r');
+    bar.style.height=Math.max(2,Math.abs(v||0)/max*30)+'px';
+    barsEl.appendChild(bar);
+  });
+  const fmt2=v=>{
+    if(v===null)return '·';
+    const n=Math.abs(v)<10?v.toFixed(1):Math.round(v);
+    return fmt==='pct'?(v>=0?'+':'')+n+'%':String(n);
+  };
+  valsEl.textContent=values.map(fmt2).join('  |  ');
+}
+
+function initSparklines(){
+  document.querySelectorAll('[data-spark]').forEach(tile=>{
+    const raw=tile.dataset.spark;if(!raw)return;
+    const vals=raw.split(',').map(Number).filter(v=>!isNaN(v));
+    if(vals.length<2)return;
+    const chartEl=tile.querySelector('.tile-chart, .kpi-chart');if(!chartEl)return;
+    const dir=tile.dataset.dir||'flat';
+    const color=dir==='up'?'34,197,94':dir==='down'?'249,66,58':'234,179,8';
+    const min=Math.min(...vals),max=Math.max(...vals);
+    const range=max-min||1;
+    const h=60,padT=16,padB=4,padX=20;
+    const w=chartEl.offsetWidth||200;
+    const step=(w-padX*2)/(vals.length-1);
+    const pts=vals.map((v,i)=>{
+      const x=padX+i*step;
+      const y=padT+((max-v)/range)*(h-padT-padB);
+      return{x,y};
+    });
+    const line=pts.map((p,i)=>(i===0?'M':'L')+p.x.toFixed(1)+','+p.y.toFixed(1)).join(' ');
+    const area=line+' L'+pts[pts.length-1].x.toFixed(1)+','+h+' L'+pts[0].x.toFixed(1)+','+h+' Z';
+    const labels=pts.map((p,i)=>
+      '<text x="'+p.x.toFixed(1)+'" y="'+(p.y-5).toFixed(1)+'" '+
+      'fill="rgba('+color+',.9)" font-size="9" font-weight="700" font-family="Pretendard" '+
+      'text-anchor="middle">'+vals[i]+'</text>'
+    ).join('');
+    const dots=pts.map(p=>
+      '<circle cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="2.5" fill="rgb('+color+')"/>'
+    ).join('');
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 '+w+' '+h);
+    svg.setAttribute('preserveAspectRatio','none');
+    svg.style.width='100%';svg.style.height='100%';svg.style.display='block';
+    svg.innerHTML=
+      '<defs><linearGradient id="sg'+vals[0]+'" x1="0" y1="0" x2="0" y2="1">'+
+      '<stop offset="0%" stop-color="rgba('+color+',.25)"/>'+
+      '<stop offset="100%" stop-color="rgba('+color+',.03)"/>'+
+      '</linearGradient></defs>'+
+      '<path d="'+area+'" fill="url(#sg'+vals[0]+')" stroke="none"/>'+
+      '<path d="'+line+'" fill="none" stroke="rgba('+color+',.6)" stroke-width="1.5"/>'+
+      dots+labels;
+    chartEl.appendChild(svg);
+  });
+}
+
+let pulseInited=false;
+window.addEventListener('DOMContentLoaded',()=>{
+  initPriceChart('price-chart',D.ohlcv_6m,D.ema50_6m,D.volume);
+  initSparklines();
+});
+</script>
+
+</body>
+</html>
