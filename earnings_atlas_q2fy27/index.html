@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q2 FY27 Earnings Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="assets/echarts.min.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#/">
+      <span class="brand-k">Earnings Atlas</span>
+      <span class="brand-p">Sep-26 quarter · Q2 FY27</span>
+    </a>
+    <nav class="tabs" id="tabs">
+      <a href="#/" data-v="pulse">Market pulse</a>
+      <a href="#/sectors" data-v="sectors">Sector map</a>
+      <a href="#/boards" data-v="boards">Leaderboards</a>
+      <a href="#/quality" data-v="quality">Earnings quality</a>
+      <a href="#/explorer" data-v="explorer">All companies</a>
+    </nav>
+    <div class="top-tools">
+      <input id="gsearch" type="search" placeholder="Jump to ticker or name" autocomplete="off" aria-label="Search companies">
+      <div id="gsearch-res" class="search-res" hidden></div>
+      <button id="theme" class="icon-btn" title="Toggle light or dark" aria-label="Toggle theme">◐</button>
+    </div>
+  </div>
+</header>
+<main id="main"><div class="loading">Loading 1,900+ results…</div></main>
+<footer class="foot" id="foot"></footer>
+<div id="tip" class="tip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
