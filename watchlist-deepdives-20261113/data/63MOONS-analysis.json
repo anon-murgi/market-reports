@@ -1,0 +1,398 @@
+{
+  "archetype": "financial technology / cybersecurity and legacy investments",
+  "executive_summary": "63 Moons remains a loss-making consolidated transition despite rapid revenue expansion. The official filing resolves the PAT-definition gap: approximately ₹40.43 crore loss before NCI becomes ₹28.73 crore loss attributable to owners. Qualified limited-review conclusions and recoverability limitations make reported book value an insufficient basis for an investment conclusion.",
+  "research_stance": "Speculative special-situation research only; require cash-flow, legal and subsidiary-economics evidence before a conviction valuation.",
+  "thesis_drivers": [
+    {
+      "title": "Revenue growth has not repaired unit profitability",
+      "evidence": "Local Q2 revenue ₹153 crore compares with ₹21 crore a year ago, but operating loss remained ₹88 crore. Large base effects or new business consolidation can inflate growth without proving positive incremental margins.",
+      "source": "September 2026 local consolidated financials"
+    },
+    {
+      "title": "The parent and subsidiaries must be separated",
+      "evidence": "A standalone profit can arise alongside consolidated losses and capital requirements in subsidiaries. Reported net assets are only useful after examining their legal accessibility, quality and liability claims.",
+      "source": "Local standalone/consolidated accounting scope; official company investor website"
+    },
+    {
+      "title": "Cash conversion is the critical proof point",
+      "evidence": "FY26 local CFO was −₹293 crore and free cash flow −₹336 crore. With additional cyber security marketing and business building, continued revenue growth must translate into better operating cash generation.",
+      "source": "FY26 local cash-flow statements"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Correct classification",
+      "content": "63 Moons is not a pure listed exchange or a generic IT-services company. Its legacy financial technology, investments and cyber security subsidiaries require a segment and asset-realisation framework."
+    },
+    {
+      "heading": "Cyber security opportunity versus proof of returns",
+      "content": "The official website emphasises securing digital life. A large cyber security market does not demonstrate that this company has profitable customer acquisition, retention or pricing power."
+    },
+    {
+      "heading": "Balance-sheet and legal lens",
+      "content": "Legacy NSEL-related litigation and asset constraints should be verified from current legal/audit disclosures before assigning net cash value. This report does not assert specific new judgments or quantify unverified claims."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Business transition",
+      "stage": "Loss-making investment phase",
+      "evidence": "Revenues expanded but local operating loss and negative historical cash generation remain."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "MEAN",
+      "evidence": "Approximately 1.18× snapshot book; asset realisability and claims are unresolved."
+    },
+    {
+      "name": "Funding / cash-conversion cycle",
+      "stage": "Cash consumption",
+      "evidence": "FY26 local CFO −₹293 crore and free cash flow −₹336 crore require a credible funding and operating-return bridge."
+    }
+  ],
+  "valuation": {
+    "method": "Conservative asset-by-asset sum-of-parts; no fair value target",
+    "assessment": "P/E is not meaningful with negative earnings. Snapshot book ₹760/share and P/B 1.18× are not a liquidation value. Restricted, disputed or non-cash assets must not be treated as freely distributable cash.",
+    "assumptions": [
+      "No DCF, target price or probability weighted value without a verified asset/liability and legal claims bridge.",
+      "Operating business value needs segment cash flows and customer-economics data.",
+      "P/B is a descriptive cross-check, not an evidence-backed margin of safety."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Cyber security and other new revenues gain repeat customers and positive contribution margins.",
+      "Parent/subsidiary capital requirements become transparent and cash burn narrows.",
+      "Legal clarity and asset realisability permit a conservative net-asset valuation."
+    ],
+    "base": [
+      "Revenues grow but expense and marketing requirements keep the consolidated business loss-making.",
+      "Treasury income and parent earnings partly offset subsidiary burn.",
+      "Valuation remains event sensitive with low forecast confidence."
+    ],
+    "bear": [
+      "Revenue growth fails to generate cash and additional funding dilutes shareholders.",
+      "Legal or asset restrictions reduce shareholder-accessible net assets.",
+      "Losses and valuation volatility persist despite positive sector narratives."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Persistent operating cash burn",
+      "detail": "Negative FY26 CFO and large operating losses limit self-funding.",
+      "monitor": "Segment cash flows, monthly burn, funding runway and intercompany support."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Qualified reviews and recoverability uncertainty",
+      "detail": "Official notes state qualified standalone/consolidated limited-review conclusions and describe uncertain consequential legal impacts; NSEL balances also face confirmation and recoverability limitations. Management’s view is not equivalent to an unqualified auditor conclusion.",
+      "monitor": "Resolution of the stated qualifications, enforceable claim outcomes, restricted versus free funds and asset-by-asset recoverability."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Subsidiary valuation and dilution",
+      "detail": "Business building and capital raising may transfer value or dilute the parent interest.",
+      "monitor": "Related-party funding, minority ownership and issue pricing."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Lack of current concall",
+      "detail": "No September quarter earnings call transcript was located in canonical store or official search.",
+      "monitor": "Official investor communications and call availability."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Evidence of repeatable positive unit contribution",
+      "timeline": "Next two quarters",
+      "evidence": "Large operating loss despite rapid revenue growth sets a high bar."
+    },
+    {
+      "event": "Subsidiary funding and cash-flow clarity",
+      "timeline": "Next financial disclosures",
+      "evidence": "FY26 negative CFO requires a clear funding bridge."
+    },
+    {
+      "event": "Verified legal or asset-realisability clarity",
+      "timeline": "Event-driven",
+      "evidence": "No outcome or valuation uplift assumed."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Consolidated operating cash burn continues without transparent funding runway and segment returns.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "New capital allocation or related-party support occurs without adequate economic disclosure.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "Revenue growth fails to improve operating losses for two further quarters.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "Potential technology assets, but current consolidated profitability is weak and segment unit-economics unproven.",
+    "management": "A current Q2 call could not be verified; sentiment and management promises should not be inferred from the website.",
+    "capital_allocation": "Negative cash flows make incremental capital deployment and minority dilution central.",
+    "governance": "The 4 November filing explicitly contains qualified limited-review conclusions, and NSEL balances have stated confirmation/recoverability limitations. This is verified disclosure, not an allegation of wrongdoing or a quantified estimate of legal liability. Independent legal and asset-quality work remains necessary.",
+    "limitations": "No verified current call, full legal review or forensic NAV. The reviewed qualification is known; its financial effect is not quantified. Statutory review findings must not be described as a clean accounting opinion."
+  },
+  "company_name": "63 moons technologies limited",
+  "ticker": "63 MOONS",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026(Q2 FY27), consolidated local financials: PAT ₹-40.0 crore versus ₹-45.0 crore a year ago and ₹-48.0 crore in June 2026. The business includes loss or near-zero comparison periods; percentage profit growth is not an appropriate standalone signal.",
+    "Revenue ₹153.0 crore was +628.6% YoY and+11.7% QoQ. Local operating profit ₹-88.0 crore and OPM-57.0% should be interpreted on the dataset’s definition, rather than automatically equated with management’s adjusted EBITDA or EBIT.",
+    "Local Q2 revenue ₹153 crore compares with ₹21 crore a year ago, but operating loss remained ₹88 crore. Large base effects or new business consolidation can inflate growth without proving positive incremental margins.",
+    "No current earnings call was verified. Numeric rows remain from the local consolidated table; the official 4 November results clarify attribution and contain separate standalone and consolidated limited-review qualifications. Standalone PAT ₹12.0028 crore must not be confused with the consolidated owners’ loss or with the filing’s ₹lakh units.",
+    "The official consolidated filing reports loss before NCI of ₹40.4324 crore, a positive NCI adjustment of ₹11.6999 crore and owners’ loss of ₹28.7325 crore. The local rounded −₹40 crore and EPS −₹6.24 therefore use different profit definitions. Owners’ loss is slightly worse than the prior-year −₹28.264 crore, even though the pre-NCI loss improved."
+  ],
+  "sources": [
+    {
+      "title": "63 Moons official investor entry point",
+      "url": "https://www.63moons.com/"
+    },
+    {
+      "title": "Official September 2026 results, notes and qualified limited-review reports",
+      "url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": null,
+    "coverage_status": "No verified current transcript",
+    "confidence": "low",
+    "sentiment": "not assessed",
+    "sentiment_basis": "No current earnings call transcript was located; management sentiment cannot be graded.",
+    "summary": {
+      "result": "September 2026(Q2 FY27), consolidated local financials: PAT ₹-40.0 crore versus ₹-45.0 crore a year ago and ₹-48.0 crore in June 2026. The business includes loss or near-zero comparison periods; percentage profit growth is not an appropriate standalone signal.",
+      "driver": "Not assessed from a call; results analysis uses local consolidated data.",
+      "forward": "No verified quantified September-call guidance available.",
+      "risk": "No verified current Q&A or track record comparison to assess management assumptions."
+    },
+    "story_tension": "Can rapid new business growth translate into positive cash flow without dilution or erosion of realisable net assets?",
+    "operating_kpis": [],
+    "what_changed": {
+      "new_guidance": [],
+      "dropped_guidance": [],
+      "new_risks": [],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [],
+    "bear_cases": [
+      {
+        "thesis": "Persistent operating cash burn",
+        "status": "ALIVE",
+        "evidence": "Negative FY26 CFO and large operating losses limit self-funding."
+      },
+      {
+        "thesis": "Asset realisability and litigation",
+        "status": "ALIVE",
+        "evidence": "Book value is not freely available cash; legal and legacy liabilities need independent work."
+      }
+    ],
+    "quotes": [],
+    "sources": [],
+    "limitations": [
+      "No Q2 FY27 call transcript or recording reviewed; never treat this as a concall summary.",
+      "Official website confirms September results availability; conflicting third-party PAT definitions were not used to replace the local dataset.",
+      "Need segment accounts, subsidiary funding, legal and asset-quality reconciliation."
+    ]
+  },
+  "remaining_gaps": [
+    "No Q2 FY27 call transcript or recording reviewed; never treat this as a concall summary.",
+    "Official website confirms September results availability; conflicting third-party PAT definitions were not used to replace the local dataset.",
+    "Need segment accounts, subsidiary funding, legal and asset-quality reconciliation.",
+    "No current call or management sentiment assessment.",
+    "The legal/asset-recoverability effects cannot be reliably quantified from the reviewed disclosure alone."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Material qualifications remain",
+    "corrections": [
+      "Resolved the −₹40 crore versus −₹28.73 crore PAT difference through NCI attribution and linked EPS to owners’ earnings.",
+      "Added official qualified limited-review conclusions and specified recoverability limitations; strengthened the risk assessment.",
+      "Removed the false generic implication that current management KPIs/guidance had been sourced to a call."
+    ],
+    "unverified": [
+      "No current call or management sentiment assessment.",
+      "The legal/asset-recoverability effects cannot be reliably quantified from the reviewed disclosure alone."
+    ],
+    "claim_count": 10,
+    "status_counts": {
+      "CORRECTED": 2,
+      "DEFINITION_DIFFERENCE": 3,
+      "SUPPORTED": 3,
+      "UNRESOLVED": 2
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "The stored consolidated table reports revenue ₹153 crore and pre-NCI PAT about −₹40 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/63MOONS_inputs.json",
+      "locator": "pnl_quarterly: 63 MOONS, specified reporting period",
+      "excerpt": "",
+      "assessment": "These are retained rounded numbers, not profit attributable to equity holders. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "Official consolidated loss before the NCI adjustment is ₹40.4324 crore.",
+      "claim_type": "Official results / calculation",
+      "status": "SUPPORTED",
+      "source_title": "Official 4 November 2026 results and limited-review reports",
+      "source_url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf",
+      "locator": "PDF page 3, consolidated result row 9",
+      "excerpt": "",
+      "assessment": "The filing is in lakh rupees; divide by 100 to convert to crore."
+    },
+    {
+      "claim": "A ₹11.6999 crore NCI adjustment yields owners’ consolidated loss of ₹28.7325 crore.",
+      "claim_type": "Official results / calculation",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Official 4 November 2026 results and limited-review reports",
+      "source_url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf",
+      "locator": "PDF page 3, consolidated rows 11–14",
+      "excerpt": "",
+      "assessment": "This resolves the apparent conflict between the local approximately −₹40 crore result and external owners’ PAT −₹28.73 crore."
+    },
+    {
+      "claim": "EPS of −₹6.24 is consistent with the owners’ loss, not the pre-NCI loss.",
+      "claim_type": "Official results / calculation",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Official 4 November 2026 results and limited-review reports",
+      "source_url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf",
+      "locator": "PDF page 3, row 19 and paid-up capital",
+      "excerpt": "",
+      "assessment": "At ₹2 face value, paid-up capital ₹9.2157 crore implies about 4.60785 crore shares; owners’ loss divided by shares is about −₹6.24."
+    },
+    {
+      "claim": "Owners’ loss is slightly worse YoY, despite improvement in loss before NCI.",
+      "claim_type": "Official results / calculation",
+      "status": "CORRECTED",
+      "source_title": "Official 4 November 2026 results and limited-review reports",
+      "source_url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf",
+      "locator": "PDF page 3, rows 9 and 14, September 2025 comparator",
+      "excerpt": "",
+      "assessment": "Owners’ loss moved from ₹28.2640 crore to ₹28.7325 crore. Choosing the profit definition changes the interpretation of the trend."
+    },
+    {
+      "claim": "Standalone PAT is ₹12.0028 crore, not ₹1,200.28 crore.",
+      "claim_type": "Official results / calculation",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Official 4 November 2026 results and limited-review reports",
+      "source_url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf",
+      "locator": "PDF page 1, row 11, amounts in ₹lakh",
+      "excerpt": "",
+      "assessment": "The standalone result and consolidated losses describe different perimeters; a unit error would overstate profit 100-fold."
+    },
+    {
+      "claim": "Standalone and consolidated September limited reviews have qualified conclusions.",
+      "claim_type": "Official results / calculation",
+      "status": "CORRECTED",
+      "source_title": "Official 4 November 2026 results and limited-review reports",
+      "source_url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf",
+      "locator": "PDF page 8, Notes 9–10; auditor reports pp 10–19",
+      "excerpt": "",
+      "assessment": "The auditor could not quantify certain consequential legal impacts. This is stronger evidence of a limitation than a generic mention of litigation."
+    },
+    {
+      "claim": "NSEL receivables, loans, advances and deposits have confirmation/recoverability limitations.",
+      "claim_type": "Official results / calculation",
+      "status": "UNRESOLVED",
+      "source_title": "Official 4 November 2026 results and limited-review reports",
+      "source_url": "https://www.63moons.com/FTUploads/QuarterelyEarnings/2026-2027/Results04112026.pdf",
+      "locator": "PDF page 9, subsidiary review qualification",
+      "excerpt": "",
+      "assessment": "Management’s recovery view does not remove the auditors’ inability to form an opinion on specified outstanding recoverability."
+    },
+    {
+      "claim": "FY26 local CFO is −₹293 crore and free cash flow −₹336 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "SUPPORTED",
+      "source_title": "Local cash_flow_annual table, retained issuer inputs",
+      "source_url": "research/63MOONS_inputs.json",
+      "locator": "cash_flow_annual: 63 MOONS, specified reporting period",
+      "excerpt": "",
+      "assessment": "Cash requirements must be assessed at group/segment level and with restricted funds distinguished from freely accessible liquidity. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "No verified current-quarter earnings-call transcript was located.",
+      "claim_type": "Coverage limitation",
+      "status": "UNRESOLVED",
+      "source_title": "Official company investor disclosures and retained source inventory",
+      "source_url": "https://www.63moons.com/",
+      "locator": "Current report source inventory and official investor site checked 14 November 2026",
+      "excerpt": "",
+      "assessment": "Results verification does not create a management call. Sentiment, guidance change and a promise ledger remain withheld."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The operating-business test is whether the expanded consolidated revenue base converts into positive incremental operating cash. The local September table shows ₹153 crore revenue with an operating loss of ₹88 crore; revenue growth alone is not proof of improving unit economics. Parent and subsidiary cash demands need separate analysis.",
+      "The parent’s standalone profit and group losses can coexist because investment income, operating subsidiaries, exceptional charges and minority interests have different effects. A single consolidated revenue-growth percentage or parent book multiple conceals those different economic claims."
+    ],
+    "earnings_quality": [
+      "The most important correction is attribution. Official loss before NCI is ₹40.4324 crore, while owners’ loss is ₹28.7325 crore after the NCI adjustment. EPS −₹6.24 follows the latter. Owners’ loss actually deteriorated slightly from ₹28.264 crore a year earlier; the pre-NCI series alone gives a more favourable trend.",
+      "The filing uses ₹lakh, making standalone PAT 1,200.28 lakh equivalent to ₹12.0028 crore. Standalone and consolidated profits should never be substituted for each other or multiplied by a headline valuation without checking the unit and attribution."
+    ],
+    "capital_allocation": [
+      "Negative FY26 local operating cash flow of ₹293 crore and free cash flow of ₹336 crore make funding runway and subsidiary support central. The next useful disclosure is cash invested by subsidiary, cash losses, minority ownership and what the parent receives in exchange for funding.",
+      "The official statutory review qualifications and NSEL recoverability limitations materially constrain asset-value confidence. Reported investments, receivables and bank balances need classification by accessibility, restrictions, disputes and recovery prospects. Neither book value nor gross cash is automatically distributable equity value."
+    ],
+    "valuation_logic": [
+      "P/E is not meaningful while owners’ earnings are negative. The dated ₹760/share book value is a starting balance-sheet descriptor, not an independently verified realizable NAV. An investable SOTP would haircut restricted/disputed assets, estimate enforceable liabilities and include future operating/subsidiary funding requirements.",
+      "No target price is supplied because legal and asset-recovery uncertainty can dominate the precision of an operating forecast. A convincing valuation upgrade needs either demonstrably profitable segment cash flows or a verified improvement in legal/asset accessibility; a rising share price is not such evidence."
+    ],
+    "peer_positioning": [
+      "Profitable exchange-technology vendors and cybersecurity platforms are not valid P/E peers for the entire group without isolating operating businesses from legacy investments and legal claims. Compare each subsidiary’s recurring contracts, gross margin, customer retention and cash burn separately; sum-of-parts requires the parent’s actual ownership and funding obligations."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Owners’ versus pre-NCI loss",
+        "latest_value": "−₹28.73 crore versus −₹40.43 crore",
+        "source": "Official 4 November results, p 3",
+        "why_it_matters": "Prevents misreading earnings trends and EPS.",
+        "next_test": "Require the attribution bridge every quarter."
+      },
+      {
+        "metric": "Operating cash conversion",
+        "latest_value": "FY26 CFO −₹293 crore",
+        "source": "Local FY26 cash-flow table",
+        "why_it_matters": "Tests whether new revenue can self-fund.",
+        "next_test": "Track subsidiary cash losses and unrestricted funding runway."
+      },
+      {
+        "metric": "Review qualifications",
+        "latest_value": "Standalone/consolidated qualified reviews",
+        "source": "Official results Notes 9–10",
+        "why_it_matters": "Limits assurance about legal impacts and recoverability.",
+        "next_test": "Check whether specified qualifications are resolved or their effects become measurable."
+      },
+      {
+        "metric": "Asset accessibility",
+        "latest_value": "Not independently quantified",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Book value is not automatically realizable cash.",
+        "next_test": "Obtain restricted/free-asset and enforceable-liability schedule."
+      }
+    ],
+    "unanswered_questions": [
+      "Which assets and bank balances are freely available after all restrictions, scheme conditions and enforceable claims?",
+      "What are the current cash burn, ownership and funding obligations for each material subsidiary?",
+      "What specific evidence would allow the auditors’ stated legal and recoverability qualifications to be removed?"
+    ]
+  }
+}

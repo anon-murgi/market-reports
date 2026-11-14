@@ -1,0 +1,480 @@
+{
+  "company_name": "Marico Limited",
+  "archetype": "fmcg",
+  "executive_summary": "Marico’s September quarter is a better quality growth print because India volume and international constant-currency growth are both strong. Softer copra and portfolio mix support earnings, but A&P reinvestment, Saffola’s reset and a premium multiple mean the margin rebound should not simply be extrapolated.",
+  "research_stance": "Strong volume and mix execution; distinguish commodity-led margin recovery from a durable earnings rebase.",
+  "results_analysis": [
+    "The local consolidated September 2026 quarter records revenue ₹3,897.00 crore, operating profit ₹709.00 crore and PAT ₹558.00 crore. Revenue changed +13.0% YoY and -1.5% QoQ; PAT changed +29.2% YoY and -14.4% QoQ.",
+    "Operating profit changed +26.6% YoY and -13.4% QoQ. The calculated operating-profit/sales margin is 18.19%, versus 16.23% a year earlier and 20.70% in June. These calculations use a consistently rounded local series; management EBITDA may use a different scope or definition.",
+    "Local consolidated PAT is ₹558 crore; management describes 31% PAT growth while the consistently rounded local series gives 29.2%. The exact attribution or recurrence bridge has not been established, so the difference remains unresolved rather than being explained speculatively. FY26 CFO ₹2,084 crore and free cash flow ₹1,772 crore support the cash-generating franchise, but these historic cash flows do not fix a fair entry multiple.",
+    "Price and financial dates differ: the cleaned close used here is ₹902.00 on 2026-11-12; the public-financial snapshot is dated 2026-11-07. The screenshot price is not treated as a live or verified valuation input. Local public-financial-data parquets, September 2026 quarter; amounts rounded to ₹ crore."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Core volume and distribution execution",
+      "evidence": "India volume grew 10% and Parachute volume 13% according to management, with SETU broadening direct reach. The useful test is repeat volume and share without excessive channel loading.",
+      "source": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf"
+    },
+    {
+      "title": "New portfolios are becoming material",
+      "evidence": "Foods crossed ₹1,500 crore annualised run-rate and premium personal care ₹500 crore per management. These are run-rates, not audited annual sales, and the brands must also demonstrate contribution after marketing expenditure.",
+      "source": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf"
+    },
+    {
+      "title": "Input-cost relief funds reinvestment",
+      "evidence": "Copra was around 35% below the previous peak, helping gross margin while A&P rose 44%. This is encouraging capital allocation if sustained consumer demand follows; the full benefit is not available for near-term profit distribution.",
+      "source": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Business model and sector lens",
+      "content": "Separate copra from crude derivatives and edible oils; their price movements differ. Revenue growth under deflation can understate consumer volume, while price hikes under inflation can overstate demand. Brand strength and distribution should be evaluated with volume, share and cash generation together."
+    },
+    {
+      "heading": "Balance sheet and capital allocation",
+      "content": "Local consolidated PAT is ₹558 crore; management describes 31% PAT growth while the consistently rounded local series gives 29.2%. The exact attribution or recurrence bridge has not been established, so the difference remains unresolved rather than being explained speculatively. FY26 CFO ₹2,084 crore and free cash flow ₹1,772 crore support the cash-generating franchise, but these historic cash flows do not fix a fair entry multiple."
+    },
+    {
+      "heading": "Growth versus price paid",
+      "content": "Current cleaned close is approximately 58x available trailing EPS. A high-return consumer business can sustain a premium, but returns from here depend on growth plus the multiple retained; copra normalisation should not be valued as a permanent independent growth engine."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Volume Growth Cycle (Rural + Urban)",
+      "stage": "BROADENING",
+      "evidence": "Q2 India volume grew 10% and Parachute volume 13%; regional rural/urban splits are not provided, so a universal ROBUST rural-cycle claim is withheld."
+    },
+    {
+      "name": "Input Cost / Gross Margin Cycle",
+      "stage": "ROLLING OVER",
+      "evidence": "Copra remained about 35% below the previous peak. This applies to copra; crude derivatives and edible oils were still inflationary and can offset the benefit."
+    },
+    {
+      "name": "Premiumisation / Mix Cycle",
+      "stage": "BROADENING",
+      "evidence": "Foods crossed ₹1,500 crore ARR and premium personal care ₹500 crore ARR per management, while A&P increased; ARR is not audited full-year sales."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "STRETCHED",
+      "evidence": "Available trailing EPS and the cleaned price imply about 58x; the result improves the earnings case without independently establishing that this multiple is fair."
+    },
+    {
+      "name": "Channel / distribution execution",
+      "stage": "SETU 2.0 deployment",
+      "evidence": "Company-specific diagnostic: SETU improved direct reach and management attributes 1–2% incremental volume to it; no unsupported q-commerce share/stage is assigned."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and cash-earnings constraints; no unsupported point target",
+    "assessment": "The available price/EPS calculation is about 58×. The cash-generating franchise and 10% India volume growth are supportive, but a commodity-assisted FY27 profit upgrade does not guarantee a higher permanent growth rate. Valuation should reflect normalized copra costs, recurringA&P needs and brand profitability rather than capitalising peak gross-margin relief.",
+    "assumptions": [
+      "At the 12 November adjusted close of ₹902.00, the available four-quarter EPS sum is ₹15.53, implying approximately 58.1× earnings and a 1.72% earnings yield. This is a price/available-EPS calculation, not a forecast or a fully normalized multiple.",
+      "A 20% contraction in the earnings multiple would require 25% cumulative EPS growth merely to keep the share price unchanged; dividends are excluded. This is algebraic sensitivity, not a prediction of the exit multiple.",
+      "No point fair value is assigned from an unverified terminal multiple or FY29 aspiration; brand-level recognized revenue and cash contribution are needed."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "India volume grew 10% and Parachute volume 13% according to management, with SETU broadening direct reach. The useful test is repeat volume and share without excessive channel loading.",
+      "Foods crossed ₹1,500 crore annualised run-rate and premium personal care ₹500 crore per management. These are run-rates, not audited annual sales, and the brands must also demonstrate contribution after marketing expenditure.",
+      "Foods and premium personal care convert the current ₹1,500 crore and ₹500 crore annualised run-rates into recognised sales with better contribution, broadening growth beyond copra-driven core margins."
+    ],
+    "base": [
+      "Management expects mid-20s FY27 EBITDA growth, double-digit India volume growth and annual revenue above ₹15,000 crore.",
+      "Local consolidated PAT is ₹558 crore; management describes 31% PAT growth while the consistently rounded local series gives 29.2%. The exact attribution or recurrence bridge has not been established, so the difference remains unresolved rather than being explained speculatively. FY26 CFO ₹2,084 crore and free cash flow ₹1,772 crore support the cash-generating franchise, but these historic cash flows do not fix a fair entry multiple.",
+      "Copra remains about 35% below the prior peak, but some relief is passed to consumers and reinvested through A&P, which rose 44%; the full gross-margin gain is not counted as permanent profit."
+    ],
+    "bear": [
+      "A high earnings multiple is sensitive to any shortfall in volume or profit delivery.",
+      "Gross-margin relief may be recycled into advertising or offset by crude-linked inputs and oils.",
+      "Deliberate low-margin volume withdrawal and acquired-brand scaling can make comparisons uneven."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Premium multiple",
+      "detail": "A high earnings multiple is sensitive to any shortfall in volume or profit delivery.",
+      "monitor": "Volume, attributable EPS and valuation."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Commodity and advertising trade-off",
+      "detail": "Gross-margin relief may be recycled into advertising or offset by crude-linked inputs and oils.",
+      "monitor": "Gross margin after A&P and core volume."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "New brands / Saffola reset",
+      "detail": "Deliberate low-margin volume withdrawal and acquired-brand scaling can make comparisons uneven.",
+      "monitor": "Saffola volumes, food margins and digital-brand contribution."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Upgraded EBITDA-growth expectation",
+      "timeline": "FY27",
+      "evidence": "Management now expects mid-20s EBITDA growth versus around 20% earlier."
+    },
+    {
+      "event": "SETU 2.0",
+      "timeline": "Next 2–4 quarters",
+      "evidence": "AI/technology-led distribution and premium/digital-brand reach."
+    },
+    {
+      "event": "Saffola portfolio reset",
+      "timeline": "Next 2–3 quarters",
+      "evidence": "Management expects rationalisation to complete over that period."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "India volume growth is below 8% for two consecutive quarters while A&P growth remains above sales growth.",
+      "deadline": "Next two reported quarters",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "FY27 EBITDA growth is below 20%, versus the upgraded mid-20s expectation.",
+      "deadline": "FY27 annual results",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Saffola reset is still causing high-single-digit volume decline after the indicated 2–3-quarter window.",
+      "deadline": "By Q1 FY28 results",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "India volume grew 10% and Parachute volume 13% according to management, with SETU broadening direct reach. The useful test is repeat volume and share without excessive channel loading.",
+    "management": "Saugata Gupta deliberately passed copra relief to consumers, increased A&P 44% and reset low-margin Saffola variants. The upgraded mid-20s EBITDA-growth expectation has measurable accountability; category ARR aspirations still require recognised sales and contribution tracking.",
+    "capital_allocation": "Local consolidated PAT is ₹558 crore; management describes 31% PAT growth while the consistently rounded local series gives 29.2%. The exact attribution or recurrence bridge has not been established, so the difference remains unresolved rather than being explained speculatively. FY26 CFO ₹2,084 crore and free cash flow ₹1,772 crore support the cash-generating franchise, but these historic cash flows do not fix a fair entry multiple.",
+    "governance": "Promoter ownership moved from 58.92% in June to 58.84% in September. Acquired digital/food brands and minority buyouts make purchase consideration, earn-outs and related-party disclosures relevant; the strong FY26 cash record is evidence of financial execution, not a standalone governance clearance.",
+    "limitations": "No fresh quantitative composite or forensic governance score is computed. The historical master-verdict index is a dated reference, not a current recommendation."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-11-02",
+    "coverage_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "confidence": "medium",
+    "sentiment": "constructive with execution risks",
+    "sentiment_basis": "Strong volume and mix execution; distinguish commodity-led margin recovery from a durable earnings rebase.",
+    "summary": {
+      "result": "Local revenue ₹3,897 crore and PAT ₹558.00 crore; use the definition notes in results analysis.",
+      "driver": "Core volume and distribution execution.",
+      "forward": "Management expects mid-20s FY27 EBITDA growth, double-digit India volume growth and annual revenue above ₹15,000 crore.",
+      "risk": "Premium multiple: Volume, attributable EPS and valuation."
+    },
+    "story_tension": "Strong volume and mix execution; distinguish commodity-led margin recovery from a durable earnings rebase.",
+    "operating_kpis": [
+      {
+        "metric": "India volume growth",
+        "value": "10%",
+        "note": "Q2 management disclosure."
+      },
+      {
+        "metric": "Parachute volume share",
+        "value": "About 60%",
+        "note": "Management reported a 570bp gain."
+      },
+      {
+        "metric": "International constant-currency growth",
+        "value": "13%",
+        "note": "Reported INR growth was higher, at 23%."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "FY27 EBITDA-growth expectation upgraded to mid-20s from around 20%."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Saffola edible-oil supply rationalisation caused high-single-digit volume decline and is expected to continue for 2–3 quarters."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "Mid-20s EBITDA growth",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Upgraded expectation made on the Q2 call."
+      },
+      {
+        "promise": "Revenue above ₹15,000 crore",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "H1 trend supports the ambition, but the year is incomplete."
+      },
+      {
+        "promise": "Almond hair-oil annualised revenue above ₹100 crore",
+        "window": "FY28",
+        "status": "PENDING",
+        "evidence": "A category scaling target; run-rate is not recognised annual sales."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Premium multiple",
+        "status": "ALIVE",
+        "evidence": "A high earnings multiple is sensitive to any shortfall in volume or profit delivery."
+      },
+      {
+        "thesis": "Commodity and advertising trade-off",
+        "status": "ALIVE",
+        "evidence": "Gross-margin relief may be recycled into advertising or offset by crude-linked inputs and oils."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Saugata Gupta",
+        "text": "we have been able to drive 1% to 2% incremental volume growth",
+        "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings-call transcript, 2026-11-02",
+        "url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf"
+      },
+      {
+        "title": "Company investor relations / current disclosures",
+        "url": "https://marico.com/investorspdf/Marico%20Limited%20Q2FY27%20Earnings%20Call%20Transcript.pdf"
+      }
+    ],
+    "limitations": [
+      "The indexed intervening items include Q2/Q1 invitations and an AGM transcript; no valid immediate Q1 call transcript was reviewed for a complete sequential audit.",
+      "Silence detection is omitted; AGM discussion is not counted as an earnings-call quarter.",
+      "Coverage uses current prepared remarks and targeted Q&A, prior available remarks and selected historical checks; it is not a complete five-call forensic or six-quarter promise audit. Empty silence, dropped-guidance and tone-shift arrays mean insufficient supported evidence, not proof of absence.",
+      "Second review distinguishes a supported management assertion from independently demonstrated economics; the claim ledger sets out residual reconciliation gaps."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings-call transcript, 2026-11-02",
+      "url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf"
+    },
+    {
+      "title": "Company investor relations / current disclosures",
+      "url": "https://marico.com/investorspdf/Marico%20Limited%20Q2FY27%20Earnings%20Call%20Transcript.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "The indexed intervening items include Q2/Q1 invitations and an AGM transcript; no valid immediate Q1 call transcript was reviewed for a complete sequential audit.",
+    "Silence detection is omitted; AGM discussion is not counted as an earnings-call quarter.",
+    "The exact PAT-growth bridge between the call and local comparative series remains unverified.",
+    "A reliable immediately-prior call is not among the selected indexed invitation/AGM files; a complete prior-calldiff is not claimed.",
+    "Retail-of ftake and channel inventory data are not independently verified from the call’s market-share assertions."
+  ],
+  "claim_audit": [
+    {
+      "claim": "September 2026 revenue ₹3,897.00 crore and PAT ₹558.00 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table",
+      "source_url": "data/MARICO-financials.json",
+      "locator": "ticker=MARICO, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The live canonical table agrees with the report input. Revenue, total PAT and EPS must retain their respective accounting definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "India volume grew 10%; international constant-currency revenue grew 13%.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 3; retained text lines 98–102",
+      "excerpt": "",
+      "assessment": "These are distinct operating measures. The reported consolidated 13% sales growth must not be labelled wholly volume-led or currency-neutral."
+    },
+    {
+      "claim": "International reportedINR revenue grew 23%, compared with 13% CC.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 3; retained text lines 98–102",
+      "excerpt": "",
+      "assessment": "The ten-percentage-point reported/CC gap shows the importance of currency; it is not automatically a 10% additive economic contribution."
+    },
+    {
+      "claim": "Management describes EBITDA growth 27% and PAT growth 31%.",
+      "claim_type": "management-reported fact",
+      "status": "CORRECTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 3; retained text lines 99–103",
+      "excerpt": "",
+      "assessment": "The local PAT series gives 29.2% growth. The earlier report’s specific attribution to recurring/attributable differences was not established by the cited passage; retain the discrepancy as unresolved."
+    },
+    {
+      "claim": "A&P increased 44% while gross margin improved.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 3; retained text lines 108–112",
+      "excerpt": "",
+      "assessment": "The company is reinvesting part of commodity relief rather than retaining all gross savings. This limits a mechanical gross-to-operating-margin extrapolation."
+    },
+    {
+      "claim": "Parachute volume rose 13%; management reports 570bp volume-share gain to 60%.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 4; retained text lines 169–173",
+      "excerpt": "",
+      "assessment": "The brand share and volume claims are management-reported. The source does not independently demonstrate durable channel inventory or retail offtake."
+    },
+    {
+      "claim": "Copra was roughly 35% below the prior peak, while other inputs remained inflationary.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 6; retained text lines 283–287",
+      "excerpt": "",
+      "assessment": "The benefit is a comparison with a prior peak, not necessarily a 35% year-on-year consumption-cost decline."
+    },
+    {
+      "claim": "Saffola low-margin variant rationalisation caused high-single-digit volume decline.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 5; retained text lines 197–201",
+      "excerpt": "",
+      "assessment": "Management expects the process to finish in 2–3quarters. A reset is not equivalent to a completed structural turnaround."
+    },
+    {
+      "claim": "FY27EBITDA-growth outlook was raised from around 20% to mid-20s.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 6; retained text lines 278–282",
+      "excerpt": "",
+      "assessment": "This is an absolute EBITDA-growth expectation. It is not a mid-20s EBITDA-margin target."
+    },
+    {
+      "claim": "Management did not automatically raise FY28–29growth to match FY27’s upgrade.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 17; retained text lines 966–970",
+      "excerpt": "",
+      "assessment": "This directly guards against turning faster commodity normalization in FY27 into an unsupported permanent growth-rate increase."
+    },
+    {
+      "claim": "FY27 revenue is expected above ₹15,000 crore;₹20,000crore FY29 is an aspiration.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 16; retained text lines 910–914",
+      "excerpt": "",
+      "assessment": "Management acknowledges no complete bottom-up FY29 build when discussing the ambition. Long-horizon targets should not be shown as contracted visibility."
+    },
+    {
+      "claim": "Almond hair oil aims above ₹100 crore annualised revenue run-rate by FY28.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "MARICO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/marico_06112026165447_SEtranscript.pdf",
+      "locator": "PDF page 4; retained text lines 180–184",
+      "excerpt": "",
+      "assessment": "An annualised run-rate is not the same as ₹100 crore recognised FY28 revenue or a disclosed earnings contribution."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹2,084 crore; dataset free cash flow ₹1,772 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local cash_flow_annual table",
+      "source_url": "data/MARICO-financials.json",
+      "locator": "ticker=MARICO, period_end=2026-03-31, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "Annual cash-flow figures were re-read; they are not September-quarter or H1 cash flows and do not use management-adjusted FCF definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "September promoter holding was 58.84%.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local shareholding_quarterly table",
+      "source_url": "data/MARICO-financials.json",
+      "locator": "ticker=MARICO, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The reported percentage agrees with the local ownership table; any change in percentage requires a corporate-action/share-count bridge before describing it as promoter buying or selling. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    }
+  ],
+  "audit_summary": {
+    "scope": "Independent second review of material operating, guidance, earnings-quality and valuation claims against retained current transcript passages, relevant prior evidence and re-read canonical financial tables. Exact source locations are supplied; management statements remain management statements. This is not a complete audit of financial statements or all historical promises.",
+    "overall_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Removed the unsupported assertion that 31% call PAT growth versus 29.2% local growth is explained by a known recurring/attributable adjustment.",
+      "Separated absolute EBITDA-growth guidance from margin guidance and preserved FY28 mid-teens rather than extrapolating FY27 mid-20s.",
+      "Classified FY29₹20,000 cr and categoryARR objectives as aspirations, not firm forecasts; removed unexplained target-price grids."
+    ],
+    "unverified": [
+      "The exact PAT-growth bridge between the call and local comparative series remains unverified.",
+      "A reliable immediately-prior call is not among the selected indexed invitation/AGM files; a complete prior-calldiff is not claimed.",
+      "Retail-of ftake and channel inventory data are not independently verified from the call’s market-share assertions."
+    ]
+  },
+  "deeper_analysis": {
+    "business_economics": [
+      "India 10% volume growth and international 13% CCgrowth are stronger evidence than reported revenue alone, particularly during copra deflation. Parachute’s 13% volume growth with price reductions suggests demand and share momentum, but reported share is management-attributed and channel health still needs verification.",
+      "The portfolio is moving toward foods, premium personal care and digital brands. Their faster growth can diversify the franchise, butARR, recognized sales, segment contribution and customer-acquisition costs differ. A larger share of new businesses does not automatically mean a higher consolidated return on capital."
+    ],
+    "earnings_quality": [
+      "The gross-margin recovery reflects softer copra, portfolio mix and operational improvement, while 44% higherA&P reinvests part of the benefit. Copra being 35% below a past peak is not the same as a 35% year-on-year decline in consumed raw-material costs, so a direct margin arithmetic from spot prices is inappropriate.",
+      "Management’s 31% PAT-growth statement and the local 29.2% calculation remain different. The prior report speculated about attribution/recurrence, but that explanation was not established. Current local PAT ₹558 cr remains the numeric anchor, and the exact comparable profit bridge is an open question."
+    ],
+    "capital_allocation": [
+      "FY26CFO ₹2,084 cr and FCF ₹1,772 cr support the cash-generation record. The capital-allocation question is whether funding acquired growth brands, distribution andA&P continues to produce incremental cash earnings rather than simply sustaining faster reported revenue.",
+      "Saffola’s deliberate pruning of low-margin variants is an economically sensible experiment if it improves contribution and cash returns after the 2–3quarterreset. It should be judged against retained customers, premium-product mix and profitability, not excused indefinitely as rationalisation."
+    ],
+    "valuation_logic": [
+      "At about 58× available EPS, cash quality alone does not establish an attractive entry price. A20% multiple contraction requires 25% EPS growth merely to keep price unchanged. The FY27 mid-20s EBITDA upgrade helps, but management explicitly retains a mid-teens growth view for subsequent years.",
+      "The FY29₹20,000 cr aspiration has no full bottom-upbuild disclosed on the call. A valuation should therefore model named drivers—India volume, price/cost cycles,CCinternational growth and recognized new-brand contribution—rather than solve backward to that headline."
+    ],
+    "peer_positioning": [
+      "Large consumer-staples peers help compare pricing power, distribution, cash conversion andA&Pintensity. Yet Marico’s concentrated coconut-oil exposure and growing digital/food portfolio make an unadjusted category-average multiple a weak valuation argument.",
+      "Compare normalized margins through both inflation and deflation, and assess whether new brands add cash contribution after promotion and acquisition amortisation. Standalone digital-brandARR multiples are especially poor substitutes for listed-parent cash flow."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Underlying demand",
+        "latest_value": "India 10% volume;international 13% CC",
+        "source": "Current call, opening remarks",
+        "why_it_matters": "Separates demand from price/currency.",
+        "next_test": "Verify volume/offtake and channel health on consistent definitions."
+      },
+      {
+        "metric": "Margin reinvestment",
+        "latest_value": "A&P+44%;copra 35% belowpriorpeak",
+        "source": "Current call, cost commentary",
+        "why_it_matters": "Tests how much commodity relief becomes recurring EBITDA.",
+        "next_test": "Track consumed costs,A&P-to-sales and category contribution."
+      },
+      {
+        "metric": "Saffola reset",
+        "latest_value": "High-single-digit volume decline;2–3quarterplan",
+        "source": "Current call, Saffola remarks",
+        "why_it_matters": "Checks if account/SKUrationalisation improves economics.",
+        "next_test": "Monitor retained sales, contribution and completion rather than only reported volume."
+      }
+    ],
+    "unanswered_questions": [
+      "What exactly reconciles 31% call PAT growth with 29.2% growth in the retained local series?",
+      "How much of FY27 profit uplift reflects timing of commodity consumption versus a permanently stronger portfolio?",
+      "What recognized sales and post-marketing contribution support the categoryARR and FY29 ambitions?"
+    ]
+  }
+}

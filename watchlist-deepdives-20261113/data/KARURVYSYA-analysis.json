@@ -1,0 +1,512 @@
+{
+  "archetype": "bank",
+  "executive_summary": "Karur Vysya Bank’s September result strengthens the case that its turnaround has become a high-return banking franchise: PAT grew strongly with very low reported problem loans and robust NIM. At around 2.4× snapshot book, the investment debate has shifted from recovery upside to how long these exceptional returns can persist.",
+  "research_stance": "High operating quality in current evidence; require a valuation cushion against normalisation of margins and credit costs.",
+  "thesis_drivers": [
+    {
+      "title": "NIM guidance has materially improved",
+      "evidence": "The Q1 call retained FY27 NIM 3.7–3.8%; Q2 now indicates 4%+for the full year. Q2 core NIM 4.26% and 4.34% including an 8 bp interest recovery support the revision, but the recurring/one-off distinction matters.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Growth and underwriting currently coexist",
+      "evidence": "Management guides 18–20% FY27 credit growth and reports GNPA 0.69%, NNPA 0.18%, gross quarterly slippages ₹123 crore and RoA 2.1%. This is strong evidence of the current franchise, not proof that losses remain this low throughout a cycle.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Liability franchise funds the return profile",
+      "evidence": "Deposits grew 5% QoQ; CASA balances increased ₹1,489 crore with 60% of incremental CASA from existing relationships. Strong operating accounts can support funding quality if credit expands rapidly.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Regional franchise, national opportunity",
+      "content": "A commercially oriented private bank can compound through SME and retail relationships without matching the breadth of the largest banks. Concentration, underwriting and deposit quality remain the counterweights to strong reported return ratios."
+    },
+    {
+      "heading": "Valuation follows sustainable returns",
+      "content": "P/B relative to sustainable RoE and capital requirements is the primary lens. Bank cash-flow statements and industrial ROCE are poor substitutes for capital generation, credit costs and deposit stability."
+    },
+    {
+      "heading": "Macro read-through",
+      "content": "A higher rate cycle can support loan yields but tests SME cash flows and deposit pricing. Gold-loan collateral values and commercial borrower stress require monitoring alongside the margin benefit."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Credit / Asset-Quality Cycle",
+      "stage": "LATE-BENIGN",
+      "evidence": "GNPA 0.69%, NNPA 0.18% and low slippages describe exceptionally benign current credit conditions."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "PREMIUM",
+      "evidence": "Snapshot P/B 2.4× already recognises high current returns, making normalisation a material valuation risk."
+    },
+    {
+      "name": "NIM / Spread Cycle",
+      "stage": "PEAK",
+      "evidence": "Core NIM held at 4.26%; inclusive 4.34% contains an 8 bp interest recovery. FY27 guidance rose to 4%+."
+    },
+    {
+      "name": "Deposit / Liability Cycle",
+      "stage": "COMFORTABLE",
+      "evidence": "Deposits grew 5% sequentially and CASA balances increased ₹1,489 crore; funding quality must keep pace with lending."
+    },
+    {
+      "name": "Credit-Growth Cycle",
+      "stage": "ACCELERATION",
+      "evidence": "Management retains 18–20% FY27 credit growth, requiring careful vintage underwriting."
+    },
+    {
+      "name": "Regulatory / ECL Transition Cycle",
+      "stage": "PRE-TRANSITION",
+      "evidence": "ECL transition remains ahead; the call discusses provision buffers, with no independent model completed here."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and sustainable-return constraints; point target withheld",
+    "assessment": "Snapshot P/B 2.4× and P/E 12.5× reflect high current profitability. A higher P/B than PSU peers is justified only if the superior RoA, asset quality and growth survive a less benign credit cycle.",
+    "assumptions": [
+      "No guarantee that current RoA 2.1% or low problem-loan ratios are permanent.",
+      "No P/ABV target without a full adjusted-book and ECL reconciliation.",
+      "The previous arbitrary bear/base/bull target-price sensitivities have been removed. The deeper valuation discussion states the economic return conditions and analyst assumptions instead."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "FY27 credit growth reaches 18–20% with 4%+NIM and 2%+RoA.",
+      "Relationship-led CASA funding allows growth without excessive bulk-deposit dependence.",
+      "Strong retained earnings allow disciplined expansion while capital remains comfortable."
+    ],
+    "base": [
+      "Growth remains healthy but margins and credit costs normalise from unusually strong levels.",
+      "Reported PAT continues to compound at a lower pace than the latest YoY comparison.",
+      "The stock retains a quality premium with limited tolerance for underwriting mistakes."
+    ],
+    "bear": [
+      "SME stress or gold-collateral weakness creates slippages after rapid growth.",
+      "Deposit competition erodes the 4%+NIM assumption.",
+      "A lower justified P/B offsets book-value compounding."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Returns near a favourable-cycle peak",
+      "detail": "Current 2.1% RoA and minimal problem loans leave less room for positive surprise.",
+      "monitor": "Through-cycle credit cost and core RoA."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Rapid credit growth",
+      "detail": "18–20% growth can obscure seasoning risks.",
+      "monitor": "Vintage delinquency, SMA 30+, commercial exposures and gold-loan LTV."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Premium-to-book valuation",
+      "detail": "At 2.4× book, a modest return normalisation can cause a larger multiple change.",
+      "monitor": "Sustainable RoE and current P/ABV."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "One-off interest recovery",
+      "detail": "4.34% inclusive NIM contains 8 bp of recovery; 4.26% is the cleaner reference.",
+      "monitor": "NIM excluding recoveries."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Deliver revised 4%+annual NIM",
+      "timeline": "FY27",
+      "evidence": "Revised from 3.7–3.8% on October 15 call."
+    },
+    {
+      "event": "Credit growth 18–20% with low slippages",
+      "timeline": "FY27",
+      "evidence": "Management maintained quantified growth and asset-quality outlook."
+    },
+    {
+      "event": "Cost-to-income below 45%",
+      "timeline": "Next two quarters",
+      "evidence": "Management indicated below 45% over the coming two quarters."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Core NIM falls below 3.8% for two quarters after the 4%+revision.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "RoA falls below 1.5% or annualised slippages exceed 1% without a credible contained cause.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "Growth exceeds funding capability and incremental deposit costs rise faster than asset yields.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "Strong current profitability and asset quality; relationship-led funding is an advantage.",
+    "management": "Quantified NIM revision is clear and testable. Conservative original guidance should not be confused with unlimited upside.",
+    "capital_allocation": "Expansion should preserve underwriting and liquidity rather than target asset growth alone.",
+    "governance": "The bank’s RAM-heavy loan mix and commercial/gold exposure make concentration limits, collateral monitoring and loan-vintage performance key controls as credit grows 18–20%. Low current NPA ratios are useful evidence, not a substitute for those checks.",
+    "limitations": "No independent loan-vintage database; headline asset-quality metrics are lagging indicators."
+  },
+  "company_name": "Karur Vysya Bank Limited",
+  "ticker": "KARURVYSYA",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026(Q2 FY27), standalone local financials: PAT ₹788.0 crore versus ₹574.0 crore a year ago and ₹756.0 crore in June 2026. Growth was +37.3% YoY and+4.2% QoQ.",
+    "Banks are analysed on NII/NIM, deposits, loan growth, provisions and capital. The source table has no bank sales or industrial OPM; these fields are intentionally left unreported. Operating ratios in the call are standalone, while consolidated local profits include subsidiaries unless the table says standalone.",
+    "The Q1 call retained FY27 NIM 3.7–3.8%; Q2 now indicates 4%+for the full year. Q2 core NIM 4.26% and 4.34% including an 8 bp interest recovery support the revision, but the recurring/one-off distinction matters.",
+    "Financial statement basis: standalone. The financial snapshot is dated 2026-11-13; cleaned share-price data ends 2026-11-12. Headline financials are from the local research lake; management operating KPIs and guidance are separately sourced to the call."
+  ],
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf"
+    },
+    {
+      "title": "Prior quarter transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_24072026140031_NSE_BSE_Transcript_DSC.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": "2026-10-15",
+    "coverage_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "confidence": "medium",
+    "sentiment": "bullish",
+    "sentiment_basis": "NIM outlook improved while asset quality remained strong.",
+    "summary": {
+      "result": "September 2026(Q2 FY27), standalone local financials: PAT ₹788.0 crore versus ₹574.0 crore a year ago and ₹756.0 crore in June 2026. Growth was +37.3% YoY and+4.2% QoQ.",
+      "driver": "Asset mix, pricing and liability relationships supported spreads and lending.",
+      "forward": "FY27 credit growth 18–20%, NIM 4%+, RoA about 2%; cost-to-income below 45% over next two quarters.",
+      "risk": "Maintaining underwriting through rapid growth and deposit competition."
+    },
+    "story_tension": "Can KVB sustain 2% RoA as credit grows 18–20% and the low-credit-loss base normalises?",
+    "operating_kpis": [
+      {
+        "metric": "Core NIM / including recovery",
+        "value": "4.26% /4.34%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "RoA",
+        "value": "2.1%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "GNPA / NNPA",
+        "value": "0.69% /0.18%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "Gross quarterly slippages",
+        "value": "₹123 crore; 0.44% annualised",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "Quarterly deposit growth",
+        "value": "5%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        {
+          "title": "NIM raised",
+          "detail": "FY27 NIM now 4%+versus 3.7–3.8% retained in Q1.",
+          "severity": "high"
+        },
+        {
+          "title": "Cost efficiency",
+          "detail": "Below 45% cost-to-income indicated over next two quarters.",
+          "severity": "medium"
+        }
+      ],
+      "dropped_guidance": [],
+      "new_risks": [],
+      "resolved_risks": [
+        {
+          "title": "Near-term margin pressure less severe",
+          "detail": "Q2 core NIM held 4.26%; original lower full-year margin range was revised upward.",
+          "severity": "medium"
+        }
+      ]
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "FY27 NIM",
+        "direction": "raised",
+        "from": "3.7–3.8% Q1 retained guidance",
+        "to": "4%+Q2 guidance",
+        "detail": "A genuine quantified revision, not merely higher current-quarter actuals."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "NIM 4%+next quarter, despite retained 3.7–3.8% full-year range",
+        "window": "Q2 FY27",
+        "status": "KEPT",
+        "evidence": "Q2 core NIM 4.26%."
+      },
+      {
+        "promise": "FY27 credit growth 18–20%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Management reiterated calibrated growth."
+      },
+      {
+        "promise": "RoA about 2% for full year",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q2 RoA 2.1%; full-year window remains open."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Returns near a favourable-cycle peak",
+        "status": "ALIVE",
+        "evidence": "Current 2.1% RoA and minimal problem loans leave less room for positive surprise."
+      },
+      {
+        "thesis": "Rapid credit growth",
+        "status": "ALIVE",
+        "evidence": "18–20% growth can obscure seasoning risks."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "B. Ramesh Babu, MD & CEO",
+        "text": "NIM for the full year will be in the range of 4% plus.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf"
+      },
+      {
+        "title": "Prior quarter transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_24072026140031_NSE_BSE_Transcript_DSC.pdf"
+      }
+    ],
+    "limitations": [
+      "No verified silence signal is asserted.",
+      "Latest/prior-call comparison is stronger than the unaudited older promise history."
+    ]
+  },
+  "remaining_gaps": [
+    "No verified silence signal is asserted.",
+    "Latest/prior-call comparison is stronger than the unaudited older promise history.",
+    "No full regulatory ECL-adjusted book or through-cycle credit-loss model has been completed."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Made the 4.26% non-guarantee and 8 bp recovery contribution explicit.",
+      "Separated annualised versus quarterly slippages and formal annual guidance from the earlier one-quarter promise."
+    ],
+    "unverified": [
+      "No full regulatory ECL-adjusted book or through-cycle credit-loss model has been completed."
+    ],
+    "claim_count": 12,
+    "status_counts": {
+      "CORRECTED": 1,
+      "DEFINITION_DIFFERENCE": 1,
+      "SUPPORTED": 10
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "Local standalone PAT of ₹788 crore matches the call’s rounded PAT.",
+      "claim_type": "Local financial data / calculation",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/KARURVYSYA_inputs.json",
+      "locator": "pnl_quarterly: KARURVYSYA, specified reporting period",
+      "excerpt": "",
+      "assessment": "This is a like-for-like standalone comparison, unlike the consolidated/standalone differences at several larger banks. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "Core NIM was 4.26%; including written-off-account interest recovery it was 4.34%.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 5; retained text line 237",
+      "excerpt": "",
+      "assessment": "The 8-basis-point recovery benefit must be separated from the core margin."
+    },
+    {
+      "claim": "Full-year NIM guidance moved from 3.7–3.8% to 4%+.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 6; retained text line 281",
+      "excerpt": "",
+      "assessment": "Current remarks explicitly refer to the older range before raising the full-year framing."
+    },
+    {
+      "claim": "Management explicitly did not promise that 4.26% would be retained.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 15; retained text line 890",
+      "excerpt": "",
+      "assessment": "The Q&A allows margin compression while retaining the 4%+ guide; treating 4.26% as a floor would overstate guidance."
+    },
+    {
+      "claim": "FY27 credit-growth framing is 18–20%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 5; retained text line 205",
+      "excerpt": "",
+      "assessment": "It is an annual guide, not the same as the quarter’s 7% sequential advances growth."
+    },
+    {
+      "claim": "Deposits rose 5% sequentially; advances rose 7%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 3; retained text line 121",
+      "excerpt": "",
+      "assessment": "Growth needs to be evaluated with funding mix and pricing discipline."
+    },
+    {
+      "claim": "Gross slippages were ₹123 crore, or 0.44% annualised.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 7; retained text line 327",
+      "excerpt": "",
+      "assessment": "The call also gives 0.11% sequential. Confusing annualised and quarterly ratios would exaggerate deterioration."
+    },
+    {
+      "claim": "GNPA/NNPA were 0.69%/0.18%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 7; retained text line 335",
+      "excerpt": "",
+      "assessment": "These low ratios support current quality but require a provisioning and recovery bridge to assess sustainable profits."
+    },
+    {
+      "claim": "Gold loans were about 29% of advances; LTVs were 67% agri and 59% non-agri.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 4; retained text line 170",
+      "excerpt": "",
+      "assessment": "Concentration, collateral valuation and pricing are material even with low current NPA ratios."
+    },
+    {
+      "claim": "ROA was 2.1% after a ₹25 crore floating provision, with written-off recoveries of ₹82 crore.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 13; retained text line 716",
+      "excerpt": "",
+      "assessment": "The current earnings return is not wholly dependent on historic ₹150–220 crore recovery levels, but recoveries remain part of reported profitability."
+    },
+    {
+      "claim": "Management expects cost-to-income below 45% over the next two quarters.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_17102026184752_Intimation_DSC.pdf",
+      "locator": "PDF page 8; retained text line 387",
+      "excerpt": "",
+      "assessment": "This is a forward efficiency aspiration with a testable window, not a completed outcome."
+    },
+    {
+      "claim": "The prior call expected next-quarter NIM above 4%, while withholding an annual range revision.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Prior-quarter official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/KARURVYSYA_24072026140031_NSE_BSE_Transcript_DSC.pdf",
+      "locator": "PDF page 18; retained text line 1060",
+      "excerpt": "",
+      "assessment": "The Q2 outcome of core 4.26% supports the specific near-term promise; it does not retrospectively make the old annual guide 4%+."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "KVB’s operating model is weighted to retail, agriculture and commercial lending rather than a very large corporate book: RAM is 86% of advances. The relevant moat is granular underwriting and transaction relationships, with the cost of maintaining deposits and branches paid from loan spreads and fees.",
+      "The gold-loan book of ₹32,153 crore is about 29% of advances. Management disclosed agri/non-agri LTV of 67%/59% and selective pricing to moderate retail gold growth. Low current delinquencies are useful evidence, but concentration and the collateral-price cycle still need stress testing."
+    ],
+    "earnings_quality": [
+      "The core NIM is 4.26%; including 8 bp of interest recovery it is 4.34%. The revised full-year guide is above 4%, and management explicitly refused to assure retention of 4.26%. A normalization toward the guide can therefore occur without a guidance miss.",
+      "ROA of 2.1% coexists with ₹82 crore of written-off recoveries and an additional ₹25 crore floating provision. Management points out that recovery income is lower than earlier ₹150–220 crore levels, supporting some improvement in core earnings resilience; it does not establish that future recoveries are irrelevant."
+    ],
+    "capital_allocation": [
+      "Calibrated 18–20% credit growth balances capacity with funding cost and credit standards. The call explicitly resists pursuing 24–25% growth by reverting to a much larger corporate mix or buying term deposits indiscriminately.",
+      "The branch plan and below-45% cost-to-income ambition need to be measured together. Near-term investment can depress efficiency before new branches mature, so judge incremental deposits, customer productivity and risk-adjusted profit rather than branch additions alone."
+    ],
+    "valuation_logic": [
+      "The dated snapshot P/B is 2.40 x and ROE is 19.1%. A deliberately simplified perpetual-bank identity, P/B=(ROE −g)/(cost of equity −g), using analyst assumptions of 13% cost of equity and 6% long-run growth, would require a steady-state ROE of about 22.8% at that book multiple. This is a diagnostic of the earnings expectations in the price, not a fair value, forecast or calibrated discount rate. A changing growth phase, subsidiary values, adjusted book and surplus capital can materially alter the answer.",
+      "At 2.40 x reported book, a strong quarter is insufficient: the market needs confidence that high ROA converts to durable ROE after a normalized credit charge and funding cost. The model’s indicative 22.8% steady-state ROE requirement exceeds the dated snapshot 19.1%, showing that the premium also depends on a growth phase, lower risk assumptions or other valuation considerations. This is a stress diagnostic, not evidence of a precise overvaluation."
+    ],
+    "peer_positioning": [
+      "KVB merits comparison with granular private-sector banks for underwriting, gold/commercial mix and liability costs. Comparing its P/B directly with Union or Bank of India without allowing for different returns and ownership would be crude. Conversely, a private-bank label alone does not justify a premium if core margin compresses or fast growth raises future credit costs."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Core / total NIM",
+        "latest_value": "4.26% / 4.34%",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Separates recurring loan spreads from recovery income.",
+        "next_test": "Track the 4%+ full-year guide; do not impose a fabricated 4.26% floor."
+      },
+      {
+        "metric": "Gold loan concentration",
+        "latest_value": "29% of advances; LTV 67% agri / 59% non-agri",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Exposes collateral and product concentration.",
+        "next_test": "Track overdue migration, auction losses and mix-adjusted yields."
+      },
+      {
+        "metric": "Gross slippage",
+        "latest_value": "₹123 crore; 0.44% annualised",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Early warning before NPAs build.",
+        "next_test": "Use the same annualisation convention each quarter."
+      },
+      {
+        "metric": "ROA / recoveries / floating provision",
+        "latest_value": "2.1% / ₹82 crore / ₹25 crore",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Tests core earnings versus recovery support.",
+        "next_test": "Ask for the return bridge excluding recoveries over FY27."
+      }
+    ],
+    "unanswered_questions": [
+      "How much of the 4%+ margin guide comes from sustainable customer pricing versus recovery and loan-mix effects?",
+      "What would gold-loan credit losses and LTV look like after a sharp gold-price decline?",
+      "Can deposit growth and new-branch productivity sustain the lending plan without sacrificing the promised efficiency trajectory?"
+    ]
+  }
+}

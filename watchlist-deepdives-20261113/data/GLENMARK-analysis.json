@@ -1,0 +1,507 @@
+{
+  "company_name": "Glenmark Pharmaceuticals Limited",
+  "archetype": "pharma_domestic",
+  "executive_summary": "Glenmark’s September headline decline is distorted by last year’s licensing-income base and this year’s exceptional charges. The core respiratory, branded and emerging-market portfolio is improving, while litigation payments and the cost/risk of innovation make normalised cash earnings more informative than reported P/E.",
+  "research_stance": "Core business is stronger than the reported YoY decline suggests, but normalisation and litigation cash outflows determine value.",
+  "results_analysis": [
+    "The local consolidated September 2026 quarter records revenue ₹4,247.00 crore, operating profit ₹864.00 crore and PAT ₹264.00 crore. Revenue changed -29.8% YoY and +5.7% QoQ; PAT changed -56.7% YoY and -45.3% QoQ.",
+    "Operating profit changed -63.4% YoY and +7.3% QoQ. The calculated operating-profit/sales margin is 20.34%, versus 39.03% a year earlier and 20.03% in June. These calculations use a consistently rounded local series; management EBITDA may use a different scope or definition.",
+    "The official MDA confirms reported PAT ₹263.8 crore and adjusted PAT ₹485.2 crore, a ₹221.4 crore difference. The local row rounds reported PAT to ₹264 crore. This adjustment is not silently added back to every future period or treated as cash. A full exceptional,tax,currency and licensing bridge remains incomplete.",
+    "Price and financial dates differ: the cleaned close used here is ₹2,659.80 on 2026-11-12; the public-financial snapshot is dated 2026-11-07. The screenshot price is not treated as a live or verified valuation input. Local public-financial-data parquets, September 2026 quarter; amounts rounded to ₹ crore.",
+    "The retained transcript contains numerical transcription errors, so the current headline figures and GoaVAIclassification were cross-checked against official MDA. The 12Novemberprice divided by availableTTMEPS implies about 51.7×, materially different from the dated 36.1× snapshotP/E; neither is a fully normalized earnings measure."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Respiratory and speciality portfolio",
+      "evidence": "New US respiratory products, RYALTRIS and branded oncology broaden earnings sources. Regulatory milestones and reimbursement/access must be linked to recurring sales; exclusivity should not be assumed permanent.",
+      "source": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf"
+    },
+    {
+      "title": "Base-business recovery masked by a one-off comparator",
+      "evidence": "Local revenue fell from ₹6,047 crore to ₹4,247 crore, while management describes roughly 20% like-for-like growth. Both can be true when last year includes licensing economics; use a separate adjusted bridge instead of declaring the franchise in structural decline.",
+      "source": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf"
+    },
+    {
+      "title": "Innovation creates optionality and spend",
+      "evidence": "IGI programmes provide long-duration potential, but returning STAR-0310 rights and continuing R&D demonstrate that pipeline value remains uncertain. Cash already received and risk-adjusted future milestones should be valued separately.",
+      "source": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Business model and sector lens",
+      "content": "A mixed branded/generic/innovation model needs several valuation lenses. Domestic prescription brands and US differentiated launches generate cash, while development assets have binary clinical and licensing outcomes; headline reported growth and P/E are particularly misleading around licence payments."
+    },
+    {
+      "heading": "Balance sheet and capital allocation",
+      "content": "Local Q2 PAT is ₹264 crore; management reports adjusted PAT ₹485 crore after removing an exceptional item. The approximate ₹221 crore difference is material and is not silently added back to the table. Other income is minus ₹281 crore in the local row; without a complete exceptional/FX/classification bridge, current P/E is not a clean operating valuation."
+    },
+    {
+      "heading": "Growth versus price paid",
+      "content": "Use a sum of core recurring earnings, net cash and separately risk-adjusted innovation/licensing value. No point fair value is issued because licence recognition, exceptional charges and cash settlement timing have not been fully normalised across the trailing four quarters."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Launch / ANDA Approval Cycle",
+      "stage": "STRONG LAUNCHES",
+      "evidence": "Current respiratory/injectable launches and management’s core North America growth support the stage; specific pending approvals are not treated as commercial sales."
+    },
+    {
+      "name": "USFDA Inspection / Compliance Cycle",
+      "stage": "VAI / EIR REVIEW",
+      "evidence": "The official September 23 company disclosure reports Goa EIR with VAI; current call also describes Monroe progress. VAI/EIR is a site-specific regulatory outcome, not a group-wide clean-compliance certification."
+    },
+    {
+      "name": "IPM Growth Cycle",
+      "stage": "ACCELERATING",
+      "evidence": "Management reports India secondary growth ahead of IPM and like-for-like India formulation growth around 14%; the comparison is separate from the licensing-distorted group top line."
+    },
+    {
+      "name": "Innovation / partnering cycle",
+      "stage": "Portfolio advancing with a rights return",
+      "evidence": "Company-specific diagnostic: ISB2001 data and other clinical assets progress, while STAR-0310 rights return to IGI; the programmes do not share one risk-adjusted stage."
+    },
+    {
+      "name": "Litigation / cash normalisation",
+      "stage": "Settlements provisioned; cash payments continue",
+      "evidence": "Company-specific diagnostic: adjusted PAT excludes a large exceptional charge, but accruals and payment schedules differ; normalised profit is not equivalent to free cash."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and cash-earnings constraints; no unsupported point target",
+    "assessment": "The current-price/available-TTM-EPS ratio is about 51.7×, materially above the dated 36.1× snapshot. Licensing base effects, exceptional charges and settlement cash mean neither ratio represents clean recurring earnings. Value should separate commercial operations, appropriately scoped net cash and risk-adjusted innovation after funding needs.",
+    "assumptions": [
+      "At the 12 November adjusted close of ₹2,659.80, the available four-quarter EPS sum is ₹51.43, implying approximately 51.7× earnings and a 1.93% earnings yield. This is a price/available-EPS calculation, not a forecast or a fully normalized multiple.",
+      "A 20% contraction in the earnings multiple would require 25% cumulative EPS growth merely to keep the share price unchanged; dividends are excluded. This is algebraic sensitivity, not a prediction of the exit multiple.",
+      "No absolute innovation value is assigned from launch counts, early clinical results or an unfunded market opportunity. A recurring-earnings and settlement-cash bridge is needed first."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "New US respiratory products, RYALTRIS and branded oncology broaden earnings sources. Regulatory milestones and reimbursement/access must be linked to recurring sales; exclusivity should not be assumed permanent.",
+      "Local revenue fell from ₹6,047 crore to ₹4,247 crore, while management describes roughly 20% like-for-like growth. Both can be true when last year includes licensing economics; use a separate adjusted bridge instead of declaring the franchise in structural decline.",
+      "US respiratory/injectable launches and proposed FY28 oncology contribution convert into cash, while the ₹424 crore management-defined net-cash position survives R&D and settlement payments."
+    ],
+    "base": [
+      "Management expects launch-led core growth, further margin improvement and gross-debt elimination by FY27-end; innovation milestones remain event-dependent.",
+      "Local Q2 PAT is ₹264 crore; management reports adjusted PAT ₹485 crore after removing an exceptional item. The approximate ₹221 crore difference is material and is not silently added back to the table. Other income is minus ₹281 crore in the local row; without a complete exceptional/FX/classification bridge, current P/E is not a clean operating valuation.",
+      "The ₹485 crore management-adjusted PAT and ₹264 crore local reported PAT remain separate until the roughly ₹221 crore adjustment and its cash-payment schedule are reconciled."
+    ],
+    "bear": [
+      "Accrual of settlements and payment timing differ; adjusted PAT can recover before cash does.",
+      "STAR-0310 rights return requires a new strategic path, while other assets remain subject to clinical and partner execution.",
+      "Respiratory and injectable growth needs compliant supply and launch conversion."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Litigation and adjustment quality",
+      "detail": "Accrual of settlements and payment timing differ; adjusted PAT can recover before cash does.",
+      "monitor": "Settlement provisions, cash payments and recurring-versus-adjusted PAT."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Clinical / licensing outcomes",
+      "detail": "STAR-0310 rights return requires a new strategic path, while other assets remain subject to clinical and partner execution.",
+      "monitor": "Trial readouts, new partnerships and IGI cash spend."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Regulatory and launch execution",
+      "detail": "Respiratory and injectable growth needs compliant supply and launch conversion.",
+      "monitor": "FDA observations, product approval/launch timing and market access."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Respiratory launch portfolio",
+      "timeline": "H2 FY27 / FY28",
+      "evidence": "Management discussed further launches; timing remains regulatory-dependent."
+    },
+    {
+      "event": "Debt reduction",
+      "timeline": "By March 2027",
+      "evidence": "Management expects gross debt to be eliminated; current cash/debt scope needs reconciliation."
+    },
+    {
+      "event": "Innovation evidence and partnerships",
+      "timeline": "2027 / event-driven",
+      "evidence": "ISB2001 data, LAD191 readout and STAR-0310 strategic path."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Gross debt remains at FY27-end despite management’s stated elimination goal, on the same reporting scope.",
+      "deadline": "March 2027",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Core like-for-like group revenue growth is below 10% for two consecutive quarters.",
+      "deadline": "Next four reported quarters",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Recurring core cash generation fails to cover R&D and legal payments, requiring rising net borrowing after the stated settlement normalisation.",
+      "deadline": "FY27 audited cash flow and next half-year update",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "New US respiratory products, RYALTRIS and branded oncology broaden earnings sources. Regulatory milestones and reimbursement/access must be linked to recurring sales; exclusivity should not be assumed permanent.",
+    "management": "Glenn Saldanha separated core growth from licensing effects and acknowledged that smaller legal settlements may continue. The group’s pipeline discussion includes both progress and returned rights; that balance is useful, but the adjusted-PAT and cash settlement bridge must be independently followed to assess capital-allocation delivery.",
+    "capital_allocation": "Local Q2 PAT is ₹264 crore; management reports adjusted PAT ₹485 crore after removing an exceptional item. The approximate ₹221 crore difference is material and is not silently added back to the table. Other income is minus ₹281 crore in the local row; without a complete exceptional/FX/classification bridge, current P/E is not a clean operating valuation.",
+    "governance": "Promoter ownership remained 46.65% in September. US antitrust settlements and the ₹220-crore-scale exceptional adjustment make legal provisions, contingent liabilities and cash-payment disclosure material governance checks. Goa’s EIR/VAI status is a regulatory fact, not an audit of governance; the report does not certify other sites or dismiss future litigation.",
+    "limitations": "No fresh quantitative composite or forensic governance score is computed. The historical master-verdict index is a dated reference, not a current recommendation."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-11-06",
+    "coverage_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "confidence": "medium",
+    "sentiment": "constructive with execution risks",
+    "sentiment_basis": "Core business is stronger than the reported YoY decline suggests, but normalisation and litigation cash outflows determine value.",
+    "summary": {
+      "result": "Local revenue ₹4,247 crore and PAT ₹264.00 crore; use the definition notes in results analysis.",
+      "driver": "Respiratory and speciality portfolio.",
+      "forward": "Management expects launch-led core growth, further margin improvement and gross-debt elimination by FY27-end; innovation milestones remain event-dependent.",
+      "risk": "Litigation and adjustment quality: Settlement provisions, cash payments and recurring-versus-adjusted PAT."
+    },
+    "story_tension": "Core business is stronger than the reported YoY decline suggests, but normalisation and litigation cash outflows determine value.",
+    "operating_kpis": [
+      {
+        "metric": "India IPM rank / share",
+        "value": "13th / 2.4%",
+        "note": "Management cites IQVIA MAT September."
+      },
+      {
+        "metric": "RYALTRIS markets",
+        "value": "58 commercialised",
+        "note": "Applications in over 90 countries; applications are not approvals."
+      },
+      {
+        "metric": "Net working-capital days",
+        "value": "110–115",
+        "note": "Management disclosure."
+      },
+      {
+        "metric": "Net cash",
+        "value": "₹424 crore",
+        "note": "Management’s September definition; not reconciled to consolidated gross borrowing row."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "Management expects gross debt to be eliminated by FY27-end."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "STAR-0310 licensing rights return to IGI, requiring a new strategic pathway.",
+        "Further smaller litigation amounts may still occur even after major cases have settled."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "Gross-debt elimination",
+        "window": "End-FY27",
+        "status": "PENDING",
+        "evidence": "Management reported gross debt around ₹867 crore and cash around ₹1,290 crore on its stated scope."
+      },
+      {
+        "promise": "Oncology incremental revenue of US$30–40 million",
+        "window": "FY28",
+        "status": "PENDING",
+        "evidence": "Management estimate; no current-quarter revenue is booked for it."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Litigation and adjustment quality",
+        "status": "ALIVE",
+        "evidence": "Accrual of settlements and payment timing differ; adjusted PAT can recover before cash does."
+      },
+      {
+        "thesis": "Clinical / licensing outcomes",
+        "status": "ALIVE",
+        "evidence": "STAR-0310 rights return requires a new strategic path, while other assets remain subject to clinical and partner execution."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Glenn Saldanha",
+        "text": "the bulk of it is behind us in terms of settlements, legal settlements.",
+        "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings-call transcript, 2026-11-06",
+        "url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf"
+      },
+      {
+        "title": "Company investor relations / current disclosures",
+        "url": "https://glenmarkpharma.com/newsroom-2026/"
+      }
+    ],
+    "limitations": [
+      "NSE-indexed documents were link-only; the actual company-hosted November 6 transcript was separately fetched.",
+      "The transcript contains apparent dropped digits and transcription errors in some financial lines. Local parquet numbers anchor reported results; management-adjusted figures are labelled separately.",
+      "The immediately prior full transcript was not obtained; no sequential dropped-guidance or silence audit is claimed.",
+      "Coverage uses current prepared remarks and targeted Q&A, prior available remarks and selected historical checks; it is not a complete five-call forensic or six-quarter promise audit. Empty silence, dropped-guidance and tone-shift arrays mean insufficient supported evidence, not proof of absence.",
+      "Second review distinguishes a supported management assertion from independently demonstrated economics; the claim ledger sets out residual reconciliation gaps."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings-call transcript, 2026-11-06",
+      "url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf"
+    },
+    {
+      "title": "Company investor relations / current disclosures",
+      "url": "https://glenmarkpharma.com/newsroom-2026/"
+    },
+    {
+      "title": "Official Q2 FY27 press release and MDA; clean financial figures and Goa VAI",
+      "url": "https://nsearchives.nseindia.com/corporate/GLENMARK_05112026171553_PR_MDA_05112026.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "NSE-indexed documents were link-only; the actual company-hosted November 6 transcript was separately fetched.",
+    "The transcript contains apparent dropped digits and transcription errors in some financial lines. Local parquet numbers anchor reported results; management-adjusted figures are labelled separately.",
+    "The immediately prior full transcript was not obtained; no sequential dropped-guidance or silence audit is claimed.",
+    "No complete exceptional, tax, currency and licensing bridge to recurring EPS/cash is available.",
+    "The call’s ₹866.5 cr gross debt and local ₹1,407 cr borrowings remain unreconciled.",
+    "Future partnerships, innovation funding, launches and litigation cash costs remain uncertain."
+  ],
+  "claim_audit": [
+    {
+      "claim": "September 2026 revenue ₹4,247.00 crore and PAT ₹264.00 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table",
+      "source_url": "data/GLENMARK-financials.json",
+      "locator": "ticker=GLENMARK, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The live canonical table agrees with the report input. Revenue, total PAT and EPS must retain their respective accounting definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "The retained transcript has incomplete numerical text.",
+      "claim_type": "management-reported fact",
+      "status": "CORRECTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 2; retained text lines 44–48",
+      "excerpt": "",
+      "assessment": "Its truncated headline is not used as a financial anchor. The official MDA separately confirms ₹42,473 million revenue."
+    },
+    {
+      "claim": "India rank 13 and share 2.4% refer to IQVIA MAT September.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 2; retained text lines 66–70",
+      "excerpt": "",
+      "assessment": "This verifies management’s attribution to IQVIA; the underlying market database was not independently purchased or audited."
+    },
+    {
+      "claim": "North America core growth around 31% excludes deferred ISB2001 licensing recognition.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 3; retained text lines 94–98",
+      "excerpt": "",
+      "assessment": "The exclusion must accompany the positive growth claim. It is not statutory group revenue growth."
+    },
+    {
+      "claim": "RYALTRIS was commercialised in 58markets, with applications in more than 90countries.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 4; retained text lines 189–193",
+      "excerpt": "",
+      "assessment": "Applications are not approvals or launches, and the count is not revenue-weighted market penetration."
+    },
+    {
+      "claim": "STAR-0310 rights return to IGI after BioCryst’s strategic decision.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 6; retained text lines 271–275",
+      "excerpt": "",
+      "assessment": "The development and funding pathway changes. Returned rights do not by themselves establish either product failure or a replacement partnership."
+    },
+    {
+      "claim": "Adjusted PAT was about ₹485 cr after an exceptional item.",
+      "claim_type": "management-reported fact",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 7; retained text lines 333–337",
+      "excerpt": "",
+      "assessment": "Official MDA confirms ₹485.2 cr adjusted versus ₹263.8 cr reported PAT. The difference is not automatically distributable cash."
+    },
+    {
+      "claim": "Management NWC was 110–115 days and net cash ₹424 cr.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 7; retained text lines 336–340",
+      "excerpt": "",
+      "assessment": "These measures retain the call’s scope; local gross borrowings are not a substitute for its net-cash figure."
+    },
+    {
+      "claim": "The call gives gross debt ₹866.5 cr and cash ₹1,290 cr.",
+      "claim_type": "management-reported fact",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 14; retained text lines 800–804",
+      "excerpt": "",
+      "assessment": "These approximately reconcile the call’s ₹424 cr net cash, but local borrowings ₹1,407 cr still need a perimeter/definition bridge."
+    },
+    {
+      "claim": "Gross-debt elimination by FY27-end remains a pending objective.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 7; retained text lines 344–348",
+      "excerpt": "",
+      "assessment": "Delivery depends on growth spending, legal payments and cash generation; it is not a current balance-sheet fact."
+    },
+    {
+      "claim": "Oncology FY28 incremental revenueUS$30–40m is management’s estimate.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 10; retained text lines 512–516",
+      "excerpt": "",
+      "assessment": "Approvals, launch access and field-force execution are prerequisites; this is not current recognised sales."
+    },
+    {
+      "claim": "Humana settlement of aboutUS$15.3m is payable in two instalments.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "GLENMARK Q2 FY27 earnings-call transcript",
+      "source_url": "https://glenmark.b-cdn.net/gpl_pdfs/Financials/Quarterly/Glenmark-Earnings-Nov06-2026.pdf",
+      "locator": "PDF page 3; retained text lines 133–137",
+      "excerpt": "",
+      "assessment": "The call describes this settlement, but the complete legal agreements and all other contingencies were not independently audited."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹3,445 crore; dataset free cash flow ₹2,090 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local cash_flow_annual table",
+      "source_url": "data/GLENMARK-financials.json",
+      "locator": "ticker=GLENMARK, period_end=2026-03-31, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "Annual cash-flow figures were re-read; they are not September-quarter or H1 cash flows and do not use management-adjusted FCF definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "Official MDA reports revenue ₹4,247.3 cr,EBITDA ₹863.8 cr,reported PAT ₹263.8crandadjusted PAT ₹485.2 cr.",
+      "claim_type": "primary company filing cross-verification",
+      "status": "SUPPORTED",
+      "source_title": "Glenmark official Q2 FY27 press release and MDA",
+      "source_url": "https://nsearchives.nseindia.com/corporate/GLENMARK_05112026171553_PR_MDA_05112026.pdf",
+      "locator": "PDF page 2,headline and consolidated results summary",
+      "excerpt": "",
+      "assessment": "The official MDA supplies clean numerical values and independently corroborates the rounded local current-quarter rupee amounts; this is not a claim that all comparative adjustments are reconciled."
+    },
+    {
+      "claim": "The Goa facility received EIR with VAI classification during Q2.",
+      "claim_type": "primary company regulatory disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Glenmark official Q2 FY27 MDA",
+      "source_url": "https://nsearchives.nseindia.com/corporate/GLENMARK_05112026171553_PR_MDA_05112026.pdf",
+      "locator": "PDF page 7,NorthAmerica manufacturing update; web lines 203–208",
+      "excerpt": "",
+      "assessment": "The MDA specifically states VAI, correcting the incomplete transcript phrase. This is the company’s regulatory disclosure, not a separate inspection-file audit."
+    },
+    {
+      "claim": "September promoter holding was 46.65%.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local shareholding_quarterly table",
+      "source_url": "data/GLENMARK-financials.json",
+      "locator": "ticker=GLENMARK, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The reported percentage agrees with the local ownership table; any change in percentage requires a corporate-action/share-count bridge before describing it as promoter buying or selling. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    }
+  ],
+  "audit_summary": {
+    "scope": "Independent second review of material operating, guidance, earnings-quality and valuation claims against retained current transcript passages, relevant prior evidence and re-read canonical financial tables. Exact source locations are supplied; management statements remain management statements. This is not a complete audit of financial statements or all historical promises.",
+    "overall_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Corroborated clean headline values and Goa VAI in the official MDA instead of copying malformed transcript numbers.",
+      "Added the current-price/available-EPS ratio around 51.7× versus dated snapshot 36.1×; neither is a fully normalised valuation.",
+      "Separated adjusted profit from cash, and call net cash from local gross borrowings."
+    ],
+    "unverified": [
+      "No complete exceptional, tax, currency and licensing bridge to recurring EPS/cash is available.",
+      "The call’s ₹866.5 cr gross debt and local ₹1,407 cr borrowings remain unreconciled.",
+      "Future partnerships, innovation funding, launches and litigation cash costs remain uncertain."
+    ]
+  },
+  "deeper_analysis": {
+    "business_economics": [
+      "Respiratory, branded India, emerging markets and partnered oncology are commercial drivers. RYALTRIS reach of 58 launched markets and 90-plus applications is encouraging, but country counts do not show pricing, market access or profit contribution.",
+      "North America’s 31% core-growth measure excludes deferred licensing recognition. It can improve while statutory group sales decline against the prior licensing base. Both observations matter; neither the reported decline nor adjusted growth alone describes the whole business."
+    ],
+    "earnings_quality": [
+      "Official MDA confirms ₹4,247.3 cr revenue,₹863.8 cr EBITDA,₹263.8 cr reported PAT and ₹485.2 cr adjusted PAT. These support the rounded current local values, but the ₹221.4 cr PAT adjustment is not cash available to shareholders and should not recur automatically in a forecast.",
+      "The transcript contains obvious numerical errors, including an incomplete revenue headline and 73.2% emerging-market growth where MDA shows 33.2%. The audit therefore uses clean MDA financial figures rather than treating a transcript as an infallible numeric record."
+    ],
+    "capital_allocation": [
+      "The call reconciles approximately ₹424 cr net cash from ₹866.5 cr debt and ₹1,290 cr cash. Local borrowings of ₹1,407 cr require a scope bridge. Cash location, growth field forces, innovation spending and legal settlements all affect distributable cash.",
+      "STAR-0310 rights returning to IGI creates a new partnership/funding requirement. The FY28 oncology estimate and FY27-end debt objective are pending execution tests, not realised returns. Funding the pipeline can consume commercial cash even if reported operating growth is strong."
+    ],
+    "valuation_logic": [
+      "The approximately 51.7× current-price/available-EPS ratio and 36.1× snapshot multiple need an earnings/timing bridge; choosing the lower figure would not establish cheapness. Normalized commercial earnings should exclude both non-recurring gains and genuine recurring innovation costs appropriately.",
+      "A model should value core after-tax cash, deduct ongoing innovation and legal cash needs, then add only probability-weighted pipeline value with ownership and timing explicit. A precise point value would overstate confidence before licensing, exceptional and cash effects are reconciled."
+    ],
+    "peer_positioning": [
+      "Domestic branded and global-generic peers help assess commercial operations, but licensing and innovation spending distort direct P/E comparisons. A biotech or oncology multiple cannot be applied to the whole group because early assets have uncertain cash and funding profiles.",
+      "Goa VAI is confirmed in official MDA. It is not a governance clearance or proof that every site has the same status. Compare product economics, regulatory reliability and cash after legal/R&D spending rather than only EBITDA."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Reported versus adjusted profit",
+        "latest_value": "₹263.8 cr reported;₹485.2 cr adjusted PAT",
+        "source": "Official Q2 press release/MDA",
+        "why_it_matters": "Prevents adjustments becoming assumed recurring income.",
+        "next_test": "Obtain the exact exceptional, tax and cash-payment bridge."
+      },
+      {
+        "metric": "Debt/cash perimeter",
+        "latest_value": "Call net cash ₹424 cr; local borrowings ₹1,407 cr",
+        "source": "Current call and local balance sheet",
+        "why_it_matters": "Funding claims depend on scope and available cash.",
+        "next_test": "Reconcile debt/cash and track the FY27-end objective."
+      },
+      {
+        "metric": "Pipeline cash accountability",
+        "latest_value": "STAR-0310 rights returned; FY28 oncologyUS$30–40m estimate",
+        "source": "Current call, innovation Q&A",
+        "why_it_matters": "Milestones and funding matter more than market size.",
+        "next_test": "Track partners, approvals, launch spend and recognised revenue."
+      }
+    ],
+    "unanswered_questions": [
+      "What recurring earnings and cash remain after licensing, exceptional items, legal payments and innovation funding are normalized?",
+      "What reconciles call gross debt with the local borrowings row, and how much cash is freely available?",
+      "What capital and partnership terms are needed for STAR-0310 and the oncology launch programme?"
+    ]
+  }
+}

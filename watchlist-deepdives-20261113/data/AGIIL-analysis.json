@@ -1,0 +1,407 @@
+{
+  "company_name": "AGI Infra Limited",
+  "archetype": "real_estate",
+  "executive_summary": "AGI Infra’s September profit growth reflects faster recognized revenue and margin improvement, but its cash conversion is a more difficult test. FY26 CFO was negative despite positive profit, and a newly reported QIP introduces dilution and deployment questions; this is a regional developer, not a generic consumer company.",
+  "research_stance": "Growth and margin evidence require cash-collection and project-level validation; avoid valuing recognition-led profit as cash-backed recurring income.",
+  "results_analysis": [
+    "September 2026 consolidated sales were ₹100.00 crore, +17.6% YoY and +4.2% QoQ. PAT was ₹31.00 crore, +40.9% YoY and +10.7% QoQ. These percentage changes use the rounded local dataset, so small differences from company-exact growth percentages are expected.",
+    "Local operating profit was ₹44.00 crore and OPM 44.00%, compared with 39.00% a year earlier and 42.00% in June 2026. PAT margin was 31.00%. OPM is the dataset’s operating-profit/sales measure, not automatically management-adjusted EBITDA or a segment EBIT margin.",
+    "Rounded local sales ₹100 crore and PAT ₹31 crore compare with ₹85 crore/₹22 crore last year. Company-exact numbers reported in public filings are approximately ₹100.19 crore/₹30.74 crore, so rounded local growth differs from exact 17.45%/39.4% calculations. Local operating profit ₹44 crore and OPM 44% are not necessarily comparable to a presentation EBITDA margin using total income; no adjusted EPS or book value from a proposed issue is assumed.",
+    "FY26 annual CFO was −₹32 crore and free cash flow −₹52 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹170 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 20.20% is an older-period return measure, not a freshly recomputed quarterly return."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Margins and execution have improved",
+      "evidence": "Local sales +17.6% YoY and PAT+40.9% using rounded rows, with OPM 44% versus 39%. Recognized revenue and profit can rise with completion mix; presales and collections should validate future income.",
+      "source": "Local September 2026 financial tables and clearly labeled official results/corporate information; no earnings-call transcript verified."
+    },
+    {
+      "title": "Cash conversion is the main unresolved issue",
+      "evidence": "FY26 CFO−₹32 crore versus PAT ₹95 crore and FCF−₹52 crore imply capital is being absorbed. Latest other assets ₹1,442 crore dwarf annual sales; full inventory, project receivable and customer advance breakdowns are required.",
+      "source": "Local September 2026 financial tables and clearly labeled official results/corporate information; no earnings-call transcript verified."
+    },
+    {
+      "title": "Capital raising creates both runway and dilution",
+      "evidence": "A 13 November PTI report says the company opened a QIP with ₹269.20 floor price and approval to raise up to ₹275 crore. This is a reported launch, not proof that the full amount was raised; final allotment, use of proceeds and share count must be verified.",
+      "source": "Local September 2026 financial tables and clearly labeled official results/corporate information; no earnings-call transcript verified."
+    },
+    {
+      "title": "Regional development opportunity is concentrated",
+      "evidence": "AGI operates in Punjab residential/commercial projects. Local execution knowledge can be useful, but land approvals, project mix and regional absorption create concentration risk.",
+      "source": "Local September 2026 financial tables and clearly labeled official results/corporate information; no earnings-call transcript verified."
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Developer accounting and cash",
+      "content": "Recognized sales and PAT follow project accounting; pre-sales, collections, construction outflow and unsold inventory show a different economic timeline. A low debtor-days figure alone does not prove strong cash conversion when project inventory absorbs cash."
+    },
+    {
+      "heading": "Regional and approval exposure",
+      "content": "Local land access and customer relationships support scale, while Punjab concentration and project-level RERA/approval milestones require verification. National property-cycle headlines cannot substitute for project absorption."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Pre-Sales / Booking Cycle",
+      "stage": "UNDETERMINED",
+      "evidence": "Current P&L growth does not establish fresh pre-sales velocity."
+    },
+    {
+      "name": "Launch / Capex Cycle",
+      "stage": "EXPANSION",
+      "evidence": "Capital raising reported; project deployment requires detail."
+    },
+    {
+      "name": "Balance Sheet / Cash Cycle",
+      "stage": "CASH ABSORPTION",
+      "evidence": "FY26 CFO negative despite profit."
+    },
+    {
+      "name": "Price Appreciation Cycle",
+      "stage": "MOMENTUM / VOLATILE",
+      "evidence": "Stock above EMA200 after a large intrayear range; not evidence of presales."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "STRETCHED",
+      "evidence": "Snapshot P/E 35.6x and P/B 7.58x require cash-backed growth."
+    }
+  ],
+  "valuation": {
+    "method": "Sector-appropriate normalized earnings / enterprise value analysis",
+    "assessment": "Use project-level NAV/DCF and a normalized earnings cross-check. Account for remaining construction cost, customer advances, debt, taxes and post-QIP dilution. Snapshot P/E 35.6x and P/B 7.58x are demanding without a project-level cash bridge; no target is assigned.",
+    "assumptions": [
+      "QIP launch reported by PTI is not completed allotment.",
+      "Rounded financial tables explain small differences from company-exact growth.",
+      "Negative FY26 CFO is a historical fact; it does not prove fraud or prevent future collection recovery."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Project collections and presales validate profit growth and make CFO positive.",
+      "QIP funds return-accretive projects without excessive issue price dilution.",
+      "Margin and return quality persist through larger project completion cycles."
+    ],
+    "base": [
+      "Recognized profit grows but land/construction absorb cash.",
+      "New capital creates project runway while diluting near term EPS/ROE.",
+      "Regional execution and approvals determine each quarter rather than national headlines."
+    ],
+    "bear": [
+      "Reported margins do not convert into collections.",
+      "Capital raising is repeated because project cash generation remains weak.",
+      "Absorption slows or approvals delay completed cash recovery."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Profit versus cash",
+      "detail": "FY26 CFO−₹32 crore versus PAT ₹95 crore is material.",
+      "monitor": "Cumulative CFO/PAT, presales, collections and construction outflow."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Dilution/deployment",
+      "detail": "Reported QIP may change EPS, book value and return ratios.",
+      "monitor": "Final allotment, price, share count and use of proceeds."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Regional/project concentration",
+      "detail": "Punjab project economics are less diversified than national developers.",
+      "monitor": "Project RERA status, unsold inventory and collection velocity."
+    },
+    {
+      "severity": "HIGH",
+      "title": "High valuation",
+      "detail": "Premium earnings/book multiples need cash-backed growth.",
+      "monitor": "NAV margin of safety and normalized cash returns."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Final QIP allotment and deployment details",
+      "timeline": "Post launch November 2026",
+      "evidence": "Reported ₹275 crore approval; completed amount not assumed."
+    },
+    {
+      "event": "Project presales/collections disclosures",
+      "timeline": "Next results/IR update",
+      "evidence": "Required to verify earnings quality."
+    },
+    {
+      "event": "New project approvals and launch conversion",
+      "timeline": "Next several quarters",
+      "evidence": "Only verified project milestones should enter NAV."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Cumulative CFO remains negative while profit and capital raised grow",
+      "deadline": "FY27 results",
+      "action": "Reassess self-funded growth and earnings quality."
+    },
+    {
+      "condition": "New issue proceeds lack clear return/deployment tracking",
+      "deadline": "Next annual report",
+      "action": "Apply higher capital allocation discount."
+    },
+    {
+      "condition": "Presales or collections slow while inventory builds",
+      "deadline": "Next two results",
+      "action": "Reduce growth/NAV assumptions."
+    }
+  ],
+  "quality_assessment": {
+    "business": "Local sales +17.6% YoY and PAT+40.9% using rounded rows, with OPM 44% versus 39%. Recognized revenue and profit can rise with completion mix; presales and collections should validate future income.",
+    "management": "Current-quarter accounting growth and fundraising are observable. Execution quality needs project completions, collections, returns on capital and actual use of proceeds; no call-based track-record score is assigned.",
+    "capital_allocation": "FY26 annual CFO was −₹32 crore and free cash flow −₹52 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹170 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 20.20% is an older-period return measure, not a freshly recomputed quarterly return.",
+    "governance": "Focus on project-level related-party terms, inventory valuation, customer advances and traceable use of raised funds. The limited review does not independently certify project cash returns; no clean-governance certificate is asserted.",
+    "limitations": "Qualitative assessment; no unsupported mechanical quality score or revised master-index rating is assigned."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": null,
+    "coverage_status": "No verified current earnings-call transcript found; financial results and clearly attributed corporate news reviewed",
+    "confidence": "low",
+    "sentiment": "not assessed",
+    "sentiment_basis": "No call transcript verified; numerical results and capital-raising news are not labeled management call sentiment.",
+    "summary": {
+      "result": "Local sales ₹100 crore and PAT ₹31 crore; rounded data.",
+      "driver": "Recognized revenue and margin improvement.",
+      "forward": "No quantified call guidance verified; QIP launch reported.",
+      "risk": "Cash conversion, regional exposure and dilution."
+    },
+    "story_tension": "Can AGI turn high reported margins into cash collections and earn acceptable per-share returns on newly raised capital?",
+    "operating_kpis": [],
+    "what_changed": {
+      "new_guidance": [],
+      "dropped_guidance": [],
+      "new_risks": [],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [],
+    "bear_cases": [
+      {
+        "thesis": "Recognized profit is not cash-backed",
+        "status": "ALIVE",
+        "evidence": "FY26 CFO negative while profit positive."
+      },
+      {
+        "thesis": "Growth requires dilutive external capital",
+        "status": "ALIVE",
+        "evidence": "QIP launch reported; deployment returns still unproven."
+      }
+    ],
+    "quotes": [],
+    "sources": [],
+    "limitations": [
+      "No verified current earnings-call transcript; no fabricated guidance, promises or silence analysis.",
+      "Project presales, collections, NAV and approval bridge remain unavailable.",
+      "QIP completion, allotment, share count and original current terms document require verification."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Local September 2026 quarterly financial data",
+      "url": "data/AGIIL-financials.json"
+    },
+    {
+      "title": "Local annual cash flow",
+      "url": "data/AGIIL-financials.json"
+    },
+    {
+      "title": "Official September 2026 financial results filing",
+      "url": "https://nsearchives.nseindia.com/corporate/AGIINFRA_06112026171503_FinancialResults30092026.pdf"
+    },
+    {
+      "title": "PTI report carried by Red iff,13 November 2026",
+      "url": "https://money.rediff.com/news/market/agi-infra-opens-qip-to-raise-rs-275-cr-reports-strong-profits/58005020261113"
+    },
+    {
+      "title": "Official company QIP investor-relations page",
+      "url": "https://agiinfra.com/investor-details.php?slug=qualified-institutional-placement"
+    }
+  ],
+  "remaining_gaps": [
+    "No verified current earnings-call transcript; no fabricated guidance, promises or silence analysis.",
+    "Project presales, collections, NAV and approval bridge remain unavailable.",
+    "QIP completion, allotment, share count and original current terms document require verification."
+  ],
+  "data_status": {
+    "quarter": "2026-09-30",
+    "view": "consolidated",
+    "financial_source": "local reported tables",
+    "reconciliation": "See results analysis for definition/rounding differences",
+    "prior_master_verdict_mtime": "2026-09-25T16:01:40.161577463+00:00",
+    "prior_master_verdict_is_current": false
+  },
+  "claim_audit": [
+    {
+      "claim": "September 2026 local consolidated revenue ₹100.00 crore, operating profit ₹44.00 crore and PAT ₹31.00 crore.",
+      "claim_type": "local statement / arithmetic",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local quarterly financial table",
+      "source_url": "data/AGIIL-financials.json",
+      "locator": "ticker=AGIIL; period_end=2026-09-30; view=consolidated",
+      "excerpt": "",
+      "assessment": "Re-read the current parquet and compared the report inputs. This verifies the report against its stated local data source; company-adjusted and attributable measures require the separate call/filing bridge below."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹-32 crore and dataset free cash flow ₹-52 crore.",
+      "claim_type": "local annual statement",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local annual cash-flow table",
+      "source_url": "data/AGIIL-financials.json",
+      "locator": "ticker=AGIIL; period_end=2026-03-31",
+      "excerpt": "",
+      "assessment": "Annual cash flow was checked against the current cash-flow table. This is FY ended March 2026, not September-quarter cash flow; investing-flow and capex definitions must not be silently interchanged."
+    },
+    {
+      "claim": "September 2026 dataset borrowings ₹170 crore.",
+      "claim_type": "local balance sheet",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local balance-sheet table",
+      "source_url": "data/AGIIL-financials.json",
+      "locator": "ticker=AGIIL; period_end=2026-09-30",
+      "excerpt": "",
+      "assessment": "The generic financial-table funding field was re-read. It is not automatically equivalent to industrial net debt or to debt excluding leases; explicit company-specific bridges are recorded where available."
+    },
+    {
+      "claim": "Rounded local revenue/PAT of ₹100 crore/₹31 crore differs from filed ₹100.19 crore/₹30.74 crore.",
+      "claim_type": "management disclosure",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Official financial results / company IR",
+      "source_url": "https://nsearchives.nseindia.com/corporate/AGIINFRA_06112026171503_FinancialResults30092026.pdf",
+      "locator": "Consolidated quarter statement; quarter ended 30 September 2026",
+      "excerpt": "",
+      "assessment": "The difference is rounding and should not be described as contradictory performance. The current parquet remains the stated numeric series."
+    },
+    {
+      "claim": "FY26 CFO was negative while PAT was positive.",
+      "claim_type": "local financial quality",
+      "status": "SUPPORTED",
+      "source_title": "Official financial results / company IR",
+      "source_url": "data/AGIIL-financials.json",
+      "locator": "AGIIL; year ended 31 March 2026",
+      "excerpt": "",
+      "assessment": "The local tables show CFO of negative ₹32 crore and PAT of ₹95 crore. This requires a project-inventory, collection and construction-outflow bridge; it does not prove fraud."
+    },
+    {
+      "claim": "The generic other-assets field does not prove the entire balance is overdue customer receivables.",
+      "claim_type": "analyst classification",
+      "status": "CORRECTED",
+      "source_title": "Official financial results / company IR",
+      "source_url": "https://nsearchives.nseindia.com/corporate/AGIINFRA_06112026171503_FinancialResults30092026.pdf",
+      "locator": "Consolidated balance sheet: current assets and notes",
+      "excerpt": "",
+      "assessment": "Developer inventories and project assets differ from trade-debtor credit risk. A project-level inventory and advances bridge is required."
+    },
+    {
+      "claim": "AGI is a regional Punjab developer.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Official financial results / company IR",
+      "source_url": "https://agiinfra.com/",
+      "locator": "Company About Us and project listing",
+      "excerpt": "",
+      "assessment": "The company site identifies residential and commercial projects around Jalandhar and Ludhiana. National property demand does not establish local project absorption."
+    },
+    {
+      "claim": "A QIP launch was reported for 12 November with a ₹269.205 floor price and up to 5% discount.",
+      "claim_type": "management disclosure",
+      "status": "UNRESOLVED",
+      "source_title": "Original source or operating evidence unavailable",
+      "source_url": "https://www.bseindia.com/stockinfo/AnnPdfOpen.aspx?Pname=4829372a-7f0e-43e4-9e5c-b8dc7d5cec19.pdf",
+      "locator": "Linked BSE PDF returned 403; official QIP page also reviewed",
+      "excerpt": "",
+      "assessment": "Public reports and linked BSE metadata identify these terms, but the original PDF was not retrievable and the company QIP page exposed no document text. Treat the terms as reported, not primary-verified or completed allotment."
+    },
+    {
+      "claim": "No verified current call or project presales/collection series was available.",
+      "claim_type": "evidencecoverage",
+      "status": "UNRESOLVED",
+      "source_title": "Original source or operating evidence unavailable",
+      "source_url": "https://agiinfra.com/investor-details.php?slug=qualified-institutional-placement",
+      "locator": "Official IR categories and available financial results",
+      "excerpt": "",
+      "assessment": "Accounting growth cannot establish a presales or cash-collection forecast without operating disclosures."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "Developer accounting and cash arrive on different timelines. Recognized sales can improve with completion mix while land and construction absorb cash. Presales, collections, contract liabilities and remaining construction costs supply the operating bridge. A 44% reported OPM does not prove new projects can earn the same return.",
+      "Punjab residential and commercial exposure may benefit from local relationships but concentrates absorption, approvals and land risk. A national property-cycle label cannot support project-level sales or NAV assumptions."
+    ],
+    "earnings_quality": [
+      "FY26 CFO was negative ₹32 crore against positive ₹95 crore PAT. This raises a cash-conversion question, not proof of fraud. The test is whether project inventory and remaining construction are matched by recoverable customer collections and adequate funding.",
+      "The generic table’s large other-assets field needs to be separated into project inventory, receivables, advances and other assets. Treating it all as bad debt is as incorrect as treating it all as liquid land value. Rounding also changes exact growth percentages without changing the underlying economic direction."
+    ],
+    "capital_allocation": [
+      "A placement creates project runway but changes per-share earnings, book value and returns. Do not assume the full reported ₹275 crore authorization has been raised or productively deployed. Actual price, shares, net proceeds and end-use commitments need verification.",
+      "The company has an official QIP IR category, but the current document text was not accessible in this review. Launch terms remain attributed reports rather than primary-verified facts. This matters before calculating post-issue NAV or EPS."
+    ],
+    "valuation_logic": [
+      "Project NAV should discount expected collections less costs to complete, taxes, finance costs and liabilities. Book value or one-quarter PAT multiplied by four cannot provide that bridge. Land values should not be added on top of an earnings value that already includes the same projects.",
+      "The bull case needs good absorption and positive cash conversion with productive proceeds deployment. The base case permits profit growth alongside working-capital absorption. The bear case includes slower collections, repeated external funding and dilution. Dated premium P/E and P/B snapshots do not prove intrinsic value."
+    ],
+    "peer_positioning": [
+      "Regional Punjab developers are the closest operating reference where project data exist. DLF, Godrej Properties and Sobha offer NAV or allocation-framework checks, but geography, project mix, approvals and funding differ. A national developer’s multiple does not automatically justify AGI’s premium."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Project cash conversion",
+        "latest_value": "FY26 CFO −₹32 crore; PAT ₹95 crore",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Tests accounting-growth quality",
+        "next_test": "Track collections, construction outflow and cumulative CFO/PAT."
+      },
+      {
+        "metric": "Presales and unsold inventory",
+        "latest_value": "Not verified",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Shows future demand beyond recognized revenue",
+        "next_test": "Require units, value, completion stage and RERA status by project."
+      },
+      {
+        "metric": "QIP completion/deployment",
+        "latest_value": "Launch reported; allotment unverified",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Determines dilution and cash runway",
+        "next_test": "Obtain primary allotment, share count, net proceeds and end use."
+      },
+      {
+        "metric": "Gross funding",
+        "latest_value": "₹170 crore dataset at September end",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Shows pre-placement financing need",
+        "next_test": "Reconcile cash, customer advances and project debt."
+      }
+    ],
+    "unanswered_questions": [
+      "What are project-level presales, collections, unsold inventory and remaining construction costs?",
+      "How much placement cash was actually raised, at what net price and share count?",
+      "What return hurdles and disclosure trackers govern new capital deployment?"
+    ]
+  },
+  "audit_summary": {
+    "scope": "Material company claims, financial definitions, management guidance and stated capital-allocation milestones were reviewed against retained primary transcripts and available official filings. Arithmetic was independently recalculated from current local tables. This is a research evidence audit, not a statutory audit or complete forensic review.",
+    "overall_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Classified QIP terms as reported/unresolved because the original PDF could not be retrieved; no completed fundraise is assumed.",
+      "Clarified that generic other assets are not all overdue receivables."
+    ],
+    "unverified": [
+      "No verified current earnings-call transcript; no fabricated guidance, promises or silence analysis.",
+      "Project presales, collections, NAV and approval bridge remain unavailable.",
+      "QIP completion, allotment, share count and original current terms document require verification."
+    ],
+    "claims_checked": 9,
+    "as_of": "2026-11-13"
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "company_name": "Bajaj Auto Limited",
+  "archetype": "auto_oem",
+  "executive_summary": "Bajaj Auto’s September quarter supports its export, premium-motorcycle and electric-mobility growth engines. The key analytical trap is comparing the management discussion of the core standalone business with consolidated revenue, debt and cash flow that include a different business mix.",
+  "research_stance": "A stronger core and EV business, with consolidated balance-sheet and KTM complexity requiring separate valuation work.",
+  "results_analysis": [
+    "The local consolidated September 2026 quarter records revenue ₹25,126.00 crore, operating profit ₹4,896.00 crore and PAT ₹3,384.00 crore. Revenue changed +59.7% YoY and +15.8% QoQ; PAT changed +59.5% YoY and +6.1% QoQ.",
+    "Operating profit changed +73.1% YoY and +8.1% QoQ. The calculated operating-profit/sales margin is 19.49%, versus 17.98% a year earlier and 20.88% in June. These calculations use a consistently rounded local series; management EBITDA may use a different scope or definition.",
+    "The stored consolidated quarter has ₹25,126 crore revenue and ₹3,384 crore PAT. Management’s core discussion cites approximately ₹20,000 crore revenue, ₹4,172 crore EBITDA and 20.9% margin, on a different scope. Do not reconcile these by mixing standalone margin with consolidated sales. September consolidated borrowings of ₹26,401 crore require subsidiary-level analysis rather than interpreting them as the manufacturing business debt.",
+    "Price and financial dates differ: the cleaned close used here is ₹10,945.00 on 2026-11-12; the public-financial snapshot is dated 2026-11-13. The screenshot price is not treated as a live or verified valuation input. Local public-financial-data parquets, September 2026 quarter; amounts rounded to ₹ crore.",
+    "Audit clarification: management calls the combined EV business, including three-wheelers, margin-accretive, while the CFO separately describes electric two-wheeler mix as still dilutive. These statements have different product scopes. Consolidated growth also includes Bajaj Mobility with a one-quarter reporting lag and a changed year-on-year base."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Export recovery with share gains",
+      "evidence": "Management reported exports of about 7.8 lakh units and strong African and Latin American demand. Geographic diversification helps, but Nigeria and currency availability remain cyclical exposures.",
+      "source": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf"
+    },
+    {
+      "title": "EVs are contributing to economics",
+      "evidence": "Chetak market share reached 23% per management and the overall EV business was margin-accretive at corporate level. Capacity and service execution now matter more than treating EV as a distant loss-making option.",
+      "source": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf"
+    },
+    {
+      "title": "Premium motorcycle refresh",
+      "evidence": "Pulsar launches and KTM/Triumph broaden the 125cc-plus franchise. Management is deliberately protecting margin rather than chasing entry-segment volume, so total domestic share alone is an incomplete performance gauge.",
+      "source": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Business model and sector lens",
+      "content": "Evaluate motorcycles, electric scooters, commercial three-wheelers, exports and overseas investments separately. Financing entities and overseas businesses can add debt and change consolidated working capital; industrial net-cash claims must not be inferred from group borrowings alone."
+    },
+    {
+      "heading": "Balance sheet and capital allocation",
+      "content": "The stored consolidated quarter has ₹25,126 crore revenue and ₹3,384 crore PAT. Management’s core discussion cites approximately ₹20,000 crore revenue, ₹4,172 crore EBITDA and 20.9% margin, on a different scope. Do not reconcile these by mixing standalone margin with consolidated sales. September consolidated borrowings of ₹26,401 crore require subsidiary-level analysis rather than interpreting them as the manufacturing business debt."
+    },
+    {
+      "heading": "Growth versus price paid",
+      "content": "The cleaned close implies about 23x available consolidated trailing EPS, but KTM/overseas consolidation and finance subsidiaries make a core-business-plus-investments SOTP more informative. Illustrative P/E cases below use the available group EPS only and are sensitivity checks, not a substitute for that SOTP."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Volume Cycle — 2W segment",
+      "stage": "BROADENING",
+      "evidence": "Exports were approximately 7.8 lakh units and premium/EV demand was strong; entry motorcycles remain a deliberate lower-priority segment, so the whole portfolio is not placed at a uniform peak."
+    },
+    {
+      "name": "Input Cost / Margin Cycle",
+      "stage": "INFLATIONARY",
+      "evidence": "Management reports input and logistics pressure, with standalone/core margin held near 20.9% through pricing, FX and mix rather than benign costs."
+    },
+    {
+      "name": "EV Transition Cycle",
+      "stage": "SCALE-UP",
+      "evidence": "Chetak share reached 23% per management and the combined EV business became margin-accretive. Capacity and retail absorption, rather than only penetration forecasts, govern the next stage."
+    },
+    {
+      "name": "Export Cycle — 2W OEM",
+      "stage": "ACCELERATION",
+      "evidence": "Q2 exports grew 41% and H1 exports outgrew the industry; Nigeria remains below its old retail peak, leaving both runway and cyclical risk."
+    },
+    {
+      "name": "Capital allocation / overseas integration",
+      "stage": "KTM and group funding review",
+      "evidence": "Company-specific diagnostic: core cash generation must be separated from overseas/KTM commitments and financing subsidiaries; consolidated borrowings are not manufacturing debt."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and cash-earnings constraints; no unsupported point target",
+    "assessment": "The approximately 23× price/available-group-EPS ratio appears more modest than many watchlist names, but the earnings perimeter is changing. Motorcycles, exports, Chetak, BACL and KTM need appropriate economic measures and capital claims. Consolidated P/E alone cannot establish whether the core franchise is cheap.",
+    "assumptions": [
+      "At the 12 November adjusted close of ₹10,945.00, the available four-quarter EPS sum is ₹469.85, implying approximately 23.3× earnings and a 4.29% earnings yield. This is a price/available-EPS calculation, not a forecast or a fully normalized multiple.",
+      "A 20% contraction in the earnings multiple would require 25% cumulative EPS growth merely to keep the share price unchanged; dividends are excluded. This is algebraic sensitivity, not a prediction of the exit multiple.",
+      "A genuine SOTP requires core cash flow, finance-company book and credit costs, overseas ownership, debt/guarantees and restructuring adjustments. Unexplained terminal multiples do not replace this work."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Management reported exports of about 7.8 lakh units and strong African and Latin American demand. Geographic diversification helps, but Nigeria and currency availability remain cyclical exposures.",
+      "Chetak market share reached 23% per management and the overall EV business was margin-accretive at corporate level. Capacity and service execution now matter more than treating EV as a distant loss-making option.",
+      "Chetak reaches the announced 80,000/month capacity in Q4 FY27 and retails absorb output while the overall EV business retains its currently margin-accretive economics."
+    ],
+    "base": [
+      "Management plans Chetak capacity of 80,000 units/month by Q4 FY27 and expects exports to sustain the higher quarterly base.",
+      "The stored consolidated quarter has ₹25,126 crore revenue and ₹3,384 crore PAT. Management’s core discussion cites approximately ₹20,000 crore revenue, ₹4,172 crore EBITDA and 20.9% margin, on a different scope. Do not reconcile these by mixing standalone margin with consolidated sales. September consolidated borrowings of ₹26,401 crore require subsidiary-level analysis rather than interpreting them as the manufacturing business debt.",
+      "Exports sustain the management-indicated approximately 7.5 lakh quarterly level while core margin stays near the reported 20.9%; consolidated KTM/finance effects are valued separately."
+    ],
+    "bear": [
+      "Group financials mix manufacturing, finance and overseas exposures; headline debt and EPS may not describe core economics.",
+      "Recovery can reverse with dollar shortages, local devaluation or tariff changes.",
+      "Rapid demand requires capacity, service and component availability, while commodity inflation persists."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Consolidation and overseas capital allocation",
+      "detail": "Group financials mix manufacturing, finance and overseas exposures; headline debt and EPS may not describe core economics.",
+      "monitor": "KTM investment cash flows, subsidiary losses and core net cash."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Exports and FX",
+      "detail": "Recovery can reverse with dollar shortages, local devaluation or tariff changes.",
+      "monitor": "Nigeria and LatAm retails, collection and hedging."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "EV supply / cost execution",
+      "detail": "Rapid demand requires capacity, service and component availability, while commodity inflation persists.",
+      "monitor": "Chetak output, share, warranty cost and margins."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Chetak capacity increase",
+      "timeline": "Q4 FY27",
+      "evidence": "Management plans 80,000 units/month."
+    },
+    {
+      "event": "Further premium launches",
+      "timeline": "H2 FY27",
+      "evidence": "Two new brands in the 125–250cc pipeline and refreshes in 160–400cc."
+    },
+    {
+      "event": "Export scale sustains",
+      "timeline": "H2 FY27",
+      "evidence": "Management expects quarterly exports around 7.5 lakh units to sustain."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Chetak capacity is below the announced 80,000 units/month at Q4 FY27-end.",
+      "deadline": "March 2027",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Quarterly exports fall below 7 lakh units for two consecutive quarters.",
+      "deadline": "Next four reported quarters",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Standalone/core EBITDA margin drops below 20% for two quarters while overseas funding commitments continue to rise.",
+      "deadline": "Next four reported quarters",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "Management reported exports of about 7.8 lakh units and strong African and Latin American demand. Geographic diversification helps, but Nigeria and currency availability remain cyclical exposures.",
+    "management": "Rakesh Sharma described a deliberate trade-off: protect profitability in 100cc motorcycles while investing in premium Pulsar, exports and Chetak. Dinesh Thapar’s core cash-flow disclosure is useful, but management’s record requires a separate test of KTM/overseas capital deployed versus cash and returns delivered to Bajaj shareholders.",
+    "capital_allocation": "The stored consolidated quarter has ₹25,126 crore revenue and ₹3,384 crore PAT. Management’s core discussion cites approximately ₹20,000 crore revenue, ₹4,172 crore EBITDA and 20.9% margin, on a different scope. Do not reconcile these by mixing standalone margin with consolidated sales. September consolidated borrowings of ₹26,401 crore require subsidiary-level analysis rather than interpreting them as the manufacturing business debt.",
+    "governance": "Promoter ownership increased from 55.01% in June to 55.95% in September; the reason for the change was not independently reconstructed. KTM/overseas exposure and finance subsidiaries require scrutiny of guarantees, intercompany funding, acquisition accounting and board-approved investment limits before treating the core franchise’s cash as fully distributable.",
+    "limitations": "No fresh quantitative composite or forensic governance score is computed. The historical master-verdict index is a dated reference, not a current recommendation."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-10-27",
+    "coverage_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "confidence": "medium",
+    "sentiment": "constructive with execution risks",
+    "sentiment_basis": "A stronger core and EV business, with consolidated balance-sheet and KTM complexity requiring separate valuation work.",
+    "summary": {
+      "result": "Local revenue ₹25,126 crore and PAT ₹3,384.00 crore; use the definition notes in results analysis.",
+      "driver": "Export recovery with share gains.",
+      "forward": "Management plans Chetak capacity of 80,000 units/month by Q4 FY27 and expects exports to sustain the higher quarterly base.",
+      "risk": "Consolidation and overseas capital allocation: KTM investment cash flows, subsidiary losses and core net cash."
+    },
+    "story_tension": "A stronger core and EV business, with consolidated balance-sheet and KTM complexity requiring separate valuation work.",
+    "operating_kpis": [
+      {
+        "metric": "Quarterly exports",
+        "value": "About 7.8 lakh units",
+        "note": "41% YoY growth per management."
+      },
+      {
+        "metric": "Chetak share",
+        "value": "23%",
+        "note": "Management disclosure despite supply constraints."
+      },
+      {
+        "metric": "Planned Chetak capacity",
+        "value": "80,000 per month",
+        "note": "Targeted by Q4 FY27, not current production."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "Chetak capacity targeted at 80,000 units/month by Q4 FY27."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Supply constraints reduced Chetak availability; commodity and logistics costs remain elevated."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "Chetak capacity 80,000 per month",
+        "window": "FY27; Q4 in prepared remarks, next-quarter timing in Q&A",
+        "status": "PENDING",
+        "evidence": "The 80,000-unit monthly capacity objective is supported, but the source uses different timing references; verify commissioning rather than treating a precise deadline as reconciled."
+      },
+      {
+        "promise": "Sustain higher export run-rate",
+        "window": "H2 FY27",
+        "status": "PENDING",
+        "evidence": "Q1 and Q2 both exceeded 7 lakh units; subsequent demand remains a test."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Consolidation and overseas capital allocation",
+        "status": "ALIVE",
+        "evidence": "Group financials mix manufacturing, finance and overseas exposures; headline debt and EPS may not describe core economics."
+      },
+      {
+        "thesis": "Exports and FX",
+        "status": "ALIVE",
+        "evidence": "Recovery can reverse with dollar shortages, local devaluation or tariff changes."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Rakesh Sharma",
+        "text": "our EV business, which includes 3-wheelers and Chetak is now margin accretive at the corporate level.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings-call transcript, 2026-10-27",
+        "url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf"
+      },
+      {
+        "title": "Company investor relations / current disclosures",
+        "url": "https://www.bajajauto.com/investors/financial-and-operational-performance"
+      }
+    ],
+    "limitations": [
+      "Standalone/core call figures and consolidated parquet figures are not interchangeable.",
+      "No complete KTM acquisition-accounting or industrial-versus-finance-debt SOTP has been reconstructed in this report.",
+      "Coverage uses current prepared remarks and targeted Q&A, prior available remarks and selected historical checks; it is not a complete five-call forensic or six-quarter promise audit. Empty silence, dropped-guidance and tone-shift arrays mean insufficient supported evidence, not proof of absence.",
+      "Second review distinguishes a supported management assertion from independently demonstrated economics; the claim ledger sets out residual reconciliation gaps."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings-call transcript, 2026-10-27",
+      "url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf"
+    },
+    {
+      "title": "Company investor relations / current disclosures",
+      "url": "https://www.bajajauto.com/investors/financial-and-operational-performance"
+    }
+  ],
+  "remaining_gaps": [
+    "Standalone/core call figures and consolidated parquet figures are not interchangeable.",
+    "No complete KTM acquisition-accounting or industrial-versus-finance-debt SOTP has been reconstructed in this report.",
+    "No complete core/BACL/KTM debt, cash, guarantees and value bridge has been constructed.",
+    "Capacity schedule references are inconsistent within the call.",
+    "Company-defined quarterly FCF and restructuring-adjusted KTM earnings are not equivalent to audited recurring group free cash flow."
+  ],
+  "claim_audit": [
+    {
+      "claim": "September 2026 revenue ₹25,126.00 crore and PAT ₹3,384.00 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table",
+      "source_url": "data/BAJAJ-AUTO-financials.json",
+      "locator": "ticker=BAJAJ-AUTO, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The live canonical table agrees with the report input. Revenue, total PAT and EPS must retain their respective accounting definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "Core EBITDA was ₹4,172 crore and margin 20.9%; consolidated revenue was ₹25,126 crore.",
+      "claim_type": "management-reported fact",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 9; retained text lines 448–452",
+      "excerpt": "",
+      "assessment": "These have different reporting perimeters. Dividing core EBITDA by consolidated revenue would create a fictitious margin."
+    },
+    {
+      "claim": "Bajaj Mobility/KTM is consolidated with a one-quarter reporting lag.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 10; retained text lines 522–526",
+      "excerpt": "",
+      "assessment": "The prior-year comparator did not include the same full quarter. Reported group growth is not like-for-like manufacturing growth."
+    },
+    {
+      "claim": "Q2 exports reached 7.8 lakh units, up 41%, with a forward aim around 7.5 lakh per quarter.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 3; retained text lines 115–119",
+      "excerpt": "",
+      "assessment": "The forward operating aim is not a contracted export order book; regional demand and currency availability remain cyclical."
+    },
+    {
+      "claim": "Chetak share reached 23%; combined EV profitability includes electric three-wheelers.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 5; retained text lines 225–229",
+      "excerpt": "",
+      "assessment": "The combined EV profitability statement explicitly includes three-wheelers, so it should not be attributed solely to Chetak."
+    },
+    {
+      "claim": "The CFO separately says electric two-wheeler mix still dilutes overall margin.",
+      "claim_type": "management-reported fact",
+      "status": "CORRECTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 9; retained text lines 462–466",
+      "excerpt": "",
+      "assessment": "This qualifies the broader combined-EV statement. A favourable three-wheeler mix does not prove Chetak alone is margin-accretive."
+    },
+    {
+      "claim": "Chetak capacity is targeted at 80,000 units monthly, but timing references differ.",
+      "claim_type": "management-reported fact",
+      "status": "UNRESOLVED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 5; retained text lines 229–233",
+      "excerpt": "",
+      "assessment": "Prepared remarks say Q4; later Q&A says next quarter. The schedule inconsistency remains open."
+    },
+    {
+      "claim": "PLI accruals benefited from a rate change, with an 18% exit rate described for H2.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 10; retained text lines 497–501",
+      "excerpt": "",
+      "assessment": "The maximum rate transition is not automatically a fresh incremental margin step each quarter. Accrual and cash collection can also differ."
+    },
+    {
+      "claim": "Core quarterly PAT was ₹3,354 crore, with nearly ₹4,000 crore company-defined FCF.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 10; retained text lines 513–517",
+      "excerpt": "",
+      "assessment": "This cash measure is a core-period disclosure; it cannot be combined with group borrowings as though on the same perimeter."
+    },
+    {
+      "claim": "KTM H1 revenue was €701 million and adjusted EBITDA €38 million.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 11; retained text lines 543–547",
+      "excerpt": "",
+      "assessment": "Management notes restructuring-profit adjustments. The turnaround needs a recurring operating and cash reconciliation."
+    },
+    {
+      "claim": "BACL had about ₹21,000 crore AUM and ₹243 crore quarterly PAT.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 11; retained text lines 557–561",
+      "excerpt": "",
+      "assessment": "The financing subsidiary changes group funding and profit mix. Its debt is not equivalent to factory leverage."
+    },
+    {
+      "claim": "Input inflation remained material despite pricing and operating leverage.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "BAJAJ-AUTO Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/lkwalimbe_bajajauto_co_in_02112026165236_Transcript_of_Earning_Conference_Call_Q2_FY27.pdf",
+      "locator": "PDF page 11; retained text lines 565–569",
+      "excerpt": "",
+      "assessment": "Stable quarterly margin does not demonstrate that raw-material risk has disappeared."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹2,597 crore; dataset free cash flow ₹1,885 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local cash_flow_annual table",
+      "source_url": "data/BAJAJ-AUTO-financials.json",
+      "locator": "ticker=BAJAJ-AUTO, period_end=2026-03-31, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "Annual cash-flow figures were re-read; they are not September-quarter or H1 cash flows and do not use management-adjusted FCF definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "September promoter holding was 55.95%.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local shareholding_quarterly table",
+      "source_url": "data/BAJAJ-AUTO-financials.json",
+      "locator": "ticker=BAJAJ-AUTO, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The reported percentage agrees with the local ownership table; any change in percentage requires a corporate-action/share-count bridge before describing it as promoter buying or selling. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    }
+  ],
+  "audit_summary": {
+    "scope": "Independent second review of material operating, guidance, earnings-quality and valuation claims against retained current transcript passages, relevant prior evidence and re-read canonical financial tables. Exact source locations are supplied; management statements remain management statements. This is not a complete audit of financial statements or all historical promises.",
+    "overall_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Separated combined EV profitability from electric two-wheeler mix, which the CFO still describes as dilutive.",
+      "Flagged Q4 versus next-quarter capacity timing references.",
+      "Added PLI accrual mechanics and the one-quarter KTM consolidation lag; withdrew unsupported target-price grids."
+    ],
+    "unverified": [
+      "No complete core/BACL/KTM debt, cash, guarantees and value bridge has been constructed.",
+      "Capacity schedule references are inconsistent within the call.",
+      "Company-defined quarterly FCF and restructuring-adjusted KTM earnings are not equivalent to audited recurring group free cash flow."
+    ]
+  },
+  "deeper_analysis": {
+    "business_economics": [
+      "Exports, premium domestic motorcycles and electric mobility are separate growth engines. Q2 exports of 7.8 lakh units and 23% Chetak share support scale, but regional demand, foreign-currency availability and capacity/service execution are different constraints.",
+      "The central EV nuance is product mix. Management calls the combined EV business, including three-wheelers, margin-accretive; the CFO separately says growing electric two-wheelers still dilute overall margin. Treating the combined statement as proof of Chetak margin accretion would overstate unit economics."
+    ],
+    "earnings_quality": [
+      "The core business reports ₹4,172 crore EBITDA at 20.9% margin; the consolidated group reports ₹25,126 crore revenue. These numbers must not be combined to calculate a margin. Group year-on-year growth also includes a full quarter of Bajaj Mobility on a changed comparable base and with a one-quarter lag.",
+      "Other operating income includes export incentives, PLI accruals and genuine-oil royalties. The PLI exit rate moves to 18% according to management; that supports current profit but is not a new rate step in every future quarter. Nearly ₹4,000 crore core quarterly FCF is strong, although working-capital and accrual-to-cash effects need separate tracking."
+    ],
+    "capital_allocation": [
+      "BACL reported about ₹21,000 crore AUM and ₹243 crore quarterly PAT. Its funding changes group debt interpretation: ₹26,401 crore consolidated borrowings are not automatically industrial net debt, while core cash is not automatically distributable before guarantees and intercompany funding are assessed.",
+      "KTM’s €38 million adjusted H1 EBITDA and positive Q2 EBIT are early turnaround evidence. The shareholder test is recurring cash after restructuring and capital committed, rather than accounting consolidation or one positive quarter."
+    ],
+    "valuation_logic": [
+      "About 23× available consolidated EPS mixes manufacturing, financing and an overseas turnaround. A sector P/E on blended earnings risks double-counting value or missing funding claims.",
+      "A SOTP should value core cash, BACL risk-adjusted book returns and KTM normalized operating cash separately, then account for attributable debt, guarantees and future capital. Until that bridge exists, a precise target grid would overstate confidence."
+    ],
+    "peer_positioning": [
+      "Domestic motorcycle peers help compare premium share, volume, realizations and core margins. Electric-scooter peers help compare distribution and service, but their valuation does not establish Bajaj’s EV value. Financing and KTM require separate comparables.",
+      "Exports diversify demand, but regional recovery and incentives can make a current run-rate appear more permanent than it is. Compare through-cycle volume and cash generation rather than assuming every future quarter repeats the current export performance."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "EV mix and PLI",
+        "latest_value": "Combined EV accretive; electric 2W still dilutive",
+        "source": "Current call, BU/CFO commentary",
+        "why_it_matters": "Avoids confusing different profitability scopes.",
+        "next_test": "Track 2W/3W margins and PLI accruals versus collections."
+      },
+      {
+        "metric": "Export base",
+        "latest_value": "7.8 lakh Q2 units; approximately 7.5 lakh forward aim",
+        "source": "Current call, export remarks",
+        "why_it_matters": "Tests retention of the stepped-up base.",
+        "next_test": "Monitor regional retail demand, currency availability and shipments."
+      },
+      {
+        "metric": "Core versus group cash",
+        "latest_value": "Nearly ₹4,000 crore core quarterly FCF",
+        "source": "Current call, CFO cash remarks",
+        "why_it_matters": "Ensures group funding claims are not ignored.",
+        "next_test": "Require a consistent core/BACL/KTM cash and capital bridge."
+      }
+    ],
+    "unanswered_questions": [
+      "What is the commissioning schedule for 80,000 Chetak units monthly given the different Q4 and next-quarter references?",
+      "How much EV profit comes from two-wheelers versus three-wheelers, and from PLI accruals versus cash?",
+      "What recurring cash, net debt, guarantees and capital commitments are attributable to KTM and BACL?"
+    ]
+  }
+}

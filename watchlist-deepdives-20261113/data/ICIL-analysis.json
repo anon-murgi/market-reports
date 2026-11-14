@@ -1,0 +1,547 @@
+{
+  "company_name": "Indo Count Industries Limited",
+  "archetype": "consumer_discretionary — home-textile exporter",
+  "executive_summary": "Indo Count’s September recovery combines core mix improvement with rapidly scaling utility bedding and brands. The useful evidence is broader than the PAT rebound: new businesses contribute around 30% of income, all three US utility plants exceed 65% utilization, and management now expects to exceed FY27 revenue/margin guidance.",
+  "research_stance": "Constructive operating evidence, with valuation and insurance/working-capital reconciliation still important after the sharp share-price rise.",
+  "results_analysis": [
+    "September 2026 consolidated sales were ₹1,673.00 crore, +57.5% YoY and +38.6% QoQ. PAT was ₹132.00 crore, +238.5% YoY and +109.5% QoQ. These percentage changes use the rounded local dataset, so small differences from company-exact growth percentages are expected.",
+    "Local operating profit was ₹233.00 crore and OPM 14.00%, compared with 10.00% a year earlier and 12.00% in June 2026. PAT margin was 7.89%. OPM is the dataset’s operating-profit/sales measure, not automatically management-adjusted EBITDA or a segment EBIT margin.",
+    "The call uses total income ₹1,699 crore and EBITDA ₹259 crore/15.3%, while the local table uses sales ₹1,673 crore and operating profit ₹233 crore/14%. The ₹26 crore other-income bridge explains most of the EBITDA numerator difference; do not call the 14% local OPM an EBITDA miss. The Bhilad inventory loss ₹45.02 crore is matched by an equivalent insurance receivable/exceptional credit, so it is not extra recurring operating growth. Interim insurance payment ₹14.99 crore was approved after quarter-end, with final recovery still open.",
+    "FY26 annual CFO was ₹573 crore and free cash flow ₹372 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹1,314 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 8.19% is an older-period return measure, not a freshly recomputed quarterly return."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "New businesses begin to scale",
+      "evidence": "New-business Q2 revenue ₹502 crore is about 30% of total income, with H1 ₹890 crore against ₹1,500 crore FY27 target. Utility bedding and US brands broaden the wallet share beyond the core bed-linen franchise.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Capacity already exists for the stated medium-term target",
+      "evidence": "Management clarified ₹8,000 crore revenue goal is calendar 2028, not FY28, and says no growth capex is required to reach it. Current US utility plants are all above 65% utilization; full utilization is targeted by CY28.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Earnings quality improves, but margins need discipline",
+      "evidence": "Core operating leverage and product mix support growth. Management refuses an analyst 18–20% current-year margin leap and instead indicates 14–15% may be possible versus the original 13% FY27 guide.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Balance-sheet improvement supports optionality",
+      "evidence": "Call net debt ₹518 crore and net debt/equity 0.2x reduce financial fragility. However the local balance-sheet borrowings ₹1,314 crore are gross and include a different perimeter from the reported net debt; reconcile rather than subtract cash casually.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Home-textile demand and product breadth",
+      "content": "The company combines Indian bed-linen manufacturing with US utility bedding and licensed/owned brands. Track meters in the core and revenues/utilization in new businesses separately to avoid double counting product flows."
+    },
+    {
+      "heading": "Trade geography",
+      "content": "Current non-US core share is around 30%; management expects over 20% non-US growth in FY27 but did not issue a firm future mix target. EU FTA inquiry interest is not the same as delivered volumes."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Export demand / trade cycle",
+      "stage": "RECOVERY",
+      "evidence": "Core revenue, wallet share and non-US demand are improving."
+    },
+    {
+      "name": "Capacity / utilization cycle",
+      "stage": "RAMPING",
+      "evidence": "All three US utility plants exceed 65%; CY28 full-use ambition."
+    },
+    {
+      "name": "Product / brand cycle",
+      "stage": "MIX-BUILDING",
+      "evidence": "Wamsutta expands beyond DTC; new businesses around 30% of income."
+    },
+    {
+      "name": "Working-capital cycle",
+      "stage": "RELEASE",
+      "evidence": "Call net debt ₹518 crore and working-capital days improved; insurance remains outstanding."
+    },
+    {
+      "name": "Valuation cycle",
+      "stage": "STRETCHED",
+      "evidence": "Snapshot P/E 39.8x and strong price appreciation require earnings delivery."
+    }
+  ],
+  "valuation": {
+    "method": "Sector-appropriate normalized earnings / enterprise value analysis",
+    "assessment": "Value the core textile business on normalized earnings/EV-EBITDA, with separately modeled US utility/brand economics and net debt. Snapshot P/E 39.8x reflects a recovery; using Q2 PAT×4 assumes away seasonality and mix. No target is assigned before recurring EBITDA and insurance/cash balances are reconciled.",
+    "assumptions": [
+      "₹8,000 crore target is CY2028, explicitly clarified in Q&A.",
+      "FY27 total-income guide ₹5,500 crore and 13% EBITDA is now expected to be exceeded; no 18–20% margin promise.",
+      "₹250 crore capex is spread over 12–18 months, not all FY27."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "New businesses sustain rapid growth as US plants rise from 65% toward full utilization.",
+      "FY27 exceeds ₹5,500 crore total income and approaches 14–15% EBITDA as management indicated.",
+      "Brands and non-US customers deepen wallet share without new growth capex."
+    ],
+    "base": [
+      "Core demand and mix recover while new-business margins converge gradually toward the 15% core reference.",
+      "CY2028 ₹8,000 crore ambition remains the medium-term benchmark.",
+      "Cash generation funds ₹250 crore capex over 12–18 months and reduces net debt."
+    ],
+    "bear": [
+      "A strong product mix quarter is extrapolated despite later customer/program changes.",
+      "Insurance receipts or trade-related customer demand disappoint.",
+      "Valuation compresses before US plants reach intended utilization."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Mix and realization sustainability",
+      "detail": "High-value orders drove realization; a single quarter cannot establish a permanent run-rate.",
+      "monitor": "Meters, blended gross margin and core/new-business EBITDA separately."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Insurance collection",
+      "detail": "Bhilad loss is offset by a receivable and not entirely cash-recovered.",
+      "monitor": "Final claim approval and collections versus ₹45.02 crore recognition."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Trade and US customer concentration",
+      "detail": "A broader business still carries US retail replenishment and tariff exposure.",
+      "monitor": "Customer programs, non-US actual sales and inventory."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Valuation after rerating",
+      "detail": "Share-price growth has already discounted a recovery.",
+      "monitor": "Normalized EPS and free cash flow yield."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Full-year guidance outperformance",
+      "timeline": "FY27 results",
+      "evidence": "H1 total income ₹2,923 crore and EBITDA 14.4% support management confidence."
+    },
+    {
+      "event": "New US plants utilization",
+      "timeline": "By CY2028",
+      "evidence": "Above 65% today; full-use ambition."
+    },
+    {
+      "event": "Wamsutta wider retail distribution",
+      "timeline": "Next several quarters",
+      "evidence": "Expansion beyond DTC disclosed."
+    },
+    {
+      "event": "Final Bhilad insurance settlement",
+      "timeline": "Timing not disclosed",
+      "evidence": "₹14.99 crore interim approval post-quarter; remainder pending."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "FY27 fails original ₹5,500 crore/13% guidance",
+      "deadline": "FY27 results",
+      "action": "Reject guidance-upgrade thesis."
+    },
+    {
+      "condition": "New-business margins do not narrow the gap to core over next three quarters",
+      "deadline": "FY28 Q1 review",
+      "action": "Reassess US investment payback."
+    },
+    {
+      "condition": "Insurance receipts materially fall short of recognized claim",
+      "deadline": "At final settlement",
+      "action": "Reduce earnings-quality assessment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "New-business Q2 revenue ₹502 crore is about 30% of total income, with H1 ₹890 crore against ₹1,500 crore FY27 target. Utility bedding and US brands broaden the wallet share beyond the core bed-linen franchise.",
+    "management": "Management explicitly corrects the CY2028 timeline and resists an analyst’s immediate 18–20% margin extrapolation. That is useful guidance discipline; new-business return and cash-conversion delivery still need evidence.",
+    "capital_allocation": "FY26 annual CFO was ₹573 crore and free cash flow ₹372 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹1,314 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 8.19% is an older-period return measure, not a freshly recomputed quarterly return.",
+    "governance": "The Bhilad insurance receivable, exceptional credit and interim payment approval require cash-settlement tracking. Review related-party, subsidiary funding and claims accounting without treating a receivable as fully collected cash.",
+    "limitations": "Qualitative assessment; no unsupported mechanical quality score or revised master-index rating is assigned."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-11-05",
+    "coverage_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "confidence": "medium",
+    "sentiment": "bullish",
+    "sentiment_basis": "Growth breadth, utilization, debt reduction and expected guidance outperformance improve; valuation limits the investment read-through.",
+    "summary": {
+      "result": "Sales ₹1,673 crore and PAT ₹132 crore; call total income ₹1,699 crore.",
+      "driver": "Core mix, wallet share and ₹502 crore new business revenue.",
+      "forward": "Expects to exceed FY27 ₹5,500 crore and 13% EBITDA guidance.",
+      "risk": "Product mix, US retail demand and insurance cash collection."
+    },
+    "story_tension": "Can utility bedding and brands reach core profitability while growth converts into cash rather than receivables and inventory?",
+    "operating_kpis": [
+      {
+        "metric": "US utility plants utilization",
+        "value": "Above 65% each",
+        "note": "Full utilization targeted CY28."
+      },
+      {
+        "metric": "Core H1 volume",
+        "value": "51 million meters",
+        "note": "49% of 105–110 million FY27 guidance."
+      },
+      {
+        "metric": "New business Q2 revenue",
+        "value": "₹502 crore",
+        "note": "About 30% of total income."
+      },
+      {
+        "metric": "Net debt",
+        "value": "₹518 crore",
+        "note": "Call net debt/equity 0.2x."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "FY27 revenue and EBITDA guidance expected to be exceeded; management discusses 14–15% margin potential.",
+        "₹8,000 crore revenue target explicitly clarified as CY2028."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Interim insurance payment approved after quarter-end; actual collection and final settlement still need confirmation."
+      ],
+      "resolved_risks": [
+        "New US plants all above 65% utilization and no longer at start-up breakeven."
+      ]
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "FY27 EBITDA margin",
+        "direction": "firmer",
+        "from": "Original 13% guide",
+        "to": "Management says 14–15% possible, no immediate 18–20%",
+        "detail": "Current Q&A discusses14–15% potential; this is stronger commentary, not a formal unconditional18–20% promise."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "FY27 total income ₹5,500 crore",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "H1 ₹2,923 crore; management expects to exceed."
+      },
+      {
+        "promise": "FY27 core volume 105–110 million meters",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "H1 51 million meters."
+      },
+      {
+        "promise": "New business revenue ₹1,500 crore",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "H1 ₹890 crore, approximately 60% achieved."
+      },
+      {
+        "promise": "₹8,000 crore revenue",
+        "window": "CY2028",
+        "status": "PENDING",
+        "evidence": "Calendar-year clarification in Q2 call."
+      },
+      {
+        "promise": "₹250 crore capex",
+        "window": "12–18 months",
+        "status": "PENDING",
+        "evidence": "H1 spent ₹40 crore; effluent work may spill to FY28."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "US investments dilute consolidated margins",
+        "status": "WEAKENING",
+        "evidence": "New business has low-double-digit EBITDA; group margin above original guide."
+      },
+      {
+        "thesis": "Recovery is a one-off tariff refund",
+        "status": "WEAKENING",
+        "evidence": "Management explicitly says no tariff refund is included; mix/efficiency driver remains to be sustained."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Manish Bhatia",
+        "text": "Yes, it's calendar year 2028. Yes.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf"
+      },
+      {
+        "speaker": "Manish Bhatia",
+        "text": "No, refund of tariff is not included in this.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Current official call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf"
+      }
+    ],
+    "limitations": [
+      "Call total income/EBITDA differs from local sales/operating profit; figures are not interchangeable.",
+      "Net debt perimeter requires reconciliation with gross borrowings before enterprise valuation.",
+      "No multi-quarter silence allegation is made without a documented frequency test."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Local September 2026 quarterly financial data",
+      "url": "data/ICIL-financials.json"
+    },
+    {
+      "title": "Local annual cash flow",
+      "url": "data/ICIL-financials.json"
+    },
+    {
+      "title": "Company Q2 FY27 earnings-call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "Call total income/EBITDA differs from local sales/operating profit; figures are not interchangeable.",
+    "Net debt perimeter requires reconciliation with gross borrowings before enterprise valuation.",
+    "Exact gross-to-net funding and insurance cash-settlement bridges remain incomplete."
+  ],
+  "data_status": {
+    "quarter": "2026-09-30",
+    "view": "consolidated",
+    "financial_source": "local reported tables",
+    "reconciliation": "See results analysis for definition/rounding differences",
+    "prior_master_verdict_mtime": "2026-09-25T16:01:40.161577463+00:00",
+    "prior_master_verdict_is_current": false
+  },
+  "claim_audit": [
+    {
+      "claim": "September 2026 local consolidated revenue ₹1,673.00 crore, operating profit ₹233.00 crore and PAT ₹132.00 crore.",
+      "claim_type": "local statement / arithmetic",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local quarterly financial table",
+      "source_url": "data/ICIL-financials.json",
+      "locator": "ticker=ICIL; period_end=2026-09-30; view=consolidated",
+      "excerpt": "",
+      "assessment": "Re-read the current parquet and compared the report inputs. This verifies the report against its stated local data source; company-adjusted and attributable measures require the separate call/filing bridge below."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹573 crore and dataset free cash flow ₹372 crore.",
+      "claim_type": "local annual statement",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local annual cash-flow table",
+      "source_url": "data/ICIL-financials.json",
+      "locator": "ticker=ICIL; period_end=2026-03-31",
+      "excerpt": "",
+      "assessment": "Annual cash flow was checked against the current cash-flow table. This is FY ended March 2026, not September-quarter cash flow; investing-flow and capex definitions must not be silently interchanged."
+    },
+    {
+      "claim": "September 2026 dataset borrowings ₹1,314 crore.",
+      "claim_type": "local balance sheet",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local balance-sheet table",
+      "source_url": "data/ICIL-financials.json",
+      "locator": "ticker=ICIL; period_end=2026-09-30",
+      "excerpt": "",
+      "assessment": "The generic financial-table funding field was re-read. It is not automatically equivalent to industrial net debt or to debt excluding leases; explicit company-specific bridges are recorded where available."
+    },
+    {
+      "claim": "Call total income₹1,699cr versus local operating sales₹1,673cr.",
+      "claim_type": "management disclosure",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 116–120",
+      "excerpt": "",
+      "assessment": "The₹26cr gap matches local other income. The call’s EBITDA₹259cr versus local operating profit₹233cr differs by the same amount; use matched numerator/denominator, not a false margin miss."
+    },
+    {
+      "claim": "New businesses generated₹502cr in Q2 and₹890cr in H1.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 166–170",
+      "excerpt": "",
+      "assessment": "These are segment/business-growth disclosures, not all organic same-business growth."
+    },
+    {
+      "claim": "New-business FY27 revenue target was₹1,500cr.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 209–213",
+      "excerpt": "",
+      "assessment": "H1₹890cr is about59% of the target; full-year completion remains pending."
+    },
+    {
+      "claim": "All three US utility facilities operated above65% utilization.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 610–614",
+      "excerpt": "",
+      "assessment": "This is not a weighted group textile utilization measure."
+    },
+    {
+      "claim": "Full US utility utilization is sought by CY2028.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 781–785",
+      "excerpt": "",
+      "assessment": "The target is calendar year, not the financial year ending March2028."
+    },
+    {
+      "claim": "₹8,000cr revenue goal is CY2028.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 441–445",
+      "excerpt": "",
+      "assessment": "An analyst’s FY28 framing is explicitly corrected by management in Q&A."
+    },
+    {
+      "claim": "Management said no growth capex is needed to reach the₹8,000cr goal on current capacity.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 681–685",
+      "excerpt": "",
+      "assessment": "This does not mean zero maintenance, compliance or already-announced capital spending."
+    },
+    {
+      "claim": "₹250cr capex is spread across12–18months, not entirely FY27.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 716–720",
+      "excerpt": "",
+      "assessment": "H1 spend₹40cr does not imply the entire₹210cr balance must be spent in H2."
+    },
+    {
+      "claim": "Near-term margin could reach14–15%, but no immediate18–20% commitment was made.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 827–831",
+      "excerpt": "",
+      "assessment": "The stronger range is management commentary rather than unconditional formal upgraded guidance; the analyst aspirational20% is excluded."
+    },
+    {
+      "claim": "Company net debt was₹518cr, with cash₹315cr.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 246–250",
+      "excerpt": "",
+      "assessment": "The gross-funding/lease/scope bridge to local₹1,314cr borrowings remains open; subtracting₹315cr from the generic number does not reproduce management net debt."
+    },
+    {
+      "claim": "Previous raw-material price increases were passed to customers, while four-to-five months inventory provides a cushion.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 274–278",
+      "excerpt": "",
+      "assessment": "Management assurance is not a guaranteed automatic-price contract; input costs can affect inventory and future cash conversion."
+    },
+    {
+      "claim": "Bhilad inventory loss₹45.02crore was offset by an equivalent insurance claim; interim₹14.99crore payment was approved after quarter-end.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICIL_12112026190346_Transcript.pdf",
+      "locator": "Text lines 187–191",
+      "excerpt": "",
+      "assessment": "The current call distinguishes accounting recognition, interim approval and pending final settlement. Approval is not proof of cash receipt, and the claim is not additional recurring operating growth."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The core bed-linen franchise, US utility bedding and branded/licensed products have different unit economics. Group revenue growth therefore mixes core meters/realizations and newly scaling businesses; a single EBITDA margin cannot prove each newer investment has reached mature profitability.",
+      "The call’s₹1,699cr total income includes₹26cr above local operating sales. The EBITDA numerator difference is also₹26cr. On consistent arithmetic,₹259/₹1,699 is15.24% while₹233/₹1,673 is13.93%; mixing the numerator from one and denominator from the other creates a false operating signal."
+    ],
+    "earnings_quality": [
+      "The reported Bhilad inventory loss/insurance receivable is a separate earnings-and-cash matter. Recognition of a receivable can offset the accounting loss before full cash collection. The reported recovery should not be treated as additional recurring operating earnings or assumed fully liquid.",
+      "Four-to-five months input inventory can cushion a cost increase before customer repricing, but it also ties up cash and can create exposure when prices reverse. Management says past increases were passed through; the audit treats that as company commentary and continues to test cash conversion and future realized margins."
+    ],
+    "capital_allocation": [
+      "All three utility plants above65% utilization indicate progress, not completion. The return test is whether higher utilization translates into segment contribution after labor, logistics, brand/licensing and financing costs, with cash conversion rather than revenue alone.",
+      "The₹8,000cr CY2028 ambition does not require new growth capacity per management, yet₹250cr maintenance/compliance and other projects remain planned over12–18months. A credible investment case must charge those existing commitments and working capital even if no new growth plant is needed."
+    ],
+    "valuation_logic": [
+      "Use separate core and new-business assumptions and then reconcile net debt, leases and contingent items. No valid enterprise value follows from the unreconciled generic₹1,314cr borrowings minus disclosed cash: it does not reproduce management₹518cr net debt.",
+      "The base case should use supported margin commentary and a staged capacity ramp; the bull case needs new-business returns converging toward core economics; the bear case combines weaker US demand, slower inventory turns and lower margins. Do not build the analyst’s20% margin aspiration into a management-guided target."
+    ],
+    "peer_positioning": [
+      "Welspun is a direct export/home-textile comparison but has flooring, different US onshore exposure and its own Vapi disruption. Trident and yarn manufacturers are not exact substitutes for branded/utility bedding economics. Compare business-level returns, working-capital requirements and customer concentration before valuation multiples."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Core versus total-income margin",
+        "latest_value": "Local13.93%; call~15.3%",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Prevents definition mixing",
+        "next_test": "Publish a revenue/other-income/EBITDA bridge each quarter."
+      },
+      {
+        "metric": "Utility utilization",
+        "latest_value": "Each US plant>65%",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Tests ramp and capital returns",
+        "next_test": "Ask for plant-level EBITDA and cash contribution."
+      },
+      {
+        "metric": "New-business revenue",
+        "latest_value": "Q2₹502cr; H1₹890cr",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Tracks FY27₹1,500cr ambition",
+        "next_test": "Measure organic versus acquired contribution and margins."
+      },
+      {
+        "metric": "Net-debt bridge",
+        "latest_value": "Management₹518cr versus genericborrowings₹1,314cr",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Necessary for enterprise valuation",
+        "next_test": "Reconcile cash, leases and group funding at same date."
+      }
+    ],
+    "unanswered_questions": [
+      "Which items explain the difference between generic borrowings and management net debt?",
+      "What is the remaining uninsured/disputed Bhilad claim balance and expected collection timetable?",
+      "How much of new-business growth comes from capacity utilization versus price/mix, and what are its standalone returns?"
+    ]
+  },
+  "audit_summary": {
+    "scope": "Material company claims, financial definitions, management guidance and stated capital-allocation milestones were reviewed against retained primary transcripts and available official filings. Arithmetic was independently recalculated from current local tables. This is a research evidence audit, not a statutory audit or complete forensic review.",
+    "overall_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Changed “raised” margin-guidance description to firmer current commentary;14–15% is potential, not a formal18–20% commitment.",
+      "Made the matched₹26cr total-income/operating-profit bridge explicit."
+    ],
+    "unverified": [
+      "Call total income/EBITDA differs from local sales/operating profit; figures are not interchangeable.",
+      "Net debt perimeter requires reconciliation with gross borrowings before enterprise valuation.",
+      "Exact gross-to-net funding and insurance cash-settlement bridges remain incomplete."
+    ],
+    "claims_checked": 15,
+    "as_of": "2026-11-13"
+  }
+}

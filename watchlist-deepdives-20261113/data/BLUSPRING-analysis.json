@@ -1,0 +1,527 @@
+{
+  "archetype": "integrated infrastructure and facilities services",
+  "executive_summary": "Bluspring’s September quarter demonstrates an accelerating mix shift toward higher-margin industrial services and acquisition-led scale. The investment case must reconcile the attractive ex-foundit presentation with much lower consolidated profits, and test whether acquisition and working-capital funding translate into durable shareholder cash flow.",
+  "research_stance": "Improving operating trajectory, with consolidated cash conversion and acquisition discipline the key conditions.",
+  "thesis_drivers": [
+    {
+      "title": "Mix shift can improve economics",
+      "evidence": "Smart Infra, Energy and Engineering reported a 10.9% EBITDA margin, versus 4.7% in facilities and food services and 3.2% in security. A higher contribution from industrial services can lift group profitability, but integration and ramp-up remain important risks.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Organic and inorganic growth must be separated",
+      "evidence": "The call reports 49% YoY revenue growth excluding foundit, versus 16% growth in the existing business. Acquisitions explain much of the gap; total growth should not be treated as fully organic or free of capital requirements.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Excluding foundit does not eliminate the cost",
+      "evidence": "The call emphasises PAT of ₹32 crore and EBITDA of ₹67 crore excluding foundit. Local consolidated PAT is ₹13 crore and operating profit ₹54 crore. Foundit losses and reporting-basis differences remain part of the valuation until the business is sold, closed or turned around.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Contract service economics",
+      "content": "Facilities, security, engineering and food services differ in margin, labour intensity and working capital. Revenue growth without contract-level returns or collections is not value creation."
+    },
+    {
+      "heading": "Acquisition strategy",
+      "content": "STEAG and LSG bring industrial and aviation-food capabilities. LSG consolidated from August, so future comparisons must separate new scope from organic growth."
+    },
+    {
+      "heading": "Macro read-through",
+      "content": "Infrastructure and industrial investment can expand demand, but wage inflation, financing costs and customer payment delays can severely affect thin-margin contracts."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Business mix and margin cycle",
+      "stage": "RECOVERY",
+      "evidence": "Higher-margin industrial services are expanding, but consolidated profits are held back by foundit."
+    },
+    {
+      "name": "Acquisition integration",
+      "stage": "Active integration",
+      "evidence": "LSG consolidation began in August; integration and cash returns test remains open."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "STRETCHED on trailing reported earnings",
+      "evidence": "Snapshot P/E 102× is distorted by small and volatile consolidated profits."
+    }
+  ],
+  "valuation": {
+    "method": "Segment EV/EBITDA and normalised consolidated cash flows; target deferred",
+    "assessment": "The positive 102 x snapshot P/E is not reconciled with approximately −₹0.16 accumulated localEPS over the latest four quarters, and cannot anchor valuation. Use segment operating earnings and consolidated shareholder cash flow, explicitly including foundit funding and acquisition/working-capital debt.",
+    "assumptions": [
+      "The FY27 guide of revenue above ₹4,700 crore, EBITDA above ₹200 crore and PAT of ₹100 crore was discussed on the basis excluding foundit.",
+      "A consistent bridge from ex-foundit operations to consolidated earnings is required before a target.",
+      "No assumption that working-capital debt is zero at year-end or that acquisition growth is capital-free."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Industrial services mix and LSG integration lift margins without collection slippage.",
+      "Foundit losses fall and consolidated profit converges with core performance.",
+      "Acquisition debt is repaid from cash while high-return growth continues."
+    ],
+    "base": [
+      "Organic growth is healthy but reported growth slows as acquisition comparisons normalise.",
+      "Working capital and foundit funding consume a portion of core cash generation.",
+      "Valuation requires normalised consolidated earnings rather than best-segment multiples."
+    ],
+    "bear": [
+      "Acquisitions fail to integrate or higher margin contracts demand larger working capital.",
+      "Foundit losses and borrowing costs offset core EBITDA growth.",
+      "Low contract margins leave equity profits sensitive to wages, collections and interest."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Ex-foundit presentation risk",
+      "detail": "₹32 crore core PAT is not ₹13 crore consolidated PAT.",
+      "monitor": "Consistent group bridge including foundit, minorities, interest and adjustments."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Working capital",
+      "detail": "Net working capital of 38 days can appear comfortable even while gross receivables, including unbilled amounts, exceed 90 days.",
+      "monitor": "Receivables, unbilled revenue, contract mobilisation and operating cash flow."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Acquisition and integration",
+      "detail": "Rapid growth from STEAG and LSG requires capital and delivery discipline.",
+      "monitor": "Acquired cohort ROIC, integration costs and debt."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Labour and thin margin contracts",
+      "detail": "Security margin 3.2% provides limited room for wage or collection shock.",
+      "monitor": "Contract repricing, labour compliance and segment cash margin."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Core FY27 guidance delivery",
+      "timeline": "FY27",
+      "evidence": "Management reiterated FY27 revenue above ₹4,700 crore, EBITDA above ₹200 crore and PAT of ₹100 crore on the basis excluding foundit."
+    },
+    {
+      "event": "Foundit cash loss reduction",
+      "timeline": "H2 FY27",
+      "evidence": "Management expects foundit’s H2 cash burn to be approximately half the H1 amount of ₹26 crore."
+    },
+    {
+      "event": "Acquisition debt paydown",
+      "timeline": "Year-end FY27",
+      "evidence": "Management targets acquisition debt of approximately ₹150 crore at year-end, with working-capital debt of ₹150–200 crore still expected."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Core growth continues but consolidated PAT and CFO do not improve over the next two quarters.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "Net working capital remains above 45 days, or gross receivables and unbilled revenue rise materially without a contract-level explanation.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "Foundit’s H2 cash burn is not materially lower than H1 and acquisition-debt reduction is delayed.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "Diversified contract base and higher-value industrial services improve the potential return profile; low margins require strong controls.",
+    "management": "Segment disclosure and the separate presentation excluding foundit aid analysis. The core presentation must still be reconciled with consolidated returns and cash requirements.",
+    "capital_allocation": "Acquisitions should earn above their cost of capital after integration and working capital; foundit funding is an economic cost.",
+    "governance": "Newly independent company with demerger/acquisition scope changes; review related-parties, capital deployment and segment accounting.",
+    "limitations": "No independent contract-level ROIC assessment or complete bridge from the presentation excluding foundit to consolidated results was completed."
+  },
+  "company_name": "Bluspring Enterprises Limited",
+  "ticker": "BLUSPRING",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹13.0 crore versus ₹4.0 crore a year ago and ₹-2.0 crore in June 2026. The business includes loss or near-zero comparison periods; percentage profit growth is not an appropriate standalone signal.",
+    "Revenue ₹1,272.0 crore was +48.4% YoY and +34.0% QoQ. Local operating profit ₹54.0 crore and OPM 4.2% should be interpreted on the dataset’s definition, rather than automatically equated with management’s adjusted EBITDA or EBIT.",
+    "Smart Infra, Energy and Engineering reported 10.9% EBITDA margin against 4.7% facilities/food and 3.2% security. Growing the higher-value vertical can lift group profitability, but integration and ramp-up risks remain.",
+    "The local snapshot is dated 2026-11-13; cleaned-price technicals are dated 2026-11-12. The financials were read from the existing local lake. No replacement result-PDF figures or old overlay targets were silently substituted, and no post-refresh verification is claimed.",
+    "Scope reconciliation: management’s core numbers exclude foundit and comprise revenue of ₹1,250 crore, EBITDA of ₹67 crore and PAT of ₹32 crore. The local consolidated figures are ₹1,272 crore revenue, ₹54 crore operating profit and ₹13 crore PAT. These differences require a reporting-scope and metric-definition bridge; they are not automatically an operating beat or an accounting error.",
+    "Recognized foundit revenue of ₹22 crore, not its ₹30 crore sales/bookings, bridges core revenue ₹1,250 crore to the local ₹1,272 crore group revenue. Core EBITDA ₹67 crore less foundit loss ₹12 crore gives about ₹55 crore versus local operating profit ₹54 crore; residual rounding/definition remains. CorePAT ₹32 crore versus group ₹13 crore still needs a tax, financing, minority and adjustment bridge."
+  ],
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf"
+    },
+    {
+      "title": "Prior quarter transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_02082026211013_Analyst_call.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": "2026-11-07",
+    "coverage_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "confidence": "medium",
+    "sentiment": "bullish with consolidated-profit caveat",
+    "sentiment_basis": "Core growth and margins accelerated; foundit and debt prevent a simple headline valuation.",
+    "summary": {
+      "result": "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹13.0 crore versus ₹4.0 crore a year ago and ₹-2.0 crore in June 2026. The business includes loss or near-zero comparison periods; percentage profit growth is not an appropriate standalone signal.",
+      "driver": "Industrial services mix, organic growth and STEAG/LSG consolidation.",
+      "forward": "Management reiterated the core FY27 guidance and expects foundit’s H2 cash burn to be approximately half its H1 cash burn.",
+      "risk": "Working capital, acquisition debt and loss-making foundit."
+    },
+    "story_tension": "Can the higher-margin mix produce cash and consolidated profit after acquisition costs and foundit losses?",
+    "operating_kpis": [
+      {
+        "metric": "Organic growth of existing business",
+        "value": "16% YoY",
+        "note": "Total ex-foundit growth 49% includes acquisitions."
+      },
+      {
+        "metric": "Industrial services EBITDA margin",
+        "value": "10.9%",
+        "note": "Core segment, not consolidated margin."
+      },
+      {
+        "metric": "Net working capital",
+        "value": "38 days",
+        "note": "Management distinguished this net measure from gross DSO above 90 days."
+      },
+      {
+        "metric": "H1 CFO / operating EBITDA",
+        "value": "76%",
+        "note": "Call’s operating presentation basis."
+      },
+      {
+        "metric": "Net debt",
+        "value": "₹126 crore",
+        "note": "Gross debt and average working capital borrowing are still material."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        {
+          "title": "Foundit burn path",
+          "detail": "Foundit H1 EBITDA burn was about ₹26 crore; management expects H2 EBITDA burn ₹12–13 crore. This is not a separately verified cash-flow disclosure.",
+          "severity": "medium"
+        },
+        {
+          "title": "Debt composition",
+          "detail": "Acquisition debt is targeted at approximately ₹150 crore at year-end; working-capital debt of ₹150–200 crore is expected to persist.",
+          "severity": "medium"
+        }
+      ],
+      "dropped_guidance": [],
+      "new_risks": [],
+      "resolved_risks": [
+        {
+          "title": "LSG closing",
+          "detail": "LSG acquisition completed and consolidated from August; integration return risk remains.",
+          "severity": "medium"
+        }
+      ]
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "Core EBITDA margin actual",
+        "direction": "firmer",
+        "from": "3.8% Q1 ex-foundit",
+        "to": "5.4% Q2 ex-foundit",
+        "detail": "Mix and acquisitions help; not the same as local consolidated OPM 4.2%."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "Core FY27 revenue above ₹4,700 crore, EBITDA above ₹200 crore and PAT of ₹100 crore",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Reiterated; full-year window open and basis excludes foundit."
+      },
+      {
+        "promise": "Exit FY27 with more than 5% core EBITDA margin",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q2 core 5.4% already above level, but sustainability until year-end untested."
+      },
+      {
+        "promise": "Complete LSG acquisition",
+        "window": "Q2 FY27",
+        "status": "KEPT",
+        "evidence": "Completed August; profitability and return test remains open."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Ex-foundit presentation risk",
+        "status": "ALIVE",
+        "evidence": "₹32 crore core PAT is not ₹13 crore consolidated PAT."
+      },
+      {
+        "thesis": "Working capital",
+        "status": "ALIVE",
+        "evidence": "Net working capital of 38 days can appear comfortable even while gross receivables, including unbilled amounts, exceed 90 days."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Kamal Pal Hoda, CEO",
+        "text": "the existing businesses growing 16% year-on-year",
+        "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf"
+      },
+      {
+        "title": "Prior quarter transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_02082026211013_Analyst_call.pdf"
+      }
+    ],
+    "limitations": [
+      "Headline core financials exclude foundit; no merger of bases for growth or valuation.",
+      "Gross DSO and net working capital are both relevant and are not interchangeable.",
+      "No six-quarter promise history available for the independent listed entity."
+    ]
+  },
+  "remaining_gaps": [
+    "Headline core financials exclude foundit; no merger of bases for growth or valuation.",
+    "Gross DSO and net working capital are both relevant and are not interchangeable.",
+    "No six-quarter promise history available for the independent listed entity.",
+    "No formal DCF, fair-value certification or quantitative CCS promotion performed for this dated batch.",
+    "Core-to-consolidated ownersPAT and operating-profit residual differences remain incompletely bridged.",
+    "The snapshot’s positive P/E is not reconciled to the retained EPS history.",
+    "Acquired-cohort ROIC and contract-level cash payback are not independently assessed."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Resolved group revenue using recognized foundit revenue ₹22 crore, rather than ₹30 crore bookings/sales.",
+      "Corrected foundit EBITDA burn versus cash burn, and closing debt versus average working-capital funding.",
+      "Made the positive-P/E versus negative-local-TTM-EPS inconsistency explicit."
+    ],
+    "unverified": [
+      "Core-to-consolidated ownersPAT and operating-profit residual differences remain incompletely bridged.",
+      "The snapshot’s positive P/E is not reconciled to the retained EPS history.",
+      "Acquired-cohort ROIC and contract-level cash payback are not independently assessed."
+    ],
+    "claim_count": 14,
+    "status_counts": {
+      "CORRECTED": 2,
+      "DEFINITION_DIFFERENCE": 4,
+      "SUPPORTED": 7,
+      "UNRESOLVED": 1
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "Local group revenue/PAT are ₹1,272 crore/₹13 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/BLUSPRING_inputs.json",
+      "locator": "pnl_quarterly: BLUSPRING, specified reporting period",
+      "excerpt": "",
+      "assessment": "The core call presentation excludes foundit; those core profits cannot replace group shareholder earnings. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "Core ex-foundit revenue/EBITDA/PAT are ₹1,250/₹67/₹32 crore.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 3; retained text line 97",
+      "excerpt": "",
+      "assessment": "Prepared remarks explicitly state the exclusion; a group valuation must still account for foundit losses."
+    },
+    {
+      "claim": "Foundit recognized revenue is ₹22 crore, while ₹30 crore refers to sales.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 11; retained text line 574",
+      "excerpt": "",
+      "assessment": "₹1,250 crore core+₹22 crore recognized foundit revenue bridges exactly to ₹1,272 crore local group revenue. Sales/bookings are not recognized revenue."
+    },
+    {
+      "claim": "Foundit EBITDA loss was ₹12 crore in Q2.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 5; retained text line 225",
+      "excerpt": "",
+      "assessment": "Core ₹67 crore EBITDA less ₹12 crore loss gives about ₹55 crore versus local ₹54 crore operating profit; residual rounding/definition remains."
+    },
+    {
+      "claim": "Existing-business revenue growth was 16%, versus 49% total ex-foundit growth.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 4; retained text line 168",
+      "excerpt": "",
+      "assessment": "Acquisitions explain much of the growth difference; total growth is not all organic."
+    },
+    {
+      "claim": "Segment EBITDA margins were 10.9% industrial,4.7% facilities/food and 3.2% security.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 5; retained text line 212",
+      "excerpt": "",
+      "assessment": "Mix shift supports economics but needs cash and return validation, not just a higher blended margin."
+    },
+    {
+      "claim": "LSG closed in August and consolidated from August.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 5; retained text line 192",
+      "excerpt": "",
+      "assessment": "A partial-quarter contribution should not be confused with a fully annualised realized result."
+    },
+    {
+      "claim": "Core FY27 guide is revenue>₹4,700 crore, EBITDA>₹200 crore and PAT ₹100 crore.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 5; retained text line 231",
+      "excerpt": "",
+      "assessment": "The discussion is explicitly ex-foundit. The ₹100 crore PAT guide is not a consolidated-owners forecast."
+    },
+    {
+      "claim": "H1 operating cash flow was 76% of operating EBITDA, on the call basis.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 7; retained text line 338",
+      "excerpt": "",
+      "assessment": "This is not necessarily the same as a statutory consolidated CFO/PAT ratio."
+    },
+    {
+      "claim": "Net debt was ₹126 crore; acquisition debt targeted ₹150 crore at year-end, with average working-capital debt ₹150–200 crore.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 11; retained text line 624",
+      "excerpt": "",
+      "assessment": "A low closing organic debt balance does not eliminate the financing cost of average working capital."
+    },
+    {
+      "claim": "Net working capital was 38 days, with~40 expected; gross DSO exceeds 90 days.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 17; retained text line 973",
+      "excerpt": "",
+      "assessment": "Both measures can be true because of payables and other offsets. The gross collection burden remains relevant."
+    },
+    {
+      "claim": "Foundit H1 burn ₹26 crore is described as EBITDA burn, not a cash-flow result.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 15; retained text line 865",
+      "excerpt": "",
+      "assessment": "H2₹12–13 crore is an operating-loss expectation. The original cash-burn label is corrected."
+    },
+    {
+      "claim": "Foundit loans were about ₹106 crore against a Board limit near ₹150 crore.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BLUSPRING_13112026193902_Earnings_Call_Transcript_Final.pdf",
+      "locator": "PDF page 15; retained text line 858",
+      "excerpt": "",
+      "assessment": "A funding approval is a limit, not a forecast of final losses or a guarantee that further capital will be unnecessary."
+    },
+    {
+      "claim": "The last 4 localEPS sum to approximately −₹0.16, despite the positive 102 x snapshot P/E.",
+      "claim_type": "Local financial data / calculation",
+      "status": "UNRESOLVED",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/BLUSPRING_inputs.json",
+      "locator": "pnl_quarterly: BLUSPRING, specified reporting period",
+      "excerpt": "",
+      "assessment": "This valuation-data inconsistency is not reconciled; the positive snapshot P/E is withheld as an earnings anchor. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The strategy is moving toward energy/industrial services, where current EBITDA margin 10.9% exceeds facilities/food 4.7% and security 3.2%. Better mix can create value, but contract mobilisation, wage pass-through, collection and safety execution still determine cash returns.",
+      "Revenue growth 49% excluding foundit is materially acquisition-assisted: existing businesses grew 16%. LSG consolidated only from August, making future annualisation meaningful but not free. The investor needs acquired-cohort earnings, integration costs and cash returns on consideration, rather than treating the entire growth rate as organic."
+    ],
+    "earnings_quality": [
+      "The revenue bridge is more specific than a generic scope warning:₹1,250 crore ex-foundit core revenue+₹22 crore recognized foundit revenue=₹1,272 crore local group revenue. The separate ₹30 crore foundit sales figure is bookings/sales, not recognized revenue.",
+      "CoreEBITDA ₹67 crore less foundit EBITDA loss ₹12 crore gives approximately ₹55 crore, close to local operating profit ₹54 crore. CorePAT ₹32 crore versus group ₹13 crore needs further tax, financing and attribution work. The guide of ₹100 crore FY27 PAT belongs to the core basis, so it cannot be directly placed under a consolidated P/E."
+    ],
+    "capital_allocation": [
+      "Management disclosed ₹340 crore acquisition consideration, acquired cash of roughly ₹188 crore and debt supporting both acquisitions and working capital. The intended ₹150 crore year-end acquisition debt is different from average ₹150–200 crore working-capital funding, which can remain even if a closing organic debt number looks low.",
+      "Foundit’s H1₹26 crore and H2₹12–13 crore outlook refer to EBITDA burn. Statutory cash requirements can differ. Loans of about ₹106 crore against a Board limit near ₹150 crore show a measurable funding exposure, but the approval is not proof that the turnaround will cost no more."
+    ],
+    "valuation_logic": [
+      "The positive 102 x snapshot P/E conflicts with approximately −₹0.16 accumulated localTTM EPS and is not a usable earnings anchor until its adjustment/scope is explained. A segmentSOTP should include core recurring earnings, the cost/funding of foundit and financing needed for working capital.",
+      "A defensible acquisition-return analysis requires purchase consideration net of genuinely accessible cash, integration cost, incremental maintenance investment and cash conversion by acquired cohort. No target is asserted from the current core presentation alone."
+    ],
+    "peer_positioning": [
+      "SIS and Updater Services offer useful comparisons for security/facilities execution, but their geographic, manpower, acquisition and service mixes differ. Quess is affected by the demerger perimeter and is not automatically a directly comparable historical group. A peer multiple must use consistent EBITDA, leases, debt and minority treatment."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Core versus group revenue",
+        "latest_value": "₹1,250+₹22=₹1,272 crore",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Prevents bookings/revenue and scope errors.",
+        "next_test": "Repeat the recognized-revenue bridge each quarter."
+      },
+      {
+        "metric": "Organic / total core growth",
+        "latest_value": "16% /49% YoY",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Separates execution from acquisition annualisation.",
+        "next_test": "Request acquired versus existing cohort cash returns."
+      },
+      {
+        "metric": "Foundit funding",
+        "latest_value": "~₹106 crore loans;~₹150 crore Board limit",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Captures capital still at risk outside the core presentation.",
+        "next_test": "Track statutory cash use separately from EBITDA burn."
+      },
+      {
+        "metric": "Collections / financing",
+        "latest_value": "38 days netWC;>90 days grossDSO",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Offsets can obscure collection risk.",
+        "next_test": "Track mobilization, unbilled revenue and average funding cost."
+      }
+    ],
+    "unanswered_questions": [
+      "What is the full core-to-consolidated ownersPAT bridge, including foundit, financing, minorities and adjustments?",
+      "What are the acquired-cohort ROIC and cash returns after integration and working-capital funding?",
+      "How much cash, rather than EBITDA loss, is foundit expected to consume before break-even, and what happens if the Board loan limit is reached?"
+    ]
+  }
+}

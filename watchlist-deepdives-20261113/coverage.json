@@ -1,0 +1,911 @@
+[
+  {
+    "ticker": "SANATHAN",
+    "company": "Sanathan Textiles Limited",
+    "sector": "consumer discretionary — yarn manufacturing / polyester capacity ramp",
+    "price": 593.4,
+    "price_date": "2026-11-12",
+    "revenue": 1804.0,
+    "pat": 61.0,
+    "revenue_yoy": 120.53789731051343,
+    "pat_yoy": 204.99999999999997,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Operating inflection merits close research attention; valuation requires normalized Punjab earnings and financing discipline before an entry conclusion.",
+    "gaps": [
+      "Only three locally indexed transcript periods; insufficient coverage for a credible four-quarter silence frequency test.",
+      "Financial figures are rounded local company-financial-data rows; the call alternates ₹154/155 crore EBITDA.",
+      "Gross-to-net debt and committed remaining project-capex bridge remain incomplete."
+    ],
+    "claims_checked": 14,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Clarified MP January milestone as construction commencement, not commercial production."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "SMSPHARMA",
+    "company": "SMS Pharmaceuticals Limited",
+    "sector": "pharma api",
+    "price": 523.8499755859375,
+    "price_date": "2026-11-12",
+    "revenue": 316.0,
+    "pat": 40.0,
+    "revenue_yoy": 30.578512396694222,
+    "pat_yoy": 60.00000000000001,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "low",
+    "stance": "Operating improvement is real; cash conversion and the valuation paid for uncommercialised peptides remain the constraints.",
+    "gaps": [
+      "Only current and May transcripts are retained; no verified immediate-prior-quarter call comparison was available.",
+      "No customer-level peptide qualification, signed CRO value or unit economics is disclosed.",
+      "The API pricing, volume and mix bridge is not quantified sufficiently to prove the margin gain is wholly structural."
+    ],
+    "claims_checked": 12,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Clarified that six filings include October, not just H1.",
+      "Separated pilot timing and CRO aspirations from contracted revenue or qualified samples.",
+      "Withdrew arbitrary EPS× multiple value targets; peptide 40% industry discussion is not company margin guidance."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "JSWSTEEL",
+    "company": "JSW Steel Limited",
+    "sector": "metals cyclical",
+    "price": 1352.0999755859375,
+    "price_date": "2026-11-12",
+    "revenue": 54486.0,
+    "pat": 5359.0,
+    "revenue_yoy": 20.67239546420978,
+    "pat_yoy": 225.5771567436209,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Cyclical growth with improving financial capacity; judge on normalized EBITDA per tonne and full-cycle capital returns rather than reported P/E alone.",
+    "gaps": [
+      "Current actual transcript resolved from an exchange link notice; prior indexed notice is not a full transcript, so quarter-on-quarter silence and guidance-diff coverage is incomplete.",
+      "P/E and headline profit require one-off normalization before a price target.",
+      "The adjusted-EBITDA/operating-profit bridge and legal detail of JV ring-fencing remain unresolved.",
+      "The prior indexed exchange documents are notices, so no complete prior-call guidance-diff or silence audit is claimed."
+    ],
+    "claims_checked": 15,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Made production-versus-sales scopes explicit and quantified the adjusted-EBITDA mismatch."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "ANGELONE",
+    "company": "Angel One Limited",
+    "sector": "brokerage / digital financial distribution",
+    "price": 341.0,
+    "price_date": "2026-11-12",
+    "revenue": 1427.0,
+    "pat": 335.0,
+    "revenue_yoy": 18.71880199667222,
+    "pat_yoy": 58.01886792452831,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Constructive on franchise diversification; valuation and funding-book risk require discipline after the operating recovery.",
+    "gaps": [
+      "Cash-flow and borrowing scope still needs a detailed client-money, collateral and own-funds bridge; no liquidity assurance is inferred.",
+      "Regulatory tailwind comments are management views; no independent legal interpretation of every current circular has been performed."
+    ],
+    "claims_checked": 13,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Clarified quarterly standalone/consolidated margins and annual guidance; removed extrapolation of the reported margin jump.",
+      "Separated registered clients, active clients, average/closing funding balances and wealth AUM monetisation."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "UTTAMSUGAR",
+    "company": "Uttam Sugar Mills Limited",
+    "sector": "sugar ethanol bioenergy",
+    "price": 367.4,
+    "price_date": "2026-11-12",
+    "revenue": 494.0,
+    "pat": 4.539999961853027,
+    "revenue_yoy": -15.053131570470924,
+    "pat_yoy": 363.26529321348823,
+    "call_quarter": "Q2 FY27",
+    "call_status": "No current earnings-call transcript found; September financials analyzed independently",
+    "current_call": false,
+    "confidence": "low",
+    "stance": "Cyclical and policy-sensitive research case; separate interest savings from an operating turnaround before drawing an investment conclusion.",
+    "gaps": [
+      "No verified current or prior earnings-call transcript; no invented guidance, promises or silence claims.",
+      "No current company-level cane-crush, recovery or ethanol unit-economics bridge is verified.",
+      "Consolidated local financials should not be replaced by standalone presentation figures."
+    ],
+    "claims_checked": 9,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Added the omitted auditor emphasis of matter on unprovided state-assistance interest.",
+      "Changed the unsupported ethanol-cycle label from SQUEEZED to UNDETERMINED.",
+      "Highlighted declining H1 profit despite the low-base Q2 PAT increase."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "WELSPUNLIV",
+    "company": "Welspun Living Limited",
+    "sector": "consumer discretionary — home-textile exporter",
+    "price": 247.6199951171875,
+    "price_date": "2026-11-12",
+    "revenue": 2838.0,
+    "pat": 170.0,
+    "revenue_yoy": 16.263826300696426,
+    "pat_yoy": 1033.3333333333335,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Broad operating improvement with a stronger cash position; require continuity after working-capital normalization and Vapi recovery.",
+    "gaps": [
+      "Actual transcripts resolved from one-page link notices.",
+      "Revenue/total income, margin definitions and net cash perimeter need careful comparison.",
+      "The precise net-cash and adjusted-EBITDA reconciliations remain open."
+    ],
+    "claims_checked": 15,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Changed FY27 low-teens ROCE promise from KEPT to PARTIAL: an interim milestone is not a completed full-year outcome."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "UNIONBANK",
+    "company": "Union Bank of India",
+    "sector": "bank",
+    "price": 204.39999389648438,
+    "price_date": "2026-11-12",
+    "revenue": null,
+    "pat": 5781.0,
+    "revenue_yoy": null,
+    "pat_yoy": 30.614550384093995,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Positive operating recovery with a funding constraint to monitor; balance valuation appeal against late-benign asset quality.",
+    "gaps": [
+      "No official numerical reconciliation of local consolidated profit with every standalone/subsidiary contribution was completed.",
+      "The final ECL accounting, ongoing provisioning burden and bond-valuation offset are not fixed by management’s current estimate."
+    ],
+    "claims_checked": 12,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Reframed ECL as total transition need less existing buffer, with a separate unresolved recurring-provisioning question.",
+      "Removed a nonspecific liquidity/growth policy from the graded promise ledger; added core ROA and domestic/global funding distinctions."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "ORIENTHOT",
+    "company": "Oriental Hotels Limited",
+    "sector": "hospitality hotels",
+    "price": 173.9,
+    "price_date": "2026-11-12",
+    "revenue": 117.75,
+    "pat": 8.59000015258789,
+    "revenue_yoy": 6.580373300296571,
+    "pat_yoy": 7.9145742640923,
+    "call_quarter": "Q2 FY27",
+    "call_status": "No current earnings-call transcript found; official results press release used only for clearly labeled commentary",
+    "current_call": false,
+    "confidence": "low",
+    "stance": "Merger-linked research case: evaluate exchange parity and approval/time risk; use hotel cash flows as a standalone fallback rather than treating a premium P/E in isolation.",
+    "gaps": [
+      "No verified current OHL call or Q&A; no management sentiment or invented guidance is supplied.",
+      "ADR and occupancy bridge remains unavailable in the reviewed company material.",
+      "Scheme completion and current approval status remain conditional; no legal or arbitrage guarantee is implied."
+    ],
+    "claims_checked": 11,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Added the material proposed IHCL amalgamation and rewrote the stance and valuation framework.",
+      "Resolved the PAT perimeter bridge and explained the generic funding field’s lease component."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "TITAN",
+    "company": "Titan Company Limited",
+    "sector": "consumer discretionary — jewellery retail",
+    "price": 4921.89990234375,
+    "price_date": "2026-11-12",
+    "revenue": 20614.0,
+    "pat": 2393.0,
+    "revenue_yoy": 10.088117489986658,
+    "pat_yoy": 113.66071428571428,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "High-quality franchise requiring an earnings-normalization exercise; do not pay for the entire reported PAT jump as recurring growth.",
+    "gaps": [
+      "No tax-adjusted or attributable PAT normalization is asserted without a complete reconciliation.",
+      "No silence claim is made from selective historical coverage.",
+      "A full after-tax/attributable normalized earnings and Damas cash-value bridge is still unavailable."
+    ],
+    "claims_checked": 12,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Explicitly separated₹1,207cr aggregate pre-tax items from any justified normalized-PAT adjustment."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "TIPSMUSIC",
+    "company": "Tips Music Limited",
+    "sector": "media entertainment / music intellectual property",
+    "price": 785.55,
+    "price_date": "2026-11-12",
+    "revenue": 120.0,
+    "pat": 66.0,
+    "revenue_yoy": 34.8314606741573,
+    "pat_yoy": 24.52830188679245,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Attractive IP economics and cash generation; valuation and content-return discipline are the central checks.",
+    "gaps": [
+      "Rights-by-rights content payback, platform contract terms and complete accounting-policy comparison remain unverified."
+    ],
+    "claims_checked": 12,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Removed the unfinished YouTube Shorts negotiation from the graded promise ledger because no date was committed.",
+      "Made the difference between management guidance, analyst-proposed growth and accounting-policy assertions explicit."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "ENTERO",
+    "company": "Entero Healthcare Solutions Limited",
+    "sector": "healthcare distribution",
+    "price": 1971.0,
+    "price_date": "2026-11-12",
+    "revenue": 2087.0,
+    "pat": 61.0,
+    "revenue_yoy": 32.8453214513049,
+    "pat_yoy": 64.86486486486487,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "A strengthening distribution platform, with the investment case dependent on owners’ earnings and working-capital conversion.",
+    "gaps": [
+      "No quantified MedTech segment EBITDA or like-for-like margin bridge is disclosed.",
+      "No scheduled percentage reduction in NCI is promised.",
+      "Management’s assessment of MRP/trade-margin regulation is not an independent legal or regulatory impact verification."
+    ],
+    "claims_checked": 13,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Changed full-year 5% margin promise from PARTIAL to PENDING; interim run-rate delivery is not completion of a full-year commitment.",
+      "Added owners’ PAT growth 44% versus 66% total-PAT growth and the distinction between deferred consideration and new acquisitions.",
+      "Removed arbitrary parent target values based on unexplained exit multiples."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "LT",
+    "company": "Larsen & Toubro Limited",
+    "sector": "infra construction",
+    "price": 4159.2001953125,
+    "price_date": "2026-11-12",
+    "revenue": 78750.0,
+    "pat": 5949.0,
+    "revenue_yoy": 15.836079077429988,
+    "pat_yoy": 27.16973065412569,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Diversified execution franchise with substantial order visibility; assess margin conversion and capital allocation before extrapolating cash and profit growth.",
+    "gaps": [
+      "PAT and EBITDA perimeters unreconciled; the financial table is local reported data and call metrics are separately labeled.",
+      "Actual current and prior transcripts resolved from official archive; exchange filings alone were only notices.",
+      "Full group PAT attribution and industrial/financial-services debt bridges remain unresolved."
+    ],
+    "claims_checked": 15,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Retained the₹749cr PAT discrepancy as unresolved instead of assuming minority interests explain it.",
+      "Added the disclosed approximately $750 million compute commitment and distinguished significant contracted capacity from fully contracted GPU utilization."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "EMCURE",
+    "company": "Emcure Pharmaceuticals Limited",
+    "sector": "pharma domestic",
+    "price": 2314.4,
+    "price_date": "2026-11-12",
+    "revenue": 2820.0,
+    "pat": 325.0,
+    "revenue_yoy": 24.229074889867853,
+    "pat_yoy": 29.482071713147405,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Broad-based earnings improvement with a genuine guidance upgrade; watch leverage and the earnings definition.",
+    "gaps": [
+      "A complete statutory-to-management EBITDA bridge for the ₹13 cr gap remains unavailable.",
+      "Management’s currency attribution is approximate, not a full constant-currency reconciliation.",
+      "Product-level semaglutide economics and timing are not capitalised as a separate forecast."
+    ],
+    "claims_checked": 13,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Made the ₹575 cr management EBITDA versus ₹588 cr local operating-profit gap explicit as unreconciled; other income alone does not explain it.",
+      "Added currency contribution and ₹551 cr payout context to international growth and leverage.",
+      "Replaced unsupported point-price sensitivities with cash/earnings valuation constraints."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "CORONA",
+    "company": "CORONA Remedies Limited",
+    "sector": "pharma domestic",
+    "price": 2342.199951171875,
+    "price_date": "2026-11-12",
+    "revenue": 441.0,
+    "pat": 60.0,
+    "revenue_yoy": 22.160664819944607,
+    "pat_yoy": 15.384615384615374,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "A high-quality domestic growth franchise, with the share price demanding a much longer record of profitable reinvestment.",
+    "gaps": [
+      "No rupee bridge quantifies the depreciation/amortisation contribution to PAT growth.",
+      "Only three usable call periods exist; a four-prior-quarter silence-frequency audit is not possible.",
+      "Wokadine’s 25% CAGR and hormonal export potential remain forward aspirations, not realised returns."
+    ],
+    "claims_checked": 12,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Distinguished exact company growth calculations from rounded local comparative rows.",
+      "Made the 1.5× IPM revenue guide and rejection of a mid-20s margin target prominent.",
+      "Removed arbitrary one-year target prices; separated current cash generation from acquired-brand and plant amortisation."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "63MOONS",
+    "company": "63 moons technologies limited",
+    "sector": "financial technology / cybersecurity and legacy investments",
+    "price": 927.4500122070312,
+    "price_date": "2026-11-12",
+    "revenue": 153.0,
+    "pat": -40.0,
+    "revenue_yoy": 628.5714285714286,
+    "pat_yoy": null,
+    "call_quarter": "Q2 FY27",
+    "call_status": "No verified current transcript",
+    "current_call": false,
+    "confidence": "low",
+    "stance": "Speculative special-situation research only; require cash-flow, legal and subsidiary-economics evidence before a conviction valuation.",
+    "gaps": [
+      "No current call or management sentiment assessment.",
+      "The legal/asset-recoverability effects cannot be reliably quantified from the reviewed disclosure alone."
+    ],
+    "claims_checked": 10,
+    "audit_status": "Material qualifications remain",
+    "corrections": [
+      "Resolved the −₹40 crore versus −₹28.73 crore PAT difference through NCI attribution and linked EPS to owners’ earnings.",
+      "Added official qualified limited-review conclusions and specified recoverability limitations; strengthened the risk assessment.",
+      "Removed the false generic implication that current management KPIs/guidance had been sourced to a call."
+    ],
+    "unresolved_claims": 2
+  },
+  {
+    "ticker": "KARURVYSYA",
+    "company": "Karur Vysya Bank Limited",
+    "sector": "bank",
+    "price": 380.6000061035156,
+    "price_date": "2026-11-12",
+    "revenue": null,
+    "pat": 788.0,
+    "revenue_yoy": null,
+    "pat_yoy": 37.2822299651568,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "High operating quality in current evidence; require a valuation cushion against normalisation of margins and credit costs.",
+    "gaps": [
+      "No full regulatory ECL-adjusted book or through-cycle credit-loss model has been completed."
+    ],
+    "claims_checked": 12,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Made the 4.26% non-guarantee and 8 bp recovery contribution explicit.",
+      "Separated annualised versus quarterly slippages and formal annual guidance from the earlier one-quarter promise."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "CEMPRO",
+    "company": "Cemindia Projects Limited",
+    "sector": "infra construction",
+    "price": 1325.6,
+    "price_date": "2026-11-12",
+    "revenue": 2749.0,
+    "pat": 131.0,
+    "revenue_yoy": 25.239179954441916,
+    "pat_yoy": 21.2962962962963,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Strong order visibility; wait for evidence that larger, more mechanized contracts improve per-share cash earnings after dilution.",
+    "gaps": [
+      "QIP timing must be reflected in diluted share count and current cash before a fair-value model.",
+      "Local 9.7% operating margin is not directly comparable with call 10.2% EBITDA.",
+      "Post-QIP return and exact adjusted-EBITDA bridges remain incomplete.",
+      "Exact date cut-off for the ₹32,715 crore call backlog remains unconfirmed."
+    ],
+    "claims_checked": 14,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Flagged the backlog cut-off as unconfirmed and identified the ₹13 crore operating-profit/EBITDA mismatch.",
+      "Separated ordinary H2 capex from contingent large-TBM investment and excluded analyst17% ROE estimate from management guidance."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "JINDALSTEL",
+    "company": "JINDAL STEEL LIMITED",
+    "sector": "metals cyclical",
+    "price": 1163.0999755859375,
+    "price_date": "2026-11-12",
+    "revenue": 16679.0,
+    "pat": 771.0,
+    "revenue_yoy": 42.72633920931028,
+    "pat_yoy": 21.41732283464568,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Execution-driven cyclical opportunity; require evidence in EBITDA per tonne, debt reduction and pipeline savings before extrapolating the expanded asset base.",
+    "gaps": [
+      "Local net revenue and call net revenue differ by ₹25 crore; no external numeric replacement was made.",
+      "Specific steel volume and capacity definitions must be kept consistent.",
+      "Full EBITDA adjustment and consistent FY27 production-versus-sales guidance bridge remain unresolved."
+    ],
+    "claims_checked": 16,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Replaced unsupported gross-versus-net explanation of₹25cr difference with an explicitly qualified other-income bridge.",
+      "Clarified ore-tonne pipeline denominator and captive-coal versus coking-coal distinction."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "ICIL",
+    "company": "Indo Count Industries Limited",
+    "sector": "consumer discretionary — home-textile exporter",
+    "price": 555.95,
+    "price_date": "2026-11-12",
+    "revenue": 1673.0,
+    "pat": 132.0,
+    "revenue_yoy": 57.532956685499045,
+    "pat_yoy": 238.46153846153845,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Constructive operating evidence, with valuation and insurance/working-capital reconciliation still important after the sharp share-price rise.",
+    "gaps": [
+      "Call total income/EBITDA differs from local sales/operating profit; figures are not interchangeable.",
+      "Net debt perimeter requires reconciliation with gross borrowings before enterprise valuation.",
+      "Exact gross-to-net funding and insurance cash-settlement bridges remain incomplete."
+    ],
+    "claims_checked": 15,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Changed “raised” margin-guidance description to firmer current commentary;14–15% is potential, not a formal18–20% commitment.",
+      "Made the matched₹26cr total-income/operating-profit bridge explicit."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "SONACOMS",
+    "company": "Sona BLW Precision Forgings Limited",
+    "sector": "auto ancillary",
+    "price": 926.0,
+    "price_date": "2026-11-12",
+    "revenue": 1536.0,
+    "pat": 223.0,
+    "revenue_yoy": 34.97363796133568,
+    "pat_yoy": 31.176470588235293,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Order conversion and EV revenue are accelerating, but mix compression and a demanding multiple restrain the investment case.",
+    "gaps": [
+      "Revenue and EBITDA definition differences remain unreconciled despite being small relative to sales.",
+      "The value, timing and probability of individual yet-to-start programmes are not disclosed.",
+      "Robotics/physical-AI order wins do not establish scaled margins or a mature addressable-market share."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Added the previously omitted ₹1,546 cr call revenue versus ₹1,536 cr lake discrepancy.",
+      "Added current H1 CFO ₹594 cr and FCF ₹446 cr, strengthening the cash-quality assessment versus the original annual-only caution.",
+      "Recorded retained 23–25% margin range; removed 10× decade ambition from the promise ledger and removed unsupported point-price grids."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "MARICO",
+    "company": "Marico Limited",
+    "sector": "fmcg",
+    "price": 902.0,
+    "price_date": "2026-11-12",
+    "revenue": 3897.0,
+    "pat": 558.0,
+    "revenue_yoy": 12.956521739130444,
+    "pat_yoy": 29.166666666666675,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Strong volume and mix execution; distinguish commodity-led margin recovery from a durable earnings rebase.",
+    "gaps": [
+      "The exact PAT-growth bridge between the call and local comparative series remains unverified.",
+      "A reliable immediately-prior call is not among the selected indexed invitation/AGM files; a complete prior-calldiff is not claimed.",
+      "Retail-of ftake and channel inventory data are not independently verified from the call’s market-share assertions."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Removed the unsupported assertion that 31% call PAT growth versus 29.2% local growth is explained by a known recurring/attributable adjustment.",
+      "Separated absolute EBITDA-growth guidance from margin guidance and preserved FY28 mid-teens rather than extrapolating FY27 mid-20s.",
+      "Classified FY29₹20,000 cr and categoryARR objectives as aspirations, not firm forecasts; removed unexplained target-price grids."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "BAJAJ-AUTO",
+    "company": "Bajaj Auto Limited",
+    "sector": "auto oem",
+    "price": 10945.0,
+    "price_date": "2026-11-12",
+    "revenue": 25126.0,
+    "pat": 3384.0,
+    "revenue_yoy": 59.682237051159824,
+    "pat_yoy": 59.47219604147031,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "A stronger core and EV business, with consolidated balance-sheet and KTM complexity requiring separate valuation work.",
+    "gaps": [
+      "No complete core/BACL/KTM debt, cash, guarantees and value bridge has been constructed.",
+      "Capacity schedule references are inconsistent within the call.",
+      "Company-defined quarterly FCF and restructuring-adjusted KTM earnings are not equivalent to audited recurring group free cash flow."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Separated combined EV profitability from electric two-wheeler mix, which the CFO still describes as dilutive.",
+      "Flagged Q4 versus next-quarter capacity timing references.",
+      "Added PLI accrual mechanics and the one-quarter KTM consolidation lag; withdrew unsupported target-price grids."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "APOLLO",
+    "company": "Apollo Micro Systems Limited",
+    "sector": "Defence electronics / private contractor",
+    "price": 440.1000061035156,
+    "price_date": "2026-11-12",
+    "revenue": 388.0,
+    "pat": 46.0,
+    "revenue_yoy": 72.44444444444444,
+    "pat_yoy": 53.33333333333334,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Rapid defence scale-up, with cash conversion and acquisition integration still the decisive risks.",
+    "gaps": [
+      "The prior-year PAT base and unusually high effective tax rate are not fully reconciled.",
+      "Premier completion/funding terms and the underlying CCI decision were not independently audited.",
+      "Current promoter pledge percentage is unverified.",
+      "Expected MIGM order value is not an executed award."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Added the call’s 40% versus local 53.3% PAT-growth discrepancy.",
+      "Separated consolidated and standalone profit/order-book scopes.",
+      "Removed arbitrary target prices and identified the incomplete tax bridge."
+    ],
+    "unresolved_claims": 2
+  },
+  {
+    "ticker": "ATHERENERG",
+    "company": "Ather Energy Limited",
+    "sector": "auto oem",
+    "price": 1923.0,
+    "price_date": "2026-11-12",
+    "revenue": 1464.239990234375,
+    "pat": 1.2599999904632568,
+    "revenue_yoy": 62.89604644451612,
+    "pat_yoy": null,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "An operating inflection with meaningful execution risk; one small PAT profit is not a mature earnings base.",
+    "gaps": [
+      "FY26 consolidated cash-flow fields are missing, not zero.",
+      "No verified diluted-equity, available-cash and fully ramped new-plant cost bridge is available.",
+      "Software attachment does not establish recurring software profit."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Removed duplicate loss-transition prose.",
+      "Added the full adjusted-gross-margin bridge and its lower level versus Q4 FY26.",
+      "Marked unavailable FY26 consolidated cash flow as missing; retained no P/E target."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "BLUSPRING",
+    "company": "Bluspring Enterprises Limited",
+    "sector": "integrated infrastructure and facilities services",
+    "price": 168.88,
+    "price_date": "2026-11-12",
+    "revenue": 1272.0,
+    "pat": 13.0,
+    "revenue_yoy": 48.42473745624272,
+    "pat_yoy": 225.0,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Improving operating trajectory, with consolidated cash conversion and acquisition discipline the key conditions.",
+    "gaps": [
+      "Core-to-consolidated ownersPAT and operating-profit residual differences remain incompletely bridged.",
+      "The snapshot’s positive P/E is not reconciled to the retained EPS history.",
+      "Acquired-cohort ROIC and contract-level cash payback are not independently assessed."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Resolved group revenue using recognized foundit revenue ₹22 crore, rather than ₹30 crore bookings/sales.",
+      "Corrected foundit EBITDA burn versus cash burn, and closing debt versus average working-capital funding.",
+      "Made the positive-P/E versus negative-local-TTM-EPS inconsistency explicit."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "BHARTIARTL",
+    "company": "Bharti Airtel Limited",
+    "sector": "telecom",
+    "price": 2096.0,
+    "price_date": "2026-11-12",
+    "revenue": 60878.0,
+    "pat": 10710.0,
+    "revenue_yoy": 16.747530923386698,
+    "pat_yoy": 23.80071668015258,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Strong operating franchise and cash-generation trajectory; value it through segment cash flows and disciplined capital deployment.",
+    "gaps": [
+      "A complete EBITDAaL-to-equity-cash and group/land-capex reconciliation remains unavailable.",
+      "Final 1 GW funding schedule, ownership dilution and realized return are not fixed by the call."
+    ],
+    "claims_checked": 13,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Reframed operating FCF and net-debt ratios using the stated after-lease definitions.",
+      "Removed an unsupported historical KEPT grade for lending launch; the prior call already said services were live.",
+      "Distinguished Airtel and Hexacom sessions and flagged the land-capex/FCF inclusion bridge."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "BANKINDIA",
+    "company": "Bank of India",
+    "sector": "bank",
+    "price": 151.41000366210938,
+    "price_date": "2026-11-12",
+    "revenue": null,
+    "pat": 3310.0,
+    "revenue_yoy": null,
+    "pat_yoy": 28.49378881987579,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Valuation support with earnings-quality caveats; monitor funding cost, provision reversals and ECL rather than treating cheap P/E as sufficient.",
+    "gaps": [
+      "Full final ECL amount, Board assessment and sustainable credit cost remain open.",
+      "A complete consolidated-to-bank-only profit and adjusted-book bridge is not available in this audit."
+    ],
+    "claims_checked": 12,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Separated falling CASA share from rising absolute CASA deposits and sequential from year-on-year NIM.",
+      "Marked provision reversals pre-tax and ECL capital estimates provisional, rather than settled profit/capital adjustments."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "AGIIL",
+    "company": "AGI Infra Limited",
+    "sector": "real estate",
+    "price": 301.92,
+    "price_date": "2026-11-12",
+    "revenue": 100.0,
+    "pat": 31.0,
+    "revenue_yoy": 17.647058823529417,
+    "pat_yoy": 40.90909090909092,
+    "call_quarter": "Q2 FY27",
+    "call_status": "No verified current earnings-call transcript found; financial results and clearly attributed corporate news reviewed",
+    "current_call": false,
+    "confidence": "low",
+    "stance": "Growth and margin evidence require cash-collection and project-level validation; avoid valuing recognition-led profit as cash-backed recurring income.",
+    "gaps": [
+      "No verified current earnings-call transcript; no fabricated guidance, promises or silence analysis.",
+      "Project presales, collections, NAV and approval bridge remain unavailable.",
+      "QIP completion, allotment, share count and original current terms document require verification."
+    ],
+    "claims_checked": 9,
+    "audit_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Classified QIP terms as reported/unresolved because the original PDF could not be retrieved; no completed fundraise is assumed.",
+      "Clarified that generic other assets are not all overdue receivables."
+    ],
+    "unresolved_claims": 2
+  },
+  {
+    "ticker": "MENONBE",
+    "company": "Menon Bearings Limited",
+    "sector": "auto ancillary",
+    "price": 356.65,
+    "price_date": "2026-11-12",
+    "revenue": 98.0,
+    "pat": 15.0,
+    "revenue_yoy": 55.55555555555556,
+    "pat_yoy": 114.28571428571428,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Small-cap earnings growth is improving, but cash conversion and the distance from RFQ to recognised sales need close monitoring.",
+    "gaps": [
+      "A consistent quarterly/half-year sales,total-income and elimination bridge remains incomplete.",
+      "H1CFO cited by an analyst was not independently verified against a statutory cash-flow statement.",
+      "Programme-level awarded versus sampled/RFQ stages and margins are not disclosed.",
+      "Promoter-holding percentage change is not independently traced to a transaction or dilution event."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Separated total-income growth from sales growth; prior rounding-only explanation was too broad.",
+      "Kept RFQs, samples and commercial discussions separate from contracted backlog.",
+      "Added the 23% next-year margin aspiration and approximate automation/capex parameters with conditions.",
+      "Removed unsupported numerical price-target grids."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "GLENMARK",
+    "company": "Glenmark Pharmaceuticals Limited",
+    "sector": "pharma domestic",
+    "price": 2659.8,
+    "price_date": "2026-11-12",
+    "revenue": 4247.0,
+    "pat": 264.0,
+    "revenue_yoy": -29.76682652554986,
+    "pat_yoy": -56.72131147540984,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Core business is stronger than the reported YoY decline suggests, but normalisation and litigation cash outflows determine value.",
+    "gaps": [
+      "No complete exceptional, tax, currency and licensing bridge to recurring EPS/cash is available.",
+      "The call’s ₹866.5 cr gross debt and local ₹1,407 cr borrowings remain unreconciled.",
+      "Future partnerships, innovation funding, launches and litigation cash costs remain uncertain."
+    ],
+    "claims_checked": 16,
+    "audit_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Corroborated clean headline values and Goa VAI in the official MDA instead of copying malformed transcript numbers.",
+      "Added the current-price/available-EPS ratio around 51.7× versus dated snapshot 36.1×; neither is a fully normalised valuation.",
+      "Separated adjusted profit from cash, and call net cash from local gross borrowings."
+    ],
+    "unresolved_claims": 0
+  },
+  {
+    "ticker": "TECHM",
+    "company": "Tech Mahindra Limited",
+    "sector": "it services",
+    "price": 1774.0,
+    "price_date": "2026-11-12",
+    "revenue": 16180.0,
+    "pat": 1610.0,
+    "revenue_yoy": 15.612718828152916,
+    "pat_yoy": 33.94342762063227,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current official IR transcript reviewed; prior-quarter comparison uses reported prior metrics; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Constructive turnaround evidence, with valuation and data-basis reconciliation limiting precision.",
+    "gaps": [
+      "PAT ownership/definition and share/bonus basis remain unresolved; no precise EPS target.",
+      "Prior-quarter full-call parsing and a complete multi-quarter silence audit remain incomplete."
+    ],
+    "claims_checked": 14,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed the false 11.7% attrition KPI; the figure is large-client account revenue growth.",
+      "Reconciled operating profit to EBIT exactly through ₹491 crore depreciation.",
+      "Separated total CC7.2% from organicCC7.0%, and removed the untraceable ₹17.84 EPS assertion."
+    ],
+    "unresolved_claims": 1
+  },
+  {
+    "ticker": "ICICIBANK",
+    "company": "ICICI Bank Limited",
+    "sector": "bank",
+    "price": 1590.0,
+    "price_date": "2026-11-12",
+    "revenue": null,
+    "pat": 17389.0,
+    "revenue_yoy": null,
+    "pat_yoy": 21.448526330493078,
+    "call_quarter": "Q2 FY27",
+    "call_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "current_call": true,
+    "confidence": "medium",
+    "stance": "Quality franchise at a meaningful valuation premium; prefer disciplined return expectations and explicit funding normalisation.",
+    "gaps": [
+      "Consolidated local-versus-call PAT needs a formal owners/NCI and accounting-definition bridge.",
+      "Final ECL effects and normalized through-cycle credit charges are not independently quantified."
+    ],
+    "claims_checked": 12,
+    "audit_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Added the previously omitted direct consolidated PAT comparison and marked the ₹1,056 crore difference unresolved.",
+      "Qualified operating-leverage interpretation for FCNR processing fees and corresponding wholesale funding expenses.",
+      "Removed unquantified policies from the graded promise ledger."
+    ],
+    "unresolved_claims": 1
+  }
+]

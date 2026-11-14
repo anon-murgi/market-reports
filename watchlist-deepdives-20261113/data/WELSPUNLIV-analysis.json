@@ -1,0 +1,534 @@
+{
+  "company_name": "Welspun Living Limited",
+  "archetype": "consumer_discretionary — home-textile exporter",
+  "executive_summary": "Welspun Living’s recovery now has supporting cash and return evidence: management reports net cash, a 44-day cash conversion cycle and 12.7% ROCE. The September quarter was achieved despite Vapi flooding, but a full-year earnings recovery and a normalized cash cycle must support a valuation already reflecting much better conditions.",
+  "research_stance": "Broad operating improvement with a stronger cash position; require continuity after working-capital normalization and Vapi recovery.",
+  "results_analysis": [
+    "September 2026 consolidated sales were ₹2,838.00 crore, +16.3% YoY and +1.5% QoQ. PAT was ₹170.00 crore, +1033.3% YoY and +4.3% QoQ. These percentage changes use the rounded local dataset, so small differences from company-exact growth percentages are expected.",
+    "Local operating profit was ₹338.00 crore and OPM 12.00%, compared with 6.00% a year earlier and 11.00% in June 2026. PAT margin was 5.99%. OPM is the dataset’s operating-profit/sales measure, not automatically management-adjusted EBITDA or a segment EBIT margin.",
+    "Management refers to consolidated revenue/total-income-style reporting of ₹2,870 crore and EBITDA 12.9%, while local operating sales are ₹2,838 crore and operating profit ₹338 crore/approximately 11.9%. Other income ₹25 crore and differing reported conventions mean the two margin series cannot be swapped. FY26 ROCE 6.26% in the snapshot is historical; call 12.7% is a newer management-defined measure, so the apparent conflict reflects period/definition as well as change.",
+    "FY26 annual CFO was ₹1,175 crore and free cash flow ₹726 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹2,405 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 6.26% is an older-period return measure, not a freshly recomputed quarterly return."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Core and newer businesses all contribute",
+      "evidence": "Home-textile exports grew 18.3%, domestic business 28.2% and flooring revenue 19.3% in the call. Diversification helps, but core export programs still drive the group.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Cash conversion is the biggest improvement",
+      "evidence": "Management reports moving from ₹775 crore net debt in March to net cash in September. Cash conversion cycle fell from 82 to 44 days, though the CFO says 50–60 days is more sustainable, making some working-capital cash release nonrepeatable.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Flooring turnaround has operating substance",
+      "evidence": "Flooring EBITDA margin 10.8% follows 10.4% Q1, helped by portfolio/right-sizing and pricing. This reduces a drag, but management guides a steady low-double-digit margin rather than an unlimited growth breakout.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Vapi recovery provides near-term throughput opportunity",
+      "evidence": "Flooding disrupted dispatches and management estimated ₹100–250 crore lost/deferred topline; restoration timing and insurance remain important. US pillow operations add another growth lever with FY29 $80–100 million ambition.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Home textiles and retailer replenishment",
+      "content": "Management says 60–70% of US business is replenishment-led. This supports order continuity but is still exposed to retail inventory, household spending and sourcing changes."
+    },
+    {
+      "heading": "Cost and trade sensitivity",
+      "content": "Cotton, polymers and energy costs remain elevated; over 90% FOB business reduces direct freight exposure but customer pricing and global demand still matter. Trade access is useful only when it converts to programs and volumes."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Export-demand cycle",
+      "stage": "RECOVERY",
+      "evidence": "Exports +18.3% YoY in management disclosure."
+    },
+    {
+      "name": "Margin cycle",
+      "stage": "MARGIN RECOVERY",
+      "evidence": "Call EBITDA 12.9%, flooring 10.8%; consistency with local OPM required."
+    },
+    {
+      "name": "Working-capital cycle",
+      "stage": "RELEASE",
+      "evidence": "44-day cash cycle versus 82 in March; normalization 50–60 days."
+    },
+    {
+      "name": "Capacity / operational cycle",
+      "stage": "RAMPING",
+      "evidence": "Vapi restoring, US pillow facilities operating."
+    },
+    {
+      "name": "Valuation cycle",
+      "stage": "STRETCHED",
+      "evidence": "Snapshot P/E 51.9x is based on trough earnings; recovery already priced to some extent."
+    }
+  ],
+  "valuation": {
+    "method": "Sector-appropriate normalized earnings / enterprise value analysis",
+    "assessment": "Normalize cash conversion and cycle earnings before using EV/EBITDA or P/E. Snapshot P/E 51.9x partly reflects depressed FY26 profit; annualizing the new quarter assumes the recovery persists. Net-cash disclosure needs a precise operating-cash and debt-perimeter bridge before enterprise valuation.",
+    "assumptions": [
+      "50–60 days is management’s sustainable cash cycle reference, not 44 days forever.",
+      "Low-teens EBITDA and double-digit revenue growth are retained FY27 targets.",
+      "Annual capex ₹400–500 crore is current baseline; new opportunities may increase future investment."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Vapi recovers and broad export/domestic growth sustains.",
+      "Flooring maintains low-double-digit margin and US pillow business scales.",
+      "Normalized working capital still permits net cash and selective capex."
+    ],
+    "base": [
+      "Recovery continues but cash cycle partly normalizes to 50–60 days.",
+      "Margins remain in low teens while cotton and polymer inflation require pricing actions.",
+      "Growth comes from existing asset utilization and ₹400–500 crore annual capex."
+    ],
+    "bear": [
+      "Cotton/input cost rises faster than customer pricing.",
+      "Vapi restoration or insurance falls behind and retail orders slow.",
+      "Working capital cash release reverses while fresh capex commitments rise."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Cash release extrapolation",
+      "detail": "The CFO points to 50–60 days as more sustainable than 44.",
+      "monitor": "Inventory, payables, receivables and CFO after seasonal normalization."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Vapi and weather",
+      "detail": "Flood disruption has not been fully removed at the call.",
+      "monitor": "Capacity restoration, dispatches and insurance cash."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Input prices",
+      "detail": "Cotton and polymers can compress margin before customer repricing.",
+      "monitor": "Gross margin and program pricing."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Valuation",
+      "detail": "Large price appreciation can outrun earnings recovery.",
+      "monitor": "Normalized cash yield and EPS delivery."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Vapi restoration",
+      "timeline": "Next quarters",
+      "evidence": "Partial operations resumed; full capacity target not precisely confirmed."
+    },
+    {
+      "event": "FY27 low-teens EBITDA and double-digit growth",
+      "timeline": "FY27 results",
+      "evidence": "Guidance retained."
+    },
+    {
+      "event": "US pillow business scaling",
+      "timeline": "FY27–FY29",
+      "evidence": "Doubling current year ambition; FY29 $80–100 million potential."
+    },
+    {
+      "event": "Capital allocation update",
+      "timeline": "Next annual planning cycle",
+      "evidence": "Current capex baseline ₹400–500 crore; additional opportunities sought."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Cash cycle stays above 70 days after seasonal normalization",
+      "deadline": "Next two quarters",
+      "action": "Reassess net cash quality."
+    },
+    {
+      "condition": "Flooring margin slips back below 8% for two quarters",
+      "deadline": "H2 FY27",
+      "action": "Reconsider turnaround durability."
+    },
+    {
+      "condition": "Core growth requires heavy new capex without return proof",
+      "deadline": "FY28 planning",
+      "action": "Reduce confidence in capital allocation."
+    }
+  ],
+  "quality_assessment": {
+    "business": "Home-textile exports grew 18.3%, domestic business 28.2% and flooring revenue 19.3% in the call. Diversification helps, but core export programs still drive the group.",
+    "management": "The call quantifies net-cash progress, working-capital improvement and a more sustainable cash-cycle range. Those disclosures are useful execution evidence; full-year return delivery still needs sustained cash and plant profitability.",
+    "capital_allocation": "FY26 annual CFO was ₹1,175 crore and free cash flow ₹726 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹2,405 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 6.26% is an older-period return measure, not a freshly recomputed quarterly return.",
+    "governance": "Tariff-refund recognition, customer sharing, shipment cut-offs and working-capital composition need accounting follow-up. No misconduct is inferred from a large cash release, but its recurring nature is not assumed.",
+    "limitations": "Qualitative assessment; no unsupported mechanical quality score or revised master-index rating is assigned."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-10-30",
+    "coverage_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "confidence": "medium",
+    "sentiment": "bullish",
+    "sentiment_basis": "Broad growth, improved margins and net cash milestone outweigh Vapi disruption; normalized cash quality still needs evidence.",
+    "summary": {
+      "result": "Sales ₹2,838 crore; PAT ₹170 crore; call EBITDA 12.9%.",
+      "driver": "Export growth, flooring recovery and working capital release.",
+      "forward": "Double-digit growth and low-teens margins retained.",
+      "risk": "Input inflation, Vapi restoration and cash cycle normalization."
+    },
+    "story_tension": "Can margin and return improvements persist after Vapi restarts and the exceptional working-capital release normalizes?",
+    "operating_kpis": [
+      {
+        "metric": "Cash conversion cycle",
+        "value": "44 days",
+        "note": "82 in March; sustainable reference 50–60 days."
+      },
+      {
+        "metric": "Management ROCE",
+        "value": "12.7%",
+        "note": "Reached FY27 low-teens target early; definition/period differs from annual snapshot."
+      },
+      {
+        "metric": "Flooring EBITDA",
+        "value": "10.8%",
+        "note": "10.4% Q1."
+      },
+      {
+        "metric": "Export growth",
+        "value": "18.3% YoY",
+        "note": "Management core home textile disclosure."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Vapi flooding interrupted production and UK/Europe dispatches.",
+        "44-day cash cycle sustainability questioned; CFO indicates 50–60 days normalized."
+      ],
+      "resolved_risks": [
+        "Management FY27 low-teens ROCE goal achieved at 12.7%.",
+        "Balance sheet moved from net debt to net cash."
+      ]
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "Returns",
+        "direction": "firmer",
+        "from": "Q1 target low-teens ROCE during FY27",
+        "to": "12.7% reported Q2",
+        "detail": "Target achieved on management measure; annual dataset still shows older return period."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "Low-teens EBITDA margin",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q2 call 12.9%; full year not closed."
+      },
+      {
+        "promise": "Low-teens ROCE",
+        "window": "FY27",
+        "status": "PARTIAL",
+        "evidence": "Interim management ROCE reached12.7%; full-year sustainability and the precise metric basis remain open."
+      },
+      {
+        "promise": "Flooring margin around 10%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q1 10.4%, Q2 10.8%; continuity required."
+      },
+      {
+        "promise": "Double US pillow business",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q2 reports 2.4x year-on-year growth, but the full-year window remains open."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Flooring never earns acceptable margin",
+        "status": "WEAKENING",
+        "evidence": "Q1 and Q2 show 10% plus EBITDA."
+      },
+      {
+        "thesis": "Recovery cannot convert into cash",
+        "status": "WEAKENING",
+        "evidence": "Net cash reported but payables and cash cycle normalization need monitoring."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Manish Bansal",
+        "text": "probably this will be more sustainable at 50 by 60 days",
+        "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Current official call transcript",
+        "url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf"
+      }
+    ],
+    "limitations": [
+      "Actual transcripts resolved from one-page link notices.",
+      "Revenue/total income, margin definitions and net cash perimeter need careful comparison.",
+      "No multi-quarter silence allegation is made without a documented frequency test."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Local September 2026 quarterly financial data",
+      "url": "data/WELSPUNLIV-financials.json"
+    },
+    {
+      "title": "Local annual cash flow",
+      "url": "data/WELSPUNLIV-financials.json"
+    },
+    {
+      "title": "Company Q2 FY27 earnings-call transcript",
+      "url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "Actual transcripts resolved from one-page link notices.",
+    "Revenue/total income, margin definitions and net cash perimeter need careful comparison.",
+    "The precise net-cash and adjusted-EBITDA reconciliations remain open."
+  ],
+  "data_status": {
+    "quarter": "2026-09-30",
+    "view": "consolidated",
+    "financial_source": "local reported tables",
+    "reconciliation": "See results analysis for definition/rounding differences",
+    "prior_master_verdict_mtime": "2026-09-25T16:01:40.161577463+00:00",
+    "prior_master_verdict_is_current": false
+  },
+  "claim_audit": [
+    {
+      "claim": "September 2026 local consolidated revenue ₹2,838.00 crore, operating profit ₹338.00 crore and PAT ₹170.00 crore.",
+      "claim_type": "local statement / arithmetic",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local quarterly financial table",
+      "source_url": "data/WELSPUNLIV-financials.json",
+      "locator": "ticker=WELSPUNLIV; period_end=2026-09-30; view=consolidated",
+      "excerpt": "",
+      "assessment": "Re-read the current parquet and compared the report inputs. This verifies the report against its stated local data source; company-adjusted and attributable measures require the separate call/filing bridge below."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹1,175 crore and dataset free cash flow ₹726 crore.",
+      "claim_type": "local annual statement",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local annual cash-flow table",
+      "source_url": "data/WELSPUNLIV-financials.json",
+      "locator": "ticker=WELSPUNLIV; period_end=2026-03-31",
+      "excerpt": "",
+      "assessment": "Annual cash flow was checked against the current cash-flow table. This is FY ended March 2026, not September-quarter cash flow; investing-flow and capex definitions must not be silently interchanged."
+    },
+    {
+      "claim": "September 2026 dataset borrowings ₹2,405 crore.",
+      "claim_type": "local balance sheet",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local balance-sheet table",
+      "source_url": "data/WELSPUNLIV-financials.json",
+      "locator": "ticker=WELSPUNLIV; period_end=2026-09-30",
+      "excerpt": "",
+      "assessment": "The generic financial-table funding field was re-read. It is not automatically equivalent to industrial net debt or to debt excluding leases; explicit company-specific bridges are recorded where available."
+    },
+    {
+      "claim": "Management revenue/total-income headline is ₹2,870cr and EBITDA margin 12.9%.",
+      "claim_type": "management disclosure",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 62–66",
+      "excerpt": "",
+      "assessment": "The local table sales₹2,838cr excludes a different income perimeter and its operating-profit measure is not automatically management EBITDA. The report keeps both definitions."
+    },
+    {
+      "claim": "Management says the business moved into net cash from March net debt₹775cr.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 105–109",
+      "excerpt": "",
+      "assessment": "This describes management net debt, not a claim that gross debt and leases were extinguished. Exact cash/debt/lease reconciliation is still required."
+    },
+    {
+      "claim": "Cash conversion cycle improved to44 days from82 in March.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 187–191",
+      "excerpt": "",
+      "assessment": "This is a management working-capital metric; its period and calculation differ from annual ratio-table working-capital days."
+    },
+    {
+      "claim": "Management current ROCE was12.7%.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 204–208",
+      "excerpt": "",
+      "assessment": "The current management return metric is distinct from the lagged annual snapshot ROCE. Reaching low teens at one interim date does not certify the full-year result."
+    },
+    {
+      "claim": "US onshore pillow quarterly sales grew2.4x YoY.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 88–92",
+      "excerpt": "",
+      "assessment": "Growth is specific to the pillow business and does not mean group sales doubled or that the new plants earned steady-state returns."
+    },
+    {
+      "claim": "Pillow operations were around breakeven; Ohio83% and Nevada52% utilization.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 488–492",
+      "excerpt": "",
+      "assessment": "The call identifies uneven plant utilization, limiting the inference that high growth already equals attractive segment profitability."
+    },
+    {
+      "claim": "Management targets US pillow revenue around$80–100m and lower-teen margin over its ramp.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 505–509",
+      "excerpt": "",
+      "assessment": "This is potential/target economics, not current annual revenue or margin."
+    },
+    {
+      "claim": "Vapi processing/cut-and-sew restarted while spinning/weaving remained affected.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 456–460",
+      "excerpt": "",
+      "assessment": "Outsourcing and Anjar supported supply. The next-quarter normalization expectation is not proof the entire site had already fully restarted."
+    },
+    {
+      "claim": "Management cited ₹100–250cr top-line impact from the Vapi disruption.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 264–268",
+      "excerpt": "",
+      "assessment": "This is an estimated revenue impact, not an audited lost-PAT or recoverable insurance amount."
+    },
+    {
+      "claim": "Some tariff refunds had been received but were not in current P&L.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 1150–1154",
+      "excerpt": "",
+      "assessment": "Customer/customs reconciliation was ongoing and future recognition was only expected. Do not add receipts to recurring current EBITDA."
+    },
+    {
+      "claim": "A44-day cash cycle is not a guaranteed permanent baseline.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 290–294",
+      "excerpt": "",
+      "assessment": "Management offered50–60 days as a more sustainable range; the analyst cash case allows re-expansion rather than capitalizing the full cash release indefinitely."
+    },
+    {
+      "claim": "Flooring EBITDA margin reached10.8%, while core home-textile exports grew18.3% YoY.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.welspunliving.com/uploads/investor_data/Q2-FY27-Earning-conference-call-03.pdf",
+      "locator": "Text lines 98–102",
+      "excerpt": "",
+      "assessment": "Both figures have business-specific scopes. The prior official call reports flooring10.4%; group margin or export growth should not be inferred from a different category."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "Home-textile earnings combine manufacturing efficiency, customer-program mix, input-price pass-through and trade exposure. Group growth therefore needs a bridge between meters/units, realizations and new categories. The US onshore pillow strategy offers proximity and lead-time advantages, but2.4x quarterly growth is not the same as mature plant economics.",
+      "The pillow disclosure is especially informative: operating breakeven coexists with Ohio83% and Nevada52% utilization. Incremental revenue can absorb fixed costs, but the lower-teen margin ambition should be tested against raw-material, freight, labor and service-level costs at each plant. A blended utilization number hides different plant ramps."
+    ],
+    "earnings_quality": [
+      "The move into net cash is supported by management statements and a large working-capital release. Cash cycle fell38 days from March. The change improves liquidity, but only the recurring part of cash generation supports a higher sustained cash-flow yield. Supplier terms, shipment cutoffs and customer advances need separate review.",
+      "Use50–60 days, management’s more sustainable cash-cycle reference, as a scenario variable rather than assuming44 days persists. At a purely illustrative annual revenue base equal to Q2 local sales×4, each10 days of additional working capital would absorb about₹311cr; this is a sensitivity, not a company cash-flow forecast."
+    ],
+    "capital_allocation": [
+      "Flooring, advanced textiles and US pillow investments should be evaluated on their individual contribution and incremental capital employed. Net-cash status creates optionality but does not itself make a new acquisition or new plant return-accretive.",
+      "Vapi recovery needs two checklists: restoration of physical processing/production and recovery of customer dispatches. An outsourcing workaround can preserve volume while raising costs, and a lost-revenue estimate does not establish insurance entitlement or future profit recovery."
+    ],
+    "valuation_logic": [
+      "Separate the core home-textile franchise from still-ramping categories and deduct debt/leases on a consistent basis. A recovery multiple applied to group EBITDA can overstate value if low-return growth categories require repeated investment.",
+      "The bull case requires both normalized cash conversion and new-category profitability; the base case allows some working-capital reversal; the bear case includes trade/input pressure plus delayed Vapi or US plant normalization. Tariff refunds are separately tracked until recognition and customer sharing are clear."
+    ],
+    "peer_positioning": [
+      "Indo Count is a closer home-textile/export comparator than a yarn manufacturer, but US utility bedding, brands, capacity footprint and customer programs differ. Trident adds different product/integration exposure. Compare recurring EBITDA, returns on invested capital and working-capital intensity rather than a common textile-sector P/E."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Cash conversion cycle",
+        "latest_value": "44days; management sustainable reference50–60",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Separates one-time release from steady cash generation",
+        "next_test": "Track inventory/payable/receivable components and cash."
+      },
+      {
+        "metric": "US pillow operating economics",
+        "latest_value": "Near breakeven; Ohio83%/Nevada52% utilization",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Volume growth still needs margin conversion",
+        "next_test": "Request plant-level contribution after logistics/labor."
+      },
+      {
+        "metric": "Vapi restart",
+        "latest_value": "Partial operations and alternative supply disclosed",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Restoration can affect costs and orders",
+        "next_test": "Confirm production and dispatch normalization separately."
+      },
+      {
+        "metric": "ROCE",
+        "latest_value": "12.7% management interim metric",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Tests returns on expansion",
+        "next_test": "Compare consistent trailing-period returns at FY27 close."
+      }
+    ],
+    "unanswered_questions": [
+      "What cash, gross debt and lease balances reconcile precisely to reported net cash?",
+      "How much of the working-capital release came from durable inventory reduction versus payment timing?",
+      "What part of tariff refunds belongs economically to customers, and when will the rest enter P&L?"
+    ]
+  },
+  "audit_summary": {
+    "scope": "Material company claims, financial definitions, management guidance and stated capital-allocation milestones were reviewed against retained primary transcripts and available official filings. Arithmetic was independently recalculated from current local tables. This is a research evidence audit, not a statutory audit or complete forensic review.",
+    "overall_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Changed FY27 low-teens ROCE promise from KEPT to PARTIAL: an interim milestone is not a completed full-year outcome."
+    ],
+    "unverified": [
+      "Actual transcripts resolved from one-page link notices.",
+      "Revenue/total income, margin definitions and net cash perimeter need careful comparison.",
+      "The precise net-cash and adjusted-EBITDA reconciliations remain open."
+    ],
+    "claims_checked": 15,
+    "as_of": "2026-11-13"
+  }
+}

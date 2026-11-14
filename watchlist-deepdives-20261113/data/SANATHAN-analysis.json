@@ -1,0 +1,514 @@
+{
+  "company_name": "Sanathan Textiles Limited",
+  "archetype": "consumer_discretionary — yarn manufacturing / polyester capacity ramp",
+  "executive_summary": "Sanathan has moved from commissioning costs to visible operating leverage: September revenue was ₹1,804 crore and PAT ₹61 crore, with Punjab becoming PAT-positive. The investment debate is whether higher utilization and EBITDA per tonne can compensate for large debt and another round of expansion; revenue growth alone is an inadequate test.",
+  "research_stance": "Operating inflection merits close research attention; valuation requires normalized Punjab earnings and financing discipline before an entry conclusion.",
+  "results_analysis": [
+    "September 2026 consolidated sales were ₹1,804.00 crore, +120.5% YoY and +35.1% QoQ. PAT was ₹61.00 crore, +205.0% YoY and +154.2% QoQ. These percentage changes use the rounded local dataset, so small differences from company-exact growth percentages are expected.",
+    "Local operating profit was ₹155.00 crore and OPM 9.00%, compared with 8.00% a year earlier and 8.00% in June 2026. PAT margin was 3.38%. OPM is the dataset’s operating-profit/sales measure, not automatically management-adjusted EBITDA or a segment EBIT margin.",
+    "The current call explains why growth reached the bottom line: Punjab utilization rose from roughly 76–80% in Q1 to above 90%, while incremental depreciation and finance costs were modest against the EBITDA increase. Consolidated sales volume was 122,000 tonnes versus a Q2-call comparison of 96,000 tonnes for Q1; the prior call had rounded Q1 sales to 100,000 tonnes, so use the latest comparable disclosure rather than treating both as identical.",
+    "FY26 annual CFO was ₹322 crore and free cash flow −₹264 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹1,433 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 6.89% is an older-period return measure, not a freshly recomputed quarterly return."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Punjab begins earning its fixed cost",
+      "evidence": "The call reports Punjab PAT positivity and utilization above 90%. The economic test now shifts from commissioning to sustaining earnings per tonne; the consolidated PAT margin is still only about 3.4%, leaving little protection against a spread reversal.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Value added capacity has started",
+      "evidence": "Silvassa technical-textile capacity doubled from 9,000 to 18,000 tonnes per annum, with production beginning August 20. Management reported the added line operating around 94–95% at call time and expects ₹80–90 crore incremental FY27 revenue; this is a disclosed management expectation, not a completed-year result.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Growth visibility improves but capital intensity persists",
+      "evidence": "Management moved FY27 revenue expectation from ₹5,600–5,700 crore to above ₹6,000 crore and EBITDA from ₹520–540 crore to north of ₹560 crore. FY26 free cash flow was negative ₹264 crore and September borrowings ₹1,433 crore, making cash generation as important as guidance upgrades.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Yarn economics",
+      "content": "Polyester is approximately 87% of consolidated revenue in the call. This is a spread-and-throughput manufacturer, not a consumer-brand retailer: PTA/MEG input prices, pass-through timing, plant utilization and EBITDA/tonne dominate."
+    },
+    {
+      "heading": "Competition and export optionality",
+      "content": "Management sees landed Chinese yarn currently above domestic prices and describes export allocation as a netback choice. Its FTA optimism is management commentary; do not capitalize a tariff benefit before realized export margins appear."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Yarn spread / input cycle",
+      "stage": "RECOVERY",
+      "evidence": "Consolidated EBITDA/tonne improved to ₹12,725, but October PTA/crude pass-through was described as uneven."
+    },
+    {
+      "name": "Capacity / utilization cycle",
+      "stage": "RAMPING",
+      "evidence": "Punjab above 90% utilization with phase two still ahead."
+    },
+    {
+      "name": "Value-add / product-mix cycle",
+      "stage": "MIX-BUILDING",
+      "evidence": "Technical-textile capacity doubled, though it remains only about 3% of consolidated revenue."
+    },
+    {
+      "name": "Export demand / trade and FX cycle",
+      "stage": "NEUTRAL",
+      "evidence": "Domestic demand strong; proposed export benefits are not separately quantified."
+    },
+    {
+      "name": "Valuation cycle",
+      "stage": "STRETCHED",
+      "evidence": "Snapshot P/E 45.9x against sub-7% historical ROCE requires a substantial earnings ramp."
+    }
+  ],
+  "valuation": {
+    "method": "Sector-appropriate normalized earnings / enterprise value analysis",
+    "assessment": "Use EV/normalized EBITDA and post-ramp free cash flow, cross-checked with normalized EPS. Snapshot P/E 45.9x is depressed-earnings sensitive; annualizing one strong quarter would ignore spread volatility, debt and phase-two capital costs. No current fair value is assigned without a full enterprise-value bridge.",
+    "assumptions": [
+      "Management EBITDA guidance >₹560 crore for FY27 is an operating target, not free cash flow.",
+      "Punjab utilization of 95–96% is targeted over the next two quarters.",
+      "Depreciation and interest must be charged on new capacity; FY26 CFO ₹322 crore did not cover expansion investment."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Punjab sustains >90% utilization, reaches the 95–96% target and preserves EBITDA/tonne near or above Q2 levels.",
+      "FY27 EBITDA exceeds ₹560 crore while technical textiles contributes the indicated incremental ₹80–90 crore revenue.",
+      "New capacity converts growth into positive free cash flow and leverage falls."
+    ],
+    "base": [
+      "Punjab operating leverage continues, but polyester spread movements keep margins volatile.",
+      "FY27 revenue exceeds ₹6,000 crore as management expects; the revenue gain is not all volume growth.",
+      "Phase-two and MP projects absorb cash, limiting the speed of deleveraging."
+    ],
+    "bear": [
+      "PTA/MEG or cotton costs move faster than the roughly two-week pass-through.",
+      "Punjab utilization or EBITDA/tonne reverses while finance costs stay elevated.",
+      "New projects create another period of low ROCE and negative free cash flow."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Spread reversal",
+      "detail": "Higher realizations can inflate revenue while per-tonne economics weaken. Management declined to endorse an analyst ₹2–3/kg raw-material-saving estimate.",
+      "monitor": "EBITDA/tonne and gross profit per kg, alongside inventory exposure."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Expansion financing",
+      "detail": "Borrowings ₹1,433 crore and negative FY26 free cash flow mean earnings growth does not itself remove funding risk.",
+      "monitor": "CFO less capex, net debt and interest coverage."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Ramp and timetable risk",
+      "detail": "Punjab phase two and MP cotton project add execution demands soon after phase one stabilizes.",
+      "monitor": "Commissioning versus announced dates and capex revisions."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Punjab first phase utilization target",
+      "timeline": "Next two quarters",
+      "evidence": "95–96% target in November 5 call."
+    },
+    {
+      "event": "Punjab phase-two first production",
+      "timeline": "December 2026/January 2027, full ramp June–July 2027",
+      "evidence": "Management outlined a staged move toward 900 tonnes/day."
+    },
+    {
+      "event": "Technical textile contribution",
+      "timeline": "H2 FY27",
+      "evidence": "Management expects ₹80–90 crore additional FY27 revenue."
+    },
+    {
+      "event": "MP construction/ground commencement target",
+      "timeline": "Early January 2027; later production/stabilization targets remain conditional",
+      "evidence": "Call describes ground commencement first, production by calendar-year end and financial-year-end stabilization; do not book January production."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Punjab utilization falls below 85% for two quarters without a planned shutdown",
+      "deadline": "Next two quarterly disclosures",
+      "action": "Reassess operating-leverage thesis."
+    },
+    {
+      "condition": "FY27 EBITDA fails to reach ₹560 crore after current upgrade",
+      "deadline": "FY27 full-year results",
+      "action": "Rework normalized earnings and expansion payback."
+    },
+    {
+      "condition": "Net debt rises while operating cash conversion deteriorates",
+      "deadline": "H2 FY27 results",
+      "action": "Require a financed capex and deleveraging plan."
+    }
+  ],
+  "quality_assessment": {
+    "business": "The call reports Punjab PAT positivity and utilization above 90%. The economic test now shifts from commissioning to sustaining earnings per tonne; the consolidated PAT margin is still only about 3.4%, leaving little protection against a spread reversal.",
+    "management": "The current call provides measurable utilization and per-tonne targets and distinguishes input-price uncertainty. The commissioning evidence supports execution progress, while revised future schedules and the debt burden still require follow-up.",
+    "capital_allocation": "FY26 annual CFO was ₹322 crore and free cash flow −₹264 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹1,433 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 6.89% is an older-period return measure, not a freshly recomputed quarterly return.",
+    "governance": "No forensic governance clearance is asserted. Related-party terms, dilution, accounting judgments and disclosures require continued review.",
+    "limitations": "Qualitative assessment; no unsupported mechanical quality score or revised master-index rating is assigned."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-11-05",
+    "coverage_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "confidence": "medium",
+    "sentiment": "bullish",
+    "sentiment_basis": "Punjab has turned PAT-positive and management raised full-year revenue and EBITDA expectations; debt and spreads keep investment confidence moderate.",
+    "summary": {
+      "result": "Revenue ₹1,804 crore and PAT ₹61 crore; Punjab operating leverage is reaching earnings.",
+      "driver": "Higher Punjab utilization, 122,000-tonne sales and improved realizations.",
+      "forward": "FY27 revenue above ₹6,000 crore and EBITDA north of ₹560 crore.",
+      "risk": "Raw-material pass-through and additional capex can interrupt cash-flow conversion."
+    },
+    "story_tension": "Can Punjab sustain earnings per tonne and improve cash returns while phase two and the MP project consume capital?",
+    "operating_kpis": [
+      {
+        "metric": "Punjab utilization",
+        "value": "Above 90%",
+        "note": "Q1 approximately 76–80%; target 95–96% over next two quarters."
+      },
+      {
+        "metric": "Consolidated sales volume",
+        "value": "122,000 tonnes",
+        "note": "Q2-call Q1 comparison 96,000 tonnes; prior call rounded Q1 to 100,000."
+      },
+      {
+        "metric": "Consolidated EBITDA/tonne",
+        "value": "₹12,725",
+        "note": "Management says +13% sequentially."
+      },
+      {
+        "metric": "Technical-textile capacity",
+        "value": "18,000 tpa",
+        "note": "Doubled from 9,000; production began August 20."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "FY27 revenue now above ₹6,000 crore versus earlier ₹5,600–5,700 crore.",
+        "FY27 EBITDA now north of ₹560 crore versus earlier ₹520–540 crore.",
+        "Punjab utilization targeted 95–96% over the next two quarters."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "October crude/PTA movements made near-term spread pass-through uneven."
+      ],
+      "resolved_risks": [
+        "Punjab is PAT-positive after Q1 depreciation/interest absorbed EBITDA growth.",
+        "Silvassa technical-textile commercial production has commenced."
+      ]
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "FY27 EBITDA",
+        "direction": "raised",
+        "from": "₹520–540 crore",
+        "to": "North of ₹560 crore",
+        "detail": "Management explicitly contrasted earlier and current targets in Q2 Q&A."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "Double Silvassa technical-textile capacity to 18,000 tpa",
+        "window": "FY27 commissioning",
+        "status": "KEPT",
+        "evidence": "Q1 expected commencement shortly; Q2 identifies August 20 start and stabilized production."
+      },
+      {
+        "promise": "Improve Punjab utilization from Q1 levels",
+        "window": "Q2 FY27",
+        "status": "KEPT",
+        "evidence": "Above 90% in Q2 versus approximately 76–80% in Q1."
+      },
+      {
+        "promise": "FY27 EBITDA north of ₹560 crore",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Upgraded in Q2; full-year window open."
+      },
+      {
+        "promise": "Punjab phase-two full ramp toward 900 t/day",
+        "window": "June–July 2027",
+        "status": "PENDING",
+        "evidence": "Management target, not commissioned capacity today."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Capacity growth will not earn enough to cover funding costs",
+        "status": "WEAKENING",
+        "evidence": "Punjab became PAT-positive, but consolidated PAT margin remains about 3.4%."
+      },
+      {
+        "thesis": "Capital intensity prevents free-cash-flow conversion",
+        "status": "ALIVE",
+        "evidence": "FY26 FCF−₹264 crore and expansion continues."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Paresh Dattani",
+        "text": "our Punjab plant has become PAT positive",
+        "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf"
+      },
+      {
+        "speaker": "Paresh Dattani",
+        "text": "north of INR560 crores as the EBITDA target for the year",
+        "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Current official call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf"
+      }
+    ],
+    "limitations": [
+      "Only three locally indexed transcript periods; insufficient coverage for a credible four-quarter silence frequency test.",
+      "Financial figures are rounded local company-financial-data rows; the call alternates ₹154/155 crore EBITDA.",
+      "No multi-quarter silence allegation is made without a documented frequency test."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Local September 2026 quarterly financial data",
+      "url": "data/SANATHAN-financials.json"
+    },
+    {
+      "title": "Local annual cash flow",
+      "url": "data/SANATHAN-financials.json"
+    },
+    {
+      "title": "Company Q2 FY27 earnings-call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "Only three locally indexed transcript periods; insufficient coverage for a credible four-quarter silence frequency test.",
+    "Financial figures are rounded local company-financial-data rows; the call alternates ₹154/155 crore EBITDA.",
+    "Gross-to-net debt and committed remaining project-capex bridge remain incomplete."
+  ],
+  "data_status": {
+    "quarter": "2026-09-30",
+    "view": "consolidated",
+    "financial_source": "local reported tables",
+    "reconciliation": "See results analysis for definition/rounding differences",
+    "prior_master_verdict_mtime": "2026-09-25T16:01:40.161577463+00:00",
+    "prior_master_verdict_is_current": false
+  },
+  "claim_audit": [
+    {
+      "claim": "September 2026 local consolidated revenue ₹1,804.00 crore, operating profit ₹155.00 crore and PAT ₹61.00 crore.",
+      "claim_type": "local statement / arithmetic",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local quarterly financial table",
+      "source_url": "data/SANATHAN-financials.json",
+      "locator": "ticker=SANATHAN; period_end=2026-09-30; view=consolidated",
+      "excerpt": "",
+      "assessment": "Re-read the current parquet and compared the report inputs. This verifies the report against its stated local data source; company-adjusted and attributable measures require the separate call/filing bridge below."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹322 crore and dataset free cash flow ₹-264 crore.",
+      "claim_type": "local annual statement",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local annual cash-flow table",
+      "source_url": "data/SANATHAN-financials.json",
+      "locator": "ticker=SANATHAN; period_end=2026-03-31",
+      "excerpt": "",
+      "assessment": "Annual cash flow was checked against the current cash-flow table. This is FY ended March 2026, not September-quarter cash flow; investing-flow and capex definitions must not be silently interchanged."
+    },
+    {
+      "claim": "September 2026 dataset borrowings ₹1,433 crore.",
+      "claim_type": "local balance sheet",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local balance-sheet table",
+      "source_url": "data/SANATHAN-financials.json",
+      "locator": "ticker=SANATHAN; period_end=2026-09-30",
+      "excerpt": "",
+      "assessment": "The generic financial-table funding field was re-read. It is not automatically equivalent to industrial net debt or to debt excluding leases; explicit company-specific bridges are recorded where available."
+    },
+    {
+      "claim": "Punjab was PAT-positive in Q2.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 148–152",
+      "excerpt": "",
+      "assessment": "Management states this explicitly. It is a plant-level operating milestone, not evidence that the whole expansion programme has earned its cost of capital."
+    },
+    {
+      "claim": "Punjab average Q2 utilization exceeded 90%; near-term target is about 95–96%.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 200–204",
+      "excerpt": "",
+      "assessment": "Average quarterly utilization and the later target are distinguished; the target is not current achieved output."
+    },
+    {
+      "claim": "Consolidated Q2 sales volume was 122,000 tonnes and the call compares Q1 with 96,000 tonnes.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 120–124",
+      "excerpt": "",
+      "assessment": "The current call provides this like-for-like comparison. Prior rounded 100,000-tonne commentary is not substituted as an exact Q1 denominator."
+    },
+    {
+      "claim": "Consolidated EBITDA per tonne was ₹12,725, up about 13% QoQ.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 140–144",
+      "excerpt": "",
+      "assessment": "The denominator is sold tonnes and the measure is company EBITDA, not the coarse rounded OPM field."
+    },
+    {
+      "claim": "The transcript alternates between ₹154 crore and ₹155 crore EBITDA.",
+      "claim_type": "management disclosure",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 261–265",
+      "excerpt": "",
+      "assessment": "The CFO section uses ₹154 crore while the opening remarks use ₹155 crore. The difference is rounding/presentation; headline table operating profit remains its disclosed local measure."
+    },
+    {
+      "claim": "Technical-textile capacity doubled to 18,000 tpa with production starting August 20.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 162–166",
+      "excerpt": "",
+      "assessment": "Commissioning date and installed annual capacity are supported; this is not 18,000 tonnes of incremental quarterly sales."
+    },
+    {
+      "claim": "Management expects ₹80–90 crore additional technical-textile revenue in FY27.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 716–720",
+      "excerpt": "",
+      "assessment": "This is a forward expectation; full annual steady-state revenue cited in the discussion is a different period."
+    },
+    {
+      "claim": "FY27 revenue expectation moved above ₹6,000 crore from ₹5,600–5,700 crore.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 858–862",
+      "excerpt": "",
+      "assessment": "The current Q&A explicitly contrasts the old and new revenue expectations."
+    },
+    {
+      "claim": "FY27 EBITDA expectation moved north of ₹560 crore.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 811–815",
+      "excerpt": "",
+      "assessment": "The Q&A compares the prior ₹520–540 crore range with the new target. It remains conditional on realizations and operating execution."
+    },
+    {
+      "claim": "Punjab phase-two first output is targeted around December/January, with full ramp to 900 t/day by June/July 2027.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 315–319",
+      "excerpt": "",
+      "assessment": "First commissioning and full ramp are different milestones and must not be used interchangeably."
+    },
+    {
+      "claim": "MP cotton-yarn project January target refers to ground/construction commencement, not production.",
+      "claim_type": "management disclosure",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SANATHAN_09112026145646_Earnings_Call_transcript_November_05_2026.pdf",
+      "locator": "Text lines 737–741",
+      "excerpt": "",
+      "assessment": "The earlier catalyst label could imply plant production begins January. Management describes ground activity in early January, production by calendar-year end and later stabilization; the year sequence is inferred from the November 2026 call and remains a target."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "Two different engines sit in the reported growth. The established Silvassa business depends on selling-price pass-through and yarn spreads, while Punjab adds a large step-up in throughput and fixed-cost absorption. Consolidated 122,000-tonne volume against 96,000 tonnes in Q1 implies about 27.1% volume growth, below the 35.2% revenue increase; realizations/mix therefore contributed as well. This decomposition is analyst arithmetic, not a separate company growth forecast.",
+      "At ₹12,725 EBITDA per tonne, every ₹1,000/tonne change across an unchanged 122,000-tonne quarterly sales base would change quarterly EBITDA by roughly ₹12.2 crore before second-order effects. That sensitivity explains why >90% utilization does not eliminate commodity-spread risk. New technical textiles can improve mix but cannot yet dominate a group still heavily dependent on polyester."
+    ],
+    "earnings_quality": [
+      "The reported consolidated operating profit of ₹155 crore is about 8.59% of sales; PAT of ₹61 crore is only 3.38%. Interest and depreciation therefore absorb a large part of operating profit even after Punjab turns profitable. A valuation based on revenue doubling would miss this thin residual earnings cushion.",
+      "FY26 CFO of ₹322 crore and free cash flow of negative ₹264 crore show that the preceding expansion was not self-funding on the dataset measure. The next evidence should be an H2 cash-flow bridge that separates working-capital normalization from recurring conversion and distinguishes maintenance from growth capex."
+    ],
+    "capital_allocation": [
+      "Evaluate Punjab phase two and MP as incremental investment decisions rather than benefits automatically justified by phase-one utilization. Production, commissioning and full stabilization dates belong in separate milestone rows; the MP January reference is construction commencement.",
+      "A credible deleveraging case needs opening net debt, cash EBITDA, taxes/interest, working-capital movement and committed capex. Gross dataset borrowings of ₹1,433 crore alone cannot supply the enterprise-value net-debt deduction."
+    ],
+    "valuation_logic": [
+      "A useful reverse valuation asks what sustainable EBITDA/tonne and sold volume are necessary to justify today’s enterprise value after debt, depreciation and recurring capex. The snapshot 45.9x P/E is dated and uses an earnings base affected by commissioning; it should not be combined with a fully ramped volume assumption without charging the related capital costs.",
+      "The bull case requires both throughput and spread retention. The base case should allow raw-material pass-through lag and a financing burden. The bear case is not simply lower sales: it includes high utilization at low contribution per tonne, which can leave EPS weak despite an impressive top line. No supported enterprise-value bridge currently establishes a point target."
+    ],
+    "peer_positioning": [
+      "Vardhman Textiles is a useful capital-efficiency and cycle comparator for spinning, whereas polyester exposure makes filament-yarn manufacturers the closer spread comparators. Home-textile exporters such as Welspun/Indo Count have different customers, manufacturing economics and trade exposure; their multiples should not be applied directly to Sanathan."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Punjab utilization",
+        "latest_value": ">90%; management target 95–96%",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Fixed-cost absorption",
+        "next_test": "Track quarterly average rather than a call-date peak."
+      },
+      {
+        "metric": "EBITDA / sold tonne",
+        "latest_value": "₹12,725",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Separates pricing/mix from volume",
+        "next_test": "Check alongside PTA/MEG changes and inventory."
+      },
+      {
+        "metric": "Expansion cash conversion",
+        "latest_value": "FY26 CFO ₹322cr; FCF −₹264cr",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Shows funding requirement",
+        "next_test": "Obtain H2 cash flow, committed capex and net debt."
+      }
+    ],
+    "unanswered_questions": [
+      "How much Punjab EBITDA is attributable to spreads versus utilization, on a consistent standalone plant basis?",
+      "What are the committed remaining capex, debt drawdown schedule and minimum liquidity buffers for Punjab phase two and MP?",
+      "What incremental post-tax return and maintenance-capex assumptions support each new project?"
+    ]
+  },
+  "audit_summary": {
+    "scope": "Material company claims, financial definitions, management guidance and stated capital-allocation milestones were reviewed against retained primary transcripts and available official filings. Arithmetic was independently recalculated from current local tables. This is a research evidence audit, not a statutory audit or complete forensic review.",
+    "overall_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Clarified MP January milestone as construction commencement, not commercial production."
+    ],
+    "unverified": [
+      "Only three locally indexed transcript periods; insufficient coverage for a credible four-quarter silence frequency test.",
+      "Financial figures are rounded local company-financial-data rows; the call alternates ₹154/155 crore EBITDA.",
+      "Gross-to-net debt and committed remaining project-capex bridge remain incomplete."
+    ],
+    "claims_checked": 14,
+    "as_of": "2026-11-13"
+  }
+}

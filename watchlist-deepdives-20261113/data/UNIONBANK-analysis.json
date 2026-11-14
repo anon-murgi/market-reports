@@ -1,0 +1,498 @@
+{
+  "archetype": "bank",
+  "executive_summary": "Union Bank’s September quarter combines improving spreads and asset quality with a substantial mismatch between loan and deposit growth. The stock’s near-book valuation looks less demanding than premium private banks, but the sustainability of returns depends on funding discipline and ECL buffers rather than simply extrapolating the present low credit cost.",
+  "research_stance": "Positive operating recovery with a funding constraint to monitor; balance valuation appeal against late-benign asset quality.",
+  "thesis_drivers": [
+    {
+      "title": "Profitability is rebuilding on operating metrics",
+      "evidence": "The latest official call reports NIM 2.86%, up from 2.80%, RoA 1.38% and RoE 17.21%. These standalone bank metrics support a more durable recovery thesis than consolidated PAT alone.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Cleanup supports capital generation",
+      "evidence": "GNPA 2.42%, NNPA 0.42%, PCR 95.20% and credit cost 21 bps point to a benign current credit environment. Lower provisions help returns, but the next credit cycle is unlikely to improve indefinitely from this base.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Deposit growth is the binding test",
+      "evidence": "Advances grew 18.53% YoY versus deposits 6.87%; management says CASA plus retail term deposits contribute 80.3% of deposits. Stable average liquidity matters more than quarter-end balances, but continued divergence would raise marginal funding cost.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Bank-specific framework",
+      "content": "Assess NII, NIM, deposits, asset quality, capital and RoA/RoE. The local consolidated table intentionally has no industrial sales, EBITDA or OPM; those blanks are not operating weakness."
+    },
+    {
+      "heading": "Competitive position",
+      "content": "A large public-sector franchise combines branch-led distribution and a broad loan book with state ownership and a lower valuation. Compare return durability and deposit costs rather than applying a uniform PSU discount or private-bank premium."
+    },
+    {
+      "heading": "Macro read-through",
+      "content": "A rate increase can lift floating-rate asset yields before deposit repricing, while simultaneously increasing borrower stress and market losses. The earnings benefit is time dependent, not automatic."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Credit / Asset-Quality Cycle",
+      "stage": "LATE-BENIGN",
+      "evidence": "GNPA 2.42%, NNPA 0.42% and credit cost 21 bps show a currently benign phase, with less room for further provision relief."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "MEAN",
+      "evidence": "Snapshot P/B 1.07× places the shares near reported book; durable bank returns and ECL-adjusted book remain the key test."
+    },
+    {
+      "name": "NIM / Spread Cycle",
+      "stage": "RE-EXPANSION",
+      "evidence": "NIM improved from 2.80% to 2.86% sequentially, even as deposits expanded."
+    },
+    {
+      "name": "Deposit / Liability Cycle",
+      "stage": "TIGHT",
+      "evidence": "Loan growth 18.53% exceeds deposit growth 6.87%, creating a material funding constraint despite adequate reported liquidity."
+    },
+    {
+      "name": "Credit-Growth Cycle",
+      "stage": "ACCELERATION",
+      "evidence": "Advances grew 18.53% YoY; management seeks system-linked growth with retail funding first."
+    },
+    {
+      "name": "Regulatory / ECL Transition Cycle",
+      "stage": "PRE-TRANSITION",
+      "evidence": "Management discussed possible ECL transition absorption of ₹5,500 crore; final impact and available buffers require follow-up."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and sustainable-return constraints; point target withheld",
+    "assessment": "Snapshot valuation is 1.07× book and 7.05× earnings, with snapshot RoE 15.7%. Latest standalone call RoE 17.21% is a different period/scope; do not mix it into an exact justified-P/B model. A valuation near book is attractive only if normalised RoE remains above cost of equity.",
+    "assumptions": [
+      "A full P/ABV requires deduction of unprovided NPAs, ECL and subsidiary valuation reconciliation.",
+      "The previous arbitrary bear/base/bull target-price sensitivities have been removed. The deeper valuation discussion states the economic return conditions and analyst assumptions instead."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "NIM remains near 2.8–2.9% while deposits catch up to credit demand.",
+      "Strong internal capital generation absorbs ECL transition and supports profitable growth.",
+      "Asset quality remains benign enough for a sustained premium to book."
+    ],
+    "base": [
+      "Loan growth moderates or deposit pricing rises to restore funding balance.",
+      "RoA remains above 1% but present recoveries and credit costs normalise.",
+      "Valuation tracks sustainable bank returns rather than the fastest quarterly PAT growth."
+    ],
+    "bear": [
+      "Funding competition erodes NIM as loan growth outruns deposits.",
+      "ECL or fresh slippages consume more capital than current buffers can absorb.",
+      "A PSU-bank discount returns if execution or underwriting weakens."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Loans outrun deposits",
+      "detail": "18.53% loan growth against 6.87% deposit growth creates funding dependence despite management comfort on liquidity.",
+      "monitor": "Average LCR/NSFR, deposit growth and marginal term-deposit pricing."
+    },
+    {
+      "severity": "HIGH",
+      "title": "ECL capital absorption",
+      "detail": "Management discussed a possible ₹5,500 crore transition impact, subject to framework and buffers. This is not a forecast credit-loss charge for one quarter.",
+      "monitor": "Final assessed ECL impact, existing buffers and CET1."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Benign credit cost extrapolation",
+      "detail": "21 bps credit cost is supportive but vulnerable to normalisation.",
+      "monitor": "Gross slippages, SMA balances and recoveries excluding write-offs."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "State ownership and capital allocation",
+      "detail": "Policy objectives and capital actions can affect minority-shareholder returns.",
+      "monitor": "Loan pricing discipline, dilution and governance disclosures."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Deposit and CASA mobilisation",
+      "timeline": "Next two quarters",
+      "evidence": "Latest call stresses average deposits and retail funding rather than quarter-end balances."
+    },
+    {
+      "event": "NIM retention through repricing",
+      "timeline": "Q3–Q4 FY27",
+      "evidence": "NIM rose 2.80→2.86% in Q2."
+    },
+    {
+      "event": "ECL buffer disclosure",
+      "timeline": "Before implementation",
+      "evidence": "Management discussed transition preparation and capital absorption."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Advances continue to outgrow deposits by more than 10 percentage points for two quarters while average liquidity weakens.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "RoA falls below 1% for two quarters without a clearly temporary provision event.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "NNPA reverses above 0.75% and slippages rise despite current benign guidance.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "Scaled deposit and credit franchise with improving profitability; funding growth currently trails opportunities.",
+    "management": "October call gives concrete liquidity and credit metrics, but confidence must be tested against subsequent deposit mobilisation.",
+    "capital_allocation": "CET1 of 16.05% offers headroom; use it to fund risk-adjusted lending and ECL transition, not simply maximise growth.",
+    "governance": "A state-owned bank with a rapidly growing loan book needs explicit accountability for underwriting and liability mobilisation. The large loan/deposit growth gap makes average liquidity, deposit concentration and risk-adjusted lending disclosure more useful than optimistic terminal growth.",
+    "limitations": "Consolidated local PAT and standalone call PAT differ by perimeter; bank operating KPIs are management-reported, not all present in the parquet."
+  },
+  "company_name": "Union Bank of India",
+  "ticker": "UNIONBANK",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026(Q2 FY27), consolidated local financials: PAT ₹5,781.0 crore versus ₹4,426.0 crore a year ago and ₹5,642.0 crore in June 2026. Growth was +30.6% YoY and+2.5% QoQ.",
+    "Banks are analysed on NII/NIM, deposits, loan growth, provisions and capital. The source table has no bank sales or industrial OPM; these fields are intentionally left unreported. Operating ratios in the call are standalone, while consolidated local profits include subsidiaries unless the table says standalone.",
+    "The latest official call reports NIM 2.86%, up from 2.80%, RoA 1.38% and RoE 17.21%. These standalone bank metrics support a more durable recovery thesis than consolidated PAT alone.",
+    "Financial statement basis: consolidated. The financial snapshot is dated 2026-11-13; cleaned share-price data ends 2026-11-12. Headline financials are from the local research lake; management operating KPIs and guidance are separately sourced to the call.",
+    "The bank call reports standalone PAT ₹5,537 crore, while the local consolidated table reports ₹5,781 crore. This is a reporting-perimeter difference; the call’s NIM, RoA, RoE and capital ratios describe the bank and should not be combined mechanically with consolidated profit."
+  ],
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings call transcript",
+      "url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf"
+    },
+    {
+      "title": "Prior-quarter call (July 2026)",
+      "url": "https://nsearchives.nseindia.com/corporate/UNIONBANK_21072026183852_Transcript_June2026.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": "2026-10-19",
+    "coverage_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "confidence": "medium",
+    "sentiment": "constructive with funding caveat",
+    "sentiment_basis": "NIM and asset quality improved; analysts challenged the loan/deposit gap.",
+    "summary": {
+      "result": "September 2026(Q2 FY27), consolidated local financials: PAT ₹5,781.0 crore versus ₹4,426.0 crore a year ago and ₹5,642.0 crore in June 2026. Growth was +30.6% YoY and+2.5% QoQ.",
+      "driver": "NIM recovery, recoveries and lower credit costs supported profitability.",
+      "forward": "Growth intended to follow system credit; retail funding and liquidity ratios remain management’s stated constraints.",
+      "risk": "Deposit mobilisation and ECL capital absorption."
+    },
+    "story_tension": "Can Union Bank sustain 1%+RoA while matching credit growth with stable, reasonably priced deposits?",
+    "operating_kpis": [
+      {
+        "metric": "NIM",
+        "value": "2.86%; Q1:2.80%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "RoA / RoE",
+        "value": "1.38% /17.21%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "GNPA / NNPA",
+        "value": "2.42% /0.42%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "Advances / deposits growth",
+        "value": "18.53% /6.87% YoY",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "CET1",
+        "value": "16.05%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        {
+          "title": "Growth linked to system",
+          "detail": "Management said credit growth would move with system growth; no precise new numeric target asserted.",
+          "severity": "medium"
+        }
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        {
+          "title": "Funding gap under analyst scrutiny",
+          "detail": "Analysts questioned high credit-deposit ratio and low relative deposit growth.",
+          "severity": "medium"
+        },
+        {
+          "title": "ECL transition estimate",
+          "detail": "Management estimates ₹5,500 crore total ECL transition impact, with ₹1,000 crore additional provision buffer already created; recurring Stage 2 provisioning remains unquantified.",
+          "severity": "medium"
+        }
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "NIM actuals, not a guidance revision",
+        "direction": "firmer",
+        "from": "2.80% Q1 FY27",
+        "to": "2.86% Q2 FY27",
+        "detail": "Actual 6 bp sequential improvement; distinguish observed spread from future guidance."
+      }
+    ],
+    "promise_ledger": [],
+    "bear_cases": [
+      {
+        "thesis": "Loans outrun deposits",
+        "status": "ALIVE",
+        "evidence": "18.53% loan growth against 6.87% deposit growth creates funding dependence despite management comfort on liquidity."
+      },
+      {
+        "thesis": "ECL capital absorption",
+        "status": "ALIVE",
+        "evidence": "Management discussed a possible ₹5,500 crore transition impact, subject to framework and buffers. This is not a forecast credit-loss charge for one quarter."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Asheesh Pandey, MD & CEO",
+        "text": "your bank, Union Bank, is working upon the average figures rather than much of the terminal figures.",
+        "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings call transcript",
+        "url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf"
+      },
+      {
+        "title": "Prior-quarter call (July 2026)",
+        "url": "https://nsearchives.nseindia.com/corporate/UNIONBANK_21072026183852_Transcript_June2026.pdf"
+      }
+    ],
+    "limitations": [
+      "NSE store lacked current transcript; company-IR fallback was recovered and read.",
+      "Prior comparison uses local July call; no audited six-quarter silence or promise series.",
+      "ECL is a management estimate, not a completed independent model."
+    ]
+  },
+  "remaining_gaps": [
+    "NSE store lacked current transcript; company-IR fallback was recovered and read.",
+    "Prior comparison uses local July call; no audited six-quarter silence or promise series.",
+    "ECL is a management estimate, not a completed independent model.",
+    "No official numerical reconciliation of local consolidated profit with every standalone/subsidiary contribution was completed.",
+    "The final ECL accounting, ongoing provisioning burden and bond-valuation offset are not fixed by management’s current estimate."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Reframed ECL as total transition need less existing buffer, with a separate unresolved recurring-provisioning question.",
+      "Removed a nonspecific liquidity/growth policy from the graded promise ledger; added core ROA and domestic/global funding distinctions."
+    ],
+    "unverified": [
+      "No official numerical reconciliation of local consolidated profit with every standalone/subsidiary contribution was completed.",
+      "The final ECL accounting, ongoing provisioning burden and bond-valuation offset are not fixed by management’s current estimate."
+    ],
+    "claim_count": 12,
+    "status_counts": {
+      "CORRECTED": 1,
+      "DEFINITION_DIFFERENCE": 1,
+      "SUPPORTED": 9,
+      "UNRESOLVED": 1
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "Local consolidated PAT is ₹5,781 crore; the call’s standalone PAT is ₹5,537 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/UNIONBANK_inputs.json",
+      "locator": "pnl_quarterly: UNIONBANK, specified reporting period",
+      "excerpt": "",
+      "assessment": "The call figure is not a replacement for consolidated PAT; growth and returns must retain the same reporting perimeter. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "NIM increased from 2.80% in Q1 to 2.86% in Q2.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 4; retained text line 167",
+      "excerpt": "",
+      "assessment": "The prepared remarks explicitly compare the two quarters, rather than using a dated sector assumption."
+    },
+    {
+      "claim": "Reported ROA was 1.38%; management’s core ROA was about 1.03%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 8; retained text line 391",
+      "excerpt": "",
+      "assessment": "Core ROA excludes treasury and recoveries from technically written-off accounts; it is a different earnings-quality lens."
+    },
+    {
+      "claim": "GNPA and NNPA were 2.42% and 0.42%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 5; retained text line 186",
+      "excerpt": "",
+      "assessment": "Low point-in-time problem loans support resilience but do not remove new-vintage credit risk."
+    },
+    {
+      "claim": "Global advances grew 18.53% while deposits grew 6.87% YoY.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 5; retained text line 212",
+      "excerpt": "",
+      "assessment": "The funding-growth gap is real; it should not be replaced by a generic benign-liquidity conclusion."
+    },
+    {
+      "claim": "Average LCR was about 120% during the quarter.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 8; retained text line 353",
+      "excerpt": "",
+      "assessment": "This is an average liquidity ratio, not a guarantee about every stress date or the cost of incremental funding."
+    },
+    {
+      "claim": "FCNR inflows were $2.25 billion and management said roughly 70% had five-year tenor.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 4; retained text line 173",
+      "excerpt": "",
+      "assessment": "Longer tenor helps the liability profile, but fixed-rate and overseas deployment economics must still be judged on spreads and ALM."
+    },
+    {
+      "claim": "Estimated ECL transition need was ₹5,500 crore, with ₹1,000 crore already buffered.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 9; retained text line 425",
+      "excerpt": "",
+      "assessment": "The ₹5,500 crore is a total estimated transition amount, not a net amount on top of the existing ₹1,000 crore buffer. Final implementation and recurring costs remain uncertain."
+    },
+    {
+      "claim": "The recurring ECL burden was not yet quantified.",
+      "claim_type": "Management-reported",
+      "status": "UNRESOLVED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 14; retained text line 704",
+      "excerpt": "",
+      "assessment": "The analyst specifically distinguished ongoing Stage 2 provisioning from day-one transition. Management said work and interpretation were still in progress."
+    },
+    {
+      "claim": "Credit cost was 21 basis points.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 5; retained text line 187",
+      "excerpt": "",
+      "assessment": "A low current loss charge can support earnings, but should not be assumed to be a permanent through-cycle rate."
+    },
+    {
+      "claim": "Management tied loan growth to system growth rather than a fresh fixed numerical target.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 15; retained text line 739",
+      "excerpt": "",
+      "assessment": "An open-ended operating policy is not a specific management promise that can be graded KEPT/MISSED."
+    },
+    {
+      "claim": "Domestic credit-deposit ratio was described as around 84%, not the same as the global ratio.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://www.unionbankofindia.bank.in/pdf/UnionBank-Earnings-Oct19-2026-Transcript.pdf",
+      "locator": "PDF page 8; retained text line 379",
+      "excerpt": "",
+      "assessment": "The Q&A distinguishes domestic and global funding metrics; applying a single ratio to all businesses would be misleading."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "Union’s immediate opportunity is to convert a large funding and distribution franchise into higher-quality earning assets without sacrificing funding economics. Loan growth of 18.53% versus deposit growth of 6.87% makes the source, tenor and cost of new liabilities a central thesis variable.",
+      "Management cites approximately 120% average LCR, around 84% domestic credit-deposit ratio and longer-tenor FCNR funding. These show available funding tools and current liquidity comfort, but do not demonstrate that incremental asset growth has the same risk-adjusted return as the legacy book."
+    ],
+    "earnings_quality": [
+      "Standalone PAT of ₹5,537 crore and ROA of 1.38% are stronger headline numbers than the approximately 1.03% core ROA management reports after treasury/TWO adjustments. Both belong in the analysis: the former measures reported outcomes, the latter tests dependence on recoveries and treasury. The local ₹5,781 crore consolidated PAT has a wider perimeter.",
+      "GNPA/NNPA of 2.42%/0.42% and credit cost of 21 basis points are current conditions. Loan growth, mix changes and low credit costs can coexist before new vintages season; monitor slippages and Stage 2/SMA migration rather than credit cost alone."
+    ],
+    "capital_allocation": [
+      "Management’s approximate ₹5,500 crore total ECL transition estimate is partly offset by ₹1,000 crore additional buffer. Treating the full ₹5,500 crore as an incremental unbuffered charge exaggerates the day-one burden, but assuming the transition buffer also solves every recurring ECL cost is equally wrong.",
+      "The bank can fund growth using deposits, refinance, infrastructure/green bonds and other capital instruments. The economic test is not whether the balance sheet can grow at all; it is whether marginal funding spreads and capital consumption preserve core returns after provisioning."
+    ],
+    "valuation_logic": [
+      "The dated snapshot P/B is 1.07 x and ROE is 15.7%. A deliberately simplified perpetual-bank identity, P/B=(ROE −g)/(cost of equity −g), using analyst assumptions of 13% cost of equity and 6% long-run growth, would require a steady-state ROE of about 13.5% at that book multiple. This is a diagnostic of the earnings expectations in the price, not a fair value, forecast or calibrated discount rate. A changing growth phase, subsidiary values, adjusted book and surplus capital can materially alter the answer.",
+      "Union’s approximately 1.07 x snapshot book value is lower than KVB’s 2.40 x and ICICI’s 2.93 x, but those franchises differ in funding mix, sustainable returns and subsidiary value. The discount is an opportunity only if the bank retains a core return above its required equity return through a less benign credit environment. No target P/ABV is supplied without adjusted-book and ECL reconciliation."
+    ],
+    "peer_positioning": [
+      "Bank of India is a closer public-sector comparison than KVB or ICICI for ownership and broad funding characteristics. Its dated snapshot P/B of 0.74 x and ROE of 12.4% compare with Union’s 1.07 x and 15.7%, suggesting that the market already differentiates return quality. These are dated consolidated snapshot ratios, not a synchronized standalone peer-return study."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Core versus reported ROA",
+        "latest_value": "About 1.03% versus 1.38%",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Tests reliance on treasury and recoveries.",
+        "next_test": "Request the same bridge at FY27 year-end."
+      },
+      {
+        "metric": "Loans / deposits YoY",
+        "latest_value": "18.53% / 6.87%",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Exposes marginal funding pressure.",
+        "next_test": "Check funding cost, average LCR and mix alongside growth."
+      },
+      {
+        "metric": "ECL transition / buffer",
+        "latest_value": "~₹5,500 crore / ₹1,000 crore",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Distinguishes gross transition from existing provision coverage.",
+        "next_test": "Track final Board-approved treatment and recurring Stage 2 charge."
+      },
+      {
+        "metric": "Credit cost",
+        "latest_value": "21 bp",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Current low loss expense may not be permanent.",
+        "next_test": "Monitor slippages and SMA migration over the next two quarters."
+      }
+    ],
+    "unanswered_questions": [
+      "What is normalized core ROA after recurring ECL provisions, excluding treasury and TWO recoveries?",
+      "What share of marginal loan growth is funded by CASA/retail term deposits versus wholesale/refinance sources, and at what spread?",
+      "How much of the gross ECL transition estimate can actually use the existing buffer under the final accounting treatment?"
+    ]
+  }
+}

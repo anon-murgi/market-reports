@@ -1,0 +1,486 @@
+{
+  "company_name": "Ather Energy Limited",
+  "archetype": "auto_oem",
+  "executive_summary": "Ather’s September result marks positive operating profit before other income, helped by volume, pricing and software attachment. The reported PAT is only ₹1.26 crore and relies on other income to bridge depreciation and interest; capacity expansion and sustainable vehicle economics remain the investment questions.",
+  "research_stance": "An operating inflection with meaningful execution risk; one small PAT profit is not a mature earnings base.",
+  "results_analysis": [
+    "The local consolidated September quarter records revenue ₹1,464.24 crore, operating profit ₹11.46 crore and PAT ₹1.26 crore. Revenue grew 62.9% year-on-year and 20.3% sequentially. Earlier losses make percentage PAT growth misleading; the transition is assessed in rupees.",
+    "Operating profit changed not meaningful on a loss/zero base YoY and not meaningful on a loss/zero base QoQ. The calculated operating-profit/sales margin is 0.78%, versus -14.75% a year earlier and -2.73% in June. These calculations use a consistently rounded local series; management EBITDA may use a different scope or definition.",
+    "Local operating profit of ₹11.46 crore equals only 0.78% of sales. Other income of ₹62.71 crore exceeds PAT by a wide margin; after ₹46.87 crore depreciation and ₹26.04 crore interest, pretax profit is ₹1.26 crore. The transcript’s 4.9% EBITDA includes other income; compare operating performance using the roughly 0.8–1% excluding-other-income measure.",
+    "Price and financial dates differ: the cleaned close used here is ₹1,923.00 on 2026-11-12; the public-financial snapshot is dated 2026-11-13. The screenshot price is not treated as a live or verified valuation input. Local public-financial-data parquets, September 2026 quarter; amounts rounded to ₹ crore.",
+    "Management’s adjusted gross margin was 24%, up 1.6 points from Q1 but below 25.4% in Q4 FY26. The bridge includes 5.3 structural points,9.4 points of commodity pressure and 2.7 points of SKU benefit. Some mix gains are explicitly temporary."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Supply-constrained growth with new capacity",
+      "evidence": "Management reported 93,000 quarterly wholesales, up 42%, and capacity expansion across Hosur and AURIC. Installed capacity must be distinguished from ramped production and actual sell-through.",
+      "source": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf"
+    },
+    {
+      "title": "Pricing and software improve unit economics",
+      "evidence": "Management reported average ex-showroom price around ₹1.64 lakh, AtherStack Pro attachment of 94% and non-vehicle revenue of 15%. These levers can offset costs, but some SKU/incentive gains were described as temporary.",
+      "source": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf"
+    },
+    {
+      "title": "Wider product and regional reach",
+      "evidence": "Konarc and a staged rollout broaden the target customer base. Preorders and inquiries are demand indicators, not revenue, and geographic expansion carries distribution and service costs.",
+      "source": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Business model and sector lens",
+      "content": "Electric two-wheelers have both a structural penetration runway and intense product, cost, policy and service competition. Track registrations against wholesales, warranty provisions, subsidy treatment and operating cash burn rather than using P/E on near-zero quarterly profit."
+    },
+    {
+      "heading": "Balance sheet and capital allocation",
+      "content": "Local operating profit of ₹11.46 crore equals only 0.78% of sales. Other income of ₹62.71 crore exceeds PAT by a wide margin; after ₹46.87 crore depreciation and ₹26.04 crore interest, pretax profit is ₹1.26 crore. The transcript’s 4.9% EBITDA includes other income; compare operating performance using the roughly 0.8–1% excluding-other-income measure."
+    },
+    {
+      "heading": "Growth versus price paid",
+      "content": "P/E is not meaningful with negative trailing earnings and negligible current-quarter PAT. A revenue/enterprise-value framework needs a defensible diluted share count, net cash/debt and a path to sustainable margin; no point fair value or P/E sensitivity is presented without that bridge."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Volume Cycle — electric scooters",
+      "stage": "BROADENING",
+      "evidence": "Wholesales of 93,000 units and registrations of about 92,500 indicate strong current demand conversion; this does not guarantee that all preorders will convert."
+    },
+    {
+      "name": "EV Transition Cycle",
+      "stage": "SCALE-UP",
+      "evidence": "Konarc rollout expands the product/region set and industry adoption is broadening; Ather remains a pure EV manufacturer rather than an ICE business transitioning its mix."
+    },
+    {
+      "name": "Input Cost / Margin Cycle",
+      "stage": "INFLATIONARY",
+      "evidence": "Management reports aluminium, copper, plastics and memory pressure; pricing and software attachment offset part of it, with some SKU-management gains temporary."
+    },
+    {
+      "name": "Capacity / operating-leverage cycle",
+      "stage": "Installation then commercial ramp",
+      "evidence": "Company-specific diagnostic: AURIC trials Q3, base capex installation Q4 and higher installed capacity by Q2 FY28 precede full utilisation; 0.78% local operating margin leaves little cushion."
+    },
+    {
+      "name": "Cash investment / profitability cycle",
+      "stage": "Early operating breakeven",
+      "evidence": "Company-specific diagnostic: the first ₹1.26 crore PAT is small and other income bridges depreciation/interest; sustained operating and cash profit remain unproved."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and cash-earnings constraints; no unsupported point target",
+    "assessment": "Trailing EPS is negative and quarterly PAT ₹1.26 crore is too small for a meaningful P/E model. Enterprise value/revenue would still need diluted shares, available versus restricted cash, debt and a sustainable margin path. Installed capacity does not supply this valuation bridge.",
+    "assumptions": [
+      "The available trailing EPS is negative or too small for a meaningful P/E-based valuation.",
+      "A 20% contraction in the earnings multiple would require 25% cumulative EPS growth merely to keep the share price unchanged; dividends are excluded. This is algebraic sensitivity, not a prediction of the exit multiple.",
+      "The generic multiple-compression algebra is not an applicable current P/E valuation for Ather. No absolute equity value is forced without a funding and unit-economics bridge."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Management reported 93,000 quarterly wholesales, up 42%, and capacity expansion across Hosur and AURIC. Installed capacity must be distinguished from ramped production and actual sell-through.",
+      "Management reported average ex-showroom price around ₹1.64 lakh, AtherStack Pro attachment of 94% and non-vehicle revenue of 15%. These levers can offset costs, but some SKU/incentive gains were described as temporary.",
+      "AURIC and Hosur installation deliver the 11.4 lakh annual capacity target by Q2 FY28 and retail demand absorbs the ramp without sacrificing the current 24% adjusted gross margin."
+    ],
+    "base": [
+      "Management targets 11.4 lakh annual installed units by Q2 FY28; new-factory capacity needs further ramp time and PAT can fluctuate.",
+      "Local operating profit of ₹11.46 crore equals only 0.78% of sales. Other income of ₹62.71 crore exceeds PAT by a wide margin; after ₹46.87 crore depreciation and ₹26.04 crore interest, pretax profit is ₹1.26 crore. The transcript’s 4.9% EBITDA includes other income; compare operating performance using the roughly 0.8–1% excluding-other-income measure.",
+      "AtherStack Pro attachment around 94% and non-vehicle revenue around 15% support unit economics, but the 0.78% local operating margin remains the starting point rather than the 4.9% figure including other income."
+    ],
+    "bear": [
+      "Large capacity additions need installation, vendor readiness, ramp-up and demand absorption; commissioning is not utilisation.",
+      "Small changes in commodity costs, warranty expense or incentives can erase the first operating profit.",
+      "Preorders are not all incremental retail demand, while incumbents are expanding capacity and products."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Capacity execution and funding",
+      "detail": "Large capacity additions need installation, vendor readiness, ramp-up and demand absorption; commissioning is not utilisation.",
+      "monitor": "AURIC timeline, capex, cash burn and registrations."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Thin underlying profitability",
+      "detail": "Small changes in commodity costs, warranty expense or incentives can erase the first operating profit.",
+      "monitor": "EBITDA excluding other income and cash operating costs."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Demand conversion / competitive response",
+      "detail": "Preorders are not all incremental retail demand, while incumbents are expanding capacity and products.",
+      "monitor": "Cancellations, registrations, mix and discounting."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "AURIC trial production and installation",
+      "timeline": "Q3 / Q4 FY27",
+      "evidence": "Management expects trials in Q3 and base installation by Q4."
+    },
+    {
+      "event": "Higher combined installed capacity",
+      "timeline": "Q2 FY28",
+      "evidence": "11.4 lakh annual installed units targeted; ramp-up may take additional quarters."
+    },
+    {
+      "event": "Konarc rollout",
+      "timeline": "Next 2–4 quarters",
+      "evidence": "Regional/product variants progressively broaden reach."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "AURIC trial production has not started in Q3 FY27.",
+      "deadline": "December 2026",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Operating EBITDA excluding other income is negative for two consecutive quarters after the September breakeven.",
+      "deadline": "Next four reported quarters",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Combined annual installed capacity is below the stated 11.4 lakh target by Q2 FY28, allowing separate disclosure of installation versus utilisation.",
+      "deadline": "September 2027",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "Management reported 93,000 quarterly wholesales, up 42%, and capacity expansion across Hosur and AURIC. Installed capacity must be distinguished from ramped production and actual sell-through.",
+    "management": "Tarun Mehta explicitly said PAT can fluctuate and distinguished installation from ramp-up, while identifying temporary SKU benefits. This is a useful disclosure discipline; execution still depends on meeting several factory and product commitments simultaneously rather than celebrating a single small profit.",
+    "capital_allocation": "Local operating profit of ₹11.46 crore equals only 0.78% of sales. Other income of ₹62.71 crore exceeds PAT by a wide margin; after ₹46.87 crore depreciation and ₹26.04 crore interest, pretax profit is ₹1.26 crore. The transcript’s 4.9% EBITDA includes other income; compare operating performance using the roughly 0.8–1% excluding-other-income measure.",
+    "governance": "The latest ownership row reports promoter holding 42.33%, versus 39.58% in the July row; the cause and like-for-like share/classification basis were not reconciled. New capacity, prospective financing, capitalised development and long battery warranties need scrutiny of dilution, accounting policy and provisions; promoter support is not proof of economic return.",
+    "limitations": "No fresh quantitative composite or forensic governance score is computed. The historical master-verdict index is a dated reference, not a current recommendation."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-10-26",
+    "coverage_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "confidence": "medium",
+    "sentiment": "constructive with execution risks",
+    "sentiment_basis": "An operating inflection with meaningful execution risk; one small PAT profit is not a mature earnings base.",
+    "summary": {
+      "result": "Local revenue ₹1,464 crore and PAT ₹1.26 crore; use the definition notes in results analysis.",
+      "driver": "Supply-constrained growth with new capacity.",
+      "forward": "Management targets 11.4 lakh annual installed units by Q2 FY28; new-factory capacity needs further ramp time and PAT can fluctuate.",
+      "risk": "Capacity execution and funding: AURIC timeline, capex, cash burn and registrations."
+    },
+    "story_tension": "An operating inflection with meaningful execution risk; one small PAT profit is not a mature earnings base.",
+    "operating_kpis": [
+      {
+        "metric": "Quarterly wholesales",
+        "value": "93,000 units",
+        "note": "42% YoY management disclosure."
+      },
+      {
+        "metric": "AtherStack Pro attach rate",
+        "value": "94%",
+        "note": "Q2 management disclosure."
+      },
+      {
+        "metric": "Adjusted gross margin",
+        "value": "24%",
+        "note": "Management-defined AGM; not the local operating margin."
+      },
+      {
+        "metric": "Target installed capacity",
+        "value": "11.4 lakh annually by Q2 FY28",
+        "note": "Installation target; not a sales forecast."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "Board-approved incremental Hosur and AURIC capacity takes combined installed target to 11.4 lakh annual units by Q2 FY28."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Commodity inflation lasted longer than expected; SKU management contributed a partly temporary margin benefit."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "AURIC trial production",
+        "window": "Q3 FY27",
+        "status": "PENDING",
+        "evidence": "Management says trials are expected in the next few weeks."
+      },
+      {
+        "promise": "AURIC base capex installation",
+        "window": "Q4 FY27",
+        "status": "PENDING",
+        "evidence": "Capacity installation precedes commercial ramp."
+      },
+      {
+        "promise": "11.4 lakh annual installed capacity",
+        "window": "Q2 FY28",
+        "status": "PENDING",
+        "evidence": "Expanded target; exact utilisation timing was not committed."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Capacity execution and funding",
+        "status": "ALIVE",
+        "evidence": "Large capacity additions need installation, vendor readiness, ramp-up and demand absorption; commissioning is not utilisation."
+      },
+      {
+        "thesis": "Thin underlying profitability",
+        "status": "ALIVE",
+        "evidence": "Small changes in commodity costs, warranty expense or incentives can erase the first operating profit."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Tarun Mehta",
+        "text": "In the near term, PAT can go up and down",
+        "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings-call transcript, 2026-10-26",
+        "url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf"
+      },
+      {
+        "title": "Company investor relations / current disclosures",
+        "url": "https://www.atherenergy.com/investor-relations"
+      }
+    ],
+    "limitations": [
+      "FY26 cash-flow rows in the pack are missing; no FY26 CFO or free-cash-flow number is invented.",
+      "Revenue-multiple fair value is withheld without a fully reconciled diluted equity / enterprise-value bridge.",
+      "Coverage uses current prepared remarks and targeted Q&A, prior available remarks and selected historical checks; it is not a complete five-call forensic or six-quarter promise audit. Empty silence, dropped-guidance and tone-shift arrays mean insufficient supported evidence, not proof of absence.",
+      "Second review distinguishes a supported management assertion from independently demonstrated economics; the claim ledger sets out residual reconciliation gaps."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings-call transcript, 2026-10-26",
+      "url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf"
+    },
+    {
+      "title": "Company investor relations / current disclosures",
+      "url": "https://www.atherenergy.com/investor-relations"
+    }
+  ],
+  "remaining_gaps": [
+    "FY26 cash-flow rows in the pack are missing; no FY26 CFO or free-cash-flow number is invented.",
+    "Revenue-multiple fair value is withheld without a fully reconciled diluted equity / enterprise-value bridge.",
+    "FY26 consolidated cash-flow fields are missing, not zero.",
+    "No verified diluted-equity, available-cash and fully ramped new-plant cost bridge is available.",
+    "Software attachment does not establish recurring software profit."
+  ],
+  "claim_audit": [
+    {
+      "claim": "September 2026 revenue ₹1,464.24 crore and PAT ₹1.26 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table",
+      "source_url": "data/ATHERENERG-financials.json",
+      "locator": "ticker=ATHERENERG, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The live canonical table agrees with the report input. Revenue, total PAT and EPS must retain their respective accounting definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "The call covers Q2 FY27, despite FY26 in the URL filename.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 2; retained text lines 35–39",
+      "excerpt": "",
+      "assessment": "The actual document title and 26October 2026 date establish the period."
+    },
+    {
+      "claim": "Wholesale volume was 93,000 units, up 42%.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 5; retained text lines 234–238",
+      "excerpt": "",
+      "assessment": "Wholesales are not registrations, production or final retail sales."
+    },
+    {
+      "claim": "AtherStack Pro attachment was 94%; non-vehicle revenue 15%.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 7; retained text lines 338–342",
+      "excerpt": "",
+      "assessment": "These figures do not disclose standalone software profit or recurring renewal economics."
+    },
+    {
+      "claim": "Adjusted gross margin was 24%, up 1.6 points from Q1.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 7; retained text lines 351–355",
+      "excerpt": "",
+      "assessment": "This management measure differs from operating margin and was below Q4’s 25.4%."
+    },
+    {
+      "claim": "The gross-margin bridge includes 5.3 points structural gain,9.4 commodity pressure and 2.7 SKU benefit.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 7; retained text lines 345–349",
+      "excerpt": "",
+      "assessment": "25.4+5.3–9.4+2.7=24.0. Some SKU benefits are explicitly less structural."
+    },
+    {
+      "claim": "The 4.9% EBITDA includes other income; excluding it was about 0.8–1%.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 7; retained text lines 357–361",
+      "excerpt": "",
+      "assessment": "The excluding-other-income measure aligns approximately with local operating margin 0.78%."
+    },
+    {
+      "claim": "Management warns near-term PAT can fluctuate.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 8; retained text lines 375–379",
+      "excerpt": "",
+      "assessment": "One negligible profit quarter does not establish stable profitability."
+    },
+    {
+      "claim": "Installed annual capacity target is 11.4 lakh units by Q2 FY28.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 6; retained text lines 285–289",
+      "excerpt": "",
+      "assessment": "Installed capacity is not utilization, sales guidance or guaranteed demand."
+    },
+    {
+      "claim": "Hosur adds 6,000 monthly units, with an additional 12,000 planned at AURIC.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 6; retained text lines 278–282",
+      "excerpt": "",
+      "assessment": "These are announced capacity increments, not current sales."
+    },
+    {
+      "claim": "AURIC trials are expected in Q3 FY27 and base installation by Q4 FY27.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 4; retained text lines 157–161",
+      "excerpt": "",
+      "assessment": "Trials, installation and a multi-quarter ramp are distinct milestones."
+    },
+    {
+      "claim": "No more Q3 price hikes were planned at the call date.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "ATHERENERG Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ATHERENERGY_30102026150952_EarningscallQ2FY26signed.pdf",
+      "locator": "PDF page 11; retained text lines 576–580",
+      "excerpt": "",
+      "assessment": "Margin protection cannot assume continuous pricing increases if inflation persists."
+    },
+    {
+      "claim": "FY26 consolidated cash-flow fields are unavailable in the retained dataset.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "UNRESOLVED",
+      "source_title": "Local cash_flow_annual table",
+      "source_url": "data/ATHERENERG-financials.json",
+      "locator": "ticker=ATHERENERG, period_end=2026-03-31, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "Missing values are not zero; earlier standalone cash flows must not be presented as a current consolidated funding bridge. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "September promoter holding was 42.33%.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local shareholding_quarterly table",
+      "source_url": "data/ATHERENERG-financials.json",
+      "locator": "ticker=ATHERENERG, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The reported percentage agrees with the local ownership table; any change in percentage requires a corporate-action/share-count bridge before describing it as promoter buying or selling. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    }
+  ],
+  "audit_summary": {
+    "scope": "Independent second review of material operating, guidance, earnings-quality and valuation claims against retained current transcript passages, relevant prior evidence and re-read canonical financial tables. Exact source locations are supplied; management statements remain management statements. This is not a complete audit of financial statements or all historical promises.",
+    "overall_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Removed duplicate loss-transition prose.",
+      "Added the full adjusted-gross-margin bridge and its lower level versus Q4 FY26.",
+      "Marked unavailable FY26 consolidated cash flow as missing; retained no P/E target."
+    ],
+    "unverified": [
+      "FY26 consolidated cash-flow fields are missing, not zero.",
+      "No verified diluted-equity, available-cash and fully ramped new-plant cost bridge is available.",
+      "Software attachment does not establish recurring software profit."
+    ]
+  },
+  "deeper_analysis": {
+    "business_economics": [
+      "Wholesales, realized price/mix, software attachment and fixed-cost absorption drive current economics.93,000 wholesales differ from registrations and production.94% Pro attachment supports mix but does not reveal recurring software profit after development and service costs.",
+      "The gross-margin bridge starts at 25.4% in Q4 FY26, adds 5.3 structural points, subtracts 9.4 commodity points and adds 2.7 SKU-management points to reach 24%. AGM improved versus Q1 but remained below Q4, and some mix gains may reverse when supply normalizes."
+    ],
+    "earnings_quality": [
+      "Local operating profit ₹11.46 cr on ₹1,464.24 cr revenue equals 0.78%. Adding ₹62.71 cr other income and subtracting ₹46.87 cr depreciation and ₹26.04 cr interest yields ₹1.26 cr pretax profit. Other income bridges most of the shortfall between operating earnings and net profitability.",
+      "The call’s 4.9% EBITDA includes other income; about 0.8–1% excluding it is the relevant operating comparison. Management warns PAT may fluctuate. Missing FY26 consolidated cash flow prevents a complete self-funding assessment."
+    ],
+    "capital_allocation": [
+      "The 11.4 lakh installed-capacity target requires installation, trials, quality stabilization, utilization and retail absorption. Each is a separate capital-return milestone; more capacity also creates depreciation, working-capital and execution requirements.",
+      "The key funding question is how much cash is needed before sustainable operating cash after the AURIC ramp. Dilution, leases, debt and long warranty obligations should be included; reported investments cannot all be assumed freely distributable."
+    ],
+    "valuation_logic": [
+      "Neither one positive PAT quarter nor installed capacity produces a credible P/E fair value. Revenue valuation must connect saleable vehicles to vehicle/software gross profit, normal warranty costs and cash after expansion.",
+      "A reverse model should ask what sales, utilization and sustainable EBIT margin the equity value requires, and whether funding can reach that point. Missing cash and diluted-share inputs should remain open rather than be invented."
+    ],
+    "peer_positioning": [
+      "EV peers help compare retail share, service quality and battery warranties, but subsidies, development capitalization and cash needs differ. Mature incumbent P/E ratios do not translate directly to a marginally profitable expansion-stage manufacturer.",
+      "The software ecosystem may differentiate the franchise, but retention, realization and contribution after development/service costs must demonstrate that value. Attachment and search interest alone do not establish it."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Operating margin excluding other income",
+        "latest_value": "0.78% local; about 0.8–1% call",
+        "source": "Current call and local P&L",
+        "why_it_matters": "Separates operating economics from treasury income.",
+        "next_test": "Track cash and margin with other income separately shown."
+      },
+      {
+        "metric": "Structural versus temporary gross margin",
+        "latest_value": "24% AGM;2.7-point SKU benefit",
+        "source": "Current call, margin bridge",
+        "why_it_matters": "Tests what remains after supply/mix normalizes.",
+        "next_test": "Monitor incentives, consumption costs, variant mix and warranty costs."
+      },
+      {
+        "metric": "Commissioning and ramp",
+        "latest_value": "11.4 lakh installed target by Q2 FY28",
+        "source": "Current call, capacity remarks",
+        "why_it_matters": "Capacity does not guarantee economic returns.",
+        "next_test": "Verify trials, saleable output, yields, utilization and funding."
+      }
+    ],
+    "unanswered_questions": [
+      "What funding and committed capex remain before sustainable cash flow after the AURIC ramp?",
+      "How much of the 2.7-point SKU benefit survives normal availability of all variants?",
+      "What software retention, profit and service/warranty costs underpin mature unit economics?"
+    ]
+  }
+}

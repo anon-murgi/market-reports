@@ -1,0 +1,520 @@
+{
+  "archetype": "it_services",
+  "executive_summary": "Tech Mahindra’s September result shows the turnaround progressing from cost repair toward a broader growth recovery. Constant-currency growth and recurring large-deal wins improve the evidence, but the investment case at the current premium requires cash conversion and continued margin execution; local PAT and EPS definitions need reconciliation before an exact target.",
+  "research_stance": "Constructive turnaround evidence, with valuation and data-basis reconciliation limiting precision.",
+  "thesis_drivers": [
+    {
+      "title": "Recovery is broader than INR translation",
+      "evidence": "The call reports 7.2% YoY constant-currency growth, including 7.0% organic CC growth, versus 15.6% INR growth. Communications and other verticals expanded; foreign exchange and a small inorganic contribution must be separated from organic demand.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Margin repair approaches its quantified milestone",
+      "evidence": "Management reported EBIT margin 14.8%, up 40 bp QoQ and 260 bp YoY, and retained 15% FY27 target. Local operating profit is closer to EBITDA; using its approximately 18% OPM as EBIT would materially misread the turnaround.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Growth must show up in cash",
+      "evidence": "Call-reported DSO 88 days rose 4 days QoQ; rebadged deal ramp-up affected quarterly cash flow. The 90–100% annual FCF/PAT goal provides a test of earnings quality and deal execution.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Turnaround versus structural growth",
+      "content": "Cost repair and utilisation can lift earnings before industry demand fully recovers. Track constant-currency growth, large-deal conversion, pricing and client concentration in addition to margins."
+    },
+    {
+      "heading": "AI economics",
+      "content": "AI can improve delivery productivity and expand scope, while also passing productivity benefits to clients. Count commercial cash flows rather than partnership announcements or AI labels."
+    },
+    {
+      "heading": "Macro read-through",
+      "content": "Global client budgets and telecom spending remain cyclical; rupee movement can help reported INR earnings without proving better USD unit growth."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Discretionary IT Spending Cycle",
+      "stage": "RECOVERY",
+      "evidence": "7.2% YoY CC growth and broad large-deal ramp-up show improvement."
+    },
+    {
+      "name": "Margin Cycle",
+      "stage": "RECOVERY",
+      "evidence": "14.8% EBIT margin is near 15% FY27 aspiration but cash conversion needs work."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "PREMIUM",
+      "evidence": "Snapshot 30.4× earnings prices continued turnaround execution."
+    }
+  ],
+  "valuation": {
+    "method": "Normalised attributable EPS/P/E and cash-flow cross-check; target deferred pending basis reconciliation",
+    "assessment": "The 30.4 x dated snapshot earnings multiple already recognises turnaround progress. Call PAT ₹1,586 crore versus local ₹1,610 crore remains a ₹24 crore attribution/definition gap. The prior ₹17.84 alternate EPS assertion is removed because no traceable cited primary source was located; local EPS and the proposed bonus must be reconciled before a precise EPS target.",
+    "assumptions": [
+      "Do not blend lake EPS and press-release EPS or apply bonus adjustments twice.",
+      "15% EBIT margin is management guidance; indefinite margin expansion is not.",
+      "No exact target until attributable PAT, minorities, share count and bonus record-date basis are settled."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Constant-currency growth accelerates as large-deals ramp across verticals.",
+      "EBIT margin reaches 15% FY27 while AI and delivery efficiency creates further headroom.",
+      "DSO falls and full-year FCF/PAT reaches 90–100%."
+    ],
+    "base": [
+      "Turnaround delivers moderate growth and approximately 15% margin with normal quarterly volatility.",
+      "Some efficiency gains are reinvested in growth and talent.",
+      "Valuation limits upside unless earnings grow consistently and cash conversion improves."
+    ],
+    "bear": [
+      "Deal ramps consume working capital and DSO remains stretched.",
+      "AI price pass-through and wage costs offset delivery savings.",
+      "Client budgets weaken and premium earnings multiple contracts."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Cash conversion",
+      "detail": "DSO 88 days and new-deal ramp-up reduce current cash conversion.",
+      "monitor": "DSO, unbilled revenue and FCF/PAT."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Turnaround already valued",
+      "detail": "Approximately 30× earnings leaves less room for demand or margin misses.",
+      "monitor": "CC growth, EBIT delivery and normalised valuation."
+    },
+    {
+      "severity": "HIGH",
+      "title": "AI pricing and delivery risk",
+      "detail": "Productivity savings may be passed to clients rather than retained.",
+      "monitor": "Realisation, deal scope, revenue per employee and fixed-price execution."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "PAT and EPS basis reconciliation",
+      "detail": "Local and company figures are not identical.",
+      "monitor": "Attributable earnings, minorities, diluted shares and bonus adjustments."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "FY27 EBIT margin 15% delivery",
+      "timeline": "FY27",
+      "evidence": "Latest call 14.8%; 15% target retained."
+    },
+    {
+      "event": "Cash normalisation after rebadged deal ramp-up",
+      "timeline": "Next quarter and FY27",
+      "evidence": "Management expects normalisation and retains 90–100% annual FCF/PAT."
+    },
+    {
+      "event": "Sustained large-deal conversion",
+      "timeline": "Next two quarters",
+      "evidence": "New-deal TCV $1.023 billion; not all TCV is immediate revenue."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "EBIT margin misses 15% FY27 goal without clear profitable growth reinvestment.",
+      "deadline": "FY27 results",
+      "action": "Rebuild turnaround earnings case"
+    },
+    {
+      "condition": "DSO remains above 90 days and FCF/PAT fails normalising across two more quarters.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "CC growth decelerates while deal announcements stay high and conversion lags.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "Deep telecom expertise and scaled delivery franchise; growth quality has improved, but turnaround depends on execution.",
+    "management": "Current quantified margin and cash goals provide clear tests; avoid credit for partnership count alone.",
+    "capital_allocation": "Capital return framework needs strong cash conversion; a bonus issue changes units, not economic value.",
+    "governance": "Before relying on the EPS multiple, reconcile attributable profit, minority interests, diluted shares and the proposed bonus issue against the local financial series. The readable official IR transcript is the commentary source; the malformed NSE copy was not treated as verified text.",
+    "limitations": "PAT/EPS basis unresolved; NSE PDF was unreadable, recovered official IR transcript used instead."
+  },
+  "company_name": "Tech Mahindra Limited",
+  "ticker": "TECHM",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026(Q2 FY27), consolidated local financials: PAT ₹1,610.0 crore versus ₹1,202.0 crore a year ago and ₹1,486.0 crore in June 2026. Growth was +33.9% YoY and+8.3% QoQ.",
+    "Revenue ₹16,180.0 crore was +15.6% YoY and+3.0% QoQ. Local operating profit ₹2,878.0 crore and OPM 18.0% should be interpreted on the dataset’s definition, rather than automatically equated with management’s adjusted EBITDA or EBIT. The exact local bridge is ₹2,878 crore operating profit minus ₹491 crore depreciation=₹2,387 crore EBIT, matching the call.",
+    "The call reports 7.2% YoY constant-currency growth, including 7.0% organic CC growth, versus 15.6% INR growth. Communications and other verticals expanded; foreign exchange and a small inorganic contribution must be separated from organic demand.",
+    "Financial statement basis: consolidated. The financial snapshot is dated 2026-11-13; cleaned share-price data ends 2026-11-12. Headline financials are from the local research lake; management operating KPIs and guidance are separately sourced to the call.",
+    "Call PAT ₹1,586 crore and local PAT ₹1,610 crore differ by ₹24 crore, about 1.5% of the call figure. No cause is certified without an attribution bridge. The original alternate diluted-EPS number was not substantiated by the cited source set and is removed; local EPS and proposed bonus/share units still need checking."
+  ],
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings call transcript",
+      "url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf"
+    },
+    {
+      "title": "Prior quarter transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/Apekshakhemka_22072026121038_Signed_SEintimationtranscript.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": "2026-10-15",
+    "coverage_status": "Current official IR transcript reviewed; prior-quarter comparison uses reported prior metrics; no audited silence frequency table",
+    "confidence": "medium",
+    "sentiment": "bullish with cash-conversion test",
+    "sentiment_basis": "Growth and EBIT execution improved; DSO and deal ramp-up need validation.",
+    "summary": {
+      "result": "September 2026(Q2 FY27), consolidated local financials: PAT ₹1,610.0 crore versus ₹1,202.0 crore a year ago and ₹1,486.0 crore in June 2026. Growth was +33.9% YoY and+8.3% QoQ.",
+      "driver": "Large deal ramp-up, vertical growth and Project Fortius savings.",
+      "forward": "FY27 EBIT margin 15%; annual FCF/PAT 90–100%; no new long-term numeric target asserted.",
+      "risk": "Cash conversion and retaining AI productivity benefits."
+    },
+    "story_tension": "Can the turnaround generate both faster constant-currency growth and cash without overstretching delivery?",
+    "operating_kpis": [
+      {
+        "metric": "CC revenue growth",
+        "value": "7.2% YoY /2.4% QoQ",
+        "note": "Latest company earnings call; figures on the stated operating basis."
+      },
+      {
+        "metric": "New-deal TCV",
+        "value": "$1.023 billion",
+        "note": "Latest company earnings call; figures on the stated operating basis."
+      },
+      {
+        "metric": "EBIT margin",
+        "value": "14.8%",
+        "note": "Not local 18% OPM/EBITDA."
+      },
+      {
+        "metric": "DSO",
+        "value": "88 days; +4 days QoQ",
+        "note": "Latest company earnings call; figures on the stated operating basis."
+      },
+      {
+        "metric": "Large-client account revenue growth",
+        "value": "11.7% YoY /3.1% QoQ",
+        "note": "Accounts with >$20 m revenue; not attrition."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        {
+          "title": "Cash normalisation",
+          "detail": "Deal ramp-up cash impact expected to normalise next quarter; annual 90–100% FCF/PAT retained.",
+          "severity": "medium"
+        }
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        {
+          "title": "Working capital during growth",
+          "detail": "DSO increased 4 days QoQ during rebadged deal ramp-up.",
+          "severity": "medium"
+        }
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "Operating margin actual",
+        "direction": "firmer",
+        "from": "14.4% Q1",
+        "to": "14.8% Q2",
+        "detail": "40 bp sequential improvement; 15% annual goal reiterated, not raised."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "15% EBIT margin",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q2 actual 14.8%; full-year window not closed."
+      },
+      {
+        "promise": "FCF/PAT 90–100%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Quarterly cash flow weaker from deal ramp-up; annual test open."
+      },
+      {
+        "promise": "Return 85%+FCF to shareholders",
+        "window": "Annual policy",
+        "status": "PENDING",
+        "evidence": "Dividend announced but full-year FCF and returns needed for grading."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Cash conversion",
+        "status": "ALIVE",
+        "evidence": "DSO 88 days and new-deal ramp-up reduce current cash conversion."
+      },
+      {
+        "thesis": "Turnaround already valued",
+        "status": "ALIVE",
+        "evidence": "Approximately 30× earnings leaves less room for demand or margin misses."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Rohit Anand, CFO",
+        "text": "we remain on track to achieve our full-year FY27 EBIT margin target of 15%.",
+        "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings call transcript",
+        "url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf"
+      },
+      {
+        "title": "Prior quarter transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/Apekshakhemka_22072026121038_Signed_SEintimationtranscript.pdf"
+      }
+    ],
+    "limitations": [
+      "PAT and EPS reconciliation pending; forex and minority definitions may contribute, but no cause is asserted without proof.",
+      "Local operating profit/OPM is not call EBIT.",
+      "No silence or full six-quarter promise audit asserted.",
+      "The prior local transcript text could not be parsed reliably; sequential comparisons above are those explicitly reported in the current official call."
+    ]
+  },
+  "remaining_gaps": [
+    "PAT and EPS reconciliation pending; forex and minority definitions may contribute, but no cause is asserted without proof.",
+    "Local operating profit/OPM is not call EBIT.",
+    "No silence or full six-quarter promise audit asserted.",
+    "Prior-quarter transcript parse needs repair for an independent full-call comparison.",
+    "PAT ownership/definition and share/bonus basis remain unresolved; no precise EPS target.",
+    "Prior-quarter full-call parsing and a complete multi-quarter silence audit remain incomplete."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed the false 11.7% attrition KPI; the figure is large-client account revenue growth.",
+      "Reconciled operating profit to EBIT exactly through ₹491 crore depreciation.",
+      "Separated total CC7.2% from organicCC7.0%, and removed the untraceable ₹17.84 EPS assertion."
+    ],
+    "unverified": [
+      "PAT ownership/definition and share/bonus basis remain unresolved; no precise EPS target.",
+      "Prior-quarter full-call parsing and a complete multi-quarter silence audit remain incomplete."
+    ],
+    "claim_count": 14,
+    "status_counts": {
+      "CORRECTED": 3,
+      "DEFINITION_DIFFERENCE": 1,
+      "SUPPORTED": 9,
+      "UNRESOLVED": 1
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "Local revenue ₹16,180 crore matches the call; local operating profit ₹2,878 less depreciation ₹491 equals EBIT ₹2,387 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/TECHM_inputs.json",
+      "locator": "pnl_quarterly: TECHM, specified reporting period",
+      "excerpt": "",
+      "assessment": "The EBITDA-like versus EBIT gap is reconciled arithmetically, not a residual mystery. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "Reported-dollar growth was 6.8%, CC growth 7.2%, and organic CC growth 7.0%.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 9; retained text line 472",
+      "excerpt": "",
+      "assessment": "The old wording blurred total CC growth with organic growth; the 0.2 percentage-point difference should be retained."
+    },
+    {
+      "claim": "EBIT margin was 14.8%, up 40 bp QoQ and 260 bp YoY.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 9; retained text line 496",
+      "excerpt": "",
+      "assessment": "Local 18% OPM is not EBIT. The full rupee bridge uses the local depreciation line."
+    },
+    {
+      "claim": "FY27 EBIT margin target remains 15%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 11; retained text line 568",
+      "excerpt": "",
+      "assessment": "A full-year target is not an indefinite margin-expansion promise."
+    },
+    {
+      "claim": "New deal wins were $1.023 billion; LTM wins $4.270 billion.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 9; retained text line 491",
+      "excerpt": "",
+      "assessment": "TCV is not current revenue, and its duration, ramp and transition spending matter."
+    },
+    {
+      "claim": "DSO was 88 days, up 4 QoQ but down 6 YoY.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 10; retained text line 516",
+      "excerpt": "",
+      "assessment": "The sequential working-capital deterioration coexists with a better year-on-year comparison."
+    },
+    {
+      "claim": "Quarterly FCF was $135 million versus PAT $166 million.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 10; retained text line 513",
+      "excerpt": "",
+      "assessment": "The approximate 81% cash / PAT ratio is below the 90–100% annual ambition; the annual promise is still open."
+    },
+    {
+      "claim": "Management attributes cash pressure to rebadged-deal ramp and expects normalization next quarter.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 10; retained text line 514",
+      "excerpt": "",
+      "assessment": "This is management’s causal explanation and expectation, not independent confirmation that receivables will be collected on time."
+    },
+    {
+      "claim": "11.7% refers to YoY growth in >$20 m client accounts, not attrition.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 16; retained text line 919",
+      "excerpt": "",
+      "assessment": "The original LTM attrition KPI was a context error and has been removed."
+    },
+    {
+      "claim": "Tax rate was 29.9%; excluding a one-time tax item it was 26.6%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 10; retained text line 507",
+      "excerpt": "",
+      "assessment": "Normalized tax can improve the earnings interpretation, but must not be mixed with a different profit-attribution basis."
+    },
+    {
+      "claim": "Call PAT was ₹1,586 crore versus local ₹1,610 crore.",
+      "claim_type": "Management-reported",
+      "status": "UNRESOLVED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 10; retained text line 509",
+      "excerpt": "",
+      "assessment": "The ₹24 crore gap remains pending an owner/NCI and reporting bridge; no cause is asserted merely because it seems plausible."
+    },
+    {
+      "claim": "The board recommended a 1:1 bonus issue.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 2; retained text line 55",
+      "excerpt": "",
+      "assessment": "Recommendation is not proof of completion or ex-date. A bonus changes share units, not underlying enterprise value."
+    },
+    {
+      "claim": "Capital-return policy is 85%+of FCF.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "PDF page 10; retained text line 553",
+      "excerpt": "",
+      "assessment": "It is not 85% of earnings and depends on actual cash conversion."
+    },
+    {
+      "claim": "The previous reference to diluted EPS ₹17.84 lacks a traceable cited primary source in this reviewed set.",
+      "claim_type": "Source-quality correction",
+      "status": "CORRECTED",
+      "source_title": "Reviewed current official transcript and original report source list",
+      "source_url": "https://insights.techmahindra.com/investors/tml-q2-fy-27-earnings-transcript.pdf",
+      "locator": "Current transcript and cited-source inventory; no independently traceable ₹17.84 disclosure located",
+      "excerpt": "",
+      "assessment": "The unsupported alternate EPS figure is removed. The local EPS still needs attribution and bonus/share-basis reconciliation before a precise target."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The turnaround depends on winning and expanding multi-year engagements while preserving the cash return on delivery. Total CC growth of 7.2% includes organicCC7.0%; reported-dollar 6.8% and INR15.6% are different currency lenses. Management’s large-client evidence is useful: >$20 m accounts grew 11.7% YoY and 3.1% QoQ, rather than a supposed 11.7% attrition statistic.",
+      "The $1.023 billion new-deal TCV and $4.270 billion LTM wins support pipeline conversion, but contract value is not revenue and has no universal annual conversion factor. Rebadging and transition costs can front-load people and working capital before steady-state collections."
+    ],
+    "earnings_quality": [
+      "The local operating-profit figure is reconciled:₹2,878 crore less depreciation ₹491 crore equals the call’s ₹2,387 crore EBIT. This makes the local 18% OPM versus 14.8% EBIT margin a definition difference, not an earnings discrepancy.",
+      "The tax rate was 29.9% versus 26.6% excluding a one-time item, while reported PAT ₹1,586 crore still differs from local ₹1,610 crore. Normalize tax only on a consistent reporting perimeter; it does not independently explain the ₹24 crore gap or establish an adjusted EPS."
+    ],
+    "capital_allocation": [
+      "Quarterly FCF of $135 million relative to $166 million PAT is about 81%, below management’s 90–100% full-year ambition. That does not make the annual commitment missed, but it makes the expected next-quarter normalization of rebadged-deal cash conversion a concrete test. DSO 88 days rose 4 days sequentially.",
+      "The policy of returning 85%+of FCF depends on collecting cash, not just meeting EBIT margin targets. A proposed 1:1 bonus issue changes units; it is not an additional economic distribution. Customer concentration, delivery commitments and AI-related investment must be measured against cash returns on new engagements."
+    ],
+    "valuation_logic": [
+      "The dated 30.4 x P/E should be judged against sustainable attributable earnings and cash conversion, not a perpetual continuation of margin repair. The stated 15% FY27 EBIT-margin target is near current 14.8%, so a substantial further rerating needs demand growth and cash conversion as well as completion of the cost program.",
+      "No price target is given until PAT attribution, diluted share count and proposed bonus basis are reconciled. The earlier alternate EPS ₹17.84 claim lacked a traceable primary source in the reviewed set and has been withdrawn. This is an evidence correction, not an explanation of why a different published number might exist elsewhere."
+    ],
+    "peer_positioning": [
+      "TCS, Infosys and HCL Technologies are useful delivery-scale comparisons, but telecom exposure, margin maturity, deal mix and capital returns differ. TechM should not automatically receive a mature peer’s multiple before sustaining organic growth and cash conversion through large-deal ramps. AI partnership announcements are weaker evidence than disclosed recurring revenue and customer-level economics."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Organic versus total CC growth",
+        "latest_value": "7.0% versus 7.2% YoY",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Separates organic demand from acquisition/currency effects.",
+        "next_test": "Track vertical and large-account conversion in Q3."
+      },
+      {
+        "metric": "EBIT bridge",
+        "latest_value": "₹2,878−₹491=₹2,387 crore;14.8% margin",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Prevents mistaking EBITDA-like OPM for EBIT.",
+        "next_test": "Retain a consistent depreciation and margin perimeter."
+      },
+      {
+        "metric": "Cash conversion / DSO",
+        "latest_value": "~81% quarterlyFCF/PAT;88 days DSO",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Tests transition working capital.",
+        "next_test": "Check next-quarter cash normalization against 90–100% annual guide."
+      },
+      {
+        "metric": "Large-client growth",
+        "latest_value": "11.7% YoY;3.1% QoQ",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Actual context of the previously mislabelled KPI.",
+        "next_test": "Measure expansion of strategic accounts, separately from attrition."
+      }
+    ],
+    "unanswered_questions": [
+      "What is the exact total-to-attributable PAT and diluted-share reconciliation, including the proposed bonus timing?",
+      "How much working capital and transition spending is tied to each large rebadged deal, and when is it collected?",
+      "What portion of AI efficiency benefits is retained in margin versus passed through to customers?"
+    ]
+  }
+}

@@ -1,0 +1,456 @@
+{
+  "company_name": "CORONA Remedies Limited",
+  "archetype": "pharma_domestic",
+  "executive_summary": "Corona continues to outgrow the Indian pharmaceutical market through chronic therapies and established brands. The September result also shows the cost of the next growth phase: PAT rose more slowly than revenue as depreciation and amortisation increased, while the trailing valuation remains high.",
+  "research_stance": "A high-quality domestic growth franchise, with the share price demanding a much longer record of profitable reinvestment.",
+  "results_analysis": [
+    "The local consolidated September 2026 quarter records revenue ₹441.00 crore, operating profit ₹96.00 crore and PAT ₹60.00 crore. Revenue changed +22.2% YoY and +4.5% QoQ; PAT changed +15.4% YoY and +0.0% QoQ.",
+    "Operating profit changed +23.1% YoY and +3.2% QoQ. The calculated operating-profit/sales margin is 21.77%, versus 21.61% a year earlier and 22.04% in June. These calculations use a consistently rounded local series; management EBITDA may use a different scope or definition.",
+    "Management reports Q2 EBITDA margin 21.7% and PAT growth 15.3% versus revenue growth 22.2%; rounded local data give slightly different growth rates. FY26 CFO ₹229 crore exceeds PAT ₹185 crore, but free cash flow was ₹56 crore after investment. The snapshot ROCE is 33.3%; a higher H1 management ratio uses a different period/definition and is not substituted.",
+    "Price and financial dates differ: the cleaned close used here is ₹2,342.20 on 2026-11-12; the public-financial snapshot is dated 2026-11-07. The screenshot price is not treated as a live or verified valuation input. Local public-financial-data parquets, September 2026 quarter; amounts rounded to ₹ crore."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Domestic prescription franchise",
+      "evidence": "India contributes 97% of revenue per management, with domestic growth 22.9% and chronic growth around 29%. This makes therapy depth and field-force productivity more relevant than export optionality.",
+      "source": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf"
+    },
+    {
+      "title": "Engine brands, not just new acquisitions",
+      "evidence": "Management reported 21.5% growth excluding acquired Wokadine and said 33 engine brands contribute around 80% of India revenue. The existing portfolio is the current earnings anchor.",
+      "source": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf"
+    },
+    {
+      "title": "Hormonal manufacturing and IVF create reinvestment opportunities",
+      "evidence": "The specialised facility and a dedicated IVF team can improve franchise breadth. Their value needs to be demonstrated through utilisation and productivity rather than capitalising the full market opportunity today.",
+      "source": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Business model and sector lens",
+      "content": "Domestic branded pharmaceuticals can earn attractive returns through doctor relationships and chronic prescription continuity, but price controls, compliance costs and representative productivity remain important. Corona’s limited international scale makes export comparisons misleading."
+    },
+    {
+      "heading": "Balance sheet and capital allocation",
+      "content": "Management reports Q2 EBITDA margin 21.7% and PAT growth 15.3% versus revenue growth 22.2%; rounded local data give slightly different growth rates. FY26 CFO ₹229 crore exceeds PAT ₹185 crore, but free cash flow was ₹56 crore after investment. The snapshot ROCE is 33.3%; a higher H1 management ratio uses a different period/definition and is not substituted."
+    },
+    {
+      "heading": "Growth versus price paid",
+      "content": "At roughly 69x available trailing EPS at the cleaned close, the market prices in a sustained growth franchise. Even good 15–20% earnings growth can produce a modest or negative return if the multiple normalises, so valuation discipline matters as much as operational execution."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "IPM Growth Cycle",
+      "stage": "ACCELERATING",
+      "evidence": "India growth of 22.9% versus approximately 12% IPM growth on the call supports current outperformance; no older May-stage assumption is reused."
+    },
+    {
+      "name": "Chronic / Therapy Mix Shift Cycle",
+      "stage": "CHRONIC SCALING",
+      "evidence": "Prior Q1 commentary put chronic/semi-chronic therapies around 73.4% and Q2 chronic growth around 29%; the exact Q2 share is not supplied, so the placement is provisional and does not claim a fresh mix percentage."
+    },
+    {
+      "name": "MR Productivity / Field Force Cycle",
+      "stage": "PRODUCTIVITY BUILD",
+      "evidence": "The dedicated 46-person IVF team reached about ₹7 lakh PCPM; management targets ₹8–9 lakh by FY27-end."
+    },
+    {
+      "name": "Launch / NCE / GLP-1 Cycle",
+      "stage": "LAUNCH RAMP",
+      "evidence": "Hormonal domestic production and initial semaglutide participation are commercial activities; international hormonal dossiers remain earlier-stage and are not counted as launch revenue."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and cash-earnings constraints; no unsupported point target",
+    "assessment": "About 69× available trailing EPS is demanding even for a strong domestic prescription franchise. The 1.5× IPM growth objective and 20% PAT ambition can support earnings growth, but they do not guarantee an investment return if valuation normalises or reinvestment absorbs cash.",
+    "assumptions": [
+      "At the 12 November adjusted close of ₹2,342.20, the available four-quarter EPS sum is ₹33.85, implying approximately 69.2× earnings and a 1.45% earnings yield. This is a price/available-EPS calculation, not a forecast or a fully normalized multiple.",
+      "A 20% contraction in the earnings multiple would require 25% cumulative EPS growth merely to keep the share price unchanged; dividends are excluded. This is algebraic sensitivity, not a prediction of the exit multiple.",
+      "No terminal multiple or target is justified merely by highROCE or a therapeutic market size; acquired-brand amortisation, plant utilisation and cash returns need an explicit forecast."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "India contributes 97% of revenue per management, with domestic growth 22.9% and chronic growth around 29%. This makes therapy depth and field-force productivity more relevant than export optionality.",
+      "Management reported 21.5% growth excluding acquired Wokadine and said 33 engine brands contribute around 80% of India revenue. The existing portfolio is the current earnings anchor.",
+      "The 46-person IVF team reaches ₹8–9 lakh PCPM by March and engine brands retain their approximately 80% India-revenue role, giving operating leverage beyond the current 21.7% EBITDA margin."
+    ],
+    "base": [
+      "Management reiterated revenue growth around 1.5x IPM and PAT growth around 20%; it explicitly denied having guided to mid-20s operating margins.",
+      "Management reports Q2 EBITDA margin 21.7% and PAT growth 15.3% versus revenue growth 22.2%; rounded local data give slightly different growth rates. FY26 CFO ₹229 crore exceeds PAT ₹185 crore, but free cash flow was ₹56 crore after investment. The snapshot ROCE is 33.3%; a higher H1 management ratio uses a different period/definition and is not substituted.",
+      "India remains the approximately 97% revenue anchor; international hormonal registrations are not assumed to contribute material near-term profit ahead of their disclosed filing and approval path."
+    ],
+    "bear": [
+      "Current earnings leave a low earnings yield; successful growth can still coincide with a falling valuation.",
+      "Depreciation is incurred before the full revenue ramp, while overseas dossiers and approvals take time.",
+      "Management said Wokadine integration was slower than expected."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Multiple compression",
+      "detail": "Current earnings leave a low earnings yield; successful growth can still coincide with a falling valuation.",
+      "monitor": "Price-to-normalised earnings and growth persistence."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "New facility absorption",
+      "detail": "Depreciation is incurred before the full revenue ramp, while overseas dossiers and approvals take time.",
+      "monitor": "Asset turns, domestic utilisation and export registration milestones."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Acquired-brand integration",
+      "detail": "Management said Wokadine integration was slower than expected.",
+      "monitor": "Wokadine growth and the 25% multi-year CAGR aspiration."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "IVF productivity",
+      "timeline": "By March 2027",
+      "evidence": "Management aims for ₹8–9 lakh PCPM from about ₹7 lakh."
+    },
+    {
+      "event": "Wokadine integration",
+      "timeline": "Next two quarters",
+      "evidence": "Management expects improved visibility after slower integration."
+    },
+    {
+      "event": "Hormonal dossiers and registrations",
+      "timeline": "FY28 / FY29",
+      "evidence": "International revenue remains a medium-term ramp, not a near-term certainty."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "India revenue growth is below 1.5x comparable IPM growth for two consecutive quarters.",
+      "deadline": "Next two reported quarters",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Full-year PAT growth is below the stated approximately 20% objective.",
+      "deadline": "FY27 annual results",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "IVF productivity remains below ₹8 lakh PCPM at year-end.",
+      "deadline": "March 2027",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "India contributes 97% of revenue per management, with domestic growth 22.9% and chronic growth around 29%. This makes therapy depth and field-force productivity more relevant than export optionality.",
+    "management": "Nirav Mehta and Bhavin Bhagat distinguished 1.5x-IPM growth guidance from a fixed 15% assumption and explicitly rejected the analyst’s claim of a mid-20s margin guide. They also acknowledged slower Wokadine integration; delivery against IVF productivity and acquisition milestones is more useful than the optimistic sector tone.",
+    "capital_allocation": "Management reports Q2 EBITDA margin 21.7% and PAT growth 15.3% versus revenue growth 22.2%; rounded local data give slightly different growth rates. FY26 CFO ₹229 crore exceeds PAT ₹185 crore, but free cash flow was ₹56 crore after investment. The snapshot ROCE is 33.3%; a higher H1 management ratio uses a different period/definition and is not substituted.",
+    "governance": "September promoter ownership was stable at 69%. The business’s relationship with associate La Chandra for hormonal APIs and continued brand acquisitions warrant review of related-party sourcing, purchase prices and amortisation policies; no fresh independent governance audit was completed.",
+    "limitations": "No fresh quantitative composite or forensic governance score is computed. The historical master-verdict index is a dated reference, not a current recommendation."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-11-02",
+    "coverage_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "confidence": "medium",
+    "sentiment": "constructive with execution risks",
+    "sentiment_basis": "A high-quality domestic growth franchise, with the share price demanding a much longer record of profitable reinvestment.",
+    "summary": {
+      "result": "Local revenue ₹441 crore and PAT ₹60.00 crore; use the definition notes in results analysis.",
+      "driver": "Domestic prescription franchise.",
+      "forward": "Management reiterated revenue growth around 1.5x IPM and PAT growth around 20%; it explicitly denied having guided to mid-20s operating margins.",
+      "risk": "Multiple compression: Price-to-normalised earnings and growth persistence."
+    },
+    "story_tension": "A high-quality domestic growth franchise, with the share price demanding a much longer record of profitable reinvestment.",
+    "operating_kpis": [
+      {
+        "metric": "India revenue mix",
+        "value": "97%",
+        "note": "Q2 and H1 management disclosure."
+      },
+      {
+        "metric": "India growth",
+        "value": "22.9%",
+        "note": "Compared with approximately 12% IPM growth on the call."
+      },
+      {
+        "metric": "IVF team / productivity",
+        "value": "46 people / about ₹7 lakh PCPM",
+        "note": "Management targets ₹8–9 lakh PCPM by year-end."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "IVF PCPM targeted at ₹8–9 lakh by FY27 year-end."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Wokadine integration/change of business model is slower than expected.",
+        "Management clarified that a mid-20s EBITDA-margin target had not been issued."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "Revenue growth 1.5x IPM",
+        "window": "Medium term / FY27",
+        "status": "PENDING",
+        "evidence": "Q2 India growth outpaced the market; full-year persistence remains to be observed."
+      },
+      {
+        "promise": "PAT growth around 20%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "H1 PAT growth was about 22% per management, versus roughly 15% in Q2."
+      },
+      {
+        "promise": "Wokadine 25% CAGR",
+        "window": "Next 3–4 years",
+        "status": "PENDING",
+        "evidence": "Management retained the aspiration despite slower integration."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Multiple compression",
+        "status": "ALIVE",
+        "evidence": "Current earnings leave a low earnings yield; successful growth can still coincide with a falling valuation."
+      },
+      {
+        "thesis": "New facility absorption",
+        "status": "ALIVE",
+        "evidence": "Depreciation is incurred before the full revenue ramp, while overseas dossiers and approvals take time."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Bhavin Bhagat",
+        "text": "We have never given guidance on operating margins, right?",
+        "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings-call transcript, 2026-11-02",
+        "url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf"
+      },
+      {
+        "title": "Company investor relations / current disclosures",
+        "url": "https://www.coronaremedies.com/financials/"
+      }
+    ],
+    "limitations": [
+      "Only three usable call periods are present, insufficient for a four-quarter topic-frequency silence audit.",
+      "Management H1 ROCE and annual snapshot ROCE are not directly comparable.",
+      "Coverage uses current prepared remarks and targeted Q&A, prior available remarks and selected historical checks; it is not a complete five-call forensic or six-quarter promise audit. Empty silence, dropped-guidance and tone-shift arrays mean insufficient supported evidence, not proof of absence.",
+      "Second review distinguishes a supported management assertion from independently demonstrated economics; the claim ledger sets out residual reconciliation gaps."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings-call transcript, 2026-11-02",
+      "url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf"
+    },
+    {
+      "title": "Company investor relations / current disclosures",
+      "url": "https://www.coronaremedies.com/financials/"
+    }
+  ],
+  "remaining_gaps": [
+    "Only three usable call periods are present, insufficient for a four-quarter topic-frequency silence audit.",
+    "Management H1 ROCE and annual snapshot ROCE are not directly comparable.",
+    "No rupee bridge quantifies the depreciation/amortisation contribution to PAT growth.",
+    "Only three usable call periods exist; a four-prior-quarter silence-frequency audit is not possible.",
+    "Wokadine’s 25% CAGR and hormonal export potential remain forward aspirations, not realised returns."
+  ],
+  "claim_audit": [
+    {
+      "claim": "September 2026 revenue ₹441.00 crore and PAT ₹60.00 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table",
+      "source_url": "data/CORONA-financials.json",
+      "locator": "ticker=CORONA, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The live canonical table agrees with the report input. Revenue, total PAT and EPS must retain their respective accounting definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "Revenue ₹441 crore, EBITDA ₹96 crore and PAT ₹60 crore are management-reported Q2 figures.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 5; retained text lines 196–200",
+      "excerpt": "",
+      "assessment": "Current rupee amounts agree with rounded local rows. Management growth 22.3% EBITDA differs from 23.1% on the rounded local prior ₹78 cr because the call uses ₹78.5 cr."
+    },
+    {
+      "claim": "India contributed 97% of revenue; India growth was 22.9%.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 5; retained text lines 200–204",
+      "excerpt": "",
+      "assessment": "This is a domestic branded-pharma thesis; export optionality must not dominate valuation of present earnings."
+    },
+    {
+      "claim": "Chronic growth was about 29%, versus 14.9% for the chronic market.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 4; retained text lines 163–167",
+      "excerpt": "",
+      "assessment": "These are management-attributed PharmaTrac comparisons, not independent channel or prescription audits."
+    },
+    {
+      "claim": "Growth excluding acquired Wokadine was 21.5% in Q2 and H1.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 4; retained text lines 152–156",
+      "excerpt": "",
+      "assessment": "This supports underlying portfolio growth and limits a claim that current growth is entirely acquisition-led."
+    },
+    {
+      "claim": "PAT growth lagged sales because depreciation and brand amortisation increased.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 5; retained text lines 209–213",
+      "excerpt": "",
+      "assessment": "This is management’s causal explanation; the exact rupee contribution is not bridged in the transcript."
+    },
+    {
+      "claim": "Management clarified revenue guidance is 1.5× IPM, not a fixed 15% ceiling.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 8; retained text lines 392–396",
+      "excerpt": "",
+      "assessment": "The implied growth rate changes with the market. A fixed 20% sales forecast would be an analyst assumption, not the stated guide."
+    },
+    {
+      "claim": "Management did not issue a mid-20s operating-margin target.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 6; retained text lines 302–306",
+      "excerpt": "",
+      "assessment": "An analyst question suggested such a target; the CFO expressly rejected the premise. The report must not recycle it as management guidance."
+    },
+    {
+      "claim": "The IVF team is 46people; productivity about ₹7lakh PCPM, with ₹8–9 lakh targeted by year-end.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 7; retained text lines 330–334",
+      "excerpt": "",
+      "assessment": "PCPM is productivity per person per month, not annual revenue per representative or total segment revenue."
+    },
+    {
+      "claim": "Wokadine 25% CAGR remains a 3–4year aspiration after slower-than-expected implementation.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 6; retained text lines 290–294",
+      "excerpt": "",
+      "assessment": "A multi-year CAGR objective is not a booked acquisition return or a promise that the next quarter will grow 25%."
+    },
+    {
+      "claim": "Thirty-three engine brands account for about 80% of India business.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "CORONA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/CORONAREMEDIES_05112026174521_Transcript_of_Conference_call.pdf",
+      "locator": "PDF page 10; retained text lines 527–531",
+      "excerpt": "",
+      "assessment": "Brand concentration supports focused sales effort but also makes growth of the existing leading brands a key monitoring item."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹229 crore; dataset free cash flow ₹56 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local cash_flow_annual table",
+      "source_url": "data/CORONA-financials.json",
+      "locator": "ticker=CORONA, period_end=2026-03-31, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "Annual cash-flow figures were re-read; they are not September-quarter or H1 cash flows and do not use management-adjusted FCF definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    }
+  ],
+  "audit_summary": {
+    "scope": "Independent second review of material operating, guidance, earnings-quality and valuation claims against retained current transcript passages, relevant prior evidence and re-read canonical financial tables. Exact source locations are supplied; management statements remain management statements. This is not a complete audit of financial statements or all historical promises.",
+    "overall_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Distinguished exact company growth calculations from rounded local comparative rows.",
+      "Made the 1.5× IPM revenue guide and rejection of a mid-20s margin target prominent.",
+      "Removed arbitrary one-year target prices; separated current cash generation from acquired-brand and plant amortisation."
+    ],
+    "unverified": [
+      "No rupee bridge quantifies the depreciation/amortisation contribution to PAT growth.",
+      "Only three usable call periods exist; a four-prior-quarter silence-frequency audit is not possible.",
+      "Wokadine’s 25% CAGR and hormonal export potential remain forward aspirations, not realised returns."
+    ]
+  },
+  "deeper_analysis": {
+    "business_economics": [
+      "The 97% India revenue mix makes doctor relationships, therapy depth, brand retention and representative productivity central. Growth excluding Wokadine of 21.5% supports the existing-franchise case; it is more informative than treating every new indication or export registration as a separate growth engine.",
+      "The IVF team’s ₹7 lakh monthly productivity after six months is a tangible early metric, while the ₹8–9 lakh year-end goal can be checked soon. It should not be converted into total incremental profit without representative count, product mix, promotional cost and contribution margins."
+    ],
+    "earnings_quality": [
+      "The revenue/EBITDA/PAT rupee figures reconcile closely, but local rounding changes growth percentages: company EBITDA compares ₹96 cr with ₹78.5 cr, while the table rounds the earlier figure to ₹78 cr. The company’s 22.3% and table’s 23.1% growth therefore describe differently rounded inputs, not an operating contradiction.",
+      "PAT growth 15.3% lagged revenue 22.2% as new facilities and acquired brands added depreciation/amortisation. These charges may precede a future ramp but still represent capital consumed; adding them back indefinitely would overstate economic returns. FY26 CFO ₹229 cr exceeding PAT ₹185 cr is supportive, while ₹56cr FCF shows the cost of reinvestment."
+    ],
+    "capital_allocation": [
+      "Wokadine is a test of acquisition integration and brand investment. Management maintains the 25% CAGR objective over 3–4 years, but the near-term sales base has been maintained rather than a full integration acceleration demonstrated. Track brand growth against purchase consideration, field-force costs and cash returns.",
+      "The hormonal facility creates optionality, but domestic utilisation and international dossiers/registration occur on different schedules. The business should first earn an adequate return on the commissioned assets rather than receive immediate value for all potential registrations."
+    ],
+    "valuation_logic": [
+      "At roughly 69× available earnings, a 20% decline in the multiple requires 25% cumulative EPS growth to maintain price. Even achievement of the 20% PAT ambition over one year would not fully offset that contraction; dividends and ownership changes aside, the arithmetic explains why strong operations can still yield a modest stock return.",
+      "The 1.5× IPM guide is a relative growth commitment, not a fixed revenue number. A defensible valuation should test slower IPM growth, stable versus improving brand productivity, facility absorption and acquisition cash requirements. The CFO’s explicit rejection of a mid-20s margin guide rules out using that margin as a management-backed base case."
+    ],
+    "peer_positioning": [
+      "Domestic therapy-led branded-pharma businesses are the relevant earnings-quality peers; largeAPI orU.S.generic manufacturers have different pricing and regulatory exposures. Corona’s high domestic concentration is a strength in franchise clarity, but also means international optionality should be valued separately and conservatively.",
+      "Compare growth excluding acquisitions, chronic mix, brand concentration, representative productivity and cash returns. Broad pharmaceuticalP/E tables alone cannot establish that Corona’s much higher earnings multiple is justified."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Underlying India growth",
+        "latest_value": "22.9%;21.5% group growth exWokadine",
+        "source": "Current call, business commentary",
+        "why_it_matters": "Tests organic franchise strength versus acquisition lift.",
+        "next_test": "Compare against IPM using consistent period/provider."
+      },
+      {
+        "metric": "IVF representative productivity",
+        "latest_value": "₹7lakh PCPM;₹8–9 lakh objective",
+        "source": "Current call, IVFQ&A",
+        "why_it_matters": "Near-term unit-economics checkpoint.",
+        "next_test": "Verify year-end PCPM, team size and incremental contribution."
+      },
+      {
+        "metric": "Cash returns on reinvestment",
+        "latest_value": "FY26CFO ₹229 cr;FCF ₹56 cr",
+        "source": "Canonical annual cashflow",
+        "why_it_matters": "High accountingROCE must translate into cash after plant/brand spend.",
+        "next_test": "Monitor asset utilisation, Wokadine cash return and FY27FCF."
+      }
+    ],
+    "unanswered_questions": [
+      "What is the incremental EBITDA and cash contribution from Wokadine after acquisition amortisation and sales-force costs?",
+      "What utilisation and approved-market milestones are needed for the hormonal plant to earn its cost of capital?",
+      "How does the 20% PAT ambition change if IPM growth slows and the 1.5× relative revenue goal delivers a lower absolute growth rate?"
+    ]
+  }
+}

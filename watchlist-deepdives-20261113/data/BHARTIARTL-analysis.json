@@ -1,0 +1,488 @@
+{
+  "archetype": "telecom",
+  "executive_summary": "Bharti Airtel’s September quarter combines sustained premiumisation with improving cash generation across India and Africa. The investment question is shifting from network rollout to capital allocation: higher ARPU and lower leverage create capacity, while data centres and financial services compete with debt reduction and shareholder returns.",
+  "research_stance": "Strong operating franchise and cash-generation trajectory; value it through segment cash flows and disciplined capital deployment.",
+  "thesis_drivers": [
+    {
+      "title": "Premiumisation continues without assuming a tariff hike",
+      "evidence": "India ARPU rose from ₹264 to ₹271 and postpaid net additions reached 1.2 million. Management noted the benefit of an additional day; the full sequential ARPU increase should not be annualised as pricing power.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Cash generation and deleveraging improve flexibility",
+      "evidence": "The call reports consolidated EBITDA after leases of approximately ₹31,500 crore, capex of ₹12,500 crore and operating free cash flow above ₹19,000 crore. Net debt/EBITDAaL of approximately 0.70 x supports financial flexibility, but this operating cash-flow measure is not the final cash available to equity.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Capital allocation is the next material test",
+      "evidence": "A ₹2,900 crore land investment for a data-centre expansion ambition and new lending initiatives can increase growth duration. They also add execution, credit and capital intensity risk beyond the core mobile franchise.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Segment-specific valuation",
+      "content": "India wireless, Africa, towers, homes, enterprise, data centres and finance have different growth, risk and capital needs. A consolidated P/E does not capture these differences adequately."
+    },
+    {
+      "heading": "Durable pricing versus usage growth",
+      "content": "Postpaid mix, smartphone upgrades, convergence and tariff structure are separate levers. Rising data consumption does not automatically translate into higher revenue per GB."
+    },
+    {
+      "heading": "Macro read-through",
+      "content": "Africa currency and inflation risk, Indian funding costs and imported network capex can offset operating leverage. Lower leverage helps but does not remove exposure."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "ARPU / Pricing Cycle",
+      "stage": "Mid-cycle",
+      "evidence": "ARPU ₹271 and postpaid mix growth; no guaranteed future tariff date assumed."
+    },
+    {
+      "name": "Capex / Free-cash-flow Cycle",
+      "stage": "Moderating capex / expanding cash generation",
+      "evidence": "Q2 capex ₹12,500 crore and operating FCF above ₹19,000 crore."
+    },
+    {
+      "name": "Capital Allocation Cycle",
+      "stage": "Reinvestment",
+      "evidence": "Data-centre land and financial services expand capital demands."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "PREMIUM",
+      "evidence": "Snapshot P/E 39.4× is a descriptive figure; SOTP is the preferred method."
+    }
+  ],
+  "valuation": {
+    "method": "Segment SOTP using EV/EBITDA after leases and DCF; no single consolidated P/E target",
+    "assessment": "The quality case is clearer than the valuation margin of safety. Snapshot P/E 39.4× is not a complete telecom valuation. Segment forecasts, lease liabilities, minorities and net debt must be reconciled before an exact equity value.",
+    "assumptions": [
+      "India and Africa require different discount rates and multiples.",
+      "Subtract net debt, lease obligations and minorities consistently with the chosen EBITDA definition.",
+      "Do not add listed subsidiary value and their earnings again in the core multiple.",
+      "No unscheduled tariff hike or undisclosed financial-services valuation is assumed."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Premiumisation and rational pricing lift ARPU while postpaid and homes gain share.",
+      "Capex intensity moderates and debt falls, expanding cash available to shareholders.",
+      "Data-centres and financial services earn returns above cost of capital without overextending the group."
+    ],
+    "base": [
+      "Mobile and Africa growth continue but new growth bets consume a portion of the cash surplus.",
+      "ARPU rises gradually with customer mix; tariff-hike timing remains uncertain.",
+      "Cash generation improves without assigning the highest possible valuation to every adjacent business."
+    ],
+    "bear": [
+      "Competitive or regulatory pressure delays tariff repair.",
+      "Aggressive reinvestment or credit losses consume expected cash returns.",
+      "Africa currency or macro shocks reduce consolidated equity cash flows."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Capital allocation",
+      "detail": "Low-return financial services or capital-intensive adjacent businesses could dilute the returns from the strong core franchise.",
+      "monitor": "Incremental ROIC, NBFC credit costs, data-centre capex and funding."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Tariff assumptions",
+      "detail": "A rational pricing framework is an objective, not a dated tariff commitment.",
+      "monitor": "Realised ARPU, mix, retention and competitive plans."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Africa FX and country exposure",
+      "detail": "Constant-currency growth can exceed cash returns to the parent.",
+      "monitor": "Currency translation, dividend repatriation and country liquidity."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Definition risk in cash flow",
+      "detail": "EBITDA after leases minus capex excludes interest, tax and other cash requirements.",
+      "monitor": "Cash from operations and final equity FCF reconciliation."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Continued postpaid and homes monetisation",
+      "timeline": "Next two quarters",
+      "evidence": "ARPU ₹271; record postpaid net adds 1.2 million."
+    },
+    {
+      "event": "Disciplined deployment of cash surplus",
+      "timeline": "FY27–FY28",
+      "evidence": "Lower leverage and new growth bets increase capital-allocation importance."
+    },
+    {
+      "event": "Data-centre and finance operating disclosures",
+      "timeline": "Next financial updates",
+      "evidence": "Land investment and lending rollout need return milestones."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Cash generation improves but net debt and shareholder-accessible cash do not improve because of unexplained capital deployment.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "ARPU gains from premiumisation stall for two quarters while capex accelerates.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "New financial-services exposures grow without clear credit-quality and capital-return disclosures.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "Scaled network and premium customer franchise; India/Africa diversification adds runway and risk.",
+    "management": "Current call links operations with cash generation and capital allocation; judge reinvestment on returns, not ambition.",
+    "capital_allocation": "Lower leverage provides capacity; data centres and lending still need explicit milestones and returns above their cost of capital.",
+    "governance": "Complex group structure and minorities require careful SOTP and related-party review.",
+    "limitations": "No independent segment forecast or full DCF; no firm tariff-hike date assumed."
+  },
+  "company_name": "Bharti Airtel Limited",
+  "ticker": "BHARTIARTL",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹10,710.0 crore versus ₹8,651.0 crore a year ago and ₹10,012.0 crore in June 2026. This represents growth of +23.8% YoY and +7.0% QoQ.",
+    "Revenue ₹60,878.0 crore was +16.7% YoY and +4.0% QoQ. Local operating profit ₹34,946.0 crore and OPM 57.0% should be interpreted on the dataset’s definition, rather than automatically equated with management’s adjusted EBITDA or EBIT.",
+    "India ARPU rose ₹264→₹271 and postpaid net adds reached 1.2 million. Management noted an extra day benefit; not all sequential ARPU growth should be annualised as pricing power.",
+    "The local snapshot is dated 2026-11-07; cleaned-price technicals are dated 2026-11-12. The financials were read from the existing local lake. No replacement result-PDF figures or old overlay targets were silently substituted, and no post-refresh verification is claimed."
+  ],
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf"
+    },
+    {
+      "title": "Prior quarter transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_10082026185505_Stx_Intimation.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": "2026-11-06",
+    "coverage_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "confidence": "medium",
+    "sentiment": "bullish with allocation caveat",
+    "sentiment_basis": "ARPU, premium customers and cash generation improved; reinvestment demands also rose.",
+    "summary": {
+      "result": "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹10,710.0 crore versus ₹8,651.0 crore a year ago and ₹10,012.0 crore in June 2026. This represents growth of +23.8% YoY and +7.0% QoQ.",
+      "driver": "Mobile premiumisation, African growth, efficiency and broadband momentum.",
+      "forward": "Continue premiumisation and scale new businesses. The 1 GW data-centre vision is a multi-year ambition, not next-quarter capacity.",
+      "risk": "Returns on new capital and African macroeconomic and currency risks."
+    },
+    "story_tension": "Will rising core cash flows be converted into high returns on new capital and shareholder value?",
+    "operating_kpis": [
+      {
+        "metric": "India ARPU",
+        "value": "₹271; prior ₹264",
+        "note": "Call noted one day benefit."
+      },
+      {
+        "metric": "Postpaid net adds",
+        "value": "1.2 million",
+        "note": "Postpaid 8.3% of customer base."
+      },
+      {
+        "metric": "Consolidated net debt / EBITDA after leases",
+        "value": "Approximately 0.70×",
+        "note": "The denominator differs from EBITDA before lease adjustments."
+      },
+      {
+        "metric": "Operating FCF",
+        "value": "Above ₹19,000 crore",
+        "note": "Defined as EBITDA after leases minus capex; this is not free cash flow to equity."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        {
+          "title": "Data-centre capacity ambition",
+          "detail": "Reiterated 1 GW multi-year capacity ambition, already discussed in Q1; ₹2,900 crore land investment disclosed in Q2. No fixed full-project deadline, final cost or return is committed.",
+          "severity": "medium"
+        }
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        {
+          "title": "Reinvestment demand",
+          "detail": "Lending and data-centres require increasing capital-and-return discipline.",
+          "severity": "medium"
+        }
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "Cash generation actual",
+        "direction": "firmer",
+        "from": "Prior operating FCF above ₹16,450 crore",
+        "to": "Current above ₹19,000 crore",
+        "detail": "Sequential actual improvement; not a new guaranteed run-rate."
+      }
+    ],
+    "promise_ledger": [],
+    "bear_cases": [
+      {
+        "thesis": "Capital allocation",
+        "status": "ALIVE",
+        "evidence": "Low-return financial services or capital-intensive adjacent businesses could dilute the core franchise’s returns."
+      },
+      {
+        "thesis": "Tariff assumptions",
+        "status": "ALIVE",
+        "evidence": "A rational pricing framework is an objective, not a dated tariff commitment."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Soumen Ray, Group CFO",
+        "text": "Prudent capital allocation, disciplined capex and continued operational excellence underpins the strength of our balance sheet.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf"
+      },
+      {
+        "title": "Prior quarter transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_10082026185505_Stx_Intimation.pdf"
+      }
+    ],
+    "limitations": [
+      "Management’s EBITDA after leases differs from local operating profit; the approximately ₹31,500 crore figure is not directly comparable with the local operating-profit row.",
+      "No full segment SOTP cash-flow model or silence audit."
+    ]
+  },
+  "remaining_gaps": [
+    "Management’s EBITDA after leases differs from local operating profit; a full definition bridge is required.",
+    "No full segment SOTP cash-flow model or silence audit.",
+    "No formal DCF, fair-value certification or quantitative CCS promotion performed for this dated batch.",
+    "A complete EBITDAaL-to-equity-cash and group/land-capex reconciliation remains unavailable.",
+    "Final 1 GW funding schedule, ownership dilution and realized return are not fixed by the call."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Reframed operating FCF and net-debt ratios using the stated after-lease definitions.",
+      "Removed an unsupported historical KEPT grade for lending launch; the prior call already said services were live.",
+      "Distinguished Airtel and Hexacom sessions and flagged the land-capex/FCF inclusion bridge."
+    ],
+    "unverified": [
+      "A complete EBITDAaL-to-equity-cash and group/land-capex reconciliation remains unavailable.",
+      "Final 1 GW funding schedule, ownership dilution and realized return are not fixed by the call."
+    ],
+    "claim_count": 13,
+    "status_counts": {
+      "CORRECTED": 1,
+      "DEFINITION_DIFFERENCE": 3,
+      "SUPPORTED": 8,
+      "UNRESOLVED": 1
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "Local consolidated revenue is ₹60,878 crore; management rounds it to about ₹60,900 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/BHARTIARTL_inputs.json",
+      "locator": "pnl_quarterly: BHARTIARTL, specified reporting period",
+      "excerpt": "",
+      "assessment": "The small difference is consistent with rounding, not an earnings beat. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "Quarterly EBITDA after leases was about ₹31,500 crore at 51.7% margin.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 3; retained text line 124",
+      "excerpt": "",
+      "assessment": "The local ₹34,946 crore operating profit uses a different definition; a lease/scope bridge is needed before comparing margins."
+    },
+    {
+      "claim": "Reported operating FCF exceeds ₹19,000 crore and is defined as EBITDAaL minus capex.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 3; retained text line 125",
+      "excerpt": "",
+      "assessment": "This excludes other equity-cash items such as tax, financing, working capital and distributions; it is not FCFE."
+    },
+    {
+      "claim": "Group capex was about ₹12,500 crore; India ex-passive capex ₹7,430 crore.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 3; retained text line 124",
+      "excerpt": "",
+      "assessment": "Keep group and India scopes separate; do not subtract one scope’s capex from another scope’s EBITDA."
+    },
+    {
+      "claim": "Management separately disclosed ₹2,900 crore strategic land investment.",
+      "claim_type": "Management-reported",
+      "status": "UNRESOLVED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 3; retained text line 130",
+      "excerpt": "",
+      "assessment": "The call says in addition in the India discussion. Its precise inclusion in every group capex/FCF line is not independently bridged here."
+    },
+    {
+      "claim": "Consolidated net-debt/EBITDAaL was about 0.70 x; India ex-passive 0.96 x.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 3; retained text line 134",
+      "excerpt": "",
+      "assessment": "Gross borrowings in the local balance sheet are not the numerator of this net-debt ratio."
+    },
+    {
+      "claim": "India mobile ARPU was ₹271 versus ₹264, with one extra day benefit.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 4; retained text line 204",
+      "excerpt": "",
+      "assessment": "About 2.65% sequential ARPU growth should not all be annualised as pricing or premiumisation."
+    },
+    {
+      "claim": "Postpaid added 1.2 million subscribers and reached 8.3% of the base.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 4; retained text line 203",
+      "excerpt": "",
+      "assessment": "Subscriber mix is separate from total subscriber growth and from realized incremental ARPU."
+    },
+    {
+      "claim": "Airtel Finance monthly loan-disbursement run rate was about ₹770 crore.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 3; retained text line 149",
+      "excerpt": "",
+      "assessment": "Distribution volume is not net interest income or net profit; the exact lending entity, risk and ownership matter."
+    },
+    {
+      "claim": "One-gigawatt data-centre capacity remains a multi-year ambition.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 4; retained text line 166",
+      "excerpt": "",
+      "assessment": "No fixed full-project completion date, final capex or returns were committed. It was already discussed in the prior call."
+    },
+    {
+      "claim": "A prior call also described the 1 GW ambition and lending services already live.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Prior-quarter official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_10082026185505_Stx_Intimation.pdf",
+      "locator": "PDF page 4; retained text line 174",
+      "excerpt": "",
+      "assessment": "The current lending update is not proof of a previously unfulfilled deadline. A one-time KEPT grade is removed."
+    },
+    {
+      "claim": "Nxtra had raised about $800 million equity and expects some debt funding.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 10; retained text line 647",
+      "excerpt": "",
+      "assessment": "The cash raised does not fully finance or value every future expansion; further debt/equity remains a treasury decision."
+    },
+    {
+      "claim": "The transcript includes a separate Bharti Hexacom session.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BHARTIARTL_12112026172851_Airtel_Stx_Intimation.pdf",
+      "locator": "PDF page 15; retained text line 1024",
+      "excerpt": "",
+      "assessment": "Hexacom ARPU ₹264 and financial ratios must not be confused with Airtel India’s ₹271 ARPU."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "India mobile contributes the largest revenue stream, while Africa, homes/B2 B and passive infrastructure add different currencies, growth rates and capital needs. A single consolidated P/E hides these variations and the economic claims of minority shareholders.",
+      "ARPU rose from ₹264 to ₹271, but one extra day helped. Postpaid net adds of 1.2 million and smartphone upgrades support premiumisation, while pricing, mix and calendar effects must be separated. A broad tariff hike should not be assumed simply because it would improve the model."
+    ],
+    "earnings_quality": [
+      "Management’s ₹31,500 crore EBITDAaL differs from local operating profit ₹34,946 crore. The after-lease measure is useful for comparing operating capacity with capex, but lease cash treatment, minority attribution and accounting scope must remain consistent throughout the valuation.",
+      "Operating FCF above ₹19,000 crore is EBITDAaL less capex. It is not cash available for dividends before tax, working-capital movements, debt interest and other claims. The additional ₹2,900 crore land disclosure is material enough that its inclusion in each capex/FCF measure should be explicitly reconciled rather than assumed."
+    ],
+    "capital_allocation": [
+      "The balance-sheet question is shifting toward allocation of improving cash generation. Data centres and cloud are legitimate growth options, but land ownership and installed megawatts have value only when contracted utilization and incremental returns justify the equity/debt capital invested.",
+      "Nxtra’s roughly $800 million equity raise provides funds, while management acknowledges debt and possible future treasury decisions. The 1 GW ambition is not a fully funded guaranteed delivery schedule. Financial services similarly needs a clear distinction between storefront distribution volume, owned credit risk and shareholder-accessible profit."
+    ],
+    "valuation_logic": [
+      "A defensible SOTP values India telecom, Africa, passive infrastructure, data centres and financial services using their own operating bases and ownership. Lease obligations must be consistent with EBITDAaL; subtracting leases again after fully allowing for lease cash can double-count the economic burden.",
+      "No point target is asserted because segment forecast, minorities and net debt are not fully bridged. Valuation discipline means credit for existing contracted cash generation, and explicitly risk-weighted assumptions for growth options, rather than assigning a generic technology multiple to financial-services or AI ambitions."
+    ],
+    "peer_positioning": [
+      "Reliance Jio is the key operating competitor, but its business is embedded in an unlisted/complex group perimeter; Reliance’s entire P/E is not Jio’s multiple. Vodafone Idea differs materially in leverage, capital needs and network position. Bharti Hexacom is useful for focused regional wireless economics, but its ₹264 ARPU and leverage cannot be substituted for Airtel India’s figures."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "India ARPU",
+        "latest_value": "₹271 versus ₹264, extra-day benefit",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Separates mix/calendar/pricing effects.",
+        "next_test": "Track like-for-like calendar and postpaid/5 G mix."
+      },
+      {
+        "metric": "EBITDAaL / operating FCF",
+        "latest_value": "~₹31,500 crore / >₹19,000 crore",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Controls lease and cash-flow definitions.",
+        "next_test": "Obtain tax, interest, working-capital and land-capex bridge."
+      },
+      {
+        "metric": "Net-debt/EBITDAaL",
+        "latest_value": "~0.70 x group;0.96 x India ex-passive",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Measures progress after netting cash, with scope discipline.",
+        "next_test": "Track gross debt and distributions alongside the ratio."
+      },
+      {
+        "metric": "Nxtra capacity / funding",
+        "latest_value": "1 GW ambition;~$800 m equity raise",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Tests the return on the next growth-capex cycle.",
+        "next_test": "Require contracted capacity, delivery dates, total capex and incremental returns."
+      }
+    ],
+    "unanswered_questions": [
+      "Is the strategic land investment included in each quoted group and India capex/operating-FCF measure?",
+      "What contracted utilization and project-level return underpin the 1 GW capacity ambition, and what new debt/equity is needed?",
+      "How much consolidated operating cash becomes cash distributable to Airtel equity holders after minorities, tax, leases and financing?"
+    ]
+  }
+}

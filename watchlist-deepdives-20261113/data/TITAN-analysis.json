@@ -1,0 +1,501 @@
+{
+  "company_name": "Titan Company Limited",
+  "archetype": "consumer_discretionary — jewellery retail",
+  "executive_summary": "Titan’s franchise remains strong, but the September PAT surge overstates the change in recurring earnings. The call identifies ₹536 crore combined jewellery/CaratLane customs-duty gains and a ₹671 crore Damas liability remeasurement gain; management nevertheless keeps domestic jewellery margin expectations around 11%.",
+  "research_stance": "High-quality franchise requiring an earnings-normalization exercise; do not pay for the entire reported PAT jump as recurring growth.",
+  "results_analysis": [
+    "September 2026 consolidated sales were ₹20,614.00 crore, +10.1% YoY and -3.5% QoQ. PAT was ₹2,393.00 crore, +113.7% YoY and +34.7% QoQ. These percentage changes use the rounded local dataset, so small differences from company-exact growth percentages are expected.",
+    "Local operating profit was ₹2,983.00 crore and OPM 14.00%, compared with 10.00% a year earlier and 14.00% in June 2026. PAT margin was 11.61%. OPM is the dataset’s operating-profit/sales measure, not automatically management-adjusted EBITDA or a segment EBIT margin.",
+    "Reported PAT ₹2,393 crore more than doubled year-on-year, while sales rose only about 10%. The call identifies ₹490 crore customs-duty gain in Titan Jewellery, ₹46 crore in CaratLane and ₹671 crore Damas deferred-consideration liability fair-value gain. These are pre-tax/segment figures and cannot simply be subtracted from PAT without tax and attribution adjustments. Management describes domestic jewellery EBIT margin 11.1% excluding duty gains, or 11.7% also normalizing the 60 bp MTM reversal; this is a segment metric and differs from consolidated operating margin.",
+    "FY26 annual CFO was ₹5,590 crore and free cash flow ₹4,713 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹27,638 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 20.50% is an older-period return measure, not a freshly recomputed quarterly return."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Brand and customer acquisition remain the durable engine",
+      "evidence": "Tanishq/Mia/Zoya combine trust, assortment, exchange and distribution. Management says buyer growth, not relying on gold-price inflation, is its priority as the gold price tailwind moderates.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Normalized margin remains disciplined",
+      "evidence": "Despite a favorable studded mix and very strong reported profit, management retained around 11% jewellery margin guidance. Q1 normalized domestic jewellery margin was 10.9%; Q2 11.7% after additional MTM normalization is an improvement, not evidence for a new permanent high-margin regime.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Adjacent franchises add growth with reinvestment",
+      "evidence": "Watches premiumization and CaratLane expansion broaden the franchise. CaratLane’s Q2 ex-duty EBIT margin 6.5% compares with 10.2% in the base period as branding, talent and promotions were stepped up.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Damas creates international optionality and measurement risk",
+      "evidence": "The ₹671 crore reduction in a future acquisition payment liability is positive accounting income, but reflects revised expected performance/payment assumptions. It is not cash operating profit and can move in either direction every quarter.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Jewellery demand versus gold price",
+      "content": "Rupee sales combine buyer counts, ticket sizes, purity and gold prices. Lower-carat and lightweight collections are long-term accessibility tools rather than a short-term price trade."
+    },
+    {
+      "heading": "Competition",
+      "content": "Management expects competitive intensity to persist. Studded-mix improvement and organized share gains must cover advertising and promotion, not merely lift gross margin mechanically."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Jewellery consumption / buyer cycle",
+      "stage": "HEALTHY GROWTH",
+      "evidence": "Management reports healthy core jewellery and studded demand, but gold-price volatility caused temporary festive softness."
+    },
+    {
+      "name": "Premiumization / product mix",
+      "stage": "MIX UPGRADE",
+      "evidence": "Studded demand and lower-carat assortment support accessibility and value addition."
+    },
+    {
+      "name": "Margin cycle",
+      "stage": "NORMALIZED",
+      "evidence": "Management anchors jewellery EBIT around 11%; accounting and customs gains require separation."
+    },
+    {
+      "name": "International expansion cycle",
+      "stage": "RAMPING",
+      "evidence": "Damas is being integrated in a difficult Middle East environment."
+    },
+    {
+      "name": "Valuation cycle",
+      "stage": "STRETCHED",
+      "evidence": "Snapshot P/E 62.4x even before removing nonrecurring earnings."
+    }
+  ],
+  "valuation": {
+    "method": "Sector-appropriate normalized earnings / enterprise value analysis",
+    "assessment": "Use normalized attributable earnings, with segment/SOTP cross-checks for jewellery, watches and CaratLane. Reported trailing P/E 62.4x benefits from unusual profit; a normalized earnings multiple would be higher at the same price. A precise target is withheld until taxes, minority interests and Damas/duty effects are bridged.",
+    "assumptions": [
+      "The ₹536 crore duty gains and ₹671 crore liability gain are not all equivalent to after-tax shareholder earnings.",
+      "Domestic jewellery EBIT margin remains anchored around 11%, not Q2 reported consolidated OPM 14%.",
+      "Damas liability remeasurement can reverse; acquisition economics require a cash-flow assessment."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Buyer growth and studded mix offset moderating gold-price inflation.",
+      "Jewellery earns around 11% EBIT while watches and CaratLane create recurring profit growth.",
+      "Damas operations recover without repeated capital commitments or balance-sheet write-downs."
+    ],
+    "base": [
+      "Revenue compounds through stores, buyer acquisition and assortment; margin guidance stays around 11%.",
+      "Some of Q2 reported PAT growth reverses when one-off gains do not repeat.",
+      "Brand and talent investment delay CaratLane margin progression."
+    ],
+    "bear": [
+      "Lower gold inflation reveals weak underlying buyer growth.",
+      "Competition forces more promotions and pushes normalized jewellery EBIT below the stated anchor.",
+      "Damas weakens and contingent-liability accounting gains obscure poor acquisition returns."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Earnings-quality trap",
+      "detail": "Reported PAT includes large gains outside normal merchandise operating economics.",
+      "monitor": "Quarterly bridge from reported to normalized attributable PAT."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Competitive intensity",
+      "detail": "Management cautions that competition may continue increasing.",
+      "monitor": "Buyer growth, ad spend and normalized jewellery EBIT."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Damas and international allocation",
+      "detail": "A liability remeasurement is not a successful operating turnaround.",
+      "monitor": "Cash operating results, investment carrying value and recurring capital needs."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Premium valuation",
+      "detail": "A high earnings multiple leaves limited room for a growth or quality disappointment.",
+      "monitor": "Normalized EPS growth relative to valuation."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Festive/wedding buyer-growth evidence",
+      "timeline": "Q3 FY27",
+      "evidence": "November 5 call precedes final festive sales outcome."
+    },
+    {
+      "event": "Normalized jewellery margin confirmation",
+      "timeline": "H2 FY27",
+      "evidence": "Management retained around 11% anchor."
+    },
+    {
+      "event": "CaratLane reinvestment converts to margin",
+      "timeline": "FY27–FY28",
+      "evidence": "Long-term margin progression remains management ambition; quarter-to-quarter volatility expected."
+    },
+    {
+      "event": "Damas operating recovery",
+      "timeline": "Next several quarters",
+      "evidence": "Requires improvement in regional conditions and operating economics."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Normalized jewellery EBIT stays below 10% for two quarters",
+      "deadline": "H2 FY27",
+      "action": "Reassess brand economics and margin assumptions."
+    },
+    {
+      "condition": "Sales growth remains price-led while buyer growth weakens",
+      "deadline": "Next two calls",
+      "action": "Reduce confidence in volume-driven compounding."
+    },
+    {
+      "condition": "Damas requires an impairment or persistent cash support",
+      "deadline": "Each quarterly disclosure",
+      "action": "Revisit acquisition value separately from contingent-liability income."
+    }
+  ],
+  "quality_assessment": {
+    "business": "Tanishq/Mia/Zoya combine trust, assortment, exchange and distribution. Management says buyer growth, not relying on gold-price inflation, is its priority as the gold price tailwind moderates.",
+    "management": "Management explicitly separates customs-duty and Damas remeasurement items and retains its roughly 11% domestic jewellery margin stance. Disclosure clarity supports analysis, while the underlying acquisition and investment returns remain separate execution tests.",
+    "capital_allocation": "FY26 annual CFO was ₹5,590 crore and free cash flow ₹4,713 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹27,638 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 20.50% is an older-period return measure, not a freshly recomputed quarterly return.",
+    "governance": "Damas contingent-liability valuation is a material accounting judgment that can reverse. Review assumptions, sensitivity and the after-tax attributable bridge rather than interpreting the gain as a governance certificate or operating cash receipt.",
+    "limitations": "Qualitative assessment; no unsupported mechanical quality score or revised master-index rating is assigned."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-11-05",
+    "coverage_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "confidence": "medium",
+    "sentiment": "neutral",
+    "sentiment_basis": "Strong franchise momentum is offset by large accounting/customs gains and unchanged normalized margin guidance.",
+    "summary": {
+      "result": "PAT ₹2,393 crore includes substantial nonrecurring/customs effects.",
+      "driver": "Studded demand, brand execution and non-jewellery growth support operations.",
+      "forward": "Domestic jewellery margin remains anchored around 11% for FY27.",
+      "risk": "Competition, gold-price volatility and Damas obscure recurring profit."
+    },
+    "story_tension": "Can underlying buyer growth and normalized earnings justify the premium when duty and Damas accounting gains stop repeating?",
+    "operating_kpis": [
+      {
+        "metric": "Domestic jewellery EBIT excluding duty",
+        "value": "11.1%",
+        "note": "11.7% also normalizing approximately 60 bp MTM reversal."
+      },
+      {
+        "metric": "Duty gains: jewellery plus CaratLane",
+        "value": "₹536 crore",
+        "note": "₹490 crore plus ₹46 crore; segment/pre-tax nature matters."
+      },
+      {
+        "metric": "Damas liability fair-value gain",
+        "value": "₹671 crore",
+        "note": "Reassessment of future payment; not operating cash earnings."
+      },
+      {
+        "metric": "CaratLane ex-duty EBIT margin",
+        "value": "6.5%",
+        "note": "10.2% in prior-year quarter; investment/promotions increased."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [],
+      "dropped_guidance": [],
+      "new_risks": [
+        "New ₹671 crore Damas contingent-liability remeasurement introduces quarterly profit volatility."
+      ],
+      "resolved_risks": [
+        "Q1 MTM gains partly reversed as management had cautioned."
+      ]
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "Normalized domestic jewellery EBIT",
+        "direction": "firmer",
+        "from": "10.9% Q1 actual; around 11% guidance",
+        "to": "11.7% Q2 after duty/MTM normalization; around 11% guidance unchanged",
+        "detail": "Actual improvement should not be mislabeled a guidance upgrade."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "Jewellery margin centered around 11%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Retained in both Q1 and Q2 calls; full-year test open."
+      },
+      {
+        "promise": "Q1 inventory MTM gains likely reverse",
+        "window": "Following quarters",
+        "status": "KEPT",
+        "evidence": "Q2 management identifies about 60 bp reversal."
+      },
+      {
+        "promise": "CaratLane progresses toward double-digit EBIT over time",
+        "window": "Medium term",
+        "status": "PENDING",
+        "evidence": "Q2 reinvestment drives 6.5% ex-duty margin; no fixed completion date."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Profit acceleration is partly nonrecurring",
+        "status": "ALIVE",
+        "evidence": "Duty and Damas gains are large relative to reported PAT."
+      },
+      {
+        "thesis": "Jewellery competition structurally consumes margin gains",
+        "status": "ALIVE",
+        "evidence": "Management retains 11% anchor and warns competition continues."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Ashok Sonthalia",
+        "text": "Growth remains a priority.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf"
+      },
+      {
+        "speaker": "Ashok Sonthalia",
+        "text": "we still, Mihir, would like to anchor our margin target at around 11%.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Current official call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf"
+      }
+    ],
+    "limitations": [
+      "No tax-adjusted or attributable PAT normalization is asserted without a complete reconciliation.",
+      "No silence claim is made from selective historical coverage.",
+      "No multi-quarter silence allegation is made without a documented frequency test."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Local September 2026 quarterly financial data",
+      "url": "data/TITAN-financials.json"
+    },
+    {
+      "title": "Local annual cash flow",
+      "url": "data/TITAN-financials.json"
+    },
+    {
+      "title": "Company Q2 FY27 earnings-call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "No tax-adjusted or attributable PAT normalization is asserted without a complete reconciliation.",
+    "No silence claim is made from selective historical coverage.",
+    "A full after-tax/attributable normalized earnings and Damas cash-value bridge is still unavailable."
+  ],
+  "data_status": {
+    "quarter": "2026-09-30",
+    "view": "consolidated",
+    "financial_source": "local reported tables",
+    "reconciliation": "See results analysis for definition/rounding differences",
+    "prior_master_verdict_mtime": "2026-09-25T16:01:40.161577463+00:00",
+    "prior_master_verdict_is_current": false
+  },
+  "claim_audit": [
+    {
+      "claim": "September 2026 local consolidated revenue ₹20,614.00 crore, operating profit ₹2,983.00 crore and PAT ₹2,393.00 crore.",
+      "claim_type": "local statement / arithmetic",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local quarterly financial table",
+      "source_url": "data/TITAN-financials.json",
+      "locator": "ticker=TITAN; period_end=2026-09-30; view=consolidated",
+      "excerpt": "",
+      "assessment": "Re-read the current parquet and compared the report inputs. This verifies the report against its stated local data source; company-adjusted and attributable measures require the separate call/filing bridge below."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹5,590 crore and dataset free cash flow ₹4,713 crore.",
+      "claim_type": "local annual statement",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local annual cash-flow table",
+      "source_url": "data/TITAN-financials.json",
+      "locator": "ticker=TITAN; period_end=2026-03-31",
+      "excerpt": "",
+      "assessment": "Annual cash flow was checked against the current cash-flow table. This is FY ended March 2026, not September-quarter cash flow; investing-flow and capex definitions must not be silently interchanged."
+    },
+    {
+      "claim": "September 2026 dataset borrowings ₹27,638 crore.",
+      "claim_type": "local balance sheet",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local balance-sheet table",
+      "source_url": "data/TITAN-financials.json",
+      "locator": "ticker=TITAN; period_end=2026-09-30",
+      "excerpt": "",
+      "assessment": "The generic financial-table funding field was re-read. It is not automatically equivalent to industrial net debt or to debt excluding leases; explicit company-specific bridges are recorded where available."
+    },
+    {
+      "claim": "Customs-duty gains were₹490cr in Titan Jewellery and₹46cr in CaratLane.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 104–108",
+      "excerpt": "",
+      "assessment": "They total₹536cr but are pre-tax business-level gains; subtracting this total directly from consolidated PAT would be wrong."
+    },
+    {
+      "claim": "Titan Jewellery EBIT margin was11.1% after customs-duty normalization.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 106–110",
+      "excerpt": "",
+      "assessment": "This is a segment operating metric, not consolidated operating margin or an attributable earnings margin."
+    },
+    {
+      "claim": "Normalizing the quarter’s MTM reversal as well gives11.7%.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 360–364",
+      "excerpt": "",
+      "assessment": "Management also says similar MTM swings will recur. A recurring volatility item should not be removed selectively only in weak quarters."
+    },
+    {
+      "claim": "Damas deferred-consideration liability remeasurement created₹671cr gain.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 117–121",
+      "excerpt": "",
+      "assessment": "The liability is remeasured each period under Ind AS109; this is not operating jewellery demand or a cash receipt."
+    },
+    {
+      "claim": "The Damas liability may move in either direction with its recovery trajectory.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 124–128",
+      "excerpt": "",
+      "assessment": "The recognized gain is not evidence that the acquired business’s cash-generating ability improved."
+    },
+    {
+      "claim": "Domestic jewellery margin target remains about11% for FY27.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 384–388",
+      "excerpt": "",
+      "assessment": "Management declined to raise the margin stance despite favorable studded mix; the analyst should not upgrade the target to11.7% simply from an adjusted quarterly result."
+    },
+    {
+      "claim": "CaratLane is investing in brand/talent and promotions.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 175–179",
+      "excerpt": "",
+      "assessment": "Lower quarter margin has a disclosed spending component. The future8→9% ambition is a multi-year aspiration, not an already achieved margin."
+    },
+    {
+      "claim": "Natural diamonds are seeing more customer interest in management commentary.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 474–478",
+      "excerpt": "",
+      "assessment": "This is qualitative company customer observation, not independently measured industry market share."
+    },
+    {
+      "claim": "A premium valuation needs recurring earnings rather than the reported PAT spike.",
+      "claim_type": "management disclosure",
+      "status": "INFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TITAN_11112026143915_SEearningcalltranscriptsQ2.pdf",
+      "locator": "Text lines 122–126",
+      "excerpt": "",
+      "assessment": "The interpretation follows from the disclosed gains. A tax and ownership bridge is still required before a precise normalized EPS estimate."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "Gold-price inflation, grams sold, buyer additions, studded mix and making charges are distinct drivers. The same rupee revenue can correspond to different customer economics when gold prices move. Customer budgets and exchange programs can protect participation, while brand and assortment—not the absolute gold price—are the durable sources of value addition.",
+      "Titan’s hedged operating model differs from that of a smaller jeweller carrying unhedged inventory. Customs-duty gains and competitive discounting are linked in management’s explanation: the industry can share inventory gains through promotions and lower realizations. It is incomplete to remove the gain without also understanding the contemporaneous selling environment."
+    ],
+    "earnings_quality": [
+      "The quarter contains at least₹536cr of jewellery/CaratLane customs-duty gains plus₹671cr of Damas deferred-consideration remeasurement. These figures total₹1,207cr on disclosed pre-tax scopes; they do not yield a justified₹1,207cr subtraction from PAT because taxes, consolidation and attribution differ. A genuine normalized EPS bridge needs each item’s after-tax, attributable effect.",
+      "The Damas gain is economically counterintuitive: a lower expected contingent payment may coincide with weaker acquired-business expectations. It improves accounting profit while potentially indicating a harder operating recovery. Quarterly remeasurement can reverse, so it deserves a separate sensitivity rather than a growth multiple."
+    ],
+    "capital_allocation": [
+      "The domestic franchise, CaratLane brand-building and Damas turnaround need separate return hurdles. Growth spending that temporarily depresses margin can create value, but a low initial margin cannot be justified indefinitely by brand language.",
+      "Gross consolidated funding includes operating gold and lease structures as well as conventional borrowing. Valuation should avoid treating every funding item like unsecured corporate debt while also avoiding an assumption that inventory finance is economically free. Exact debt/inventory/cash definitions remain necessary."
+    ],
+    "valuation_logic": [
+      "Use normalized attributable earnings for domestic jewellery and other businesses, with an explicit Damas recovery and contingent-liability bridge. Do not project a group14% local OPM as the domestic jewellery operating margin or use11.7% adjusted segment margin as a new full-year target.",
+      "Reverse valuation should ask how long buyer-led growth and returns must persist to justify the dated62.4x P/E snapshot. The bull case requires high-quality customer growth and successful international allocation; the base case retains roughly11% domestic jewellery margin guidance; the bear case combines a margin/volume miss with valuation compression."
+    ],
+    "peer_positioning": [
+      "Kalyan Jewellers and Senco are more direct jewellery comparisons, but store ownership/franchise mix, geography, product mix and financing differ. CaratLane’s digital/distribution model and Titan’s watches/eyewear/international assets make a headline jewellery multiple imperfect. Compare business-level margins and capital turns on matching perimeters."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Domestic jewellery margin",
+        "latest_value": "11.1% ex-duty;11.7% also ex-MTM; target~11%",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Prevents adjustment-driven overstatement",
+        "next_test": "Track reported, duty-adjusted and MTM-consistent series."
+      },
+      {
+        "metric": "Damas remeasurement",
+        "latest_value": "₹671cr gain",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Separates accounting gain from operating recovery",
+        "next_test": "Review liability, cash outlook and reversal each quarter."
+      },
+      {
+        "metric": "Customer/buyer growth",
+        "latest_value": "Qualitative management priority",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Tests demand quality beyond gold inflation",
+        "next_test": "Request buyers, same-store growth, grams and mix."
+      },
+      {
+        "metric": "CaratLane investment return",
+        "latest_value": "Brand/talent/promotion spend elevated",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Spending should translate to durable customers",
+        "next_test": "Monitor incremental sales, mature-store margins and capital turns."
+      }
+    ],
+    "unanswered_questions": [
+      "What is the after-tax attributable EPS effect of each customs-duty and Damas item?",
+      "Which Damas assumptions changed and what would reverse the remeasurement gain?",
+      "How much domestic sales growth is from buyers, units, gold price and product mix respectively?"
+    ]
+  },
+  "audit_summary": {
+    "scope": "Material company claims, financial definitions, management guidance and stated capital-allocation milestones were reviewed against retained primary transcripts and available official filings. Arithmetic was independently recalculated from current local tables. This is a research evidence audit, not a statutory audit or complete forensic review.",
+    "overall_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Explicitly separated₹1,207cr aggregate pre-tax items from any justified normalized-PAT adjustment."
+    ],
+    "unverified": [
+      "No tax-adjusted or attributable PAT normalization is asserted without a complete reconciliation.",
+      "No silence claim is made from selective historical coverage.",
+      "A full after-tax/attributable normalized earnings and Damas cash-value bridge is still unavailable."
+    ],
+    "claims_checked": 12,
+    "as_of": "2026-11-13"
+  }
+}

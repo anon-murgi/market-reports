@@ -1,0 +1,493 @@
+{
+  "archetype": "bank",
+  "executive_summary": "ICICI Bank’s September result supports strong franchise quality, but spectacular balance-sheet growth is partly inflated by FCNR-linked flows. The relevant evidence is resilient core operating profit and low net problem loans alongside a softer margin; the premium book multiple needs sustained risk-adjusted returns rather than the headline 30% loan-growth number.",
+  "research_stance": "Quality franchise at a meaningful valuation premium; prefer disciplined return expectations and explicit funding normalisation.",
+  "thesis_drivers": [
+    {
+      "title": "Core profit growth supports franchise quality",
+      "evidence": "Standalone core operating profit grew 21.8% YoY, or 25% excluding subsidiary dividends. Fees rose 20.1% versus opex growth of 8.5%, but the Q&A identifies FCNR leverage processing fees and broadly offsetting wholesale-resource costs; do not extrapolate the entire comparison as clean recurring operating leverage.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Growth must be stripped of FCNR mechanics",
+      "evidence": "Reported loan growth of 30% and deposit growth of 27.1% compare with 24% and 17%, respectively, excluding FCNR-linked items. NIM fell to 4.18% from 4.36%, or from 4.28% after excluding Q1 tax-refund interest. Underlying returns matter more than the headline balance-sheet growth rate.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Asset quality and capital provide capacity",
+      "evidence": "NNPA of 0.30%, contingency provisions of ₹13,100 crore and CET1 of 16.01% provide substantial buffers. Low current losses do not remove seasoning and ECL risks as corporate and business-banking portfolios expand.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Premium banking franchise lens",
+      "content": "An integrated retail, SME and corporate bank can create value through wallet share and primary relationships. Compare risk-adjusted PBT, funding quality and returns; raw loan growth is insufficient."
+    },
+    {
+      "heading": "FCNR activity changes both growth and spread ratios",
+      "content": "The special deposit programme adds matched balance-sheet activity at lower spreads. Its NIM dilution does not automatically mean weaker absolute earnings, but the associated growth should not be valued like higher-return retail lending."
+    },
+    {
+      "heading": "Macro read-through",
+      "content": "Tighter policy can benefit floating loan yields but raises liability costs and borrower stress. Treasury and FX movements also affect consolidated accounts and must be distinguished from the bank’s core earnings."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Credit / Asset-Quality Cycle",
+      "stage": "LATE-BENIGN",
+      "evidence": "NNPA fell to 0.30% from 0.35% in Q1 and contingency provisions were ₹13,100 crore. These are strong current buffers, while fast-growing corporate and business-banking vintages still need to season."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "PREMIUM",
+      "evidence": "The snapshot P/B of 2.93 x prices a quality premium. Its durability depends on sustainable RoE and risk-adjusted returns rather than headline loan growth."
+    },
+    {
+      "name": "NIM / Spread Cycle",
+      "stage": "COMPRESSING",
+      "evidence": "NIM was 4.18%, versus Q1 core NIM of 4.28% excluding tax-refund interest. Management expects the full FCNR dilution in Q3 before subsequent improvement, conditional on policy rates."
+    },
+    {
+      "name": "Deposit / Liability Cycle",
+      "stage": "COMFORTABLE",
+      "evidence": "Reported deposits grew 27.1%, or 17% excluding FCNR-linked items. The matched programme expands funding and assets, but changes the spread mix."
+    },
+    {
+      "name": "Credit-Growth Cycle",
+      "stage": "ACCELERATION",
+      "evidence": "Reported loans grew 30%, while growth excluding FCNR-linked items was 24%. Both are strong, but the distinction changes how growth and capital productivity should be assessed."
+    },
+    {
+      "name": "Regulatory / ECL Transition Cycle",
+      "stage": "PRE-TRANSITION",
+      "evidence": "CET1 of 16.01% and contingency provisions of ₹13,100 crore provide capacity. The final ECL impact and future credit losses still require bank-specific assessment."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and sustainable-return constraints; point target withheld",
+    "assessment": "Snapshot P/B 2.93× and P/E 19.3× price franchise quality. The appropriate premium depends on durable RoE and credit costs; do not use consolidated book plus full subsidiary values without removing double counting.",
+    "assumptions": [
+      "No forward book growth, probability or target price implied.",
+      "A true SOTP must separate bank adjusted book and listed/unlisted subsidiaries; not completed with available inputs.",
+      "The previous arbitrary bear/base/bull target-price sensitivities have been removed. The deeper valuation discussion states the economic return conditions and analyst assumptions instead."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Core operating profit compounds at healthy double-digit rates with disciplined expenses.",
+      "FCNR dilution peaks and NIM recovers while funding remains stable.",
+      "Credit losses stay contained and subsidiaries add value without diluting bank returns."
+    ],
+    "base": [
+      "Growth normalises below the 30% headline as FCNR base effects fade.",
+      "NIM is pressured in Q3 before stabilisation; fees and cost discipline help support PBT.",
+      "A quality premium remains, but stock returns mainly follow earnings and book growth."
+    ],
+    "bear": [
+      "Rapid corporate/business banking growth exposes seasoning risk.",
+      "Funding costs and ECL requirements overrun margin and provision assumptions.",
+      "A multiple derating compresses returns despite satisfactory business growth."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Headline growth overstates underlying expansion",
+      "detail": "FCNR-linked growth inflates reported loans and deposits.",
+      "monitor": "Underlying growth and spreads after excluding matched programme balances."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Margin pressure is not finished",
+      "detail": "Management expects full FCNR dilution in Q3 before margin improvement.",
+      "monitor": "Core NIM excluding tax refund interest and programme effects."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Low credit losses and fast growth",
+      "detail": "Very low current net losses can mask future seasoning of corporate and SME portfolios.",
+      "monitor": "Gross slippages, exposures rated BB and below, credit cost and contingency provisions."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Premium valuation",
+      "detail": "Near 3× book requires durable high returns.",
+      "monitor": "Sustainable RoE and valuation against quality peers."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Margin inflection after full FCNR dilution",
+      "timeline": "Q3–Q4 FY27",
+      "evidence": "Call anticipates full impact in Q3 and improvement thereafter, conditional on policy rates."
+    },
+    {
+      "event": "Fee and cost operating leverage",
+      "timeline": "Next two quarters",
+      "evidence": "Q2 fee income grew 20.1% YoY, versus operating-expense growth of 8.5%."
+    },
+    {
+      "event": "Prudent credit growth and ECL transition",
+      "timeline": "FY27–FY28",
+      "evidence": "Strong capital and contingency buffers provide capacity."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Core operating profit growth sustains below 10% while credit growth remains high.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "NNPA rises above 0.6% or credit slippages accelerate for two quarters without clear containment.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "NIM does not stabilise after the FCNR base effect and return on capital weakens materially.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "Broad franchise and fee income provide analytical reasons for a premium; current evidence is stronger than raw growth figures alone.",
+    "management": "Clear separation of FCNR growth and tax-refund interest is valuable; declining to give a growth target is consistent with risk-adjusted growth discipline.",
+    "capital_allocation": "CET1 and provisions support lending capacity, but capital use must preserve risk returns.",
+    "governance": "Values and control statements are management assertions; no full governance audit completed.",
+    "limitations": "Local consolidated PAT ₹17,389 crore differs from call consolidated PAT ₹16,333 crore; attribution/definition reconciliation remains pending. Call standalone PAT ₹14,843 crore and ROE 16.6% use another perimeter. Management’s current resilience and policy statements do not certify through-cycle losses."
+  },
+  "company_name": "ICICI Bank Limited",
+  "ticker": "ICICIBANK",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹17,389.0 crore versus ₹14,318.0 crore a year ago and ₹16,276.0 crore in June 2026. This represents growth of +21.4% YoY and +6.8% QoQ.",
+    "Banks are analysed on NII/NIM, deposits, loan growth, provisions and capital. The source table has no bank sales or industrial OPM; these fields are intentionally left unreported. Operating ratios in the call are standalone, while consolidated local profits include subsidiaries unless the table says standalone.",
+    "Standalone core operating profit grew 21.8% YoY, or 25% excluding subsidiary dividends. Fees rose 20.1% versus opex growth of 8.5%, but the Q&A identifies FCNR leverage processing fees and broadly offsetting wholesale-resource costs; do not extrapolate the entire comparison as clean recurring operating leverage.",
+    "The local snapshot is dated 2026-11-13; cleaned-price technicals are dated 2026-11-12. The financials were read from the existing local lake. No replacement result-PDF figures or old overlay targets were silently substituted, and no post-refresh verification is claimed.",
+    "The analyst-call consolidated PAT is ₹16,333 crore, not the local ₹17,389 crore. This ₹1,056 crore gap needs an explicit group-profit/owner-attribution bridge. The separate standalone PAT of ₹14,843 crore does not by itself resolve the consolidated comparison."
+  ],
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf"
+    },
+    {
+      "title": "Prior quarter transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23072026185521_NSEBSE.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": "2026-10-17",
+    "coverage_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "confidence": "medium",
+    "sentiment": "constructive",
+    "sentiment_basis": "Core profitability and asset quality are strong, but margin and growth need FCNR normalisation.",
+    "summary": {
+      "result": "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹17,389.0 crore versus ₹14,318.0 crore a year ago and ₹16,276.0 crore in June 2026. This represents growth of +21.4% YoY and +6.8% QoQ.",
+      "driver": "Fees, operating leverage and broad-based lending offset margin moderation.",
+      "forward": "Management expects full FCNR margin impact in Q3 then improvement; no guidance for a specific loan growth rate.",
+      "risk": "Funding mix dilution and future credit normalisation."
+    },
+    "story_tension": "Can ICICI protect premium returns as fast balance-sheet growth meets higher funding costs and normalised credit losses?",
+    "operating_kpis": [
+      {
+        "metric": "NIM",
+        "value": "4.18%; Q1 core 4.28% ex-tax refund",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "NNPA",
+        "value": "0.30%; Q1: 0.35%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "CET1",
+        "value": "16.01%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "Loans/deposits growth(ex FCNR)",
+        "value": "24% / 17% YoY",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "Standalone RoE",
+        "value": "16.6%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        {
+          "title": "Margin path more explicit",
+          "detail": "Full FCNR dilution expected in Q3, improvement thereafter based on current policy rates.",
+          "severity": "medium"
+        }
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        {
+          "title": "Growth comparability",
+          "detail": "FCNR matched balances materially inflate year-on-year growth rates.",
+          "severity": "medium"
+        }
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "Margin outlook",
+        "direction": "hedged",
+        "from": "Q1 range-bound FY27 NIM with marginal FCNR dilution",
+        "to": "Q2 NIM 4.18%, with full FCNR impact still to come in Q3",
+        "detail": "More explicit near-term pressure; not a numerical full-year guidance cut."
+      }
+    ],
+    "promise_ledger": [],
+    "bear_cases": [
+      {
+        "thesis": "Headline growth overstates underlying expansion",
+        "status": "ALIVE",
+        "evidence": "FCNR-linked growth inflates reported loans and deposits."
+      },
+      {
+        "thesis": "Margin pressure is not finished",
+        "status": "ALIVE",
+        "evidence": "Management expects full FCNR dilution in Q3 before margin improvement."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Sandeep Batra, Executive Director",
+        "text": "We really do not have any particular target in terms of loan or deposit growth per se.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf"
+      },
+      {
+        "title": "Prior quarter transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23072026185521_NSEBSE.pdf"
+      }
+    ],
+    "limitations": [
+      "Local consolidated PAT and standalone bank KPIs require perimeter-aware comparison.",
+      "No audited multi-quarter silence frequency table."
+    ]
+  },
+  "remaining_gaps": [
+    "Local consolidated PAT and standalone bank KPIs require perimeter-aware comparison.",
+    "No audited multi-quarter silence frequency table.",
+    "No formal DCF, fair-value certification or quantitative CCS promotion performed for this dated batch.",
+    "Consolidated local-versus-call PAT needs a formal owners/NCI and accounting-definition bridge.",
+    "Final ECL effects and normalized through-cycle credit charges are not independently quantified."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Added the previously omitted direct consolidated PAT comparison and marked the ₹1,056 crore difference unresolved.",
+      "Qualified operating-leverage interpretation for FCNR processing fees and corresponding wholesale funding expenses.",
+      "Removed unquantified policies from the graded promise ledger."
+    ],
+    "unverified": [
+      "Consolidated local-versus-call PAT needs a formal owners/NCI and accounting-definition bridge.",
+      "Final ECL effects and normalized through-cycle credit charges are not independently quantified."
+    ],
+    "claim_count": 12,
+    "status_counts": {
+      "CORRECTED": 2,
+      "SUPPORTED": 9,
+      "UNRESOLVED": 1
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "Local consolidated PAT is ₹17,389 crore; the call also reports consolidated PAT ₹16,333 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "UNRESOLVED",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/ICICIBANK_inputs.json",
+      "locator": "pnl_quarterly: ICICIBANK, specified reporting period",
+      "excerpt": "",
+      "assessment": "The difference is ₹1,056 crore, or 6.5% of the call number. It may involve attribution or other reporting definitions, but no cause is certified without a complete bridge. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "The analyst-call consolidated PAT figure is ₹16,333 crore.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 28; retained text line 1268",
+      "excerpt": "",
+      "assessment": "This direct consolidated disclosure was missed in the prior report, which only contrasted standalone PAT."
+    },
+    {
+      "claim": "Standalone PAT and ROE were ₹14,843 crore and 16.6%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 3; retained text line 116",
+      "excerpt": "",
+      "assessment": "Standalone returns are distinct from the local consolidated profit and dated consolidated snapshot ROE."
+    },
+    {
+      "claim": "Core operating profit grew 21.8%, or 25% excluding subsidiary dividends.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 3; retained text line 110",
+      "excerpt": "",
+      "assessment": "This demonstrates strength before provision changes; excluding subsidiary dividends narrows but does not fully normalize all fee/cost items."
+    },
+    {
+      "claim": "Fee growth of 20.1% includes some FCNR leverage processing fees.",
+      "claim_type": "Management-reported",
+      "status": "CORRECTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 39; retained text line 1680",
+      "excerpt": "",
+      "assessment": "Management says corresponding wholesale funding costs broadly offset this benefit in opex. The fee/opex growth comparison is therefore not a fully recurring clean operating-leverage signal."
+    },
+    {
+      "claim": "Reported loans/deposits grew 30%/27.1%; ex-FCNR growth was 24%/17%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 6; retained text line 263",
+      "excerpt": "",
+      "assessment": "The underlying franchise still grew strongly, but the FCNR programme inflates the headline comparison."
+    },
+    {
+      "claim": "Q2 NIM was 4.18%; Q1 was 4.28% excluding tax-refund interest.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 3; retained text line 107",
+      "excerpt": "",
+      "assessment": "The 10 bp core decline differs from the 18 bp decline versus the unadjusted 4.36% Q1 number."
+    },
+    {
+      "claim": "Management expects full FCNR dilution in Q3 and potential recovery from Q4.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 34; retained text line 1514",
+      "excerpt": "",
+      "assessment": "This is a conditional path under current rate assumptions, not a guaranteed fixed quarterly margin floor."
+    },
+    {
+      "claim": "NNPA was 0.30%, CET1 16.01%, and contingency provisions ₹13,100 crore.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 4; retained text line 171",
+      "excerpt": "",
+      "assessment": "Current resilience is supported, but low present losses do not measure the future risk of rapid loan growth."
+    },
+    {
+      "claim": "Gross NPA additions were ₹4,833 crore; recoveries/upgrades ₹3,620 crore.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 4; retained text line 159",
+      "excerpt": "",
+      "assessment": "These are gross flows, not the same as net NPA additions or the P&L provision charge."
+    },
+    {
+      "claim": "Business-banking growth was 33.8% and corporate growth 30.6%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 3; retained text line 145",
+      "excerpt": "",
+      "assessment": "New-vintage seasoning matters; high growth in these segments is not automatically equivalent to lower-risk growth."
+    },
+    {
+      "claim": "The bank declined to provide a fixed loan/deposit growth target.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/ICICI2022_23102026175603_NSEBSE23102026.pdf",
+      "locator": "PDF page 6; retained text line 268",
+      "excerpt": "",
+      "assessment": "A risk-calibrated operating approach is not a specific numerical promise for a graded delivery ledger."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The bank’s opportunity is to deepen primary relationships across retail, business banking and corporate ecosystems while optimizing sustainable pre-tax profit. FCNR funding provides medium-term balance-sheet capacity, but the associated matched overseas leverage is not economically identical to the domestic retail book.",
+      "Excluding FCNR, loans still grew 24% and deposits 17%; that is a strong underlying outcome. The important question is what return the incremental balance sheet earns after funding, operating cost, capital use and credit losses, rather than whether the reported loan balance grew 30%."
+    ],
+    "earnings_quality": [
+      "Core operating profit growth of 21.8%, or 25% excluding subsidiary dividends, supports the franchise case. However, the analyst Q&A says FCNR leverage generated some processing fees, while wholesale funding costs rose in opex and broadly offset them. A straight comparison of fees +20.1% versus opex +8.5% overstates how cleanly all of this translates into repeatable operating leverage.",
+      "The local consolidated PAT of ₹17,389 crore cannot yet be treated as reconciled to the call’s ₹16,333 crore group figure. Standalone PAT is a separate ₹14,843 crore. Retain all labels until total profit, owners’ attribution, subsidiary accounting and minority interests explain the ₹1,056 crore consolidated gap."
+    ],
+    "capital_allocation": [
+      "CET1 of 16.01%, contingency provisions of ₹13,100 crore and low NNPA of 0.30% provide capacity. They do not prove that the next loan vintages carry the same risk: business banking grew 33.8% and domestic corporate lending 30.6%, which need ongoing seasoning and concentration checks.",
+      "The NIM path reflects funding composition as well as pricing. A further Q3 moderation can occur as FCNR balances enter the full-period average balance sheet; management expects recovery from Q4 under current policy assumptions. Test PBT and risk-adjusted returns alongside NIM rather than maximizing the margin ratio in isolation."
+    ],
+    "valuation_logic": [
+      "The dated snapshot P/B is 2.93 x and ROE is 15.9%. A deliberately simplified perpetual-bank identity, P/B=(ROE −g)/(cost of equity −g), using analyst assumptions of 13% cost of equity and 6% long-run growth, would require a steady-state ROE of about 26.5% at that book multiple. This is a diagnostic of the earnings expectations in the price, not a fair value, forecast or calibrated discount rate. A changing growth phase, subsidiary values, adjusted book and surplus capital can materially alter the answer.",
+      "Applying this perpetual formula directly to ICICI’s consolidated book would be particularly incomplete because listed/unlisted subsidiaries and a multi-year growth phase can create value outside a one-stage bank-return model. The diagnostic highlights that a 2.93 x book premium requires more than mechanically capitalizing the current 15.9% consolidated snapshot ROE. A proper SOTP must avoid adding subsidiary values on top of consolidated earnings/book without eliminating double counting."
+    ],
+    "peer_positioning": [
+      "KVB is useful as a granular-loan profitability comparison but has different scale and concentration; Union/BOI offer much lower book multiples with different normalized returns. HDFC Bank and Axis Bank are closer large private-bank franchise comparisons. The decisive peer variables are sustainable ROE, deposit acquisition cost, risk-adjusted growth and subsidiary treatment, not raw credit growth or current NNPA alone."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Ex-FCNR loan / deposit growth",
+        "latest_value": "24% / 17% YoY",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Separates underlying franchise from programme mechanics.",
+        "next_test": "Track average balances and risk-adjusted PBT through Q4."
+      },
+      {
+        "metric": "NIM",
+        "latest_value": "4.18%; Q1 ex-tax-refund 4.28%",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Controls one-off and funding-mix comparability.",
+        "next_test": "Check Q3 full-period dilution and the conditional Q4 recovery."
+      },
+      {
+        "metric": "Core operating profit",
+        "latest_value": "+21.8%; +25% ex subsidiary dividends",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Tests pre-provision earnings, with fee/cost normalization still required.",
+        "next_test": "Request FCNR processing-fee and wholesale-cost reconciliation."
+      },
+      {
+        "metric": "Consolidated PAT definition gap",
+        "latest_value": "₹17,389 crore local vs ₹16,333 crore call",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Affects EPS, valuation and growth comparison.",
+        "next_test": "Obtain owner/NCI and accounting-perimeter bridge before a price target."
+      }
+    ],
+    "unanswered_questions": [
+      "What is the complete reconciliation from total group PAT to profit attributable to shareholders and to the local dataset?",
+      "How much of Q2 fee growth and opex came from FCNR processing and wholesale resource raising?",
+      "What return and risk weights does the marginal corporate/business-banking growth earn after normal credit costs?"
+    ]
+  }
+}

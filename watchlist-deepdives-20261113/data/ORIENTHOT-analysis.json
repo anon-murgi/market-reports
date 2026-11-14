@@ -1,0 +1,442 @@
+{
+  "company_name": "Oriental Hotels Limited",
+  "archetype": "hospitality_hotels",
+  "executive_summary": "Oriental Hotels is now a merger-linked special situation as well as a hotel operating investment. The earlier report omitted the proposed IHCL amalgamation. Operating improvement matters, but the exchange terms, IHCL share price, approvals and completion timetable are central to the equity case.",
+  "research_stance": "Merger-linked research case: evaluate exchange parity and approval/time risk; use hotel cash flows as a standalone fallback rather than treating a premium P/E in isolation.",
+  "results_analysis": [
+    "September 2026 consolidated sales were ₹117.75 crore, +6.6% YoY and +5.6% QoQ. PAT was ₹8.59 crore, +7.9% YoY and +62.1% QoQ. These percentage changes use the rounded local dataset, so small differences from company-exact growth percentages are expected.",
+    "Local operating profit was ₹27.12 crore and OPM 23.03%, compared with 23.82% a year earlier and 21.03% in June 2026. PAT margin was 7.30%. OPM is the dataset’s operating-profit/sales measure, not automatically management-adjusted EBITDA or a segment EBIT margin.",
+    "The prior PAT gap is now reconciled using the official statement: standalone PAT was ₹11.62 crore; consolidated PAT before associates and joint ventures was ₹11.77 crore; after associate loss of ₹0.49 crore and joint-venture loss of ₹2.69 crore, final consolidated profit was ₹8.59 crore. The press release rounds its operating-company PAT to ₹12 crore. This is not an unexplained minority-interest mismatch.",
+    "FY26 annual CFO was ₹128 crore and free cash flow ₹93 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹114 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 12.10% is an older-period return measure, not a freshly recomputed quarterly return. The generic ₹114 crore funding field approximately includes ₹34.30 crore of leases alongside ₹79.38 crore of conventional borrowings."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Proposed IHCL merger changes the shareholder payoff",
+      "evidence": "The approved proposal exchanges 25 IHCL shares for 117 OHL shares, subject to approvals. Returns depend on the acquirer share price and time to completion as well as hotel performance; the earlier hotel-only framing was incomplete.",
+      "source": "https://ir.ihcltata.com/news/ihcl-and-oriental-hotels-limited-announce-merger/"
+    },
+    {
+      "title": "Taj/IHCL association supports positioning",
+      "evidence": "The official release identifies seven hotels and three Taj-branded properties. Brand access and asset upgrades can support pricing, but the limited portfolio concentrates property and local-market risk.",
+      "source": "Local September 2026 financial tables and clearly labeled official results/corporate information; no earnings-call transcript verified."
+    },
+    {
+      "title": "Historical cash flow provides a funding base",
+      "evidence": "FY26 CFO ₹128 crore and FCF ₹93 crore exceeded annual PAT ₹68 crore. This is encouraging historical evidence; upgrades and renovation outlays must be deducted before assuming a distributable cash yield.",
+      "source": "Local September 2026 financial tables and clearly labeled official results/corporate information; no earnings-call transcript verified."
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Hotel economics",
+      "content": "Revenue equals available rooms, occupancy, room rate and ancillary spending. RevPAR growth is useful, but occupancy versus ADR and renovation closures determine how it reaches profit."
+    },
+    {
+      "heading": "Regional concentration and seasonality",
+      "content": "The seven-hotel portfolio is concentrated in South India, so property-level upgrades, corporate travel, leisure traffic and wedding calendars can create material quarterly variation."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Corporate-action / merger cycle",
+      "stage": "PROPOSED / APPROVALS PENDING",
+      "evidence": "The amalgamation proposal changes the equity payoff; completion remains conditional."
+    },
+    {
+      "name": "Room demand / RevPAR cycle",
+      "stage": "RECOVERY",
+      "evidence": "Official release cites 9% RevPAR growth; local revenue +6.6% YoY."
+    },
+    {
+      "name": "Asset upgrade / capacity cycle",
+      "stage": "UPGRADATION",
+      "evidence": "Company says asset upgrades improve positioning, but quantified payback is not disclosed."
+    },
+    {
+      "name": "Margin cycle",
+      "stage": "STABILIZING",
+      "evidence": "Local OPM 23.03% below 23.82% last year but above Q1."
+    },
+    {
+      "name": "Valuation cycle",
+      "stage": "STRETCHED",
+      "evidence": "Snapshot P/E 46x versus ROCE 12.1% requires stronger earnings conversion."
+    }
+  ],
+  "valuation": {
+    "method": "Conditional exchange-parity analysis plus standalone hotel/NAV fallback",
+    "assessment": "The proposed all-stock exchange makes IHCL price exposure and completion risk central. At matching 12 November 2026 clean closes, gross parity is ₹188.46 versus OHL ₹173.90. This is neither a cash offer nor risk-free arbitrage. Value the failed-deal case using hotel operating cash flow, investments and funding separately.",
+    "assumptions": [
+      "The proposed ratio of 25/117 is not a completed exchange.",
+      "Local 12 November closes were IHCL ₹882 and OHL ₹173.90. Gross parity assumes an unchanged IHCL price, successful completion and no costs.",
+      "Approval timing, fractional entitlements, dividends, corporate actions and hedging or financing costs can affect the realized payoff."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Approvals progress and the exchange completes on stated terms while IHCL value is sustained.",
+      "Hotel productivity and asset upgrades support the combined portfolio.",
+      "Transaction uncertainty narrows without disproportionate costs."
+    ],
+    "base": [
+      "The proposal remains conditional and OHL price tracks both IHCL and the time/approval discount.",
+      "Hotel cash generation supports the fallback case while upgrades consume capital.",
+      "No annualized arbitrage return is assumed without an evidence-based settlement date."
+    ],
+    "bear": [
+      "The proposal is delayed, repriced or fails; OHL reverts toward a standalone valuation.",
+      "IHCL share price falls, reducing exchange parity even if the merger completes.",
+      "Weak hotel productivity and reinvestment requirements reduce failed-deal value."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Approval, timetable and exchange-price risk",
+      "detail": "All-stock consideration exposes investors to IHCL price and statutory completion risk; proposed parity is not a cash floor.",
+      "monitor": "NCLT, exchange and shareholder milestones; scheme amendments; same-date exchange parity."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Valuation versus modest growth",
+      "detail": "A 46x snapshot multiple assumes more than mid-single-digit sales growth alone.",
+      "monitor": "Recurring EPS, RevPAR and free cash flow."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Property concentration",
+      "detail": "A seven-hotel footprint limits diversification.",
+      "monitor": "Hotel-level occupancy, closures and capital needs."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Disclosure coverage",
+      "detail": "No usable current earnings-call transcript was found.",
+      "monitor": "Official IR/exchange updates and operating KPI detail."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Scheme approvals and implementation",
+      "timeline": "Company target H2 FY2028; appointed date 1 April 2027",
+      "evidence": "Targets remain conditional; follow official orders and scheme changes."
+    },
+    {
+      "event": "Peak-season operating performance",
+      "timeline": "Q3/Q4 FY27",
+      "evidence": "Hotel seasonality can improve revenue and mix, subject to actual bookings."
+    },
+    {
+      "event": "Completion and monetization of upgrades",
+      "timeline": "Next several quarters",
+      "evidence": "Company qualitative statement; no precise completion schedule confirmed."
+    },
+    {
+      "event": "Expanded hotel operating disclosures",
+      "timeline": "Next results",
+      "evidence": "ADR, occupancy and RevPAR bridge would improve conviction."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "The scheme is materially amended, rejected or delayed beyond the investment’s explicit time/risk budget.",
+      "deadline": "Each official approval/update",
+      "action": "Reprice the transaction case against the standalone fallback."
+    },
+    {
+      "condition": "IHCL price falls enough to remove the exchange-parity discount.",
+      "deadline": "Before any entry and at each review",
+      "action": "Recompute gross and net parity; do not rely on an old spread."
+    },
+    {
+      "condition": "Hotel cash productivity weakens while upgrade commitments rise.",
+      "deadline": "Next two results and annual cash flow",
+      "action": "Reduce standalone failed-deal assumptions."
+    }
+  ],
+  "quality_assessment": {
+    "business": "Local sales increased 6.6% YoY and the official release cites 9% RevPAR growth. A stronger rate/occupancy mix must be distinguished from additions, renovations and quarterly seasonality.",
+    "management": "Asset upgrades and the merger proposal are observable allocation decisions. Their returns and minority-shareholder treatment require scheme, fairness and operating evidence rather than brand reputation alone.",
+    "capital_allocation": "FY26 annual CFO was ₹128 crore and free cash flow ₹93 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹114 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 12.10% is an older-period return measure, not a freshly recomputed quarterly return.",
+    "governance": "The promoter-associated merger requires attention to independent valuation and fairness documentation, approvals and minority-shareholder economics. The proposal is not evidence that every legal condition has been satisfied.",
+    "limitations": "Qualitative assessment; no unsupported mechanical quality score or revised master-index rating is assigned."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": null,
+    "coverage_status": "No current earnings-call transcript found; official results press release used only for clearly labeled commentary",
+    "confidence": "low",
+    "sentiment": "not assessed",
+    "sentiment_basis": "No earnings-call transcript or Q&A was available; press-release optimism is not labeled call sentiment.",
+    "summary": {
+      "result": "Local September sales ₹117.75 crore and PAT ₹8.59 crore.",
+      "driver": "Official release cites 9% RevPAR growth and asset upgrades.",
+      "forward": "No quantified earnings-call guidance verified.",
+      "risk": "Merger completion, IHCL price exposure, hotel reinvestment and limited operating disclosure."
+    },
+    "story_tension": "Can asset upgrades and RevPAR growth create enough recurring cash earnings to justify the hotel portfolio’s premium multiple?",
+    "operating_kpis": [
+      {
+        "metric": "RevPAR growth",
+        "value": "9%",
+        "note": "Official October 15 results press release."
+      },
+      {
+        "metric": "Hotel portfolio",
+        "value": "7 hotels",
+        "note": "Official release; 3 Taj-branded."
+      },
+      {
+        "metric": "Renewable energy consumption",
+        "value": "61%",
+        "note": "Company release; operating sustainability indicator, not a margin forecast."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [],
+      "dropped_guidance": [],
+      "new_risks": [],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [],
+    "bear_cases": [
+      {
+        "thesis": "Premium valuation exceeds near-term operating acceleration",
+        "status": "ALIVE",
+        "evidence": "Sales growth modest and operating margin below last year."
+      },
+      {
+        "thesis": "Hotel reinvestment absorbs operating cash",
+        "status": "ALIVE",
+        "evidence": "Upgrade economics require property-level return disclosure."
+      }
+    ],
+    "quotes": [],
+    "sources": [],
+    "limitations": [
+      "No verified current OHL call or Q&A; no management sentiment or invented guidance is supplied.",
+      "ADR and occupancy bridge remains unavailable in the reviewed company material."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Local September 2026 quarterly financial data",
+      "url": "data/ORIENTHOT-financials.json"
+    },
+    {
+      "title": "Local annual cash flow",
+      "url": "data/ORIENTHOT-financials.json"
+    },
+    {
+      "title": "Official Q2/H1 FY27 press release,15 October 2026",
+      "url": "https://nsearchives.nseindia.com/corporate/TAJORIENTAL_15102026165413_Pressrelease.pdf"
+    },
+    {
+      "title": "Official September-quarter results and notes",
+      "url": "https://nsearchives.nseindia.com/corporate/TAJORIENTAL_15102026161257_BMOutcome.pdf"
+    },
+    {
+      "title": "IHCL official merger announcement",
+      "url": "https://ir.ihcltata.com/news/ihcl-and-oriental-hotels-limited-announce-merger/"
+    }
+  ],
+  "remaining_gaps": [
+    "No verified current OHL call or Q&A; no management sentiment or invented guidance is supplied.",
+    "ADR and occupancy bridge remains unavailable in the reviewed company material.",
+    "Scheme completion and current approval status remain conditional; no legal or arbitrage guarantee is implied."
+  ],
+  "data_status": {
+    "quarter": "2026-09-30",
+    "view": "consolidated",
+    "financial_source": "local reported tables",
+    "reconciliation": "See results analysis for definition/rounding differences",
+    "prior_master_verdict_mtime": "2026-09-25T16:01:40.161577463+00:00",
+    "prior_master_verdict_is_current": false
+  },
+  "claim_audit": [
+    {
+      "claim": "September 2026 local consolidated revenue ₹117.75 crore, operating profit ₹27.12 crore and PAT ₹8.59 crore.",
+      "claim_type": "local statement / arithmetic",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local quarterly financial table",
+      "source_url": "data/ORIENTHOT-financials.json",
+      "locator": "ticker=ORIENTHOT; period_end=2026-09-30; view=consolidated",
+      "excerpt": "",
+      "assessment": "Re-read the current parquet and compared the report inputs. This verifies the report against its stated local data source; company-adjusted and attributable measures require the separate call/filing bridge below."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹128 crore and dataset free cash flow ₹93 crore.",
+      "claim_type": "local annual statement",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local annual cash-flow table",
+      "source_url": "data/ORIENTHOT-financials.json",
+      "locator": "ticker=ORIENTHOT; period_end=2026-03-31",
+      "excerpt": "",
+      "assessment": "Annual cash flow was checked against the current cash-flow table. This is FY ended March 2026, not September-quarter cash flow; investing-flow and capex definitions must not be silently interchanged."
+    },
+    {
+      "claim": "September 2026 dataset borrowings ₹114 crore.",
+      "claim_type": "local balance sheet",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local balance-sheet table",
+      "source_url": "data/ORIENTHOT-financials.json",
+      "locator": "ticker=ORIENTHOT; period_end=2026-09-30",
+      "excerpt": "",
+      "assessment": "The generic financial-table funding field was re-read. It is not automatically equivalent to industrial net debt or to debt excluding leases; explicit company-specific bridges are recorded where available."
+    },
+    {
+      "claim": "Official press-release RevPAR growth of 9% and the seven-hotel footprint.",
+      "claim_type": "official company disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Official Q2/H1 FY27 press release",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TAJORIENTAL_15102026165413_Pressrelease.pdf",
+      "locator": "PDF pp 2–3",
+      "excerpt": "",
+      "assessment": "The company release supports these operating facts; it does not provide a full ADR/occupancy bridge."
+    },
+    {
+      "claim": "Press-release PAT of about ₹12 crore is a different profit perimeter.",
+      "claim_type": "official filing / analyst interpretation",
+      "status": "CORRECTED",
+      "source_title": "Official September2026 financial results",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TAJORIENTAL_15102026161257_BMOutcome.pdf",
+      "locator": "PDF pp 2 and 7",
+      "excerpt": "",
+      "assessment": "The precise statement bridge is explained in the results section. The earlier unexplained attribution caveat is replaced with the associates/joint-venture reconciliation."
+    },
+    {
+      "claim": "The generic ₹114 crore funding field approximately includes leases.",
+      "claim_type": "official filing / analyst interpretation",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Official September2026 balance sheet",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TAJORIENTAL_15102026161257_BMOutcome.pdf",
+      "locator": "PDF p 8",
+      "excerpt": "",
+      "assessment": "Conventional borrowings and leases are separately identified in the official statement; the report now distinguishes them."
+    },
+    {
+      "claim": "OHL’s board approved proposed amalgamation into IHCL on 24 August 2026.",
+      "claim_type": "official filing / analyst interpretation",
+      "status": "CORRECTED",
+      "source_title": "Official September2026 results notes",
+      "source_url": "https://nsearchives.nseindia.com/corporate/TAJORIENTAL_15102026161257_BMOutcome.pdf",
+      "locator": "PDF p 5, note 4",
+      "excerpt": "",
+      "assessment": "This material corporate action was omitted from the earlier report. The proposal remains subject to statutory conditions; it is not a completed merger."
+    },
+    {
+      "claim": "The proposed exchange ratio is 25 IHCL shares for 117 OHL shares.",
+      "claim_type": "official company disclosure",
+      "status": "SUPPORTED",
+      "source_title": "IHCL official merger announcement",
+      "source_url": "https://ir.ihcltata.com/news/ihcl-and-oriental-hotels-limited-announce-merger/",
+      "locator": "Share-exchange paragraph",
+      "excerpt": "",
+      "assessment": "Confirmed by the acquirer’s official announcement. Costs, fractional entitlements and changing share prices still affect realized outcomes."
+    },
+    {
+      "claim": "The appointed date is 1 April 2027; completion is targeted for H2 FY2028.",
+      "claim_type": "official company disclosure",
+      "status": "SUPPORTED",
+      "source_title": "IHCL official merger announcement",
+      "source_url": "https://ir.ihcltata.com/news/ihcl-and-oriental-hotels-limited-announce-merger/",
+      "locator": "CFO statement in official merger announcement",
+      "excerpt": "",
+      "assessment": "These are scheme dates and targets, not guaranteed settlement dates. The board approval date is established separately in the financial note."
+    },
+    {
+      "claim": "Matching local closes imply gross exchange parity of ₹188.46 per OHL share.",
+      "claim_type": "official filing / analyst interpretation",
+      "status": "INFERENCE",
+      "source_title": "Local clean OHLCV / analyst arithmetic",
+      "source_url": "data/ORIENTHOT-financials.json",
+      "locator": "Clean OHLCV, 12 November 2026; INDHOTEL and ORIENTHOT",
+      "excerpt": "",
+      "assessment": "12 November IHCL ₹882 × 25/117 = ₹188.46. OHL at ₹173.90 is 7.73% below parity; gross convergence upside of 8.37% assumes an unchanged IHCL price and successful completion."
+    },
+    {
+      "claim": "A hotel-only valuation framework omits a material driver of the equity payoff.",
+      "claim_type": "official filing / analyst interpretation",
+      "status": "CORRECTED",
+      "source_title": "IHCL official merger announcement",
+      "source_url": "https://ir.ihcltata.com/news/ihcl-and-oriental-hotels-limited-announce-merger/",
+      "locator": "Proposed scheme and exchange-ratio terms",
+      "excerpt": "",
+      "assessment": "Exchange terms and acquirer-price exposure must be considered alongside standalone hotel cash flows as a failed-deal valuation reference."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The operating business earns room and ancillary revenue from a concentrated South Indian portfolio supported by IHCL brands. RevPAR growth combines occupancy and rates; revenue growth alone cannot isolate either. Renovation closures, food and beverage activity, and property mix affect how room productivity reaches cash profit.",
+      "The shareholder case differs from an unchanged standalone hotel case. The proposed exchange makes both acquirer performance and transaction conditions material. The hotels and strategic investments also support a fallback valuation if implementation does not occur."
+    ],
+    "earnings_quality": [
+      "Final consolidated profit includes associates and joint ventures; the press-release highlight uses a different perimeter. The statement-based reconciliation in the results section resolves the earlier unexplained PAT discrepancy.",
+      "A hotel cash-flow assessment should separate recurring maintenance, upgrade investment and investment income from operating earnings. Historical cash generation supports liquidity but does not establish the return or cost of every planned upgrade."
+    ],
+    "capital_allocation": [
+      "The merger can simplify ownership and give the assets access to a larger capital platform, but investors should test exchange economics and minority treatment rather than assume all synergies accrue to current OHL holders.",
+      "Debt and leases need consistent treatment in hotel EV/EBITDA. Adding leases to enterprise value while mixing pre-lease and post-lease earnings measures, or double counting rental costs, distorts comparisons."
+    ],
+    "valuation_logic": [
+      "Gross parity equals the acquirer price multiplied by the exchange ratio. A discount may compensate for time, approval risk, failed-deal downside, dividends, transaction costs and inability to hedge. A larger spread is not free profit.",
+      "The failed-deal case should value hotel operations and financial interests net of appropriate liabilities. Transaction parity cannot be used as both successful-deal value and failed-deal valuation."
+    ],
+    "peer_positioning": [
+      "IHCL is the relevant payoff reference under the exchange proposal. EIH, Chalet and other hotel owners remain operating/NAV comparators, with different ownership and lease profiles. A broad hotel P/E ranking would miss the announced transaction."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Scheme progress",
+        "latest_value": "Proposed; approvals outstanding",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Changes the expected shareholder payoff",
+        "next_test": "Check official orders and any term changes."
+      },
+      {
+        "metric": "Exchange ratio / gross parity",
+        "latest_value": "25/117; ₹188.46 at the 12 November IHCL price",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Tracks acquirer-price exposure",
+        "next_test": "Recompute both prices for the same date and subtract costs."
+      },
+      {
+        "metric": "Standalone hotel cash performance",
+        "latest_value": "FY26 local CFO ₹128 crore",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Supports a failed-deal valuation reference",
+        "next_test": "Separate maintenance, upgrades and investment cash flows."
+      },
+      {
+        "metric": "RevPAR bridge",
+        "latest_value": "9% company-reported growth",
+        "source": "Reviewed official disclosure and local financial table; see claim audit",
+        "why_it_matters": "Tests operating recovery",
+        "next_test": "Obtain ADR, occupancy and available-room changes."
+      }
+    ],
+    "unanswered_questions": [
+      "Which approvals remain, and what timetable is supportable from official scheme orders?",
+      "What fractional-entitlement, dividend and corporate-action provisions affect exchange parity?",
+      "What sustainable hotel NAV or cash flow supports downside if the proposal fails?"
+    ]
+  },
+  "audit_summary": {
+    "scope": "Material company claims, financial definitions, management guidance and stated capital-allocation milestones were reviewed against retained primary transcripts and available official filings. Arithmetic was independently recalculated from current local tables. This is a research evidence audit, not a statutory audit or complete forensic review.",
+    "overall_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Added the material proposed IHCL amalgamation and rewrote the stance and valuation framework.",
+      "Resolved the PAT perimeter bridge and explained the generic funding field’s lease component."
+    ],
+    "unverified": [
+      "No verified current OHL call or Q&A; no management sentiment or invented guidance is supplied.",
+      "ADR and occupancy bridge remains unavailable in the reviewed company material.",
+      "Scheme completion and current approval status remain conditional; no legal or arbitrage guarantee is implied."
+    ],
+    "claims_checked": 11,
+    "as_of": "2026-11-13"
+  }
+}

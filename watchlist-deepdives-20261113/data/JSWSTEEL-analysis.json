@@ -1,0 +1,527 @@
+{
+  "company_name": "JSW Steel Limited",
+  "archetype": "metals_cyclical",
+  "executive_summary": "JSW Steel combines record sales with a stronger balance sheet, but a larger capex program raises the importance of steel spreads and cash returns. September revenue and PAT grew strongly, while Q3 coking-coal inflation is an explicit counterweight to better volumes and pricing.",
+  "research_stance": "Cyclical growth with improving financial capacity; judge on normalized EBITDA per tonne and full-cycle capital returns rather than reported P/E alone.",
+  "results_analysis": [
+    "September 2026 consolidated sales were ₹54,486.00 crore, +20.7% YoY and +15.0% QoQ. PAT was ₹5,359.00 crore, +225.6% YoY and +14.1% QoQ. These percentage changes use the rounded local dataset, so small differences from company-exact growth percentages are expected.",
+    "Local operating profit was ₹10,120.00 crore and OPM 19.00%, compared with 16.00% a year earlier and 20.00% in June 2026. PAT margin was 9.84%. OPM is the dataset’s operating-profit/sales measure, not automatically management-adjusted EBITDA or a segment EBIT margin.",
+    "The call reports adjusted EBITDA ₹9,941 crore at about 18% margin, whereas the local operating-profit line is ₹10,120 crore and rounded OPM 19%. These definitions must remain separate. Q4 FY26 local PAT ₹19,243 crore is an obvious outlier relative to surrounding quarters and makes the trailing earnings multiple unsuitable as a clean normalized valuation anchor; this report does not attribute that outlier to a specific transaction without a bridge.",
+    "FY26 annual CFO was ₹25,152 crore and free cash flow ₹10,610 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹69,820 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 11.00% is an older-period return measure, not a freshly recomputed quarterly return."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Record volumes demonstrate asset execution",
+      "evidence": "Consolidated Q2 sales reached 7.46 million tonnes, +13% YoY; Indian sales 7.27 million tonnes were +14%. BF3 at Vijayanagar reached about 90% utilization and Indian operations were about 88%, leaving room for throughput growth.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Value-added steel supports demand quality",
+      "evidence": "Value-added/special product sales were 4.11 million tonnes and automotive volumes grew 36% YoY in the call. This improves customer mix, but does not remove commodity-price or imported-coal exposure.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Balance sheet can fund expansion, with a much larger commitment",
+      "evidence": "Call net debt ₹44,482 crore and net debt/EBITDA 1.28x provide headroom. The expanded plan is ₹1.48 lakh crore over 5–6 years versus ₹1.3 lakh crore previously discussed; this creates a lasting capex and execution obligation.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    },
+    {
+      "title": "Captive raw material is a delayed cost lever",
+      "evidence": "The Odisha slurry pipeline targets March 2027 and Karnataka iron-ore additions Q4 FY27. Mozambique cleaned coking-coal production is expected from CY2028, so near-term coal inflation remains exposed.",
+      "source": "September 2026 local financials and current company earnings-call transcript; source links below"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Steel demand and spreads",
+      "content": "Domestic demand supports capacity utilization, while realizations must offset coking coal and iron ore. Management expects Indian steel demand growth of 7–8% for FY27; this is its outlook, not an assured sales rate."
+    },
+    {
+      "heading": "Expansion and JVs",
+      "content": "JV capacity adds scale but demands a separate debt/equity-accounting assessment. Management says JSW Steel is ring-fenced from the Sambalpur JV funding risk; legal and guarantee terms still determine the economic exposure."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Steel Spread Cycle",
+      "stage": "RECOVERY",
+      "evidence": "Q2 earnings and volumes improved, but management guides another $25/tonne coal-cost increase in Q3."
+    },
+    {
+      "name": "Capacity / Utilization Cycle",
+      "stage": "RAMPING",
+      "evidence": "BF3 near 90%, India 88%; more production expected Q3."
+    },
+    {
+      "name": "Capex Cycle",
+      "stage": "EXPANSION",
+      "evidence": "₹1.48 lakh crore multi-year plan."
+    },
+    {
+      "name": "Raw Material Integration Cycle",
+      "stage": "BUILDING",
+      "evidence": "Pipeline, mines and Mozambique projects have future delivery dates."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "REGULAR EXPANSION",
+      "evidence": "Snapshot P/E 21x is distorted by unusually large historical PAT; use normalized earnings."
+    }
+  ],
+  "valuation": {
+    "method": "Sector-appropriate normalized earnings / enterprise value analysis",
+    "assessment": "Use mid-cycle EV/EBITDA, replacement cost and through-cycle free cash flow. Model owned operations, equity-accounted JVs and debt consistently. Snapshot P/E 21x should not be interpreted as cheap without normalizing the large Q4 FY26 profit and capex needs.",
+    "assumptions": [
+      "Adjusted EBITDA ₹9,941 crore is not identical to operating profit ₹10,120 crore.",
+      "FY27 capex guidance ₹22,000–24,000 crore remains open; H1 spend ₹11,136 crore.",
+      "Q3 coking coal cost +$25/tonne is management guidance, not an EBITDA forecast."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Volume ramp and improved realizations more than absorb coal inflation.",
+      "Cash generation keeps leverage near current levels through the ₹22,000–24,000 crore FY27 capex year.",
+      "New captive raw materials reduce future cost volatility."
+    ],
+    "base": [
+      "Volume growth offsets part of spread pressure; margins remain cyclical.",
+      "Capex stays heavy for several years and requires disciplined deployment.",
+      "Domestic growth supports utilization while overseas operations are modest contributors."
+    ],
+    "bear": [
+      "Coal/input inflation exceeds steel price pass-through.",
+      "A downturn arrives while newly expanded capex commitments are high.",
+      "JV funding or guarantee obligations create more leverage than headline consolidated ratios suggest."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Coal and spread pressure",
+      "detail": "Management guides coking coal +$25/tonne and marginally higher iron ore in Q3.",
+      "monitor": "EBITDA per tonne and realized steel/input spread."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Capex at scale",
+      "detail": "₹1.48 lakh crore program can consume through-cycle cash generation.",
+      "monitor": "Capex phasing, project returns and free cash flow."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Debt perimeter",
+      "detail": "Equity-accounted JVs and revenue acceptances require consistent debt treatment.",
+      "monitor": "Consolidated and proportionate debt plus guarantees."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Trailing-earnings distortion",
+      "detail": "Q4 FY26 PAT is unusually large.",
+      "monitor": "Normalized attributable earnings bridge."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Full BF3/JVML production",
+      "timeline": "Q3 FY27",
+      "evidence": "Management expects sequential volume increase."
+    },
+    {
+      "event": "Odisha slurry pipeline",
+      "timeline": "March 2027",
+      "evidence": "Management commissioning target."
+    },
+    {
+      "event": "Karnataka iron-ore additions",
+      "timeline": "Q4 FY27",
+      "evidence": "Around 4 million tonne incremental mine capacity planned."
+    },
+    {
+      "event": "Long-term expansion milestones",
+      "timeline": "FY30–FY32",
+      "evidence": "Utkal phases, downstream plants and JV expansion remain execution-dependent."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Operating spreads deteriorate despite price recovery",
+      "deadline": "Next two quarters",
+      "action": "Reassess near-term earnings cycle."
+    },
+    {
+      "condition": "Leverage rises sharply without corresponding commissioned cash generation",
+      "deadline": "Each quarter",
+      "action": "Rework capex affordability."
+    },
+    {
+      "condition": "Material delays or overruns in current projects",
+      "deadline": "FY27–FY28",
+      "action": "Reduce return assumptions and expansion value."
+    }
+  ],
+  "quality_assessment": {
+    "business": "Consolidated Q2 sales reached 7.46 million tonnes, +13% YoY; Indian sales 7.27 million tonnes were +14%. BF3 at Vijayanagar reached about 90% utilization and Indian operations were about 88%, leaving room for throughput growth.",
+    "management": "Management provides a quantified capex envelope and lower current leverage, but the enlarged programme needs a through-cycle funding test. Described JV ring-fencing remains an assurance until the actual guarantees and support commitments are reviewed.",
+    "capital_allocation": "FY26 annual CFO was ₹25,152 crore and free cash flow ₹10,610 crore. These are annual figures, not September-quarter cash flow. Latest balance-sheet borrowings were ₹69,820 crore at 2026-09-30; gross borrowings must not be confused with call net debt. Snapshot ROCE 11.00% is an older-period return measure, not a freshly recomputed quarterly return.",
+    "governance": "Review JV guarantees, related-party arrangements and committed equity alongside the industrial balance sheet. An operating call is not a legal non-recourse opinion or forensic governance clearance.",
+    "limitations": "Qualitative assessment; no unsupported mechanical quality score or revised master-index rating is assigned."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-10-23",
+    "coverage_status": "Current full transcript sourced; prior-quarter comparison where supported",
+    "confidence": "medium",
+    "sentiment": "neutral",
+    "sentiment_basis": "Volumes, leverage and demand commentary improve, but Q3 costs and the enlarged capex plan temper the operating outlook.",
+    "summary": {
+      "result": "Revenue ₹54,486 crore; PAT ₹5,359 crore; adjusted EBITDA ₹9,941 crore.",
+      "driver": "Record sales, BF3 ramp and value-added customer mix.",
+      "forward": "FY27 volume and ₹22,000–24,000 crore capex guidance retained.",
+      "risk": "Q3 coking coal +$25/tonne and expanding capital commitments."
+    },
+    "story_tension": "Can volume-led cash generation fund the enlarged capex plan when coal costs rise and steel prices remain cyclical?",
+    "operating_kpis": [
+      {
+        "metric": "Consolidated sales",
+        "value": "7.46 million tonnes",
+        "note": "+13% YoY."
+      },
+      {
+        "metric": "Indian utilization",
+        "value": "About 88%",
+        "note": "BF3 about 90%."
+      },
+      {
+        "metric": "Net debt/EBITDA",
+        "value": "1.28x",
+        "note": "Call net debt ₹44,482 crore."
+      },
+      {
+        "metric": "Value-added/special sales",
+        "value": "4.11 million tonnes",
+        "note": "+11% YoY."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "Total capex plan increased from ₹1.3 lakh crore to ₹1.48 lakh crore over 5–6 years.",
+        "Q3 coking coal cost expected to rise about $25/tonne."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Expanded capex commitment raises long-duration funding and return risk."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "FY27 capex ₹22,000–24,000 crore",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "H1 spend ₹11,136 crore."
+      },
+      {
+        "promise": "Odisha slurry pipeline commissioned",
+        "window": "March 2027",
+        "status": "PENDING",
+        "evidence": "Current call says on track."
+      },
+      {
+        "promise": "Additional Karnataka mines",
+        "window": "Q4 FY27",
+        "status": "PENDING",
+        "evidence": "Management targets around 4 million tonne incremental capacity."
+      },
+      {
+        "promise": "Mozambique cleaned coking-coal production begins",
+        "window": "CY2028",
+        "status": "PENDING",
+        "evidence": "Current growth plan; no near-term saving booked."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Capex expansion creates a new leverage cycle",
+        "status": "ALIVE",
+        "evidence": "Current leverage is lower but commitments have increased."
+      },
+      {
+        "thesis": "Raw-material cost inflation erodes volume benefit",
+        "status": "ALIVE",
+        "evidence": "Q3 coal inflation explicitly guided."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Swayam Saurabh",
+        "text": "we right now stand at 1.28x net debt to EBITDA",
+        "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Current official call transcript",
+        "url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf"
+      }
+    ],
+    "limitations": [
+      "Current actual transcript resolved from an exchange link notice; prior indexed notice is not a full transcript, so quarter-on-quarter silence and guidance-diff coverage is incomplete.",
+      "P/E and headline profit require one-off normalization before a price target.",
+      "No multi-quarter silence allegation is made without a documented frequency test."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Local September 2026 quarterly financial data",
+      "url": "data/JSWSTEEL-financials.json"
+    },
+    {
+      "title": "Local annual cash flow",
+      "url": "data/JSWSTEEL-financials.json"
+    },
+    {
+      "title": "Company Q2 FY27 earnings-call transcript",
+      "url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "Current actual transcript resolved from an exchange link notice; prior indexed notice is not a full transcript, so quarter-on-quarter silence and guidance-diff coverage is incomplete.",
+    "P/E and headline profit require one-off normalization before a price target.",
+    "The adjusted-EBITDA/operating-profit bridge and legal detail of JV ring-fencing remain unresolved.",
+    "The prior indexed exchange documents are notices, so no complete prior-call guidance-diff or silence audit is claimed."
+  ],
+  "data_status": {
+    "quarter": "2026-09-30",
+    "view": "consolidated",
+    "financial_source": "local reported tables",
+    "reconciliation": "See results analysis for definition/rounding differences",
+    "prior_master_verdict_mtime": "2026-09-25T16:01:40.161577463+00:00",
+    "prior_master_verdict_is_current": false
+  },
+  "claim_audit": [
+    {
+      "claim": "September 2026 local consolidated revenue ₹54,486.00 crore, operating profit ₹10,120.00 crore and PAT ₹5,359.00 crore.",
+      "claim_type": "local statement / arithmetic",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local quarterly financial table",
+      "source_url": "data/JSWSTEEL-financials.json",
+      "locator": "ticker=JSWSTEEL; period_end=2026-09-30; view=consolidated",
+      "excerpt": "",
+      "assessment": "Re-read the current parquet and compared the report inputs. This verifies the report against its stated local data source; company-adjusted and attributable measures require the separate call/filing bridge below."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹25,152 crore and dataset free cash flow ₹10,610 crore.",
+      "claim_type": "local annual statement",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local annual cash-flow table",
+      "source_url": "data/JSWSTEEL-financials.json",
+      "locator": "ticker=JSWSTEEL; period_end=2026-03-31",
+      "excerpt": "",
+      "assessment": "Annual cash flow was checked against the current cash-flow table. This is FY ended March 2026, not September-quarter cash flow; investing-flow and capex definitions must not be silently interchanged."
+    },
+    {
+      "claim": "September 2026 dataset borrowings ₹69,820 crore.",
+      "claim_type": "local balance sheet",
+      "status": "SUPPORTED",
+      "source_title": "Maintained local balance-sheet table",
+      "source_url": "data/JSWSTEEL-financials.json",
+      "locator": "ticker=JSWSTEEL; period_end=2026-09-30",
+      "excerpt": "",
+      "assessment": "The generic financial-table funding field was re-read. It is not automatically equivalent to industrial net debt or to debt excluding leases; explicit company-specific bridges are recorded where available."
+    },
+    {
+      "claim": "Q2 consolidated sales were 7.46mt and Indian sales 7.27mt.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 123–127",
+      "excerpt": "",
+      "assessment": "Sales differ from crude production, reported separately at 7.27mt consolidated; the identical 7.27 figure must not be assigned to the wrong series."
+    },
+    {
+      "claim": "BF3 utilization was about 90%, while Indian operations were about 88%.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 119–123",
+      "excerpt": "",
+      "assessment": "Plant ramp-up and aggregate utilization are different scopes."
+    },
+    {
+      "claim": "Revenue ₹54,486cr and PAT ₹5,359cr agree with the local quarter.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 136–140",
+      "excerpt": "",
+      "assessment": "Management current-quarter headline amounts match the local financial row; this does not make EBITDA definitions identical."
+    },
+    {
+      "claim": "Adjusted EBITDA ₹9,941cr differs from local operating profit ₹10,120cr.",
+      "claim_type": "management disclosure",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 136–140",
+      "excerpt": "",
+      "assessment": "The ₹179cr gap is 1.8% of management EBITDA. A full adjustment bridge is not present in the reviewed transcript; do not silently call the measures verified equivalents."
+    },
+    {
+      "claim": "Net debt was ₹44,482cr and leverage 1.28x.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 164–168",
+      "excerpt": "",
+      "assessment": "Company net debt/leverage are the relevant industrial funding metrics, distinct from gross balance-sheet debt."
+    },
+    {
+      "claim": "H1 capex ₹11,136cr is against FY27 guidance ₹22,000–24,000cr.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 166–170",
+      "excerpt": "",
+      "assessment": "This implies roughly ₹10,864–12,864cr of second-half spend if guidance is achieved; the H2 calculation is analyst arithmetic."
+    },
+    {
+      "claim": "Total growth-capex plan increased to ₹1.48 lakh crore over 5–6 years.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 243–247",
+      "excerpt": "",
+      "assessment": "A multi-year envelope is not current-year capex or already spent cash."
+    },
+    {
+      "claim": "Mozambique cleaned coking-coal production is targeted to begin CY2028.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 209–213",
+      "excerpt": "",
+      "assessment": "This is a future target with gradual ramp-up; no immediate captive-coal savings are assumed."
+    },
+    {
+      "claim": "Management describes Sambalpur JV balance-sheet risk as ring-fenced.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 395–399",
+      "excerpt": "",
+      "assessment": "This is management assurance, not an independently reviewed legal non-recourse opinion; guarantees and equity commitments still need disclosure review."
+    },
+    {
+      "claim": "Lower present leverage does not prove the enlarged capex programme is self-funding through a steel downturn.",
+      "claim_type": "management disclosure",
+      "status": "INFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 714–718",
+      "excerpt": "",
+      "assessment": "Management allows temporary debt growth. The analyst concern is the interaction of a cyclical cash source and a fixed project-spend schedule, not a claim that a funding failure has already occurred."
+    },
+    {
+      "claim": "Management expects Q3 coking-coal costs to rise about$25 per tonne.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 257–261",
+      "excerpt": "",
+      "assessment": "The call identifies expected Q3 cost pressure; this is guidance, not already incurred Q3 actual cost."
+    },
+    {
+      "claim": "Odisha pipeline targets March2027 and three new Karnataka mines target Q4FY27.",
+      "claim_type": "management disclosure",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://jsw-steel-s3.s3.ap-south-1.amazonaws.com/jsw-steel-images/uploads/2026/10/JSWSL-Q2FY27-Earnings-Oct23-2026.pdf",
+      "locator": "Text lines 179–183",
+      "excerpt": "",
+      "assessment": "These are conditional commissioning milestones; mine capacity addition is not equal to immediate production or cash savings."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The operating bridge must start with separate production and sales volumes. Consolidated sales were 7.46mt, while crude production was 7.27mt; Indian sales happened also to be 7.27mt. Conflating these creates false utilization and realization calculations. BF3 at about 90% utilization demonstrates ramp progress, while group contribution depends on the wider product and geographic mix.",
+      "Management adjusted EBITDA divided by consolidated sales implies approximately ₹13,326 per sold tonne (₹9,941cr/7.46mt). This is analyst arithmetic on the disclosed group scope. An illustrative ₹1,000/tonne margin change at unchanged quarterly sales changes EBITDA by roughly ₹746cr—showing why steel spread normalization matters more than trailing P/E optics."
+    ],
+    "earnings_quality": [
+      "Headline revenue and PAT match the local table, but adjusted EBITDA does not equal generic operating profit. Keep ₹9,941cr and ₹10,120cr as separate definitions until exceptional items, other income and consolidation adjustments are bridged. A 1% reconciliation rule would not permit these two figures to be labelled identical.",
+      "The JV discussion includes a stamp-duty provision and separate operating results. Current consolidated profit and historic EPS can therefore change with transaction and ownership accounting; a peak-quarter annualization cannot substitute for a consistent perimeter or mid-cycle earnings estimate."
+    ],
+    "capital_allocation": [
+      "H1 spend represents approximately 46–51% of the FY27 capex envelope. Growth in operating cash flow must fund the remaining ₹10.9–12.9kcr annual spend as well as dividends, taxes and working capital; the multi-year ₹1.48 lakh crore programme creates further sequencing exposure.",
+      "Low current leverage creates flexibility rather than a guarantee. Stress the plan with a two-year margin downturn, delayed mine output and slower ramp-up. Management’s description of JV ring-fencing is valuable but should be checked against shareholder loans, guarantees and committed equity—not assumed from a single call answer."
+    ],
+    "valuation_logic": [
+      "Use a sum of operating steel assets, JV interests and raw-material projects, with consistent consolidation and net debt. Do not value the same JV EBITDA inside consolidated earnings and again as a separate equity stake. Captive-mine benefits begin only after production, yield, logistics and operating costs are demonstrated.",
+      "A reverse enterprise-value case should show the normal sold-tonne base, sustainable EBITDA/tonne, capital expenditure and eventual distributable cash. The bull case needs volume gains to survive higher coal costs; the base case should allow moderate spreads and full project funding; the bear case should include both EBITDA contraction and higher debt."
+    ],
+    "peer_positioning": [
+      "Tata Steel introduces different geographic and European restructuring exposures; Jindal Steel has a different ramp-up and ore-logistics profile; SAIL differs in project/employee economics. These are useful cycle checks, not interchangeable multiples. Compare EBITDA/tonne, cash conversion, net debt and maintenance/growth capex on matching operating scopes."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Consolidated sold tonnes",
+        "latest_value": "7.46mt Q2",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Volume contribution versus price/mix",
+        "next_test": "Compare with production and inventory changes."
+      },
+      {
+        "metric": "Adjusted EBITDA / sold tonne",
+        "latest_value": "~₹13,326; analyst calculation",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Measures cyclical spread quality",
+        "next_test": "Reconcile to company adjusted EBITDA and relevant volumes."
+      },
+      {
+        "metric": "Net debt / EBITDA",
+        "latest_value": "1.28x company measure",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Funding headroom",
+        "next_test": "Track leverage after H2 capex and weaker-spread sensitivity."
+      },
+      {
+        "metric": "FY27 capex",
+        "latest_value": "₹22,000–24,000cr guide; H1₹11,136cr",
+        "source": "Q2 FY27 company disclosure / local financial table",
+        "why_it_matters": "Cash commitment",
+        "next_test": "Monitor actual spend, delays and revised costs."
+      }
+    ],
+    "unanswered_questions": [
+      "What exactly bridges local operating profit to adjusted EBITDA and current EPS to trailing EPS?",
+      "Which parent commitments, guarantees or liquidity support remain at the JV despite described ring-fencing?",
+      "How much of the ₹1.48 lakh crore programme is contractually committed versus discretionary and deferrable?"
+    ]
+  },
+  "audit_summary": {
+    "scope": "Material company claims, financial definitions, management guidance and stated capital-allocation milestones were reviewed against retained primary transcripts and available official filings. Arithmetic was independently recalculated from current local tables. This is a research evidence audit, not a statutory audit or complete forensic review.",
+    "overall_status": "QUALIFIED: material claims supported with explicit unresolved items",
+    "corrections": [
+      "Made production-versus-sales scopes explicit and quantified the adjusted-EBITDA mismatch."
+    ],
+    "unverified": [
+      "Current actual transcript resolved from an exchange link notice; prior indexed notice is not a full transcript, so quarter-on-quarter silence and guidance-diff coverage is incomplete.",
+      "P/E and headline profit require one-off normalization before a price target.",
+      "The adjusted-EBITDA/operating-profit bridge and legal detail of JV ring-fencing remain unresolved.",
+      "The prior indexed exchange documents are notices, so no complete prior-call guidance-diff or silence audit is claimed."
+    ],
+    "claims_checked": 15,
+    "as_of": "2026-11-13"
+  }
+}

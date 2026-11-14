@@ -1,0 +1,483 @@
+{
+  "company_name": "Apollo Micro Systems Limited",
+  "archetype": "defence_railways_psu",
+  "executive_summary": "Apollo Micro Systems is scaling defence electronics and expanding toward complete systems and explosives. September earnings growth is strong, but the very long working-capital cycle and acquisition/capex commitments mean reported order visibility is not yet equivalent to cash-generating visibility.",
+  "research_stance": "Rapid defence scale-up, with cash conversion and acquisition integration still the decisive risks.",
+  "results_analysis": [
+    "The local consolidated September 2026 quarter records revenue ₹388.00 crore, operating profit ₹111.00 crore and PAT ₹46.00 crore. Revenue changed +72.4% YoY and +54.6% QoQ; PAT changed +53.3% YoY and +84.0% QoQ.",
+    "Operating profit changed +88.1% YoY and +105.6% QoQ. The calculated operating-profit/sales margin is 28.61%, versus 26.22% a year earlier and 21.51% in June. These calculations use a consistently rounded local series; management EBITDA may use a different scope or definition.",
+    "FY26 CFO was minus ₹130 crore and free cash flow minus ₹357 crore. The current call reports H1 CFO positive ₹22 crore, but working capital remained 353 days, only modestly better than 359 in FY26. Management described FY29 as the point for sustained positive quarterly operating cash flow as production orders rise.",
+    "Price and financial dates differ: the cleaned close used here is ₹440.10 on 2026-11-12; the public-financial snapshot is dated 2026-11-13. The screenshot price is not treated as a live or verified valuation input. Local public-financial-data parquets, September 2026 quarter; amounts rounded to ₹ crore.",
+    "Audit finding: management describes 40% year-on-year group PAT growth, while the local ₹46 crore versus ₹30 crore comparison gives 53.3%. The current rupee amount agrees but the comparative base remains unresolved. Standalone PAT ₹48 crore exceeds consolidated PAT ₹46 crore, so integration is not yet clearly profit-accretive."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Existing defence-electronics execution",
+      "evidence": "The quarter’s ₹388 crore revenue and ₹111 crore operating profit are a meaningful scale-up. Programmes need to move from development to recurring production before cash conversion becomes predictable.",
+      "source": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf"
+    },
+    {
+      "title": "Order visibility is increasing",
+      "evidence": "Management reported a ₹1,765 crore September order book and a March expectation above ₹2,000 crore excluding MIGM. Treat the pending MIGM opportunity separately until an actual contract is signed.",
+      "source": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf"
+    },
+    {
+      "title": "Explosives and systems expand the opportunity set",
+      "evidence": "CCI approval for Premier, Ideal’s infrastructure and ShauryAstra add scope. They also add integration, funding and organisational risk; acquisition announcements are not proof of accretive returns.",
+      "source": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Business model and sector lens",
+      "content": "Defence procurement is lumpy and qualification-intensive. A private supplier with development orders and acquisitions does not share a PSU prime’s advance-funded cash profile; programme milestones, customer certification and receivable collections are essential."
+    },
+    {
+      "heading": "Balance sheet and capital allocation",
+      "content": "FY26 CFO was minus ₹130 crore and free cash flow minus ₹357 crore. The current call reports H1 CFO positive ₹22 crore, but working capital remained 353 days, only modestly better than 359 in FY26. Management described FY29 as the point for sustained positive quarterly operating cash flow as production orders rise."
+    },
+    {
+      "heading": "Growth versus price paid",
+      "content": "The current cleaned close is about 116x available trailing EPS; old snapshot PE is higher because its date/share basis differs. The valuation already assumes a large earnings scale-up. Scenario values are deliberately based on earnings and multiples rather than adding uncontracted orders to fair value."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Order Inflow Cycle",
+      "stage": "CONTRACT SIGNING / ORDERING ACCELERATION",
+      "evidence": "September signed order book was ₹1,765 crore; management expects above ₹2,000 crore by March excluding MIGM. An anticipated MIGM award is not included as an existing contract."
+    },
+    {
+      "name": "Execution / Order Conversion Cycle",
+      "stage": "RAMP",
+      "evidence": "Current revenue ₹388 crore and H1 production scale support execution progress, but development-heavy work still keeps cash tied up."
+    },
+    {
+      "name": "Government Capex / Budget Cycle",
+      "stage": "2H DEPLOYMENT (back-loaded)",
+      "evidence": "November falls in the archetype’s fiscal second-half ordering/deployment window; this is calendar positioning, not verification of a new budget number or guaranteed Apollo orders."
+    },
+    {
+      "name": "Valuation / PE Cycle",
+      "stage": "PEAK MULTIPLES",
+      "evidence": "Current available trailing P/E is over 100x. This denotes a high-expectation valuation regime, not a verified all-time/own-history peak."
+    },
+    {
+      "name": "Working-capital and acquisition cycle",
+      "stage": "Cash absorption / integration",
+      "evidence": "Company-specific diagnostic: 353-day working capital, H1 CFO ₹22 crore and continuing Ideal/Premier integration make cash funding the constraint on the order ramp."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and cash-earnings constraints; no unsupported point target",
+    "assessment": "At about 116× available trailing EPS, valuation requires a major earnings and cash scale-up. Long working capital, integration losses, expansion commitments and uncertain normal taxation make a simple P/E target weak. Order expectations need scope, timing, funding and execution analysis.",
+    "assumptions": [
+      "At the 12 November adjusted close of ₹440.10, the available four-quarter EPS sum is ₹3.79, implying approximately 116.1× earnings and a 0.86% earnings yield. This is a price/available-EPS calculation, not a forecast or a fully normalized multiple.",
+      "A 20% contraction in the earnings multiple would require 25% cumulative EPS growth merely to keep the share price unchanged; dividends are excluded. This is algebraic sensitivity, not a prediction of the exit multiple.",
+      "A point value needs electronics versus explosives cash economics, diluted capital, acquisition funding and normal taxation; those bridges remain incomplete."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "The quarter’s ₹388 crore revenue and ₹111 crore operating profit are a meaningful scale-up. Programmes need to move from development to recurring production before cash conversion becomes predictable.",
+      "Management reported a ₹1,765 crore September order book and a March expectation above ₹2,000 crore excluding MIGM. Treat the pending MIGM opportunity separately until an actual contract is signed.",
+      "Signed order book exceeds ₹2,000 crore excluding MIGM by March, while Ideal improves over the disclosed next 2–3 quarters and the production-order share increases."
+    ],
+    "base": [
+      "Management expects order book above ₹2,000 crore by March excluding MIGM; more consistent positive quarterly operating cash flow is a FY29 ambition.",
+      "FY26 CFO was minus ₹130 crore and free cash flow minus ₹357 crore. The current call reports H1 CFO positive ₹22 crore, but working capital remained 353 days, only modestly better than 359 in FY26. Management described FY29 as the point for sustained positive quarterly operating cash flow as production orders rise.",
+      "The current 353-day working-capital cycle improves only gradually; ₹22 crore H1 CFO is treated as early progress, without bringing the FY29 consistent-cash-flow aspiration forward."
+    ],
+    "bear": [
+      "A 353-day working-capital cycle leaves substantial cash tied up, while capex and acquisitions require funding.",
+      "Ideal was loss-making; Premier and new systems businesses introduce further capital and management demands.",
+      "A high earnings multiple is exposed to procurement delays; expected orders must not be treated as signed contracts."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Cash conversion",
+      "detail": "A 353-day working-capital cycle leaves substantial cash tied up, while capex and acquisitions require funding.",
+      "monitor": "CFO/PAT, receivables, customer advances and borrowings."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Integration and dilution",
+      "detail": "Ideal was loss-making; Premier and new systems businesses introduce further capital and management demands.",
+      "monitor": "Subsidiary profit, acquisition consideration, new shares and promoter pledge."
+    },
+    {
+      "severity": "HIGH",
+      "title": "Valuation and order timing",
+      "detail": "A high earnings multiple is exposed to procurement delays; expected orders must not be treated as signed contracts.",
+      "monitor": "Confirmed order book and production-order conversion."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Order book above ₹2,000 crore excluding MIGM",
+      "timeline": "By March 2027",
+      "evidence": "Management expectation; not contracted current revenue."
+    },
+    {
+      "event": "Ideal operational changes",
+      "timeline": "Next 2–3 quarters",
+      "evidence": "Management expects improvements after restructuring and lean Q2."
+    },
+    {
+      "event": "Production-order mix rises",
+      "timeline": "Through FY29",
+      "evidence": "Proposed path to more regular operating cash flow."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Signed order book is no higher than ₹2,000 crore excluding MIGM at FY27-end.",
+      "deadline": "March 2027",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Working-capital days remain at or above 353 and full-year CFO is negative.",
+      "deadline": "FY27 audited cash flow",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Ideal remains loss-making after the indicated next 2–3-quarter improvement window.",
+      "deadline": "By Q1 FY28 results",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "The quarter’s ₹388 crore revenue and ₹111 crore operating profit are a meaningful scale-up. Programmes need to move from development to recurring production before cash conversion becomes predictable.",
+    "management": "Management gave observable order-book and cash milestones and acknowledged Ideal’s losses and further restructuring. It also declined to guide Premier before the process finished. The widening move from subsystems to complete weapon systems increases execution demands and should be judged against capital productivity rather than ambition alone.",
+    "capital_allocation": "FY26 CFO was minus ₹130 crore and free cash flow minus ₹357 crore. The current call reports H1 CFO positive ₹22 crore, but working capital remained 353 days, only modestly better than 359 in FY26. Management described FY29 as the point for sustained positive quarterly operating cash flow as production orders rise.",
+    "governance": "Promoter ownership remained 49.98% between June and September, while FII ownership fell from 7.59% to 5.95%. Current pledge percentage was not verified in the new shareholding pack; an older deepdive pledge figure must not be recycled as current. Acquisition terms, future equity dilution and promoter pledges require fresh encumbrance filings before position sizing.",
+    "limitations": "No fresh quantitative composite or forensic governance score is computed. The historical master-verdict index is a dated reference, not a current recommendation."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-10-26",
+    "coverage_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "confidence": "medium",
+    "sentiment": "constructive with execution risks",
+    "sentiment_basis": "Rapid defence scale-up, with cash conversion and acquisition integration still the decisive risks.",
+    "summary": {
+      "result": "Local revenue ₹388 crore and PAT ₹46.00 crore; use the definition notes in results analysis.",
+      "driver": "Existing defence-electronics execution.",
+      "forward": "Management expects order book above ₹2,000 crore by March excluding MIGM; more consistent positive quarterly operating cash flow is a FY29 ambition.",
+      "risk": "Cash conversion: CFO/PAT, receivables, customer advances and borrowings."
+    },
+    "story_tension": "Rapid defence scale-up, with cash conversion and acquisition integration still the decisive risks.",
+    "operating_kpis": [
+      {
+        "metric": "Order book",
+        "value": "₹1,765 crore",
+        "note": "September-end management disclosure."
+      },
+      {
+        "metric": "Working-capital days",
+        "value": "353",
+        "note": "359 at FY26 year-end."
+      },
+      {
+        "metric": "H1 operating cash flow",
+        "value": "₹22 crore positive",
+        "note": "Management-reported; compare with full-year cash requirements."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "Order book expected above ₹2,000 crore by March excluding MIGM."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Ideal remains a drag and requires further operating changes over the next few quarters."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "Order book above ₹2,000 crore excluding MIGM",
+        "window": "March 2027",
+        "status": "PENDING",
+        "evidence": "September reported book ₹1,765 crore."
+      },
+      {
+        "promise": "Improve Ideal operations",
+        "window": "Next 2–3 quarters",
+        "status": "PENDING",
+        "evidence": "Current-quarter performance remained affected by its lean season and restructuring."
+      },
+      {
+        "promise": "Consistent positive operating cash flow",
+        "window": "FY29 onwards",
+        "status": "PENDING",
+        "evidence": "This is a forward production-mix aspiration; current H1 positive CFO does not establish it."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Cash conversion",
+        "status": "ALIVE",
+        "evidence": "A 353-day working-capital cycle leaves substantial cash tied up, while capex and acquisitions require funding."
+      },
+      {
+        "thesis": "Integration and dilution",
+        "status": "ALIVE",
+        "evidence": "Ideal was loss-making; Premier and new systems businesses introduce further capital and management demands."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "A. Krishna Sai Kumar",
+        "text": "we do not want to comment as of now until the full process is over.",
+        "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings-call transcript, 2026-10-26",
+        "url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf"
+      },
+      {
+        "title": "Company investor relations / current disclosures",
+        "url": "https://apollo-micro.com/investor-relations.html"
+      }
+    ],
+    "limitations": [
+      "NSE-indexed current PDF was a link-only filing; the actual company-hosted transcript was separately retrieved and used.",
+      "Management historical PAT-growth percentages differ from growth calculated on rounded local comparative PAT; table calculations retain the local comparable series.",
+      "Coverage uses current prepared remarks and targeted Q&A, prior available remarks and selected historical checks; it is not a complete five-call forensic or six-quarter promise audit. Empty silence, dropped-guidance and tone-shift arrays mean insufficient supported evidence, not proof of absence.",
+      "Second review distinguishes a supported management assertion from independently demonstrated economics; the claim ledger sets out residual reconciliation gaps."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings-call transcript, 2026-10-26",
+      "url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf"
+    },
+    {
+      "title": "Company investor relations / current disclosures",
+      "url": "https://apollo-micro.com/investor-relations.html"
+    }
+  ],
+  "remaining_gaps": [
+    "NSE-indexed current PDF was a link-only filing; the actual company-hosted transcript was separately retrieved and used.",
+    "Management historical PAT-growth percentages differ from growth calculated on rounded local comparative PAT; table calculations retain the local comparable series.",
+    "The prior-year PAT base and unusually high effective tax rate are not fully reconciled.",
+    "Premier completion/funding terms and the underlying CCI decision were not independently audited.",
+    "Current promoter pledge percentage is unverified.",
+    "Expected MIGM order value is not an executed award."
+  ],
+  "claim_audit": [
+    {
+      "claim": "September 2026 revenue ₹388.00 crore and PAT ₹46.00 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table",
+      "source_url": "data/APOLLO-financials.json",
+      "locator": "ticker=APOLLO, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The live canonical table agrees with the report input. Revenue, total PAT and EPS must retain their respective accounting definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "Group Q2 revenue ₹388 cr, EBITDA excluding other income ₹111 cr and PAT ₹46 cr agree in rounded rupees.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 3; retained text lines 126–130",
+      "excerpt": "",
+      "assessment": "Amounts match current local rows, but this does not resolve comparative growth or standalone scope."
+    },
+    {
+      "claim": "The call says 40% PAT growth; the local comparison gives 53.3%.",
+      "claim_type": "management-reported fact",
+      "status": "UNRESOLVED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 3; retained text lines 134–138",
+      "excerpt": "",
+      "assessment": "The year-ago base is unresolved; do not certify both growth percentages as one measure."
+    },
+    {
+      "claim": "Standalone Q2 revenue was ₹306 cr and PAT ₹48 cr.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 3; retained text lines 138–142",
+      "excerpt": "",
+      "assessment": "More consolidated revenue does not create more profit in this quarter; subsidiary contribution is currently dilutive."
+    },
+    {
+      "claim": "H1 CFO was ₹22 cr; working capital 353 days versus 359 in FY26.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 3; retained text lines 110–114",
+      "excerpt": "",
+      "assessment": "Positive H1 cash is supported, but the remaining cycle is long and is not evidence of consistently positive quarterly cash."
+    },
+    {
+      "claim": "Group order book was ₹1,765 cr.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 4; retained text lines 157–161",
+      "excerpt": "",
+      "assessment": "Management later places standalone book below ₹1,300 cr, so the group number is not wholly standalone electronics visibility."
+    },
+    {
+      "claim": "Management expects above ₹2,000 cr book by March excluding MIGM.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 8; retained text lines 433–437",
+      "excerpt": "",
+      "assessment": "This is a forward expectation rather than awarded work."
+    },
+    {
+      "claim": "The larger ₹4,500–5,000 cr book depends on MIGM placement.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 17; retained text lines 1022–1026",
+      "excerpt": "",
+      "assessment": "The explicit placement condition must accompany the figure."
+    },
+    {
+      "claim": "Ideal/IDL improvement needs another two to three quarters.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 4; retained text lines 198–202",
+      "excerpt": "",
+      "assessment": "Management acknowledges turnaround and lean-season risks; integration is not complete."
+    },
+    {
+      "claim": "Consistent positive quarterly CFO is discussed from FY29.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 14; retained text lines 811–815",
+      "excerpt": "",
+      "assessment": "The long horizon tempers claims that current earnings already represent dependable cash conversion."
+    },
+    {
+      "claim": "Management states CCI approved the Premier transaction.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 2; retained text lines 67–71",
+      "excerpt": "",
+      "assessment": "The claim is supported as management commentary; the underlying regulatory decision was not separately audited."
+    },
+    {
+      "claim": "The high effective-tax discussion lacks a complete reconciliation.",
+      "claim_type": "management-reported fact",
+      "status": "UNRESOLVED",
+      "source_title": "APOLLO Q2 FY27 earnings-call transcript",
+      "source_url": "https://apollo-micro.in/api/files/reports/f1151a27-3dd7-403a-82c4-7874c20b9016-earnings-call-transcript---october-26%2C-2026.pdf",
+      "locator": "PDF page 10; retained text lines 548–552",
+      "excerpt": "",
+      "assessment": "A25% to 30% statutory shift does not by itself explain a near 51% effective rate."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹-130 crore; dataset free cash flow ₹-357 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local cash_flow_annual table",
+      "source_url": "data/APOLLO-financials.json",
+      "locator": "ticker=APOLLO, period_end=2026-03-31, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "Annual cash-flow figures were re-read; they are not September-quarter or H1 cash flows and do not use management-adjusted FCF definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "September promoter holding was 49.98%.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local shareholding_quarterly table",
+      "source_url": "data/APOLLO-financials.json",
+      "locator": "ticker=APOLLO, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The reported percentage agrees with the local ownership table; any change in percentage requires a corporate-action/share-count bridge before describing it as promoter buying or selling. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    }
+  ],
+  "audit_summary": {
+    "scope": "Independent second review of material operating, guidance, earnings-quality and valuation claims against retained current transcript passages, relevant prior evidence and re-read canonical financial tables. Exact source locations are supplied; management statements remain management statements. This is not a complete audit of financial statements or all historical promises.",
+    "overall_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Added the call’s 40% versus local 53.3% PAT-growth discrepancy.",
+      "Separated consolidated and standalone profit/order-book scopes.",
+      "Removed arbitrary target prices and identified the incomplete tax bridge."
+    ],
+    "unverified": [
+      "The prior-year PAT base and unusually high effective tax rate are not fully reconciled.",
+      "Premier completion/funding terms and the underlying CCI decision were not independently audited.",
+      "Current promoter pledge percentage is unverified.",
+      "Expected MIGM order value is not an executed award."
+    ]
+  },
+  "deeper_analysis": {
+    "business_economics": [
+      "Electronics, explosives and complete systems have different customers, capital requirements and cash cycles. Standalone Q2 PAT of ₹48 crore exceeds group PAT of ₹46 crore despite lower revenue, showing that subsidiary scale currently creates a profit drag.",
+      "The ₹1,765 crore group order book differs from standalone visibility of a little below ₹1,300 crore. Development programmes, limited-series work and production awards require different forecasts. Trials and management confidence are not executed orders."
+    ],
+    "earnings_quality": [
+      "Current revenue ₹388 crore, EBITDA ₹111 crore and PAT ₹46 crore agree with local rounded rows. The call’s 40% PAT-growth description does not match 53.3% on the local comparative base. Matching the current amount does not verify the growth percentage.",
+      "Positive H1 CFO of ₹22 crore improves on FY26’s negative ₹130 crore, but 353 working-capital days remains very long. Management points to FY29 for consistently positive quarterly cash conversion as production orders expand; the current half-year is not a completed turnaround."
+    ],
+    "capital_allocation": [
+      "Premier funding and completion, Ideal/IDL improvement and new systems capacity require cash before the expanded opportunity becomes recurring shareholder income. Acquired scale should be tested through subsidiary profit, cash and capital deployed.",
+      "A question about an effective tax rate near 51% receives a discussion of a 25% to 30% statutory change but no complete bridge. Neither a low normal tax assumption nor a permanent 50% rate should be inserted without reconciliation."
+    ],
+    "valuation_logic": [
+      "An approximately 116× price/available-EPS ratio leaves a high burden of proof. Strong revenue growth alone is insufficient if collections, subsidiary returns, dilution and tax do not improve together.",
+      "A valuation should separate existing electronics cash earnings, explosives turnaround and prospective systems programmes, then account for incremental funding. Conditional ₹4,500–5,000 crore order-book language is not cash or guaranteed annual sales."
+    ],
+    "peer_positioning": [
+      "Electronics peers help assess qualification, production conversion and receivables. Explosives peers suit Ideal/IDL, while complete-system vendors operate at another scope. One defence-sector multiple conceals these distinctions.",
+      "Government programme exposure can support demand visibility while leaving award, acceptance and collection risk. Compare order-to-cash and incremental returns rather than only order-book growth."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Consolidation drag",
+        "latest_value": "Standalone PAT ₹48 cr; group PAT ₹46 cr",
+        "source": "Current call, prepared results",
+        "why_it_matters": "Tests whether acquired subsidiaries add economic profit.",
+        "next_test": "Track subsidiary profit, cash and capital separately."
+      },
+      {
+        "metric": "Cash conversion",
+        "latest_value": "H1 CFO ₹22 cr;353 working-capital days",
+        "source": "Current call, cash remarks",
+        "why_it_matters": "Profit growth may still need external finance.",
+        "next_test": "Verify quarterly cash generation and collections."
+      },
+      {
+        "metric": "Award versus expectation",
+        "latest_value": "Book ₹1,765 cr; larger MIGM view conditional",
+        "source": "Current call, order Q&A",
+        "why_it_matters": "Avoids valuing unawarded business as contracted cash.",
+        "next_test": "Track executed awards, scope, advances and delivery schedule."
+      }
+    ],
+    "unanswered_questions": [
+      "What reconciles 40% call PAT growth with 53.3% on the local comparative base?",
+      "What explains the high effective tax rate and sustainable attributable-EPS tax basis?",
+      "What cash, guarantees and dilution are required for Premier, explosives expansion and complete systems?"
+    ]
+  }
+}

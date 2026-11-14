@@ -1,0 +1,515 @@
+{
+  "archetype": "bank",
+  "executive_summary": "Bank of India presents a low-multiple profitability recovery with strong balance-sheet expansion, but the September quarter exposes funding-mix and provision-quality questions. The discount to book may narrow if returns improve sustainably; the key is separating core spread improvement from treasury income and standard-asset provision reversals.",
+  "research_stance": "Valuation support with earnings-quality caveats; monitor funding cost, provision reversals and ECL rather than treating cheap P/E as sufficient.",
+  "thesis_drivers": [
+    {
+      "title": "Balance-sheet growth broadens opportunity",
+      "evidence": "Global advances grew 20.58% and deposits 21.59% YoY in the call; domestic advances grew 17.84%. Faster deposit growth than loans is reassuring, but the liability mix is less favourable than aggregate growth alone suggests.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Profitability has improved but provisions matter",
+      "evidence": "The call reports standalone PAT of ₹3,202 crore, up 25.32% YoY. Management identified ₹213 crore of standard-asset provision reversals; assess pre-provision operating income and normalised credit costs before annualising the reported profit.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    },
+    {
+      "title": "Cheap book multiple needs a return bridge",
+      "evidence": "The local snapshot shows a P/B of 0.74 x and RoE of 12.4%. A rerating needs sustainable returns and capital discipline, particularly as the ECL transition competes for retained earnings.",
+      "source": "September 2026 local financials and latest earnings-call transcript"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "PSU-bank recovery lens",
+      "content": "Bank of India’s franchise value should be analysed through funding costs, recoveries, credit underwriting and return on capital. Sales/EBITDA/ROCE comparisons with industrial companies are inappropriate."
+    },
+    {
+      "heading": "Deposit mix versus deposit growth",
+      "content": "CASA fell to 34.16% from 36.68% in Q1 despite growth in the absolute CASA balance. FCNR deposits and associated lending can expand the balance sheet while diluting NIM; aggregate growth alone does not establish better franchise economics."
+    },
+    {
+      "heading": "Macro read-through",
+      "content": "Loan repricing after a rate increase can aid spreads, but deposit competition and investment-book sensitivity are offsets. Higher rates can also expose borrower stress."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "Credit / Asset-Quality Cycle",
+      "stage": "LATE-BENIGN",
+      "evidence": "Reported GNPA of 1.60% and NNPA of 0.42% indicate a much cleaner current loan book. New loan vintages still need to season, so low current losses do not establish future credit costs."
+    },
+    {
+      "name": "Valuation Cycle",
+      "stage": "DISCOUNT",
+      "evidence": "The snapshot P/B of 0.74 x represents a discount to reported book. Whether that discount closes depends on sustainable RoE and adjustments to book value."
+    },
+    {
+      "name": "NIM / Spread Cycle",
+      "stage": "COMPRESSING",
+      "evidence": "Global NIM fell to 2.47% from 2.52% in Q1. Management attributed a 5 bp impact to the FCNR programme, making funding and programme mix important to any margin recovery."
+    },
+    {
+      "name": "Deposit / Liability Cycle",
+      "stage": "COMFORTABLE",
+      "evidence": "Deposits grew 21.59% YoY, ahead of advances at 20.58%, but CASA share declined. Funding availability and funding quality therefore send different signals."
+    },
+    {
+      "name": "Credit-Growth Cycle",
+      "stage": "ACCELERATION",
+      "evidence": "Global advances grew 20.58% YoY and domestic advances 17.84%. The current pace is above the unchanged 15–16% full-year guide; FCNR activity and underlying credit demand must be distinguished."
+    },
+    {
+      "name": "Regulatory / ECL Transition Cycle",
+      "stage": "PRE-TRANSITION",
+      "evidence": "Management discussed an approximate annual CRAR impact of 0.5 percentage points over four years, subject to board assessment. The final bank-specific model and buffers remain to be confirmed."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and sustainable-return constraints; point target withheld",
+    "assessment": "The snapshot P/B of 0.74 x and P/E of 5.61 x look inexpensive, but reflect lower or less certain sustainable returns than premium peers. Provision reversals and low current credit costs warrant conservative normalisation.",
+    "assumptions": [
+      "Current reported book value is ₹207 per share in the consolidated snapshot.",
+      "A fair-value P/ABV requires ECL, subsidiary and unprovided NPA adjustments not completed here.",
+      "The previous arbitrary bear/base/bull target-price sensitivities have been removed. The deeper valuation discussion states the economic return conditions and analyst assumptions instead."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "Deposits continue funding profitable credit growth while CASA stabilises.",
+      "NIM recovers after FCNR mix dilution; credit costs remain controlled.",
+      "Sustainable RoE improvement narrows the discount to book."
+    ],
+    "base": [
+      "Loan growth tracks 15–16% guidance and deposits 16–17%.",
+      "Funding-mix pressure offsets some operating growth and provision benefits normalise.",
+      "Book value compounds, with modest rerating dependent on return quality."
+    ],
+    "bear": [
+      "CASA dilution and marginal funding costs keep NIM under pressure.",
+      "ECL and fresh credit losses require materially higher provisions.",
+      "Headline PAT recovery proves less recurring than the low P/E implies."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Provision reversals flatter earnings",
+      "detail": "₹213 crore standard-asset release supported the quarter; do not treat all current profits as recurring.",
+      "monitor": "PAT excluding nonrecurring provision releases and treasury effects."
+    },
+    {
+      "severity": "HIGH",
+      "title": "CASA and NIM dilution",
+      "detail": "CASA was 34.16%, versus 36.68% in Q1; global NIM was 2.47%, versus 2.52%.",
+      "monitor": "Marginal deposit cost, CASA and NIM."
+    },
+    {
+      "severity": "HIGH",
+      "title": "ECL capital transition",
+      "detail": "Management mentioned around 0.5 percentage-point annual CRAR impact over next 4 years, subject to board assessment.",
+      "monitor": "Final ECL model, buffers and CET1."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Credit-cycle normalisation",
+      "detail": "Low reported credit cost can reverse as new loans season.",
+      "monitor": "SMA, vintage slippages and credit cost."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Deposit guide delivery after upward revision",
+      "timeline": "FY27",
+      "evidence": "Global deposit guidance raised from 13–14% to 16–17%; advances 15–16% unchanged."
+    },
+    {
+      "event": "NIM recovery after lower-yield FCNR balance-sheet expansion",
+      "timeline": "Next two quarters",
+      "evidence": "Management attributed 5 bp global NIM impact to FCNR programme."
+    },
+    {
+      "event": "ECL preparedness and capital-buffer disclosure",
+      "timeline": "Before transition",
+      "evidence": "Board-level assessment still pending on call."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "Global NIM remains below 2.4% for two quarters while CASA continues falling.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "Underlying PAT growth disappears after removing provision releases and treasury gains.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    },
+    {
+      "condition": "ECL capital absorption or fresh slippages materially exceed disclosed buffer capacity.",
+      "deadline": "Next two reported quarters",
+      "action": "Reassess the thesis and reduce confidence"
+    }
+  ],
+  "quality_assessment": {
+    "business": "The large deposit franchise and improving asset-quality metrics support the recovery case. Funding cost and deposit mix remain important differentiators.",
+    "management": "Specific deposit guidance revision and explanation of FCNR and provision releases aid analysis, but ECL numbers are not yet final.",
+    "capital_allocation": "CRAR 17.78% offers room; value creation depends on lending spread and losses, not nominal balance-sheet expansion.",
+    "governance": "Public ownership and policy exposure remain structural; this is not a forensic approval.",
+    "limitations": "Local consolidated PAT of ₹3,310 crore differs from the call’s standalone PAT of ₹3,202 crore. This is a reporting-scope difference, not automatically a numerical failure."
+  },
+  "company_name": "Bank of India",
+  "ticker": "BANKINDIA",
+  "as_of": "2026-11-13",
+  "results_analysis": [
+    "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹3,310.0 crore versus ₹2,576.0 crore a year ago and ₹3,304.0 crore in June 2026. This represents growth of +28.5% YoY and +0.2% QoQ.",
+    "Banks are analysed on NII/NIM, deposits, loan growth, provisions and capital. The source table has no bank sales or industrial OPM; these fields are intentionally left unreported. Operating ratios in the call are standalone, while consolidated local profits include subsidiaries unless the table says standalone.",
+    "Global advances grew 20.58% and deposits 21.59% YoY in the call; domestic advances grew 17.84%. Faster deposit growth than loans is reassuring, but the liability mix is less favourable than aggregate growth alone suggests.",
+    "The local snapshot is dated 2026-11-13; cleaned-price technicals are dated 2026-11-12. The financials were read from the existing local lake. No replacement result-PDF figures or old overlay targets were silently substituted, and no post-refresh verification is claimed."
+  ],
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings call transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf"
+    },
+    {
+      "title": "Prior quarter transcript",
+      "url": "https://nsearchives.nseindia.com/corporate/BANKINDIA6_30072026181621_Transcriptjune2026.pdf"
+    }
+  ],
+  "concall": {
+    "as_of_quarter": "Q2 FY27 (September 2026)",
+    "call_date": "2026-10-23",
+    "coverage_status": "Current transcript reviewed; latest/prior comparison; no audited silence frequency table",
+    "confidence": "medium",
+    "sentiment": "constructive with quality caveats",
+    "sentiment_basis": "Growth and asset quality improved, while questions focused on deposits, provisions and ECL.",
+    "summary": {
+      "result": "September 2026 (Q2 FY27), consolidated local financials report PAT of ₹3,310.0 crore versus ₹2,576.0 crore a year ago and ₹3,304.0 crore in June 2026. This represents growth of +28.5% YoY and +0.2% QoQ.",
+      "driver": "Credit growth, NII and non-interest income; standard-asset provision release also contributed.",
+      "forward": "FY27 global advances 15–16%, deposits 16–17%; deposit guide was raised from 13–14%.",
+      "risk": "NIM dilution, provision normalisation and ECL capital absorption."
+    },
+    "story_tension": "Can the discount to book narrow through recurring return improvement as deposit mix and provisioning normalise?",
+    "operating_kpis": [
+      {
+        "metric": "Global advances/deposits growth",
+        "value": "20.58% / 21.59% YoY",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "Global NIM",
+        "value": "2.47%; Q1: 2.52%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "CASA",
+        "value": "34.16%; Q1: 36.68%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "GNPA/NNPA",
+        "value": "1.60% / 0.42%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      },
+      {
+        "metric": "CRAR",
+        "value": "17.78%",
+        "note": "Latest call; bank operating ratios are standalone unless stated otherwise"
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        {
+          "title": "Deposit guide higher",
+          "detail": "FY27 global deposits 16–17% versus 13–14% in Q1.",
+          "severity": "high"
+        }
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        {
+          "title": "Provision release",
+          "detail": "₹213 crore standard asset reversals require earnings-quality adjustment.",
+          "severity": "medium"
+        },
+        {
+          "title": "ECL capital path",
+          "detail": "Management discussed an approximate annual CRAR impact of 0.5 percentage points over four years; the final board assessment remains pending.",
+          "severity": "medium"
+        }
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [
+      {
+        "area": "FY27 deposit growth",
+        "direction": "raised",
+        "from": "13–14%",
+        "to": "16–17%",
+        "detail": "Advances guide stayed 15–16%; more balanced funding objective."
+      }
+    ],
+    "promise_ledger": [
+      {
+        "promise": "FY27 advances growth 15–16%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q2 global advances 20.58% YoY, annual window open."
+      },
+      {
+        "promise": "FY27 global deposits 13–14%",
+        "window": "FY27",
+        "status": "WITHDRAWN",
+        "evidence": "Replaced by 16–17% higher guide in Q2."
+      },
+      {
+        "promise": "FY27 global deposits 16–17%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Updated guidance; actual Q2 growth 21.59% is not full-year delivery."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Provision reversals flatter earnings",
+        "status": "ALIVE",
+        "evidence": "₹213 crore standard-asset release supported the quarter; do not treat all current profits as recurring."
+      },
+      {
+        "thesis": "CASA and NIM dilution",
+        "status": "ALIVE",
+        "evidence": "CASA 34.16% versus 36.68% Q1; global NIM 2.47% versus 2.52%."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Rajneesh Karnatak, MD & CEO",
+        "text": "global advances to grow by 15-16%, and global deposits by 16-17%.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings call transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf"
+      },
+      {
+        "title": "Prior quarter transcript",
+        "url": "https://nsearchives.nseindia.com/corporate/BANKINDIA6_30072026181621_Transcriptjune2026.pdf"
+      }
+    ],
+    "limitations": [
+      "Annualisation of credit-cost conventions and final ECL model are not independently verified.",
+      "No validated four-quarter silence signal."
+    ]
+  },
+  "remaining_gaps": [
+    "Annualisation of credit-cost conventions and final ECL model are not independently verified.",
+    "No validated four-quarter silence signal.",
+    "No formal DCF, fair-value certification or quantitative CCS promotion performed for this dated batch.",
+    "Full final ECL amount, Board assessment and sustainable credit cost remain open.",
+    "A complete consolidated-to-bank-only profit and adjusted-book bridge is not available in this audit."
+  ],
+  "audit_summary": {
+    "as_of": "2026-11-14",
+    "source_cutoff": "2026-11-13",
+    "scope": "Independent second-pass review of material company-specific claims against retained current/prior primary transcripts, current local statement rows and explicit arithmetic. A supported management statement remains a management assertion, not an independently assured outcome. This is not a five-call silence audit, legal audit or full forensic accounting review.",
+    "overall_status": "Reviewed with disclosed qualifications",
+    "corrections": [
+      "Removed arbitrary price sensitivities whose exit multiples had not been established from a defensible historical or peer valuation study.",
+      "Separated falling CASA share from rising absolute CASA deposits and sequential from year-on-year NIM.",
+      "Marked provision reversals pre-tax and ECL capital estimates provisional, rather than settled profit/capital adjustments."
+    ],
+    "unverified": [
+      "Full final ECL amount, Board assessment and sustainable credit cost remain open.",
+      "A complete consolidated-to-bank-only profit and adjusted-book bridge is not available in this audit."
+    ],
+    "claim_count": 12,
+    "status_counts": {
+      "DEFINITION_DIFFERENCE": 2,
+      "SUPPORTED": 9,
+      "UNRESOLVED": 1
+    }
+  },
+  "claim_audit": [
+    {
+      "claim": "Local consolidated PAT is ₹3,310 crore; the call reports bank PAT ₹3,202 crore.",
+      "claim_type": "Local financial data / calculation",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Local pnl_quarterly table, retained issuer inputs",
+      "source_url": "research/BANKINDIA_inputs.json",
+      "locator": "pnl_quarterly: BANKINDIA, specified reporting period",
+      "excerpt": "",
+      "assessment": "A ₹108 crore scope difference must not be presented as an operating beat. The call’s standalone operating ratios should not be applied mechanically to group earnings. This verifies the stored dataset and arithmetic; it is not an independent audit of the issuer."
+    },
+    {
+      "claim": "Global advances/deposits grew 20.58%/21.59% YoY.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 4; retained text line 166",
+      "excerpt": "",
+      "assessment": "Headline global growth is not the same as domestic lending growth or a same-currency organic rate."
+    },
+    {
+      "claim": "Domestic loan growth was 17.84%; domestic deposits grew 23.29%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 5; retained text line 178",
+      "excerpt": "",
+      "assessment": "Domestic and overseas books have different mix and economics; separate them when judging funding and margins."
+    },
+    {
+      "claim": "CASA ratio was 34.16%, although absolute CASA grew about 7%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 10; retained text line 409",
+      "excerpt": "",
+      "assessment": "A growing absolute CASA balance can coexist with a falling share as faster term deposits enlarge the denominator."
+    },
+    {
+      "claim": "Prior-quarter CASA was 36.68%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Prior-quarter official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA6_30072026181621_Transcriptjune2026.pdf",
+      "locator": "PDF page 5; retained text line 177",
+      "excerpt": "",
+      "assessment": "Comparison with the current 34.16% shows a 252 bp sequential mix decline, not a decline in the absolute CASA balance."
+    },
+    {
+      "claim": "Global NIM was 2.47%, versus Q1 2.52%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 5; retained text line 200",
+      "excerpt": "",
+      "assessment": "Current prepared remarks give 2.47%; prior transcript independently gives 2.52%. The decline is 5 bp, despite year-on-year improvement."
+    },
+    {
+      "claim": "₹213 crore standard-asset provision reversal supported the result.",
+      "claim_type": "Management-reported",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 7; retained text line 296",
+      "excerpt": "",
+      "assessment": "The amount is pre-tax. It should not be subtracted from PAT without tax and other provision movements."
+    },
+    {
+      "claim": "GNPA/NNPA were 1.60%/0.42%; CRAR was 17.78%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 5; retained text line 207",
+      "excerpt": "",
+      "assessment": "Low current ratios and capital headroom do not settle future ECL provisioning or new-vintage risk."
+    },
+    {
+      "claim": "Credit cost was 0.12% in the bank’s disclosed ratio series.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 5; retained text line 204",
+      "excerpt": "",
+      "assessment": "Retain the issuer convention; do not compare directly with differently annualised ratios from another bank."
+    },
+    {
+      "claim": "FY27 global deposits guide is now 16–17%, versus 13–14% in Q1.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 6; retained text line 229",
+      "excerpt": "",
+      "assessment": "The prior call explicitly states 13–14%; this is a genuine upgraded annual guide, not a new target inferred from quarterly momentum."
+    },
+    {
+      "claim": "Prior annual deposit-growth guide was 13–14%.",
+      "claim_type": "Management-reported",
+      "status": "SUPPORTED",
+      "source_title": "Prior-quarter official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA6_30072026181621_Transcriptjune2026.pdf",
+      "locator": "PDF page 6; retained text line 230",
+      "excerpt": "",
+      "assessment": "This verifies the prior side of the guidance-change comparison."
+    },
+    {
+      "claim": "The ECL discussion gave a ballpark 0.5 percentage-point annual CRAR effect over four years.",
+      "claim_type": "Management-reported",
+      "status": "UNRESOLVED",
+      "source_title": "Q2 FY27 official earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/BANKINDIA5_30102026155810_TranscriptQ2FY27.pdf",
+      "locator": "PDF page 8; retained text line 325",
+      "excerpt": "",
+      "assessment": "Management said the total amount was not shared before Board consideration. This is an estimate, not a final regulatory or accounting conclusion."
+    }
+  ],
+  "deeper_analysis": {
+    "business_economics": [
+      "The quarter demonstrates volume strength: global loans grew 20.58% and deposits 21.59%. Domestic figures differ, at 17.84% loan growth and 23.29% deposit growth, so not all headline balance-sheet expansion should be valued as identical domestic spread income.",
+      "The liability-quality question is sharper than the growth headline. CASA rose about 7% in absolute rupees, but the ratio fell from 36.68% to 34.16% as other deposits expanded faster. The economic test is whether incremental NII compensates for a more expensive mix, not whether deposits increased."
+    ],
+    "earnings_quality": [
+      "Global NIM fell 5 bp sequentially to 2.47% even though it improved from 2.41% a year earlier. This mixed comparison is important: year-on-year improvement does not establish that near-term margin pressure is over.",
+      "The ₹213 crore standard-asset provision reversal adds to earnings and requires normalization. Local consolidated PAT of ₹3,310 crore differs from the call’s ₹3,202 crore bank profit. Removing the reversal requires an appropriate tax adjustment and a full provision bridge, not a simple direct subtraction from either PAT number."
+    ],
+    "capital_allocation": [
+      "CRAR of 17.78% provides current capacity, but management’s estimated recurring capital effect from ECL was explicitly preliminary and subject to Board work. Capital generation must be evaluated after dividends, new RWA growth and the final provisioning rules.",
+      "Higher deposit guidance of 16–17%, versus 13–14% in Q1, is a genuine change. Advances guidance remained 15–16%; pursuing more balanced funding can be constructive even if spot loan growth later slows toward the full-year range."
+    ],
+    "valuation_logic": [
+      "The dated snapshot P/B is 0.74 x and ROE is 12.4%. A deliberately simplified perpetual-bank identity, P/B=(ROE −g)/(cost of equity −g), using analyst assumptions of 13% cost of equity and 6% long-run growth, would require a steady-state ROE of about 11.2% at that book multiple. This is a diagnostic of the earnings expectations in the price, not a fair value, forecast or calibrated discount rate. A changing growth phase, subsidiary values, adjusted book and surplus capital can materially alter the answer.",
+      "A 0.74 x snapshot book multiple is not automatically a margin of safety: the value case depends on protecting normalized ROE after the current credit-cost trough and provision releases. The stylized model’s approximately 11.2% required steady-state ROE is near the 12.4% snapshot ROE, leaving sensitivity to modest return normalization. This comparison is descriptive, not a target or an ECL-adjusted book valuation."
+    ],
+    "peer_positioning": [
+      "Union’s higher dated P/B of 1.07 x accompanies higher snapshot ROE of 15.7%, compared with BOI’s 0.74 x and 12.4%. A rerating requires evidence that BOI narrows the sustainable-return gap, not merely that both banks report low current NPAs. Private-bank multiples incorporate different liability and franchise characteristics and should not be imported mechanically."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "CASA ratio / absolute growth",
+        "latest_value": "34.16% / about 7% YoY",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Separates funding mix deterioration from deposit shrinkage.",
+        "next_test": "Track marginal funding cost and retail term deposit retention."
+      },
+      {
+        "metric": "Global NIM",
+        "latest_value": "2.47%; Q1 2.52%",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Volume growth can dilute spreads.",
+        "next_test": "Check NII growth against average earning assets and funding mix."
+      },
+      {
+        "metric": "Standard-asset provision reversal",
+        "latest_value": "₹213 crore pre-tax",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Part of profit support may not recur.",
+        "next_test": "Request a normalized provisions and tax bridge."
+      },
+      {
+        "metric": "ECL capital estimate",
+        "latest_value": "~0.5 pp/year over four years, preliminary",
+        "source": "Q2 FY27 earnings call",
+        "why_it_matters": "Capital consumption can change the valuation of book.",
+        "next_test": "Replace management estimate with the final approved treatment when available."
+      }
+    ],
+    "unanswered_questions": [
+      "How much of the provision reversal is repeatable, and what is normalized earnings after a through-cycle credit charge?",
+      "What proportion of current global deposit growth is rate-sensitive or overseas, and how does it change marginal spreads?",
+      "What final ECL exposure and retained-earnings path supports both planned growth and shareholder distributions?"
+    ]
+  }
+}

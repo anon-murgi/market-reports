@@ -1,0 +1,456 @@
+{
+  "company_name": "SMS Pharmaceuticals Limited",
+  "archetype": "pharma_api",
+  "executive_summary": "SMS Pharma is converting backward integration and higher API volumes into stronger operating profits. The September quarter is a meaningful improvement, but negative FY26 free cash flow and a still-unproven peptide/CDMO platform make this an execution-and-cash-conversion thesis rather than a peptide valuation story.",
+  "research_stance": "Operating improvement is real; cash conversion and the valuation paid for uncommercialised peptides remain the constraints.",
+  "results_analysis": [
+    "The local consolidated September 2026 quarter records revenue ₹316.00 crore, operating profit ₹68.00 crore and PAT ₹40.00 crore. Revenue changed +30.6% YoY and +52.7% QoQ; PAT changed +60.0% YoY and +90.5% QoQ.",
+    "Operating profit changed +41.7% YoY and +65.9% QoQ. The calculated operating-profit/sales margin is 21.52%, versus 19.83% a year earlier and 19.81% in June. These calculations use a consistently rounded local series; management EBITDA may use a different scope or definition.",
+    "FY26 CFO of ₹59 crore against PAT of ₹102 crore and free cash flow of minus ₹71 crore show why earnings acceleration needs a cash-flow cross-check. September borrowings of ₹349 crore and CWIP of ₹138 crore leave material capital employed before the next products fully earn.",
+    "Price and financial dates differ: the cleaned close used here is ₹523.85 on 2026-11-12; the public-financial snapshot is dated 2026-11-07. The screenshot price is not treated as a live or verified valuation input. Local public-financial-data parquets, September 2026 quarter; amounts rounded to ₹ crore."
+  ],
+  "thesis_drivers": [
+    {
+      "title": "Integrated API cost structure",
+      "evidence": "September revenue rose to ₹316 crore and local operating profit to ₹68 crore. Management attributes the improvement to volume, realisations and backward integration; the test is whether this advantage survives the next ibuprofen pricing down-cycle.",
+      "source": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf"
+    },
+    {
+      "title": "Capacity with an observable utilisation bridge",
+      "evidence": "Management reported current ibuprofen utilisation of 90–95% and a planned 9,600-tonne annual capacity. Existing utilisation makes expansion more credible, but customer qualification and the rate of absorption must determine future revenue recognition.",
+      "source": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf"
+    },
+    {
+      "title": "New molecules add breadth before peptides add scale",
+      "evidence": "Six filings had been completed including October, against a FY27 target of ten. Six to eight molecules are expected to commercialise in FY28; the research facility for peptides is operating, but samples and commercial customer revenue are still future milestones.",
+      "source": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf"
+    }
+  ],
+  "industry_context": [
+    {
+      "heading": "Business model and sector lens",
+      "content": "This is an API manufacturer exposed to molecule-level supply, regulatory qualification and price cycles. Domestic branded-pharma valuation benchmarks are a poor substitute for assessing manufacturing integration, product concentration and return on incremental capex."
+    },
+    {
+      "heading": "Balance sheet and capital allocation",
+      "content": "FY26 CFO of ₹59 crore against PAT of ₹102 crore and free cash flow of minus ₹71 crore show why earnings acceleration needs a cash-flow cross-check. September borrowings of ₹349 crore and CWIP of ₹138 crore leave material capital employed before the next products fully earn."
+    },
+    {
+      "heading": "Growth versus price paid",
+      "content": "A trailing P/E near the low-40s using current cleaned price and local EPS leaves limited room for delayed capacity utilisation. Value the existing API business first; attach no separate peptide premium until customer validation and revenue become observable."
+    }
+  ],
+  "cycles": [
+    {
+      "name": "API molecule filing / launch cycle",
+      "stage": "REPLENISHMENT",
+      "evidence": "Adapted from pharma_export Launch / ANDA Approval Cycle; these are API DMF/CEP filings, not ANDAs. Six filings including October versus ten targeted for FY27, with 6–8 molecules expected to commercialise in FY28."
+    },
+    {
+      "name": "CDMO / China+1 Integration Cycle",
+      "stage": "CAPABILITY BUILD",
+      "evidence": "The peptide R&D facility is operating but pilot samples and first CRO revenue are still future milestones; no commercial CDMO base is assumed."
+    },
+    {
+      "name": "Existing-molecule capacity / utilisation",
+      "stage": "Expansion / operating leverage",
+      "evidence": "Company-specific diagnostic: existing ibuprofen utilisation was 90–95%, while the 9,600-tonne expanded capacity and its absorption remain ahead."
+    },
+    {
+      "name": "Cash investment / funding",
+      "stage": "Capex absorption",
+      "evidence": "Company-specific diagnostic: FY26 CFO ₹59 crore versus free cash flow minus ₹71 crore and September borrowings ₹349 crore; the next cycle leg requires cash returns from commissioned assets."
+    }
+  ],
+  "valuation": {
+    "method": "Reverse valuation and cash-earnings constraints; no unsupported point target",
+    "assessment": "The approximately 42× price/available-TTM-EPS ratio already requires several years of execution from the API base. Backward integration can support earnings, but the cash needed for ₹120 crore remaining capex, a 120–150 day working-capital cycle and a pre-commercial peptide platform reduces the distributable value of near-term accounting profits.",
+    "assumptions": [
+      "At the 12 November adjusted close of ₹523.85, the available four-quarter EPS sum is ₹12.49, implying approximately 41.9× earnings and a 2.38% earnings yield. This is a price/available-EPS calculation, not a forecast or a fully normalized multiple.",
+      "A 20% contraction in the earnings multiple would require 25% cumulative EPS growth merely to keep the share price unchanged; dividends are excluded. This is algebraic sensitivity, not a prediction of the exit multiple.",
+      "A separate peptide option value is withheld until product qualification, customer commitments, required capital and cash contribution are known."
+    ],
+    "scenarios": []
+  },
+  "forward_thesis": {
+    "bull": [
+      "September revenue rose to ₹316 crore and local operating profit to ₹68 crore. Management attributes the improvement to volume, realisations and backward integration; the test is whether this advantage survives the next ibuprofen pricing down-cycle.",
+      "Management reported current ibuprofen utilisation of 90–95% and a planned 9,600-tonne annual capacity. Existing utilisation makes expansion more credible, but customer qualification and the rate of absorption must determine future revenue recognition.",
+      "The peptide pilot is ready in Q4 FY27 and first CRO revenue begins in Q2 FY28, validating the first commercial step without assuming a mature peptide margin."
+    ],
+    "base": [
+      "Management expects to exceed the earlier FY27 15% revenue-growth and 20% EBITDA-margin guidance, without publishing a replacement range.",
+      "FY26 CFO of ₹59 crore against PAT of ₹102 crore and free cash flow of minus ₹71 crore show why earnings acceleration needs a cash-flow cross-check. September borrowings of ₹349 crore and CWIP of ₹138 crore leave material capital employed before the next products fully earn.",
+      "The remaining ₹120 crore capex is completed by FY27-end; existing APIs carry earnings while six to eight FY28 molecules qualify and begin to ramp."
+    ],
+    "bear": [
+      "Expansion is preceding cash generation; borrowings can rise while qualification and ramp-up consume working capital.",
+      "Backward integration improves cost control but does not remove global oversupply or customer price negotiation.",
+      "A functioning R&D facility is not a commercial peptide business."
+    ]
+  },
+  "top_risks": [
+    {
+      "severity": "HIGH",
+      "title": "Cash tied up in capex",
+      "detail": "Expansion is preceding cash generation; borrowings can rise while qualification and ramp-up consume working capital.",
+      "monitor": "CFO/PAT, CWIP and debt at March 2027."
+    },
+    {
+      "severity": "HIGH",
+      "title": "API pricing cycle",
+      "detail": "Backward integration improves cost control but does not remove global oversupply or customer price negotiation.",
+      "monitor": "Gross margin and ibuprofen realisations."
+    },
+    {
+      "severity": "MEDIUM",
+      "title": "Peptide expectations run ahead of evidence",
+      "detail": "A functioning R&D facility is not a commercial peptide business.",
+      "monitor": "Pilot samples, signed customers and first revenue rather than addressable-market claims."
+    }
+  ],
+  "catalysts": [
+    {
+      "event": "Ibuprofen expansion and ramp-up",
+      "timeline": "Next 6–9 months",
+      "evidence": "Management plans 9,600-tonne capacity and progressive utilisation."
+    },
+    {
+      "event": "Remaining capex completion",
+      "timeline": "By March 2027",
+      "evidence": "₹160 crore deployed out of a ₹280 crore programme."
+    },
+    {
+      "event": "Peptide pilot / first CRO revenue",
+      "timeline": "Q4 FY27 / Q2 FY28",
+      "evidence": "Explicit management milestones, not reported revenue."
+    }
+  ],
+  "falsification_gates": [
+    {
+      "condition": "FY27 revenue growth is no higher than 15%, despite the stated expectation to exceed that guide.",
+      "deadline": "FY27 annual results",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Operating margin falls below 20% for two consecutive quarters while borrowings rise above the September ₹349 crore base.",
+      "deadline": "Next two reported quarters",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    },
+    {
+      "condition": "Peptide pilot production is not achieved by Q4 FY27, or first CRO revenue slips beyond Q2 FY28.",
+      "deadline": "March / September 2027",
+      "action": "Re-underwrite the thesis and lower confidence if triggered. Analyst monitoring threshold unless explicitly identified as a management commitment."
+    }
+  ],
+  "quality_assessment": {
+    "business": "September revenue rose to ₹316 crore and local operating profit to ₹68 crore. Management attributes the improvement to volume, realisations and backward integration; the test is whether this advantage survives the next ibuprofen pricing down-cycle.",
+    "management": "Vamsi Krishna Potluri raised the FY27 outlook above the old 15% growth/20% margin guide and tied the next phase to explicit capex, filings and peptide milestones. This improves accountability, but only two call periods are available and the six-quarter delivery record is not established.",
+    "capital_allocation": "FY26 CFO of ₹59 crore against PAT of ₹102 crore and free cash flow of minus ₹71 crore show why earnings acceleration needs a cash-flow cross-check. September borrowings of ₹349 crore and CWIP of ₹138 crore leave material capital employed before the next products fully earn.",
+    "governance": "September promoter ownership was 68.07%, unchanged from June. This is an alignment observation, not a clean-governance conclusion; current related-party terms involving associates and new peptide/CDMO subsidiaries still need annual-report review.",
+    "limitations": "No fresh quantitative composite or forensic governance score is computed. The historical master-verdict index is a dated reference, not a current recommendation."
+  },
+  "concall": {
+    "as_of_quarter": "Q2 FY27 / quarter ended 30 September 2026",
+    "call_date": "2026-11-05",
+    "coverage_status": "Latest-quarter transcript reviewed; historical audit limited as disclosed",
+    "confidence": "low",
+    "sentiment": "constructive with execution risks",
+    "sentiment_basis": "Operating improvement is real; cash conversion and the valuation paid for uncommercialised peptides remain the constraints.",
+    "summary": {
+      "result": "Local revenue ₹316 crore and PAT ₹40.00 crore; use the definition notes in results analysis.",
+      "driver": "Integrated API cost structure.",
+      "forward": "Management expects to exceed the earlier FY27 15% revenue-growth and 20% EBITDA-margin guidance, without publishing a replacement range.",
+      "risk": "Cash tied up in capex: CFO/PAT, CWIP and debt at March 2027."
+    },
+    "story_tension": "Operating improvement is real; cash conversion and the valuation paid for uncommercialised peptides remain the constraints.",
+    "operating_kpis": [
+      {
+        "metric": "Ibuprofen utilisation",
+        "value": "90–95%",
+        "note": "Management-reported existing facilities, not the enlarged future capacity."
+      },
+      {
+        "metric": "High-value API share",
+        "value": "49% of H1 revenue",
+        "note": "47% in FY26."
+      },
+      {
+        "metric": "Filings",
+        "value": "6 including October",
+        "note": "FY27 target of 10."
+      }
+    ],
+    "what_changed": {
+      "new_guidance": [
+        "Expectation to exceed the previous FY27 15% revenue-growth / 20% EBITDA-margin guide.",
+        "Peptide pilot targeted for Q4 FY27 and first CRO revenue for Q2 FY28."
+      ],
+      "dropped_guidance": [],
+      "new_risks": [
+        "Peptides have not yet sent pilot samples; initial commercial economics and customer conversion remain uncertain."
+      ],
+      "resolved_risks": []
+    },
+    "silence_detected": [],
+    "tone_shifts": [],
+    "promise_ledger": [
+      {
+        "promise": "FY27 revenue growth of 15% and EBITDA margin of 20%",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "Q2 management now expects to exceed both; the full financial year is not complete."
+      },
+      {
+        "promise": "₹280 crore capex programme completion",
+        "window": "FY27",
+        "status": "PENDING",
+        "evidence": "₹160 crore deployed; remaining ₹120 crore planned before year-end."
+      },
+      {
+        "promise": "Peptide pilot production",
+        "window": "Q4 FY27",
+        "status": "PENDING",
+        "evidence": "R&D facility operating, with pilot samples still ahead."
+      }
+    ],
+    "bear_cases": [
+      {
+        "thesis": "Cash tied up in capex",
+        "status": "ALIVE",
+        "evidence": "Expansion is preceding cash generation; borrowings can rise while qualification and ramp-up consume working capital."
+      },
+      {
+        "thesis": "API pricing cycle",
+        "status": "ALIVE",
+        "evidence": "Backward integration improves cost control but does not remove global oversupply or customer price negotiation."
+      }
+    ],
+    "quotes": [
+      {
+        "speaker": "Vamsi Krishna Potluri",
+        "text": "Backward integration gives us a structural cost advantage, not a temporary pricing benefit.",
+        "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Q2 FY27 earnings-call transcript, 2026-11-05",
+        "url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf"
+      },
+      {
+        "title": "Company investor relations / current disclosures",
+        "url": "https://smspharma.com/wp-content/uploads/2026/11/Press-Release-on-04-11-2026.pdf"
+      }
+    ],
+    "limitations": [
+      "Only two usable transcript periods are in this pack, Q2 FY27 and Q4 FY26; an immediate Q1 FY27 transcript was not available for a clean sequential guidance audit.",
+      "Silence detection and six-quarter promise grading are not supported by this history.",
+      "Coverage uses current prepared remarks and targeted Q&A, prior available remarks and selected historical checks; it is not a complete five-call forensic or six-quarter promise audit. Empty silence, dropped-guidance and tone-shift arrays mean insufficient supported evidence, not proof of absence.",
+      "Second review distinguishes a supported management assertion from independently demonstrated economics; the claim ledger sets out residual reconciliation gaps."
+    ]
+  },
+  "sources": [
+    {
+      "title": "Q2 FY27 earnings-call transcript, 2026-11-05",
+      "url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf"
+    },
+    {
+      "title": "Company investor relations / current disclosures",
+      "url": "https://smspharma.com/wp-content/uploads/2026/11/Press-Release-on-04-11-2026.pdf"
+    }
+  ],
+  "remaining_gaps": [
+    "Only two usable transcript periods are in this pack, Q2 FY27 and Q4 FY26; an immediate Q1 FY27 transcript was not available for a clean sequential guidance audit.",
+    "Silence detection and six-quarter promise grading are not supported by this history.",
+    "Only current and May transcripts are retained; no verified immediate-prior-quarter call comparison was available.",
+    "No customer-level peptide qualification, signed CRO value or unit economics is disclosed.",
+    "The API pricing, volume and mix bridge is not quantified sufficiently to prove the margin gain is wholly structural."
+  ],
+  "claim_audit": [
+    {
+      "claim": "September 2026 revenue ₹316.00 crore and PAT ₹40.00 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local pnl_quarterly table",
+      "source_url": "data/SMSPHARMA-financials.json",
+      "locator": "ticker=SMSPHARMA, period_end=2026-09-30, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "The live canonical table agrees with the report input. Revenue, total PAT and EPS must retain their respective accounting definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    },
+    {
+      "claim": "Management reports Q2 revenue ₹316 crore, EBITDA ₹68 crore and PAT ₹39.6 crore.",
+      "claim_type": "management-reported fact",
+      "status": "DEFINITION_DIFFERENCE",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 3; retained text lines 107–111",
+      "excerpt": "",
+      "assessment": "Current rupee amounts broadly match rounded local rows; the call uses 57% PAT growth, whereas the rounded local PAT series produces 60%. Do not present those growth percentages as exactly reconciled."
+    },
+    {
+      "claim": "H1 high-value APIs contributed 49% of revenue, versus 47% in FY26.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 4; retained text lines 134–138",
+      "excerpt": "",
+      "assessment": "The denominator is H1 revenue, not Q2 revenue or peptide revenue. High value is management’s product categorisation."
+    },
+    {
+      "claim": "Six filings were completed including October; FY27 target is ten.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 4; retained text lines 141–145",
+      "excerpt": "",
+      "assessment": "The six includes four H1 filings plus two after quarter-end. It must not be labelled six filings during the September quarter."
+    },
+    {
+      "claim": "Ibuprofen existing-capacity utilisation is 90–95%; expansion aims at 9,600 tonnes annually.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 5; retained text lines 221–225",
+      "excerpt": "",
+      "assessment": "The utilisation rate refers to current capacity; management separately described a gradual enlarged-capacity ramp. It is not 95% utilisation of the future 9,600-tonne plant."
+    },
+    {
+      "claim": "₹160 crore of a ₹280 crore capex programme was deployed; ₹120 crore remains.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 8; retained text lines 423–427",
+      "excerpt": "",
+      "assessment": "This is programme capex, not expenditure solely on peptides. Future cash needs should include the remaining spend and working capital."
+    },
+    {
+      "claim": "Peptide pilot production is targeted for Q4 FY27 and first CRO revenue for Q2 FY28.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 4; retained text lines 164–168",
+      "excerpt": "",
+      "assessment": "These are forward milestones. The later Q&A distinguishes own generic-peptide pilots from a signed customer CRO contract; do not treat the first-revenue objective as contracted sales."
+    },
+    {
+      "claim": "Pilot peptide samples had not been dispatched at the call date.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 8; retained text lines 392–396",
+      "excerpt": "",
+      "assessment": "Early customer discussion is not product qualification or commercial order conversion. The report should assign no proven peptide economics."
+    },
+    {
+      "claim": "Management expects to exceed its prior 15% revenue-growth and 20% EBITDA-margin FY27 outlook.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 4; retained text lines 169–173",
+      "excerpt": "",
+      "assessment": "Management strengthened direction but did not provide a new numerical range. The old 15% and 20% are prior guideposts, not newly upgraded precise forecasts."
+    },
+    {
+      "claim": "Management describes a 120–150 day working-capital cycle.",
+      "claim_type": "management-reported fact",
+      "status": "SUPPORTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 12; retained text lines 694–698",
+      "excerpt": "",
+      "assessment": "The cycle is material to the financing intensity of a larger sales base. It is management-reported and not a substitute for the cash-flow statement."
+    },
+    {
+      "claim": "Peptide margins above 40% were not company-specific guidance.",
+      "claim_type": "management-reported fact",
+      "status": "CORRECTED",
+      "source_title": "SMSPHARMA Q2 FY27 earnings-call transcript",
+      "source_url": "https://nsearchives.nseindia.com/corporate/SMSPHARMA_10112026163937_Transcript_Q2_2026.pdf",
+      "locator": "PDF page 5; retained text lines 211–215",
+      "excerpt": "",
+      "assessment": "The speaker explicitly said it was too early to quantify SMS peptide margins, then discussed generic industry potential. Any valuation using 40% as an SMS commitment would be unsupported."
+    },
+    {
+      "claim": "FY26 operating cash flow ₹59 crore; dataset free cash flow ₹-71 crore.",
+      "claim_type": "canonical local financial data cross-check",
+      "status": "SUPPORTED",
+      "source_title": "Local cash_flow_annual table",
+      "source_url": "data/SMSPHARMA-financials.json",
+      "locator": "ticker=SMSPHARMA, period_end=2026-03-31, view=consolidated unless stated",
+      "excerpt": "",
+      "assessment": "Annual cash-flow figures were re-read; they are not September-quarter or H1 cash flows and do not use management-adjusted FCF definitions. This is an internal canonical-table check, not an assertion of independent auditor verification."
+    }
+  ],
+  "audit_summary": {
+    "scope": "Independent second review of material operating, guidance, earnings-quality and valuation claims against retained current transcript passages, relevant prior evidence and re-read canonical financial tables. Exact source locations are supplied; management statements remain management statements. This is not a complete audit of financial statements or all historical promises.",
+    "overall_status": "Reviewed with explicit definition differences and open questions",
+    "corrections": [
+      "Clarified that six filings include October, not just H1.",
+      "Separated pilot timing and CRO aspirations from contracted revenue or qualified samples.",
+      "Withdrew arbitrary EPS× multiple value targets; peptide 40% industry discussion is not company margin guidance."
+    ],
+    "unverified": [
+      "Only current and May transcripts are retained; no verified immediate-prior-quarter call comparison was available.",
+      "No customer-level peptide qualification, signed CRO value or unit economics is disclosed.",
+      "The API pricing, volume and mix bridge is not quantified sufficiently to prove the margin gain is wholly structural."
+    ]
+  },
+  "deeper_analysis": {
+    "business_economics": [
+      "Ibuprofen is already operating near current capacity, so the next growth step is no longer just recovering utilisation. It requires the enlarged 9,600-tonne configuration to become operational, customer demand to absorb the output and price realisation to remain adequate. Management itself describes commodity ibuprofen prices as cyclical; backward integration improves the cost position but does not eliminate pricing cycles.",
+      "The 49% high-value API mix and 6–8 prospective FY28 launches diversify the portfolio, but filings, launch timing and mature utilisation are separate stages. The investment question is how much incremental gross profit the new products generate after regulatory and ramp costs, rather than multiplying the current gross margin by all announced capacity."
+    ],
+    "earnings_quality": [
+      "The quarter’s ₹68 crore EBITDA versus ₹316 crore revenue is a real operating improvement. Yet FY26 CFO of ₹59 crore was only about 58% of ₹102 crore PAT, and dataset FCF was negative ₹71 crore. Those annual cash figures do not refute the new quarter, but they show that better EBITDA alone has not established cash-backed returns.",
+      "Current management PAT of ₹39.6 crore and the rounded local row of ₹40 crore are close in rupees, but their respective year-on-year percentages differ. The report retains the local comparable series for table arithmetic and the management number for call attribution, rather than claiming an exact financial reconciliation."
+    ],
+    "capital_allocation": [
+      "₹160 crore of ₹280 crore programme capex has been deployed, while ₹138 crore CWIP and ₹349 crore September borrowings remain in the local balance sheet. The useful return test is incremental EBITDA and CFO after commissioning, with any growth in receivables/inventory funded explicitly.",
+      "The ₹50 crore approved loan to the peptide subsidiary is an additional capital-allocation checkpoint. No samples had yet been sent; pilot production and first CRO revenue are milestones to verify, not reasons to award mature CDMO margins immediately."
+    ],
+    "valuation_logic": [
+      "At about 42× the available trailing EPS, a substantial part of the outcome depends on earnings growing into the price. A 20% decline in the multiple consumes 25% cumulative EPS growth before any capital appreciation. The valuation therefore needs evidence on cash conversion as well as the FY27 growth/margin outperformance.",
+      "No point fair value is assigned from a peptide addressable market or a generic 40% industry margin. A defensible model would separate the existing API cash engine from product-specific probabilities, launch windows, ramp capex and customer qualification for the new platform."
+    ],
+    "peer_positioning": [
+      "Compare the ibuprofen and backward-integration economics with established API manufacturers, while using integrated CDMO businesses only as capability benchmarks. SMS has not yet demonstrated the qualified customer pipeline that would justify importing a mature CDMO multiple.",
+      "A higher-value API mix may deserve a different valuation from a commodity API producer only if incremental margins persist after the next price cycle and cash returns cover the enlarged asset base. The current evidence supports a capability build, not a completed peer-group migration."
+    ],
+    "monitoring_dashboard": [
+      {
+        "metric": "Ibuprofen ramp",
+        "latest_value": "90–95% current utilisation; 9,600-tonne target",
+        "source": "Current call, utilisation/capex Q&A",
+        "why_it_matters": "Separates current scarcity from future absorption risk.",
+        "next_test": "Verify commissioning, saleable production, realisations and utilisation on the enlarged base."
+      },
+      {
+        "metric": "Peptide qualification",
+        "latest_value": "No samples sent at call date",
+        "source": "Current call, sample Q&A",
+        "why_it_matters": "Commercial readiness is earlier than the narrative may imply.",
+        "next_test": "Check pilot sample delivery, customer qualification and first revenue separately."
+      },
+      {
+        "metric": "Cash conversion",
+        "latest_value": "FY26 CFO/PAT about 58%; FCF –₹71 cr",
+        "source": "Canonical annual cash/P&L tables",
+        "why_it_matters": "Working capital can absorb the earnings step-up.",
+        "next_test": "Compare FY27 CFO/PAT and capex funding; no universal target is implied."
+      }
+    ],
+    "unanswered_questions": [
+      "What proportion of API gross-profit improvement is price, volume, backward-integration savings and product mix?",
+      "How much of the ₹280 crore programme and subsidiary funding is still required before the new businesses become self-funding?",
+      "What specific customer acceptance and qualification steps stand between pilot samples and recurring peptide revenue?"
+    ]
+  }
+}
